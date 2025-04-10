@@ -1,0 +1,359 @@
+<Recording xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Client.ServerForm.TaskRecording">
+<CanonicalId>40570ffd-7819-4a21-bb4e-217739728dc3</CanonicalId>
+<CurrentSequence>21</CurrentSequence>
+<Description/>
+<FormContexts xmlns:d2p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+<d2p1:KeyValueOfstringFormContextyaScvdpM>
+<d2p1:Key>3_LedgerJournalTable_4e0485d8-1d58-4a72-b333-259972c08429</d2p1:Key>
+<d2p1:Value>
+<Annotations>
+<Annotation i:type="FormAnnotation">
+<ConfigurationOwnerName>LedgerJournalTable</ConfigurationOwnerName>
+<ConfigurationScope>41</ConfigurationScope>
+<FilterCommandName>ApplyFilters</FilterCommandName>
+<FilterControlName>SystemDefinedFilterPane</FilterControlName>
+<FormViewOptionType>0</FormViewOptionType>
+<MenuItemLabel>Customer payment journal</MenuItemLabel>
+<MenuItemName>LedgerJournalTable_CustPaym</MenuItemName>
+<MenuItemType>Display</MenuItemType>
+<PublishedFromConfiguration>0</PublishedFromConfiguration>
+</Annotation>
+</Annotations>
+<FormID>3_LedgerJournalTable_4e0485d8-1d58-4a72-b333-259972c08429</FormID>
+<FormName>LedgerJournalTable</FormName>
+<HasMetadata>true</HasMetadata>
+<RecordingName>LedgerJournalTable</RecordingName>
+<Sequence>2</Sequence>
+</d2p1:Value>
+</d2p1:KeyValueOfstringFormContextyaScvdpM>
+<d2p1:KeyValueOfstringFormContextyaScvdpM>
+<d2p1:Key>143_VendTable_4e0485d8-1d58-4a72-b333-259972c08429</d2p1:Key>
+<d2p1:Value>
+<Annotations>
+<Annotation i:type="FormAnnotation">
+<ConfigurationOwnerName>VendTable</ConfigurationOwnerName>
+<ConfigurationScope>10</ConfigurationScope>
+<FilterCommandName>ApplyFilters</FilterCommandName>
+<FilterControlName>SystemDefinedFilterPane</FilterControlName>
+<FormViewOptionType>0</FormViewOptionType>
+<MenuItemLabel>All vendors</MenuItemLabel>
+<MenuItemName>VendTableListPage</MenuItemName>
+<MenuItemType>Display</MenuItemType>
+<PublishedFromConfiguration>0</PublishedFromConfiguration>
+</Annotation>
+<Annotation i:type="FormAnnotation">
+<ConfigurationOwnerName>VendTable</ConfigurationOwnerName>
+<ConfigurationScope>10</ConfigurationScope>
+<FilterCommandName>ApplyFilters</FilterCommandName>
+<FilterControlName>SystemDefinedFilterPane</FilterControlName>
+<FormViewOptionType>1</FormViewOptionType>
+<MenuItemLabel>All vendors</MenuItemLabel>
+<MenuItemName>VendTableListPage</MenuItemName>
+<MenuItemType>Display</MenuItemType>
+<PublishedFromConfiguration>0</PublishedFromConfiguration>
+</Annotation>
+</Annotations>
+<FormID>143_VendTable_4e0485d8-1d58-4a72-b333-259972c08429</FormID>
+<FormName>VendTable</FormName>
+<HasMetadata>true</HasMetadata>
+<RecordingName>VendTable</RecordingName>
+<Sequence>8</Sequence>
+</d2p1:Value>
+</d2p1:KeyValueOfstringFormContextyaScvdpM>
+</FormContexts>
+<Name>testing_2</Name>
+<RootScope xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Id="i1">
+<CustomDescription i:nil="true"/>
+<Description i:nil="true"/>
+<Id>4e0485d8-1d58-4a72-b333-259972c08429</Id>
+<Parent i:nil="true"/>
+<ParentSequence>0</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>0</Sequence>
+<Children>
+<Node z:Id="i2" i:type="Scope">
+<CustomDescription i:nil="true"/>
+<Description/>
+<Id>3_LedgerJournalTable_4e0485d8-1d58-4a72-b333-259972c08429</Id>
+<Parent z:Ref="i1"/>
+<ParentSequence>0</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>1</Sequence>
+<Children>
+<Node z:Id="i3" i:type="Scope">
+<CustomDescription i:nil="true"/>
+<Description/>
+<Id>3RequestClose_4e0485d8-1d58-4a72-b333-259972c08429</Id>
+<Parent z:Ref="i2"/>
+<ParentSequence>1</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>3</Sequence>
+<Children>
+<Node z:Id="i4" i:type="CommandUserAction">
+<CustomDescription i:nil="true"/>
+<Description>Close the page.</Description>
+<Id>3RequestClose_4e0485d8-1d58-4a72-b333-259972c08429x4</Id>
+<Parent z:Ref="i3"/>
+<ParentSequence>3</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>4</Sequence>
+<Annotations/>
+<GlobalId>447143b5-7278-475b-9c65-1aed0b8d99a6</GlobalId>
+<SystemGenerated>false</SystemGenerated>
+<ControlLabel/>
+<ControlLabelId/>
+<FormId>3_LedgerJournalTable_4e0485d8-1d58-4a72-b333-259972c08429</FormId>
+<ListContext i:nil="true"/>
+<RowIndex i:nil="true"/>
+<Arguments/>
+<CommandName>RequestClose</CommandName>
+<ControlName/>
+<ControlType/>
+<LabelId>@SysTaskRecorder:CloseForm</LabelId>
+<ReturnType>Void</ReturnType>
+<ReturnValue i:nil="true"/>
+<TaskId i:nil="true"/>
+</Node>
+</Children>
+<IsForm>false</IsForm>
+<IsStepGroup>false</IsStepGroup>
+<Name>RequestClose</Name>
+<ScopeType>Private</ScopeType>
+</Node>
+</Children>
+<IsForm>true</IsForm>
+<IsStepGroup>false</IsStepGroup>
+<Name>LedgerJournalTable</Name>
+<ScopeType>Public</ScopeType>
+</Node>
+<Node z:Id="i5" i:type="Scope">
+<CustomDescription i:nil="true"/>
+<Description/>
+<Id>MenuItemvendtablelistpage_4e0485d8-1d58-4a72-b333-259972c08429</Id>
+<Parent z:Ref="i1"/>
+<ParentSequence>0</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>5</Sequence>
+<Children>
+<Node z:Id="i6" i:type="MenuItemUserAction">
+<CustomDescription i:nil="true"/>
+<Description>Go to Accounts payable > Vendors > All vendors.</Description>
+<Id>MenuItemvendtablelistpage_4e0485d8-1d58-4a72-b333-259972c08429x6</Id>
+<Parent z:Ref="i5"/>
+<ParentSequence>5</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>6</Sequence>
+<Annotations/>
+<GlobalId>03003f9e-b8f8-442f-b54b-fecbfbcfe659</GlobalId>
+<SystemGenerated>false</SystemGenerated>
+<MenuItemName>vendtablelistpage</MenuItemName>
+<MenuItemType>Display</MenuItemType>
+<NavigationPath xmlns:d7p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+<d7p1:string>mainmenu</d7p1:string>
+<d7p1:string>AccountsPayable</d7p1:string>
+<d7p1:string>Vendors</d7p1:string>
+</NavigationPath>
+</Node>
+<Node z:Id="i7" i:type="Scope">
+<CustomDescription i:nil="true"/>
+<Description/>
+<Id>143_VendTable_4e0485d8-1d58-4a72-b333-259972c08429</Id>
+<Parent z:Ref="i5"/>
+<ParentSequence>5</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>7</Sequence>
+<Children>
+<Node z:Id="i8" i:type="Scope">
+<CustomDescription i:nil="true"/>
+<Description/>
+<Id>238_0Click_4e0485d8-1d58-4a72-b333-259972c08429</Id>
+<Parent z:Ref="i7"/>
+<ParentSequence>9</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>10</Sequence>
+<Children>
+<Node z:Id="i9" i:type="CommandUserAction">
+<CustomDescription i:nil="true"/>
+<Description>Click New.</Description>
+<Id>238_0Click_4e0485d8-1d58-4a72-b333-259972c08429x11</Id>
+<Parent z:Ref="i8"/>
+<ParentSequence>10</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>11</Sequence>
+<Annotations/>
+<GlobalId>caa52042-d20e-4206-a950-05bd87e91588</GlobalId>
+<SystemGenerated>false</SystemGenerated>
+<ControlLabel>New</ControlLabel>
+<ControlLabelId/>
+<FormId>143_VendTable_4e0485d8-1d58-4a72-b333-259972c08429</FormId>
+<ListContext i:nil="true"/>
+<RowIndex i:nil="true"/>
+<Arguments/>
+<CommandName>Click</CommandName>
+<ControlName>SystemDefinedNewButton</ControlName>
+<ControlType>CommandButton</ControlType>
+<LabelId i:nil="true"/>
+<ReturnType>Void</ReturnType>
+<ReturnValue i:nil="true"/>
+<TaskId>260</TaskId>
+</Node>
+</Children>
+<IsForm>false</IsForm>
+<IsStepGroup>false</IsStepGroup>
+<Name>SystemDefinedNewButton_Click</Name>
+<ScopeType>Private</ScopeType>
+</Node>
+<Node z:Id="i10" i:type="Scope">
+<CustomDescription i:nil="true"/>
+<Description/>
+<Id>298Value_4e0485d8-1d58-4a72-b333-259972c08429</Id>
+<Parent z:Ref="i7"/>
+<ParentSequence>13</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>14</Sequence>
+<Children>
+<Node z:Id="i11" i:type="PropertyUserAction">
+<CustomDescription i:nil="true"/>
+<Description>In the Vendor account field, type a value.</Description>
+<Id>298Value_4e0485d8-1d58-4a72-b333-259972c08429x15</Id>
+<Parent z:Ref="i10"/>
+<ParentSequence>14</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>15</Sequence>
+<Annotations/>
+<GlobalId>3f339d72-7845-4e02-a7de-a64387dd563f</GlobalId>
+<SystemGenerated>false</SystemGenerated>
+<ControlLabel>Vendor account</ControlLabel>
+<ControlLabelId>@SYS14048</ControlLabelId>
+<FormId>143_VendTable_4e0485d8-1d58-4a72-b333-259972c08429</FormId>
+<ListContext i:nil="true"/>
+<RowIndex i:nil="true"/>
+<BoundDataSource>VendTable</BoundDataSource>
+<BoundProperty>AccountNum</BoundProperty>
+<ControlName>Identification_AccountNum</ControlName>
+<ControlType>Input</ControlType>
+<IsReference>false</IsReference>
+<LabelId i:nil="true"/>
+<PropertyName>Value</PropertyName>
+<UserActionType>Input</UserActionType>
+<Value>1001</Value>
+<ValueLabel i:nil="true"/>
+</Node>
+</Children>
+<IsForm>false</IsForm>
+<IsStepGroup>false</IsStepGroup>
+<Name>Identification_AccountNum_Value</Name>
+<ScopeType>Private</ScopeType>
+</Node>
+<Node z:Id="i12" i:type="Scope">
+<CustomDescription i:nil="true"/>
+<Description/>
+<Id>304Value_4e0485d8-1d58-4a72-b333-259972c08429</Id>
+<Parent z:Ref="i7"/>
+<ParentSequence>16</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>17</Sequence>
+<Children>
+<Node z:Id="i13" i:type="PropertyUserAction">
+<CustomDescription i:nil="true"/>
+<Description>In the Search name field, type a value.</Description>
+<Id>304Value_4e0485d8-1d58-4a72-b333-259972c08429x18</Id>
+<Parent z:Ref="i12"/>
+<ParentSequence>17</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>18</Sequence>
+<Annotations/>
+<GlobalId>bebe5daf-d3dd-415f-9502-c48519612831</GlobalId>
+<SystemGenerated>false</SystemGenerated>
+<ControlLabel>Search name</ControlLabel>
+<ControlLabelId>@SYS27054</ControlLabelId>
+<FormId>143_VendTable_4e0485d8-1d58-4a72-b333-259972c08429</FormId>
+<ListContext i:nil="true"/>
+<RowIndex i:nil="true"/>
+<BoundDataSource>DirPartyTable</BoundDataSource>
+<BoundProperty>NameAlias</BoundProperty>
+<ControlName>Org_NameAlias</ControlName>
+<ControlType>Input</ControlType>
+<IsReference>false</IsReference>
+<LabelId i:nil="true"/>
+<PropertyName>Value</PropertyName>
+<UserActionType>Input</UserActionType>
+<Value>abc</Value>
+<ValueLabel i:nil="true"/>
+</Node>
+</Children>
+<IsForm>false</IsForm>
+<IsStepGroup>false</IsStepGroup>
+<Name>Org_NameAlias_Value</Name>
+<ScopeType>Private</ScopeType>
+</Node>
+<Node z:Id="i14" i:type="Scope">
+<CustomDescription i:nil="true"/>
+<Description/>
+<Id>306Value_4e0485d8-1d58-4a72-b333-259972c08429</Id>
+<Parent z:Ref="i7"/>
+<ParentSequence>19</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>20</Sequence>
+<Children>
+<Node z:Id="i15" i:type="PropertyUserAction">
+<CustomDescription i:nil="true"/>
+<Description>In the Group field, type a value.</Description>
+<Id>306Value_4e0485d8-1d58-4a72-b333-259972c08429x21</Id>
+<Parent z:Ref="i14"/>
+<ParentSequence>20</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>21</Sequence>
+<Annotations/>
+<GlobalId>3a446641-2857-4883-be7d-f9dc7456df6f</GlobalId>
+<SystemGenerated>false</SystemGenerated>
+<ControlLabel>Group</ControlLabel>
+<ControlLabelId>@SYS3815</ControlLabelId>
+<FormId>143_VendTable_4e0485d8-1d58-4a72-b333-259972c08429</FormId>
+<ListContext i:nil="true"/>
+<RowIndex i:nil="true"/>
+<BoundDataSource>VendTable</BoundDataSource>
+<BoundProperty>VendGroup</BoundProperty>
+<ControlName>Posting_VendGroup</ControlName>
+<ControlType>Input</ControlType>
+<IsReference>false</IsReference>
+<LabelId i:nil="true"/>
+<PropertyName>Value</PropertyName>
+<UserActionType>Input</UserActionType>
+<Value>group</Value>
+<ValueLabel i:nil="true"/>
+</Node>
+</Children>
+<IsForm>false</IsForm>
+<IsStepGroup>false</IsStepGroup>
+<Name>Posting_VendGroup_Value</Name>
+<ScopeType>Private</ScopeType>
+</Node>
+</Children>
+<IsForm>true</IsForm>
+<IsStepGroup>false</IsStepGroup>
+<Name>VendTable</Name>
+<ScopeType>Public</ScopeType>
+</Node>
+</Children>
+<IsForm>false</IsForm>
+<IsStepGroup>false</IsStepGroup>
+<Name>MenuItem_vendtablelistpage</Name>
+<ScopeType>Private</ScopeType>
+</Node>
+</Children>
+<IsForm>false</IsForm>
+<IsStepGroup>false</IsStepGroup>
+<Name>testing_2</Name>
+<ScopeType>Public</ScopeType>
+</RootScope>
+<UserActions xmlns:d2p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+<d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i4"/>
+<d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i6"/>
+<d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i9"/>
+<d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i11"/>
+<d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i13"/>
+<d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i15"/>
+</UserActions>
+<Version>1</Version>
+</Recording>

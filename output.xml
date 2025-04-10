@@ -1,0 +1,58 @@
+<?xml version="1.0" ?>
+<UserActionsWithDetails>
+  <UserAction Ref="i4">
+    <Description>Close the page.</Description>
+    <NodeId>i4</NodeId>
+    <Sequence>1</Sequence>
+    <ControlLabel/>
+    <ControlType/>
+    <Value/>
+  </UserAction>
+  <UserAction Ref="i6">
+    <Description>Go to Accounts payable &gt; Vendors &gt; All vendors.</Description>
+    <NodeId>i6</NodeId>
+    <Sequence>2</Sequence>
+    <Navigation>mainmenu</Navigation>
+    <Navigation>AccountsPayable</Navigation>
+    <Navigation>Vendors</Navigation>
+    <ControlLabel/>
+    <ControlType/>
+    <Value/>
+  </UserAction>
+  <UserAction Ref="i9">
+    <Description>Click New.</Description>
+    <NodeId>i9</NodeId>
+    <Sequence>3</Sequence>
+    <ControlName>SystemDefinedNewButton</ControlName>
+    <ControlLabel>New</ControlLabel>
+    <ControlType>CommandButton</ControlType>
+    <Value/>
+  </UserAction>
+  <UserAction Ref="i11">
+    <Description>In the Vendor account field, type a value.</Description>
+    <NodeId>i11</NodeId>
+    <Sequence>4</Sequence>
+    <ControlName>Identification_AccountNum</ControlName>
+    <ControlLabel>Vendor account</ControlLabel>
+    <ControlType>Input</ControlType>
+    <Value/>
+  </UserAction>
+  <UserAction Ref="i13">
+    <Description>In the Search name field, type a value.</Description>
+    <NodeId>i13</NodeId>
+    <Sequence>5</Sequence>
+    <ControlName>Org_NameAlias</ControlName>
+    <ControlLabel>Search name</ControlLabel>
+    <ControlType>Input</ControlType>
+    <Value/>
+  </UserAction>
+  <UserAction Ref="i15">
+    <Description>In the Group field, type a value.</Description>
+    <NodeId>i15</NodeId>
+    <Sequence>6</Sequence>
+    <ControlName>Posting_VendGroup</ControlName>
+    <ControlLabel>Group</ControlLabel>
+    <ControlType>Input</ControlType>
+    <Value/>
+  </UserAction>
+</UserActionsWithDetails>
