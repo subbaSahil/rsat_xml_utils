@@ -1,58 +1,259 @@
-<?xml version="1.0" ?>
+<?xml version='1.0' encoding='UTF-8'?>
 <UserActionsWithDetails>
-  <UserAction Ref="i4">
-    <Description>Close the page.</Description>
-    <NodeId>i4</NodeId>
-    <Sequence>1</Sequence>
-    <ControlLabel/>
-    <ControlType/>
-    <Value/>
-  </UserAction>
-  <UserAction Ref="i6">
-    <Description>Go to Accounts payable &gt; Vendors &gt; All vendors.</Description>
-    <NodeId>i6</NodeId>
-    <Sequence>2</Sequence>
+  <UserAction Ref="i3">
+    <Description>Go to Accounts payable &gt; Purchase orders &gt; All purchase orders.</Description>
+    <NodeId>i3</NodeId>
+    <Sequence>32</Sequence>
     <Navigation>mainmenu</Navigation>
     <Navigation>AccountsPayable</Navigation>
-    <Navigation>Vendors</Navigation>
-    <ControlLabel/>
-    <ControlType/>
-    <Value/>
+    <Navigation>PurchaseOrders</Navigation>
+    <ControlName>No Control Name</ControlName>
+    <ControlLabel />
+    <ControlType />
+    <Value />
   </UserAction>
-  <UserAction Ref="i9">
+  <UserAction Ref="i6">
     <Description>Click New.</Description>
-    <NodeId>i9</NodeId>
-    <Sequence>3</Sequence>
+    <NodeId>i6</NodeId>
+    <Sequence>32</Sequence>
     <ControlName>SystemDefinedNewButton</ControlName>
     <ControlLabel>New</ControlLabel>
     <ControlType>CommandButton</ControlType>
-    <Value/>
+    <Value />
   </UserAction>
-  <UserAction Ref="i11">
-    <Description>In the Vendor account field, type a value.</Description>
-    <NodeId>i11</NodeId>
-    <Sequence>4</Sequence>
-    <ControlName>Identification_AccountNum</ControlName>
+  <UserAction Ref="i9">
+    <Description>In the Vendor account field, enter or select a value.</Description>
+    <NodeId>i9</NodeId>
+    <Sequence>32</Sequence>
+    <ControlName>PurchTable_OrderAccount</ControlName>
     <ControlLabel>Vendor account</ControlLabel>
     <ControlType>Input</ControlType>
-    <Value/>
-  </UserAction>
-  <UserAction Ref="i13">
-    <Description>In the Search name field, type a value.</Description>
-    <NodeId>i13</NodeId>
-    <Sequence>5</Sequence>
-    <ControlName>Org_NameAlias</ControlName>
-    <ControlLabel>Search name</ControlLabel>
-    <ControlType>Input</ControlType>
-    <Value/>
+    <Value>1001</Value>
   </UserAction>
   <UserAction Ref="i15">
-    <Description>In the Group field, type a value.</Description>
+    <Description>Click OK.</Description>
     <NodeId>i15</NodeId>
-    <Sequence>6</Sequence>
-    <ControlName>Posting_VendGroup</ControlName>
-    <ControlLabel>Group</ControlLabel>
+    <Sequence>32</Sequence>
+    <ControlName>OK</ControlName>
+    <ControlLabel>OK</ControlLabel>
+    <ControlType>CommandButton</ControlType>
+    <Value />
+  </UserAction>
+  <UserAction Ref="i17">
+    <Description>On the Action Pane, click Receive.</Description>
+    <NodeId>i17</NodeId>
+    <Sequence>32</Sequence>
+    <ControlName>Receive</ControlName>
+    <ControlLabel>Receive</ControlLabel>
+    <ControlType>AppBarTab</ControlType>
+    <Value />
+  </UserAction>
+  <UserAction Ref="i19">
+    <Description>In the list, mark the selected row.</Description>
+    <NodeId>i19</NodeId>
+    <Sequence>32</Sequence>
+    <ControlName>LineSpec</ControlName>
+    <ControlLabel />
+    <ControlType>Grid</ControlType>
+    <Value />
+  </UserAction>
+  <UserAction Ref="i21">
+    <Description>In the Item number field, enter or select a value.</Description>
+    <NodeId>i21</NodeId>
+    <Sequence>32</Sequence>
+    <ControlName>PurchLine_ItemId</ControlName>
+    <ControlLabel>Item number</ControlLabel>
     <ControlType>Input</ControlType>
-    <Value/>
+    <Value />
+  </UserAction>
+  <UserAction Ref="i26">
+    <Description>In the Site field, enter or select a value.</Description>
+    <NodeId>i26</NodeId>
+    <Sequence>32</Sequence>
+    <ControlName>InventoryDimensionsGrid_InventSiteId</ControlName>
+    <ControlLabel>Site</ControlLabel>
+    <ControlType>Input</ControlType>
+    <Value>2</Value>
+  </UserAction>
+  <UserAction Ref="i34">
+    <Description>In the Warehouse field, enter or select a value.</Description>
+    <NodeId>i34</NodeId>
+    <Sequence>32</Sequence>
+    <ControlName>InventoryDimensionsGrid_InventLocationId</ControlName>
+    <ControlLabel>Warehouse</ControlLabel>
+    <ControlType>Input</ControlType>
+    <Value>21</Value>
+  </UserAction>
+  <UserAction Ref="i38">
+    <Description>In the list, click the link in the selected row.</Description>
+    <NodeId>i38</NodeId>
+    <Sequence>32</Sequence>
+    <ControlName>GridInventLocation</ControlName>
+    <ControlLabel />
+    <ControlType>Grid</ControlType>
+    <Value />
+  </UserAction>
+  <UserAction Ref="i40">
+    <Description>In the Quantity field, enter a number.</Description>
+    <NodeId>i40</NodeId>
+    <Sequence>32</Sequence>
+    <ControlName>PurchLine_PurchQtyGrid</ControlName>
+    <ControlLabel>Quantity</ControlLabel>
+    <ControlType>Real</ControlType>
+    <Value>100.00</Value>
+  </UserAction>
+  <UserAction Ref="i42">
+    <Description>Click Save.</Description>
+    <NodeId>i42</NodeId>
+    <Sequence>32</Sequence>
+    <ControlName>SystemDefinedSaveButton</ControlName>
+    <ControlLabel>Save</ControlLabel>
+    <ControlType>CommandButton</ControlType>
+    <Value />
+  </UserAction>
+  <UserAction Ref="i44">
+    <Description>On the Action Pane, click Purchase.</Description>
+    <NodeId>i44</NodeId>
+    <Sequence>32</Sequence>
+    <ControlName>Purchase</ControlName>
+    <ControlLabel>Purchase</ControlLabel>
+    <ControlType>AppBarTab</ControlType>
+    <Value />
+  </UserAction>
+  <UserAction Ref="i46">
+    <Description>Click Confirm.</Description>
+    <NodeId>i46</NodeId>
+    <Sequence>32</Sequence>
+    <ControlName>buttonConfirm</ControlName>
+    <ControlLabel>Confirm</ControlLabel>
+    <ControlType>MenuItemButton</ControlType>
+    <Value />
+  </UserAction>
+  <UserAction Ref="i50">
+    <Description>In the list, mark the selected row.</Description>
+    <NodeId>i50</NodeId>
+    <Sequence>32</Sequence>
+    <ControlName>LineSpec</ControlName>
+    <ControlLabel />
+    <ControlType>Grid</ControlType>
+    <Value />
+  </UserAction>
+  <UserAction Ref="i52">
+    <Description>On the Action Pane, click Receive.</Description>
+    <NodeId>i52</NodeId>
+    <Sequence>32</Sequence>
+    <ControlName>Receive</ControlName>
+    <ControlLabel>Receive</ControlLabel>
+    <ControlType>AppBarTab</ControlType>
+    <Value />
+  </UserAction>
+  <UserAction Ref="i54">
+    <Description>Click Product receipt.</Description>
+    <NodeId>i54</NodeId>
+    <Sequence>32</Sequence>
+    <ControlName>buttonUpdatePackingSlip</ControlName>
+    <ControlLabel>Product receipt</ControlLabel>
+    <ControlType>MenuItemButton</ControlType>
+    <Value />
+  </UserAction>
+  <UserAction Ref="i57">
+    <Description>In the list, mark the selected row.</Description>
+    <NodeId>i57</NodeId>
+    <Sequence>32</Sequence>
+    <ControlName>gridParmTable</ControlName>
+    <ControlLabel />
+    <ControlType>Grid</ControlType>
+    <Value />
+  </UserAction>
+  <UserAction Ref="i59">
+    <Description>In the Product receipt field, type a value.</Description>
+    <NodeId>i59</NodeId>
+    <Sequence>32</Sequence>
+    <ControlName>PurchParmTable_Num</ControlName>
+    <ControlLabel>Product receipt</ControlLabel>
+    <ControlType>Input</ControlType>
+    <Value>PR-0002</Value>
+  </UserAction>
+  <UserAction Ref="i61">
+    <Description>Click OK.</Description>
+    <NodeId>i61</NodeId>
+    <Sequence>32</Sequence>
+    <ControlName>OK</ControlName>
+    <ControlLabel>OK</ControlLabel>
+    <ControlType>CommandButton</ControlType>
+    <Value />
+  </UserAction>
+  <UserAction Ref="i63">
+    <Description>Click Product receipt.</Description>
+    <NodeId>i63</NodeId>
+    <Sequence>32</Sequence>
+    <ControlName>buttonJournalPackingSlip</ControlName>
+    <ControlLabel>Product receipt</ControlLabel>
+    <ControlType>MenuItemButton</ControlType>
+    <Value />
+  </UserAction>
+  <UserAction Ref="i66">
+    <Description>Close the page.</Description>
+    <NodeId>i66</NodeId>
+    <Sequence>32</Sequence>
+    <ControlName>No Control Name</ControlName>
+    <ControlLabel />
+    <ControlType />
+    <Value />
+  </UserAction>
+  <UserAction Ref="i68">
+    <Description>On the Action Pane, click Invoice.</Description>
+    <NodeId>i68</NodeId>
+    <Sequence>32</Sequence>
+    <ControlName>Invoice</ControlName>
+    <ControlLabel>Invoice</ControlLabel>
+    <ControlType>AppBarTab</ControlType>
+    <Value />
+  </UserAction>
+  <UserAction Ref="i70">
+    <Description>Click Invoice.</Description>
+    <NodeId>i70</NodeId>
+    <Sequence>32</Sequence>
+    <ControlName>buttonUpdateInvoice</ControlName>
+    <ControlLabel>Invoice</ControlLabel>
+    <ControlType>MenuItemButton</ControlType>
+    <Value />
+  </UserAction>
+  <UserAction Ref="i73">
+    <Description>In the Number field, type a value.</Description>
+    <NodeId>i73</NodeId>
+    <Sequence>32</Sequence>
+    <ControlName>PurchParmTable_Num</ControlName>
+    <ControlLabel>Number</ControlLabel>
+    <ControlType>Input</ControlType>
+    <Value>INV-0002</Value>
+  </UserAction>
+  <UserAction Ref="i75">
+    <Description>Click Save.</Description>
+    <NodeId>i75</NodeId>
+    <Sequence>32</Sequence>
+    <ControlName>SystemDefinedSaveButton</ControlName>
+    <ControlLabel>Save</ControlLabel>
+    <ControlType>CommandButton</ControlType>
+    <Value />
+  </UserAction>
+  <UserAction Ref="i77">
+    <Description>Click Update match status.</Description>
+    <NodeId>i77</NodeId>
+    <Sequence>32</Sequence>
+    <ControlName>UpdateMatchStatus</ControlName>
+    <ControlLabel>Update match status</ControlLabel>
+    <ControlType>Button</ControlType>
+    <Value />
+  </UserAction>
+  <UserAction Ref="i79">
+    <Description>Click Post.</Description>
+    <NodeId>i79</NodeId>
+    <Sequence>32</Sequence>
+    <ControlName>OK</ControlName>
+    <ControlLabel>Post</ControlLabel>
+    <ControlType>Button</ControlType>
+    <Value />
   </UserAction>
 </UserActionsWithDetails>
+ 

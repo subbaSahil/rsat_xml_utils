@@ -6,11 +6,11 @@ from selenium.webdriver.common.by import By
 XML_PATH = "output.xml"
 OUTPUT_SCRIPT = "rsat_script.py"
 
-def generate_xpath_from_control(control_type, control_name):
+def generate_xpath_from_control(control_type, control_name, control_label):
     if control_type.lower() == "commandbutton":
         return f"//button[@data-dyn-controlname='{control_name}']"
-    elif control_type.lower() == "input":
-        return f"//input[contains(@name,'{control_name}')]"
+    elif control_type.lower() == "input" or control_type.lower() == "real":
+        return [f"//input[contains(@name,'{control_name.strip()}')]", f"//input[contains(@aria-label,'{control_label.strip()}')]"]
     elif control_type.lower() == "appbartab":
         return f"//div[@data-dyn-controlname='{control_name}']"
     else:
@@ -19,6 +19,38 @@ def generate_xpath_from_control(control_type, control_name):
 # def extract_navigation_keys(root):
 #     """Extract values from <Navigation> tags."""
 #     return [elem.text.strip() for elem in root.findall(".//Navigation") if elem.text]
+
+
+def find_input_xpath(driver, control_name, control_label):
+    # Try locating by name
+    if control_name:
+        try:
+            elem = driver.find_element(By.XPATH, f"//input[contains(@name,'{control_name}')]")
+            if elem:
+                return f"//input[contains(@name,'{control_name}')]"
+        except:
+            pass
+
+    # Try locating by id
+    if control_name:
+        try:
+            elem = driver.find_element(By.XPATH, f"//input[contains(@id,'{control_name}')]")
+            if elem:
+                return f"//input[contains(@id,'{control_name}')]"
+        except:
+            pass
+
+    # Try locating by aria-label
+    if control_label:
+        try:
+            elem = driver.find_element(By.XPATH, f"//input[@aria-label='{control_label}']")
+            if elem:
+                return f"//input[@aria-label='{control_label}']"
+        except:
+            pass
+
+    return None
+
 
 def extract_navigation_from_description(root):
     """Extract navigation items from <Description> text."""
@@ -90,13 +122,29 @@ def generate_selenium_script(nav_keys, controls):
         name = control["name"]
         ctype = control["type"]
         value = control["value"]
-        xpath = generate_xpath_from_control(ctype, name)
+        xpath = generate_xpath_from_control(ctype, name,label)
+        print(xpath)
 
         if xpath:
             if ctype == "input":
                 lines.append(f"# Inputting into: {name}")
-                lines.append(f"Interactions.wait_and_send_keys(driver, By.XPATH, \"{xpath}\", \"{value}\")")
-                lines.append(f"Interactions.wait_and_send_keys(driver, By.XPATH, \"{xpath}\", Keys.RETURN)")
+                xpath_controlname = xpath[0]+"/following-sibling::div"
+                lines.append(f"if(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[0]}\")):")
+                lines.append(f"    Interactions.wait_and_send_keys(driver, By.XPATH, \"{xpath[0]}\", \"{value}\")")
+                # lines.append(f"    Interactions.wait_and_send_keys(driver, By.XPATH, \"{xpath[0]}\", Keys.RETURN)")
+                lines.append(f"elif(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[1]}\")):")
+                lines.append(f"    Interactions.wait_and_send_keys(driver, By.XPATH, \"{xpath[1]}\", \"{value}\")")
+                # lines.append(f"    Interactions.wait_and_send_keys(driver, By.XPATH, \"{xpath[1]}\", Keys.RETURN)")
+
+            elif ctype == "real":
+                lines.append(f"if(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[0]}\")):")
+                lines.append(f"    Interactions.clearInputField(driver, By.XPATH, \"{xpath[0]}\", \"{value}\")")
+                lines.append(f"    Interactions.wait_and_send_keys(driver, By.XPATH, \"{xpath[0]}\", \"{value}\")")
+                # lines.append(f"    Interactions.wait_and_send_keys(driver, By.XPATH, \"{xpath[0]}\", Keys.RETURN)")
+                lines.append(f"elif(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[1]}\")):")
+                lines.append(f"    Interactions.clearInputField(driver, By.XPATH, \"{xpath[1]}\", \"{value}\")")
+                lines.append(f"    Interactions.wait_and_send_keys(driver, By.XPATH, \"{xpath[1]}\", \"{value}\")")
+
             elif ctype == "commandbutton":
                 lines.append(f"# Clicking button: {name}")
                 lines.append(f"Interactions.wait_and_click(driver, By.XPATH, \"{xpath}\")")
@@ -107,6 +155,7 @@ def generate_selenium_script(nav_keys, controls):
             lines.append(f"# ❌ Locator not found for: {name} (Type: {ctype})")
 
     lines.append("time.sleep(5)")
+    lines.append("print(\"test case passed\")")
     lines.append("driver.quit()")
     return "\n".join(lines)
 

@@ -27,3 +27,7 @@ INPUTS = {
 CLICKS = {
     "OK": "//button[@data-dyn-controlname='OK']"
 }
+
+
+
+//span[text()='Automatic netting']/ancestor::button
