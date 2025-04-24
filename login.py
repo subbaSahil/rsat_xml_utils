@@ -22,8 +22,6 @@ def login(driver):
     secrets = d365_preview_cred()
     username = secrets["username"]
     password = secrets["password"]
-    print("Username:", username)
-    print("Password:", password)
     # Login
     d365_login(driver, username, password)
     print("Login Successful!")

@@ -2,55 +2,20 @@ import xml.etree.ElementTree as ET
 import re
 
 from selenium.webdriver.common.by import By
-
+from getLocatorFromControls import generate_xpath_from_control
 XML_PATH = "output.xml"
 OUTPUT_SCRIPT = "rsat_script.py"
 
-def generate_xpath_from_control(control_type, control_name, control_label):
-    if control_type.lower() == "commandbutton":
-        return f"//button[@data-dyn-controlname='{control_name}']"
-    elif control_type.lower() == "input" or control_type.lower() == "real":
-        return [f"//input[contains(@name,'{control_name.strip()}')]", f"//input[contains(@aria-label,'{control_label.strip()}')]"]
-    elif control_type.lower() == "appbartab":
-        return f"//div[@data-dyn-controlname='{control_name}']"
-    else:
-        return f"//*[contains(@data-dyn-controlname, '{control_name}')]"
-
-# def extract_navigation_keys(root):
-#     """Extract values from <Navigation> tags."""
-#     return [elem.text.strip() for elem in root.findall(".//Navigation") if elem.text]
 
 
-def find_input_xpath(driver, control_name, control_label):
-    # Try locating by name
-    if control_name:
-        try:
-            elem = driver.find_element(By.XPATH, f"//input[contains(@name,'{control_name}')]")
-            if elem:
-                return f"//input[contains(@name,'{control_name}')]"
-        except:
-            pass
-
-    # Try locating by id
-    if control_name:
-        try:
-            elem = driver.find_element(By.XPATH, f"//input[contains(@id,'{control_name}')]")
-            if elem:
-                return f"//input[contains(@id,'{control_name}')]"
-        except:
-            pass
-
-    # Try locating by aria-label
-    if control_label:
-        try:
-            elem = driver.find_element(By.XPATH, f"//input[@aria-label='{control_label}']")
-            if elem:
-                return f"//input[@aria-label='{control_label}']"
-        except:
-            pass
-
-    return None
-
+def convert_date_format(date_str):
+    """Convert date from YYYY-MM-DD to DD/MM/YYYY format."""
+    from datetime import datetime
+    try:
+        date_obj = datetime.strptime(date_str, "%Y-%m-%d")
+        return date_obj.strftime("%m/%d/%Y")
+    except ValueError:
+        return "Invalid date format"
 
 def extract_navigation_from_description(root):
     """Extract navigation items from <Description> text."""
@@ -68,11 +33,25 @@ def extract_navigation_from_description(root):
 
 def extract_controls_with_types(root):
     controls = []
+
+    def get_quickfilter_value_from_description(elem):
+        """
+        Extract the value inside single quotes from the Description tag,
+        specifically for quickfilter controls.
+        """
+        description_elem = elem.find("Description")
+        if description_elem is not None and description_elem.text:
+            match = re.search(r"'([^']+)'", description_elem.text.strip())
+            if match:
+                return match.group(1)
+        return None
+
     for elem in root.iter():
         label = None
         control_name = None
         control_type = None
         value = None
+        filtervalue = None
 
         for child in elem:
             tag = child.tag.split('}')[-1]
@@ -82,15 +61,20 @@ def extract_controls_with_types(root):
                 control_name = child.text.strip() if child.text else None
             elif tag == "ControlType":
                 control_type = child.text.strip().lower() if child.text else None
+                if(control_type == "quickfilter" or control_type == "filtermanager"):
+                    filtervalue = get_quickfilter_value_from_description(elem)
             elif tag == "Value":
                 value = child.text.strip() if child.text else None
+            
 
         if control_name and control_type:
             controls.append({
                 "label": label or "",
                 "name": control_name,
                 "type": control_type or "",
-                "value": value or ""
+                "value": value or "",
+                "filtervalue": filtervalue or ""
+                
             })
 
     return controls
@@ -106,7 +90,8 @@ def generate_selenium_script(nav_keys, controls):
         "driver = webdriver.Chrome()",
         "driver.maximize_window()",
         "time.sleep(3)\n",
-        "login.login(driver)\n"
+        "login.login(driver)\n",
+        "locator = \"\"\n",
         "Interactions.wait_and_click(driver, By.XPATH, \"//div[@aria-label='Modules']\")"
 
     ]
@@ -122,32 +107,54 @@ def generate_selenium_script(nav_keys, controls):
         name = control["name"]
         ctype = control["type"]
         value = control["value"]
+        filtervalue = control["filtervalue"]
         xpath = generate_xpath_from_control(ctype, name,label)
-        print(xpath)
+        # print(xpath)
 
         if xpath:
-            if ctype == "input":
+            if ctype in ["input" , "referencegroup"] :
                 lines.append(f"# Inputting into: {name}")
-                xpath_controlname = xpath[0]+"/following-sibling::div"
+                # xpath_controlname = xpath[0]+"/following-sibling::div"
                 lines.append(f"if(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[0]}\")):")
-                lines.append(f"    Interactions.wait_and_send_keys(driver, By.XPATH, \"{xpath[0]}\", \"{value}\")")
-                # lines.append(f"    Interactions.wait_and_send_keys(driver, By.XPATH, \"{xpath[0]}\", Keys.RETURN)")
+                lines.append(f"    locator=Interactions.get_locator(driver, By.XPATH, \"{xpath[0]}\")")
+                lines.append(f"    Interactions.wait_and_send_keys(driver, By.XPATH, locator, \"{value}\")")
                 lines.append(f"elif(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[1]}\")):")
-                lines.append(f"    Interactions.wait_and_send_keys(driver, By.XPATH, \"{xpath[1]}\", \"{value}\")")
-                # lines.append(f"    Interactions.wait_and_send_keys(driver, By.XPATH, \"{xpath[1]}\", Keys.RETURN)")
-
+                lines.append(f"    locator=Interactions.get_locator(driver, By.XPATH, \"{xpath[1]}\")")
+                lines.append(f"    print(locator)")
+                lines.append(f"    Interactions.wait_and_send_keys(driver, By.XPATH, locator, \"{value}\")")
+            
+            elif ctype in["quickfilter", "filtermanager"]:
+                lines.append(f"# Inputting into: {name}")
+                # xpath_controlname = xpath[0]+"/following-sibling::div"
+                lines.append(f"if(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[0]}\")):")
+                lines.append(f"    locator=Interactions.get_locator(driver, By.XPATH, \"{xpath[0]}\")")
+                lines.append(f"    Interactions.clear_input_field_and_send_keys(driver, By.XPATH, locator, \"{filtervalue}\")")
+                lines.append(f"elif(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[1]}\")):")
+                lines.append(f"    locator=Interactions.get_locator(driver, By.XPATH, \"{xpath[1]}\")")
+                lines.append(f"    Interactions.clear_input_field_and_send_keys(driver, By.XPATH, locator, \"{filtervalue}\")")
+            
+            elif ctype == "date":
+                date = convert_date_format(value)
+                lines.append(f"if(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[0]}\")):")
+                lines.append(f"    Interactions.get_locator(driver, By.XPATH, \"{xpath[1]}\")")
+                lines.append(f"    Interactions.clear_input_field_and_send_keys(driver, By.XPATH, \"{xpath[0]}\", \"{date}\")")
+                lines.append(f"elif(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[1]}\")):")
+                lines.append(f"    Interactions.clear_input_field_and_send_keys(driver, By.XPATH, \"{xpath[1]}\", \"{date}\")")
             elif ctype == "real":
                 lines.append(f"if(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[0]}\")):")
-                lines.append(f"    Interactions.clearInputField(driver, By.XPATH, \"{xpath[0]}\", \"{value}\")")
-                lines.append(f"    Interactions.wait_and_send_keys(driver, By.XPATH, \"{xpath[0]}\", \"{value}\")")
-                # lines.append(f"    Interactions.wait_and_send_keys(driver, By.XPATH, \"{xpath[0]}\", Keys.RETURN)")
+                lines.append(f"    Interactions.get_locator(driver, By.XPATH, \"{xpath[1]}\")")
+                lines.append(f"    Interactions.clear_input_field_and_send_keys(driver, By.XPATH, \"{xpath[0]}\", \"{value}\")")
                 lines.append(f"elif(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[1]}\")):")
-                lines.append(f"    Interactions.clearInputField(driver, By.XPATH, \"{xpath[1]}\", \"{value}\")")
-                lines.append(f"    Interactions.wait_and_send_keys(driver, By.XPATH, \"{xpath[1]}\", \"{value}\")")
+                lines.append(f"    Interactions.clear_input_field_and_send_keys(driver, By.XPATH, \"{xpath[1]}\", \"{value}\")")
 
-            elif ctype == "commandbutton":
+            elif ctype == "commandbutton" or ctype == "checkBox":
                 lines.append(f"# Clicking button: {name}")
                 lines.append(f"Interactions.wait_and_click(driver, By.XPATH, \"{xpath}\")")
+
+            elif ctype == "multilineinput":
+                lines.append(f"# Inputting into: {name}")
+                lines.append(f"if(Interactions.check_element_exist(driver, By.XPATH, \"{xpath}\")):")
+                lines.append(f"    Interactions.wait_and_send_keys(driver, By.XPATH, \"{xpath}\", \"{value}\")")
             else:
                 lines.append(f"# Clicking (default) on: {name}")
                 lines.append(f"Interactions.wait_and_click(driver, By.XPATH, \"{xpath}\")")

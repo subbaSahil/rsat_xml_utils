@@ -1,0 +1,257 @@
+<?xml version="1.0" ?>
+<UserActionsWithDetails>
+  <UserAction Ref="i3">
+    <Description>Go to Accounts payable &gt; Purchase orders &gt; Purchase agreements.</Description>
+    <NodeId>i3</NodeId>
+    <Sequence>1</Sequence>
+    <Navigation>mainmenu</Navigation>
+    <Navigation>AccountsPayable</Navigation>
+    <Navigation>PurchaseOrders</Navigation>
+    <ControlLabel/>
+    <ControlType/>
+    <Value/>
+  </UserAction>
+  <UserAction Ref="i6">
+    <Description>Click New.</Description>
+    <NodeId>i6</NodeId>
+    <Sequence>2</Sequence>
+    <ControlName>SystemDefinedNewButton</ControlName>
+    <ControlLabel>New</ControlLabel>
+    <ControlType>CommandButton</ControlType>
+    <Value/>
+  </UserAction>
+  <UserAction Ref="i9">
+    <Description>In the Vendor account field, enter or select a value.</Description>
+    <NodeId>i9</NodeId>
+    <Sequence>3</Sequence>
+    <ControlName>PurchAgreementHeader_VendAccount1</ControlName>
+    <ControlLabel>Vendor account</ControlLabel>
+    <ControlType>Input</ControlType>
+    <Value>US_TX_001</Value>
+  </UserAction>
+  <UserAction Ref="i13">
+    <Description>In the list, click the link in the selected row.</Description>
+    <NodeId>i13</NodeId>
+    <Sequence>4</Sequence>
+    <ControlLabel/>
+    <ControlType>Grid</ControlType>
+    <Value/>
+  </UserAction>
+  <UserAction Ref="i14">
+    <Description>In the Vendor account field, enter or select a value.</Description>
+    <NodeId>i14</NodeId>
+    <Sequence>5</Sequence>
+    <ControlName>PurchAgreementHeader_VendAccount1</ControlName>
+    <ControlLabel>Vendor account</ControlLabel>
+    <ControlType>Input</ControlType>
+    <Value/>
+  </UserAction>
+  <UserAction Ref="i17">
+    <Description>In the list, select row 19.</Description>
+    <NodeId>i17</NodeId>
+    <Sequence>6</Sequence>
+    <ControlLabel/>
+    <ControlType>Grid</ControlType>
+    <Value/>
+  </UserAction>
+  <UserAction Ref="i19">
+    <Description>In the list, click the link in the selected row.</Description>
+    <NodeId>i19</NodeId>
+    <Sequence>7</Sequence>
+    <ControlLabel/>
+    <ControlType>Grid</ControlType>
+    <Value/>
+  </UserAction>
+  <UserAction Ref="i21">
+    <Description>In the Purchase agreement classification field, enter or select a value.</Description>
+    <NodeId>i21</NodeId>
+    <Sequence>8</Sequence>
+    <ControlName>PurchAgreementHeader_AgreementClassification1</ControlName>
+    <ControlLabel>Purchase agreement classification</ControlLabel>
+    <ControlType>ReferenceGroup</ControlType>
+    <Value>General purchases</Value>
+  </UserAction>
+  <UserAction Ref="i25">
+    <Description>In the list, select row 2.</Description>
+    <NodeId>i25</NodeId>
+    <Sequence>9</Sequence>
+    <ControlLabel/>
+    <ControlType>Grid</ControlType>
+    <Value/>
+  </UserAction>
+  <UserAction Ref="i27">
+    <Description>In the list, click the link in the selected row.</Description>
+    <NodeId>i27</NodeId>
+    <Sequence>10</Sequence>
+    <ControlLabel/>
+    <ControlType>Grid</ControlType>
+    <Value/>
+  </UserAction>
+  <UserAction Ref="i29">
+    <Description>Click OK.</Description>
+    <NodeId>i29</NodeId>
+    <Sequence>11</Sequence>
+    <ControlName>OK</ControlName>
+    <ControlLabel>OK</ControlLabel>
+    <ControlType>CommandButton</ControlType>
+    <Value/>
+  </UserAction>
+  <UserAction Ref="i31">
+    <Description>Expand the Purchase agreement header section.</Description>
+    <NodeId>i31</NodeId>
+    <Sequence>12</Sequence>
+    <ControlName>LineViewHeader</ControlName>
+    <ControlLabel>Purchase agreement header</ControlLabel>
+    <ControlType>SectionPage</ControlType>
+    <Value/>
+  </UserAction>
+  <UserAction Ref="i33">
+    <Description>Click Add line.</Description>
+    <NodeId>i33</NodeId>
+    <Sequence>13</Sequence>
+    <ControlName>NewLineGridCmdButton</ControlName>
+    <ControlLabel>Add line</ControlLabel>
+    <ControlType>CommandButton</ControlType>
+    <Value/>
+  </UserAction>
+  <UserAction Ref="i35">
+    <Description>In the list, mark the selected row.</Description>
+    <NodeId>i35</NodeId>
+    <Sequence>14</Sequence>
+    <ControlName>AgreementLineGrid</ControlName>
+    <ControlLabel/>
+    <ControlType>Grid</ControlType>
+    <Value/>
+  </UserAction>
+  <UserAction Ref="i37">
+    <Description>In the Item number field, enter or select a value.</Description>
+    <NodeId>i37</NodeId>
+    <Sequence>15</Sequence>
+    <ControlName>AgreementLine_ItemId</ControlName>
+    <ControlLabel>Item number</ControlLabel>
+    <ControlType>Input</ControlType>
+    <Value>T0003</Value>
+  </UserAction>
+  <UserAction Ref="i41">
+    <Description>In the list, select row 186.</Description>
+    <NodeId>i41</NodeId>
+    <Sequence>16</Sequence>
+    <ControlLabel/>
+    <ControlType>Grid</ControlType>
+    <Value/>
+  </UserAction>
+  <UserAction Ref="i43">
+    <Description>In the list, click the link in the selected row.</Description>
+    <NodeId>i43</NodeId>
+    <Sequence>17</Sequence>
+    <ControlLabel/>
+    <ControlType>Grid</ControlType>
+    <Value/>
+  </UserAction>
+  <UserAction Ref="i45">
+    <Description>In the Site field, enter or select a value.</Description>
+    <NodeId>i45</NodeId>
+    <Sequence>18</Sequence>
+    <ControlName>Warehouse_InventSiteId</ControlName>
+    <ControlLabel>Site</ControlLabel>
+    <ControlType>Input</ControlType>
+    <Value>5</Value>
+  </UserAction>
+  <UserAction Ref="i49">
+    <Description>In the list, select row 5.</Description>
+    <NodeId>i49</NodeId>
+    <Sequence>19</Sequence>
+    <ControlLabel/>
+    <ControlType>Grid</ControlType>
+    <Value/>
+  </UserAction>
+  <UserAction Ref="i51">
+    <Description>In the list, click the link in the selected row.</Description>
+    <NodeId>i51</NodeId>
+    <Sequence>20</Sequence>
+    <ControlLabel/>
+    <ControlType>Grid</ControlType>
+    <Value/>
+  </UserAction>
+  <UserAction Ref="i53">
+    <Description>In the Warehouse field, enter or select a value.</Description>
+    <NodeId>i53</NodeId>
+    <Sequence>21</Sequence>
+    <ControlName>Warehouse_InventLocationId</ControlName>
+    <ControlLabel>Warehouse</ControlLabel>
+    <ControlType>Input</ControlType>
+    <Value>55</Value>
+  </UserAction>
+  <UserAction Ref="i57">
+    <Description>In the list, select row 2.</Description>
+    <NodeId>i57</NodeId>
+    <Sequence>22</Sequence>
+    <ControlName>GridInventLocation</ControlName>
+    <ControlLabel/>
+    <ControlType>Grid</ControlType>
+    <Value/>
+  </UserAction>
+  <UserAction Ref="i59">
+    <Description>In the list, click the link in the selected row.</Description>
+    <NodeId>i59</NodeId>
+    <Sequence>23</Sequence>
+    <ControlName>GridInventLocation</ControlName>
+    <ControlLabel/>
+    <ControlType>Grid</ControlType>
+    <Value/>
+  </UserAction>
+  <UserAction Ref="i61">
+    <Description>Expand the Line details section.</Description>
+    <NodeId>i61</NodeId>
+    <Sequence>24</Sequence>
+    <ControlName>LineViewLineDetails</ControlName>
+    <ControlLabel>Line details</ControlLabel>
+    <ControlType>SectionPage</ControlType>
+    <Value/>
+  </UserAction>
+  <UserAction Ref="i63">
+    <Description>In the Expiration date field, enter a date.</Description>
+    <NodeId>i63</NodeId>
+    <Sequence>25</Sequence>
+    <ControlName>AgreementLine_ExpirationDate</ControlName>
+    <ControlLabel>Expiration date</ControlLabel>
+    <ControlType>Date</ControlType>
+    <Value>05/24/2025</Value>
+  </UserAction>
+  <UserAction Ref="i65">
+    <Description>Click Save.</Description>
+    <NodeId>i65</NodeId>
+    <Sequence>26</Sequence>
+    <ControlName>SystemDefinedSaveButton</ControlName>
+    <ControlLabel>Save</ControlLabel>
+    <ControlType>CommandButton</ControlType>
+    <Value/>
+  </UserAction>
+  <UserAction Ref="i67">
+    <Description>Click Confirmation.</Description>
+    <NodeId>i67</NodeId>
+    <Sequence>27</Sequence>
+    <ControlName>ButtonConfirmation</ControlName>
+    <ControlLabel>Confirmation</ControlLabel>
+    <ControlType>MenuItemButton</ControlType>
+    <Value/>
+  </UserAction>
+  <UserAction Ref="i70">
+    <Description>Select Yes in the Print report field.</Description>
+    <NodeId>i70</NodeId>
+    <Sequence>28</Sequence>
+    <ControlName>PrintReport</ControlName>
+    <ControlLabel>Print report</ControlLabel>
+    <ControlType>CheckBox</ControlType>
+    <Value/>
+  </UserAction>
+  <UserAction Ref="i72">
+    <Description>Click OK.</Description>
+    <NodeId>i72</NodeId>
+    <Sequence>29</Sequence>
+    <ControlName>OKButton</ControlName>
+    <ControlLabel>OK</ControlLabel>
+    <ControlType>CommandButton</ControlType>
+    <Value/>
+  </UserAction>
+</UserActionsWithDetails>
