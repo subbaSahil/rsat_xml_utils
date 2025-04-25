@@ -88,3 +88,8 @@ def get_locator(driver, by, value,):
         return value
     except TimeoutException:
         return None
+
+def press_enter(driver, by, value, timeout=20):
+    element = WebDriverWait(driver, timeout).until(EC.element_to_be_clickable((by, value)))
+    element.send_keys(Keys.ENTER)
+    

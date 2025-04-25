@@ -1,60 +1,71 @@
 <Recording xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Client.ServerForm.TaskRecording">
-<CanonicalId>91152a2f-00aa-48a2-8aa2-97581626524b</CanonicalId>
-<CurrentSequence>17</CurrentSequence>
+<CanonicalId>1df9302e-4bb0-4d0e-bef6-4c1b0b5d5e03</CanonicalId>
+<CurrentSequence>130</CurrentSequence>
 <Description/>
 <FormContexts xmlns:d2p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
 <d2p1:KeyValueOfstringFormContextyaScvdpM>
-<d2p1:Key>8717_VendTableListPage_a298a3f3-37c4-455e-8e57-3d52d5d78406</d2p1:Key>
+<d2p1:Key>26345_PurchTable_c5614fad-7fb8-46d0-a244-2607d7366357</d2p1:Key>
 <d2p1:Value>
 <Annotations>
 <Annotation i:type="FormAnnotation">
-<ConfigurationOwnerName>VendTableListPage</ConfigurationOwnerName>
+<ConfigurationOwnerName>PurchTable</ConfigurationOwnerName>
 <ConfigurationScope>41</ConfigurationScope>
 <FilterCommandName>ApplyFilters</FilterCommandName>
 <FilterControlName>SystemDefinedFilterPane</FilterControlName>
 <FormViewOptionType>0</FormViewOptionType>
-<MenuItemLabel>Vendors past due</MenuItemLabel>
-<MenuItemName>VendTablePastDueListPage</MenuItemName>
+<MenuItemLabel>All purchase orders</MenuItemLabel>
+<MenuItemName>PurchTableListPage</MenuItemName>
 <MenuItemType>Display</MenuItemType>
 <PublishedFromConfiguration>0</PublishedFromConfiguration>
 </Annotation>
 </Annotations>
-<FormID>8717_VendTableListPage_a298a3f3-37c4-455e-8e57-3d52d5d78406</FormID>
-<FormName>VendTableListPage</FormName>
+<FormID>26345_PurchTable_c5614fad-7fb8-46d0-a244-2607d7366357</FormID>
+<FormName>PurchTable</FormName>
 <HasMetadata>true</HasMetadata>
-<RecordingName>VendTableListPage</RecordingName>
-<Sequence>1</Sequence>
+<RecordingName>PurchTable</RecordingName>
+<Sequence>2</Sequence>
 </d2p1:Value>
 </d2p1:KeyValueOfstringFormContextyaScvdpM>
 <d2p1:KeyValueOfstringFormContextyaScvdpM>
-<d2p1:Key>9408_VendTableListPage_a298a3f3-37c4-455e-8e57-3d52d5d78406</d2p1:Key>
+<d2p1:Key>34967_PurchTable_c5614fad-7fb8-46d0-a244-2607d7366357</d2p1:Key>
 <d2p1:Value>
 <Annotations>
 <Annotation i:type="FormAnnotation">
-<ConfigurationOwnerName>VendTableListPage</ConfigurationOwnerName>
+<ConfigurationOwnerName>PurchTable</ConfigurationOwnerName>
 <ConfigurationScope>41</ConfigurationScope>
 <FilterCommandName>ApplyFilters</FilterCommandName>
 <FilterControlName>SystemDefinedFilterPane</FilterControlName>
 <FormViewOptionType>0</FormViewOptionType>
-<MenuItemLabel>Vendors past due</MenuItemLabel>
-<MenuItemName>VendTablePastDueListPage</MenuItemName>
+<MenuItemLabel>All purchase orders</MenuItemLabel>
+<MenuItemName>PurchTableListPage</MenuItemName>
+<MenuItemType>Display</MenuItemType>
+<PublishedFromConfiguration>0</PublishedFromConfiguration>
+</Annotation>
+<Annotation i:type="FormAnnotation">
+<ConfigurationOwnerName>PurchTable</ConfigurationOwnerName>
+<ConfigurationScope>41</ConfigurationScope>
+<FilterCommandName>ApplyFilters</FilterCommandName>
+<FilterControlName>SystemDefinedFilterPane</FilterControlName>
+<FormViewOptionType>1</FormViewOptionType>
+<MenuItemLabel>All purchase orders</MenuItemLabel>
+<MenuItemName>PurchTableListPage</MenuItemName>
 <MenuItemType>Display</MenuItemType>
 <PublishedFromConfiguration>0</PublishedFromConfiguration>
 </Annotation>
 </Annotations>
-<FormID>9408_VendTableListPage_a298a3f3-37c4-455e-8e57-3d52d5d78406</FormID>
-<FormName>VendTableListPage</FormName>
+<FormID>34967_PurchTable_c5614fad-7fb8-46d0-a244-2607d7366357</FormID>
+<FormName>PurchTable</FormName>
 <HasMetadata>true</HasMetadata>
-<RecordingName>VendTableListPage</RecordingName>
+<RecordingName>PurchTable</RecordingName>
 <Sequence>8</Sequence>
 </d2p1:Value>
 </d2p1:KeyValueOfstringFormContextyaScvdpM>
 </FormContexts>
-<Name>filtermanager_2</Name>
+<Name>quick_filter_1</Name>
 <RootScope xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Id="i1">
 <CustomDescription i:nil="true"/>
 <Description i:nil="true"/>
-<Id>a298a3f3-37c4-455e-8e57-3d52d5d78406</Id>
+<Id>c5614fad-7fb8-46d0-a244-2607d7366357</Id>
 <Parent i:nil="true"/>
 <ParentSequence>0</ParentSequence>
 <ScreenshotUri i:nil="true"/>
@@ -63,35 +74,35 @@
 <Node z:Id="i2" i:type="Scope">
 <CustomDescription i:nil="true"/>
 <Description/>
-<Id>8717_VendTableListPage_a298a3f3-37c4-455e-8e57-3d52d5d78406</Id>
+<Id>26345_PurchTable_c5614fad-7fb8-46d0-a244-2607d7366357</Id>
 <Parent z:Ref="i1"/>
 <ParentSequence>0</ParentSequence>
 <ScreenshotUri i:nil="true"/>
-<Sequence>2</Sequence>
+<Sequence>1</Sequence>
 <Children>
 <Node z:Id="i3" i:type="Scope">
 <CustomDescription i:nil="true"/>
 <Description/>
-<Id>8717RequestClose_a298a3f3-37c4-455e-8e57-3d52d5d78406</Id>
+<Id>26345RequestClose_c5614fad-7fb8-46d0-a244-2607d7366357</Id>
 <Parent z:Ref="i2"/>
-<ParentSequence>2</ParentSequence>
+<ParentSequence>1</ParentSequence>
 <ScreenshotUri i:nil="true"/>
 <Sequence>3</Sequence>
 <Children>
 <Node z:Id="i4" i:type="CommandUserAction">
 <CustomDescription i:nil="true"/>
 <Description>Close the page.</Description>
-<Id>8717RequestClose_a298a3f3-37c4-455e-8e57-3d52d5d78406x4</Id>
+<Id>26345RequestClose_c5614fad-7fb8-46d0-a244-2607d7366357x4</Id>
 <Parent z:Ref="i3"/>
 <ParentSequence>3</ParentSequence>
 <ScreenshotUri i:nil="true"/>
 <Sequence>4</Sequence>
 <Annotations/>
-<GlobalId>743d1593-1161-4071-a5cf-564d8f14b8a7</GlobalId>
+<GlobalId>47d9afc7-2b37-431e-b82c-ac1bcfbd850c</GlobalId>
 <SystemGenerated>false</SystemGenerated>
 <ControlLabel/>
 <ControlLabelId/>
-<FormId>8717_VendTableListPage_a298a3f3-37c4-455e-8e57-3d52d5d78406</FormId>
+<FormId>26345_PurchTable_c5614fad-7fb8-46d0-a244-2607d7366357</FormId>
 <ListContext i:nil="true"/>
 <RowIndex i:nil="true"/>
 <Arguments/>
@@ -112,13 +123,13 @@
 </Children>
 <IsForm>true</IsForm>
 <IsStepGroup>false</IsStepGroup>
-<Name>VendTableListPage</Name>
+<Name>PurchTable</Name>
 <ScopeType>Public</ScopeType>
 </Node>
 <Node z:Id="i5" i:type="Scope">
 <CustomDescription i:nil="true"/>
 <Description/>
-<Id>MenuItemvendtablepastduelistpage_a298a3f3-37c4-455e-8e57-3d52d5d78406</Id>
+<Id>MenuItempurchtablelistpage_c5614fad-7fb8-46d0-a244-2607d7366357</Id>
 <Parent z:Ref="i1"/>
 <ParentSequence>0</ParentSequence>
 <ScreenshotUri i:nil="true"/>
@@ -126,27 +137,27 @@
 <Children>
 <Node z:Id="i6" i:type="MenuItemUserAction">
 <CustomDescription i:nil="true"/>
-<Description>Go to Accounts payable > Vendors > Vendors past due.</Description>
-<Id>MenuItemvendtablepastduelistpage_a298a3f3-37c4-455e-8e57-3d52d5d78406x6</Id>
+<Description>Go to Accounts payable > Purchase orders > All purchase orders.</Description>
+<Id>MenuItempurchtablelistpage_c5614fad-7fb8-46d0-a244-2607d7366357x6</Id>
 <Parent z:Ref="i5"/>
 <ParentSequence>5</ParentSequence>
 <ScreenshotUri i:nil="true"/>
 <Sequence>6</Sequence>
 <Annotations/>
-<GlobalId>b8e019bd-9bc3-4b55-818e-e76dc2e20d62</GlobalId>
+<GlobalId>fe36ddba-b561-44ed-9ec7-a2b8ca661074</GlobalId>
 <SystemGenerated>false</SystemGenerated>
-<MenuItemName>vendtablepastduelistpage</MenuItemName>
+<MenuItemName>purchtablelistpage</MenuItemName>
 <MenuItemType>Display</MenuItemType>
 <NavigationPath xmlns:d7p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
 <d7p1:string>mainmenu</d7p1:string>
 <d7p1:string>AccountsPayable</d7p1:string>
-<d7p1:string>Vendors</d7p1:string>
+<d7p1:string>PurchaseOrders</d7p1:string>
 </NavigationPath>
 </Node>
 <Node z:Id="i7" i:type="Scope">
 <CustomDescription i:nil="true"/>
 <Description/>
-<Id>9408_VendTableListPage_a298a3f3-37c4-455e-8e57-3d52d5d78406</Id>
+<Id>34967_PurchTable_c5614fad-7fb8-46d0-a244-2607d7366357</Id>
 <Parent z:Ref="i5"/>
 <ParentSequence>5</ParentSequence>
 <ScreenshotUri i:nil="true"/>
@@ -155,45 +166,49 @@
 <Node z:Id="i8" i:type="Scope">
 <CustomDescription i:nil="true"/>
 <Description/>
-<Id>SystemDefinedFilterManager_GetFilters_a298a3f3-37c4-455e-8e57-3d52d5d78406</Id>
+<Id>GridFilter_ApplyFilterForTaskRecorder_c5614fad-7fb8-46d0-a244-2607d7366357</Id>
 <Parent z:Ref="i7"/>
-<ParentSequence>9</ParentSequence>
+<ParentSequence>24</ParentSequence>
 <ScreenshotUri i:nil="true"/>
-<Sequence>10</Sequence>
+<Sequence>25</Sequence>
 <Children>
 <Node z:Id="i9" i:type="CommandUserAction">
 <CustomDescription i:nil="true"/>
-<Description>Open Vendor account column filter.</Description>
-<Id>SystemDefinedFilterManager_GetFilters_a298a3f3-37c4-455e-8e57-3d52d5d78406x11</Id>
+<Description>Use the Quick Filter to find records. For example, filter on the Purchase order field with a value of '00001'.</Description>
+<Id>GridFilter_ApplyFilterForTaskRecorder_c5614fad-7fb8-46d0-a244-2607d7366357x26</Id>
 <Parent z:Ref="i8"/>
-<ParentSequence>10</ParentSequence>
+<ParentSequence>25</ParentSequence>
 <ScreenshotUri i:nil="true"/>
-<Sequence>11</Sequence>
+<Sequence>26</Sequence>
 <Annotations/>
-<GlobalId>d750e680-5519-447a-9233-f5cd51855377</GlobalId>
+<GlobalId>4f6a811a-383d-4e5d-90e2-cd6767f4287e</GlobalId>
 <SystemGenerated>false</SystemGenerated>
 <ControlLabel/>
 <ControlLabelId/>
-<FormId>9408_VendTableListPage_a298a3f3-37c4-455e-8e57-3d52d5d78406</FormId>
+<FormId>34967_PurchTable_c5614fad-7fb8-46d0-a244-2607d7366357</FormId>
 <ListContext i:nil="true"/>
 <RowIndex i:nil="true"/>
 <Arguments>
 <CommandArgument>
 <IsReference>false</IsReference>
-<Value>[{"Capability":null,"DataSourceName":"","FieldArrayIndex":1,"FieldName":"AccountNum","FormDataSourceName":"VendTable","IsEditable":"Yes","IsQueryFilter":"Yes","MasterFormDataSourceName":"","Operator":"Matches","RecordingReferences":[],"SFKReplacementFieldBinding":"","TableId":0,"Values":[""],"Version":2}]</Value>
+<Value>Purchase order</Value>
 </CommandArgument>
 <CommandArgument>
 <IsReference>false</IsReference>
-<Value>VendTable_AccountNum</Value>
+<Value>00001</Value>
 </CommandArgument>
 <CommandArgument>
 <IsReference>false</IsReference>
-<Value>Vendor account</Value>
+<Value>{"FieldName":"PurchTable_PurchIdAdvanced","ReferenceUserActionSequenceId":"","Value":"00001","Version":3}</Value>
+</CommandArgument>
+<CommandArgument>
+<IsReference>false</IsReference>
+<Value>2</Value>
 </CommandArgument>
 </Arguments>
-<CommandName>GetFilters</CommandName>
-<ControlName>SystemDefinedFilterManager</ControlName>
-<ControlType>FilterManager</ControlType>
+<CommandName>ApplyFilterForTaskRecorder</CommandName>
+<ControlName>GridFilter</ControlName>
+<ControlType>QuickFilter</ControlType>
 <LabelId i:nil="true"/>
 <ReturnType>Void</ReturnType>
 <ReturnValue/>
@@ -202,112 +217,135 @@
 </Children>
 <IsForm>false</IsForm>
 <IsStepGroup>false</IsStepGroup>
-<Name>SystemDefinedFilterManager_GetFilters</Name>
+<Name>GridFilter_ApplyFilterForTaskRecorder</Name>
 <ScopeType>Private</ScopeType>
 </Node>
 <Node z:Id="i10" i:type="Scope">
 <CustomDescription i:nil="true"/>
 <Description/>
-<Id>SystemDefinedFilterManager_ApplyFiltersForTaskRecorder_a298a3f3-37c4-455e-8e57-3d52d5d78406</Id>
+<Id>36059_0TabShown_c5614fad-7fb8-46d0-a244-2607d7366357</Id>
 <Parent z:Ref="i7"/>
-<ParentSequence>9</ParentSequence>
+<ParentSequence>39</ParentSequence>
 <ScreenshotUri i:nil="true"/>
-<Sequence>12</Sequence>
+<Sequence>40</Sequence>
 <Children>
 <Node z:Id="i11" i:type="CommandUserAction">
 <CustomDescription i:nil="true"/>
-<Description>Enter a filter value of "1002" on the "Vendor account" field using the "begins with" filter operator.</Description>
-<Id>SystemDefinedFilterManager_ApplyFiltersForTaskRecorder_a298a3f3-37c4-455e-8e57-3d52d5d78406x13</Id>
+<Description>On the Action Pane, click Purchase.</Description>
+<Id>36059_0TabShown_c5614fad-7fb8-46d0-a244-2607d7366357x41</Id>
 <Parent z:Ref="i10"/>
-<ParentSequence>12</ParentSequence>
+<ParentSequence>40</ParentSequence>
 <ScreenshotUri i:nil="true"/>
-<Sequence>13</Sequence>
+<Sequence>41</Sequence>
 <Annotations/>
-<GlobalId>bc6493c5-c5a7-497c-97be-7f189b6ae571</GlobalId>
+<GlobalId>91b75b3c-7bea-4a38-b1fe-d670834c2c5c</GlobalId>
 <SystemGenerated>false</SystemGenerated>
-<ControlLabel/>
-<ControlLabelId/>
-<FormId>9408_VendTableListPage_a298a3f3-37c4-455e-8e57-3d52d5d78406</FormId>
+<ControlLabel>Purchase</ControlLabel>
+<ControlLabelId>@SYS53872</ControlLabelId>
+<FormId>34967_PurchTable_c5614fad-7fb8-46d0-a244-2607d7366357</FormId>
 <ListContext i:nil="true"/>
 <RowIndex i:nil="true"/>
-<Arguments>
-<CommandArgument>
-<IsReference>false</IsReference>
-<Value>[{"Capability":{"DisplayDataType":"String","DomainValues":null,"FieldId":0,"FieldLabel":"Vendor account","FieldName":"","RelationLabel":"","SFKReplacementFieldBinding":"","ShowLookup":false,"TableId":0,"Version":2},"DataSourceName":"VendTable","FieldArrayIndex":1,"FieldName":"AccountNum","FormDataSourceName":"VendTable","IsEditable":"Yes","IsQueryFilter":"Yes","MasterFormDataSourceName":"VendTable","Operator":"BeginsWith","RecordingReferences":[],"SFKReplacementFieldBinding":"","TableId":3135,"Values":["1002"],"Version":2}]</Value>
-</CommandArgument>
-<CommandArgument>
-<IsReference>false</IsReference>
-<Value>1</Value>
-</CommandArgument>
-<CommandArgument>
-<IsReference>false</IsReference>
-<Value>114</Value>
-</CommandArgument>
-<CommandArgument>
-<IsReference>false</IsReference>
-<Value>Enter a filter value of "1002" on the "Vendor account" field using the "begins with" filter operator.</Value>
-</CommandArgument>
-<CommandArgument>
-<IsReference>false</IsReference>
-<Value>[{"FieldLabel":"Vendor account","OperatorLabel":"begins with","Values":"1002"}]</Value>
-</CommandArgument>
-</Arguments>
-<CommandName>ApplyFiltersForTaskRecorder</CommandName>
-<ControlName>SystemDefinedFilterManager</ControlName>
-<ControlType>FilterManager</ControlType>
+<Arguments/>
+<CommandName>TabShown</CommandName>
+<ControlName>Purchase</ControlName>
+<ControlType>AppBarTab</ControlType>
 <LabelId i:nil="true"/>
 <ReturnType>Void</ReturnType>
-<ReturnValue/>
-<TaskId i:nil="true"/>
+<ReturnValue i:nil="true"/>
+<TaskId/>
 </Node>
 </Children>
 <IsForm>false</IsForm>
 <IsStepGroup>false</IsStepGroup>
-<Name>SystemDefinedFilterManager_ApplyFiltersForTaskRecorder</Name>
+<Name>Purchase_TabShown</Name>
 <ScopeType>Private</ScopeType>
 </Node>
 <Node z:Id="i12" i:type="Scope">
 <CustomDescription i:nil="true"/>
 <Description/>
-<Id>SystemDefinedFilterManager_GetFilters_a298a3f3-37c4-455e-8e57-3d52d5d78406</Id>
+<Id>36058_0TabShown_c5614fad-7fb8-46d0-a244-2607d7366357</Id>
 <Parent z:Ref="i7"/>
-<ParentSequence>9</ParentSequence>
+<ParentSequence>42</ParentSequence>
 <ScreenshotUri i:nil="true"/>
-<Sequence>14</Sequence>
+<Sequence>43</Sequence>
 <Children>
 <Node z:Id="i13" i:type="CommandUserAction">
 <CustomDescription i:nil="true"/>
-<Description>Open Vendor account column filter.</Description>
-<Id>SystemDefinedFilterManager_GetFilters_a298a3f3-37c4-455e-8e57-3d52d5d78406x15</Id>
+<Description>On the Action Pane, click Purchase order.</Description>
+<Id>36058_0TabShown_c5614fad-7fb8-46d0-a244-2607d7366357x44</Id>
 <Parent z:Ref="i12"/>
-<ParentSequence>14</ParentSequence>
+<ParentSequence>43</ParentSequence>
 <ScreenshotUri i:nil="true"/>
-<Sequence>15</Sequence>
+<Sequence>44</Sequence>
 <Annotations/>
-<GlobalId>366a2665-892f-4ab9-89fe-10a78abe5936</GlobalId>
+<GlobalId>fffc81b1-ad84-4fb8-bab6-25878e4411ea</GlobalId>
+<SystemGenerated>false</SystemGenerated>
+<ControlLabel>Purchase order</ControlLabel>
+<ControlLabelId>@SYS25545</ControlLabelId>
+<FormId>34967_PurchTable_c5614fad-7fb8-46d0-a244-2607d7366357</FormId>
+<ListContext i:nil="true"/>
+<RowIndex i:nil="true"/>
+<Arguments/>
+<CommandName>TabShown</CommandName>
+<ControlName>PurchOrder</ControlName>
+<ControlType>AppBarTab</ControlType>
+<LabelId i:nil="true"/>
+<ReturnType>Void</ReturnType>
+<ReturnValue i:nil="true"/>
+<TaskId/>
+</Node>
+</Children>
+<IsForm>false</IsForm>
+<IsStepGroup>false</IsStepGroup>
+<Name>PurchOrder_TabShown</Name>
+<ScopeType>Private</ScopeType>
+</Node>
+<Node z:Id="i14" i:type="Scope">
+<CustomDescription i:nil="true"/>
+<Description/>
+<Id>GridFilter_ApplyFilterForTaskRecorder_c5614fad-7fb8-46d0-a244-2607d7366357</Id>
+<Parent z:Ref="i7"/>
+<ParentSequence>45</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>46</Sequence>
+<Children>
+<Node z:Id="i15" i:type="CommandUserAction">
+<CustomDescription i:nil="true"/>
+<Description>Use the Quick Filter to find records. For example, filter on the Purchase order field with a value of '00000'.</Description>
+<Id>GridFilter_ApplyFilterForTaskRecorder_c5614fad-7fb8-46d0-a244-2607d7366357x47</Id>
+<Parent z:Ref="i14"/>
+<ParentSequence>46</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>47</Sequence>
+<Annotations/>
+<GlobalId>56852eef-2d40-442b-8d54-45369b6d8084</GlobalId>
 <SystemGenerated>false</SystemGenerated>
 <ControlLabel/>
 <ControlLabelId/>
-<FormId>9408_VendTableListPage_a298a3f3-37c4-455e-8e57-3d52d5d78406</FormId>
+<FormId>34967_PurchTable_c5614fad-7fb8-46d0-a244-2607d7366357</FormId>
 <ListContext i:nil="true"/>
 <RowIndex i:nil="true"/>
 <Arguments>
 <CommandArgument>
 <IsReference>false</IsReference>
-<Value>[{"Capability":null,"DataSourceName":"","FieldArrayIndex":1,"FieldName":"AccountNum","FormDataSourceName":"VendTable","IsEditable":"Yes","IsQueryFilter":"Yes","MasterFormDataSourceName":"","Operator":"Matches","RecordingReferences":[],"SFKReplacementFieldBinding":"","TableId":0,"Values":[""],"Version":2}]</Value>
+<Value>Purchase order</Value>
 </CommandArgument>
 <CommandArgument>
 <IsReference>false</IsReference>
-<Value>VendTable_AccountNum</Value>
+<Value>00000</Value>
 </CommandArgument>
 <CommandArgument>
 <IsReference>false</IsReference>
-<Value>Vendor account</Value>
+<Value>{"FieldName":"PurchTable_PurchIdAdvanced","ReferenceUserActionSequenceId":"","Value":"00000","Version":3}</Value>
+</CommandArgument>
+<CommandArgument>
+<IsReference>false</IsReference>
+<Value>2</Value>
 </CommandArgument>
 </Arguments>
-<CommandName>GetFilters</CommandName>
-<ControlName>SystemDefinedFilterManager</ControlName>
-<ControlType>FilterManager</ControlType>
+<CommandName>ApplyFilterForTaskRecorder</CommandName>
+<ControlName>GridFilter</ControlName>
+<ControlType>QuickFilter</ControlType>
 <LabelId i:nil="true"/>
 <ReturnType>Void</ReturnType>
 <ReturnValue/>
@@ -316,38 +354,276 @@
 </Children>
 <IsForm>false</IsForm>
 <IsStepGroup>false</IsStepGroup>
-<Name>SystemDefinedFilterManager_GetFilters</Name>
+<Name>GridFilter_ApplyFilterForTaskRecorder</Name>
 <ScopeType>Private</ScopeType>
 </Node>
-<Node z:Id="i14" i:type="Scope">
+<Node z:Id="i16" i:type="Scope">
 <CustomDescription i:nil="true"/>
 <Description/>
-<Id>SystemDefinedFilterManager_ApplyFiltersForTaskRecorder_a298a3f3-37c4-455e-8e57-3d52d5d78406</Id>
+<Id>GridFilter_ApplyFilterForTaskRecorder_c5614fad-7fb8-46d0-a244-2607d7366357</Id>
 <Parent z:Ref="i7"/>
-<ParentSequence>9</ParentSequence>
+<ParentSequence>61</ParentSequence>
 <ScreenshotUri i:nil="true"/>
-<Sequence>16</Sequence>
+<Sequence>62</Sequence>
 <Children>
-<Node z:Id="i15" i:type="CommandUserAction">
+<Node z:Id="i17" i:type="CommandUserAction">
 <CustomDescription i:nil="true"/>
-<Description>Enter a filter value of "100" on the "Vendor account" field using the "begins with" filter operator.</Description>
-<Id>SystemDefinedFilterManager_ApplyFiltersForTaskRecorder_a298a3f3-37c4-455e-8e57-3d52d5d78406x17</Id>
-<Parent z:Ref="i14"/>
-<ParentSequence>16</ParentSequence>
+<Description>Use the Quick Filter to find records. For example, filter on the Purchase order field with a value of '00000859'.</Description>
+<Id>GridFilter_ApplyFilterForTaskRecorder_c5614fad-7fb8-46d0-a244-2607d7366357x63</Id>
+<Parent z:Ref="i16"/>
+<ParentSequence>62</ParentSequence>
 <ScreenshotUri i:nil="true"/>
-<Sequence>17</Sequence>
+<Sequence>63</Sequence>
 <Annotations/>
-<GlobalId>01f7cc9d-1937-4d7f-8f78-e259f91088c3</GlobalId>
+<GlobalId>1d4a8928-e8a7-4d02-86ac-9a408978ee8b</GlobalId>
 <SystemGenerated>false</SystemGenerated>
 <ControlLabel/>
 <ControlLabelId/>
-<FormId>9408_VendTableListPage_a298a3f3-37c4-455e-8e57-3d52d5d78406</FormId>
+<FormId>34967_PurchTable_c5614fad-7fb8-46d0-a244-2607d7366357</FormId>
 <ListContext i:nil="true"/>
 <RowIndex i:nil="true"/>
 <Arguments>
 <CommandArgument>
 <IsReference>false</IsReference>
-<Value>[{"Capability":{"DisplayDataType":"String","DomainValues":null,"FieldId":0,"FieldLabel":"Vendor account","FieldName":"","RelationLabel":"","SFKReplacementFieldBinding":"","ShowLookup":false,"TableId":0,"Version":2},"DataSourceName":"VendTable","FieldArrayIndex":1,"FieldName":"AccountNum","FormDataSourceName":"VendTable","IsEditable":"Yes","IsQueryFilter":"Yes","MasterFormDataSourceName":"VendTable","Operator":"BeginsWith","RecordingReferences":[],"SFKReplacementFieldBinding":"","TableId":3135,"Values":["100"],"Version":2}]</Value>
+<Value>Purchase order</Value>
+</CommandArgument>
+<CommandArgument>
+<IsReference>false</IsReference>
+<Value>00000859</Value>
+</CommandArgument>
+<CommandArgument>
+<IsReference>false</IsReference>
+<Value>{"FieldName":"PurchTable_PurchIdAdvanced","ReferenceUserActionSequenceId":"","Value":"00000859","Version":3}</Value>
+</CommandArgument>
+<CommandArgument>
+<IsReference>false</IsReference>
+<Value>2</Value>
+</CommandArgument>
+</Arguments>
+<CommandName>ApplyFilterForTaskRecorder</CommandName>
+<ControlName>GridFilter</ControlName>
+<ControlType>QuickFilter</ControlType>
+<LabelId i:nil="true"/>
+<ReturnType>Void</ReturnType>
+<ReturnValue/>
+<TaskId i:nil="true"/>
+</Node>
+</Children>
+<IsForm>false</IsForm>
+<IsStepGroup>false</IsStepGroup>
+<Name>GridFilter_ApplyFilterForTaskRecorder</Name>
+<ScopeType>Private</ScopeType>
+</Node>
+<Node z:Id="i18" i:type="Scope">
+<CustomDescription i:nil="true"/>
+<Description/>
+<Id>36158NavigationAction_c5614fad-7fb8-46d0-a244-2607d7366357</Id>
+<Parent z:Ref="i7"/>
+<ParentSequence>76</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>77</Sequence>
+<Children>
+<Node z:Id="i19" i:type="CommandUserAction">
+<CustomDescription i:nil="true"/>
+<Description>In the list, click the link in the selected row.</Description>
+<Id>36158NavigationAction_c5614fad-7fb8-46d0-a244-2607d7366357x78</Id>
+<Parent z:Ref="i18"/>
+<ParentSequence>77</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>78</Sequence>
+<Annotations/>
+<GlobalId>3ba72171-ac56-4c79-a5b7-731e8353efc5</GlobalId>
+<SystemGenerated>false</SystemGenerated>
+<ControlLabel/>
+<ControlLabelId/>
+<FormId>34967_PurchTable_c5614fad-7fb8-46d0-a244-2607d7366357</FormId>
+<ListContext>Grid</ListContext>
+<RowIndex i:nil="true"/>
+<Arguments/>
+<CommandName>NavigationAction</CommandName>
+<ControlName>Grid</ControlName>
+<ControlType>Grid</ControlType>
+<LabelId/>
+<ReturnType>Void</ReturnType>
+<ReturnValue i:nil="true"/>
+<TaskId i:nil="true"/>
+</Node>
+</Children>
+<IsForm>false</IsForm>
+<IsStepGroup>false</IsStepGroup>
+<Name>Grid_NavigationAction</Name>
+<ScopeType>Private</ScopeType>
+</Node>
+<Node z:Id="i20" i:type="Scope">
+<CustomDescription i:nil="true"/>
+<Description/>
+<Id>36058_0TabShown_c5614fad-7fb8-46d0-a244-2607d7366357</Id>
+<Parent z:Ref="i7"/>
+<ParentSequence>79</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>80</Sequence>
+<Children>
+<Node z:Id="i21" i:type="CommandUserAction">
+<CustomDescription i:nil="true"/>
+<Description>On the Action Pane, click Purchase order.</Description>
+<Id>36058_0TabShown_c5614fad-7fb8-46d0-a244-2607d7366357x81</Id>
+<Parent z:Ref="i20"/>
+<ParentSequence>80</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>81</Sequence>
+<Annotations/>
+<GlobalId>48fabc4b-5d84-49a6-bcf3-3530c8397b1c</GlobalId>
+<SystemGenerated>false</SystemGenerated>
+<ControlLabel>Purchase order</ControlLabel>
+<ControlLabelId>@SYS25545</ControlLabelId>
+<FormId>34967_PurchTable_c5614fad-7fb8-46d0-a244-2607d7366357</FormId>
+<ListContext i:nil="true"/>
+<RowIndex i:nil="true"/>
+<Arguments/>
+<CommandName>TabShown</CommandName>
+<ControlName>PurchOrder</ControlName>
+<ControlType>AppBarTab</ControlType>
+<LabelId i:nil="true"/>
+<ReturnType>Void</ReturnType>
+<ReturnValue i:nil="true"/>
+<TaskId/>
+</Node>
+</Children>
+<IsForm>false</IsForm>
+<IsStepGroup>false</IsStepGroup>
+<Name>PurchOrder_TabShown</Name>
+<ScopeType>Private</ScopeType>
+</Node>
+<Node z:Id="i22" i:type="Scope">
+<CustomDescription i:nil="true"/>
+<Description/>
+<Id>34967_0OpenGridView_c5614fad-7fb8-46d0-a244-2607d7366357</Id>
+<Parent z:Ref="i7"/>
+<ParentSequence>7</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>82</Sequence>
+<Children>
+<Node z:Id="i23" i:type="CommandUserAction">
+<CustomDescription i:nil="true"/>
+<Description>Click the form caption.</Description>
+<Id>34967_0OpenGridView_c5614fad-7fb8-46d0-a244-2607d7366357x83</Id>
+<Parent z:Ref="i22"/>
+<ParentSequence>82</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>83</Sequence>
+<Annotations/>
+<GlobalId>a485bc85-ac3e-4f09-abbf-dbdeba04792b</GlobalId>
+<SystemGenerated>false</SystemGenerated>
+<ControlLabel i:nil="true"/>
+<ControlLabelId i:nil="true"/>
+<FormId>34967_PurchTable_c5614fad-7fb8-46d0-a244-2607d7366357</FormId>
+<ListContext i:nil="true"/>
+<RowIndex i:nil="true"/>
+<Arguments/>
+<CommandName>OpenGridView</CommandName>
+<ControlName i:nil="true"/>
+<ControlType i:nil="true"/>
+<LabelId>@SysTaskRecorder:OpenGridView</LabelId>
+<ReturnType>Void</ReturnType>
+<ReturnValue i:nil="true"/>
+<TaskId/>
+</Node>
+</Children>
+<IsForm>false</IsForm>
+<IsStepGroup>false</IsStepGroup>
+<Name>OpenGridView</Name>
+<ScopeType>Private</ScopeType>
+</Node>
+<Node z:Id="i24" i:type="Scope">
+<CustomDescription i:nil="true"/>
+<Description/>
+<Id>GridFilter_ApplyFilterForTaskRecorder_c5614fad-7fb8-46d0-a244-2607d7366357</Id>
+<Parent z:Ref="i7"/>
+<ParentSequence>86</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>87</Sequence>
+<Children>
+<Node z:Id="i25" i:type="CommandUserAction">
+<CustomDescription i:nil="true"/>
+<Description>Use the Quick Filter to find records. For example, filter on the Purchase order field with a value of '000008'.</Description>
+<Id>GridFilter_ApplyFilterForTaskRecorder_c5614fad-7fb8-46d0-a244-2607d7366357x88</Id>
+<Parent z:Ref="i24"/>
+<ParentSequence>87</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>88</Sequence>
+<Annotations/>
+<GlobalId>b467c04b-7686-4c04-b26b-7a92e40985e9</GlobalId>
+<SystemGenerated>false</SystemGenerated>
+<ControlLabel/>
+<ControlLabelId/>
+<FormId>34967_PurchTable_c5614fad-7fb8-46d0-a244-2607d7366357</FormId>
+<ListContext i:nil="true"/>
+<RowIndex i:nil="true"/>
+<Arguments>
+<CommandArgument>
+<IsReference>false</IsReference>
+<Value>Purchase order</Value>
+</CommandArgument>
+<CommandArgument>
+<IsReference>false</IsReference>
+<Value>000008</Value>
+</CommandArgument>
+<CommandArgument>
+<IsReference>false</IsReference>
+<Value>{"FieldName":"PurchTable_PurchIdAdvanced","ReferenceUserActionSequenceId":"","Value":"000008","Version":3}</Value>
+</CommandArgument>
+<CommandArgument>
+<IsReference>false</IsReference>
+<Value>2</Value>
+</CommandArgument>
+</Arguments>
+<CommandName>ApplyFilterForTaskRecorder</CommandName>
+<ControlName>GridFilter</ControlName>
+<ControlType>QuickFilter</ControlType>
+<LabelId i:nil="true"/>
+<ReturnType>Void</ReturnType>
+<ReturnValue/>
+<TaskId i:nil="true"/>
+</Node>
+</Children>
+<IsForm>false</IsForm>
+<IsStepGroup>false</IsStepGroup>
+<Name>GridFilter_ApplyFilterForTaskRecorder</Name>
+<ScopeType>Private</ScopeType>
+</Node>
+<Node z:Id="i26" i:type="Scope">
+<CustomDescription i:nil="true"/>
+<Description/>
+<Id>36158ChangeSelectedIndexInCache_c5614fad-7fb8-46d0-a244-2607d7366357</Id>
+<Parent z:Ref="i7"/>
+<ParentSequence>105</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>106</Sequence>
+<Children>
+<Node z:Id="i27" i:type="CommandUserAction">
+<CustomDescription i:nil="true"/>
+<Description>In the list, find and select the desired record.</Description>
+<Id>36158ChangeSelectedIndexInCache_c5614fad-7fb8-46d0-a244-2607d7366357x107</Id>
+<Parent z:Ref="i26"/>
+<ParentSequence>106</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>107</Sequence>
+<Annotations/>
+<GlobalId>4fa6ff55-9505-45c9-9692-3234a53e9704</GlobalId>
+<SystemGenerated>false</SystemGenerated>
+<ControlLabel/>
+<ControlLabelId/>
+<FormId>34967_PurchTable_c5614fad-7fb8-46d0-a244-2607d7366357</FormId>
+<ListContext>Grid</ListContext>
+<RowIndex i:nil="true"/>
+<Arguments>
+<CommandArgument>
+<IsReference>false</IsReference>
+<Value>19</Value>
+</CommandArgument>
+<CommandArgument>
+<IsReference>false</IsReference>
+<Value>0</Value>
 </CommandArgument>
 <CommandArgument>
 <IsReference>false</IsReference>
@@ -355,47 +631,119 @@
 </CommandArgument>
 <CommandArgument>
 <IsReference>false</IsReference>
-<Value>114</Value>
-</CommandArgument>
-<CommandArgument>
-<IsReference>false</IsReference>
-<Value>Enter a filter value of "100" on the "Vendor account" field using the "begins with" filter operator.</Value>
-</CommandArgument>
-<CommandArgument>
-<IsReference>false</IsReference>
-<Value>[{"FieldLabel":"Vendor account","OperatorLabel":"begins with","Values":"100"}]</Value>
+<Value>last</Value>
 </CommandArgument>
 </Arguments>
-<CommandName>ApplyFiltersForTaskRecorder</CommandName>
-<ControlName>SystemDefinedFilterManager</ControlName>
-<ControlType>FilterManager</ControlType>
-<LabelId i:nil="true"/>
+<CommandName>ChangeSelectedIndexInCache</CommandName>
+<ControlName>Grid</ControlName>
+<ControlType>Grid</ControlType>
+<LabelId/>
 <ReturnType>Void</ReturnType>
-<ReturnValue/>
+<ReturnValue i:nil="true"/>
 <TaskId i:nil="true"/>
 </Node>
 </Children>
 <IsForm>false</IsForm>
 <IsStepGroup>false</IsStepGroup>
-<Name>SystemDefinedFilterManager_ApplyFiltersForTaskRecorder</Name>
+<Name>Grid_ChangeSelectedIndexInCache</Name>
+<ScopeType>Private</ScopeType>
+</Node>
+<Node z:Id="i28" i:type="Scope">
+<CustomDescription i:nil="true"/>
+<Description/>
+<Id>36158NavigationAction_c5614fad-7fb8-46d0-a244-2607d7366357</Id>
+<Parent z:Ref="i7"/>
+<ParentSequence>105</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>126</Sequence>
+<Children>
+<Node z:Id="i29" i:type="CommandUserAction">
+<CustomDescription i:nil="true"/>
+<Description>In the list, click the link in the selected row.</Description>
+<Id>36158NavigationAction_c5614fad-7fb8-46d0-a244-2607d7366357x127</Id>
+<Parent z:Ref="i28"/>
+<ParentSequence>126</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>127</Sequence>
+<Annotations/>
+<GlobalId>6449d097-042b-44a8-b0b2-fcc3cc97b4fd</GlobalId>
+<SystemGenerated>false</SystemGenerated>
+<ControlLabel/>
+<ControlLabelId/>
+<FormId>34967_PurchTable_c5614fad-7fb8-46d0-a244-2607d7366357</FormId>
+<ListContext>Grid</ListContext>
+<RowIndex i:nil="true"/>
+<Arguments/>
+<CommandName>NavigationAction</CommandName>
+<ControlName>Grid</ControlName>
+<ControlType>Grid</ControlType>
+<LabelId/>
+<ReturnType>Void</ReturnType>
+<ReturnValue i:nil="true"/>
+<TaskId i:nil="true"/>
+</Node>
+</Children>
+<IsForm>false</IsForm>
+<IsStepGroup>false</IsStepGroup>
+<Name>Grid_NavigationAction</Name>
+<ScopeType>Private</ScopeType>
+</Node>
+<Node z:Id="i30" i:type="Scope">
+<CustomDescription i:nil="true"/>
+<Description/>
+<Id>36058_0TabShown_c5614fad-7fb8-46d0-a244-2607d7366357</Id>
+<Parent z:Ref="i7"/>
+<ParentSequence>128</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>129</Sequence>
+<Children>
+<Node z:Id="i31" i:type="CommandUserAction">
+<CustomDescription i:nil="true"/>
+<Description>On the Action Pane, click Purchase order.</Description>
+<Id>36058_0TabShown_c5614fad-7fb8-46d0-a244-2607d7366357x130</Id>
+<Parent z:Ref="i30"/>
+<ParentSequence>129</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>130</Sequence>
+<Annotations/>
+<GlobalId>074fb842-40eb-463e-9c36-b53bc25f3171</GlobalId>
+<SystemGenerated>false</SystemGenerated>
+<ControlLabel>Purchase order</ControlLabel>
+<ControlLabelId>@SYS25545</ControlLabelId>
+<FormId>34967_PurchTable_c5614fad-7fb8-46d0-a244-2607d7366357</FormId>
+<ListContext i:nil="true"/>
+<RowIndex i:nil="true"/>
+<Arguments/>
+<CommandName>TabShown</CommandName>
+<ControlName>PurchOrder</ControlName>
+<ControlType>AppBarTab</ControlType>
+<LabelId i:nil="true"/>
+<ReturnType>Void</ReturnType>
+<ReturnValue i:nil="true"/>
+<TaskId/>
+</Node>
+</Children>
+<IsForm>false</IsForm>
+<IsStepGroup>false</IsStepGroup>
+<Name>PurchOrder_TabShown</Name>
 <ScopeType>Private</ScopeType>
 </Node>
 </Children>
 <IsForm>true</IsForm>
 <IsStepGroup>false</IsStepGroup>
-<Name>VendTableListPage</Name>
+<Name>PurchTable</Name>
 <ScopeType>Public</ScopeType>
 </Node>
 </Children>
 <IsForm>false</IsForm>
 <IsStepGroup>false</IsStepGroup>
-<Name>MenuItem_vendtablepastduelistpage</Name>
+<Name>MenuItem_purchtablelistpage</Name>
 <ScopeType>Private</ScopeType>
 </Node>
 </Children>
 <IsForm>false</IsForm>
 <IsStepGroup>false</IsStepGroup>
-<Name>filtermanager_2</Name>
+<Name>quick_filter_1</Name>
 <ScopeType>Public</ScopeType>
 </RootScope>
 <UserActions xmlns:d2p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
@@ -405,6 +753,14 @@
 <d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i11"/>
 <d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i13"/>
 <d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i15"/>
+<d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i17"/>
+<d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i19"/>
+<d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i21"/>
+<d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i23"/>
+<d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i25"/>
+<d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i27"/>
+<d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i29"/>
+<d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i31"/>
 </UserActions>
 <Version>1</Version>
 </Recording>

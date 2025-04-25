@@ -31,20 +31,45 @@ def extract_navigation_from_description(root):
                         description_navs.append(item)
     return description_navs
 
+import re
+
 def extract_controls_with_types(root):
     controls = []
 
     def get_quickfilter_value_from_description(elem):
         """
-        Extract the value inside single quotes from the Description tag,
-        specifically for quickfilter controls.
+        Extract the value from the Description tag, specifically for quickfilter and filtermanager controls.
+        Prioritizes:
+        - Values in single quotes (e.g. '000008') for Quick Filter instructions.
+        - Values in double quotes (e.g. "100") for filter instructions.
         """
         description_elem = elem.find("Description")
         if description_elem is not None and description_elem.text:
-            match = re.search(r"'([^']+)'", description_elem.text.strip())
+            desc_text = description_elem.text.strip()
+
+            # Priority 1: Match value in single quotes
+            single_match = re.search(r"'([^']+)'", desc_text)
+            if single_match:
+                return single_match.group(1)
+
+            # Priority 2: Match value in double quotes
+            double_match = re.search(r'"([^"]+)"', desc_text)
+            if double_match:
+                return double_match.group(1)
+
+        return None
+    
+    def extract_target_field(elem):
+        """
+        Extract field name like 'Vendor account' from description such as:
+        'Open Vendor account column filter.'
+        """
+        description_elem = elem.find("Description")
+        if description_elem is not None and description_elem.text:
+            match = re.search(r'Open (.*?) column filter\.', description_elem.text.strip())
             if match:
                 return match.group(1)
-        return None
+        return ""
 
     for elem in root.iter():
         label = None
@@ -52,6 +77,7 @@ def extract_controls_with_types(root):
         control_type = None
         value = None
         filtervalue = None
+        manageFilterLocator = None
 
         for child in elem:
             tag = child.tag.split('}')[-1]
@@ -61,11 +87,11 @@ def extract_controls_with_types(root):
                 control_name = child.text.strip() if child.text else None
             elif tag == "ControlType":
                 control_type = child.text.strip().lower() if child.text else None
-                if(control_type == "quickfilter" or control_type == "filtermanager"):
+                if control_type in ("quickfilter", "filtermanager"):
                     filtervalue = get_quickfilter_value_from_description(elem)
+                    manageFilterLocator = extract_target_field(elem)
             elif tag == "Value":
                 value = child.text.strip() if child.text else None
-            
 
         if control_name and control_type:
             controls.append({
@@ -73,11 +99,12 @@ def extract_controls_with_types(root):
                 "name": control_name,
                 "type": control_type or "",
                 "value": value or "",
-                "filtervalue": filtervalue or ""
-                
+                "filtervalue": filtervalue or "",
+                "manageFilterLocator": manageFilterLocator or ""
             })
 
     return controls
+
 
 def generate_selenium_script(nav_keys, controls):
     lines = [
@@ -129,9 +156,11 @@ def generate_selenium_script(nav_keys, controls):
                 lines.append(f"if(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[0]}\")):")
                 lines.append(f"    locator=Interactions.get_locator(driver, By.XPATH, \"{xpath[0]}\")")
                 lines.append(f"    Interactions.clear_input_field_and_send_keys(driver, By.XPATH, locator, \"{filtervalue}\")")
+                lines.append(f"    Interactions.press_enter(driver, By.XPATH, locator)")
                 lines.append(f"elif(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[1]}\")):")
                 lines.append(f"    locator=Interactions.get_locator(driver, By.XPATH, \"{xpath[1]}\")")
                 lines.append(f"    Interactions.clear_input_field_and_send_keys(driver, By.XPATH, locator, \"{filtervalue}\")")
+                lines.append(f"    Interactions.press_enter(driver, By.XPATH, locator)")
             
             elif ctype == "date":
                 date = convert_date_format(value)

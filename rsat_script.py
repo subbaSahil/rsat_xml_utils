@@ -18,42 +18,58 @@ Interactions.wait_and_click(driver, By.XPATH, "//div[@aria-label='Modules']")
 Interactions.wait_and_click(driver, By.XPATH, "//a[@data-dyn-title='Accounts payable']")
 time.sleep(1)
 
-# Clicking navigation: Vendors
-Interactions.wait_and_click(driver, By.XPATH, "//a[@data-dyn-title='Vendors']")
+# Clicking navigation: Purchase orders
+Interactions.wait_and_click(driver, By.XPATH, "//a[@data-dyn-title='Purchase orders']")
 time.sleep(1)
 
-# Clicking navigation: Vendors past due
-Interactions.wait_and_click(driver, By.XPATH, "//a[@data-dyn-title='Vendors past due']")
+# Clicking navigation: All purchase orders
+Interactions.wait_and_click(driver, By.XPATH, "//a[@data-dyn-title='All purchase orders']")
 time.sleep(1)
 
-# Inputting into: SystemDefinedFilterManager
-if(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@name,'SystemDefinedFilterManager')]")):
-    locator=Interactions.get_locator(driver, By.XPATH, "//input[contains(@name,'SystemDefinedFilterManager')]")
-    Interactions.clear_input_field_and_send_keys(driver, By.XPATH, locator, "")
+# Inputting into: GridFilter
+if(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@name,'GridFilter')]")):
+    locator=Interactions.get_locator(driver, By.XPATH, "//input[contains(@name,'GridFilter')]")
+    Interactions.clear_input_field_and_send_keys(driver, By.XPATH, locator, "00001")
+    Interactions.press_enter(driver, By.XPATH, locator)
 elif(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@aria-label,'')]")):
     locator=Interactions.get_locator(driver, By.XPATH, "//input[contains(@aria-label,'')]")
-    Interactions.clear_input_field_and_send_keys(driver, By.XPATH, locator, "")
-# Inputting into: SystemDefinedFilterManager
-if(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@name,'SystemDefinedFilterManager')]")):
-    locator=Interactions.get_locator(driver, By.XPATH, "//input[contains(@name,'SystemDefinedFilterManager')]")
-    Interactions.clear_input_field_and_send_keys(driver, By.XPATH, locator, "")
+    Interactions.clear_input_field_and_send_keys(driver, By.XPATH, locator, "00001")
+    Interactions.press_enter(driver, By.XPATH, locator)
+# Clicking (default) on: Purchase
+# Interactions.wait_and_click(driver, By.XPATH, "//div[@data-dyn-controlname='Purchase']")
+# Clicking (default) on: PurchOrder
+# Interactions.wait_and_click(driver, By.XPATH, "//div[@data-dyn-controlname='PurchOrder']")
+# Inputting into: GridFilter
+if(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@name,'GridFilter')]")):
+    locator=Interactions.get_locator(driver, By.XPATH, "//input[contains(@name,'GridFilter')]")
+    Interactions.clear_input_field_and_send_keys(driver, By.XPATH, locator, "00000")
+    Interactions.press_enter(driver, By.XPATH, locator)
 elif(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@aria-label,'')]")):
     locator=Interactions.get_locator(driver, By.XPATH, "//input[contains(@aria-label,'')]")
-    Interactions.clear_input_field_and_send_keys(driver, By.XPATH, locator, "")
-# Inputting into: SystemDefinedFilterManager
-if(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@name,'SystemDefinedFilterManager')]")):
-    locator=Interactions.get_locator(driver, By.XPATH, "//input[contains(@name,'SystemDefinedFilterManager')]")
-    Interactions.clear_input_field_and_send_keys(driver, By.XPATH, locator, "")
+    Interactions.clear_input_field_and_send_keys(driver, By.XPATH, locator, "00000")
+    Interactions.press_enter(driver, By.XPATH, locator)
+# Inputting into: GridFilter
+if(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@name,'GridFilter')]")):
+    locator=Interactions.get_locator(driver, By.XPATH, "//input[contains(@name,'GridFilter')]")
+    Interactions.clear_input_field_and_send_keys(driver, By.XPATH, locator, "00000859")
+    Interactions.press_enter(driver, By.XPATH, locator)
 elif(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@aria-label,'')]")):
     locator=Interactions.get_locator(driver, By.XPATH, "//input[contains(@aria-label,'')]")
-    Interactions.clear_input_field_and_send_keys(driver, By.XPATH, locator, "")
-# Inputting into: SystemDefinedFilterManager
-if(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@name,'SystemDefinedFilterManager')]")):
-    locator=Interactions.get_locator(driver, By.XPATH, "//input[contains(@name,'SystemDefinedFilterManager')]")
-    Interactions.clear_input_field_and_send_keys(driver, By.XPATH, locator, "")
+    Interactions.clear_input_field_and_send_keys(driver, By.XPATH, locator, "00000859")
+    Interactions.press_enter(driver, By.XPATH, locator)
+# Clicking (default) on: PurchOrder
+# Interactions.wait_and_click(driver, By.XPATH, "//div[@data-dyn-controlname='PurchOrder']")
+# Inputting into: GridFilter
+if(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@name,'GridFilter')]")):
+    locator=Interactions.get_locator(driver, By.XPATH, "//input[contains(@name,'GridFilter')]")
+    Interactions.clear_input_field_and_send_keys(driver, By.XPATH, locator, "000008")
+    Interactions.press_enter(driver, By.XPATH, locator)
 elif(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@aria-label,'')]")):
     locator=Interactions.get_locator(driver, By.XPATH, "//input[contains(@aria-label,'')]")
-    Interactions.clear_input_field_and_send_keys(driver, By.XPATH, locator, "")
+    Interactions.clear_input_field_and_send_keys(driver, By.XPATH, locator, "000008")
+    Interactions.press_enter(driver, By.XPATH, locator)
+# Clicking (default) on: PurchOrder
+# Interactions.wait_and_click(driver, By.XPATH, "//div[@data-dyn-controlname='PurchOrder']")
 time.sleep(5)
 print("test case passed")
 driver.quit()
