@@ -26,50 +26,53 @@ time.sleep(1)
 Interactions.wait_and_click(driver, By.XPATH, "//a[@data-dyn-title='All purchase orders']")
 time.sleep(1)
 
-# Inputting into: GridFilter
-if(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@name,'GridFilter')]")):
-    locator=Interactions.get_locator(driver, By.XPATH, "//input[contains(@name,'GridFilter')]")
-    Interactions.clear_input_field_and_send_keys(driver, By.XPATH, locator, "00001")
-    Interactions.press_enter(driver, By.XPATH, locator)
-elif(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@aria-label,'')]")):
-    locator=Interactions.get_locator(driver, By.XPATH, "//input[contains(@aria-label,'')]")
-    Interactions.clear_input_field_and_send_keys(driver, By.XPATH, locator, "00001")
-    Interactions.press_enter(driver, By.XPATH, locator)
+# Clicking (default) on: PurchOrder
+Interactions.wait_and_click(driver, By.XPATH, "//div[@data-dyn-controlname='PurchOrder']")
+# Clicking (default) on: PurchCopyJournalHeader
+Interactions.wait_and_click(driver, By.XPATH, "//button[@data-dyn-controlname='PurchCopyJournalHeader']")
+# Clicking checkbox: CopyMarkup
+if(Interactions.check_element_exist(driver, By.XPATH, "//label[contains(text(),'Copy charges')]/following-sibling::div/span[1]")):
+    Interactions.wait_and_click(driver, By.XPATH, "//label[contains(text(),'Copy charges')]/following-sibling::div/span[1]")
+elif(Interactions.check_element_exist(driver, By.XPATH, "//span[contains(@id, 'CopyMarkup') and (@class='toggle-box' or @class='checkBox')]")):
+    Interactions.wait_and_click(driver, By.XPATH, "//span[contains(@id, 'CopyMarkup') and (@class='toggle-box' or @class='checkBox')]")
+# Clicking checkbox: CopyPrecisely
+if(Interactions.check_element_exist(driver, By.XPATH, "//label[contains(text(),'Copy precisely')]/following-sibling::div/span[1]")):
+    Interactions.wait_and_click(driver, By.XPATH, "//label[contains(text(),'Copy precisely')]/following-sibling::div/span[1]")
+elif(Interactions.check_element_exist(driver, By.XPATH, "//span[contains(@id, 'CopyPrecisely') and (@class='toggle-box' or @class='checkBox')]")):
+    Interactions.wait_and_click(driver, By.XPATH, "//span[contains(@id, 'CopyPrecisely') and (@class='toggle-box' or @class='checkBox')]")
+# Clicking checkbox: RecalculateAmount
+if(Interactions.check_element_exist(driver, By.XPATH, "//label[contains(text(),'Recalculate price')]/following-sibling::div/span[1]")):
+    Interactions.wait_and_click(driver, By.XPATH, "//label[contains(text(),'Recalculate price')]/following-sibling::div/span[1]")
+elif(Interactions.check_element_exist(driver, By.XPATH, "//span[contains(@id, 'RecalculateAmount') and (@class='toggle-box' or @class='checkBox')]")):
+    Interactions.wait_and_click(driver, By.XPATH, "//span[contains(@id, 'RecalculateAmount') and (@class='toggle-box' or @class='checkBox')]")
+# Clicking checkbox: CopyHeader
+if(Interactions.check_element_exist(driver, By.XPATH, "//label[contains(text(),'Copy order header')]/following-sibling::div/span[1]")):
+    Interactions.wait_and_click(driver, By.XPATH, "//label[contains(text(),'Copy order header')]/following-sibling::div/span[1]")
+elif(Interactions.check_element_exist(driver, By.XPATH, "//span[contains(@id, 'CopyHeader') and (@class='toggle-box' or @class='checkBox')]")):
+    Interactions.wait_and_click(driver, By.XPATH, "//span[contains(@id, 'CopyHeader') and (@class='toggle-box' or @class='checkBox')]")
+# Clicking checkbox: PurchOrderMarkAll
+if(Interactions.check_element_exist(driver, By.XPATH, "//label[contains(text(),'Select all')]/following-sibling::div/span[1]")):
+    Interactions.wait_and_click(driver, By.XPATH, "//label[contains(text(),'Select all')]/following-sibling::div/span[1]")
+elif(Interactions.check_element_exist(driver, By.XPATH, "//span[contains(@id, 'PurchOrderMarkAll') and (@class='toggle-box' or @class='checkBox')]")):
+    Interactions.wait_and_click(driver, By.XPATH, "//span[contains(@id, 'PurchOrderMarkAll') and (@class='toggle-box' or @class='checkBox')]")
+# Clicking checkbox: PackingSlipMarkAll
+if(Interactions.check_element_exist(driver, By.XPATH, "//label[contains(text(),'Select all')]/following-sibling::div/span[1]")):
+    Interactions.wait_and_click(driver, By.XPATH, "//label[contains(text(),'Select all')]/following-sibling::div/span[1]")
+elif(Interactions.check_element_exist(driver, By.XPATH, "//span[contains(@id, 'PackingSlipMarkAll') and (@class='toggle-box' or @class='checkBox')]")):
+    Interactions.wait_and_click(driver, By.XPATH, "//span[contains(@id, 'PackingSlipMarkAll') and (@class='toggle-box' or @class='checkBox')]")
+# Clicking button: OK
+Interactions.wait_and_click(driver, By.XPATH, "//button[@data-dyn-controlname='OK']")
 # Clicking (default) on: Purchase
-# Interactions.wait_and_click(driver, By.XPATH, "//div[@data-dyn-controlname='Purchase']")
-# Clicking (default) on: PurchOrder
-# Interactions.wait_and_click(driver, By.XPATH, "//div[@data-dyn-controlname='PurchOrder']")
-# Inputting into: GridFilter
-if(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@name,'GridFilter')]")):
-    locator=Interactions.get_locator(driver, By.XPATH, "//input[contains(@name,'GridFilter')]")
-    Interactions.clear_input_field_and_send_keys(driver, By.XPATH, locator, "00000")
-    Interactions.press_enter(driver, By.XPATH, locator)
-elif(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@aria-label,'')]")):
-    locator=Interactions.get_locator(driver, By.XPATH, "//input[contains(@aria-label,'')]")
-    Interactions.clear_input_field_and_send_keys(driver, By.XPATH, locator, "00000")
-    Interactions.press_enter(driver, By.XPATH, locator)
-# Inputting into: GridFilter
-if(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@name,'GridFilter')]")):
-    locator=Interactions.get_locator(driver, By.XPATH, "//input[contains(@name,'GridFilter')]")
-    Interactions.clear_input_field_and_send_keys(driver, By.XPATH, locator, "00000859")
-    Interactions.press_enter(driver, By.XPATH, locator)
-elif(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@aria-label,'')]")):
-    locator=Interactions.get_locator(driver, By.XPATH, "//input[contains(@aria-label,'')]")
-    Interactions.clear_input_field_and_send_keys(driver, By.XPATH, locator, "00000859")
-    Interactions.press_enter(driver, By.XPATH, locator)
-# Clicking (default) on: PurchOrder
-# Interactions.wait_and_click(driver, By.XPATH, "//div[@data-dyn-controlname='PurchOrder']")
-# Inputting into: GridFilter
-if(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@name,'GridFilter')]")):
-    locator=Interactions.get_locator(driver, By.XPATH, "//input[contains(@name,'GridFilter')]")
-    Interactions.clear_input_field_and_send_keys(driver, By.XPATH, locator, "000008")
-    Interactions.press_enter(driver, By.XPATH, locator)
-elif(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@aria-label,'')]")):
-    locator=Interactions.get_locator(driver, By.XPATH, "//input[contains(@aria-label,'')]")
-    Interactions.clear_input_field_and_send_keys(driver, By.XPATH, locator, "000008")
-    Interactions.press_enter(driver, By.XPATH, locator)
-# Clicking (default) on: PurchOrder
-# Interactions.wait_and_click(driver, By.XPATH, "//div[@data-dyn-controlname='PurchOrder']")
+Interactions.wait_and_click(driver, By.XPATH, "//div[@data-dyn-controlname='Purchase']")
+# Clicking (default) on: PurchCreditNoteHeader
+Interactions.wait_and_click(driver, By.XPATH, "//button[@data-dyn-controlname='PurchCreditNoteHeader']")
+# Clicking checkbox: InvoiceMarkAll
+if(Interactions.check_element_exist(driver, By.XPATH, "//label[contains(text(),'Select all')]/following-sibling::div/span[1]")):
+    Interactions.wait_and_click(driver, By.XPATH, "//label[contains(text(),'Select all')]/following-sibling::div/span[1]")
+elif(Interactions.check_element_exist(driver, By.XPATH, "//span[contains(@id, 'InvoiceMarkAll') and (@class='toggle-box' or @class='checkBox')]")):
+    Interactions.wait_and_click(driver, By.XPATH, "//span[contains(@id, 'InvoiceMarkAll') and (@class='toggle-box' or @class='checkBox')]")
+# Clicking button: OK
+Interactions.wait_and_click(driver, By.XPATH, "//button[@data-dyn-controlname='OK']")
 time.sleep(5)
 print("test case passed")
 driver.quit()

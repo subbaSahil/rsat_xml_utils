@@ -184,6 +184,12 @@ def generate_selenium_script(nav_keys, controls):
                 lines.append(f"# Inputting into: {name}")
                 lines.append(f"if(Interactions.check_element_exist(driver, By.XPATH, \"{xpath}\")):")
                 lines.append(f"    Interactions.wait_and_send_keys(driver, By.XPATH, \"{xpath}\", \"{value}\")")
+            elif ctype == "checkbox":
+                lines.append(f"# Clicking checkbox: {name}")
+                lines.append(f"if(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[0]}\")):")
+                lines.append(f"    Interactions.wait_and_click(driver, By.XPATH, \"{xpath[0]}\")")
+                lines.append(f"elif(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[1]}\")):")
+                lines.append(f"    Interactions.wait_and_click(driver, By.XPATH, \"{xpath[1]}\")")
             else:
                 lines.append(f"# Clicking (default) on: {name}")
                 lines.append(f"Interactions.wait_and_click(driver, By.XPATH, \"{xpath}\")")

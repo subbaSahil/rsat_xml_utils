@@ -10,9 +10,10 @@ def generate_xpath_from_control(control_type, control_name, control_label):
     elif control_type == "sectionpage":
         return f"//button[contains(text(),'{control_label}')]"
     elif control_type == "checkbox":
-        # return [
-            f"//label[contains(text(),'{control_label}')]/following-sibling::div/span[1]"
-            # f"//span[contains(@id, '{control_name}') and (@class='toggle-box' or @class='checkBox')]"]
+        return [
+            f"//label[contains(text(),'{control_label}')]/following-sibling::div/span[1]",
+            f"//span[contains(@id, '{control_name}') and (@class='toggle-box' or @class='checkBox')]"
+            ]
     elif control_type == "pivotitem":
         return f"//li[contains(@data-dyn-controlname,'{control_name}')]"
     elif control_type in ["input", "real", "referencegroup","date","radiobutton", "quickfilter","filtermanager"]:
