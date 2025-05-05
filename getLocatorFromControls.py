@@ -1,7 +1,7 @@
 def generate_xpath_from_control(control_type, control_name, control_label):
     control_type = control_type.lower()
 #filter manager/quick filter
-    if control_type in ["commandbutton", "menuitembutton","dropdialogbutton","button"]:
+    if control_type in ["commandbutton", "menuitembutton","dropdialogbutton","button","togglebutton"]:
         return f"//button[@data-dyn-controlname='{control_name}']"
     elif control_type in ["menubutton", "menuitem"]:
         return f"//button[@name='{control_name}']"
@@ -16,13 +16,13 @@ def generate_xpath_from_control(control_type, control_name, control_label):
             ]
     elif control_type == "pivotitem":
         return f"//li[contains(@data-dyn-controlname,'{control_name}')]"
-    elif control_type in ["input", "real", "referencegroup","date","radiobutton", "quickfilter","filtermanager"]:
+    elif control_type in ["input", "real", "referencegroup","date","radiobutton", "quickfilter","filtermanager", "segmentedentry"]:
         return [
             f"//input[contains(@name,'{control_name.strip()}')]",
             f"//input[contains(@aria-label,'{control_label.strip()}')]"
         ]
     elif control_type == "appbartab":
-        return f"//div[@data-dyn-controlname='{control_name}']"
+        return f"//button/parent::div[@data-dyn-controlname='{control_name}']"
     elif control_type == "multilineinput":
         return f"//textarea[@name='{control_name}']"
 

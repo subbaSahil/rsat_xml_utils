@@ -1,5 +1,13 @@
 PO
 name="FilterField_PurchTable_PurchIdAdvanced_PurchId_Input_0"
+name="FilterField_PurchTable_PurchIdAdvanced_PurchId_Input_0"
+name="FilterField_PurchTable_PurchIdAdvanced_PurchId_Input_0"
+name="FilterField_PurchTable_PurchIdAdvanced_PurchId_Input_0"
+name="FilterField_PurchPrepayOpen_PurchId_PurchId_Input_0"
+
+aria-label="Filter field: Purchase order"
+aria-label="Filter field: Purchase order"
+
 name="FilterField_PurchTable_OrderAccountAdv_OrderAccount_Input_0"
 name="FilterField_PurchTable_InvoiceAccountGrid_InvoiceAccount_Input_0"\
 name="FilterField_PurchTable_PurchNameGrid_PurchName_Input_0"

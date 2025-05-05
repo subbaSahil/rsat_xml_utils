@@ -1,781 +1,664 @@
-<?xml version="1.0" encoding="utf-8"?>
 <Recording xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Client.ServerForm.TaskRecording">
-  <CanonicalId>46cb5b68-2b63-420b-b8d8-bcfa44a51601</CanonicalId>
-  <CurrentSequence>129</CurrentSequence>
-  <Description></Description>
-  <FormContexts xmlns:d2p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
-    <d2p1:KeyValueOfstringFormContextyaScvdpM>
-      <d2p1:Key>38105_PurchTable_803a10b0-f5b5-44ef-84df-1a4b7dda2344</d2p1:Key>
-      <d2p1:Value>
-        <Annotations>
-          <Annotation i:type="FormAnnotation">
-            <ConfigurationOwnerName>PurchTable</ConfigurationOwnerName>
-            <ConfigurationScope>41</ConfigurationScope>
-            <FilterCommandName>ApplyFilters</FilterCommandName>
-            <FilterControlName>SystemDefinedFilterPane</FilterControlName>
-            <FormViewOptionType>0</FormViewOptionType>
-            <MenuItemLabel>All purchase orders</MenuItemLabel>
-            <MenuItemName>PurchTableListPage</MenuItemName>
-            <MenuItemType>Display</MenuItemType>
-            <PublishedFromConfiguration>0</PublishedFromConfiguration>
-          </Annotation>
-        </Annotations>
-        <FormID>38105_PurchTable_803a10b0-f5b5-44ef-84df-1a4b7dda2344</FormID>
-        <FormName>PurchTable</FormName>
-        <HasMetadata>true</HasMetadata>
-        <RecordingName>PurchTable</RecordingName>
-        <Sequence>4</Sequence>
-      </d2p1:Value>
-    </d2p1:KeyValueOfstringFormContextyaScvdpM>
-    <d2p1:KeyValueOfstringFormContextyaScvdpM>
-      <d2p1:Key>45748_PurchCopying_803a10b0-f5b5-44ef-84df-1a4b7dda2344</d2p1:Key>
-      <d2p1:Value>
-        <Annotations>
-          <Annotation i:type="FormAnnotation">
-            <ConfigurationOwnerName>PurchCopying</ConfigurationOwnerName>
-            <ConfigurationScope>41</ConfigurationScope>
-            <FilterCommandName>ApplyFilters</FilterCommandName>
-            <FilterControlName>SystemDefinedFilterPane</FilterControlName>
-            <FormViewOptionType>0</FormViewOptionType>
-            <MenuItemLabel>Copy from journal</MenuItemLabel>
-            <MenuItemName>PurchCopyJournalHeader</MenuItemName>
-            <MenuItemType>Display</MenuItemType>
-            <PublishedFromConfiguration>0</PublishedFromConfiguration>
-          </Annotation>
-        </Annotations>
-        <FormID>45748_PurchCopying_803a10b0-f5b5-44ef-84df-1a4b7dda2344</FormID>
-        <FormName>PurchCopying</FormName>
-        <HasMetadata>true</HasMetadata>
-        <RecordingName>PurchCopying</RecordingName>
-        <Sequence>40</Sequence>
-      </d2p1:Value>
-    </d2p1:KeyValueOfstringFormContextyaScvdpM>
-    <d2p1:KeyValueOfstringFormContextyaScvdpM>
-      <d2p1:Key>46600_PurchCopying_803a10b0-f5b5-44ef-84df-1a4b7dda2344</d2p1:Key>
-      <d2p1:Value>
-        <Annotations>
-          <Annotation i:type="FormAnnotation">
-            <ConfigurationOwnerName>PurchCopying</ConfigurationOwnerName>
-            <ConfigurationScope>41</ConfigurationScope>
-            <FilterCommandName>ApplyFilters</FilterCommandName>
-            <FilterControlName>SystemDefinedFilterPane</FilterControlName>
-            <FormViewOptionType>0</FormViewOptionType>
-            <MenuItemLabel>Create credit note</MenuItemLabel>
-            <MenuItemName>PurchCreditNoteHeader</MenuItemName>
-            <MenuItemType>Display</MenuItemType>
-            <PublishedFromConfiguration>0</PublishedFromConfiguration>
-          </Annotation>
-        </Annotations>
-        <FormID>46600_PurchCopying_803a10b0-f5b5-44ef-84df-1a4b7dda2344</FormID>
-        <FormName>PurchCopying</FormName>
-        <HasMetadata>true</HasMetadata>
-        <RecordingName>PurchCopying</RecordingName>
-        <Sequence>76</Sequence>
-      </d2p1:Value>
-    </d2p1:KeyValueOfstringFormContextyaScvdpM>
-  </FormContexts>
-  <Name>PO_credit note</Name>
-  <RootScope z:Id="i1" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/">
-    <CustomDescription i:nil="true" />
-    <Description i:nil="true" />
-    <Id>803a10b0-f5b5-44ef-84df-1a4b7dda2344</Id>
-    <Parent i:nil="true" />
-    <ParentSequence>0</ParentSequence>
-    <ScreenshotUri i:nil="true" />
-    <Sequence>0</Sequence>
-    <Children>
-      <Node z:Id="i2" i:type="Scope">
-        <CustomDescription i:nil="true" />
-        <Description></Description>
-        <Id>MenuItempurchtablelistpage_803a10b0-f5b5-44ef-84df-1a4b7dda2344</Id>
-        <Parent z:Ref="i1" />
-        <ParentSequence>0</ParentSequence>
-        <ScreenshotUri i:nil="true" />
-        <Sequence>1</Sequence>
-        <Children>
-          <Node z:Id="i3" i:type="MenuItemUserAction">
-            <CustomDescription i:nil="true" />
-            <Description>Go to Accounts payable &gt; Purchase orders &gt; All purchase orders.</Description>
-            <Id>MenuItempurchtablelistpage_803a10b0-f5b5-44ef-84df-1a4b7dda2344x2</Id>
-            <Parent z:Ref="i2" />
-            <ParentSequence>1</ParentSequence>
-            <ScreenshotUri i:nil="true" />
-            <Sequence>2</Sequence>
-            <Annotations />
-            <GlobalId>0691bf40-be4f-4f53-a5a8-70d38d1b7e84</GlobalId>
-            <SystemGenerated>false</SystemGenerated>
-            <MenuItemName>purchtablelistpage</MenuItemName>
-            <MenuItemType>Display</MenuItemType>
-            <NavigationPath xmlns:d7p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
-              <d7p1:string>mainmenu</d7p1:string>
-              <d7p1:string>AccountsPayable</d7p1:string>
-              <d7p1:string>PurchaseOrders</d7p1:string>
-            </NavigationPath>
-          </Node>
-          <Node z:Id="i4" i:type="Scope">
-            <CustomDescription i:nil="true" />
-            <Description></Description>
-            <Id>38105_PurchTable_803a10b0-f5b5-44ef-84df-1a4b7dda2344</Id>
-            <Parent z:Ref="i2" />
-            <ParentSequence>1</ParentSequence>
-            <ScreenshotUri i:nil="true" />
-            <Sequence>3</Sequence>
-            <Children>
-              <Node z:Id="i5" i:type="Scope">
-                <CustomDescription i:nil="true" />
-                <Description></Description>
-                <Id>39296ChangeSelectedIndexInCache_803a10b0-f5b5-44ef-84df-1a4b7dda2344</Id>
-                <Parent z:Ref="i4" />
-                <ParentSequence>17</ParentSequence>
-                <ScreenshotUri i:nil="true" />
-                <Sequence>18</Sequence>
-                <Children>
-                  <Node z:Id="i6" i:type="CommandUserAction">
-                    <CustomDescription i:nil="true" />
-                    <Description>In the list, find and select the desired record.</Description>
-                    <Id>39296ChangeSelectedIndexInCache_803a10b0-f5b5-44ef-84df-1a4b7dda2344x19</Id>
-                    <Parent z:Ref="i5" />
-                    <ParentSequence>18</ParentSequence>
-                    <ScreenshotUri i:nil="true" />
-                    <Sequence>19</Sequence>
-                    <Annotations />
-                    <GlobalId>af347b57-811b-4413-b48b-781247fd2075</GlobalId>
-                    <SystemGenerated>false</SystemGenerated>
-                    <ControlLabel></ControlLabel>
-                    <ControlLabelId></ControlLabelId>
-                    <FormId>38105_PurchTable_803a10b0-f5b5-44ef-84df-1a4b7dda2344</FormId>
-                    <ListContext>Grid</ListContext>
-                    <RowIndex i:nil="true" />
-                    <Arguments>
-                      <CommandArgument>
-                        <IsReference>false</IsReference>
-                        <Value>17</Value>
-                      </CommandArgument>
-                      <CommandArgument>
-                        <IsReference>false</IsReference>
-                        <Value>1</Value>
-                      </CommandArgument>
-                      <CommandArgument>
-                        <IsReference>false</IsReference>
-                        <Value>1</Value>
-                      </CommandArgument>
-                      <CommandArgument>
-                        <IsReference>false</IsReference>
-                        <Value>last</Value>
-                      </CommandArgument>
-                    </Arguments>
-                    <CommandName>ChangeSelectedIndexInCache</CommandName>
-                    <ControlName>Grid</ControlName>
-                    <ControlType>Grid</ControlType>
-                    <LabelId></LabelId>
-                    <ReturnType>Void</ReturnType>
-                    <ReturnValue i:nil="true" />
-                    <TaskId i:nil="true" />
-                  </Node>
-                </Children>
-                <IsForm>false</IsForm>
-                <IsStepGroup>false</IsStepGroup>
-                <Name>Grid_ChangeSelectedIndexInCache</Name>
-                <ScopeType>Private</ScopeType>
-              </Node>
-              <Node z:Id="i7" i:type="Scope">
-                <CustomDescription i:nil="true" />
-                <Description></Description>
-                <Id>39196_0TabShown_803a10b0-f5b5-44ef-84df-1a4b7dda2344</Id>
-                <Parent z:Ref="i4" />
-                <ParentSequence>32</ParentSequence>
-                <ScreenshotUri i:nil="true" />
-                <Sequence>33</Sequence>
-                <Children>
-                  <Node z:Id="i8" i:type="CommandUserAction">
-                    <CustomDescription i:nil="true" />
-                    <Description>On the Action Pane, click Purchase order.</Description>
-                    <Id>39196_0TabShown_803a10b0-f5b5-44ef-84df-1a4b7dda2344x34</Id>
-                    <Parent z:Ref="i7" />
-                    <ParentSequence>33</ParentSequence>
-                    <ScreenshotUri i:nil="true" />
-                    <Sequence>34</Sequence>
-                    <Annotations />
-                    <GlobalId>a15e01c6-e12e-4d78-a3d0-1882fe71a8ae</GlobalId>
-                    <SystemGenerated>false</SystemGenerated>
-                    <ControlLabel>Purchase order</ControlLabel>
-                    <ControlLabelId>@SYS25545</ControlLabelId>
-                    <FormId>38105_PurchTable_803a10b0-f5b5-44ef-84df-1a4b7dda2344</FormId>
-                    <ListContext i:nil="true" />
-                    <RowIndex i:nil="true" />
-                    <Arguments />
-                    <CommandName>TabShown</CommandName>
-                    <ControlName>PurchOrder</ControlName>
-                    <ControlType>AppBarTab</ControlType>
-                    <LabelId i:nil="true" />
-                    <ReturnType>Void</ReturnType>
-                    <ReturnValue i:nil="true" />
-                    <TaskId></TaskId>
-                  </Node>
-                </Children>
-                <IsForm>false</IsForm>
-                <IsStepGroup>false</IsStepGroup>
-                <Name>PurchOrder_TabShown</Name>
-                <ScopeType>Private</ScopeType>
-              </Node>
-              <Node z:Id="i9" i:type="Scope">
-                <CustomDescription i:nil="true" />
-                <Description></Description>
-                <Id>43677Click_803a10b0-f5b5-44ef-84df-1a4b7dda2344</Id>
-                <Parent z:Ref="i4" />
-                <ParentSequence>36</ParentSequence>
-                <ScreenshotUri i:nil="true" />
-                <Sequence>37</Sequence>
-                <Children>
-                  <Node z:Id="i10" i:type="CommandUserAction">
-                    <CustomDescription i:nil="true" />
-                    <Description>Click From journal.</Description>
-                    <Id>43677Click_803a10b0-f5b5-44ef-84df-1a4b7dda2344x38</Id>
-                    <Parent z:Ref="i9" />
-                    <ParentSequence>37</ParentSequence>
-                    <ScreenshotUri i:nil="true" />
-                    <Sequence>38</Sequence>
-                    <Annotations />
-                    <GlobalId>a6391fef-4207-46d8-8b8c-924d1ea45135</GlobalId>
-                    <SystemGenerated>false</SystemGenerated>
-                    <ControlLabel>From journal</ControlLabel>
-                    <ControlLabelId>@SYS317845</ControlLabelId>
-                    <FormId>38105_PurchTable_803a10b0-f5b5-44ef-84df-1a4b7dda2344</FormId>
-                    <ListContext i:nil="true" />
-                    <RowIndex i:nil="true" />
-                    <Arguments />
-                    <CommandName>Click</CommandName>
-                    <ControlName>PurchCopyJournalHeader</ControlName>
-                    <ControlType>MenuItemButton</ControlType>
-                    <LabelId></LabelId>
-                    <ReturnType>Void</ReturnType>
-                    <ReturnValue i:nil="true" />
-                    <TaskId i:nil="true" />
-                  </Node>
-                  <Node z:Id="i11" i:type="Scope">
-                    <CustomDescription i:nil="true" />
-                    <Description></Description>
-                    <Id>45748_PurchCopying_803a10b0-f5b5-44ef-84df-1a4b7dda2344</Id>
-                    <Parent z:Ref="i9" />
-                    <ParentSequence>37</ParentSequence>
-                    <ScreenshotUri i:nil="true" />
-                    <Sequence>39</Sequence>
-                    <Children>
-                      <Node z:Id="i12" i:type="Scope">
-                        <CustomDescription i:nil="true" />
-                        <Description></Description>
-                        <Id>45922Value_803a10b0-f5b5-44ef-84df-1a4b7dda2344</Id>
-                        <Parent z:Ref="i11" />
-                        <ParentSequence>41</ParentSequence>
-                        <ScreenshotUri i:nil="true" />
-                        <Sequence>42</Sequence>
-                        <Children>
-                          <Node z:Id="i13" i:type="PropertyUserAction">
-                            <CustomDescription i:nil="true" />
-                            <Description>Select No in the Copy charges field.</Description>
-                            <Id>45922Value_803a10b0-f5b5-44ef-84df-1a4b7dda2344x43</Id>
-                            <Parent z:Ref="i12" />
-                            <ParentSequence>42</ParentSequence>
-                            <ScreenshotUri i:nil="true" />
-                            <Sequence>43</Sequence>
-                            <Annotations />
-                            <GlobalId>ad1be31d-58be-40a0-904a-7df5aee5f2bd</GlobalId>
-                            <SystemGenerated>false</SystemGenerated>
-                            <ControlLabel>Copy charges</ControlLabel>
-                            <ControlLabelId>@SYS13422</ControlLabelId>
-                            <FormId>45748_PurchCopying_803a10b0-f5b5-44ef-84df-1a4b7dda2344</FormId>
-                            <ListContext i:nil="true" />
-                            <RowIndex i:nil="true" />
-                            <BoundDataSource></BoundDataSource>
-                            <BoundProperty></BoundProperty>
-                            <ControlName>CopyMarkup</ControlName>
-                            <ControlType>CheckBox</ControlType>
-                            <IsReference>false</IsReference>
-                            <LabelId>@SysTaskRecorder:Slider_SetValue</LabelId>
-                            <PropertyName>Value</PropertyName>
-                            <UserActionType>Input</UserActionType>
-                            <Value>False</Value>
-                            <ValueLabel>@SysTaskRecorder:No</ValueLabel>
-                          </Node>
-                        </Children>
-                        <IsForm>false</IsForm>
-                        <IsStepGroup>false</IsStepGroup>
-                        <Name>CopyMarkup_Value</Name>
-                        <ScopeType>Private</ScopeType>
-                      </Node>
-                      <Node z:Id="i14" i:type="Scope">
-                        <CustomDescription i:nil="true" />
-                        <Description></Description>
-                        <Id>45924Value_803a10b0-f5b5-44ef-84df-1a4b7dda2344</Id>
-                        <Parent z:Ref="i11" />
-                        <ParentSequence>44</ParentSequence>
-                        <ScreenshotUri i:nil="true" />
-                        <Sequence>45</Sequence>
-                        <Children>
-                          <Node z:Id="i15" i:type="PropertyUserAction">
-                            <CustomDescription i:nil="true" />
-                            <Description>Select No in the Copy precisely field.</Description>
-                            <Id>45924Value_803a10b0-f5b5-44ef-84df-1a4b7dda2344x46</Id>
-                            <Parent z:Ref="i14" />
-                            <ParentSequence>45</ParentSequence>
-                            <ScreenshotUri i:nil="true" />
-                            <Sequence>46</Sequence>
-                            <Annotations />
-                            <GlobalId>31927684-d805-414d-af26-59ddd1589fc6</GlobalId>
-                            <SystemGenerated>false</SystemGenerated>
-                            <ControlLabel>Copy precisely</ControlLabel>
-                            <ControlLabelId>@SYS28991</ControlLabelId>
-                            <FormId>45748_PurchCopying_803a10b0-f5b5-44ef-84df-1a4b7dda2344</FormId>
-                            <ListContext i:nil="true" />
-                            <RowIndex i:nil="true" />
-                            <BoundDataSource></BoundDataSource>
-                            <BoundProperty></BoundProperty>
-                            <ControlName>CopyPrecisely</ControlName>
-                            <ControlType>CheckBox</ControlType>
-                            <IsReference>false</IsReference>
-                            <LabelId>@SysTaskRecorder:Slider_SetValue</LabelId>
-                            <PropertyName>Value</PropertyName>
-                            <UserActionType>Input</UserActionType>
-                            <Value>False</Value>
-                            <ValueLabel>@SysTaskRecorder:No</ValueLabel>
-                          </Node>
-                        </Children>
-                        <IsForm>false</IsForm>
-                        <IsStepGroup>false</IsStepGroup>
-                        <Name>CopyPrecisely_Value</Name>
-                        <ScopeType>Private</ScopeType>
-                      </Node>
-                      <Node z:Id="i16" i:type="Scope">
-                        <CustomDescription i:nil="true" />
-                        <Description></Description>
-                        <Id>45923Value_803a10b0-f5b5-44ef-84df-1a4b7dda2344</Id>
-                        <Parent z:Ref="i11" />
-                        <ParentSequence>47</ParentSequence>
-                        <ScreenshotUri i:nil="true" />
-                        <Sequence>48</Sequence>
-                        <Children>
-                          <Node z:Id="i17" i:type="PropertyUserAction">
-                            <CustomDescription i:nil="true" />
-                            <Description>Select Yes in the Recalculate price field.</Description>
-                            <Id>45923Value_803a10b0-f5b5-44ef-84df-1a4b7dda2344x49</Id>
-                            <Parent z:Ref="i16" />
-                            <ParentSequence>48</ParentSequence>
-                            <ScreenshotUri i:nil="true" />
-                            <Sequence>49</Sequence>
-                            <Annotations />
-                            <GlobalId>4a2828be-14a1-4912-b769-aa4ade5af145</GlobalId>
-                            <SystemGenerated>false</SystemGenerated>
-                            <ControlLabel>Recalculate price</ControlLabel>
-                            <ControlLabelId>@SYS23228</ControlLabelId>
-                            <FormId>45748_PurchCopying_803a10b0-f5b5-44ef-84df-1a4b7dda2344</FormId>
-                            <ListContext i:nil="true" />
-                            <RowIndex i:nil="true" />
-                            <BoundDataSource></BoundDataSource>
-                            <BoundProperty></BoundProperty>
-                            <ControlName>RecalculateAmount</ControlName>
-                            <ControlType>CheckBox</ControlType>
-                            <IsReference>false</IsReference>
-                            <LabelId>@SysTaskRecorder:Slider_SetValue</LabelId>
-                            <PropertyName>Value</PropertyName>
-                            <UserActionType>Input</UserActionType>
-                            <Value>True</Value>
-                            <ValueLabel>@SysTaskRecorder:Yes</ValueLabel>
-                          </Node>
-                        </Children>
-                        <IsForm>false</IsForm>
-                        <IsStepGroup>false</IsStepGroup>
-                        <Name>RecalculateAmount_Value</Name>
-                        <ScopeType>Private</ScopeType>
-                      </Node>
-                      <Node z:Id="i18" i:type="Scope">
-                        <CustomDescription i:nil="true" />
-                        <Description></Description>
-                        <Id>45926Value_803a10b0-f5b5-44ef-84df-1a4b7dda2344</Id>
-                        <Parent z:Ref="i11" />
-                        <ParentSequence>50</ParentSequence>
-                        <ScreenshotUri i:nil="true" />
-                        <Sequence>51</Sequence>
-                        <Children>
-                          <Node z:Id="i19" i:type="PropertyUserAction">
-                            <CustomDescription i:nil="true" />
-                            <Description>Select No in the Copy order header field.</Description>
-                            <Id>45926Value_803a10b0-f5b5-44ef-84df-1a4b7dda2344x52</Id>
-                            <Parent z:Ref="i18" />
-                            <ParentSequence>51</ParentSequence>
-                            <ScreenshotUri i:nil="true" />
-                            <Sequence>52</Sequence>
-                            <Annotations />
-                            <GlobalId>5eb11400-8053-4dad-b63b-a8a746594eb1</GlobalId>
-                            <SystemGenerated>false</SystemGenerated>
-                            <ControlLabel>Copy order header</ControlLabel>
-                            <ControlLabelId>@SYS29008</ControlLabelId>
-                            <FormId>45748_PurchCopying_803a10b0-f5b5-44ef-84df-1a4b7dda2344</FormId>
-                            <ListContext i:nil="true" />
-                            <RowIndex i:nil="true" />
-                            <BoundDataSource></BoundDataSource>
-                            <BoundProperty></BoundProperty>
-                            <ControlName>CopyHeader</ControlName>
-                            <ControlType>CheckBox</ControlType>
-                            <IsReference>false</IsReference>
-                            <LabelId>@SysTaskRecorder:Slider_SetValue</LabelId>
-                            <PropertyName>Value</PropertyName>
-                            <UserActionType>Input</UserActionType>
-                            <Value>False</Value>
-                            <ValueLabel>@SysTaskRecorder:No</ValueLabel>
-                          </Node>
-                        </Children>
-                        <IsForm>false</IsForm>
-                        <IsStepGroup>false</IsStepGroup>
-                        <Name>CopyHeader_Value</Name>
-                        <ScopeType>Private</ScopeType>
-                      </Node>
-                      <Node z:Id="i20" i:type="Scope">
-                        <CustomDescription i:nil="true" />
-                        <Description></Description>
-                        <Id>45933Value_803a10b0-f5b5-44ef-84df-1a4b7dda2344</Id>
-                        <Parent z:Ref="i11" />
-                        <ParentSequence>53</ParentSequence>
-                        <ScreenshotUri i:nil="true" />
-                        <Sequence>54</Sequence>
-                        <Children>
-                          <Node z:Id="i21" i:type="PropertyUserAction">
-                            <CustomDescription i:nil="true" />
-                            <Description>Select the Select all check box.</Description>
-                            <Id>45933Value_803a10b0-f5b5-44ef-84df-1a4b7dda2344x55</Id>
-                            <Parent z:Ref="i20" />
-                            <ParentSequence>54</ParentSequence>
-                            <ScreenshotUri i:nil="true" />
-                            <Sequence>55</Sequence>
-                            <Annotations />
-                            <GlobalId>b67f4037-dc93-4ddc-ac38-9f4839b95f6d</GlobalId>
-                            <SystemGenerated>false</SystemGenerated>
-                            <ControlLabel>Select all</ControlLabel>
-                            <ControlLabelId>@SYS28958</ControlLabelId>
-                            <FormId>45748_PurchCopying_803a10b0-f5b5-44ef-84df-1a4b7dda2344</FormId>
-                            <ListContext>PurchOrderHeadingGrid</ListContext>
-                            <RowIndex i:nil="true" />
-                            <BoundDataSource>VendPurchOrderJour</BoundDataSource>
-                            <BoundProperty>purchOrderMarkAll</BoundProperty>
-                            <ControlName>PurchOrderMarkAll</ControlName>
-                            <ControlType>CheckBox</ControlType>
-                            <IsReference>false</IsReference>
-                            <LabelId>@SysTaskRecorder:CheckBox_SetValue</LabelId>
-                            <PropertyName>Value</PropertyName>
-                            <UserActionType>Input</UserActionType>
-                            <Value>True</Value>
-                            <ValueLabel>@SysTaskRecorder:Check</ValueLabel>
-                          </Node>
-                        </Children>
-                        <IsForm>false</IsForm>
-                        <IsStepGroup>false</IsStepGroup>
-                        <Name>PurchOrderMarkAll_Value</Name>
-                        <ScopeType>Private</ScopeType>
-                      </Node>
-                      <Node z:Id="i22" i:type="Scope">
-                        <CustomDescription i:nil="true" />
-                        <Description></Description>
-                        <Id>45964Value_803a10b0-f5b5-44ef-84df-1a4b7dda2344</Id>
-                        <Parent z:Ref="i11" />
-                        <ParentSequence>56</ParentSequence>
-                        <ScreenshotUri i:nil="true" />
-                        <Sequence>57</Sequence>
-                        <Children>
-                          <Node z:Id="i23" i:type="PropertyUserAction">
-                            <CustomDescription i:nil="true" />
-                            <Description>Select the Select all check box.</Description>
-                            <Id>45964Value_803a10b0-f5b5-44ef-84df-1a4b7dda2344x58</Id>
-                            <Parent z:Ref="i22" />
-                            <ParentSequence>57</ParentSequence>
-                            <ScreenshotUri i:nil="true" />
-                            <Sequence>58</Sequence>
-                            <Annotations />
-                            <GlobalId>56586122-1085-4f11-afae-bb546744c786</GlobalId>
-                            <SystemGenerated>false</SystemGenerated>
-                            <ControlLabel>Select all</ControlLabel>
-                            <ControlLabelId>@SYS28958</ControlLabelId>
-                            <FormId>45748_PurchCopying_803a10b0-f5b5-44ef-84df-1a4b7dda2344</FormId>
-                            <ListContext>PackingSlipHeadingGrid</ListContext>
-                            <RowIndex i:nil="true" />
-                            <BoundDataSource>VendPackingSlipJour</BoundDataSource>
-                            <BoundProperty>PackingSlipMarkAll</BoundProperty>
-                            <ControlName>PackingSlipMarkAll</ControlName>
-                            <ControlType>CheckBox</ControlType>
-                            <IsReference>false</IsReference>
-                            <LabelId>@SysTaskRecorder:CheckBox_SetValue</LabelId>
-                            <PropertyName>Value</PropertyName>
-                            <UserActionType>Input</UserActionType>
-                            <Value>True</Value>
-                            <ValueLabel>@SysTaskRecorder:Check</ValueLabel>
-                          </Node>
-                        </Children>
-                        <IsForm>false</IsForm>
-                        <IsStepGroup>false</IsStepGroup>
-                        <Name>PackingSlipMarkAll_Value</Name>
-                        <ScopeType>Private</ScopeType>
-                      </Node>
-                      <Node z:Id="i24" i:type="Scope">
-                        <CustomDescription i:nil="true" />
-                        <Description></Description>
-                        <Id>46024_0Click_803a10b0-f5b5-44ef-84df-1a4b7dda2344</Id>
-                        <Parent z:Ref="i11" />
-                        <ParentSequence>59</ParentSequence>
-                        <ScreenshotUri i:nil="true" />
-                        <Sequence>60</Sequence>
-                        <Children>
-                          <Node z:Id="i25" i:type="CommandUserAction">
-                            <CustomDescription i:nil="true" />
-                            <Description>Click OK.</Description>
-                            <Id>46024_0Click_803a10b0-f5b5-44ef-84df-1a4b7dda2344x61</Id>
-                            <Parent z:Ref="i24" />
-                            <ParentSequence>60</ParentSequence>
-                            <ScreenshotUri i:nil="true" />
-                            <Sequence>61</Sequence>
-                            <Annotations />
-                            <GlobalId>3bffeaf2-f672-4164-8d43-23727002bf42</GlobalId>
-                            <SystemGenerated>false</SystemGenerated>
-                            <ControlLabel>OK</ControlLabel>
-                            <ControlLabelId></ControlLabelId>
-                            <FormId>45748_PurchCopying_803a10b0-f5b5-44ef-84df-1a4b7dda2344</FormId>
-                            <ListContext i:nil="true" />
-                            <RowIndex i:nil="true" />
-                            <Arguments />
-                            <CommandName>Click</CommandName>
-                            <ControlName>OK</ControlName>
-                            <ControlType>CommandButton</ControlType>
-                            <LabelId i:nil="true" />
-                            <ReturnType>Void</ReturnType>
-                            <ReturnValue i:nil="true" />
-                            <TaskId>263</TaskId>
-                          </Node>
-                        </Children>
-                        <IsForm>false</IsForm>
-                        <IsStepGroup>false</IsStepGroup>
-                        <Name>OK_Click</Name>
-                        <ScopeType>Private</ScopeType>
-                      </Node>
-                    </Children>
-                    <IsForm>true</IsForm>
-                    <IsStepGroup>false</IsStepGroup>
-                    <Name>PurchCopying</Name>
-                    <ScopeType>Public</ScopeType>
-                  </Node>
-                </Children>
-                <IsForm>false</IsForm>
-                <IsStepGroup>false</IsStepGroup>
-                <Name>PurchCopyJournalHeader_Click</Name>
-                <ScopeType>Private</ScopeType>
-              </Node>
-              <Node z:Id="i26" i:type="Scope">
-                <CustomDescription i:nil="true" />
-                <Description></Description>
-                <Id>39197_0TabShown_803a10b0-f5b5-44ef-84df-1a4b7dda2344</Id>
-                <Parent z:Ref="i4" />
-                <ParentSequence>69</ParentSequence>
-                <ScreenshotUri i:nil="true" />
-                <Sequence>70</Sequence>
-                <Children>
-                  <Node z:Id="i27" i:type="CommandUserAction">
-                    <CustomDescription i:nil="true" />
-                    <Description>On the Action Pane, click Purchase.</Description>
-                    <Id>39197_0TabShown_803a10b0-f5b5-44ef-84df-1a4b7dda2344x71</Id>
-                    <Parent z:Ref="i26" />
-                    <ParentSequence>70</ParentSequence>
-                    <ScreenshotUri i:nil="true" />
-                    <Sequence>71</Sequence>
-                    <Annotations />
-                    <GlobalId>16ea49ba-d1f8-4b70-a36c-5e8754583388</GlobalId>
-                    <SystemGenerated>false</SystemGenerated>
-                    <ControlLabel>Purchase</ControlLabel>
-                    <ControlLabelId>@SYS53872</ControlLabelId>
-                    <FormId>38105_PurchTable_803a10b0-f5b5-44ef-84df-1a4b7dda2344</FormId>
-                    <ListContext i:nil="true" />
-                    <RowIndex i:nil="true" />
-                    <Arguments />
-                    <CommandName>TabShown</CommandName>
-                    <ControlName>Purchase</ControlName>
-                    <ControlType>AppBarTab</ControlType>
-                    <LabelId i:nil="true" />
-                    <ReturnType>Void</ReturnType>
-                    <ReturnValue i:nil="true" />
-                    <TaskId></TaskId>
-                  </Node>
-                </Children>
-                <IsForm>false</IsForm>
-                <IsStepGroup>false</IsStepGroup>
-                <Name>Purchase_TabShown</Name>
-                <ScopeType>Private</ScopeType>
-              </Node>
-              <Node z:Id="i28" i:type="Scope">
-                <CustomDescription i:nil="true" />
-                <Description></Description>
-                <Id>46560Click_803a10b0-f5b5-44ef-84df-1a4b7dda2344</Id>
-                <Parent z:Ref="i4" />
-                <ParentSequence>72</ParentSequence>
-                <ScreenshotUri i:nil="true" />
-                <Sequence>73</Sequence>
-                <Children>
-                  <Node z:Id="i29" i:type="CommandUserAction">
-                    <CustomDescription i:nil="true" />
-                    <Description>Click Credit note.</Description>
-                    <Id>46560Click_803a10b0-f5b5-44ef-84df-1a4b7dda2344x74</Id>
-                    <Parent z:Ref="i28" />
-                    <ParentSequence>73</ParentSequence>
-                    <ScreenshotUri i:nil="true" />
-                    <Sequence>74</Sequence>
-                    <Annotations />
-                    <GlobalId>715847d7-a64a-4f10-a709-ac597691c122</GlobalId>
-                    <SystemGenerated>false</SystemGenerated>
-                    <ControlLabel>Credit note</ControlLabel>
-                    <ControlLabelId>@SYS8125</ControlLabelId>
-                    <FormId>38105_PurchTable_803a10b0-f5b5-44ef-84df-1a4b7dda2344</FormId>
-                    <ListContext i:nil="true" />
-                    <RowIndex i:nil="true" />
-                    <Arguments />
-                    <CommandName>Click</CommandName>
-                    <ControlName>PurchCreditNoteHeader</ControlName>
-                    <ControlType>MenuItemButton</ControlType>
-                    <LabelId></LabelId>
-                    <ReturnType>Void</ReturnType>
-                    <ReturnValue i:nil="true" />
-                    <TaskId i:nil="true" />
-                  </Node>
-                  <Node z:Id="i30" i:type="Scope">
-                    <CustomDescription i:nil="true" />
-                    <Description></Description>
-                    <Id>46600_PurchCopying_803a10b0-f5b5-44ef-84df-1a4b7dda2344</Id>
-                    <Parent z:Ref="i28" />
-                    <ParentSequence>73</ParentSequence>
-                    <ScreenshotUri i:nil="true" />
-                    <Sequence>75</Sequence>
-                    <Children>
-                      <Node z:Id="i31" i:type="Scope">
-                        <CustomDescription i:nil="true" />
-                        <Description></Description>
-                        <Id>46866Value_803a10b0-f5b5-44ef-84df-1a4b7dda2344</Id>
-                        <Parent z:Ref="i30" />
-                        <ParentSequence>77</ParentSequence>
-                        <ScreenshotUri i:nil="true" />
-                        <Sequence>78</Sequence>
-                        <Children>
-                          <Node z:Id="i32" i:type="PropertyUserAction">
-                            <CustomDescription i:nil="true" />
-                            <Description>Select the Select all check box.</Description>
-                            <Id>46866Value_803a10b0-f5b5-44ef-84df-1a4b7dda2344x79</Id>
-                            <Parent z:Ref="i31" />
-                            <ParentSequence>78</ParentSequence>
-                            <ScreenshotUri i:nil="true" />
-                            <Sequence>79</Sequence>
-                            <Annotations />
-                            <GlobalId>ecf59fcc-be0a-4b3f-8823-4d8be69be046</GlobalId>
-                            <SystemGenerated>false</SystemGenerated>
-                            <ControlLabel>Select all</ControlLabel>
-                            <ControlLabelId>@SYS28958</ControlLabelId>
-                            <FormId>46600_PurchCopying_803a10b0-f5b5-44ef-84df-1a4b7dda2344</FormId>
-                            <ListContext>InvoiceHeadingGrid</ListContext>
-                            <RowIndex i:nil="true" />
-                            <BoundDataSource>VendInvoiceJour</BoundDataSource>
-                            <BoundProperty>InvoiceMarkAll</BoundProperty>
-                            <ControlName>InvoiceMarkAll</ControlName>
-                            <ControlType>CheckBox</ControlType>
-                            <IsReference>false</IsReference>
-                            <LabelId>@SysTaskRecorder:CheckBox_SetValue</LabelId>
-                            <PropertyName>Value</PropertyName>
-                            <UserActionType>Input</UserActionType>
-                            <Value>True</Value>
-                            <ValueLabel>@SysTaskRecorder:Check</ValueLabel>
-                          </Node>
-                        </Children>
-                        <IsForm>false</IsForm>
-                        <IsStepGroup>false</IsStepGroup>
-                        <Name>InvoiceMarkAll_Value</Name>
-                        <ScopeType>Private</ScopeType>
-                      </Node>
-                      <Node z:Id="i33" i:type="Scope">
-                        <CustomDescription i:nil="true" />
-                        <Description></Description>
-                        <Id>46898_0Click_803a10b0-f5b5-44ef-84df-1a4b7dda2344</Id>
-                        <Parent z:Ref="i30" />
-                        <ParentSequence>80</ParentSequence>
-                        <ScreenshotUri i:nil="true" />
-                        <Sequence>81</Sequence>
-                        <Children>
-                          <Node z:Id="i34" i:type="CommandUserAction">
-                            <CustomDescription i:nil="true" />
-                            <Description>Click OK.</Description>
-                            <Id>46898_0Click_803a10b0-f5b5-44ef-84df-1a4b7dda2344x82</Id>
-                            <Parent z:Ref="i33" />
-                            <ParentSequence>81</ParentSequence>
-                            <ScreenshotUri i:nil="true" />
-                            <Sequence>82</Sequence>
-                            <Annotations />
-                            <GlobalId>5f3fc21b-8b64-4f4e-8a08-94ce2ed9fb3c</GlobalId>
-                            <SystemGenerated>false</SystemGenerated>
-                            <ControlLabel>OK</ControlLabel>
-                            <ControlLabelId></ControlLabelId>
-                            <FormId>46600_PurchCopying_803a10b0-f5b5-44ef-84df-1a4b7dda2344</FormId>
-                            <ListContext i:nil="true" />
-                            <RowIndex i:nil="true" />
-                            <Arguments />
-                            <CommandName>Click</CommandName>
-                            <ControlName>OK</ControlName>
-                            <ControlType>CommandButton</ControlType>
-                            <LabelId i:nil="true" />
-                            <ReturnType>Void</ReturnType>
-                            <ReturnValue i:nil="true" />
-                            <TaskId>263</TaskId>
-                          </Node>
-                        </Children>
-                        <IsForm>false</IsForm>
-                        <IsStepGroup>false</IsStepGroup>
-                        <Name>OK_Click</Name>
-                        <ScopeType>Private</ScopeType>
-                      </Node>
-                    </Children>
-                    <IsForm>true</IsForm>
-                    <IsStepGroup>false</IsStepGroup>
-                    <Name>PurchCopying</Name>
-                    <ScopeType>Public</ScopeType>
-                  </Node>
-                </Children>
-                <IsForm>false</IsForm>
-                <IsStepGroup>false</IsStepGroup>
-                <Name>PurchCreditNoteHeader_Click</Name>
-                <ScopeType>Private</ScopeType>
-              </Node>
-            </Children>
-            <IsForm>true</IsForm>
-            <IsStepGroup>false</IsStepGroup>
-            <Name>PurchTable</Name>
-            <ScopeType>Public</ScopeType>
-          </Node>
-        </Children>
-        <IsForm>false</IsForm>
-        <IsStepGroup>false</IsStepGroup>
-        <Name>MenuItem_purchtablelistpage</Name>
-        <ScopeType>Private</ScopeType>
-      </Node>
-    </Children>
-    <IsForm>false</IsForm>
-    <IsStepGroup>false</IsStepGroup>
-    <Name>PO_credit note</Name>
-    <ScopeType>Public</ScopeType>
-  </RootScope>
-  <UserActions xmlns:d2p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
-    <d2p1:anyType z:Ref="i3" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
-    <d2p1:anyType z:Ref="i6" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
-    <d2p1:anyType z:Ref="i8" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
-    <d2p1:anyType z:Ref="i10" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
-    <d2p1:anyType z:Ref="i13" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
-    <d2p1:anyType z:Ref="i15" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
-    <d2p1:anyType z:Ref="i17" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
-    <d2p1:anyType z:Ref="i19" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
-    <d2p1:anyType z:Ref="i21" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
-    <d2p1:anyType z:Ref="i23" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
-    <d2p1:anyType z:Ref="i25" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
-    <d2p1:anyType z:Ref="i27" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
-    <d2p1:anyType z:Ref="i29" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
-    <d2p1:anyType z:Ref="i32" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
-    <d2p1:anyType z:Ref="i34" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
-  </UserActions>
-  <Version>1</Version>
+<CanonicalId>94a7e3e1-49e4-4b6e-98e4-5fb0b2551a22</CanonicalId>
+<CurrentSequence>24</CurrentSequence>
+<Description/>
+<FormContexts xmlns:d2p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+<d2p1:KeyValueOfstringFormContextyaScvdpM>
+<d2p1:Key>256_VendInvoiceInfoListPage_8d56a50d-db67-4a6d-bb1b-12aea1eda7da</d2p1:Key>
+<d2p1:Value>
+<Annotations>
+<Annotation i:type="FormAnnotation">
+<ConfigurationOwnerName>VendInvoiceInfoListPage</ConfigurationOwnerName>
+<ConfigurationScope>41</ConfigurationScope>
+<FilterCommandName>ApplyFilters</FilterCommandName>
+<FilterControlName>SystemDefinedFilterPane</FilterControlName>
+<FormViewOptionType>0</FormViewOptionType>
+<MenuItemLabel>Pending vendor invoices</MenuItemLabel>
+<MenuItemName>VendInvoiceInfoListPage</MenuItemName>
+<MenuItemType>Display</MenuItemType>
+<PublishedFromConfiguration>0</PublishedFromConfiguration>
+</Annotation>
+</Annotations>
+<FormID>256_VendInvoiceInfoListPage_8d56a50d-db67-4a6d-bb1b-12aea1eda7da</FormID>
+<FormName>VendInvoiceInfoListPage</FormName>
+<HasMetadata>true</HasMetadata>
+<RecordingName>VendInvoiceInfoListPage</RecordingName>
+<Sequence>4</Sequence>
+</d2p1:Value>
+</d2p1:KeyValueOfstringFormContextyaScvdpM>
+</FormContexts>
+<Name>filter_manager_test_1</Name>
+<RootScope xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Id="i1">
+<CustomDescription i:nil="true"/>
+<Description i:nil="true"/>
+<Id>8d56a50d-db67-4a6d-bb1b-12aea1eda7da</Id>
+<Parent i:nil="true"/>
+<ParentSequence>0</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>0</Sequence>
+<Children>
+<Node z:Id="i2" i:type="Scope">
+<CustomDescription i:nil="true"/>
+<Description/>
+<Id>MenuItemvendinvoiceinfolistpage_8d56a50d-db67-4a6d-bb1b-12aea1eda7da</Id>
+<Parent z:Ref="i1"/>
+<ParentSequence>0</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>1</Sequence>
+<Children>
+<Node z:Id="i3" i:type="MenuItemUserAction">
+<CustomDescription i:nil="true"/>
+<Description>Go to Accounts payable > Invoices > Pending vendor invoices.</Description>
+<Id>MenuItemvendinvoiceinfolistpage_8d56a50d-db67-4a6d-bb1b-12aea1eda7dax2</Id>
+<Parent z:Ref="i2"/>
+<ParentSequence>1</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>2</Sequence>
+<Annotations/>
+<GlobalId>824d47cd-d120-4496-a183-2b330687769c</GlobalId>
+<SystemGenerated>false</SystemGenerated>
+<MenuItemName>vendinvoiceinfolistpage</MenuItemName>
+<MenuItemType>Display</MenuItemType>
+<NavigationPath xmlns:d7p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+<d7p1:string>mainmenu</d7p1:string>
+<d7p1:string>AccountsPayable</d7p1:string>
+<d7p1:string>VendorInvoices</d7p1:string>
+</NavigationPath>
+</Node>
+<Node z:Id="i4" i:type="Scope">
+<CustomDescription i:nil="true"/>
+<Description/>
+<Id>256_VendInvoiceInfoListPage_8d56a50d-db67-4a6d-bb1b-12aea1eda7da</Id>
+<Parent z:Ref="i2"/>
+<ParentSequence>1</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>3</Sequence>
+<Children>
+<Node z:Id="i5" i:type="Scope">
+<CustomDescription i:nil="true"/>
+<Description/>
+<Id>SystemDefinedFilterManager_GetFilters_8d56a50d-db67-4a6d-bb1b-12aea1eda7da</Id>
+<Parent z:Ref="i4"/>
+<ParentSequence>5</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>6</Sequence>
+<Children>
+<Node z:Id="i6" i:type="CommandUserAction">
+<CustomDescription i:nil="true"/>
+<Description>Open Invoice column filter.</Description>
+<Id>SystemDefinedFilterManager_GetFilters_8d56a50d-db67-4a6d-bb1b-12aea1eda7dax7</Id>
+<Parent z:Ref="i5"/>
+<ParentSequence>6</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>7</Sequence>
+<Annotations/>
+<GlobalId>d01d0412-9785-4dc3-b31e-3df9908be230</GlobalId>
+<SystemGenerated>false</SystemGenerated>
+<ControlLabel/>
+<ControlLabelId/>
+<FormId>256_VendInvoiceInfoListPage_8d56a50d-db67-4a6d-bb1b-12aea1eda7da</FormId>
+<ListContext i:nil="true"/>
+<RowIndex i:nil="true"/>
+<Arguments>
+<CommandArgument>
+<IsReference>false</IsReference>
+<Value>[{"Capability":null,"DataSourceName":"","FieldArrayIndex":1,"FieldName":"Num","FormDataSourceName":"VendInvoiceInfoTable","IsEditable":"Yes","IsQueryFilter":"Yes","MasterFormDataSourceName":"","Operator":"Matches","RecordingReferences":[],"SFKReplacementFieldBinding":"","TableId":0,"Values":[""],"Version":2}]</Value>
+</CommandArgument>
+<CommandArgument>
+<IsReference>false</IsReference>
+<Value>VendInvoiceInfoTable_Num</Value>
+</CommandArgument>
+<CommandArgument>
+<IsReference>false</IsReference>
+<Value>Invoice</Value>
+</CommandArgument>
+</Arguments>
+<CommandName>GetFilters</CommandName>
+<ControlName>SystemDefinedFilterManager</ControlName>
+<ControlType>FilterManager</ControlType>
+<LabelId i:nil="true"/>
+<ReturnType>Void</ReturnType>
+<ReturnValue/>
+<TaskId i:nil="true"/>
+</Node>
+</Children>
+<IsForm>false</IsForm>
+<IsStepGroup>false</IsStepGroup>
+<Name>SystemDefinedFilterManager_GetFilters</Name>
+<ScopeType>Private</ScopeType>
+</Node>
+<Node z:Id="i7" i:type="Scope">
+<CustomDescription i:nil="true"/>
+<Description/>
+<Id>SystemDefinedFilterManager_ApplyFiltersForTaskRecorder_8d56a50d-db67-4a6d-bb1b-12aea1eda7da</Id>
+<Parent z:Ref="i4"/>
+<ParentSequence>5</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>8</Sequence>
+<Children>
+<Node z:Id="i8" i:type="CommandUserAction">
+<CustomDescription i:nil="true"/>
+<Description>Enter a filter value of "100" on the "Invoice" field using the "contains" filter operator.</Description>
+<Id>SystemDefinedFilterManager_ApplyFiltersForTaskRecorder_8d56a50d-db67-4a6d-bb1b-12aea1eda7dax9</Id>
+<Parent z:Ref="i7"/>
+<ParentSequence>8</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>9</Sequence>
+<Annotations/>
+<GlobalId>781b9252-366a-47b9-9146-ae857460a430</GlobalId>
+<SystemGenerated>false</SystemGenerated>
+<ControlLabel/>
+<ControlLabelId/>
+<FormId>256_VendInvoiceInfoListPage_8d56a50d-db67-4a6d-bb1b-12aea1eda7da</FormId>
+<ListContext i:nil="true"/>
+<RowIndex i:nil="true"/>
+<Arguments>
+<CommandArgument>
+<IsReference>false</IsReference>
+<Value>[{"Capability":{"DisplayDataType":"String","DomainValues":null,"FieldId":0,"FieldLabel":"Invoice","FieldName":"","RelationLabel":"","SFKReplacementFieldBinding":"","ShowLookup":false,"TableId":0,"Version":2},"DataSourceName":"VendInvoiceInfoTable","FieldArrayIndex":1,"FieldName":"Num","FormDataSourceName":"VendInvoiceInfoTable","IsEditable":"Yes","IsQueryFilter":"Yes","MasterFormDataSourceName":"VendInvoiceInfoTable","Operator":"Contains","RecordingReferences":[],"SFKReplacementFieldBinding":"","TableId":3490,"Values":["100"],"Version":2}]</Value>
+</CommandArgument>
+<CommandArgument>
+<IsReference>false</IsReference>
+<Value>1</Value>
+</CommandArgument>
+<CommandArgument>
+<IsReference>false</IsReference>
+<Value>35</Value>
+</CommandArgument>
+<CommandArgument>
+<IsReference>false</IsReference>
+<Value>Enter a filter value of "100" on the "Invoice" field using the "contains" filter operator.</Value>
+</CommandArgument>
+<CommandArgument>
+<IsReference>false</IsReference>
+<Value>[{"FieldLabel":"Invoice","OperatorLabel":"contains","Values":"100"}]</Value>
+</CommandArgument>
+</Arguments>
+<CommandName>ApplyFiltersForTaskRecorder</CommandName>
+<ControlName>SystemDefinedFilterManager</ControlName>
+<ControlType>FilterManager</ControlType>
+<LabelId i:nil="true"/>
+<ReturnType>Void</ReturnType>
+<ReturnValue/>
+<TaskId i:nil="true"/>
+</Node>
+</Children>
+<IsForm>false</IsForm>
+<IsStepGroup>false</IsStepGroup>
+<Name>SystemDefinedFilterManager_ApplyFiltersForTaskRecorder</Name>
+<ScopeType>Private</ScopeType>
+</Node>
+<Node z:Id="i9" i:type="Scope">
+<CustomDescription i:nil="true"/>
+<Description/>
+<Id>SystemDefinedFilterManager_GetFilters_8d56a50d-db67-4a6d-bb1b-12aea1eda7da</Id>
+<Parent z:Ref="i4"/>
+<ParentSequence>5</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>10</Sequence>
+<Children>
+<Node z:Id="i10" i:type="CommandUserAction">
+<CustomDescription i:nil="true"/>
+<Description>Open Invoice column filter.</Description>
+<Id>SystemDefinedFilterManager_GetFilters_8d56a50d-db67-4a6d-bb1b-12aea1eda7dax11</Id>
+<Parent z:Ref="i9"/>
+<ParentSequence>10</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>11</Sequence>
+<Annotations/>
+<GlobalId>be896387-4f5f-4087-8e23-782c814b717f</GlobalId>
+<SystemGenerated>false</SystemGenerated>
+<ControlLabel/>
+<ControlLabelId/>
+<FormId>256_VendInvoiceInfoListPage_8d56a50d-db67-4a6d-bb1b-12aea1eda7da</FormId>
+<ListContext i:nil="true"/>
+<RowIndex i:nil="true"/>
+<Arguments>
+<CommandArgument>
+<IsReference>false</IsReference>
+<Value>[{"Capability":null,"DataSourceName":"","FieldArrayIndex":1,"FieldName":"Num","FormDataSourceName":"VendInvoiceInfoTable","IsEditable":"Yes","IsQueryFilter":"Yes","MasterFormDataSourceName":"","Operator":"Matches","RecordingReferences":[],"SFKReplacementFieldBinding":"","TableId":0,"Values":[""],"Version":2}]</Value>
+</CommandArgument>
+<CommandArgument>
+<IsReference>false</IsReference>
+<Value>VendInvoiceInfoTable_Num</Value>
+</CommandArgument>
+<CommandArgument>
+<IsReference>false</IsReference>
+<Value>Invoice</Value>
+</CommandArgument>
+</Arguments>
+<CommandName>GetFilters</CommandName>
+<ControlName>SystemDefinedFilterManager</ControlName>
+<ControlType>FilterManager</ControlType>
+<LabelId i:nil="true"/>
+<ReturnType>Void</ReturnType>
+<ReturnValue/>
+<TaskId i:nil="true"/>
+</Node>
+</Children>
+<IsForm>false</IsForm>
+<IsStepGroup>false</IsStepGroup>
+<Name>SystemDefinedFilterManager_GetFilters</Name>
+<ScopeType>Private</ScopeType>
+</Node>
+<Node z:Id="i11" i:type="Scope">
+<CustomDescription i:nil="true"/>
+<Description/>
+<Id>SystemDefinedFilterManager_SetSortsForTaskRecorder_8d56a50d-db67-4a6d-bb1b-12aea1eda7da</Id>
+<Parent z:Ref="i4"/>
+<ParentSequence>5</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>12</Sequence>
+<Children>
+<Node z:Id="i12" i:type="CommandUserAction">
+<CustomDescription i:nil="true"/>
+<Description>Sort Z to A</Description>
+<Id>SystemDefinedFilterManager_SetSortsForTaskRecorder_8d56a50d-db67-4a6d-bb1b-12aea1eda7dax13</Id>
+<Parent z:Ref="i11"/>
+<ParentSequence>12</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>13</Sequence>
+<Annotations/>
+<GlobalId>8cf3ece2-c7ed-4bee-9dd5-87fbfeff1431</GlobalId>
+<SystemGenerated>false</SystemGenerated>
+<ControlLabel/>
+<ControlLabelId/>
+<FormId>256_VendInvoiceInfoListPage_8d56a50d-db67-4a6d-bb1b-12aea1eda7da</FormId>
+<ListContext i:nil="true"/>
+<RowIndex i:nil="true"/>
+<Arguments>
+<CommandArgument>
+<IsReference>false</IsReference>
+<Value>[{"Capability":{"DisplayDataType":"String","DomainValues":null,"FieldId":0,"FieldLabel":"Invoice","FieldName":"","RelationLabel":"","SFKReplacementFieldBinding":"","ShowLookup":false,"TableId":0,"Version":2},"DataSourceName":"VendInvoiceInfoTable","FieldArrayIndex":1,"FieldName":"Num","FormDataSourceName":"VendInvoiceInfoTable","IsEditable":"Yes","IsQueryFilter":"Yes","MasterFormDataSourceName":"VendInvoiceInfoTable","Operator":"Contains","RecordingReferences":[],"SFKReplacementFieldBinding":"","TableId":3490,"Values":["100"],"Version":2}]</Value>
+</CommandArgument>
+<CommandArgument>
+<IsReference>false</IsReference>
+<Value>["0"]</Value>
+</CommandArgument>
+<CommandArgument>
+<IsReference>false</IsReference>
+<Value>1</Value>
+</CommandArgument>
+<CommandArgument>
+<IsReference>false</IsReference>
+<Value>2</Value>
+</CommandArgument>
+<CommandArgument>
+<IsReference>false</IsReference>
+<Value>35</Value>
+</CommandArgument>
+<CommandArgument>
+<IsReference>false</IsReference>
+<Value>Sort Z to A</Value>
+</CommandArgument>
+</Arguments>
+<CommandName>SetSortsForTaskRecorder</CommandName>
+<ControlName>SystemDefinedFilterManager</ControlName>
+<ControlType>FilterManager</ControlType>
+<LabelId i:nil="true"/>
+<ReturnType>Void</ReturnType>
+<ReturnValue/>
+<TaskId i:nil="true"/>
+</Node>
+</Children>
+<IsForm>false</IsForm>
+<IsStepGroup>false</IsStepGroup>
+<Name>SystemDefinedFilterManager_SetSortsForTaskRecorder</Name>
+<ScopeType>Private</ScopeType>
+</Node>
+<Node z:Id="i13" i:type="Scope">
+<CustomDescription i:nil="true"/>
+<Description/>
+<Id>SystemDefinedFilterManager_GetFilters_8d56a50d-db67-4a6d-bb1b-12aea1eda7da</Id>
+<Parent z:Ref="i4"/>
+<ParentSequence>5</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>14</Sequence>
+<Children>
+<Node z:Id="i14" i:type="CommandUserAction">
+<CustomDescription i:nil="true"/>
+<Description>Open Company column filter.</Description>
+<Id>SystemDefinedFilterManager_GetFilters_8d56a50d-db67-4a6d-bb1b-12aea1eda7dax15</Id>
+<Parent z:Ref="i13"/>
+<ParentSequence>14</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>15</Sequence>
+<Annotations/>
+<GlobalId>f613b30a-d7a7-4bdc-b002-d5285d5908c3</GlobalId>
+<SystemGenerated>false</SystemGenerated>
+<ControlLabel/>
+<ControlLabelId/>
+<FormId>256_VendInvoiceInfoListPage_8d56a50d-db67-4a6d-bb1b-12aea1eda7da</FormId>
+<ListContext i:nil="true"/>
+<RowIndex i:nil="true"/>
+<Arguments>
+<CommandArgument>
+<IsReference>false</IsReference>
+<Value>[{"Capability":null,"DataSourceName":"","FieldArrayIndex":1,"FieldName":"dataAreaId","FormDataSourceName":"VendInvoiceInfoTable","IsEditable":"Yes","IsQueryFilter":"Yes","MasterFormDataSourceName":"","Operator":"Matches","RecordingReferences":[],"SFKReplacementFieldBinding":"","TableId":0,"Values":[""],"Version":2}]</Value>
+</CommandArgument>
+<CommandArgument>
+<IsReference>false</IsReference>
+<Value>VendInvoiceInfoTable_dataAreaId</Value>
+</CommandArgument>
+<CommandArgument>
+<IsReference>false</IsReference>
+<Value>Company</Value>
+</CommandArgument>
+</Arguments>
+<CommandName>GetFilters</CommandName>
+<ControlName>SystemDefinedFilterManager</ControlName>
+<ControlType>FilterManager</ControlType>
+<LabelId i:nil="true"/>
+<ReturnType>Void</ReturnType>
+<ReturnValue/>
+<TaskId i:nil="true"/>
+</Node>
+</Children>
+<IsForm>false</IsForm>
+<IsStepGroup>false</IsStepGroup>
+<Name>SystemDefinedFilterManager_GetFilters</Name>
+<ScopeType>Private</ScopeType>
+</Node>
+<Node z:Id="i15" i:type="Scope">
+<CustomDescription i:nil="true"/>
+<Description/>
+<Id>SystemDefinedFilterManager_SetSortsForTaskRecorder_8d56a50d-db67-4a6d-bb1b-12aea1eda7da</Id>
+<Parent z:Ref="i4"/>
+<ParentSequence>5</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>16</Sequence>
+<Children>
+<Node z:Id="i16" i:type="CommandUserAction">
+<CustomDescription i:nil="true"/>
+<Description>Sort Z to A</Description>
+<Id>SystemDefinedFilterManager_SetSortsForTaskRecorder_8d56a50d-db67-4a6d-bb1b-12aea1eda7dax17</Id>
+<Parent z:Ref="i15"/>
+<ParentSequence>16</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>17</Sequence>
+<Annotations/>
+<GlobalId>71ae7c1d-cfa4-44d8-a864-79c2528fca9c</GlobalId>
+<SystemGenerated>false</SystemGenerated>
+<ControlLabel/>
+<ControlLabelId/>
+<FormId>256_VendInvoiceInfoListPage_8d56a50d-db67-4a6d-bb1b-12aea1eda7da</FormId>
+<ListContext i:nil="true"/>
+<RowIndex i:nil="true"/>
+<Arguments>
+<CommandArgument>
+<IsReference>false</IsReference>
+<Value>[{"Capability":{"DisplayDataType":"String","DomainValues":null,"FieldId":0,"FieldLabel":"Company","FieldName":"","RelationLabel":"","SFKReplacementFieldBinding":"","ShowLookup":false,"TableId":0,"Version":2},"DataSourceName":"VendInvoiceInfoTable","FieldArrayIndex":1,"FieldName":"dataAreaId","FormDataSourceName":"VendInvoiceInfoTable","IsEditable":"Yes","IsQueryFilter":"Yes","MasterFormDataSourceName":"VendInvoiceInfoTable","Operator":"IsOneOf","RecordingReferences":[],"SFKReplacementFieldBinding":"","TableId":3490,"Values":["DAT","CNMF"],"Version":2}]</Value>
+</CommandArgument>
+<CommandArgument>
+<IsReference>false</IsReference>
+<Value>["0"]</Value>
+</CommandArgument>
+<CommandArgument>
+<IsReference>false</IsReference>
+<Value>1</Value>
+</CommandArgument>
+<CommandArgument>
+<IsReference>false</IsReference>
+<Value>2</Value>
+</CommandArgument>
+<CommandArgument>
+<IsReference>false</IsReference>
+<Value>62</Value>
+</CommandArgument>
+<CommandArgument>
+<IsReference>false</IsReference>
+<Value>Sort Z to A</Value>
+</CommandArgument>
+</Arguments>
+<CommandName>SetSortsForTaskRecorder</CommandName>
+<ControlName>SystemDefinedFilterManager</ControlName>
+<ControlType>FilterManager</ControlType>
+<LabelId i:nil="true"/>
+<ReturnType>Void</ReturnType>
+<ReturnValue/>
+<TaskId i:nil="true"/>
+</Node>
+</Children>
+<IsForm>false</IsForm>
+<IsStepGroup>false</IsStepGroup>
+<Name>SystemDefinedFilterManager_SetSortsForTaskRecorder</Name>
+<ScopeType>Private</ScopeType>
+</Node>
+<Node z:Id="i17" i:type="Scope">
+<CustomDescription i:nil="true"/>
+<Description/>
+<Id>SystemDefinedFilterManager_GetFilters_8d56a50d-db67-4a6d-bb1b-12aea1eda7da</Id>
+<Parent z:Ref="i4"/>
+<ParentSequence>5</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>18</Sequence>
+<Children>
+<Node z:Id="i18" i:type="CommandUserAction">
+<CustomDescription i:nil="true"/>
+<Description>Open Name column filter.</Description>
+<Id>SystemDefinedFilterManager_GetFilters_8d56a50d-db67-4a6d-bb1b-12aea1eda7dax19</Id>
+<Parent z:Ref="i17"/>
+<ParentSequence>18</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>19</Sequence>
+<Annotations/>
+<GlobalId>90f0fb2c-d54d-415b-9b56-0d8305aee2b3</GlobalId>
+<SystemGenerated>false</SystemGenerated>
+<ControlLabel/>
+<ControlLabelId/>
+<FormId>256_VendInvoiceInfoListPage_8d56a50d-db67-4a6d-bb1b-12aea1eda7da</FormId>
+<ListContext i:nil="true"/>
+<RowIndex i:nil="true"/>
+<Arguments>
+<CommandArgument>
+<IsReference>false</IsReference>
+<Value>[{"Capability":null,"DataSourceName":"","FieldArrayIndex":1,"FieldName":"PurchName","FormDataSourceName":"VendInvoiceInfoTable","IsEditable":"Yes","IsQueryFilter":"Yes","MasterFormDataSourceName":"","Operator":"Matches","RecordingReferences":[],"SFKReplacementFieldBinding":"","TableId":0,"Values":[""],"Version":2}]</Value>
+</CommandArgument>
+<CommandArgument>
+<IsReference>false</IsReference>
+<Value>VendInvoiceInfoTable_PurchName</Value>
+</CommandArgument>
+<CommandArgument>
+<IsReference>false</IsReference>
+<Value>Name</Value>
+</CommandArgument>
+</Arguments>
+<CommandName>GetFilters</CommandName>
+<ControlName>SystemDefinedFilterManager</ControlName>
+<ControlType>FilterManager</ControlType>
+<LabelId i:nil="true"/>
+<ReturnType>Void</ReturnType>
+<ReturnValue/>
+<TaskId i:nil="true"/>
+</Node>
+</Children>
+<IsForm>false</IsForm>
+<IsStepGroup>false</IsStepGroup>
+<Name>SystemDefinedFilterManager_GetFilters</Name>
+<ScopeType>Private</ScopeType>
+</Node>
+<Node z:Id="i19" i:type="Scope">
+<CustomDescription i:nil="true"/>
+<Description/>
+<Id>SystemDefinedFilterManager_ApplyFiltersForTaskRecorder_8d56a50d-db67-4a6d-bb1b-12aea1eda7da</Id>
+<Parent z:Ref="i4"/>
+<ParentSequence>5</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>20</Sequence>
+<Children>
+<Node z:Id="i20" i:type="CommandUserAction">
+<CustomDescription i:nil="true"/>
+<Description>Enter a filter value of "1" on the "Name" field using the "does not contain" filter operator.</Description>
+<Id>SystemDefinedFilterManager_ApplyFiltersForTaskRecorder_8d56a50d-db67-4a6d-bb1b-12aea1eda7dax21</Id>
+<Parent z:Ref="i19"/>
+<ParentSequence>20</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>21</Sequence>
+<Annotations/>
+<GlobalId>45798fa1-328a-4660-b2b7-af5f61b45464</GlobalId>
+<SystemGenerated>false</SystemGenerated>
+<ControlLabel/>
+<ControlLabelId/>
+<FormId>256_VendInvoiceInfoListPage_8d56a50d-db67-4a6d-bb1b-12aea1eda7da</FormId>
+<ListContext i:nil="true"/>
+<RowIndex i:nil="true"/>
+<Arguments>
+<CommandArgument>
+<IsReference>false</IsReference>
+<Value>[{"Capability":{"DisplayDataType":"String","DomainValues":null,"FieldId":0,"FieldLabel":"Name","FieldName":"","RelationLabel":"","SFKReplacementFieldBinding":"","ShowLookup":false,"TableId":0,"Version":2},"DataSourceName":"VendInvoiceInfoTable","FieldArrayIndex":1,"FieldName":"PurchName","FormDataSourceName":"VendInvoiceInfoTable","IsEditable":"Yes","IsQueryFilter":"Yes","MasterFormDataSourceName":"VendInvoiceInfoTable","Operator":"DoesNotContain","RecordingReferences":[],"SFKReplacementFieldBinding":"","TableId":3490,"Values":["1"],"Version":2}]</Value>
+</CommandArgument>
+<CommandArgument>
+<IsReference>false</IsReference>
+<Value>1</Value>
+</CommandArgument>
+<CommandArgument>
+<IsReference>false</IsReference>
+<Value>74</Value>
+</CommandArgument>
+<CommandArgument>
+<IsReference>false</IsReference>
+<Value>Enter a filter value of "1" on the "Name" field using the "does not contain" filter operator.</Value>
+</CommandArgument>
+<CommandArgument>
+<IsReference>false</IsReference>
+<Value>[{"FieldLabel":"Name","OperatorLabel":"does not contain","Values":"1"}]</Value>
+</CommandArgument>
+</Arguments>
+<CommandName>ApplyFiltersForTaskRecorder</CommandName>
+<ControlName>SystemDefinedFilterManager</ControlName>
+<ControlType>FilterManager</ControlType>
+<LabelId i:nil="true"/>
+<ReturnType>Void</ReturnType>
+<ReturnValue/>
+<TaskId i:nil="true"/>
+</Node>
+</Children>
+<IsForm>false</IsForm>
+<IsStepGroup>false</IsStepGroup>
+<Name>SystemDefinedFilterManager_ApplyFiltersForTaskRecorder</Name>
+<ScopeType>Private</ScopeType>
+</Node>
+<Node z:Id="i21" i:type="Scope">
+<CustomDescription i:nil="true"/>
+<Description/>
+<Id>SystemDefinedFilterManager_GetFilters_8d56a50d-db67-4a6d-bb1b-12aea1eda7da</Id>
+<Parent z:Ref="i4"/>
+<ParentSequence>5</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>22</Sequence>
+<Children>
+<Node z:Id="i22" i:type="CommandUserAction">
+<CustomDescription i:nil="true"/>
+<Description>Open Invoice received date column filter.</Description>
+<Id>SystemDefinedFilterManager_GetFilters_8d56a50d-db67-4a6d-bb1b-12aea1eda7dax23</Id>
+<Parent z:Ref="i21"/>
+<ParentSequence>22</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>23</Sequence>
+<Annotations/>
+<GlobalId>ef1e15b0-e6c9-43bb-85fc-8a5f3b260ecf</GlobalId>
+<SystemGenerated>false</SystemGenerated>
+<ControlLabel/>
+<ControlLabelId/>
+<FormId>256_VendInvoiceInfoListPage_8d56a50d-db67-4a6d-bb1b-12aea1eda7da</FormId>
+<ListContext i:nil="true"/>
+<RowIndex i:nil="true"/>
+<Arguments>
+<CommandArgument>
+<IsReference>false</IsReference>
+<Value>[{"Capability":null,"DataSourceName":"","FieldArrayIndex":1,"FieldName":"ReceivedDate","FormDataSourceName":"VendInvoiceInfoTable","IsEditable":"Yes","IsQueryFilter":"Yes","MasterFormDataSourceName":"","Operator":"Matches","RecordingReferences":[],"SFKReplacementFieldBinding":"","TableId":0,"Values":[""],"Version":2}]</Value>
+</CommandArgument>
+<CommandArgument>
+<IsReference>false</IsReference>
+<Value>VendInvoiceInfoTable_ReceivedDate</Value>
+</CommandArgument>
+<CommandArgument>
+<IsReference>false</IsReference>
+<Value>Invoice received date</Value>
+</CommandArgument>
+</Arguments>
+<CommandName>GetFilters</CommandName>
+<ControlName>SystemDefinedFilterManager</ControlName>
+<ControlType>FilterManager</ControlType>
+<LabelId i:nil="true"/>
+<ReturnType>Void</ReturnType>
+<ReturnValue/>
+<TaskId i:nil="true"/>
+</Node>
+<Node z:Id="i23" i:type="CommandUserAction">
+<CustomDescription i:nil="true"/>
+<Description>Open Invoice date column filter.</Description>
+<Id>SystemDefinedFilterManager_GetFilters_8d56a50d-db67-4a6d-bb1b-12aea1eda7dax24</Id>
+<Parent z:Ref="i21"/>
+<ParentSequence>22</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>24</Sequence>
+<Annotations/>
+<GlobalId>ae20ba84-05a3-450c-86da-bd07ad114090</GlobalId>
+<SystemGenerated>false</SystemGenerated>
+<ControlLabel/>
+<ControlLabelId/>
+<FormId>256_VendInvoiceInfoListPage_8d56a50d-db67-4a6d-bb1b-12aea1eda7da</FormId>
+<ListContext i:nil="true"/>
+<RowIndex i:nil="true"/>
+<Arguments>
+<CommandArgument>
+<IsReference>false</IsReference>
+<Value>[{"Capability":null,"DataSourceName":"","FieldArrayIndex":1,"FieldName":"DocumentDate","FormDataSourceName":"VendInvoiceInfoTable","IsEditable":"Yes","IsQueryFilter":"Yes","MasterFormDataSourceName":"","Operator":"Matches","RecordingReferences":[],"SFKReplacementFieldBinding":"","TableId":0,"Values":[""],"Version":2}]</Value>
+</CommandArgument>
+<CommandArgument>
+<IsReference>false</IsReference>
+<Value>VendInvoiceInfoTable_DocumentDate</Value>
+</CommandArgument>
+<CommandArgument>
+<IsReference>false</IsReference>
+<Value>Invoice date</Value>
+</CommandArgument>
+</Arguments>
+<CommandName>GetFilters</CommandName>
+<ControlName>SystemDefinedFilterManager</ControlName>
+<ControlType>FilterManager</ControlType>
+<LabelId i:nil="true"/>
+<ReturnType>Void</ReturnType>
+<ReturnValue/>
+<TaskId i:nil="true"/>
+</Node>
+</Children>
+<IsForm>false</IsForm>
+<IsStepGroup>false</IsStepGroup>
+<Name>SystemDefinedFilterManager_GetFilters</Name>
+<ScopeType>Private</ScopeType>
+</Node>
+</Children>
+<IsForm>true</IsForm>
+<IsStepGroup>false</IsStepGroup>
+<Name>VendInvoiceInfoListPage</Name>
+<ScopeType>Public</ScopeType>
+</Node>
+</Children>
+<IsForm>false</IsForm>
+<IsStepGroup>false</IsStepGroup>
+<Name>MenuItem_vendinvoiceinfolistpage</Name>
+<ScopeType>Private</ScopeType>
+</Node>
+</Children>
+<IsForm>false</IsForm>
+<IsStepGroup>false</IsStepGroup>
+<Name>filter_manager_test_1</Name>
+<ScopeType>Public</ScopeType>
+</RootScope>
+<UserActions xmlns:d2p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+<d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i3"/>
+<d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i6"/>
+<d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i8"/>
+<d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i10"/>
+<d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i12"/>
+<d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i14"/>
+<d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i16"/>
+<d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i18"/>
+<d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i20"/>
+<d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i22"/>
+<d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i23"/>
+</UserActions>
+<Version>1</Version>
 </Recording>

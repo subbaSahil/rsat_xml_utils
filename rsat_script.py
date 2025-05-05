@@ -13,66 +13,142 @@ login.login(driver)
 
 locator = ""
 
+filter_manager_cloumn_last_opened = ""
+column_to_open = ""
 Interactions.wait_and_click(driver, By.XPATH, "//div[@aria-label='Modules']")
+
 # Clicking navigation: Accounts payable
 Interactions.wait_and_click(driver, By.XPATH, "//a[@data-dyn-title='Accounts payable']")
 time.sleep(1)
 
-# Clicking navigation: Purchase orders
-Interactions.wait_and_click(driver, By.XPATH, "//a[@data-dyn-title='Purchase orders']")
+# Clicking navigation: Invoices
+Interactions.wait_and_click(driver, By.XPATH, "//a[@data-dyn-title='Invoices']")
 time.sleep(1)
 
-# Clicking navigation: All purchase orders
-Interactions.wait_and_click(driver, By.XPATH, "//a[@data-dyn-title='All purchase orders']")
+# Clicking navigation: Pending vendor invoices
+Interactions.wait_and_click(driver, By.XPATH, "//a[@data-dyn-title='Pending vendor invoices']")
 time.sleep(1)
 
-# Clicking (default) on: PurchOrder
-Interactions.wait_and_click(driver, By.XPATH, "//div[@data-dyn-controlname='PurchOrder']")
-# Clicking (default) on: PurchCopyJournalHeader
-Interactions.wait_and_click(driver, By.XPATH, "//button[@data-dyn-controlname='PurchCopyJournalHeader']")
-# Clicking checkbox: CopyMarkup
-if(Interactions.check_element_exist(driver, By.XPATH, "//label[contains(text(),'Copy charges')]/following-sibling::div/span[1]")):
-    Interactions.wait_and_click(driver, By.XPATH, "//label[contains(text(),'Copy charges')]/following-sibling::div/span[1]")
-elif(Interactions.check_element_exist(driver, By.XPATH, "//span[contains(@id, 'CopyMarkup') and (@class='toggle-box' or @class='checkBox')]")):
-    Interactions.wait_and_click(driver, By.XPATH, "//span[contains(@id, 'CopyMarkup') and (@class='toggle-box' or @class='checkBox')]")
-# Clicking checkbox: CopyPrecisely
-if(Interactions.check_element_exist(driver, By.XPATH, "//label[contains(text(),'Copy precisely')]/following-sibling::div/span[1]")):
-    Interactions.wait_and_click(driver, By.XPATH, "//label[contains(text(),'Copy precisely')]/following-sibling::div/span[1]")
-elif(Interactions.check_element_exist(driver, By.XPATH, "//span[contains(@id, 'CopyPrecisely') and (@class='toggle-box' or @class='checkBox')]")):
-    Interactions.wait_and_click(driver, By.XPATH, "//span[contains(@id, 'CopyPrecisely') and (@class='toggle-box' or @class='checkBox')]")
-# Clicking checkbox: RecalculateAmount
-if(Interactions.check_element_exist(driver, By.XPATH, "//label[contains(text(),'Recalculate price')]/following-sibling::div/span[1]")):
-    Interactions.wait_and_click(driver, By.XPATH, "//label[contains(text(),'Recalculate price')]/following-sibling::div/span[1]")
-elif(Interactions.check_element_exist(driver, By.XPATH, "//span[contains(@id, 'RecalculateAmount') and (@class='toggle-box' or @class='checkBox')]")):
-    Interactions.wait_and_click(driver, By.XPATH, "//span[contains(@id, 'RecalculateAmount') and (@class='toggle-box' or @class='checkBox')]")
-# Clicking checkbox: CopyHeader
-if(Interactions.check_element_exist(driver, By.XPATH, "//label[contains(text(),'Copy order header')]/following-sibling::div/span[1]")):
-    Interactions.wait_and_click(driver, By.XPATH, "//label[contains(text(),'Copy order header')]/following-sibling::div/span[1]")
-elif(Interactions.check_element_exist(driver, By.XPATH, "//span[contains(@id, 'CopyHeader') and (@class='toggle-box' or @class='checkBox')]")):
-    Interactions.wait_and_click(driver, By.XPATH, "//span[contains(@id, 'CopyHeader') and (@class='toggle-box' or @class='checkBox')]")
-# Clicking checkbox: PurchOrderMarkAll
-if(Interactions.check_element_exist(driver, By.XPATH, "//label[contains(text(),'Select all')]/following-sibling::div/span[1]")):
-    Interactions.wait_and_click(driver, By.XPATH, "//label[contains(text(),'Select all')]/following-sibling::div/span[1]")
-elif(Interactions.check_element_exist(driver, By.XPATH, "//span[contains(@id, 'PurchOrderMarkAll') and (@class='toggle-box' or @class='checkBox')]")):
-    Interactions.wait_and_click(driver, By.XPATH, "//span[contains(@id, 'PurchOrderMarkAll') and (@class='toggle-box' or @class='checkBox')]")
-# Clicking checkbox: PackingSlipMarkAll
-if(Interactions.check_element_exist(driver, By.XPATH, "//label[contains(text(),'Select all')]/following-sibling::div/span[1]")):
-    Interactions.wait_and_click(driver, By.XPATH, "//label[contains(text(),'Select all')]/following-sibling::div/span[1]")
-elif(Interactions.check_element_exist(driver, By.XPATH, "//span[contains(@id, 'PackingSlipMarkAll') and (@class='toggle-box' or @class='checkBox')]")):
-    Interactions.wait_and_click(driver, By.XPATH, "//span[contains(@id, 'PackingSlipMarkAll') and (@class='toggle-box' or @class='checkBox')]")
-# Clicking button: OK
-Interactions.wait_and_click(driver, By.XPATH, "//button[@data-dyn-controlname='OK']")
-# Clicking (default) on: Purchase
-Interactions.wait_and_click(driver, By.XPATH, "//div[@data-dyn-controlname='Purchase']")
-# Clicking (default) on: PurchCreditNoteHeader
-Interactions.wait_and_click(driver, By.XPATH, "//button[@data-dyn-controlname='PurchCreditNoteHeader']")
-# Clicking checkbox: InvoiceMarkAll
-if(Interactions.check_element_exist(driver, By.XPATH, "//label[contains(text(),'Select all')]/following-sibling::div/span[1]")):
-    Interactions.wait_and_click(driver, By.XPATH, "//label[contains(text(),'Select all')]/following-sibling::div/span[1]")
-elif(Interactions.check_element_exist(driver, By.XPATH, "//span[contains(@id, 'InvoiceMarkAll') and (@class='toggle-box' or @class='checkBox')]")):
-    Interactions.wait_and_click(driver, By.XPATH, "//span[contains(@id, 'InvoiceMarkAll') and (@class='toggle-box' or @class='checkBox')]")
-# Clicking button: OK
-Interactions.wait_and_click(driver, By.XPATH, "//button[@data-dyn-controlname='OK']")
+# Clicking filter manager: SystemDefinedFilterManager
+column_to_open = "Invoice"
+open_divs = driver.find_elements(By.XPATH, "//div/parent::div[contains(@class, 'dyn-headerCell')]")
+filter_manager_cloumn_last_opened = ''
+for i, div in enumerate(open_divs, start=1):
+    class_attr = div.get_attribute('class')
+    if 'hasOpenPopup' in class_attr:
+        filter_manager_cloumn_last_opened = Interactions.get_element_text(driver, By.XPATH, f"(//div/parent::div[contains(@class, 'dyn-headerCell')])[{i}]")
+        print(f"filter_manager_cloumn_last_opened: {filter_manager_cloumn_last_opened}")
+        break
+if filter_manager_cloumn_last_opened == 'Invoice' and filter_manager_cloumn_last_opened != '':
+    Interactions.wait_and_click(driver, By.XPATH, "//div[text()='Invoice']")
+    Interactions.wait_and_click(driver, By.XPATH, "//div[text()='Invoice']")
+else:
+    Interactions.wait_and_click(driver, By.XPATH, "//div[text()='Invoice']")
+filter_manager_data = Interactions.extract_value_and_operator_from_description("Enter a filter value of '100' on the 'Invoice' field using the 'contains' filter operator.")
+operator = filter_manager_data['operator']
+new_val = filter_manager_data['value']
+field_name = filter_manager_data['field_name']
+drop_down_item = "//span[text()='"+operator+"']/ancestor::button[contains(@class,'button flyout-menuItem')]"
+print(drop_down_item)
+input_field = "//input[contains(@aria-label,'Filter field: "+field_name+",')]"
+apply_button = "//input[contains(@aria-label,'Filter field: "+field_name+", operator: ')]//ancestor::div/child::div[@class='columnHeaderPopup-buttons']//span[text()='Apply']/ancestor::button"
+dropDown_button = "//span[contains(@class,'button-label-dropDown')]/ancestor::button[contains(@class,'dynamicsButton')][ancestor::div[@class='filterFieldContainer']//input[contains(@aria-label,'Filter field: "+field_name+"')]]"
+Interactions.wait_and_click(driver, By.XPATH, dropDown_button)
+Interactions.wait_and_click(driver, By.XPATH, drop_down_item)
+Interactions.wait_and_send_keys(driver, By.XPATH, input_field, new_val)
+Interactions.wait_and_click(driver, By.XPATH, apply_button)
+# Clicking filter manager: SystemDefinedFilterManager
+column_to_open = "Invoice"
+open_divs = driver.find_elements(By.XPATH, "//div/parent::div[contains(@class, 'dyn-headerCell')]")
+filter_manager_cloumn_last_opened = ''
+for i, div in enumerate(open_divs, start=1):
+    class_attr = div.get_attribute('class')
+    if 'hasOpenPopup' in class_attr:
+        filter_manager_cloumn_last_opened = Interactions.get_element_text(driver, By.XPATH, f"(//div/parent::div[contains(@class, 'dyn-headerCell')])[{i}]")
+        print(f"filter_manager_cloumn_last_opened: {filter_manager_cloumn_last_opened}")
+        break
+if filter_manager_cloumn_last_opened == 'Invoice' and filter_manager_cloumn_last_opened != '':
+    Interactions.wait_and_click(driver, By.XPATH, "//div[text()='Invoice']")
+    Interactions.wait_and_click(driver, By.XPATH, "//div[text()='Invoice']")
+else:
+    Interactions.wait_and_click(driver, By.XPATH, "//div[text()='Invoice']")
+print("//input[contains(@aria-label,'Filter field: "+column_to_open+", operator: ')]//ancestor::div/child::div[@class='columnHeaderPopup-sort']//span[text()='Sort Z to A']/ancestor::button")
+Interactions.wait_and_click(driver, By.XPATH, "//input[contains(@aria-label,'Filter field: "+column_to_open+", operator: ')]//ancestor::div/child::div[@class='columnHeaderPopup-sort']//span[text()='Sort Z to A']/ancestor::button")
+# Clicking filter manager: SystemDefinedFilterManager
+column_to_open = "Company"
+open_divs = driver.find_elements(By.XPATH, "//div/parent::div[contains(@class, 'dyn-headerCell')]")
+filter_manager_cloumn_last_opened = ''
+for i, div in enumerate(open_divs, start=1):
+    class_attr = div.get_attribute('class')
+    if 'hasOpenPopup' in class_attr:
+        filter_manager_cloumn_last_opened = Interactions.get_element_text(driver, By.XPATH, f"(//div/parent::div[contains(@class, 'dyn-headerCell')])[{i}]")
+        print(f"filter_manager_cloumn_last_opened: {filter_manager_cloumn_last_opened}")
+        break
+if filter_manager_cloumn_last_opened == 'Company' and filter_manager_cloumn_last_opened != '':
+    Interactions.wait_and_click(driver, By.XPATH, "//div[text()='Company']")
+    Interactions.wait_and_click(driver, By.XPATH, "//div[text()='Company']")
+else:
+    Interactions.wait_and_click(driver, By.XPATH, "//div[text()='Company']")
+print("//input[contains(@aria-label,'Filter field: "+column_to_open+", operator: ')]//ancestor::div/child::div[@class='columnHeaderPopup-sort']//span[text()='Sort Z to A']/ancestor::button")
+Interactions.wait_and_click(driver, By.XPATH, "//input[contains(@aria-label,'Filter field: "+column_to_open+", operator: ')]//ancestor::div/child::div[@class='columnHeaderPopup-sort']//span[text()='Sort Z to A']/ancestor::button")
+# Clicking filter manager: SystemDefinedFilterManager
+column_to_open = "Name"
+open_divs = driver.find_elements(By.XPATH, "//div/parent::div[contains(@class, 'dyn-headerCell')]")
+filter_manager_cloumn_last_opened = ''
+for i, div in enumerate(open_divs, start=1):
+    class_attr = div.get_attribute('class')
+    if 'hasOpenPopup' in class_attr:
+        filter_manager_cloumn_last_opened = Interactions.get_element_text(driver, By.XPATH, f"(//div/parent::div[contains(@class, 'dyn-headerCell')])[{i}]")
+        print(f"filter_manager_cloumn_last_opened: {filter_manager_cloumn_last_opened}")
+        break
+if filter_manager_cloumn_last_opened == 'Name' and filter_manager_cloumn_last_opened != '':
+    Interactions.wait_and_click(driver, By.XPATH, "//div[text()='Name']")
+    Interactions.wait_and_click(driver, By.XPATH, "//div[text()='Name']")
+else:
+    Interactions.wait_and_click(driver, By.XPATH, "//div[text()='Name']")
+filter_manager_data = Interactions.extract_value_and_operator_from_description("Enter a filter value of '1' on the 'Name' field using the 'does not contain' filter operator.")
+operator = filter_manager_data['operator']
+new_val = filter_manager_data['value']
+field_name = filter_manager_data['field_name']
+drop_down_item = "//span[text()='"+operator+"']/ancestor::button[contains(@class,'button flyout-menuItem')]"
+print(drop_down_item)
+input_field = "//input[contains(@aria-label,'Filter field: "+field_name+",')]"
+apply_button = "//input[contains(@aria-label,'Filter field: "+field_name+", operator: ')]//ancestor::div/child::div[@class='columnHeaderPopup-buttons']//span[text()='Apply']/ancestor::button"
+dropDown_button = "//span[contains(@class,'button-label-dropDown')]/ancestor::button[contains(@class,'dynamicsButton')][ancestor::div[@class='filterFieldContainer']//input[contains(@aria-label,'Filter field: "+field_name+"')]]"
+Interactions.wait_and_click(driver, By.XPATH, dropDown_button)
+Interactions.wait_and_click(driver, By.XPATH, drop_down_item)
+Interactions.wait_and_send_keys(driver, By.XPATH, input_field, new_val)
+Interactions.wait_and_click(driver, By.XPATH, apply_button)
+# Clicking filter manager: SystemDefinedFilterManager
+column_to_open = "Invoice received date"
+open_divs = driver.find_elements(By.XPATH, "//div/parent::div[contains(@class, 'dyn-headerCell')]")
+filter_manager_cloumn_last_opened = ''
+for i, div in enumerate(open_divs, start=1):
+    class_attr = div.get_attribute('class')
+    if 'hasOpenPopup' in class_attr:
+        filter_manager_cloumn_last_opened = Interactions.get_element_text(driver, By.XPATH, f"(//div/parent::div[contains(@class, 'dyn-headerCell')])[{i}]")
+        print(f"filter_manager_cloumn_last_opened: {filter_manager_cloumn_last_opened}")
+        break
+if filter_manager_cloumn_last_opened == 'Invoice received date' and filter_manager_cloumn_last_opened != '':
+    Interactions.wait_and_click(driver, By.XPATH, "//div[text()='Invoice received date']")
+    Interactions.wait_and_click(driver, By.XPATH, "//div[text()='Invoice received date']")
+else:
+    Interactions.wait_and_click(driver, By.XPATH, "//div[text()='Invoice received date']")
+# Clicking filter manager: SystemDefinedFilterManager
+column_to_open = "Invoice date"
+open_divs = driver.find_elements(By.XPATH, "//div/parent::div[contains(@class, 'dyn-headerCell')]")
+filter_manager_cloumn_last_opened = ''
+for i, div in enumerate(open_divs, start=1):
+    class_attr = div.get_attribute('class')
+    if 'hasOpenPopup' in class_attr:
+        filter_manager_cloumn_last_opened = Interactions.get_element_text(driver, By.XPATH, f"(//div/parent::div[contains(@class, 'dyn-headerCell')])[{i}]")
+        print(f"filter_manager_cloumn_last_opened: {filter_manager_cloumn_last_opened}")
+        break
+if filter_manager_cloumn_last_opened == 'Invoice date' and filter_manager_cloumn_last_opened != '':
+    Interactions.wait_and_click(driver, By.XPATH, "//div[text()='Invoice date']")
+    Interactions.wait_and_click(driver, By.XPATH, "//div[text()='Invoice date']")
+else:
+    Interactions.wait_and_click(driver, By.XPATH, "//div[text()='Invoice date']")
 time.sleep(5)
 print("test case passed")
 driver.quit()
