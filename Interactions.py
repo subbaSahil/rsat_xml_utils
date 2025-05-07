@@ -36,6 +36,7 @@ def wait_and_click(driver, by, value, timeout=20):
 def wait_and_send_keys(driver, by, value, keys,timeout=20):
     element = WebDriverWait(driver, timeout).until(EC.element_to_be_clickable((by, value)))
     element.click()
+    element.clear()  # Clear the input field before sending keys
     element.send_keys(keys)
     # element.send_keys(Keys.RETURN)  # Press Tab after sending keys
     time.sleep(2) 
@@ -149,3 +150,28 @@ def extract_value_and_operator_from_description(description):
         return {"value":value, "operator":operator, "field_name":field_name}
     else:
         return None, None
+    
+
+# def extract_multiple_values(description):
+#     description = normalize_description_quotes(description)
+#     pattern = r"Enter a filter value of '(.+)' on the '(.+)' field using the '(.+)' filter operator."
+#     match = re.match(pattern, description)
+#     if match:
+#         value = match.group(1)
+#         values_list = [v.strip() for v in value.split('/')]
+#         return values_list
+#     else:
+#         return None
+    
+def extract_multiple_values(value_string):
+    return [v.strip() for v in value_string.split('/')]
+
+def extract_dates(date_str):
+    parts = date_str.split('/')
+    if len(parts) != 6:
+        raise ValueError("Input string must contain two dates in the format dd/mm/yyyy/dd/mm/yyyy")
+    
+    from_date = f"{parts[0]}/{parts[1]}/{parts[2]}"
+    to_date = f"{parts[3]}/{parts[4]}/{parts[5]}"
+    
+    return [from_date, to_date]

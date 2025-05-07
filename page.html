@@ -1,1 +1,75 @@
-//span[text()='Apply']/ancestor::button/parent::div/parent::div/child::div[@class='filterFieldContainer']//input[@aria-label='Filter field: Invoice, operator: begins with']
+<input class="textbox field displayoption viewMarker alignmentLeft" autocomplete="off" type="text" role="textbox"
+    data-dyn-bind="
+        attr: {
+            name: $data.Name,
+            'aria-describedby': $dyn.ui.getDescribedByData($data),
+            placeholder: $data.PlaceHolder,
+            'aria-invalid': !$dyn.value($data.IsValid),
+        },
+        id: $data.Id + '_input',
+        ariaLabelledBy: $data.getLabelledByData(),
+        boundValue: { binder: $data.valueBinder, changeMode: $data.ChangeMode },
+        link: $dyn.ui.link($data),
+        secondaryNavigation: { keyboard: $data.OnKeyboardSecondaryNavigation, mouse: $data.OnMouseSecondaryNavigation },
+        skip: $dyn.ui.skip($data),
+        password: $data.PasswordMode,
+        title: $data.toolTip,
+        required: $data.Required,
+        allowEdit: $dyn.value($data.LookupOnly) ? false : $dyn.value($data.allowTyping),
+        enabled: $data.Enabled,
+        maxlength: $data.conditionalLimitTextLength,
+        textAlign: $data.Alignment,
+        keyDown: $data.keyDown,
+        keyUp: $data.keyUp,
+        input: $data.onInput,
+        click: $data.onInputClick,
+        preview: $dyn.ui.preview($data),
+        foregroundColor: $data.ForegroundColor,
+        backgroundColor: $data.BackgroundColor,
+        superTooltip: $dyn.ui.superTooltip($data),
+        css: { 'validationFailed': $data.IsShowingWarningIndicator }"
+    name="FilterField_VendInvoiceInfoTable_ReceivedDate_ReceivedDate_Input_0" placeholder="" aria-invalid="false"
+    id="__FilterField_VendInvoiceInfoTable_ReceivedDate_ReceivedDate_Input_0_0_input"
+    aria-label="Filter field: Invoice received date, operator: between" tabindex="0"
+    data-dynamics-input-alignment="Left" dyn-data-supertooltip="true" data-dyn-qtip-title="5/10/2025 "
+    data-dyn-qtip-hastitleattr="true"
+    data-dyn-qtip-describedby="__FilterField_VendInvoiceInfoTable_ReceivedDate_ReceivedDate_Input_0_0_helptext"
+    data-hasqtip="superToolTip">
+
+
+<input class="textbox field displayoption viewMarker alignmentLeft" autocomplete="off" type="text" role="textbox"
+    data-dyn-bind="
+        attr: {
+            name: $data.Name,
+            'aria-describedby': $dyn.ui.getDescribedByData($data),
+            placeholder: $data.PlaceHolder,
+            'aria-invalid': !$dyn.value($data.IsValid),
+        },
+        id: $data.Id + '_input',
+        ariaLabelledBy: $data.getLabelledByData(),
+        boundValue: { binder: $data.valueBinder, changeMode: $data.ChangeMode },
+        link: $dyn.ui.link($data),
+        secondaryNavigation: { keyboard: $data.OnKeyboardSecondaryNavigation, mouse: $data.OnMouseSecondaryNavigation },
+        skip: $dyn.ui.skip($data),
+        password: $data.PasswordMode,
+        title: $data.toolTip,
+        required: $data.Required,
+        allowEdit: $dyn.value($data.LookupOnly) ? false : $dyn.value($data.allowTyping),
+        enabled: $data.Enabled,
+        maxlength: $data.conditionalLimitTextLength,
+        textAlign: $data.Alignment,
+        keyDown: $data.keyDown,
+        keyUp: $data.keyUp,
+        input: $data.onInput,
+        click: $data.onInputClick,
+        preview: $dyn.ui.preview($data),
+        foregroundColor: $data.ForegroundColor,
+        backgroundColor: $data.BackgroundColor,
+        superTooltip: $dyn.ui.superTooltip($data),
+        css: { 'validationFailed': $data.IsShowingWarningIndicator }"
+    name="FilterField_VendInvoiceInfoTable_ReceivedDate_ReceivedDate_Input_1" placeholder="" aria-invalid="false"
+    id="__FilterField_VendInvoiceInfoTable_ReceivedDate_ReceivedDate_Input_1_1_input"
+    aria-label="Filter field: Invoice received date, operator: between" tabindex="0"
+    data-dynamics-input-alignment="Left" dyn-data-supertooltip="true" data-dyn-qtip-hastitleattr="true"
+    title=" 6/10/2025"
+    aria-describedby="__FilterField_VendInvoiceInfoTable_ReceivedDate_ReceivedDate_Input_1_1_helptext">

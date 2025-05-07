@@ -15,7 +15,7 @@ def extract_user_actions(input_xml):
     user_actions_with_details = ET.Element("UserActionsWithDetails")
     user_actions = root.findall(".//UserActions//d2p1:anyType", namespaces=namespaces)
  
-    actions_dict = {}  # To store actions grouped by Ref
+    actions_dict = {}
  
     for index, action in enumerate(user_actions):
         ref = action.attrib.get("{http://schemas.microsoft.com/2003/10/Serialization/}Ref")
@@ -26,13 +26,17 @@ def extract_user_actions(input_xml):
         control_type = ''
         control_names = []
         value = ''
-        value_label = ''
         navigation_path = []
+        annotations_elem = None  # To store annotations if "Close the page."
  
         if node is not None:
             desc_elem = node.find(".//Description", namespaces=namespaces)
             if desc_elem is not None and desc_elem.text:
                 description = desc_elem.text
+ 
+            # Capture annotations only for "Close the page."
+            if description == "Close the page.":
+                annotations_elem = node.find(".//Annotations", namespaces=namespaces)
  
             control_label_elem = node.find(".//ControlLabel", namespaces=namespaces)
             if control_label_elem is not None and control_label_elem.text:
@@ -56,7 +60,7 @@ def extract_user_actions(input_xml):
                         if part.text:
                             navigation_path.append(part.text)
  
-            # Get value
+            # Check for value in CanonicalUserAction
             annotation_value = node.find(".//Annotations//Annotation//CanonicalUserAction//Value", namespaces=namespaces)
             if annotation_value is not None and annotation_value.text:
                 value = annotation_value.text.strip()
@@ -65,11 +69,7 @@ def extract_user_actions(input_xml):
                 if direct_value is not None and direct_value.text:
                     value = direct_value.text.strip()
  
-            # Get value label if it exists
-            value_label_elem = node.find(".//ValueLabel", namespaces=namespaces)
-            if value_label_elem is not None and value_label_elem.text:
-                value_label = value_label_elem.text.strip()
- 
+        # Add to dictionary
         if ref not in actions_dict:
             actions_dict[ref] = {
                 "Description": description,
@@ -77,14 +77,14 @@ def extract_user_actions(input_xml):
                 "ControlLabel": control_label,
                 "ControlType": control_type,
                 "Value": value,
-                "ValueLabel": value_label,
-                "NavigationPath": navigation_path
+                "NavigationPath": navigation_path,
+                "Annotations": annotations_elem  # store only if it's for "Close the page."
             }
  
         for control_name in control_names:
             actions_dict[ref]["ControlNames"].add(control_name)
  
-    # Generate output XML
+    # Build output XML
     for ref, action_data in actions_dict.items():
         user_action = ET.SubElement(user_actions_with_details, "UserAction")
         user_action.set("Ref", ref)
@@ -92,8 +92,9 @@ def extract_user_actions(input_xml):
         ET.SubElement(user_action, "NodeId").text = ref
         ET.SubElement(user_action, "Sequence").text = str(index + 1)
  
-        for nav_item in action_data["NavigationPath"]:
-            ET.SubElement(user_action, "Navigation").text = nav_item
+        if action_data["NavigationPath"]:
+            for nav_item in action_data["NavigationPath"]:
+                ET.SubElement(user_action, "Navigation").text = nav_item
  
         if action_data["ControlNames"]:
             for control_name in action_data["ControlNames"]:
@@ -104,7 +105,13 @@ def extract_user_actions(input_xml):
         ET.SubElement(user_action, "ControlLabel").text = action_data["ControlLabel"]
         ET.SubElement(user_action, "ControlType").text = action_data["ControlType"]
         ET.SubElement(user_action, "Value").text = action_data["Value"]
-        ET.SubElement(user_action, "ValueLabel").text = action_data["ValueLabel"]
+ 
+        # Add Annotations only if present
+        if action_data["Annotations"] is not None:
+            # Deep copy annotations (optional: import copy and use deepcopy)
+            annotations_element = ET.SubElement(user_action, "Annotations")
+            for child in action_data["Annotations"]:
+                annotations_element.append(child)
  
     tree_out = ET.ElementTree(user_actions_with_details)
     tree_out.write('output.xml', encoding='UTF-8', xml_declaration=True)

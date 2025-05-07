@@ -14,6 +14,8 @@ login.login(driver)
 locator = ""
 
 filter_manager_cloumn_last_opened = ""
+filter_manager_dropdown_item_index = 1
+
 column_to_open = ""
 Interactions.wait_and_click(driver, By.XPATH, "//div[@aria-label='Modules']")
 
@@ -21,134 +23,142 @@ Interactions.wait_and_click(driver, By.XPATH, "//div[@aria-label='Modules']")
 Interactions.wait_and_click(driver, By.XPATH, "//a[@data-dyn-title='Accounts payable']")
 time.sleep(1)
 
-# Clicking navigation: Invoices
-Interactions.wait_and_click(driver, By.XPATH, "//a[@data-dyn-title='Invoices']")
+# Clicking navigation: Purchase orders
+Interactions.wait_and_click(driver, By.XPATH, "//a[@data-dyn-title='Purchase orders']")
 time.sleep(1)
 
-# Clicking navigation: Pending vendor invoices
-Interactions.wait_and_click(driver, By.XPATH, "//a[@data-dyn-title='Pending vendor invoices']")
+# Clicking navigation: All purchase orders
+Interactions.wait_and_click(driver, By.XPATH, "//a[@data-dyn-title='All purchase orders']")
 time.sleep(1)
 
-# Clicking filter manager: SystemDefinedFilterManager
-column_to_open = "Invoice"
-open_divs = driver.find_elements(By.XPATH, "//div/parent::div[contains(@class, 'dyn-headerCell')]")
-filter_manager_cloumn_last_opened = ''
-for i, div in enumerate(open_divs, start=1):
-    class_attr = div.get_attribute('class')
-    if 'hasOpenPopup' in class_attr:
-        filter_manager_cloumn_last_opened = Interactions.get_element_text(driver, By.XPATH, f"(//div/parent::div[contains(@class, 'dyn-headerCell')])[{i}]")
-        print(f"filter_manager_cloumn_last_opened: {filter_manager_cloumn_last_opened}")
-        break
-if filter_manager_cloumn_last_opened == 'Invoice' and filter_manager_cloumn_last_opened != '':
-    Interactions.wait_and_click(driver, By.XPATH, "//div[text()='Invoice']")
-    Interactions.wait_and_click(driver, By.XPATH, "//div[text()='Invoice']")
-else:
-    Interactions.wait_and_click(driver, By.XPATH, "//div[text()='Invoice']")
-filter_manager_data = Interactions.extract_value_and_operator_from_description("Enter a filter value of '100' on the 'Invoice' field using the 'contains' filter operator.")
-operator = filter_manager_data['operator']
-new_val = filter_manager_data['value']
-field_name = filter_manager_data['field_name']
-drop_down_item = "//span[text()='"+operator+"']/ancestor::button[contains(@class,'button flyout-menuItem')]"
-print(drop_down_item)
-input_field = "//input[contains(@aria-label,'Filter field: "+field_name+",')]"
-apply_button = "//input[contains(@aria-label,'Filter field: "+field_name+", operator: ')]//ancestor::div/child::div[@class='columnHeaderPopup-buttons']//span[text()='Apply']/ancestor::button"
-dropDown_button = "//span[contains(@class,'button-label-dropDown')]/ancestor::button[contains(@class,'dynamicsButton')][ancestor::div[@class='filterFieldContainer']//input[contains(@aria-label,'Filter field: "+field_name+"')]]"
-Interactions.wait_and_click(driver, By.XPATH, dropDown_button)
-Interactions.wait_and_click(driver, By.XPATH, drop_down_item)
-Interactions.wait_and_send_keys(driver, By.XPATH, input_field, new_val)
-Interactions.wait_and_click(driver, By.XPATH, apply_button)
-# Clicking filter manager: SystemDefinedFilterManager
-column_to_open = "Invoice"
-open_divs = driver.find_elements(By.XPATH, "//div/parent::div[contains(@class, 'dyn-headerCell')]")
-filter_manager_cloumn_last_opened = ''
-for i, div in enumerate(open_divs, start=1):
-    class_attr = div.get_attribute('class')
-    if 'hasOpenPopup' in class_attr:
-        filter_manager_cloumn_last_opened = Interactions.get_element_text(driver, By.XPATH, f"(//div/parent::div[contains(@class, 'dyn-headerCell')])[{i}]")
-        print(f"filter_manager_cloumn_last_opened: {filter_manager_cloumn_last_opened}")
-        break
-if filter_manager_cloumn_last_opened == 'Invoice' and filter_manager_cloumn_last_opened != '':
-    Interactions.wait_and_click(driver, By.XPATH, "//div[text()='Invoice']")
-    Interactions.wait_and_click(driver, By.XPATH, "//div[text()='Invoice']")
-else:
-    Interactions.wait_and_click(driver, By.XPATH, "//div[text()='Invoice']")
-print("//input[contains(@aria-label,'Filter field: "+column_to_open+", operator: ')]//ancestor::div/child::div[@class='columnHeaderPopup-sort']//span[text()='Sort Z to A']/ancestor::button")
-Interactions.wait_and_click(driver, By.XPATH, "//input[contains(@aria-label,'Filter field: "+column_to_open+", operator: ')]//ancestor::div/child::div[@class='columnHeaderPopup-sort']//span[text()='Sort Z to A']/ancestor::button")
-# Clicking filter manager: SystemDefinedFilterManager
-column_to_open = "Company"
-open_divs = driver.find_elements(By.XPATH, "//div/parent::div[contains(@class, 'dyn-headerCell')]")
-filter_manager_cloumn_last_opened = ''
-for i, div in enumerate(open_divs, start=1):
-    class_attr = div.get_attribute('class')
-    if 'hasOpenPopup' in class_attr:
-        filter_manager_cloumn_last_opened = Interactions.get_element_text(driver, By.XPATH, f"(//div/parent::div[contains(@class, 'dyn-headerCell')])[{i}]")
-        print(f"filter_manager_cloumn_last_opened: {filter_manager_cloumn_last_opened}")
-        break
-if filter_manager_cloumn_last_opened == 'Company' and filter_manager_cloumn_last_opened != '':
-    Interactions.wait_and_click(driver, By.XPATH, "//div[text()='Company']")
-    Interactions.wait_and_click(driver, By.XPATH, "//div[text()='Company']")
-else:
-    Interactions.wait_and_click(driver, By.XPATH, "//div[text()='Company']")
-print("//input[contains(@aria-label,'Filter field: "+column_to_open+", operator: ')]//ancestor::div/child::div[@class='columnHeaderPopup-sort']//span[text()='Sort Z to A']/ancestor::button")
-Interactions.wait_and_click(driver, By.XPATH, "//input[contains(@aria-label,'Filter field: "+column_to_open+", operator: ')]//ancestor::div/child::div[@class='columnHeaderPopup-sort']//span[text()='Sort Z to A']/ancestor::button")
-# Clicking filter manager: SystemDefinedFilterManager
-column_to_open = "Name"
-open_divs = driver.find_elements(By.XPATH, "//div/parent::div[contains(@class, 'dyn-headerCell')]")
-filter_manager_cloumn_last_opened = ''
-for i, div in enumerate(open_divs, start=1):
-    class_attr = div.get_attribute('class')
-    if 'hasOpenPopup' in class_attr:
-        filter_manager_cloumn_last_opened = Interactions.get_element_text(driver, By.XPATH, f"(//div/parent::div[contains(@class, 'dyn-headerCell')])[{i}]")
-        print(f"filter_manager_cloumn_last_opened: {filter_manager_cloumn_last_opened}")
-        break
-if filter_manager_cloumn_last_opened == 'Name' and filter_manager_cloumn_last_opened != '':
-    Interactions.wait_and_click(driver, By.XPATH, "//div[text()='Name']")
-    Interactions.wait_and_click(driver, By.XPATH, "//div[text()='Name']")
-else:
-    Interactions.wait_and_click(driver, By.XPATH, "//div[text()='Name']")
-filter_manager_data = Interactions.extract_value_and_operator_from_description("Enter a filter value of '1' on the 'Name' field using the 'does not contain' filter operator.")
-operator = filter_manager_data['operator']
-new_val = filter_manager_data['value']
-field_name = filter_manager_data['field_name']
-drop_down_item = "//span[text()='"+operator+"']/ancestor::button[contains(@class,'button flyout-menuItem')]"
-print(drop_down_item)
-input_field = "//input[contains(@aria-label,'Filter field: "+field_name+",')]"
-apply_button = "//input[contains(@aria-label,'Filter field: "+field_name+", operator: ')]//ancestor::div/child::div[@class='columnHeaderPopup-buttons']//span[text()='Apply']/ancestor::button"
-dropDown_button = "//span[contains(@class,'button-label-dropDown')]/ancestor::button[contains(@class,'dynamicsButton')][ancestor::div[@class='filterFieldContainer']//input[contains(@aria-label,'Filter field: "+field_name+"')]]"
-Interactions.wait_and_click(driver, By.XPATH, dropDown_button)
-Interactions.wait_and_click(driver, By.XPATH, drop_down_item)
-Interactions.wait_and_send_keys(driver, By.XPATH, input_field, new_val)
-Interactions.wait_and_click(driver, By.XPATH, apply_button)
-# Clicking filter manager: SystemDefinedFilterManager
-column_to_open = "Invoice received date"
-open_divs = driver.find_elements(By.XPATH, "//div/parent::div[contains(@class, 'dyn-headerCell')]")
-filter_manager_cloumn_last_opened = ''
-for i, div in enumerate(open_divs, start=1):
-    class_attr = div.get_attribute('class')
-    if 'hasOpenPopup' in class_attr:
-        filter_manager_cloumn_last_opened = Interactions.get_element_text(driver, By.XPATH, f"(//div/parent::div[contains(@class, 'dyn-headerCell')])[{i}]")
-        print(f"filter_manager_cloumn_last_opened: {filter_manager_cloumn_last_opened}")
-        break
-if filter_manager_cloumn_last_opened == 'Invoice received date' and filter_manager_cloumn_last_opened != '':
-    Interactions.wait_and_click(driver, By.XPATH, "//div[text()='Invoice received date']")
-    Interactions.wait_and_click(driver, By.XPATH, "//div[text()='Invoice received date']")
-else:
-    Interactions.wait_and_click(driver, By.XPATH, "//div[text()='Invoice received date']")
-# Clicking filter manager: SystemDefinedFilterManager
-column_to_open = "Invoice date"
-open_divs = driver.find_elements(By.XPATH, "//div/parent::div[contains(@class, 'dyn-headerCell')]")
-filter_manager_cloumn_last_opened = ''
-for i, div in enumerate(open_divs, start=1):
-    class_attr = div.get_attribute('class')
-    if 'hasOpenPopup' in class_attr:
-        filter_manager_cloumn_last_opened = Interactions.get_element_text(driver, By.XPATH, f"(//div/parent::div[contains(@class, 'dyn-headerCell')])[{i}]")
-        print(f"filter_manager_cloumn_last_opened: {filter_manager_cloumn_last_opened}")
-        break
-if filter_manager_cloumn_last_opened == 'Invoice date' and filter_manager_cloumn_last_opened != '':
-    Interactions.wait_and_click(driver, By.XPATH, "//div[text()='Invoice date']")
-    Interactions.wait_and_click(driver, By.XPATH, "//div[text()='Invoice date']")
-else:
-    Interactions.wait_and_click(driver, By.XPATH, "//div[text()='Invoice date']")
+# Clicking (default) on: WHS
+time.sleep(3)
+Interactions.wait_and_click(driver, By.XPATH, "//button/parent::div[@data-dyn-controlname='WHS']")
+# Clicking (default) on: MenuItemButton
+Interactions.wait_and_click(driver, By.XPATH, "//button[@data-dyn-controlname='MenuItemButton']")
+# Inputting into: SupplyDemandLPWFilter
+if(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@name,'SupplyDemandLPWFilter')]")):
+    locator=Interactions.get_locator(driver, By.XPATH, "//input[contains(@name,'SupplyDemandLPWFilter')]")
+    Interactions.wait_and_send_keys(driver, By.XPATH, locator, "")
+elif(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@aria-label,'Supply and demand filter')]")):
+    locator=Interactions.get_locator(driver, By.XPATH, "//input[contains(@aria-label,'Supply and demand filter')]")
+    Interactions.wait_and_send_keys(driver, By.XPATH, locator, "")
+# Inputting into: InventSiteIdFilter
+if(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@name,'InventSiteIdFilter')]")):
+    locator=Interactions.get_locator(driver, By.XPATH, "//input[contains(@name,'InventSiteIdFilter')]")
+    Interactions.wait_and_send_keys(driver, By.XPATH, locator, "2")
+elif(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@aria-label,'Site')]")):
+    locator=Interactions.get_locator(driver, By.XPATH, "//input[contains(@aria-label,'Site')]")
+    Interactions.wait_and_send_keys(driver, By.XPATH, locator, "2")
+# Inputting into: InventLocationIdFilter
+if(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@name,'InventLocationIdFilter')]")):
+    locator=Interactions.get_locator(driver, By.XPATH, "//input[contains(@name,'InventLocationIdFilter')]")
+    Interactions.wait_and_send_keys(driver, By.XPATH, locator, "11")
+elif(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@aria-label,'Warehouse')]")):
+    locator=Interactions.get_locator(driver, By.XPATH, "//input[contains(@aria-label,'Warehouse')]")
+    Interactions.wait_and_send_keys(driver, By.XPATH, locator, "11")
+# ❌ Locator not found for: GridInventLocation (Type: grid)
+if(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@name,'ShipDateFilter')]")):
+    Interactions.get_locator(driver, By.XPATH, "//input[contains(@aria-label,'Ship date')]")
+    Interactions.clear_input_field_and_send_keys(driver, By.XPATH, "//input[contains(@name,'ShipDateFilter')]", "05/13/2025")
+elif(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@aria-label,'Ship date')]")):
+    Interactions.clear_input_field_and_send_keys(driver, By.XPATH, "//input[contains(@aria-label,'Ship date')]", "05/13/2025")
+if(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@name,'ReceiptDateFilter')]")):
+    Interactions.get_locator(driver, By.XPATH, "//input[contains(@aria-label,'Receipt date')]")
+    Interactions.clear_input_field_and_send_keys(driver, By.XPATH, "//input[contains(@name,'ReceiptDateFilter')]", "05/20/2025")
+elif(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@aria-label,'Receipt date')]")):
+    Interactions.clear_input_field_and_send_keys(driver, By.XPATH, "//input[contains(@aria-label,'Receipt date')]", "05/20/2025")
+# Clicking (default) on: InventLines
+Interactions.wait_and_click(driver, By.XPATH, "//li[contains(@data-dyn-controlname,'InventLines')]")
+# Clicking (default) on: SalesLines
+Interactions.wait_and_click(driver, By.XPATH, "//li[contains(@data-dyn-controlname,'SalesLines')]")
+# Clicking (default) on: UnassignedShipments
+Interactions.wait_and_click(driver, By.XPATH, "//li[contains(@data-dyn-controlname,'UnassignedShipments')]")
+# Inputting into: LoadLPWFilter
+if(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@name,'LoadLPWFilter')]")):
+    locator=Interactions.get_locator(driver, By.XPATH, "//input[contains(@name,'LoadLPWFilter')]")
+    Interactions.wait_and_send_keys(driver, By.XPATH, locator, "")
+elif(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@aria-label,'Load filter')]")):
+    locator=Interactions.get_locator(driver, By.XPATH, "//input[contains(@aria-label,'Load filter')]")
+    Interactions.wait_and_send_keys(driver, By.XPATH, locator, "")
+# ❌ Locator not found for: LoadGrid (Type: grid)
+# Clicking (default) on: Actions
+Interactions.wait_and_click(driver, By.XPATH, "//button[@name='Actions']")
+# Clicking (default) on: change
+Interactions.wait_and_click(driver, By.XPATH, "//button[@name='change']")
+# Inputting into: WHSUserId
+if(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@name,'WHSUserId')]")):
+    locator=Interactions.get_locator(driver, By.XPATH, "//input[contains(@name,'WHSUserId')]")
+    Interactions.wait_and_send_keys(driver, By.XPATH, locator, "25")
+elif(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@aria-label,'User ID')]")):
+    locator=Interactions.get_locator(driver, By.XPATH, "//input[contains(@aria-label,'User ID')]")
+    Interactions.wait_and_send_keys(driver, By.XPATH, locator, "25")
+# ❌ Locator not found for: WHSWorkPriority (Type: integer)
+# Clicking button: OK
+Interactions.wait_and_click(driver, By.XPATH, "//button[@data-dyn-controlname='OK']")
+# Inputting into: FinalLocationId
+if(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@name,'FinalLocationId')]")):
+    locator=Interactions.get_locator(driver, By.XPATH, "//input[contains(@name,'FinalLocationId')]")
+    Interactions.wait_and_send_keys(driver, By.XPATH, locator, "BAYDOOR")
+elif(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@aria-label,'Final shipping location')]")):
+    locator=Interactions.get_locator(driver, By.XPATH, "//input[contains(@aria-label,'Final shipping location')]")
+    Interactions.wait_and_send_keys(driver, By.XPATH, locator, "BAYDOOR")
+# Clicking button: OK
+Interactions.wait_and_click(driver, By.XPATH, "//button[@data-dyn-controlname='OK']")
+# Clicking button: SystemDefinedSaveButton
+Interactions.wait_and_click(driver, By.XPATH, "//button[@data-dyn-controlname='SystemDefinedSaveButton']")
+# Clicking (default) on: SupplyDemandActionPane
+time.sleep(3)
+Interactions.wait_and_click(driver, By.XPATH, "//button/parent::div[@data-dyn-controlname='SupplyDemandActionPane']")
+# Clicking (default) on: AddToNewLoad
+Interactions.wait_and_click(driver, By.XPATH, "//button[@data-dyn-controlname='AddToNewLoad']")
+# Inputting into: Fld1_1
+if(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@name,'Fld1_1')]")):
+    locator=Interactions.get_locator(driver, By.XPATH, "//input[contains(@name,'Fld1_1')]")
+    Interactions.wait_and_send_keys(driver, By.XPATH, locator, "20' Container")
+elif(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@aria-label,'Load template ID')]")):
+    locator=Interactions.get_locator(driver, By.XPATH, "//input[contains(@aria-label,'Load template ID')]")
+    Interactions.wait_and_send_keys(driver, By.XPATH, locator, "20' Container")
+# Clicking button: OkButton
+Interactions.wait_and_click(driver, By.XPATH, "//button[@data-dyn-controlname='OkButton']")
+# Clicking (default) on: FiltersActionPane
+time.sleep(3)
+Interactions.wait_and_click(driver, By.XPATH, "//button/parent::div[@data-dyn-controlname='FiltersActionPane']")
+# Clicking (default) on: ButtonSetDefault
+Interactions.wait_and_click(driver, By.XPATH, "//button[@data-dyn-controlname='ButtonSetDefault']")
+# Clicking (default) on: ShipReceive
+Interactions.wait_and_click(driver, By.XPATH, "//button[@name='ShipReceive']")
+# Clicking (default) on: btnReverseShipConfirm
+Interactions.wait_and_click(driver, By.XPATH, "//button[@name='btnReverseShipConfirm']")
+# ❌ Locator not found for: LoadGrid (Type: grid)
+# Clicking (default) on: ShipReceive
+Interactions.wait_and_click(driver, By.XPATH, "//button[@name='ShipReceive']")
+# Clicking (default) on: WHSPackStructureCrossDockCreate
+Interactions.wait_and_click(driver, By.XPATH, "//button[@name='WHSPackStructureCrossDockCreate']")
+# Inputting into: Fld4_1
+if(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@name,'Fld4_1')]")):
+    locator=Interactions.get_locator(driver, By.XPATH, "//input[contains(@name,'Fld4_1')]")
+    Interactions.wait_and_send_keys(driver, By.XPATH, locator, "AIFBatch")
+elif(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@aria-label,'Batch group')]")):
+    locator=Interactions.get_locator(driver, By.XPATH, "//input[contains(@aria-label,'Batch group')]")
+    Interactions.wait_and_send_keys(driver, By.XPATH, locator, "AIFBatch")
+# Clicking checkbox: Fld2_1
+if(Interactions.check_element_exist(driver, By.XPATH, "//label[contains(text(),'Batch processing')]/following-sibling::div/span[1]")):
+    Interactions.wait_and_click(driver, By.XPATH, "//label[contains(text(),'Batch processing')]/following-sibling::div/span[1]")
+elif(Interactions.check_element_exist(driver, By.XPATH, "//span[contains(@id, 'Fld2_1') and (@class='toggle-box' or @class='checkBox')]")):
+    Interactions.wait_and_click(driver, By.XPATH, "//span[contains(@id, 'Fld2_1') and (@class='toggle-box' or @class='checkBox')]")
+# Clicking checkbox: Fld6_1
+if(Interactions.check_element_exist(driver, By.XPATH, "//label[contains(text(),'Critical Job')]/following-sibling::div/span[1]")):
+    Interactions.wait_and_click(driver, By.XPATH, "//label[contains(text(),'Critical Job')]/following-sibling::div/span[1]")
+elif(Interactions.check_element_exist(driver, By.XPATH, "//span[contains(@id, 'Fld6_1') and (@class='toggle-box' or @class='checkBox')]")):
+    Interactions.wait_and_click(driver, By.XPATH, "//span[contains(@id, 'Fld6_1') and (@class='toggle-box' or @class='checkBox')]")
+# Clicking checkbox: Fld5_1
+if(Interactions.check_element_exist(driver, By.XPATH, "//label[contains(text(),'Private')]/following-sibling::div/span[1]")):
+    Interactions.wait_and_click(driver, By.XPATH, "//label[contains(text(),'Private')]/following-sibling::div/span[1]")
+elif(Interactions.check_element_exist(driver, By.XPATH, "//span[contains(@id, 'Fld5_1') and (@class='toggle-box' or @class='checkBox')]")):
+    Interactions.wait_and_click(driver, By.XPATH, "//span[contains(@id, 'Fld5_1') and (@class='toggle-box' or @class='checkBox')]")
+# Clicking button: CommandButton
+Interactions.wait_and_click(driver, By.XPATH, "//button[@data-dyn-controlname='CommandButton']")
 time.sleep(5)
 print("test case passed")
 driver.quit()
