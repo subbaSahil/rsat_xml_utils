@@ -1,10 +1,59 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<UserActionsWithDetails xmlns:ns0="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Client.ServerForm.TaskRecording"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <UserAction Ref="i3">
+<UserActionsWithDetails>
+    <UserAction Ref="i4">
+        <Description>Close the page.</Description>
+        <NodeId>i4</NodeId>
+        <Sequence>21</Sequence>
+        <ControlName>No Control Name</ControlName>
+        <ControlLabel />
+        <ControlType />
+        <Value />
+        <Annotations />
+    </UserAction>
+    <UserAction Ref="i6">
+        <Description>Go to Accounts payable &gt; Vendors &gt; Vendor groups.</Description>
+        <NodeId>i6</NodeId>
+        <Sequence>21</Sequence>
+        <Navigation>mainmenu</Navigation>
+        <Navigation>AccountsPayable</Navigation>
+        <Navigation>Vendors</Navigation>
+        <ControlName>No Control Name</ControlName>
+        <ControlLabel />
+        <ControlType />
+        <Value />
+    </UserAction>
+    <UserAction Ref="i9">
+        <Description>Open Vendor group column filter.</Description>
+        <NodeId>i9</NodeId>
+        <Sequence>21</Sequence>
+        <ControlName>SystemDefinedFilterManager</ControlName>
+        <ControlLabel />
+        <ControlType>FilterManager</ControlType>
+        <Value>[{"Capability":null,"DataSourceName":"","FieldArrayIndex":1,"FieldName":"VendGroup","FormDataSourceName":"VendGroup","IsEditable":"Yes","IsQueryFilter":"Yes","MasterFormDataSourceName":"","Operator":"Matches","RecordingReferences":[],"SFKReplacementFieldBinding":"","TableId":0,"Values":[""],"Version":2}]</Value>
+    </UserAction>
+    <UserAction Ref="i11">
+        <Description>Enter a filter value of "123" on the "Vendor group" field using the "begins with" filter operator.</Description>
+        <NodeId>i11</NodeId>
+        <Sequence>21</Sequence>
+        <ControlName>SystemDefinedFilterManager</ControlName>
+        <ControlLabel />
+        <ControlType>FilterManager</ControlType>
+        <Value>[{"Capability":{"DisplayDataType":"String","DomainValues":null,"FieldId":0,"FieldLabel":"Vendor group","FieldName":"","RelationLabel":"","SFKReplacementFieldBinding":"","ShowLookup":false,"TableId":0,"Version":2},"DataSourceName":"VendGroup","FieldArrayIndex":1,"FieldName":"VendGroup","FormDataSourceName":"VendGroup","IsEditable":"Yes","IsQueryFilter":"Yes","MasterFormDataSourceName":"VendGroup","Operator":"BeginsWith","RecordingReferences":[],"SFKReplacementFieldBinding":"","TableId":4285,"Values":["123"],"Version":2}]</Value>
+    </UserAction>
+    <UserAction Ref="i13">
+        <Description>Close the page.</Description>
+        <NodeId>i13</NodeId>
+        <Sequence>21</Sequence>
+        <ControlName>No Control Name</ControlName>
+        <ControlLabel />
+        <ControlType />
+        <Value />
+        <Annotations />
+    </UserAction>
+    <UserAction Ref="i15">
         <Description>Go to Accounts payable &gt; Purchase orders &gt; All purchase orders.</Description>
-        <NodeId>i3</NodeId>
-        <Sequence>48</Sequence>
+        <NodeId>i15</NodeId>
+        <Sequence>21</Sequence>
         <Navigation>mainmenu</Navigation>
         <Navigation>AccountsPayable</Navigation>
         <Navigation>PurchaseOrders</Navigation>
@@ -13,375 +62,125 @@
         <ControlType />
         <Value />
     </UserAction>
-    <UserAction Ref="i6">
-        <Description>On the Action Pane, click Warehouse.</Description>
-        <NodeId>i6</NodeId>
-        <Sequence>48</Sequence>
-        <ControlName>WHS</ControlName>
-        <ControlLabel>Warehouse</ControlLabel>
-        <ControlType>AppBarTab</ControlType>
-        <Value />
-    </UserAction>
-    <UserAction Ref="i8">
-        <Description>Click Load planning workbench.</Description>
-        <NodeId>i8</NodeId>
-        <Sequence>48</Sequence>
-        <ControlName>MenuItemButton</ControlName>
-        <ControlLabel>Load planning workbench</ControlLabel>
-        <ControlType>MenuItemButton</ControlType>
-        <Value />
-    </UserAction>
-    <UserAction Ref="i11">
-        <Description>In the Supply and demand filter field, enter or select a value.</Description>
-        <NodeId>i11</NodeId>
-        <Sequence>48</Sequence>
-        <ControlName>SupplyDemandLPWFilter</ControlName>
-        <ControlLabel>Supply and demand filter</ControlLabel>
-        <ControlType>Input</ControlType>
-        <Value />
-    </UserAction>
-    <UserAction Ref="i14">
-        <Description>Close the page.</Description>
-        <NodeId>i14</NodeId>
-        <Sequence>48</Sequence>
-        <ControlName>No Control Name</ControlName>
+    <UserAction Ref="i18">
+        <Description>Open Purchase order column filter.</Description>
+        <NodeId>i18</NodeId>
+        <Sequence>21</Sequence>
+        <ControlName>SystemDefinedFilterManager</ControlName>
         <ControlLabel />
-        <ControlType />
-        <Value />
-        <Annotations>
-            <ns0:Annotation xsi:type="TaskGuideAnnotation">
-                <ns0:Description xsi:nil="true" />
-                <ns0:ExampleText xsi:nil="true" />
-                <ns0:GlobalId xsi:nil="true" />
-                <ns0:Hidden>true</ns0:Hidden>
-                <ns0:RecordingValueType>Preferred</ns0:RecordingValueType>
-                <ns0:Title xsi:nil="true" />
-            </ns0:Annotation>
-        </Annotations>
+        <ControlType>FilterManager</ControlType>
+        <Value>[{"Capability":null,"DataSourceName":"","FieldArrayIndex":1,"FieldName":"PurchId","FormDataSourceName":"PurchTable","IsEditable":"Yes","IsQueryFilter":"Yes","MasterFormDataSourceName":"","Operator":"Matches","RecordingReferences":[],"SFKReplacementFieldBinding":"","TableId":0,"Values":[""],"Version":2}]</Value>
     </UserAction>
-    <UserAction Ref="i16">
-        <Description>In the Site field, enter or select a value.</Description>
-        <NodeId>i16</NodeId>
-        <Sequence>48</Sequence>
-        <ControlName>InventSiteIdFilter</ControlName>
-        <ControlLabel>Site</ControlLabel>
-        <ControlType>Input</ControlType>
-        <Value>2</Value>
+    <UserAction Ref="i20">
+        <Description>Enter a filter value of "00000042" on the "Purchase order" field using the "does not contain" filter operator.</Description>
+        <NodeId>i20</NodeId>
+        <Sequence>21</Sequence>
+        <ControlName>SystemDefinedFilterManager</ControlName>
+        <ControlLabel />
+        <ControlType>FilterManager</ControlType>
+        <Value>[{"Capability":{"DisplayDataType":"String","DomainValues":null,"FieldId":0,"FieldLabel":"Purchase order","FieldName":"","RelationLabel":"","SFKReplacementFieldBinding":"","ShowLookup":false,"TableId":0,"Version":2},"DataSourceName":"PurchTable","FieldArrayIndex":1,"FieldName":"PurchId","FormDataSourceName":"PurchTable","IsEditable":"Yes","IsQueryFilter":"Yes","MasterFormDataSourceName":"PurchTable","Operator":"DoesNotContain","RecordingReferences":[],"SFKReplacementFieldBinding":"","TableId":9669,"Values":["00000042"],"Version":2}]</Value>
+    </UserAction>
+    <UserAction Ref="i22">
+        <Description>Open Vendor account column filter.</Description>
+        <NodeId>i22</NodeId>
+        <Sequence>21</Sequence>
+        <ControlName>SystemDefinedFilterManager</ControlName>
+        <ControlLabel />
+        <ControlType>FilterManager</ControlType>
+        <Value>[{"Capability":null,"DataSourceName":"","FieldArrayIndex":1,"FieldName":"OrderAccount","FormDataSourceName":"PurchTable","IsEditable":"Yes","IsQueryFilter":"Yes","MasterFormDataSourceName":"","Operator":"Matches","RecordingReferences":[],"SFKReplacementFieldBinding":"","TableId":0,"Values":[""],"Version":2}]</Value>
     </UserAction>
     <UserAction Ref="i24">
-        <Description>In the Warehouse field, enter or select a value.</Description>
+        <Description>Sort Z to A</Description>
         <NodeId>i24</NodeId>
-        <Sequence>48</Sequence>
-        <ControlName>InventLocationIdFilter</ControlName>
-        <ControlLabel>Warehouse</ControlLabel>
-        <ControlType>Input</ControlType>
-        <Value>11</Value>
+        <Sequence>21</Sequence>
+        <ControlName>SystemDefinedFilterManager</ControlName>
+        <ControlLabel />
+        <ControlType>FilterManager</ControlType>
+        <Value>[{"Capability":{"DisplayDataType":"String","DomainValues":null,"FieldId":0,"FieldLabel":"Vendor account","FieldName":"","RelationLabel":"","SFKReplacementFieldBinding":"","ShowLookup":false,"TableId":0,"Version":2},"DataSourceName":"PurchTable","FieldArrayIndex":1,"FieldName":"OrderAccount","FormDataSourceName":"PurchTable","IsEditable":"Yes","IsQueryFilter":"Yes","MasterFormDataSourceName":"PurchTable","Operator":"BeginsWith","RecordingReferences":[],"SFKReplacementFieldBinding":"","TableId":9669,"Values":[""],"Version":2}]</Value>
+    </UserAction>
+    <UserAction Ref="i26">
+        <Description>Open Invoice account column filter.</Description>
+        <NodeId>i26</NodeId>
+        <Sequence>21</Sequence>
+        <ControlName>SystemDefinedFilterManager</ControlName>
+        <ControlLabel />
+        <ControlType>FilterManager</ControlType>
+        <Value>[{"Capability":null,"DataSourceName":"","FieldArrayIndex":1,"FieldName":"InvoiceAccount","FormDataSourceName":"PurchTable","IsEditable":"Yes","IsQueryFilter":"Yes","MasterFormDataSourceName":"","Operator":"Matches","RecordingReferences":[],"SFKReplacementFieldBinding":"","TableId":0,"Values":[""],"Version":2}]</Value>
     </UserAction>
     <UserAction Ref="i28">
-        <Description>In the list, click the link in the selected row.</Description>
+        <Description>Enter a filter value of "1002" on the "Invoice account" field using the "does not contain" filter operator.</Description>
         <NodeId>i28</NodeId>
-        <Sequence>48</Sequence>
-        <ControlName>GridInventLocation</ControlName>
+        <Sequence>21</Sequence>
+        <ControlName>SystemDefinedFilterManager</ControlName>
         <ControlLabel />
-        <ControlType>Grid</ControlType>
-        <Value />
+        <ControlType>FilterManager</ControlType>
+        <Value>[{"Capability":{"DisplayDataType":"String","DomainValues":null,"FieldId":0,"FieldLabel":"Invoice account","FieldName":"","RelationLabel":"","SFKReplacementFieldBinding":"","ShowLookup":false,"TableId":0,"Version":2},"DataSourceName":"PurchTable","FieldArrayIndex":1,"FieldName":"InvoiceAccount","FormDataSourceName":"PurchTable","IsEditable":"Yes","IsQueryFilter":"Yes","MasterFormDataSourceName":"PurchTable","Operator":"DoesNotContain","RecordingReferences":[],"SFKReplacementFieldBinding":"","TableId":9669,"Values":["1002"],"Version":2}]</Value>
     </UserAction>
     <UserAction Ref="i30">
-        <Description>In the Ship date field, enter a date.</Description>
-        <NodeId>i30</NodeId>
-        <Sequence>48</Sequence>
-        <ControlName>ShipDateFilter</ControlName>
-        <ControlLabel>Ship date</ControlLabel>
-        <ControlType>Date</ControlType>
-        <Value>2025-05-13</Value>
-    </UserAction>
-    <UserAction Ref="i32">
-        <Description>In the Receipt date field, enter a date.</Description>
-        <NodeId>i32</NodeId>
-        <Sequence>48</Sequence>
-        <ControlName>ReceiptDateFilter</ControlName>
-        <ControlLabel>Receipt date</ControlLabel>
-        <ControlType>Date</ControlType>
-        <Value>2025-05-20</Value>
-    </UserAction>
-    <UserAction Ref="i34">
-        <Description>Click the Transfer lines tab.</Description>
-        <NodeId>i34</NodeId>
-        <Sequence>48</Sequence>
-        <ControlName>InventLines</ControlName>
-        <ControlLabel>Transfer lines</ControlLabel>
-        <ControlType>PivotItem</ControlType>
-        <Value>true</Value>
-    </UserAction>
-    <UserAction Ref="i36">
-        <Description>Click the Sales lines tab.</Description>
-        <NodeId>i36</NodeId>
-        <Sequence>48</Sequence>
-        <ControlName>SalesLines</ControlName>
-        <ControlLabel>Sales lines</ControlLabel>
-        <ControlType>PivotItem</ControlType>
-        <Value>true</Value>
-    </UserAction>
-    <UserAction Ref="i38">
-        <Description>Click the Shipments tab.</Description>
-        <NodeId>i38</NodeId>
-        <Sequence>48</Sequence>
-        <ControlName>UnassignedShipments</ControlName>
-        <ControlLabel>Shipments</ControlLabel>
-        <ControlType>PivotItem</ControlType>
-        <Value>true</Value>
-    </UserAction>
-    <UserAction Ref="i40">
-        <Description>In the Load filter field, enter or select a value.</Description>
-        <NodeId>i40</NodeId>
-        <Sequence>48</Sequence>
-        <ControlName>LoadLPWFilter</ControlName>
-        <ControlLabel>Load filter</ControlLabel>
-        <ControlType>Input</ControlType>
-        <Value />
-    </UserAction>
-    <UserAction Ref="i43">
         <Description>Close the page.</Description>
-        <NodeId>i43</NodeId>
-        <Sequence>48</Sequence>
+        <NodeId>i30</NodeId>
+        <Sequence>21</Sequence>
         <ControlName>No Control Name</ControlName>
         <ControlLabel />
         <ControlType />
         <Value />
-        <Annotations>
-            <ns0:Annotation xsi:type="TaskGuideAnnotation">
-                <ns0:Description xsi:nil="true" />
-                <ns0:ExampleText xsi:nil="true" />
-                <ns0:GlobalId xsi:nil="true" />
-                <ns0:Hidden>true</ns0:Hidden>
-                <ns0:RecordingValueType>Preferred</ns0:RecordingValueType>
-                <ns0:Title xsi:nil="true" />
-            </ns0:Annotation>
-        </Annotations>
+        <Annotations />
     </UserAction>
-    <UserAction Ref="i45">
-        <Description>In the list, find and select the desired record.</Description>
-        <NodeId>i45</NodeId>
-        <Sequence>48</Sequence>
-        <ControlName>LoadGrid</ControlName>
+    <UserAction Ref="i32">
+        <Description>Go to Accounts payable &gt; Invoices &gt; Pending vendor invoices.</Description>
+        <NodeId>i32</NodeId>
+        <Sequence>21</Sequence>
+        <Navigation>mainmenu</Navigation>
+        <Navigation>AccountsPayable</Navigation>
+        <Navigation>VendorInvoices</Navigation>
+        <ControlName>No Control Name</ControlName>
         <ControlLabel />
-        <ControlType>Grid</ControlType>
-        <Value>4</Value>
-    </UserAction>
-    <UserAction Ref="i47">
-        <Description>Click Actions.</Description>
-        <NodeId>i47</NodeId>
-        <Sequence>48</Sequence>
-        <ControlName>Actions</ControlName>
-        <ControlLabel>Actions</ControlLabel>
-        <ControlType>MenuButton</ControlType>
+        <ControlType />
         <Value />
     </UserAction>
-    <UserAction Ref="i49">
-        <Description>Click Change work location.</Description>
-        <NodeId>i49</NodeId>
-        <Sequence>48</Sequence>
-        <ControlName>change</ControlName>
-        <ControlLabel>Change work location</ControlLabel>
-        <ControlType>MenuItem</ControlType>
-        <Value />
-    </UserAction>
-    <UserAction Ref="i52">
-        <Description>In the User ID field, enter or select a value.</Description>
-        <NodeId>i52</NodeId>
-        <Sequence>48</Sequence>
-        <ControlName>WHSUserId</ControlName>
-        <ControlLabel>User ID</ControlLabel>
-        <ControlType>Input</ControlType>
-        <Value>25</Value>
-    </UserAction>
-    <UserAction Ref="i60">
-        <Description>In the Work priority field, enter a number.</Description>
-        <NodeId>i60</NodeId>
-        <Sequence>48</Sequence>
-        <ControlName>WHSWorkPriority</ControlName>
-        <ControlLabel>Work priority</ControlLabel>
-        <ControlType>Integer</ControlType>
-        <Value>1</Value>
-    </UserAction>
-    <UserAction Ref="i62">
-        <Description>Click OK.</Description>
-        <NodeId>i62</NodeId>
-        <Sequence>48</Sequence>
-        <ControlName>OK</ControlName>
-        <ControlLabel>OK</ControlLabel>
-        <ControlType>CommandButton</ControlType>
-        <Value />
-    </UserAction>
-    <UserAction Ref="i64">
-        <Description>In the Final shipping location field, enter or select a value.</Description>
-        <NodeId>i64</NodeId>
-        <Sequence>48</Sequence>
-        <ControlName>FinalLocationId</ControlName>
-        <ControlLabel>Final shipping location</ControlLabel>
-        <ControlType>Input</ControlType>
-        <Value>BAYDOOR</Value>
-    </UserAction>
-    <UserAction Ref="i70">
-        <Description>Click OK.</Description>
-        <NodeId>i70</NodeId>
-        <Sequence>48</Sequence>
-        <ControlName>OK</ControlName>
-        <ControlLabel>OK</ControlLabel>
-        <ControlType>CommandButton</ControlType>
-        <Value />
-    </UserAction>
-    <UserAction Ref="i72">
-        <Description>Click Save.</Description>
-        <NodeId>i72</NodeId>
-        <Sequence>48</Sequence>
-        <ControlName>SystemDefinedSaveButton</ControlName>
-        <ControlLabel>Save</ControlLabel>
-        <ControlType>CommandButton</ControlType>
-        <Value />
-    </UserAction>
-    <UserAction Ref="i74">
-        <Description>On the Action Pane, click Supply and demand.</Description>
-        <NodeId>i74</NodeId>
-        <Sequence>48</Sequence>
-        <ControlName>SupplyDemandActionPane</ControlName>
-        <ControlLabel>Supply and demand</ControlLabel>
-        <ControlType>AppBarTab</ControlType>
-        <Value />
-    </UserAction>
-    <UserAction Ref="i76">
-        <Description>Click To new load.</Description>
-        <NodeId>i76</NodeId>
-        <Sequence>48</Sequence>
-        <ControlName>AddToNewLoad</ControlName>
-        <ControlLabel>To new load</ControlLabel>
-        <ControlType>Button</ControlType>
-        <Value />
-    </UserAction>
-    <UserAction Ref="i79">
-        <Description>In the Load template ID field, enter or select a value.</Description>
-        <NodeId>i79</NodeId>
-        <Sequence>48</Sequence>
-        <ControlName>Fld1_1</ControlName>
-        <ControlLabel>Load template ID</ControlLabel>
-        <ControlType>Input</ControlType>
-        <Value>20' Container</Value>
-    </UserAction>
-    <UserAction Ref="i85">
-        <Description>Click OK.</Description>
-        <NodeId>i85</NodeId>
-        <Sequence>48</Sequence>
-        <ControlName>OkButton</ControlName>
-        <ControlLabel>OK</ControlLabel>
-        <ControlType>CommandButton</ControlType>
-        <Value />
-    </UserAction>
-    <UserAction Ref="i87">
-        <Description>On the Action Pane, click Filters.</Description>
-        <NodeId>i87</NodeId>
-        <Sequence>48</Sequence>
-        <ControlName>FiltersActionPane</ControlName>
-        <ControlLabel>Filters</ControlLabel>
-        <ControlType>AppBarTab</ControlType>
-        <Value />
-    </UserAction>
-    <UserAction Ref="i89">
-        <Description>Click Set as default.</Description>
-        <NodeId>i89</NodeId>
-        <Sequence>48</Sequence>
-        <ControlName>ButtonSetDefault</ControlName>
-        <ControlLabel>Set as default</ControlLabel>
-        <ControlType>Button</ControlType>
-        <Value />
-    </UserAction>
-    <UserAction Ref="i91">
-        <Description>Click Ship and receive.</Description>
-        <NodeId>i91</NodeId>
-        <Sequence>48</Sequence>
-        <ControlName>ShipReceive</ControlName>
-        <ControlLabel>Ship and receive</ControlLabel>
-        <ControlType>MenuButton</ControlType>
-        <Value />
-    </UserAction>
-    <UserAction Ref="i93">
-        <Description>Click Reverse shipment confirmation.</Description>
-        <NodeId>i93</NodeId>
-        <Sequence>48</Sequence>
-        <ControlName>btnReverseShipConfirm</ControlName>
-        <ControlLabel>Reverse shipment confirmation</ControlLabel>
-        <ControlType>MenuItem</ControlType>
-        <Value />
-    </UserAction>
-    <UserAction Ref="i95">
-        <Description>In the list, find and select the desired record.</Description>
-        <NodeId>i95</NodeId>
-        <Sequence>48</Sequence>
-        <ControlName>LoadGrid</ControlName>
+    <UserAction Ref="i35">
+        <Description>Use the Quick Filter to find records. For example, filter on the Imported invoice amount field with a value of '1003'.</Description>
+        <NodeId>i35</NodeId>
+        <Sequence>21</Sequence>
+        <ControlName>QuickFilterControl</ControlName>
         <ControlLabel />
-        <ControlType>Grid</ControlType>
-        <Value>4</Value>
+        <ControlType>QuickFilter</ControlType>
+        <Value>Imported invoice amount</Value>
     </UserAction>
-    <UserAction Ref="i97">
-        <Description>Click Ship and receive.</Description>
-        <NodeId>i97</NodeId>
-        <Sequence>48</Sequence>
-        <ControlName>ShipReceive</ControlName>
-        <ControlLabel>Ship and receive</ControlLabel>
-        <ControlType>MenuButton</ControlType>
-        <Value />
-    </UserAction>
-    <UserAction Ref="i99">
-        <Description>Click Create cross docking packing structure.</Description>
-        <NodeId>i99</NodeId>
-        <Sequence>48</Sequence>
-        <ControlName>WHSPackStructureCrossDockCreate</ControlName>
-        <ControlLabel>Create cross docking packing structure</ControlLabel>
-        <ControlType>MenuItem</ControlType>
-        <Value />
-    </UserAction>
-    <UserAction Ref="i102">
-        <Description>In the Batch group field, enter or select a value.</Description>
-        <NodeId>i102</NodeId>
-        <Sequence>48</Sequence>
-        <ControlName>Fld4_1</ControlName>
-        <ControlLabel>Batch group</ControlLabel>
+    <UserAction Ref="i37">
+        <Description>In the Company field, enter or select a value.</Description>
+        <NodeId>i37</NodeId>
+        <Sequence>21</Sequence>
+        <ControlName>CompanyFilter</ControlName>
+        <ControlLabel>Company</ControlLabel>
         <ControlType>Input</ControlType>
-        <Value>AIFBatch</Value>
+        <Value />
     </UserAction>
-    <UserAction Ref="i110">
-        <Description>Select Yes in the Batch processing field.</Description>
-        <NodeId>i110</NodeId>
-        <Sequence>48</Sequence>
-        <ControlName>Fld2_1</ControlName>
-        <ControlLabel>Batch processing</ControlLabel>
-        <ControlType>CheckBox</ControlType>
-        <Value>True</Value>
-    </UserAction>
-    <UserAction Ref="i112">
-        <Description>Select Yes in the Critical Job field.</Description>
-        <NodeId>i112</NodeId>
-        <Sequence>48</Sequence>
-        <ControlName>Fld6_1</ControlName>
-        <ControlLabel>Critical Job</ControlLabel>
-        <ControlType>CheckBox</ControlType>
-        <Value>True</Value>
-    </UserAction>
-    <UserAction Ref="i114">
-        <Description>Select Yes in the Private field.</Description>
-        <NodeId>i114</NodeId>
-        <Sequence>48</Sequence>
-        <ControlName>Fld5_1</ControlName>
-        <ControlLabel>Private</ControlLabel>
-        <ControlType>CheckBox</ControlType>
-        <Value>True</Value>
-    </UserAction>
-    <UserAction Ref="i116">
-        <Description>Click OK.</Description>
-        <NodeId>i116</NodeId>
-        <Sequence>48</Sequence>
-        <ControlName>CommandButton</ControlName>
-        <ControlLabel>OK</ControlLabel>
+    <UserAction Ref="i44">
+        <Description>Click Select.</Description>
+        <NodeId>i44</NodeId>
+        <Sequence>21</Sequence>
+        <ControlName>OK</ControlName>
+        <ControlLabel>Select</ControlLabel>
         <ControlType>CommandButton</ControlType>
         <Value />
+    </UserAction>
+    <UserAction Ref="i46">
+        <Description>Open Name column filter.</Description>
+        <NodeId>i46</NodeId>
+        <Sequence>21</Sequence>
+        <ControlName>SystemDefinedFilterManager</ControlName>
+        <ControlLabel />
+        <ControlType>FilterManager</ControlType>
+        <Value>[{"Capability":null,"DataSourceName":"","FieldArrayIndex":1,"FieldName":"PurchName","FormDataSourceName":"VendInvoiceInfoTable","IsEditable":"Yes","IsQueryFilter":"Yes","MasterFormDataSourceName":"","Operator":"Matches","RecordingReferences":[],"SFKReplacementFieldBinding":"","TableId":0,"Values":[""],"Version":2}]</Value>
+    </UserAction>
+    <UserAction Ref="i48">
+        <Description>Sort Z to A</Description>
+        <NodeId>i48</NodeId>
+        <Sequence>21</Sequence>
+        <ControlName>SystemDefinedFilterManager</ControlName>
+        <ControlLabel />
+        <ControlType>FilterManager</ControlType>
+        <Value>[{"Capability":{"DisplayDataType":"String","DomainValues":null,"FieldId":0,"FieldLabel":"Name","FieldName":"","RelationLabel":"","SFKReplacementFieldBinding":"","ShowLookup":false,"TableId":0,"Version":2},"DataSourceName":"VendInvoiceInfoTable","FieldArrayIndex":1,"FieldName":"PurchName","FormDataSourceName":"VendInvoiceInfoTable","IsEditable":"Yes","IsQueryFilter":"Yes","MasterFormDataSourceName":"VendInvoiceInfoTable","Operator":"Contains","RecordingReferences":[],"SFKReplacementFieldBinding":"","TableId":3490,"Values":[""],"Version":2}]</Value>
     </UserAction>
 </UserActionsWithDetails>

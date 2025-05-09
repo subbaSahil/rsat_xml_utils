@@ -3,43 +3,84 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.common.by import By
 import re
+from selenium.webdriver.common.action_chains import ActionChains
+# def wait_and_click(driver, by, value, timeout=20):
+#     # Wait for element to be present
+#     element = WebDriverWait(driver, timeout).until(EC.presence_of_element_located((by, value)))
+#     # if(check_element_exist(driver, by, "//div[contains(@class,'popupShadow popupView preview')]")):
+#     #     element.click()
+#     # Get the aria-expanded attribute (if any)
+#     aria_expanded = element.get_attribute("aria-expanded")
+#     flag = False
+#     if(element): 
+#         flag = True
+#         if aria_expanded is not None:
+#         # print(f"aria-expanded attribute found: {aria_expanded}")
+#             if aria_expanded.lower() == "false":
+#                 driver.execute_script("arguments[0].scrollIntoView({block: 'center', behavior: 'smooth'});", element)
+#                 WebDriverWait(driver, timeout).until(
+#                 EC.element_to_be_clickable((by, value))
+#             )
+#                 element.click()
+#         else:
+#             # print("aria-expanded not found. Clicking by default.")
+#             driver.execute_script("arguments[0].scrollIntoView({block: 'center', behavior: 'smooth'});", element)
+#             WebDriverWait(driver, timeout).until(
+#             EC.element_to_be_clickable((by, value))
+#             )
+#             element.click()
+#     time.sleep(2)
+#     return flag;  
 
-def wait_and_click(driver, by, value, timeout=20):
-    # Wait for element to be present
-    element = WebDriverWait(driver, timeout).until(EC.presence_of_element_located((by, value)))
+def wait_and_click(driver, by, base_xpath, timeout=10):
+    try:
+        # Wait until the element is present
+        element = WebDriverWait(driver, timeout).until(
+            EC.presence_of_element_located((by, base_xpath))
+        )
 
-    # Get the aria-expanded attribute (if any)
-    aria_expanded = element.get_attribute("aria-expanded")
-    flag = False
-    if(element): 
-        flag = True
-        if aria_expanded is not None:
-        # print(f"aria-expanded attribute found: {aria_expanded}")
-            if aria_expanded.lower() == "false":
-                driver.execute_script("arguments[0].scrollIntoView({block: 'center', behavior: 'smooth'});", element)
-                WebDriverWait(driver, timeout).until(
-                EC.element_to_be_clickable((by, value))
-            )
+        if element:
+            aria_expanded = element.get_attribute("aria-expanded")
+            
+            # If aria-expanded is present and false, or not present at all
+            if aria_expanded is not None:
+                if aria_expanded.lower() == "false":
+                    WebDriverWait(driver, timeout).until(EC.element_to_be_clickable((by, base_xpath)))
+                    element.click()
+            else:
+                WebDriverWait(driver, timeout).until(EC.element_to_be_clickable((by, base_xpath)))
                 element.click()
+
+    except Exception as e:
+        print(f"Primary click failed on base_xpath: {base_xpath} - {str(e)}")
+
+        if base_xpath:
+            # Try fallback by clicking indexed variants
+            for i in range(1, 100):
+                xpath = f"({base_xpath})[{i}]"
+                try:
+                    fallback_element = WebDriverWait(driver, timeout).until(
+                        EC.element_to_be_clickable((by, xpath))
+                    )
+                    driver.execute_script("arguments[0].click();", fallback_element)
+                    print(f"Successfully clicked fallback element at index {i}")
+                    break
+                except Exception as ex:
+                    print(f"Attempt {i} failed for xpath: {xpath} - {str(ex)}")
         else:
-            # print("aria-expanded not found. Clicking by default.")
-            driver.execute_script("arguments[0].scrollIntoView({block: 'center', behavior: 'smooth'});", element)
-            WebDriverWait(driver, timeout).until(
-            EC.element_to_be_clickable((by, value))
-            )
-            element.click()
-    time.sleep(2)
-    return flag;  
+            print(f"No base_xpath provided. Exception: {str(e)}")
+
+    time.sleep(4)
         
 
 def wait_and_send_keys(driver, by, value, keys,timeout=20):
     element = WebDriverWait(driver, timeout).until(EC.element_to_be_clickable((by, value)))
+    time.sleep(0.5)
     element.click()
-    element.clear()  # Clear the input field before sending keys
+    # element.clear()  # Clear the input field before sending keys
     element.send_keys(keys)
-    # element.send_keys(Keys.RETURN)  # Press Tab after sending keys
-    time.sleep(2) 
 def check_element_exist(driver, by, value, timeout=10):
     try:
         element = WebDriverWait(driver, timeout).until(
@@ -175,3 +216,18 @@ def extract_dates(date_str):
     to_date = f"{parts[3]}/{parts[4]}/{parts[5]}"
     
     return [from_date, to_date]
+
+
+def click_back_button(driver, by, base_xpath,timeout=10):
+    for i in range(1,100):
+        # print("Attempt:", i)
+        xpath = f"({base_xpath})[{i}]"
+        try:
+            close_button = WebDriverWait(driver, timeout).until(
+                EC.element_to_be_clickable((by, xpath))
+            )
+            close_button.click()
+            print(f"Successfully clicked button at index {i}")
+            break
+        except Exception as e:
+            print(f"Attempt {i} failed for xpath : {xpath}")

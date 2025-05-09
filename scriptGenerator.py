@@ -3,8 +3,11 @@ import re
 import Interactions
 from selenium.webdriver.common.by import By
 from getLocatorFromControls import generate_xpath_from_control
+
+import datetime
 XML_PATH = "output.xml"
 OUTPUT_SCRIPT = "rsat_script.py"
+
 
 def convert_date_format(date_str):
     """Convert date from YYYY-MM-DD to DD/MM/YYYY format."""
@@ -29,8 +32,6 @@ def extract_navigation_from_description(root):
                         description_navs.append(item)
     return description_navs
 
-import re
-
 def extract_controls_with_types(root):
     controls = []
     def extract_field_name_from_filtermanager(description_text):
@@ -40,7 +41,7 @@ def extract_controls_with_types(root):
                 return match.group(1)
         return ""
 
-    for elem in root.iter():
+    for elem in root.findall(".//UserAction"):
         label = None
         control_name = None
         control_type = None
@@ -70,19 +71,17 @@ def extract_controls_with_types(root):
             elif tag == "Annotations":
                 # If Annotations has at least one child, it's present
                 annotation_present = len(child.findall(".//*")) > 0
-
-
-        if control_name and control_type:
-            controls.append({
-                "label": label or "",
-                "name": control_name,
-                "type": control_type or "",
-                "value": value or "",
-                "filtervalue": filtervalue or "",
-                "filterManagerLocator": filterManagerLocator or "",
-               "description": description or "",  # Now we'll always have this
-                "annotation_present": annotation_present
-            })
+ 
+        controls.append({
+            "label": label or "",
+            "name": control_name,
+            "type": control_type or "",
+            "value": value or "",
+            "filtervalue": filtervalue or "",
+            "filterManagerLocator": filterManagerLocator or "",
+            "description": description or "", 
+            "annotation_present": annotation_present
+        })
 
     return controls
 
@@ -92,6 +91,7 @@ def generate_selenium_script(nav_keys, controls):
         "from selenium import webdriver",
         "from selenium.webdriver.common.by import By",
         "from selenium.webdriver.common.keys import Keys",
+        "from selenium.webdriver.common.action_chains import ActionChains\n",
         "import time\n",
         "import login",
         "import Interactions",
@@ -122,7 +122,13 @@ def generate_selenium_script(nav_keys, controls):
         filtervalue = control["filtervalue"]
         filterManagerLocator = control["filterManagerLocator"]
         description = control["description"]
-        xpath = generate_xpath_from_control(ctype, name,label)
+        
+        if description and description.strip() == "Close the page." and not control["annotation_present"]:
+            lines.append("# Closing the page")
+            lines.append("Interactions.click_back_button(driver, By.XPATH, \"//button[@data-dyn-controlname='SystemDefinedCloseButton']\")")
+            lines.append("time.sleep(1)")
+            continue
+        xpath = generate_xpath_from_control(ctype, name,label, description, value)
 
         if xpath:
             if ctype in ["input" , "referencegroup","segmentedentry"] :
@@ -147,6 +153,15 @@ def generate_selenium_script(nav_keys, controls):
                 lines.append(f"    Interactions.clear_input_field_and_send_keys(driver, By.XPATH, locator, \"{filtervalue}\")")
                 lines.append(f"    Interactions.press_enter(driver, By.XPATH, locator)")
             
+            elif ctype == "datetime":
+                dt = datetime.datetime.fromisoformat(value)
+                formatted_value = dt.strftime("%#m/%#d/%Y %#I:%M %p")
+                # lines.append(f"Interactions.send_input_with_clear(driver, By.XPATH, \"{xpath}\", \"{formatted_value}\")")
+                lines.append(f"if Interactions.check_element_exist(driver, By.XPATH, \"{xpath[0]}\"):")
+                lines.append(f"    Interactions.wait_and_send_keys(driver, By.XPATH, \"{xpath[0]}\", \"{formatted_value}\",Keys.RETURN)")
+                lines.append(f"elif Interactions.check_element_exist(driver, By.XPATH, \"{xpath[1]}\"):")
+                lines.append(f"    Interactions.wait_and_send_keys(driver, By.XPATH, \"{xpath[1]}\", \"{formatted_value}\",Keys.RETURN)")
+
             elif ctype == "date":
                 date = convert_date_format(value)
                 lines.append(f"if(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[0]}\")):")
@@ -180,6 +195,11 @@ def generate_selenium_script(nav_keys, controls):
                 lines.append(f"# Clicking (default) on: {name}")
                 lines.append("time.sleep(3)")
                 lines.append(f"Interactions.wait_and_click(driver, By.XPATH, \"{xpath}\")")
+            
+            elif ctype == "formrunpersonalizationtoolbarcontrol":
+                lines.append(f"Interactions.wait_and_click(driver, By.XPATH, \"(//div[@data-dyn-role='OverflowButton'])[2]\")")
+                lines.append(f"Interactions.wait_and_click(driver, By.XPATH, \"{xpath}\")")
+
             elif ctype == "filtermanager":
                 if description.startswith("Open"):
                     lines.append(f"# Clicking filter manager: {name}")
@@ -190,7 +210,7 @@ def generate_selenium_script(nav_keys, controls):
                     lines.append("    class_attr = div.get_attribute('class')")
                     lines.append("    if 'hasOpenPopup' in class_attr:")
                     lines.append("        filter_manager_cloumn_last_opened = Interactions.get_element_text(driver, By.XPATH, f\"(//div/parent::div[contains(@class, 'dyn-headerCell')])[{i}]\")")
-                    lines.append("        print(f\"filter_manager_cloumn_last_opened: {filter_manager_cloumn_last_opened}\")")
+                    # lines.append("        print(f\"filter_manager_cloumn_last_opened: {filter_manager_cloumn_last_opened}\")")
                     lines.append("        break")
                     lines.append(f"if filter_manager_cloumn_last_opened == '{filterManagerLocator}' and filter_manager_cloumn_last_opened != '':")
                     lines.append(f"    Interactions.wait_and_click(driver, By.XPATH, \"//div[text()='{filterManagerLocator}']\")")
@@ -203,25 +223,24 @@ def generate_selenium_script(nav_keys, controls):
                 elif description.startswith("Click Clear"):
                     lines.append("Interactions.wait_and_click(driver, By.XPATH, \"//span[text()='Clear']/ancestor::button\")")
                 elif description.startswith("Enter a filter value of"):
-                    print(description)
                     description = Interactions.normalize_description_quotes(description)
-                    # lines.append("Interactions.wait_and_click(driver, By.XPATH, \"//span[text()='Apply']/ancestor::button\")")
-                    # lines.append("text=Interactions.get_element_text(driver, By.XPATH, \"//span[contains(@class,'button-label-dropDown')]/ancestor::button[contains(@class,'dynamicsButton')]/ancestor::div[@class='filterField-titleContainer']//button//span[@class='button-label button-label-dropDown']\")")
-                    # lines.append("print(text)")
                     lines.append(f"filter_manager_data = Interactions.extract_value_and_operator_from_description(\"{description}\")")
                     lines.append("operator = filter_manager_data['operator']")
                     lines.append("new_val = filter_manager_data['value']")
                     lines.append("field_name = filter_manager_data['field_name']")
                     lines.append("drop_down_item = \"//input[contains(@aria-label,'Filter field: \"+field_name+\",')]/ancestor::div[@class='columnHeader-popup sysPopup']/ancestor::body/child::div[@class='sysPopup flyoutButton-flyOut layout-root-scope']//button//span[text()='\"+operator+\"']\"")
-                    # lines.append("print(drop_down_item)")
+                
                     lines.append("input_field = \"//input[contains(@aria-label,'Filter field: \"+field_name+\",')]\"")
                     lines.append("apply_button = \"//input[contains(@aria-label,'Filter field: \"+field_name+\", operator: ')]//ancestor::div/child::div[@class='columnHeaderPopup-buttons']//span[text()='Apply']/ancestor::button\"")
                     lines.append("dropDown_button = \"//span[contains(@class,'button-label-dropDown')]/ancestor::button[contains(@class,'dynamicsButton')][ancestor::div[@class='filterFieldContainer']//input[contains(@aria-label,'Filter field: \"+field_name+\"')]]\"")
                     lines.append(f"Interactions.wait_and_click(driver, By.XPATH, dropDown_button)")
                     lines.append(f"Interactions.wait_and_click(driver, By.XPATH, drop_down_item)")
+                    lines.append("if(Interactions.check_element_exist(driver, By.XPATH, \"//div[contains(@class,'popupShadow popupView preview')]\")):")
+                    lines.append("    actions = ActionChains(driver)")
+                    lines.append("    other_element = driver.find_element(By.XPATH, \"//div[text()='\" + field_name + \"']\")")
+                    lines.append("    actions.move_to_element(other_element).perform()")
                     lines.append("if operator == 'is one of' or operator == 'matches':")
                     lines.append("    new_val = Interactions.extract_multiple_values(new_val)")
-                    lines.append("    print(new_val)")
                     lines.append("    for new_val_value in new_val:")
                     lines.append("        Interactions.wait_and_send_keys(driver, By.XPATH, input_field, new_val_value)")
                     lines.append("        Interactions.wait_and_click(driver, By.XPATH, apply_button)")
@@ -234,6 +253,8 @@ def generate_selenium_script(nav_keys, controls):
                     lines.append("else:")
                     lines.append("    Interactions.wait_and_send_keys(driver, By.XPATH, input_field, new_val)")
                     lines.append(f"Interactions.wait_and_click(driver, By.XPATH, apply_button)")
+            
+                    
             else:
                 lines.append(f"# Clicking (default) on: {name}")
                 lines.append(f"Interactions.wait_and_click(driver, By.XPATH, \"{xpath}\")")
@@ -258,5 +279,4 @@ selenium_code = generate_selenium_script(navigation_keys, controls)
 
 with open(OUTPUT_SCRIPT, "w", encoding="utf-8") as f:
     f.write(selenium_code)
-
 print(f"✅ Selenium script generated in: {OUTPUT_SCRIPT}")
