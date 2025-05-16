@@ -1,8 +1,9 @@
-def generate_xpath_from_control(control_type, control_name, control_label, description,value):
+def generate_xpath_from_control(control_type, control_name, control_label, description,value,second_word):
     control_type = control_type.lower()
 #filter manager/quick filter
     if control_type in ["commandbutton", "menuitembutton","dropdialogbutton","button","togglebutton"]:
-        return f"//button[@data-dyn-controlname='{control_name}']"
+        return [f"//button[@data-dyn-controlname='{control_name}']",
+                 f"//button[@aria-label='{control_label}']"]
     elif control_type in ["menubutton", "menuitem"]:
         return f"//button[@name='{control_name}']"
     # elif control_type in ["combobox"]:
@@ -33,13 +34,13 @@ def generate_xpath_from_control(control_type, control_name, control_label, descr
         if second_word:
             return f"(//span[contains(text(),'{second_word}')]/parent::div/parent::button)[2]"
         return f"(//span[contains(text(),'Personalize')]/parent::div/parent::button)[2]"
- 
-    # if control_type == "formrunpersonalizationtoolbarcontrol" and description and description.lower().startswith("click "):
-    #     parts = description.split()
-    #     if len(parts) > 1:
-    #         second_word = parts[1]
-    #         if second_word.lower() == "close":
-    #             continue
- 
-
-    # elif control_type == "quickfilter":
+    elif control_type == "grid":
+        
+        if value == "":
+            # print("value is empty")
+            return
+        #if value !='' or value != "true" or value != "false":
+        else:
+            return f"//div[contains(@class,'fixedDataTableRowLayout_')]/div[@aria-rowindex='{str(int(value) + 1) }']"
+        
+    

@@ -6,6 +6,24 @@ from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
 import re
 from selenium.webdriver.common.action_chains import ActionChains
+from selenium.common.exceptions import NoSuchElementException, ElementClickInterceptedException
+
+def extract_navigation_steps(description):
+    if not description or "Go to " not in description:
+        return []
+
+    # Extract the part after "Go to"
+    path = description.split("Go to ", 1)[-1].strip()
+
+    # Remove trailing period
+    if path.endswith("."):
+        path = path[:-1]
+
+    # Split by '>' and strip extra spaces
+    steps = [step.strip() for step in path.split(">")]
+
+    return steps
+
 # def wait_and_click(driver, by, value, timeout=20):
 #     # Wait for element to be present
 #     element = WebDriverWait(driver, timeout).until(EC.presence_of_element_located((by, value)))
@@ -58,7 +76,7 @@ def wait_and_click(driver, by, base_xpath, timeout=10):
 
         if base_xpath:
             # Try fallback by clicking indexed variants
-            for i in range(1, 100):
+            for i in range(1, 20):
                 xpath = f"({base_xpath})[{i}]"
                 try:
                     fallback_element = WebDriverWait(driver, timeout).until(
@@ -81,6 +99,14 @@ def wait_and_send_keys(driver, by, value, keys,timeout=20):
     element.click()
     # element.clear()  # Clear the input field before sending keys
     element.send_keys(keys)
+
+def wait_and_send_keys_and_enter(driver, by, value, keys,timeout=20):
+    element = WebDriverWait(driver, timeout).until(EC.element_to_be_clickable((by, value)))
+    time.sleep(0.5)
+    element.click()
+    element.send_keys(keys)
+    element.send_keys(Keys.ENTER)
+
 def check_element_exist(driver, by, value, timeout=10):
     try:
         element = WebDriverWait(driver, timeout).until(
@@ -231,3 +257,52 @@ def click_back_button(driver, by, base_xpath,timeout=10):
             break
         except Exception as e:
             print(f"Attempt {i} failed for xpath : {xpath}")
+
+def scroll_and_click_row(driver, by, container_xpath, target_xpath, timeout=10, max_scrolls=20):
+    time.sleep(2)
+    try:
+        actions = ActionChains(driver)
+        container = WebDriverWait(driver, timeout).until(
+            EC.presence_of_element_located((by, container_xpath))
+        )
+        scroll_driection = None
+        count = container.get_attribute("aria-rowcount")
+        if(check_element_exist(driver, by, f"//div[contains(@class,'fixedDataTableRowLayout_')]/div[@aria-rowindex='{count}']")):
+            scroll_driection = Keys.PAGE_UP
+        else:
+            scroll_driection = Keys.PAGE_DOWN
+        for _ in range(max_scrolls):
+            try:
+                element_to_click = WebDriverWait(driver, 1).until(
+                    EC.visibility_of_element_located((by, target_xpath))
+                )
+                element_to_click.click()
+                return
+            except TimeoutException:
+                actions.move_to_element(container).click().send_keys(scroll_driection).perform()
+                time.sleep(0.5)
+
+        raise TimeoutException(f"Element {target_xpath} not found after scrolling.")
+
+    except TimeoutException as e:
+        print(f"Timeout: {e}")
+
+def check_input_ancestor_is_table(driver, by, value, timeout=10):
+    try:
+        element = WebDriverWait(driver, timeout).until(
+            EC.presence_of_element_located((by, f"{value}/ancestor::div[contains(@class,'fixedDataTableRowLayout_rowWrapper')]"))
+        )
+        # Check if the ancestor of the input is a table
+        if element:
+            return True
+        else:
+            return False
+    except TimeoutException:
+        return False
+    
+
+def extract_quickfilter_value(description):
+    match = re.search(r"with a value of '([^']+)'", description)
+    if match:
+        return match.group(1)
+    return None
