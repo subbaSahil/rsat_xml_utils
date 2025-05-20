@@ -70,6 +70,7 @@ def wait_and_click(driver, by, base_xpath, timeout=10):
             else:
                 WebDriverWait(driver, timeout).until(EC.element_to_be_clickable((by, base_xpath)))
                 element.click()
+                print(f"Clicked element with {base_xpath}")
 
     except Exception as e:
         print(f"Primary click failed on base_xpath: {base_xpath} - {str(e)}")
@@ -93,28 +94,43 @@ def wait_and_click(driver, by, base_xpath, timeout=10):
     time.sleep(4)
         
 
+def hover_on_an_element(driver, by, value, timeout=10):
+    element = WebDriverWait(driver, timeout).until(EC.element_to_be_clickable((by, value)))
+    ActionChains(driver).move_to_element(element).perform()
+    time.sleep(2)
+
+def js_click(driver, by, value, timeout=10):
+    element = WebDriverWait(driver, 10).until(
+    EC.presence_of_element_located((by, value))
+)
+# Scroll into view just in case
+    driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", element)
+    time.sleep(0.3)
+
+# Click using JavaScript
+    driver.execute_script("arguments[0].click();", element)
+
 def wait_and_send_keys(driver, by, value, keys,timeout=20):
     element = WebDriverWait(driver, timeout).until(EC.element_to_be_clickable((by, value)))
     time.sleep(0.5)
     element.click()
-    # element.clear()  # Clear the input field before sending keys
+    element.clear()
     element.send_keys(keys)
+    time.sleep(1)
 
-def wait_and_send_keys_and_enter(driver, by, value, keys,timeout=20):
+def send_enter(driver, by, value,timeout=20):
     element = WebDriverWait(driver, timeout).until(EC.element_to_be_clickable((by, value)))
-    time.sleep(0.5)
-    element.click()
-    element.send_keys(keys)
     element.send_keys(Keys.ENTER)
 
 def check_element_exist(driver, by, value, timeout=10):
     try:
-        element = WebDriverWait(driver, timeout).until(
+        WebDriverWait(driver, timeout).until(
             EC.presence_of_element_located((by, value))
         )
         return True
     except TimeoutException:
         return False
+
 
 def checkInputExpanded(driver, by, value, timeout=10):
     try:
@@ -258,47 +274,49 @@ def click_back_button(driver, by, base_xpath,timeout=10):
         except Exception as e:
             print(f"Attempt {i} failed for xpath : {xpath}")
 
-def scroll_and_click_row(driver, by, container_xpath, target_xpath, timeout=10, max_scrolls=20):
-    time.sleep(2)
+# def scroll_and_click_row(driver, by, container_xpath, target_xpath, timeout=10, max_scrolls=20):
+#     time.sleep(2)
+#     try:
+#         actions = ActionChains(driver)
+#         container = WebDriverWait(driver, timeout).until(
+#             EC.presence_of_element_located((by, container_xpath))
+#         )
+#         scroll_driection = None
+#         count = container.get_attribute("aria-rowcount")
+#         if(check_element_exist(driver, by, f"//div[contains(@class,'fixedDataTableRowLayout_')]/div[@aria-rowindex='{count}']")):
+#             scroll_driection = Keys.PAGE_UP
+#         else:
+#             scroll_driection = Keys.PAGE_DOWN
+#         for _ in range(max_scrolls):
+#             try:
+#                 element_to_click = WebDriverWait(driver, 1).until(
+#                     EC.visibility_of_element_located((by, target_xpath))
+#                 )
+#                 element_to_click.click()
+#                 return
+#             except TimeoutException:
+#                 actions.move_to_element(container).click().send_keys(scroll_driection).perform()
+#                 time.sleep(0.5)
+
+#         raise TimeoutException(f"Element {target_xpath} not found after scrolling.")
+
+#     except TimeoutException as e:
+#         print(f"Timeout: {e}")
+
+def check_input_ancestor_is_table(driver, by, value_xpath, timeout=10):
+    """
+    Check if the input element (given by value_xpath) has a visible ancestor 
+    with a specific class (e.g. part of a fixed data table row).
+    """
     try:
-        actions = ActionChains(driver)
-        container = WebDriverWait(driver, timeout).until(
-            EC.presence_of_element_located((by, container_xpath))
-        )
-        scroll_driection = None
-        count = container.get_attribute("aria-rowcount")
-        if(check_element_exist(driver, by, f"//div[contains(@class,'fixedDataTableRowLayout_')]/div[@aria-rowindex='{count}']")):
-            scroll_driection = Keys.PAGE_UP
-        else:
-            scroll_driection = Keys.PAGE_DOWN
-        for _ in range(max_scrolls):
-            try:
-                element_to_click = WebDriverWait(driver, 1).until(
-                    EC.visibility_of_element_located((by, target_xpath))
-                )
-                element_to_click.click()
-                return
-            except TimeoutException:
-                actions.move_to_element(container).click().send_keys(scroll_driection).perform()
-                time.sleep(0.5)
-
-        raise TimeoutException(f"Element {target_xpath} not found after scrolling.")
-
-    except TimeoutException as e:
-        print(f"Timeout: {e}")
-
-def check_input_ancestor_is_table(driver, by, value, timeout=10):
-    try:
+        ancestor_xpath = f"{value_xpath}/ancestor::div[contains(@class,'fixedDataTableRowLayout_rowWrapper')]"
         element = WebDriverWait(driver, timeout).until(
-            EC.presence_of_element_located((by, f"{value}/ancestor::div[contains(@class,'fixedDataTableRowLayout_rowWrapper')]"))
+            EC.presence_of_element_located((by, ancestor_xpath))
         )
-        # Check if the ancestor of the input is a table
-        if element:
-            return True
-        else:
-            return False
+        return element.is_displayed()
     except TimeoutException:
         return False
+   
     
 
 def extract_quickfilter_value(description):
@@ -306,3 +324,93 @@ def extract_quickfilter_value(description):
     if match:
         return match.group(1)
     return None
+
+
+def scroll_and_click_row(driver, by, container_xpath, target_xpath, timeout=10, max_scrolls=1000):
+    time.sleep(2)
+    # Try multiple container elements (if indexed)
+    for i in range(1, 10):
+        indexed_xpath = f"({container_xpath})[{i}]"
+        try:
+            container = WebDriverWait(driver, timeout).until(
+                EC.presence_of_element_located((By.XPATH, indexed_xpath))
+            )
+            
+            if container.is_displayed():
+                actions = ActionChains(driver)
+
+                # Determine scroll direction
+                count = container.get_attribute("aria-rowcount")
+                last_row_xpath = f"//div[contains(@class,'fixedDataTableRowLayout_')]/div[@aria-rowindex='{count}']"
+                scroll_direction = Keys.PAGE_DOWN
+                if check_element_exist(driver, by, last_row_xpath):
+                    scroll_direction = Keys.PAGE_UP
+
+                stop_scroll =  WebDriverWait(driver, timeout).until(
+                EC.presence_of_element_located((By.XPATH, target_xpath))
+                )
+                
+                for _ in range(max_scrolls):
+                    try:
+                        element_to_click = WebDriverWait(driver, 1).until(
+                            EC.visibility_of_element_located((by, target_xpath))
+                        )
+                        element_to_click.click()
+                        return
+                    except TimeoutException:
+                        actions.move_to_element(container).click().send_keys(scroll_direction).perform()
+                        time.sleep(0.5)
+
+                raise TimeoutException(f"Element {target_xpath} not found after scrolling.")
+
+        except TimeoutException as e:
+            print(f"Timeout or not displayed: {e}")
+        except Exception as e:
+            print(f"Unexpected error: {e}")
+
+    print("Visible container not found.")
+
+
+# def scroll_and_click_row(driver, by, container_xpath, target_xpath, timeout=10, max_scrolls=1000):
+#     time.sleep(2)
+#     scroll_direction = Keys.PAGE_DOWN
+#     # Try multiple container elements (if indexed)
+#     for i in range(1, 10):
+#         indexed_xpath = f"({container_xpath})[{i}]"
+#         try:
+#             container = WebDriverWait(driver, timeout).until(
+#                 EC.presence_of_element_located((By.XPATH, indexed_xpath))
+#             )
+#             count = container.get_attribute("aria-rowcount")
+#             last_row_xpath = f"//div[contains(@class,'fixedDataTableRowLayout_')]/div[@aria-rowindex='{count}']"
+            
+#             if check_element_exist(driver, by, last_row_xpath):
+#                     scroll_direction = Keys.PAGE_UP
+
+#             if container.is_displayed():
+#                 actions = ActionChains(driver)
+
+#                 # Scroll down repeatedly until the target element is found
+#                 for scroll_count in range(max_scrolls):
+#                     try:
+#                         # Try to locate the target element
+#                         element_to_click = WebDriverWait(driver, timeout).until(
+#                         EC.presence_of_element_located((By.XPATH, target_xpath)))
+#                         if element_to_click.is_displayed():
+#                             element_to_click.click()
+#                             return
+#                     except Exception:
+#                         pass  # Element not found or not visible yet
+
+#                     # Scroll down within the container
+#                     actions.move_to_element(container).click().send_keys(Keys.scroll_direction).perform()
+#                     time.sleep(0.5)
+
+#                 raise TimeoutException(f"Element {target_xpath} not found after scrolling {max_scrolls} times.")
+
+#         except TimeoutException as e:
+#             print(f"Timeout or not displayed: {e}")
+#         except Exception as e:
+#             print(f"Unexpected error: {e}")
+
+#     print("Visible container not found.")

@@ -171,11 +171,9 @@ def generate_selenium_script(controls):
         if xpath:
             if ctype in ["commandbutton", "menuitembutton","dropdialogbutton","button","togglebutton"]:
                 lines.append(f"if(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[0]}\")):")
-                lines.append(f"     locator=Interactions.get_locator(driver, By.XPATH, \"{xpath[0]}\")")
-                lines.append(f"     Interactions.wait_and_click(driver, By.XPATH, locator)")
+                lines.append(f"     Interactions.wait_and_click(driver, By.XPATH, \"{xpath[0]}\")")
                 lines.append(f"elif(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[1]}\")):")
-                lines.append(f"     locator=Interactions.get_locator(driver, By.XPATH, \"{xpath[1]}\")")
-                lines.append(f"     Interactions.wait_and_click(driver, By.XPATH, locator)")
+                lines.append(f"     Interactions.wait_and_click(driver, By.XPATH, \"{xpath[1]}\")")
             if ctype in ["input" , "referencegroup","segmentedentry"] :
                 if ctype == "input":
                     input_flag = True
@@ -190,18 +188,14 @@ def generate_selenium_script(controls):
                     lines.append(f"if(Interactions.check_input_ancestor_is_table(driver, By.XPATH, \"{xpath[0]}\") or Interactions.check_input_ancestor_is_table(driver, By.XPATH, \"{xpath[1]}\") ):")
                     lines.append(f"    #clicking inside grid: {name}")
                     lines.append(f"    if(Interactions.check_element_exist(driver, By.XPATH, \"{'('+xpath[0] +')[1]'}\")):")
-                    lines.append(f"         locator=Interactions.get_locator(driver, By.XPATH, \"{'('+xpath[0] +')[1]'}\")")
-                    lines.append(f"         Interactions.wait_and_send_keys(driver, By.XPATH, locator, \"{value}\")")
+                    lines.append(f"         Interactions.wait_and_send_keys(driver, By.XPATH, \"{'('+xpath[0] +')[1]'}\", \"{value}\")")
                     lines.append(f"    elif(Interactions.check_element_exist(driver, By.XPATH, \"{'('+xpath[1] +')[1]'}\")):")
-                    lines.append(f"         locator=Interactions.get_locator(driver, By.XPATH, \"{'('+xpath[1] +')[1]'}\")")
-                    lines.append(f"         Interactions.wait_and_send_keys(driver, By.XPATH, locator, \"{value}\")")
+                    lines.append(f"         Interactions.wait_and_send_keys(driver, By.XPATH, \"{'('+xpath[0] +')[1]'}\", \"{value}\")")
                     lines.append(f"else:")
                     lines.append(f"    if(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[0]}\")):")
-                    lines.append(f"         locator=Interactions.get_locator(driver, By.XPATH, \"{xpath[0]}\")")
-                    lines.append(f"         Interactions.wait_and_send_keys(driver, By.XPATH, locator, \"{value}\")")
+                    lines.append(f"         Interactions.wait_and_send_keys(driver, By.XPATH, \"{xpath[0]}\", \"{value}\")")
                     lines.append(f"    elif(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[1]}\")):")
-                    lines.append(f"         locator=Interactions.get_locator(driver, By.XPATH, \"{xpath[1]}\")")
-                    lines.append(f"         Interactions.wait_and_send_keys(driver, By.XPATH, locator, \"{value}\")")
+                    lines.append(f"         Interactions.wait_and_send_keys(driver, By.XPATH, \"{xpath[1]}\", \"{value}\")")
                     # if command_name == "ExecuteHyperlink":
                     #     lines.append(f"# clicking inside grid: {name}")
                     #     lines.append(f"# TODO: Replace with appropriate XPath for the grid input")
@@ -281,6 +275,8 @@ def generate_selenium_script(controls):
                 lines.append(f"# Clicking (default) on: {name}")
                 lines.append("time.sleep(3)")
                 lines.append(f"Interactions.wait_and_click(driver, By.XPATH, \"{xpath}\")") 
+            elif ctype == "pivotitem":
+                lines.append(f"Interactions.wait_and_click(driver, By.XPATH, \"{xpath}\")")
             elif ctype == "formrunpersonalizationtoolbarcontrol":
                 if second_word:
                     return f"(//span[contains(text(),'{second_word}')]/parent::div/parent::button)[2]"
@@ -351,7 +347,10 @@ def generate_selenium_script(controls):
                     lines.append(f"     locator=Interactions.get_locator(driver, By.XPATH, \"{locator_for_table_edit_name}\")")
                     lines.append(f"     Interactions.wait_and_send_keys(driver, By.XPATH, locator, \"{edited_value}\")")
                 elif grid_for_table_or_data_selection == "data_selection":
-                    lines.append(f"# Clicking button: {name}")
+                    # lines.append(f"if(Interactions.check_element_exist(driver, By.XPATH, \"{input_label}\")):")
+                    lines.append(f"Interactions.send_enter(driver, By.XPATH, \"//body\")")
+                    # lines.append(f"elif(Interactions.check_element_exist(driver, By.XPATH, \"{input_name}\")):")
+                    # lines.append(f"     Interactions.send_enter(driver, By.XPATH, \"{input_name}\")")
                 else:
                     lines.append(f"# Clicking button: {name}")
                     lines.append(f"# Clicking (default) on: {name}")
@@ -360,6 +359,7 @@ def generate_selenium_script(controls):
                 input_label = ""
                 input_name = ""
                 edited_value = ""
+           
             # else:
             #     lines.append(f"# Clicking (default) on: {name}")
             #     lines.append(f"Interactions.wait_and_click(driver, By.XPATH, \"{xpath}\")")

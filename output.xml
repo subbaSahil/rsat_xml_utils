@@ -1,2 +1,539 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<UserActionsWithDetails><UserAction Ref="i3"><Description>Go to Accounts receivable &gt; Orders &gt; All sales orders.</Description><NodeId>i3</NodeId><Sequence>22</Sequence><Navigation>mainmenu</Navigation><Navigation>AccountsReceivable</Navigation><Navigation>Orders</Navigation><ControlName>No Control Name</ControlName><ControlLabel /><ControlType /><Value /><CommandName /></UserAction><UserAction Ref="i6"><Description>On the Action Pane, click Manage.</Description><NodeId>i6</NodeId><Sequence>22</Sequence><ControlName>Manage</ControlName><ControlLabel>Manage</ControlLabel><ControlType>AppBarTab</ControlType><Value /><CommandName>TabShown</CommandName></UserAction><UserAction Ref="i8"><Description>Click Check credit limit.</Description><NodeId>i8</NodeId><Sequence>22</Sequence><ControlName>CheckCreditLimit</ControlName><ControlLabel>Check credit limit</ControlLabel><ControlType>MenuItemButton</ControlType><Value /><CommandName>Click</CommandName></UserAction><UserAction Ref="i10"><Description>On the Action Pane, click Manage.</Description><NodeId>i10</NodeId><Sequence>22</Sequence><ControlName>Manage</ControlName><ControlLabel>Manage</ControlLabel><ControlType>AppBarTab</ControlType><Value /><CommandName>TabShown</CommandName></UserAction><UserAction Ref="i12"><Description>Click Prices.</Description><NodeId>i12</NodeId><Sequence>22</Sequence><ControlName>PriceDiscActual</ControlName><ControlLabel>Prices</ControlLabel><ControlType>MenuItemButton</ControlType><Value /><CommandName>Click</CommandName></UserAction><UserAction Ref="i15"><Description>Click View sales prices.</Description><NodeId>i15</NodeId><Sequence>22</Sequence><ControlName>PriceSales</ControlName><ControlLabel>View sales prices</ControlLabel><ControlType>MenuItemButton</ControlType><Value /><CommandName>Click</CommandName></UserAction><UserAction Ref="i18"><Description>Close the page.</Description><NodeId>i18</NodeId><Sequence>22</Sequence><ControlName>No Control Name</ControlName><ControlLabel /><ControlType /><Value /><CommandName>RequestClose</CommandName><Annotations /></UserAction><UserAction Ref="i20"><Description>In the Item number field, enter or select a value.</Description><NodeId>i20</NodeId><Sequence>22</Sequence><ControlName>ItemIdFilter</ControlName><ControlLabel>Item number</ControlLabel><ControlType>Input</ControlType><Value>A0002</Value><CommandName>RequestPopup</CommandName></UserAction><UserAction Ref="i24"><Description>In the list, select row 6.</Description><NodeId>i24</NodeId><Sequence>22</Sequence><ControlName>Grid</ControlName><ControlLabel /><ControlType>Grid</ControlType><Value>6</Value><CommandName>ChangeSelectedIndexInCache</CommandName></UserAction><UserAction Ref="i28"><Description>On the Action Pane, click Options.</Description><NodeId>i28</NodeId><Sequence>22</Sequence><ControlName>SystemDefinedOptions</ControlName><ControlLabel>Options</ControlLabel><ControlType>AppBarTab</ControlType><Value /><CommandName>TabShown</CommandName></UserAction><UserAction Ref="i30"><Description>Close the page.</Description><NodeId>i30</NodeId><Sequence>22</Sequence><ControlName>No Control Name</ControlName><ControlLabel /><ControlType /><Value /><CommandName>RequestClose</CommandName><Annotations /></UserAction><UserAction Ref="i32"><Description>On the Action Pane, click Manage.</Description><NodeId>i32</NodeId><Sequence>22</Sequence><ControlName>Manage</ControlName><ControlLabel>Manage</ControlLabel><ControlType>AppBarTab</ControlType><Value /><CommandName>TabShown</CommandName></UserAction><UserAction Ref="i34"><Description>Click Rebate.</Description><NodeId>i34</NodeId><Sequence>22</Sequence><ControlName>PdsRebateTable</ControlName><ControlLabel>Rebate</ControlLabel><ControlType>MenuItemButton</ControlType><Value /><CommandName>Click</CommandName></UserAction><UserAction Ref="i37"><Description>Click Functions.</Description><NodeId>i37</NodeId><Sequence>22</Sequence><ControlName>Setup</ControlName><ControlLabel>Functions</ControlLabel><ControlType>MenuButton</ControlType><Value /><CommandName>Click</CommandName></UserAction><UserAction Ref="i39"><Description>Click Approve rebates.</Description><NodeId>i39</NodeId><Sequence>22</Sequence><ControlName>Approbation</ControlName><ControlLabel>Approve rebates</ControlLabel><ControlType>MenuItem</ControlType><Value /><CommandName>Click</CommandName></UserAction><UserAction Ref="i42"><Description>Click Yes.</Description><NodeId>i42</NodeId><Sequence>22</Sequence><ControlName>Yes</ControlName><ControlLabel>Yes</ControlLabel><ControlType>CommandButton</ControlType><Value /><CommandName>Click</CommandName></UserAction><UserAction Ref="i44"><Description>Click Inquiries.</Description><NodeId>i44</NodeId><Sequence>22</Sequence><ControlName>Inquiries</ControlName><ControlLabel>Inquiries</ControlLabel><ControlType>MenuButton</ControlType><Value /><CommandName>Click</CommandName></UserAction><UserAction Ref="i46"><Description>Click Rebate transactions.</Description><NodeId>i46</NodeId><Sequence>22</Sequence><ControlName>PdsRebateTrans</ControlName><ControlLabel>Rebate transactions</ControlLabel><ControlType>MenuItem</ControlType><Value /><CommandName>Click</CommandName></UserAction><UserAction Ref="i49"><Description>Close the page.</Description><NodeId>i49</NodeId><Sequence>22</Sequence><ControlName>No Control Name</ControlName><ControlLabel /><ControlType /><Value /><CommandName>RequestClose</CommandName><Annotations /></UserAction><UserAction Ref="i51"><Description>Close the page.</Description><NodeId>i51</NodeId><Sequence>22</Sequence><ControlName>No Control Name</ControlName><ControlLabel /><ControlType /><Value /><CommandName>RequestClose</CommandName><Annotations /></UserAction><UserAction Ref="i53"><Description>Close the page.</Description><NodeId>i53</NodeId><Sequence>22</Sequence><ControlName>No Control Name</ControlName><ControlLabel /><ControlType /><Value /><CommandName>RequestClose</CommandName><Annotations /></UserAction></UserActionsWithDetails>
+<UserActionsWithDetails xmlns:ns0="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Client.ServerForm.TaskRecording"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <UserAction Ref="i3">
+        <Description>Go to Product information management &gt; Products &gt; All products and product masters.</Description>
+        <NodeId>i3</NodeId>
+        <Sequence>59</Sequence>
+        <Navigation>mainmenu</Navigation>
+        <Navigation>ProductInformationManagement</Navigation>
+        <Navigation>Products</Navigation>
+        <ControlName>No Control Name</ControlName>
+        <ControlLabel />
+        <ControlType />
+        <Value />
+        <CommandName />
+    </UserAction>
+    <UserAction Ref="i6">
+        <Description>Click New.</Description>
+        <NodeId>i6</NodeId>
+        <Sequence>59</Sequence>
+        <ControlName>SystemDefinedNewButton</ControlName>
+        <ControlLabel>New</ControlLabel>
+        <ControlType>CommandButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i9">
+        <Description>In the Product name field, type a value.</Description>
+        <NodeId>i9</NodeId>
+        <Sequence>59</Sequence>
+        <ControlName>Identification_Name</ControlName>
+        <ControlLabel>Product name</ControlLabel>
+        <ControlType>Input</ControlType>
+        <Value>Demo Product</Value>
+        <CommandName />
+    </UserAction>
+    <UserAction Ref="i11">
+        <Description>In the Retail category field, enter or select a value.</Description>
+        <NodeId>i11</NodeId>
+        <Sequence>59</Sequence>
+        <ControlName>CategoryReferenceGroup</ControlName>
+        <ControlLabel>Retail category</ControlLabel>
+        <ControlType>ReferenceGroup</ControlType>
+        <Value />
+        <CommandName>ResolveChanges</CommandName>
+    </UserAction>
+    <UserAction Ref="i15">
+        <Description>In the tree, select 'ALL (ALL)\Fashion (Fashion)'.</Description>
+        <NodeId>i15</NodeId>
+        <Sequence>59</Sequence>
+        <ControlName>ctrlFormTree</ControlName>
+        <ControlLabel />
+        <ControlType>Tree</ControlType>
+        <Value>ALL (ALL)\Fashion (Fashion)</Value>
+        <CommandName>SelectionPathChanged</CommandName>
+    </UserAction>
+    <UserAction Ref="i17">
+        <Description>Click OK.</Description>
+        <NodeId>i17</NodeId>
+        <Sequence>59</Sequence>
+        <ControlName>OKButton</ControlName>
+        <ControlLabel>OK</ControlLabel>
+        <ControlType>CommandButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i19">
+        <Description>In the Product number field, type a value.</Description>
+        <NodeId>i19</NodeId>
+        <Sequence>59</Sequence>
+        <ControlName>Identification_ProductNumber</ControlName>
+        <ControlLabel>Product number</ControlLabel>
+        <ControlType>Input</ControlType>
+        <Value>0092</Value>
+        <CommandName />
+    </UserAction>
+    <UserAction Ref="i21">
+        <Description>In the Product number field, type a value.</Description>
+        <NodeId>i21</NodeId>
+        <Sequence>59</Sequence>
+        <ControlName>Identification_ProductNumber</ControlName>
+        <ControlLabel>Product number</ControlLabel>
+        <ControlType>Input</ControlType>
+        <Value>0192</Value>
+        <CommandName />
+    </UserAction>
+    <UserAction Ref="i23">
+        <Description>Click OK.</Description>
+        <NodeId>i23</NodeId>
+        <Sequence>59</Sequence>
+        <ControlName>OKButton</ControlName>
+        <ControlLabel>OK</ControlLabel>
+        <ControlType>CommandButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i26">
+        <Description>In the Product owner field, enter or select a value.</Description>
+        <NodeId>i26</NodeId>
+        <Sequence>59</Sequence>
+        <ControlName>EcoResProduct_EngChgProductOwnerId</ControlName>
+        <ControlLabel>Product owner</ControlLabel>
+        <ControlType>Input</ControlType>
+        <Value>Design department speakers</Value>
+        <CommandName>RequestPopup</CommandName>
+    </UserAction>
+    <UserAction Ref="i30">
+        <Description>In the list, select row 2.</Description>
+        <NodeId>i30</NodeId>
+        <Sequence>59</Sequence>
+        <ControlName>Grid</ControlName>
+        <ControlLabel />
+        <ControlType>Grid</ControlType>
+        <Value>2</Value>
+        <CommandName>ChangeSelectedIndexInCache</CommandName>
+    </UserAction>
+    <UserAction Ref="i34">
+        <Description>In the Release policy field, enter or select a value.</Description>
+        <NodeId>i34</NodeId>
+        <Sequence>59</Sequence>
+        <ControlName>EcoResProduct_EngChgProductReleasePolicy</ControlName>
+        <ControlLabel>Release policy</ControlLabel>
+        <ControlType>ReferenceGroup</ControlType>
+        <Value />
+        <CommandName>ResolveChanges</CommandName>
+    </UserAction>
+    <UserAction Ref="i38">
+        <Description>In the list, select row 2.</Description>
+        <NodeId>i38</NodeId>
+        <Sequence>59</Sequence>
+        <ControlName>Grid</ControlName>
+        <ControlLabel />
+        <ControlType>Grid</ControlType>
+        <Value>2</Value>
+        <CommandName>ChangeSelectedIndexInCache</CommandName>
+    </UserAction>
+    <UserAction Ref="i42">
+        <Description>In the Product readiness policy field, enter or select a value.</Description>
+        <NodeId>i42</NodeId>
+        <Sequence>59</Sequence>
+        <ControlName>EcoResProduct_EngChgProductReadinessPolicy</ControlName>
+        <ControlLabel>Product readiness policy</ControlLabel>
+        <ControlType>ReferenceGroup</ControlType>
+        <Value />
+        <CommandName>ResolveChanges</CommandName>
+    </UserAction>
+    <UserAction Ref="i48">
+        <Description>Click Dimension groups to open the drop dialog.</Description>
+        <NodeId>i48</NodeId>
+        <Sequence>59</Sequence>
+        <ControlName>EcoResProductInventoryDimensionGroups</ControlName>
+        <ControlLabel>Dimension groups</ControlLabel>
+        <ControlType>DropDialogButton</ControlType>
+        <Value />
+        <CommandName>RequestPopup</CommandName>
+    </UserAction>
+    <UserAction Ref="i51">
+        <Description>In the Storage dimension group field, enter or select a value.</Description>
+        <NodeId>i51</NodeId>
+        <Sequence>59</Sequence>
+        <ControlName>StorageDimensionGroup</ControlName>
+        <ControlLabel>Storage dimension group</ControlLabel>
+        <ControlType>ReferenceGroup</ControlType>
+        <Value />
+        <CommandName>ResolveChanges</CommandName>
+    </UserAction>
+    <UserAction Ref="i55">
+        <Description>In the list, select row 2.</Description>
+        <NodeId>i55</NodeId>
+        <Sequence>59</Sequence>
+        <ControlName>Grid</ControlName>
+        <ControlLabel />
+        <ControlType>Grid</ControlType>
+        <Value>2</Value>
+        <CommandName>ChangeSelectedIndexInCache</CommandName>
+    </UserAction>
+    <UserAction Ref="i59">
+        <Description>In the Tracking dimension group field, enter or select a value.</Description>
+        <NodeId>i59</NodeId>
+        <Sequence>59</Sequence>
+        <ControlName>TrackingDimensionGroup</ControlName>
+        <ControlLabel>Tracking dimension group</ControlLabel>
+        <ControlType>ReferenceGroup</ControlType>
+        <Value />
+        <CommandName>ResolveChanges</CommandName>
+    </UserAction>
+    <UserAction Ref="i63">
+        <Description>In the list, select row 5.</Description>
+        <NodeId>i63</NodeId>
+        <Sequence>59</Sequence>
+        <ControlName>Grid</ControlName>
+        <ControlLabel />
+        <ControlType>Grid</ControlType>
+        <Value>5</Value>
+        <CommandName>ChangeSelectedIndexInCache</CommandName>
+    </UserAction>
+    <UserAction Ref="i67">
+        <Description>Click OK.</Description>
+        <NodeId>i67</NodeId>
+        <Sequence>59</Sequence>
+        <ControlName>OKButton</ControlName>
+        <ControlLabel>OK</ControlLabel>
+        <ControlType>CommandButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i69">
+        <Description>Click Product attributes.</Description>
+        <NodeId>i69</NodeId>
+        <Sequence>59</Sequence>
+        <ControlName>ProductAttributes</ControlName>
+        <ControlLabel>Product attributes</ControlLabel>
+        <ControlType>MenuItemButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i72">
+        <Description>On the Action Pane, click Options.</Description>
+        <NodeId>i72</NodeId>
+        <Sequence>59</Sequence>
+        <ControlName>SystemDefinedOptions</ControlName>
+        <ControlLabel>Options</ControlLabel>
+        <ControlType>AppBarTab</ControlType>
+        <Value />
+        <CommandName>TabShown</CommandName>
+    </UserAction>
+    <UserAction Ref="i74">
+        <Description>Close the page.</Description>
+        <NodeId>i74</NodeId>
+        <Sequence>59</Sequence>
+        <ControlName>No Control Name</ControlName>
+        <ControlLabel />
+        <ControlType />
+        <Value />
+        <CommandName>RequestClose</CommandName>
+        <Annotations />
+    </UserAction>
+    <UserAction Ref="i76">
+        <Description>Click Change product number.</Description>
+        <NodeId>i76</NodeId>
+        <Sequence>59</Sequence>
+        <ControlName>EcoResProductNumberRename</ControlName>
+        <ControlLabel>Change product number</ControlLabel>
+        <ControlType>MenuItemButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i79">
+        <Description>Click Cancel.</Description>
+        <NodeId>i79</NodeId>
+        <Sequence>59</Sequence>
+        <ControlName>CancelButton</ControlName>
+        <ControlLabel>Cancel</ControlLabel>
+        <ControlType>CommandButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i81">
+        <Description>Click Product categories.</Description>
+        <NodeId>i81</NodeId>
+        <Sequence>59</Sequence>
+        <ControlName>ProductCategory</ControlName>
+        <ControlLabel>Product categories</ControlLabel>
+        <ControlType>MenuItemButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i84">
+        <Description>Click New.</Description>
+        <NodeId>i84</NodeId>
+        <Sequence>59</Sequence>
+        <ControlName>SystemDefinedNewButton</ControlName>
+        <ControlLabel>New</ControlLabel>
+        <ControlType>CommandButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i86">
+        <Description>In the Category hierarchy field, enter or select a value.</Description>
+        <NodeId>i86</NodeId>
+        <Sequence>59</Sequence>
+        <ControlName>EcoResProductCategory_CategoryHierarchy</ControlName>
+        <ControlLabel>Category hierarchy</ControlLabel>
+        <ControlType>ReferenceGroup</ControlType>
+        <Value />
+        <CommandName>ResolveChanges</CommandName>
+    </UserAction>
+    <UserAction Ref="i90">
+        <Description>Close the page.</Description>
+        <NodeId>i90</NodeId>
+        <Sequence>59</Sequence>
+        <ControlName>No Control Name</ControlName>
+        <ControlLabel />
+        <ControlType />
+        <Value />
+        <CommandName>RequestClose</CommandName>
+        <Annotations>
+            <ns0:Annotation xsi:type="TaskGuideAnnotation">
+                <ns0:Description xsi:nil="true" />
+                <ns0:ExampleText xsi:nil="true" />
+                <ns0:GlobalId xsi:nil="true" />
+                <ns0:Hidden>true</ns0:Hidden>
+                <ns0:RecordingValueType>Preferred</ns0:RecordingValueType>
+                <ns0:Title xsi:nil="true" />
+            </ns0:Annotation>
+        </Annotations>
+    </UserAction>
+    <UserAction Ref="i92">
+        <Description>In the Category hierarchy field, type 'REtail category2'.</Description>
+        <NodeId>i92</NodeId>
+        <Sequence>59</Sequence>
+        <ControlName>EcoResProductCategory_CategoryHierarchy_Name</ControlName>
+        <ControlLabel>Category hierarchy</ControlLabel>
+        <ControlType>Input</ControlType>
+        <Value>REtail category2</Value>
+        <CommandName />
+    </UserAction>
+    <UserAction Ref="i95">
+        <Description>ResolveChanges the Category hierarchy.</Description>
+        <NodeId>i95</NodeId>
+        <Sequence>59</Sequence>
+        <ControlName>EcoResProductCategory_CategoryHierarchy</ControlName>
+        <ControlLabel>Category hierarchy</ControlLabel>
+        <ControlType>ReferenceGroup</ControlType>
+        <Value />
+        <CommandName>ResolveChanges</CommandName>
+    </UserAction>
+    <UserAction Ref="i96">
+        <Description>In the Category hierarchy field, enter or select a value.</Description>
+        <NodeId>i96</NodeId>
+        <Sequence>59</Sequence>
+        <ControlName>EcoResProductCategory_CategoryHierarchy_Name</ControlName>
+        <ControlLabel>Category hierarchy</ControlLabel>
+        <ControlType>Input</ControlType>
+        <Value />
+        <CommandName>RequestPopup</CommandName>
+    </UserAction>
+    <UserAction Ref="i99">
+        <Description>In the list, select row 2.</Description>
+        <NodeId>i99</NodeId>
+        <Sequence>59</Sequence>
+        <ControlName>Grid</ControlName>
+        <ControlLabel />
+        <ControlType>Grid</ControlType>
+        <Value>2</Value>
+        <CommandName>ChangeSelectedIndexInCache</CommandName>
+    </UserAction>
+    <UserAction Ref="i103">
+        <Description>In the Category field, enter or select a value.</Description>
+        <NodeId>i103</NodeId>
+        <Sequence>59</Sequence>
+        <ControlName>EcoResProductCategory_Category1</ControlName>
+        <ControlLabel>Category</ControlLabel>
+        <ControlType>ReferenceGroup</ControlType>
+        <Value />
+        <CommandName>ResolveChanges</CommandName>
+    </UserAction>
+    <UserAction Ref="i107">
+        <Description>Click OK.</Description>
+        <NodeId>i107</NodeId>
+        <Sequence>59</Sequence>
+        <ControlName>OKButton</ControlName>
+        <ControlLabel>OK</ControlLabel>
+        <ControlType>CommandButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i109">
+        <Description>Click Save.</Description>
+        <NodeId>i109</NodeId>
+        <Sequence>59</Sequence>
+        <ControlName>SystemDefinedSaveButton</ControlName>
+        <ControlLabel>Save</ControlLabel>
+        <ControlType>CommandButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i112">
+        <Description>Click Yes.</Description>
+        <NodeId>i112</NodeId>
+        <Sequence>59</Sequence>
+        <ControlName>Yes</ControlName>
+        <ControlLabel>Yes</ControlLabel>
+        <ControlType>CommandButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i114">
+        <Description>Close the page.</Description>
+        <NodeId>i114</NodeId>
+        <Sequence>59</Sequence>
+        <ControlName>No Control Name</ControlName>
+        <ControlLabel />
+        <ControlType />
+        <Value />
+        <CommandName>RequestClose</CommandName>
+        <Annotations />
+    </UserAction>
+    <UserAction Ref="i116">
+        <Description>Click Product catalogs.</Description>
+        <NodeId>i116</NodeId>
+        <Sequence>59</Sequence>
+        <ControlName>ProductCatalog</ControlName>
+        <ControlLabel>Product catalogs</ControlLabel>
+        <ControlType>MenuItemButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i119">
+        <Description>Click New to open the drop dialog.</Description>
+        <NodeId>i119</NodeId>
+        <Sequence>59</Sequence>
+        <ControlName>NewCatalogButton</ControlName>
+        <ControlLabel>New</ControlLabel>
+        <ControlType>DropDialogButton</ControlType>
+        <Value />
+        <CommandName>RequestPopup</CommandName>
+    </UserAction>
+    <UserAction Ref="i122">
+        <Description>In the Catalog name field, type a value.</Description>
+        <NodeId>i122</NodeId>
+        <Sequence>59</Sequence>
+        <ControlName>CatalogName</ControlName>
+        <ControlLabel>Catalog name</ControlLabel>
+        <ControlType>Input</ControlType>
+        <Value>catalog newname</Value>
+        <CommandName />
+    </UserAction>
+    <UserAction Ref="i124">
+        <Description>In the Description field, type a value.</Description>
+        <NodeId>i124</NodeId>
+        <Sequence>59</Sequence>
+        <ControlName>CatalogTranslationDescription</ControlName>
+        <ControlLabel>Description</ControlLabel>
+        <ControlType>Input</ControlType>
+        <Value>catalog desc</Value>
+        <CommandName />
+    </UserAction>
+    <UserAction Ref="i126">
+        <Description>Click OK.</Description>
+        <NodeId>i126</NodeId>
+        <Sequence>59</Sequence>
+        <ControlName>OK</ControlName>
+        <ControlLabel>OK</ControlLabel>
+        <ControlType>Button</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i129">
+        <Description>Click Save.</Description>
+        <NodeId>i129</NodeId>
+        <Sequence>59</Sequence>
+        <ControlName>SystemDefinedSaveButton</ControlName>
+        <ControlLabel>Save</ControlLabel>
+        <ControlType>CommandButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i131">
+        <Description>Click Include all variants.</Description>
+        <NodeId>i131</NodeId>
+        <Sequence>59</Sequence>
+        <ControlName>ExplodeVariantsButton</ControlName>
+        <ControlLabel>Include all variants</ControlLabel>
+        <ControlType>MenuItemButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i134">
+        <Description>In the Batch group field, enter or select a value.</Description>
+        <NodeId>i134</NodeId>
+        <Sequence>59</Sequence>
+        <ControlName>Fld3_1</ControlName>
+        <ControlLabel>Batch group</ControlLabel>
+        <ControlType>Input</ControlType>
+        <Value>AIFBatch</Value>
+        <CommandName>RequestPopup</CommandName>
+    </UserAction>
+    <UserAction Ref="i138">
+        <Description>In the list, select row 2.</Description>
+        <NodeId>i138</NodeId>
+        <Sequence>59</Sequence>
+        <ControlName>Grid</ControlName>
+        <ControlLabel />
+        <ControlType>Grid</ControlType>
+        <Value>2</Value>
+        <CommandName>ChangeSelectedIndexInCache</CommandName>
+    </UserAction>
+    <UserAction Ref="i142">
+        <Description>Select Yes in the Batch processing field.</Description>
+        <NodeId>i142</NodeId>
+        <Sequence>59</Sequence>
+        <ControlName>Fld1_1</ControlName>
+        <ControlLabel>Batch processing</ControlLabel>
+        <ControlType>CheckBox</ControlType>
+        <Value>True</Value>
+        <CommandName />
+    </UserAction>
+    <UserAction Ref="i144">
+        <Description>In the Monitoring category field, select an option.</Description>
+        <NodeId>i144</NodeId>
+        <Sequence>59</Sequence>
+        <ControlName>Fld6_1</ControlName>
+        <ControlLabel>Monitoring category</ControlLabel>
+        <ControlType>ComboBox</ControlType>
+        <Value>4</Value>
+        <CommandName />
+    </UserAction>
+    <UserAction Ref="i146">
+        <Description>Click OK.</Description>
+        <NodeId>i146</NodeId>
+        <Sequence>59</Sequence>
+        <ControlName>OkButton</ControlName>
+        <ControlLabel>OK</ControlLabel>
+        <ControlType>CommandButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i148">
+        <Description>Click View results.</Description>
+        <NodeId>i148</NodeId>
+        <Sequence>59</Sequence>
+        <ControlName>ViewResults</ControlName>
+        <ControlLabel>View results</ControlLabel>
+        <ControlType>MenuItemButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i151">
+        <Description>Click Save.</Description>
+        <NodeId>i151</NodeId>
+        <Sequence>59</Sequence>
+        <ControlName>SystemDefinedSaveButton</ControlName>
+        <ControlLabel>Save</ControlLabel>
+        <ControlType>CommandButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+</UserActionsWithDetails>
