@@ -117,6 +117,7 @@ def wait_and_send_keys(driver, by, value, keys,timeout=20):
     element.clear()
     element.send_keys(keys)
     time.sleep(1)
+    element.send_keys(Keys.RETURN)
 
 def send_enter(driver, by, value,timeout=20):
     element = WebDriverWait(driver, timeout).until(EC.element_to_be_clickable((by, value)))
@@ -337,6 +338,7 @@ def scroll_and_click_row(driver, by, container_xpath, target_xpath, timeout=10, 
             )
             
             if container.is_displayed():
+                print(f"Container found: {indexed_xpath}")
                 actions = ActionChains(driver)
 
                 # Determine scroll direction
@@ -346,16 +348,13 @@ def scroll_and_click_row(driver, by, container_xpath, target_xpath, timeout=10, 
                 if check_element_exist(driver, by, last_row_xpath):
                     scroll_direction = Keys.PAGE_UP
 
-                stop_scroll =  WebDriverWait(driver, timeout).until(
-                EC.presence_of_element_located((By.XPATH, target_xpath))
-                )
-                
                 for _ in range(max_scrolls):
                     try:
-                        element_to_click = WebDriverWait(driver, 1).until(
+                        element_to_click = WebDriverWait(driver, timeout).until(
                             EC.visibility_of_element_located((by, target_xpath))
                         )
                         element_to_click.click()
+                        element_to_click.click()  
                         return
                     except TimeoutException:
                         actions.move_to_element(container).click().send_keys(scroll_direction).perform()
@@ -369,48 +368,3 @@ def scroll_and_click_row(driver, by, container_xpath, target_xpath, timeout=10, 
             print(f"Unexpected error: {e}")
 
     print("Visible container not found.")
-
-
-# def scroll_and_click_row(driver, by, container_xpath, target_xpath, timeout=10, max_scrolls=1000):
-#     time.sleep(2)
-#     scroll_direction = Keys.PAGE_DOWN
-#     # Try multiple container elements (if indexed)
-#     for i in range(1, 10):
-#         indexed_xpath = f"({container_xpath})[{i}]"
-#         try:
-#             container = WebDriverWait(driver, timeout).until(
-#                 EC.presence_of_element_located((By.XPATH, indexed_xpath))
-#             )
-#             count = container.get_attribute("aria-rowcount")
-#             last_row_xpath = f"//div[contains(@class,'fixedDataTableRowLayout_')]/div[@aria-rowindex='{count}']"
-            
-#             if check_element_exist(driver, by, last_row_xpath):
-#                     scroll_direction = Keys.PAGE_UP
-
-#             if container.is_displayed():
-#                 actions = ActionChains(driver)
-
-#                 # Scroll down repeatedly until the target element is found
-#                 for scroll_count in range(max_scrolls):
-#                     try:
-#                         # Try to locate the target element
-#                         element_to_click = WebDriverWait(driver, timeout).until(
-#                         EC.presence_of_element_located((By.XPATH, target_xpath)))
-#                         if element_to_click.is_displayed():
-#                             element_to_click.click()
-#                             return
-#                     except Exception:
-#                         pass  # Element not found or not visible yet
-
-#                     # Scroll down within the container
-#                     actions.move_to_element(container).click().send_keys(Keys.scroll_direction).perform()
-#                     time.sleep(0.5)
-
-#                 raise TimeoutException(f"Element {target_xpath} not found after scrolling {max_scrolls} times.")
-
-#         except TimeoutException as e:
-#             print(f"Timeout or not displayed: {e}")
-#         except Exception as e:
-#             print(f"Unexpected error: {e}")
-
-#     print("Visible container not found.")

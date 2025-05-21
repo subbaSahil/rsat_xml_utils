@@ -1,0 +1,10 @@
+purchase_order = input("Enter the purchase order number: ")
+time.sleep(1)
+Interactions.wait_and_click(driver, By.XPATH, f"//input[@value='{purchase_order}']/parent::div")
+Interactions.wait_and_click(driver, By.XPATH, f"//input[@value='{purchase_order}']/parent::div")
+
+
+if(Interactions.check_element_exist(driver, By.XPATH, "//button[@data-dyn-controlname='SystemDefinedViewEditButton']")):
+     Interactions.wait_and_click(driver, By.XPATH, "//button[@data-dyn-controlname='SystemDefinedViewEditButton']")
+elif(Interactions.check_element_exist(driver, By.XPATH, "//button[@aria-label='Edit']")):
+     Interactions.wait_and_click(driver, By.XPATH, "//button[@aria-label='Edit']")

@@ -167,6 +167,12 @@ def generate_selenium_script(controls):
             grid_for_table_or_data_selection = "data_selection"
             print("grid_for_table_or_data_selection")
 
+        if description and description.strip() == "Use the shortcut for switching to View or Edit mode.":
+            lines.append("# going to edit view mode")
+            lines.append("Interactions.click_back_button(driver, By.XPATH, \"//button[@data-dyn-controlname='SystemDefinedViewEditButton']\")")
+            lines.append("time.sleep(1)")
+            continue   
+
         xpath = generate_xpath_from_control(ctype, name,label, description, value,second_word)
         if xpath:
             if ctype in ["commandbutton", "menuitembutton","dropdialogbutton","button","togglebutton"]:
@@ -347,19 +353,16 @@ def generate_selenium_script(controls):
                     lines.append(f"     locator=Interactions.get_locator(driver, By.XPATH, \"{locator_for_table_edit_name}\")")
                     lines.append(f"     Interactions.wait_and_send_keys(driver, By.XPATH, locator, \"{edited_value}\")")
                 elif grid_for_table_or_data_selection == "data_selection":
-                    # lines.append(f"if(Interactions.check_element_exist(driver, By.XPATH, \"{input_label}\")):")
                     lines.append(f"Interactions.send_enter(driver, By.XPATH, \"//body\")")
-                    # lines.append(f"elif(Interactions.check_element_exist(driver, By.XPATH, \"{input_name}\")):")
-                    # lines.append(f"     Interactions.send_enter(driver, By.XPATH, \"{input_name}\")")
                 else:
                     lines.append(f"# Clicking button: {name}")
-                    lines.append(f"# Clicking (default) on: {name}")
                     container = "//div[contains(@class,'fixedDataTableRowLayout_')]/ancestor::div[@role='grid']"
-                    lines.append(f"Interactions.scroll_and_click_row(driver, By.XPATH, \"{container}\", \"{xpath}\")")
+                    lines.append(f"user_input = input(\"Press data to select: \")")
+                    lines.append(f"Interactions.scroll_and_click_row(driver, By.XPATH, \"{container}\", f\"//input[@value='{{user_input}}']\")")
+
                 input_label = ""
                 input_name = ""
                 edited_value = ""
-           
             # else:
             #     lines.append(f"# Clicking (default) on: {name}")
             #     lines.append(f"Interactions.wait_and_click(driver, By.XPATH, \"{xpath}\")")
