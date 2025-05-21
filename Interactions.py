@@ -117,7 +117,7 @@ def wait_and_send_keys(driver, by, value, keys,timeout=20):
     element.clear()
     element.send_keys(keys)
     time.sleep(1)
-    element.send_keys(Keys.RETURN)
+    # element.send_keys(Keys.RETURN)
 
 def send_enter(driver, by, value,timeout=20):
     element = WebDriverWait(driver, timeout).until(EC.element_to_be_clickable((by, value)))
@@ -350,7 +350,7 @@ def scroll_and_click_row(driver, by, container_xpath, target_xpath, timeout=10, 
 
                 for _ in range(max_scrolls):
                     try:
-                        element_to_click = WebDriverWait(driver, timeout).until(
+                        element_to_click = WebDriverWait(driver, 2).until(
                             EC.visibility_of_element_located((by, target_xpath))
                         )
                         element_to_click.click()

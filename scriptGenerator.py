@@ -159,13 +159,13 @@ def generate_selenium_script(controls):
                 lines.append("time.sleep(1)")
         elif description == "Click Edit.":
             new_or_edit = "Edit"
-
-        if description.strip() == "In the list, find and select the desired record.":
+       
+        if description.strip() == "In the list, find and select the desired record." or description.strip() == "In the list, click the link in the selected row.":
             grid_for_table_or_data_selection= "table"
-            print("grid_for_table_or_data_selection")
+           
         elif description.startswith("In the list, select row"):
             grid_for_table_or_data_selection = "data_selection"
-            print("grid_for_table_or_data_selection")
+           
 
         if description and description.strip() == "Use the shortcut for switching to View or Edit mode.":
             lines.append("# going to edit view mode")

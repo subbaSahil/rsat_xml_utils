@@ -1,5 +1,6 @@
 def generate_xpath_from_control(control_type, control_name, control_label, description,value,second_word):
     control_type = control_type.lower()
+    print(f"Control Type: {control_type}")
 #filter manager/quick filter
     if control_type in ["commandbutton", "menuitembutton","dropdialogbutton","button","togglebutton"]:
         return [f"//button[@data-dyn-controlname='{control_name}']",
@@ -35,12 +36,12 @@ def generate_xpath_from_control(control_type, control_name, control_label, descr
             return f"(//span[contains(text(),'{second_word}')]/parent::div/parent::button)[2]"
         return f"(//span[contains(text(),'Personalize')]/parent::div/parent::button)[2]"
     elif control_type == "grid":
-        
-        if value == "":
-            # print("value is empty")
-            return
+        if value == "": 
+            return f"//div[contains(@class,'fixedDataTableRowLayout_')]"
         #if value !='' or value != "true" or value != "false":
         else:
             return f"//div[contains(@class,'fixedDataTableRowLayout_')]/div[@aria-rowindex='{str(int(value) + 1) }']"
+    elif control_type == " ":
+        return 
         
     
