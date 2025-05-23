@@ -16,7 +16,7 @@ def extract_user_actions(input_xml):
     user_actions = root.findall(".//UserActions//d2p1:anyType", namespaces=namespaces)
  
     actions_dict = {}
- 
+    first_occurrence_of_navigtion = None
     for index, action in enumerate(user_actions):
         ref = action.attrib.get("{http://schemas.microsoft.com/2003/10/Serialization/}Ref")
         node = root.find(f".//Node[@z:Id='{ref}']", namespaces=namespaces)
@@ -33,7 +33,10 @@ def extract_user_actions(input_xml):
         if node is not None:
             desc_elem = node.find(".//Description", namespaces=namespaces)
             if desc_elem is not None and desc_elem.text:
-                description = desc_elem.text
+                if desc_elem.text.startswith("Go to"):
+                    first_occurrence_of_navigtion = True
+                if first_occurrence_of_navigtion:
+                    description = desc_elem.text
  
             # Capture annotations only for "Close the page."
             if description == "Close the page.":

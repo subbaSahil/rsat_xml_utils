@@ -344,17 +344,19 @@ def scroll_and_click_row(driver, by, container_xpath, target_xpath, timeout=10, 
                 # Determine scroll direction
                 count = container.get_attribute("aria-rowcount")
                 last_row_xpath = f"//div[contains(@class,'fixedDataTableRowLayout_')]/div[@aria-rowindex='{count}']"
-                scroll_direction = Keys.PAGE_DOWN
+                first_row_xpath = f"//div[contains(@class,'fixedDataTableRowLayout_')]/div[@aria-rowindex='2']"
+                scroll_direction = None
                 if check_element_exist(driver, by, last_row_xpath):
                     scroll_direction = Keys.PAGE_UP
+                elif check_element_exist(driver, by, first_row_xpath):
+                    scroll_direction = Keys.PAGE_DOWN
 
                 for _ in range(max_scrolls):
                     try:
-                        element_to_click = WebDriverWait(driver, 2).until(
+                        element_to_click = WebDriverWait(driver, 8).until(
                             EC.visibility_of_element_located((by, target_xpath))
                         )
                         element_to_click.click()
-                        element_to_click.click()  
                         return
                     except TimeoutException:
                         actions.move_to_element(container).click().send_keys(scroll_direction).perform()

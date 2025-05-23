@@ -19,156 +19,75 @@ filter_manager_cloumn_last_opened = ""
 filter_manager_dropdown_item_index = 1
 
 column_to_open = ""
+user_input = None
 Interactions.wait_and_click(driver, By.XPATH, "//div[@aria-label='Modules']")
-# Clicking navigation: Accounts receivable
-Interactions.wait_and_click(driver, By.XPATH, "//a[@data-dyn-title='Accounts receivable']")
+# Clicking navigation: Procurement and sourcing
+Interactions.wait_and_click(driver, By.XPATH, "//a[@data-dyn-title='Procurement and sourcing']")
 time.sleep(1)
-# Clicking navigation: Customers
-Interactions.wait_and_click(driver, By.XPATH, "//a[@data-dyn-title='Customers']")
+# Clicking navigation: Purchase orders
+Interactions.wait_and_click(driver, By.XPATH, "//a[@data-dyn-title='Purchase orders']")
 time.sleep(1)
-# Clicking navigation: Customers on hold
-Interactions.wait_and_click(driver, By.XPATH, "//a[@data-dyn-title='Customers on hold']")
+# Clicking navigation: All purchase orders
+Interactions.wait_and_click(driver, By.XPATH, "//a[@data-dyn-title='All purchase orders']")
 time.sleep(1)
-# ❌ Locator not found for: No Control Name (Type: )
-if(Interactions.check_element_exist(driver, By.XPATH, "//button[@data-dyn-controlname='NewCustomer']")):
-     Interactions.wait_and_click(driver, By.XPATH, "//button[@data-dyn-controlname='NewCustomer']")
-elif(Interactions.check_element_exist(driver, By.XPATH, "//button[@aria-label='New']")):
-     Interactions.wait_and_click(driver, By.XPATH, "//button[@aria-label='New']")
-# Inputting into: DynamicHeader_AccountNum
-if(Interactions.check_input_ancestor_is_table(driver, By.XPATH, "//input[contains(@name,'DynamicHeader_AccountNum')]") or Interactions.check_input_ancestor_is_table(driver, By.XPATH, "//input[contains(@aria-label,'Customer account')]") ):
-    #clicking inside grid: DynamicHeader_AccountNum
-    if(Interactions.check_element_exist(driver, By.XPATH, "(//input[contains(@name,'DynamicHeader_AccountNum')])[1]")):
-         Interactions.wait_and_send_keys(driver, By.XPATH, "(//input[contains(@name,'DynamicHeader_AccountNum')])[1]", "US-012")
-    elif(Interactions.check_element_exist(driver, By.XPATH, "(//input[contains(@aria-label,'Customer account')])[1]")):
-         Interactions.wait_and_send_keys(driver, By.XPATH, "(//input[contains(@name,'DynamicHeader_AccountNum')])[1]", "US-012")
+# Clicking filter manager: SystemDefinedFilterManager
+column_to_open = "Purchase order"
+open_divs = driver.find_elements(By.XPATH, "//div/parent::div[contains(@class, 'dyn-headerCell')]")
+filter_manager_cloumn_last_opened = ''
+for i, div in enumerate(open_divs, start=1):
+    class_attr = div.get_attribute('class')
+    if 'hasOpenPopup' in class_attr:
+        filter_manager_cloumn_last_opened = Interactions.get_element_text(driver, By.XPATH, f"(//div/parent::div[contains(@class, 'dyn-headerCell')])[{i}]")
+        break
+if filter_manager_cloumn_last_opened == 'Purchase order' and filter_manager_cloumn_last_opened != '':
+    Interactions.wait_and_click(driver, By.XPATH, "//div[text()='Purchase order']")
+    Interactions.wait_and_click(driver, By.XPATH, "//div[text()='Purchase order']")
 else:
-    if(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@name,'DynamicHeader_AccountNum')]")):
-         Interactions.wait_and_send_keys(driver, By.XPATH, "//input[contains(@name,'DynamicHeader_AccountNum')]", "US-012")
-    elif(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@aria-label,'Customer account')]")):
-         Interactions.wait_and_send_keys(driver, By.XPATH, "//input[contains(@aria-label,'Customer account')]", "US-012")
-Interactions.send_enter(driver, By.XPATH, "//body")
+    Interactions.wait_and_click(driver, By.XPATH, "//div[text()='Purchase order']")
+filter_manager_data = Interactions.extract_value_and_operator_from_description("Enter a filter value of '00001111' on the 'Purchase order' field using the 'is exactly' filter operator.")
+operator = filter_manager_data['operator']
+new_val = filter_manager_data['value']
+field_name = filter_manager_data['field_name']
+drop_down_item = "//input[contains(@aria-label,'Filter field: "+field_name+",')]/ancestor::div[@class='columnHeader-popup sysPopup']/ancestor::body/child::div[@class='sysPopup flyoutButton-flyOut layout-root-scope']//button//span[text()='"+operator+"']"
+input_field = "//input[contains(@aria-label,'Filter field: "+field_name+",')]"
+apply_button = "//input[contains(@aria-label,'Filter field: "+field_name+", operator: ')]//ancestor::div/child::div[@class='columnHeaderPopup-buttons']//span[text()='Apply']/ancestor::button"
+dropDown_button = "//span[contains(@class,'button-label-dropDown')]/ancestor::button[contains(@class,'dynamicsButton')][ancestor::div[@class='filterFieldContainer']//input[contains(@aria-label,'Filter field: "+field_name+"')]]"
+Interactions.wait_and_click(driver, By.XPATH, dropDown_button)
+Interactions.wait_and_click(driver, By.XPATH, drop_down_item)
+if(Interactions.check_element_exist(driver, By.XPATH, "//div[contains(@class,'popupShadow popupView preview')]")):
+    actions = ActionChains(driver)
+    other_element = driver.find_element(By.XPATH, "//div[text()='" + field_name + "']")
+    actions.move_to_element(other_element).perform()
+if operator == 'is one of' or operator == 'matches':
+    new_val = Interactions.extract_multiple_values(new_val)
+    for new_val_value in new_val:
+        Interactions.wait_and_send_keys(driver, By.XPATH, input_field, new_val_value)
+        Interactions.wait_and_click(driver, By.XPATH, apply_button)
+elif operator == 'between':
+    new_val = Interactions.extract_dates(new_val)
+    from_date_locator = "(//input[contains(@aria-label,'Filter field: " + field_name + ",')])[1]"
+    to_date_locator = "(//input[contains(@aria-label,'Filter field: " + field_name + ",')])[2]"
+    Interactions.wait_and_send_keys(driver, By.XPATH, from_date_locator, new_val[0])
+    Interactions.wait_and_send_keys(driver, By.XPATH, to_date_locator, new_val[1])
+else:
+    Interactions.wait_and_send_keys(driver, By.XPATH, input_field, new_val)
+Interactions.wait_and_click(driver, By.XPATH, apply_button)
 # Clicking button: Grid
 user_input = input("Press data to select: ")
 Interactions.scroll_and_click_row(driver, By.XPATH, "//div[contains(@class,'fixedDataTableRowLayout_')]/ancestor::div[@role='grid']", f"//input[@value='{user_input}']")
-# Inputting into: Org_Name
-if(Interactions.check_input_ancestor_is_table(driver, By.XPATH, "//input[contains(@name,'Org_Name')]") or Interactions.check_input_ancestor_is_table(driver, By.XPATH, "//input[contains(@aria-label,'Name')]") ):
-    #clicking inside grid: Org_Name
-    if(Interactions.check_element_exist(driver, By.XPATH, "(//input[contains(@name,'Org_Name')])[1]")):
-         Interactions.wait_and_send_keys(driver, By.XPATH, "(//input[contains(@name,'Org_Name')])[1]", "Contoso Retail New York")
-    elif(Interactions.check_element_exist(driver, By.XPATH, "(//input[contains(@aria-label,'Name')])[1]")):
-         Interactions.wait_and_send_keys(driver, By.XPATH, "(//input[contains(@name,'Org_Name')])[1]", "Contoso Retail New York")
-else:
-    if(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@name,'Org_Name')]")):
-         Interactions.wait_and_send_keys(driver, By.XPATH, "//input[contains(@name,'Org_Name')]", "Contoso Retail New York")
-    elif(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@aria-label,'Name')]")):
-         Interactions.wait_and_send_keys(driver, By.XPATH, "//input[contains(@aria-label,'Name')]", "Contoso Retail New York")
-if(Interactions.check_element_exist(driver, By.XPATH, "//button[@data-dyn-controlname='OkButton']")):
-     Interactions.wait_and_click(driver, By.XPATH, "//button[@data-dyn-controlname='OkButton']")
-elif(Interactions.check_element_exist(driver, By.XPATH, "//button[@aria-label='Select']")):
-     Interactions.wait_and_click(driver, By.XPATH, "//button[@aria-label='Select']")
-# Inputting into: DynamicDetail_CustGroup
-if(Interactions.check_input_ancestor_is_table(driver, By.XPATH, "//input[contains(@name,'DynamicDetail_CustGroup')]") or Interactions.check_input_ancestor_is_table(driver, By.XPATH, "//input[contains(@aria-label,'Customer group')]") ):
-    #clicking inside grid: DynamicDetail_CustGroup
-    if(Interactions.check_element_exist(driver, By.XPATH, "(//input[contains(@name,'DynamicDetail_CustGroup')])[1]")):
-         Interactions.wait_and_send_keys(driver, By.XPATH, "(//input[contains(@name,'DynamicDetail_CustGroup')])[1]", "40")
-    elif(Interactions.check_element_exist(driver, By.XPATH, "(//input[contains(@aria-label,'Customer group')])[1]")):
-         Interactions.wait_and_send_keys(driver, By.XPATH, "(//input[contains(@name,'DynamicDetail_CustGroup')])[1]", "40")
-else:
-    if(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@name,'DynamicDetail_CustGroup')]")):
-         Interactions.wait_and_send_keys(driver, By.XPATH, "//input[contains(@name,'DynamicDetail_CustGroup')]", "40")
-    elif(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@aria-label,'Customer group')]")):
-         Interactions.wait_and_send_keys(driver, By.XPATH, "//input[contains(@aria-label,'Customer group')]", "40")
-Interactions.send_enter(driver, By.XPATH, "//body")
-# Clicking button: Grid
-user_input = input("Press data to select: ")
-Interactions.scroll_and_click_row(driver, By.XPATH, "//div[contains(@class,'fixedDataTableRowLayout_')]/ancestor::div[@role='grid']", f"//input[@value='{user_input}']")
-if(Interactions.check_element_exist(driver, By.XPATH, "//button[@data-dyn-controlname='OKButton']")):
-     Interactions.wait_and_click(driver, By.XPATH, "//button[@data-dyn-controlname='OKButton']")
-elif(Interactions.check_element_exist(driver, By.XPATH, "//button[@aria-label='Save']")):
-     Interactions.wait_and_click(driver, By.XPATH, "//button[@aria-label='Save']")
-if(Interactions.check_element_exist(driver, By.XPATH, "//button[@data-dyn-controlname='CancelButton']")):
-     Interactions.wait_and_click(driver, By.XPATH, "//button[@data-dyn-controlname='CancelButton']")
-elif(Interactions.check_element_exist(driver, By.XPATH, "//button[@aria-label='Cancel']")):
-     Interactions.wait_and_click(driver, By.XPATH, "//button[@aria-label='Cancel']")
-if(Interactions.check_element_exist(driver, By.XPATH, "//button[@data-dyn-controlname='mibCustPackingSlipJournal']")):
-     Interactions.wait_and_click(driver, By.XPATH, "//button[@data-dyn-controlname='mibCustPackingSlipJournal']")
-elif(Interactions.check_element_exist(driver, By.XPATH, "//button[@aria-label='Packing slips']")):
-     Interactions.wait_and_click(driver, By.XPATH, "//button[@aria-label='Packing slips']")
-if(Interactions.check_element_exist(driver, By.XPATH, "//button[@data-dyn-controlname='LedgerTransactVoucher']")):
-     Interactions.wait_and_click(driver, By.XPATH, "//button[@data-dyn-controlname='LedgerTransactVoucher']")
-elif(Interactions.check_element_exist(driver, By.XPATH, "//button[@aria-label='Vouchers']")):
-     Interactions.wait_and_click(driver, By.XPATH, "//button[@aria-label='Vouchers']")
-# Clicking button: OverviewGrid
-user_input = input("Press data to select: ")
-Interactions.scroll_and_click_row(driver, By.XPATH, "//div[contains(@class,'fixedDataTableRowLayout_')]/ancestor::div[@role='grid']", f"//input[@value='{user_input}']")
-if(Interactions.check_element_exist(driver, By.XPATH, "//button[@data-dyn-controlname='TransactionLog']")):
-     Interactions.wait_and_click(driver, By.XPATH, "//button[@data-dyn-controlname='TransactionLog']")
-elif(Interactions.check_element_exist(driver, By.XPATH, "//button[@aria-label='Audit trail']")):
-     Interactions.wait_and_click(driver, By.XPATH, "//button[@aria-label='Audit trail']")
-if(Interactions.check_element_exist(driver, By.XPATH, "//button[@data-dyn-controlname='LedgerTransact']")):
-     Interactions.wait_and_click(driver, By.XPATH, "//button[@data-dyn-controlname='LedgerTransact']")
-elif(Interactions.check_element_exist(driver, By.XPATH, "//button[@aria-label='Voucher transactions']")):
-     Interactions.wait_and_click(driver, By.XPATH, "//button[@aria-label='Voucher transactions']")
-if(Interactions.check_element_exist(driver, By.XPATH, "//button[@data-dyn-controlname='LedgerTransAccount']")):
-     Interactions.wait_and_click(driver, By.XPATH, "//button[@data-dyn-controlname='LedgerTransAccount']")
-elif(Interactions.check_element_exist(driver, By.XPATH, "//button[@aria-label='Transactions']")):
-     Interactions.wait_and_click(driver, By.XPATH, "//button[@aria-label='Transactions']")
-# Clicking button: Identification
-user_input = input("Press data to select: ")
-Interactions.scroll_and_click_row(driver, By.XPATH, "//div[contains(@class,'fixedDataTableRowLayout_')]/ancestor::div[@role='grid']", f"//input[@value='{user_input}']")
-if(Interactions.check_element_exist(driver, By.XPATH, "//button[@data-dyn-controlname='LedgerTransSettled']")):
-     Interactions.wait_and_click(driver, By.XPATH, "//button[@data-dyn-controlname='LedgerTransSettled']")
-elif(Interactions.check_element_exist(driver, By.XPATH, "//button[@aria-label='Ledger settlements']")):
-     Interactions.wait_and_click(driver, By.XPATH, "//button[@aria-label='Ledger settlements']")
-# Closing the page
-Interactions.click_back_button(driver, By.XPATH, "//button[@data-dyn-controlname='SystemDefinedCloseButton']")
-time.sleep(1)
-if(Interactions.check_element_exist(driver, By.XPATH, "//button[@data-dyn-controlname='LedgerTransVoucher']")):
-     Interactions.wait_and_click(driver, By.XPATH, "//button[@data-dyn-controlname='LedgerTransVoucher']")
-elif(Interactions.check_element_exist(driver, By.XPATH, "//button[@aria-label='Voucher']")):
-     Interactions.wait_and_click(driver, By.XPATH, "//button[@aria-label='Voucher']")
-# Clicking (default) on: SystemDefinedOptions
+Interactions.wait_and_click(driver, By.XPATH, "//input[@value='"+user_input+"']")
+# Clicking (default) on: PurchOrder
 time.sleep(3)
-Interactions.wait_and_click(driver, By.XPATH, "//button/parent::div[@data-dyn-controlname='SystemDefinedOptions']")
-# Closing the page
-Interactions.click_back_button(driver, By.XPATH, "//button[@data-dyn-controlname='SystemDefinedCloseButton']")
-time.sleep(1)
-# Closing the page
-Interactions.click_back_button(driver, By.XPATH, "//button[@data-dyn-controlname='SystemDefinedCloseButton']")
-time.sleep(1)
-# Closing the page
-Interactions.click_back_button(driver, By.XPATH, "//button[@data-dyn-controlname='SystemDefinedCloseButton']")
-time.sleep(1)
-if(Interactions.check_element_exist(driver, By.XPATH, "//button[@data-dyn-controlname='TaxTransactions']")):
-     Interactions.wait_and_click(driver, By.XPATH, "//button[@data-dyn-controlname='TaxTransactions']")
-elif(Interactions.check_element_exist(driver, By.XPATH, "//button[@aria-label='Posted sales tax']")):
-     Interactions.wait_and_click(driver, By.XPATH, "//button[@aria-label='Posted sales tax']")
-if(Interactions.check_element_exist(driver, By.XPATH, "//button[@data-dyn-controlname='Cov']")):
-     Interactions.wait_and_click(driver, By.XPATH, "//button[@data-dyn-controlname='Cov']")
-elif(Interactions.check_element_exist(driver, By.XPATH, "//button[@aria-label='Cash flow forecasts']")):
-     Interactions.wait_and_click(driver, By.XPATH, "//button[@aria-label='Cash flow forecasts']")
-# Closing the page
-Interactions.click_back_button(driver, By.XPATH, "//button[@data-dyn-controlname='SystemDefinedCloseButton']")
-time.sleep(1)
-# Closing the page
-Interactions.click_back_button(driver, By.XPATH, "//button[@data-dyn-controlname='SystemDefinedCloseButton']")
-time.sleep(1)
-if(Interactions.check_element_exist(driver, By.XPATH, "//button[@data-dyn-controlname='TaxTransactions']")):
-     Interactions.wait_and_click(driver, By.XPATH, "//button[@data-dyn-controlname='TaxTransactions']")
-elif(Interactions.check_element_exist(driver, By.XPATH, "//button[@aria-label='Posted sales tax']")):
-     Interactions.wait_and_click(driver, By.XPATH, "//button[@aria-label='Posted sales tax']")
-# Closing the page
-Interactions.click_back_button(driver, By.XPATH, "//button[@data-dyn-controlname='SystemDefinedCloseButton']")
-time.sleep(1)
-# Closing the page
-Interactions.click_back_button(driver, By.XPATH, "//button[@data-dyn-controlname='SystemDefinedCloseButton']")
-time.sleep(1)
-# Closing the page
-Interactions.click_back_button(driver, By.XPATH, "//button[@data-dyn-controlname='SystemDefinedCloseButton']")
-time.sleep(1)
-# Closing the page
-Interactions.click_back_button(driver, By.XPATH, "//button[@data-dyn-controlname='SystemDefinedCloseButton']")
-time.sleep(1)
+Interactions.wait_and_click(driver, By.XPATH, "//button/parent::div[@data-dyn-controlname='PurchOrder']")
+if(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@name,'RemainPurchPhysical')]")):
+    Interactions.get_locator(driver, By.XPATH, "//input[contains(@aria-label,'Purchase quantity')]")
+    Interactions.clear_input_field_and_send_keys(driver, By.XPATH, "//input[contains(@name,'RemainPurchPhysical')]", "0.00")
+elif(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@aria-label,'Purchase quantity')]")):
+    Interactions.clear_input_field_and_send_keys(driver, By.XPATH, "//input[contains(@aria-label,'Purchase quantity')]", "0.00")
+if(Interactions.check_element_exist(driver, By.XPATH, "//button[@data-dyn-controlname='CommandButtonOK']")):
+     Interactions.wait_and_click(driver, By.XPATH, "//button[@data-dyn-controlname='CommandButtonOK']")
+elif(Interactions.check_element_exist(driver, By.XPATH, "//button[@aria-label='OK']")):
+     Interactions.wait_and_click(driver, By.XPATH, "//button[@aria-label='OK']")
 # Closing the page
 Interactions.click_back_button(driver, By.XPATH, "//button[@data-dyn-controlname='SystemDefinedCloseButton']")
 time.sleep(1)

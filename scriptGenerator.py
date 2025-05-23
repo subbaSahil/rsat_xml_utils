@@ -106,6 +106,9 @@ def generate_selenium_script(controls):
     input_label = ""
     input_name = ""
     grid_for_table_or_data_selection = ""
+    previous_control_type = None
+    previous_control_description = None
+    select_a_grid_or_click_a_input_anchor_flag = None
     lines = [
         "from selenium import webdriver",
         "from selenium.webdriver.common.by import By",
@@ -122,6 +125,7 @@ def generate_selenium_script(controls):
         "filter_manager_cloumn_last_opened = \"\"",
         "filter_manager_dropdown_item_index = 1\n",
         "column_to_open = \"\"",
+        "user_input = None",
         # "Interactions.wait_and_click(driver, By.XPATH, \"//div[@aria-label='Modules']\")\n"
     ]
 
@@ -160,9 +164,11 @@ def generate_selenium_script(controls):
         elif description == "Click Edit.":
             new_or_edit = "Edit"
        
-        if description.strip() == "In the list, find and select the desired record." or description.strip() == "In the list, click the link in the selected row.":
+        if description.strip() == "In the list, find and select the desired record.":
             grid_for_table_or_data_selection= "table"
-           
+            select_a_grid_or_click_a_input_anchor_flag = "select_row"
+        elif description.strip() == "In the list, click the link in the selected row.":
+            select_a_grid_or_click_a_input_anchor_flag = "click_row"
         elif description.startswith("In the list, select row"):
             grid_for_table_or_data_selection = "data_selection"
            
@@ -171,8 +177,7 @@ def generate_selenium_script(controls):
             lines.append("# going to edit view mode")
             lines.append("Interactions.click_back_button(driver, By.XPATH, \"//button[@data-dyn-controlname='SystemDefinedViewEditButton']\")")
             lines.append("time.sleep(1)")
-            continue   
-
+            continue       
         xpath = generate_xpath_from_control(ctype, name,label, description, value,second_word)
         if xpath:
             if ctype in ["commandbutton", "menuitembutton","dropdialogbutton","button","togglebutton"]:
@@ -180,7 +185,13 @@ def generate_selenium_script(controls):
                 lines.append(f"     Interactions.wait_and_click(driver, By.XPATH, \"{xpath[0]}\")")
                 lines.append(f"elif(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[1]}\")):")
                 lines.append(f"     Interactions.wait_and_click(driver, By.XPATH, \"{xpath[1]}\")")
-            if ctype in ["input" , "referencegroup","segmentedentry"] :
+            elif ctype in ["menubutton", "menuitem"]:
+                lines.append(f"if(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[0]}\")):")
+                lines.append(f"     Interactions.wait_and_click(driver, By.XPATH, \"{xpath[0]}\")")
+                lines.append(f"elif(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[1]}\")):")
+                lines.append(f"     Interactions.wait_and_click(driver, By.XPATH, \"{xpath[1]}\")")
+
+            elif ctype in ["input" , "referencegroup","segmentedentry"] :
                 if ctype == "input":
                     input_flag = True
                 input_name = xpath[0]
@@ -355,10 +366,22 @@ def generate_selenium_script(controls):
                 elif grid_for_table_or_data_selection == "data_selection":
                     lines.append(f"Interactions.send_enter(driver, By.XPATH, \"//body\")")
                 else:
-                    lines.append(f"# Clicking button: {name}")
                     container = "//div[contains(@class,'fixedDataTableRowLayout_')]/ancestor::div[@role='grid']"
-                    lines.append(f"user_input = input(\"Press data to select: \")")
-                    lines.append(f"Interactions.scroll_and_click_row(driver, By.XPATH, \"{container}\", f\"//input[@value='{{user_input}}']\")")
+                    if select_a_grid_or_click_a_input_anchor_flag == "select_row":
+                        lines.append(f"# Clicking button: {name}")
+                        lines.append(f"user_input = input(\"Press data to select: \")")
+                        lines.append(f"Interactions.scroll_and_click_row(driver, By.XPATH, \"{container}\", f\"//input[@value='{{user_input}}']\")")
+                    elif select_a_grid_or_click_a_input_anchor_flag == "click_row":
+                        if previous_control_type == "grid" and previous_control_description == "In the list, find and select the desired record.":   
+                            # lines.append(f"# Clicking button: {name}")
+                            # lines.append(f"user_input = input(\"Press data to select: \")")
+                            # lines.append(f"Interactions.scroll_and_click_row(driver, By.XPATH, \"{container}\", f\"//input[@value='{{user_input}}']\")")
+                            lines.append("Interactions.wait_and_click(driver, By.XPATH, \"//input[@value='\"+user_input+\"']\")")
+                        else:
+                            lines.append(f"# Clicking button: {name}")
+                            lines.append(f"user_input = input(\"Press data to select: \")")
+                            lines.append(f"Interactions.scroll_and_click_row(driver, By.XPATH, \"{container}\", f\"//input[@value='{{user_input}}']\")")
+                            lines.append(f"Interactions.wait_and_click(driver, By.XPATH, \"//input[@value='\"+user_input+\"']\")")
 
                 input_label = ""
                 input_name = ""
@@ -366,8 +389,10 @@ def generate_selenium_script(controls):
             # else:
             #     lines.append(f"# Clicking (default) on: {name}")
             #     lines.append(f"Interactions.wait_and_click(driver, By.XPATH, \"{xpath}\")")
-        else:
-            lines.append(f"# ❌ Locator not found for: {name} (Type: {ctype})")
+        # else:
+        #     lines.append(f"# ❌ Locator not found for: {name} (Type: {ctype})")
+        previous_control_type = ctype
+        previous_control_description = description
     lines.append("time.sleep(5)")
     lines.append("print(\"test case passed\")")
     lines.append("driver.quit()")

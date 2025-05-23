@@ -1,12 +1,11 @@
 def generate_xpath_from_control(control_type, control_name, control_label, description,value,second_word):
     control_type = control_type.lower()
-    print(f"Control Type: {control_type}")
 #filter manager/quick filter
     if control_type in ["commandbutton", "menuitembutton","dropdialogbutton","button","togglebutton"]:
         return [f"//button[@data-dyn-controlname='{control_name}']",
                  f"//button[@aria-label='{control_label}']"]
     elif control_type in ["menubutton", "menuitem"]:
-        return f"//button[@name='{control_name}']"
+        return [f"//button[@name='{control_name}']", f"//span[text()='{control_label}']/ancestor::button"]
     # elif control_type in ["combobox"]:
     #     return f"//div[@data-dyn-controlname='{control_name}']"
     elif control_type == "combobox":
@@ -41,7 +40,7 @@ def generate_xpath_from_control(control_type, control_name, control_label, descr
         #if value !='' or value != "true" or value != "false":
         else:
             return f"//div[contains(@class,'fixedDataTableRowLayout_')]/div[@aria-rowindex='{str(int(value) + 1) }']"
-    elif control_type == " ":
-        return 
+    elif control_name == "No Control Name":
+        return
         
     
