@@ -109,6 +109,7 @@ def generate_selenium_script(controls):
     previous_control_type = None
     previous_control_description = None
     select_a_grid_or_click_a_input_anchor_flag = None
+    filter_manager_value = None
     lines = [
         "from selenium import webdriver",
         "from selenium.webdriver.common.by import By",
@@ -322,8 +323,10 @@ def generate_selenium_script(controls):
                     lines.append("Interactions.wait_and_click(driver, By.XPATH, \"//span[text()='Clear']/ancestor::button\")")
                 elif description.startswith("Enter a filter value of"):
                     description = Interactions.normalize_description_quotes(description)
+                    filter_manager_data = Interactions.extract_value_and_operator_from_description(description)
                     lines.append(f"filter_manager_data = Interactions.extract_value_and_operator_from_description(\"{description}\")")
                     lines.append("operator = filter_manager_data['operator']")
+                    
                     lines.append("new_val = filter_manager_data['value']")
                     lines.append("field_name = filter_manager_data['field_name']")
                     lines.append("drop_down_item = \"//input[contains(@aria-label,'Filter field: \"+field_name+\",')]/ancestor::div[@class='columnHeader-popup sysPopup']/ancestor::body/child::div[@class='sysPopup flyoutButton-flyOut layout-root-scope']//button//span[text()='\"+operator+\"']\"")
@@ -379,7 +382,7 @@ def generate_selenium_script(controls):
                             lines.append(f"# Clicking button: {name}")
                             lines.append(f"user_input = input(\"Press data to select: \")")
                             lines.append(f"Interactions.scroll_and_click_row(driver, By.XPATH, \"{container}\", f\"//input[@value='{{user_input}}']/ancestor::div[@class='fixedDataTableRowLayout_body']/div[1]//div[@role='checkbox']\")")
-                            lines.append(f"Interactions.wait_and_click(driver, By.XPATH, \"//input[@value='\"+user_input+\"']\")")
+                            # lines.append(f"Interactions.wait_and_click(driver, By.XPATH, \"//input[@value='\"+user_input+\"']\")")
                             lines.append(f"Interactions.press_enter(driver, By.XPATH, \"//input[@value='\"+user_input+\"']\")")
 
                 input_label = ""

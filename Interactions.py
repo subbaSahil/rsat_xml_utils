@@ -100,14 +100,11 @@ def wait_and_click(driver, by, base_xpath, timeout=10):
 
     time.sleep(4)
         
-
 def hover_on_an_element(driver, by, value, timeout=10):
     element = WebDriverWait(driver, timeout).until(EC.element_to_be_clickable((by, value)))
     ActionChains(driver).move_to_element(element).perform()
     time.sleep(2)
 
-
-    
 def mouse_click(driver, by, value, timeout=10):
     element = WebDriverWait(driver, timeout).until(EC.element_to_be_clickable((by, value)))
     actions = ActionChains(driver)
@@ -129,8 +126,13 @@ def wait_and_send_keys(driver, by, value, keys,timeout=20):
     time.sleep(1)
     # element.send_keys(Keys.RETURN)
 
-def send_enter(driver, by, value,timeout=20):
+def wait_send_keys_and_enter(driver, by, value,keys,timeout=20):
     element = WebDriverWait(driver, timeout).until(EC.element_to_be_clickable((by, value)))
+    element.click()
+    element.clear()
+    time.sleep(0.5)
+    element.send_keys(keys)
+    time.sleep(0.5)
     element.send_keys(Keys.ENTER)
 
 def check_element_exist(driver, by, value, timeout=10):
@@ -141,7 +143,6 @@ def check_element_exist(driver, by, value, timeout=10):
         return True
     except TimeoutException:
         return False
-
 
 def checkInputExpanded(driver, by, value, timeout=10):
     try:

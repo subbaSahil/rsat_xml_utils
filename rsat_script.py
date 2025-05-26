@@ -20,6 +20,8 @@ filter_manager_dropdown_item_index = 1
 
 column_to_open = ""
 user_input = None
+# Closing the page
+
 Interactions.wait_and_click(driver, By.XPATH, "//div[@aria-label='Modules']")
 # Clicking navigation: Accounts payable
 Interactions.wait_and_click(driver, By.XPATH, "//a[@data-dyn-title='Accounts payable']")
@@ -33,7 +35,6 @@ time.sleep(1)
 # Clicking button: Grid
 user_input = input("Press data to select: ")
 Interactions.scroll_and_click_row(driver, By.XPATH, "//div[contains(@class,'fixedDataTableRowLayout_')]/ancestor::div[@role='grid']", f"//input[@value='{user_input}']/ancestor::div[@class='fixedDataTableRowLayout_body']/div[1]//div[@role='checkbox']")
-Interactions.wait_and_click(driver, By.XPATH, "//input[@value='"+user_input+"']")
 Interactions.press_enter(driver, By.XPATH, "//input[@value='"+user_input+"']")
 # Clicking (default) on: PurchOrder
 time.sleep(3)
