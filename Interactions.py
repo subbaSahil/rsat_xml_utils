@@ -5,8 +5,15 @@ from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
 import re
+
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.common.exceptions import NoSuchElementException, ElementClickInterceptedException
+
+
+def js_click(driver, by, value, timeout=10):
+    element = WebDriverWait(driver, 10).until(
+    EC.presence_of_element_located((by, value)))
+    driver.execute_script("arguments[0].click();", element)
 
 def extract_navigation_steps(description):
     if not description or "Go to " not in description:
@@ -99,10 +106,13 @@ def hover_on_an_element(driver, by, value, timeout=10):
     ActionChains(driver).move_to_element(element).perform()
     time.sleep(2)
 
-def js_click(driver, by, value, timeout=10):
-    element = WebDriverWait(driver, 10).until(
-    EC.presence_of_element_located((by, value))
-)
+
+    
+def mouse_click(driver, by, value, timeout=10):
+    element = WebDriverWait(driver, timeout).until(EC.element_to_be_clickable((by, value)))
+    actions = ActionChains(driver)
+    actions.move_to_element(element).click().perform()
+
 # Scroll into view just in case
     driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", element)
     time.sleep(0.3)
@@ -357,6 +367,7 @@ def scroll_and_click_row(driver, by, container_xpath, target_xpath, timeout=10, 
                             EC.visibility_of_element_located((by, target_xpath))
                         )
                         element_to_click.click()
+                        print(f"Clicked element: {target_xpath}")
                         return
                     except TimeoutException:
                         actions.move_to_element(container).click().send_keys(scroll_direction).perform()

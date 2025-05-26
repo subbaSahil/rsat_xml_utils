@@ -151,8 +151,6 @@ def generate_selenium_script(controls):
             lines.append("Interactions.click_back_button(driver, By.XPATH, \"//button[@data-dyn-controlname='SystemDefinedCloseButton']\")")
             lines.append("time.sleep(1)")
             continue
-        
-
         if description.startswith("Go to"):
             navgation_array = Interactions.extract_navigation_steps(description)
             lines.append("Interactions.wait_and_click(driver, By.XPATH, \"//div[@aria-label='Modules']\")")
@@ -370,18 +368,19 @@ def generate_selenium_script(controls):
                     if select_a_grid_or_click_a_input_anchor_flag == "select_row":
                         lines.append(f"# Clicking button: {name}")
                         lines.append(f"user_input = input(\"Press data to select: \")")
-                        lines.append(f"Interactions.scroll_and_click_row(driver, By.XPATH, \"{container}\", f\"//input[@value='{{user_input}}']\")")
+                        lines.append(f"Interactions.scroll_and_click_row(driver, By.XPATH, \"{container}\", f\"//input[@value='{{user_input}}']/ancestor::div[@class='fixedDataTableRowLayout_body']/div[1]//div[@role='checkbox']\")")
                     elif select_a_grid_or_click_a_input_anchor_flag == "click_row":
                         if previous_control_type == "grid" and previous_control_description == "In the list, find and select the desired record.":   
                             # lines.append(f"# Clicking button: {name}")
                             # lines.append(f"user_input = input(\"Press data to select: \")")
                             # lines.append(f"Interactions.scroll_and_click_row(driver, By.XPATH, \"{container}\", f\"//input[@value='{{user_input}}']\")")
-                            lines.append("Interactions.wait_and_click(driver, By.XPATH, \"//input[@value='\"+user_input+\"']\")")
+                            lines.append(f"Interactions.press_enter(driver, By.XPATH, \"//input[@value='\"+user_input+\"']\")")
                         else:
                             lines.append(f"# Clicking button: {name}")
                             lines.append(f"user_input = input(\"Press data to select: \")")
-                            lines.append(f"Interactions.scroll_and_click_row(driver, By.XPATH, \"{container}\", f\"//input[@value='{{user_input}}']\")")
+                            lines.append(f"Interactions.scroll_and_click_row(driver, By.XPATH, \"{container}\", f\"//input[@value='{{user_input}}']/ancestor::div[@class='fixedDataTableRowLayout_body']/div[1]//div[@role='checkbox']\")")
                             lines.append(f"Interactions.wait_and_click(driver, By.XPATH, \"//input[@value='\"+user_input+\"']\")")
+                            lines.append(f"Interactions.press_enter(driver, By.XPATH, \"//input[@value='\"+user_input+\"']\")")
 
                 input_label = ""
                 input_name = ""

@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <UserActionsWithDetails>
-    <UserAction Ref="i3">
-        <Description>Go to Procurement and sourcing &gt; Purchase orders &gt; All purchase orders.</Description>
-        <NodeId>i3</NodeId>
-        <Sequence>10</Sequence>
+    <UserAction Ref="i6">
+        <Description>Go to Accounts payable &gt; Purchase orders &gt; All purchase orders.</Description>
+        <NodeId>i6</NodeId>
+        <Sequence>17</Sequence>
         <Navigation>mainmenu</Navigation>
-        <Navigation>ProcurementAndSourcing</Navigation>
+        <Navigation>AccountsPayable</Navigation>
         <Navigation>PurchaseOrders</Navigation>
         <ControlName>No Control Name</ControlName>
         <ControlLabel />
@@ -13,95 +13,162 @@
         <Value />
         <CommandName />
     </UserAction>
-    <UserAction Ref="i6">
-        <Description>Open Purchase order column filter.</Description>
-        <NodeId>i6</NodeId>
-        <Sequence>10</Sequence>
-        <ControlName>SystemDefinedFilterManager</ControlName>
-        <ControlLabel />
-        <ControlType>FilterManager</ControlType>
-        <Value>[{"Capability":null,"DataSourceName":"","FieldArrayIndex":1,"FieldName":"PurchId","FormDataSourceName":"PurchTable","IsEditable":"Yes","IsQueryFilter":"Yes","MasterFormDataSourceName":"","Operator":"Matches","RecordingReferences":[],"SFKReplacementFieldBinding":"","TableId":0,"Values":[""],"Version":2}]</Value>
-        <CommandName>GetFilters</CommandName>
-    </UserAction>
-    <UserAction Ref="i8">
-        <Description>Enter a filter value of "00001111" on the "Purchase order" field using the "is exactly" filter operator.</Description>
-        <NodeId>i8</NodeId>
-        <Sequence>10</Sequence>
-        <ControlName>SystemDefinedFilterManager</ControlName>
-        <ControlLabel />
-        <ControlType>FilterManager</ControlType>
-        <Value>[{"Capability":{"DisplayDataType":"String","DomainValues":null,"FieldId":0,"FieldLabel":"Purchase order","FieldName":"","RelationLabel":"","SFKReplacementFieldBinding":"","ShowLookup":false,"TableId":0,"Version":2},"DataSourceName":"PurchTable","FieldArrayIndex":1,"FieldName":"PurchId","FormDataSourceName":"PurchTable","IsEditable":"Yes","IsQueryFilter":"Yes","MasterFormDataSourceName":"PurchTable","Operator":"Is","RecordingReferences":[],"SFKReplacementFieldBinding":"","TableId":9669,"Values":["00001111"],"Version":2}]</Value>
-        <CommandName>ApplyFiltersForTaskRecorder</CommandName>
-    </UserAction>
-    <UserAction Ref="i10">
+    <UserAction Ref="i9">
         <Description>In the list, click the link in the selected row.</Description>
-        <NodeId>i10</NodeId>
-        <Sequence>10</Sequence>
+        <NodeId>i9</NodeId>
+        <Sequence>17</Sequence>
         <ControlName>Grid</ControlName>
         <ControlLabel />
         <ControlType>Grid</ControlType>
         <Value />
         <CommandName>NavigationAction</CommandName>
     </UserAction>
-    <UserAction Ref="i12">
+    <UserAction Ref="i11">
         <Description>On the Action Pane, click Purchase order.</Description>
-        <NodeId>i12</NodeId>
-        <Sequence>10</Sequence>
+        <NodeId>i11</NodeId>
+        <Sequence>17</Sequence>
         <ControlName>PurchOrder</ControlName>
         <ControlLabel>Purchase order</ControlLabel>
         <ControlType>AppBarTab</ControlType>
         <Value />
         <CommandName>TabShown</CommandName>
     </UserAction>
-    <UserAction Ref="i14">
-        <Description>Click Update line.</Description>
-        <NodeId>i14</NodeId>
-        <Sequence>10</Sequence>
-        <ControlName>LineStripUpdate</ControlName>
-        <ControlLabel>Update line</ControlLabel>
-        <ControlType>MenuButton</ControlType>
-        <Value />
-        <CommandName>Click</CommandName>
-    </UserAction>
-    <UserAction Ref="i16">
-        <Description>Click Deliver remainder.</Description>
-        <NodeId>i16</NodeId>
-        <Sequence>10</Sequence>
-        <ControlName>PurchUpdateRemain</ControlName>
-        <ControlLabel>Deliver remainder</ControlLabel>
-        <ControlType>MenuItem</ControlType>
-        <Value />
-        <CommandName>Click</CommandName>
-    </UserAction>
-    <UserAction Ref="i19">
-        <Description>In the Purchase quantity field, enter a number.</Description>
-        <NodeId>i19</NodeId>
-        <Sequence>10</Sequence>
-        <ControlName>RemainPurchPhysical</ControlName>
-        <ControlLabel>Purchase quantity</ControlLabel>
-        <ControlType>Real</ControlType>
-        <Value>0.00</Value>
-        <CommandName />
-    </UserAction>
-    <UserAction Ref="i21">
-        <Description>Click OK.</Description>
-        <NodeId>i21</NodeId>
-        <Sequence>10</Sequence>
-        <ControlName>CommandButtonOK</ControlName>
-        <ControlLabel>OK</ControlLabel>
-        <ControlType>CommandButton</ControlType>
-        <Value />
-        <CommandName>Click</CommandName>
-    </UserAction>
-    <UserAction Ref="i23">
+    <UserAction Ref="i13">
         <Description>Close the page.</Description>
-        <NodeId>i23</NodeId>
-        <Sequence>10</Sequence>
+        <NodeId>i13</NodeId>
+        <Sequence>17</Sequence>
         <ControlName>No Control Name</ControlName>
         <ControlLabel />
         <ControlType />
         <Value />
         <CommandName>RequestClose</CommandName>
         <Annotations />
+    </UserAction>
+    <UserAction Ref="i15">
+        <Description>Go to Accounts payable &gt; Vendors &gt; All vendors.</Description>
+        <NodeId>i15</NodeId>
+        <Sequence>17</Sequence>
+        <Navigation>mainmenu</Navigation>
+        <Navigation>AccountsPayable</Navigation>
+        <Navigation>Vendors</Navigation>
+        <ControlName>No Control Name</ControlName>
+        <ControlLabel />
+        <ControlType />
+        <Value />
+        <CommandName />
+    </UserAction>
+    <UserAction Ref="i18">
+        <Description>In the list, find and select the desired record.</Description>
+        <NodeId>i18</NodeId>
+        <Sequence>17</Sequence>
+        <ControlName>Grid</ControlName>
+        <ControlLabel />
+        <ControlType>Grid</ControlType>
+        <Value>11</Value>
+        <CommandName>ChangeSelectedIndexInCache</CommandName>
+    </UserAction>
+    <UserAction Ref="i20">
+        <Description>In the list, click the link in the selected row.</Description>
+        <NodeId>i20</NodeId>
+        <Sequence>17</Sequence>
+        <ControlName>Grid</ControlName>
+        <ControlLabel />
+        <ControlType>Grid</ControlType>
+        <Value />
+        <CommandName>NavigationAction</CommandName>
+    </UserAction>
+    <UserAction Ref="i22">
+        <Description>On the Action Pane, click Vendor.</Description>
+        <NodeId>i22</NodeId>
+        <Sequence>17</Sequence>
+        <ControlName>VendorTab</ControlName>
+        <ControlLabel>Vendor</ControlLabel>
+        <ControlType>AppBarTab</ControlType>
+        <Value />
+        <CommandName>TabShown</CommandName>
+    </UserAction>
+    <UserAction Ref="i24">
+        <Description />
+        <NodeId>i24</NodeId>
+        <Sequence>17</Sequence>
+        <ControlName>AddressGridFormPart</ControlName>
+        <ControlLabel />
+        <ControlType>Part</ControlType>
+        <Value />
+        <CommandName>OpenFormPart</CommandName>
+    </UserAction>
+    <UserAction Ref="i26">
+        <Description>Close the page.</Description>
+        <NodeId>i26</NodeId>
+        <Sequence>17</Sequence>
+        <ControlName>No Control Name</ControlName>
+        <ControlLabel />
+        <ControlType />
+        <Value />
+        <CommandName>RequestClose</CommandName>
+        <Annotations />
+    </UserAction>
+    <UserAction Ref="i28">
+        <Description>Go to Accounts receivable &gt; Customers &gt; All customers.</Description>
+        <NodeId>i28</NodeId>
+        <Sequence>17</Sequence>
+        <Navigation>mainmenu</Navigation>
+        <Navigation>AccountsReceivable</Navigation>
+        <Navigation>Customers</Navigation>
+        <ControlName>No Control Name</ControlName>
+        <ControlLabel />
+        <ControlType />
+        <Value />
+        <CommandName />
+    </UserAction>
+    <UserAction Ref="i31">
+        <Description>In the list, find and select the desired record.</Description>
+        <NodeId>i31</NodeId>
+        <Sequence>17</Sequence>
+        <ControlName>Grid</ControlName>
+        <ControlLabel />
+        <ControlType>Grid</ControlType>
+        <Value>11</Value>
+        <CommandName>ChangeSelectedIndexInCache</CommandName>
+    </UserAction>
+    <UserAction Ref="i33">
+        <Description>In the list, click the link in the selected row.</Description>
+        <NodeId>i33</NodeId>
+        <Sequence>17</Sequence>
+        <ControlName>Grid</ControlName>
+        <ControlLabel />
+        <ControlType>Grid</ControlType>
+        <Value />
+        <CommandName>NavigationAction</CommandName>
+    </UserAction>
+    <UserAction Ref="i35">
+        <Description>On the Action Pane, click Projects.</Description>
+        <NodeId>i35</NodeId>
+        <Sequence>17</Sequence>
+        <ControlName>aptabProjects</ControlName>
+        <ControlLabel>Projects</ControlLabel>
+        <ControlType>AppBarTab</ControlType>
+        <Value />
+        <CommandName>TabShown</CommandName>
+    </UserAction>
+    <UserAction Ref="i37">
+        <Description />
+        <NodeId>i37</NodeId>
+        <Sequence>17</Sequence>
+        <ControlName>AddressGridFormPart</ControlName>
+        <ControlLabel />
+        <ControlType>Part</ControlType>
+        <Value />
+        <CommandName>OpenFormPart</CommandName>
+    </UserAction>
+    <UserAction Ref="i39">
+        <Description />
+        <NodeId>i39</NodeId>
+        <Sequence>17</Sequence>
+        <ControlName>ElectronicAddressGridFormPart</ControlName>
+        <ControlLabel />
+        <ControlType>Part</ControlType>
+        <Value />
+        <CommandName>OpenFormPart</CommandName>
     </UserAction>
 </UserActionsWithDetails>

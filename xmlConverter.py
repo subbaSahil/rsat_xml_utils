@@ -33,9 +33,9 @@ def extract_user_actions(input_xml):
         if node is not None:
             desc_elem = node.find(".//Description", namespaces=namespaces)
             if desc_elem is not None and desc_elem.text:
-                if desc_elem.text.startswith("Go to"):
-                    first_occurrence_of_navigtion = True
-                if first_occurrence_of_navigtion:
+                # if desc_elem.text.startswith("Go to"):
+                #     first_occurrence_of_navigtion = True
+                # if first_occurrence_of_navigtion:
                     description = desc_elem.text
  
             # Capture annotations only for "Close the page."
