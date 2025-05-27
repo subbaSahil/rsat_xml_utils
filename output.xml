@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <UserActionsWithDetails>
     <UserAction Ref="i3">
-        <Description>Go to Sales and marketing &gt; Sales orders &gt; Open orders &gt; Backorder lines.</Description>
+        <Description>Go to Inventory management &gt; Journal entries &gt; Items &gt; Movement.</Description>
         <NodeId>i3</NodeId>
-        <Sequence>5</Sequence>
+        <Sequence>18</Sequence>
         <Navigation>mainmenu</Navigation>
-        <Navigation>SalesAndMarketing</Navigation>
-        <Navigation>SalesOrders</Navigation>
-        <Navigation>OpenOrders</Navigation>
+        <Navigation>InventoryManagement</Navigation>
+        <Navigation>JournalEntries</Navigation>
+        <Navigation>Items</Navigation>
         <ControlName>No Control Name</ControlName>
         <ControlLabel />
         <ControlType />
@@ -15,44 +15,173 @@
         <CommandName />
     </UserAction>
     <UserAction Ref="i6">
-        <Description>Open Item number column filter.</Description>
+        <Description>Click New.</Description>
         <NodeId>i6</NodeId>
-        <Sequence>5</Sequence>
-        <ControlName>SystemDefinedFilterManager</ControlName>
-        <ControlLabel />
-        <ControlType>FilterManager</ControlType>
-        <Value>[{"Capability":null,"DataSourceName":"","FieldArrayIndex":1,"FieldName":"ItemId","FormDataSourceName":"SalesLine","IsEditable":"Yes","IsQueryFilter":"Yes","MasterFormDataSourceName":"","Operator":"Matches","RecordingReferences":[],"SFKReplacementFieldBinding":"","TableId":0,"Values":[""],"Version":2}]</Value>
-        <CommandName>GetFilters</CommandName>
-    </UserAction>
-    <UserAction Ref="i8">
-        <Description>Enter a filter value of "D0001" on the "Item number" field using the "is exactly" filter operator.</Description>
-        <NodeId>i8</NodeId>
-        <Sequence>5</Sequence>
-        <ControlName>SystemDefinedFilterManager</ControlName>
-        <ControlLabel />
-        <ControlType>FilterManager</ControlType>
-        <Value>[{"Capability":{"DisplayDataType":"String","DomainValues":null,"FieldId":0,"FieldLabel":"Item number","FieldName":"","RelationLabel":"","SFKReplacementFieldBinding":"","ShowLookup":false,"TableId":0,"Version":2},"DataSourceName":"SalesLine","FieldArrayIndex":1,"FieldName":"ItemId","FormDataSourceName":"SalesLine","IsEditable":"Yes","IsQueryFilter":"Yes","MasterFormDataSourceName":"SalesLine","Operator":"Is","RecordingReferences":[],"SFKReplacementFieldBinding":"","TableId":5816,"Values":["D0001"],"Version":2}]</Value>
-        <CommandName>ApplyFiltersForTaskRecorder</CommandName>
-    </UserAction>
-    <UserAction Ref="i10">
-        <Description>Click to follow the link in the Sales order field.</Description>
-        <NodeId>i10</NodeId>
-        <Sequence>5</Sequence>
-        <ControlName>SalesLine_SalesId</ControlName>
-        <ControlLabel>Sales order</ControlLabel>
-        <ControlType>Input</ControlType>
+        <Sequence>18</Sequence>
+        <ControlName>SystemDefinedNewButton</ControlName>
+        <ControlLabel>New</ControlLabel>
+        <ControlType>CommandButton</ControlType>
         <Value />
-        <CommandName>ExecuteHyperlink</CommandName>
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i9">
+        <Description>In the Site field, enter or select a value.</Description>
+        <NodeId>i9</NodeId>
+        <Sequence>18</Sequence>
+        <ControlName>RetailStoreInventory_InventSiteId</ControlName>
+        <ControlLabel>Site</ControlLabel>
+        <ControlType>Input</ControlType>
+        <Value>1</Value>
+        <CommandName>RequestPopup</CommandName>
     </UserAction>
     <UserAction Ref="i13">
-        <Description>In the list, mark the selected row.</Description>
+        <Description>In the list, click the link in the selected row.</Description>
         <NodeId>i13</NodeId>
-        <Sequence>5</Sequence>
-        <ControlName>SalesLineGrid</ControlName>
+        <Sequence>18</Sequence>
+        <ControlName>Grid</ControlName>
+        <ControlLabel />
+        <ControlType>Grid</ControlType>
+        <Value />
+        <CommandName>NavigationAction</CommandName>
+    </UserAction>
+    <UserAction Ref="i15">
+        <Description>In the Warehouse field, enter or select a value.</Description>
+        <NodeId>i15</NodeId>
+        <Sequence>18</Sequence>
+        <ControlName>RetailStoreInventory_InventLocationId</ControlName>
+        <ControlLabel>Warehouse</ControlLabel>
+        <ControlType>Input</ControlType>
+        <Value>11</Value>
+        <CommandName>RequestPopup</CommandName>
+    </UserAction>
+    <UserAction Ref="i19">
+        <Description>In the list, click the link in the selected row.</Description>
+        <NodeId>i19</NodeId>
+        <Sequence>18</Sequence>
+        <ControlName>GridInventLocation</ControlName>
+        <ControlLabel />
+        <ControlType>Grid</ControlType>
+        <Value />
+        <CommandName>NavigationAction</CommandName>
+    </UserAction>
+    <UserAction Ref="i21">
+        <Description>In the Offset account field, specify the desired values.</Description>
+        <NodeId>i21</NodeId>
+        <Sequence>18</Sequence>
+        <ControlName>Posting_OffsetLedgerDimension</ControlName>
+        <ControlLabel>Offset account</ControlLabel>
+        <ControlType>SegmentedEntry</ControlType>
+        <Value>110110</Value>
+        <CommandName />
+    </UserAction>
+    <UserAction Ref="i23">
+        <Description>Click OK.</Description>
+        <NodeId>i23</NodeId>
+        <Sequence>18</Sequence>
+        <ControlName>Ok</ControlName>
+        <ControlLabel>OK</ControlLabel>
+        <ControlType>CommandButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i25">
+        <Description>Click New.</Description>
+        <NodeId>i25</NodeId>
+        <Sequence>18</Sequence>
+        <ControlName>NewLine</ControlName>
+        <ControlLabel>New</ControlLabel>
+        <ControlType>CommandButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i27">
+        <Description>In the list, mark the selected row.</Description>
+        <NodeId>i27</NodeId>
+        <Sequence>18</Sequence>
+        <ControlName>Grid</ControlName>
         <ControlLabel />
         <ControlType>Grid</ControlType>
         <Value />
         <CommandName>MarkActiveRow</CommandName>
     </UserAction>
+    <UserAction Ref="i29">
+        <Description>In the Item number field, enter or select a value.</Description>
+        <NodeId>i29</NodeId>
+        <Sequence>18</Sequence>
+        <ControlName>InventJournalTrans_ItemId</ControlName>
+        <ControlLabel>Item number</ControlLabel>
+        <ControlType>Input</ControlType>
+        <Value>A0001</Value>
+        <CommandName>RequestPopup</CommandName>
+    </UserAction>
+    <UserAction Ref="i33">
+        <Description>In the list, select row 4.</Description>
+        <NodeId>i33</NodeId>
+        <Sequence>18</Sequence>
+        <ControlName>Grid</ControlName>
+        <ControlLabel />
+        <ControlType>Grid</ControlType>
+        <Value>4</Value>
+        <CommandName>ChangeSelectedIndexInCache</CommandName>
+    </UserAction>
+    <UserAction Ref="i35">
+        <Description>In the list, click the link in the selected row.</Description>
+        <NodeId>i35</NodeId>
+        <Sequence>18</Sequence>
+        <ControlName>Grid</ControlName>
+        <ControlLabel />
+        <ControlType>Grid</ControlType>
+        <Value />
+        <CommandName>NavigationAction</CommandName>
+    </UserAction>
+    <UserAction Ref="i37">
+        <Description>Click Save.</Description>
+        <NodeId>i37</NodeId>
+        <Sequence>18</Sequence>
+        <ControlName>SystemDefinedSaveButton</ControlName>
+        <ControlLabel>Save</ControlLabel>
+        <ControlType>CommandButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i39">
+        <Description>Click Validate.</Description>
+        <NodeId>i39</NodeId>
+        <Sequence>18</Sequence>
+        <ControlName>checkJournal</ControlName>
+        <ControlLabel>Validate</ControlLabel>
+        <ControlType>MenuItemButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i42">
+        <Description>Click OK.</Description>
+        <NodeId>i42</NodeId>
+        <Sequence>18</Sequence>
+        <ControlName>OkButton</ControlName>
+        <ControlLabel>OK</ControlLabel>
+        <ControlType>CommandButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i44">
+        <Description>Click Post.</Description>
+        <NodeId>i44</NodeId>
+        <Sequence>18</Sequence>
+        <ControlName>postJournal</ControlName>
+        <ControlLabel>Post</ControlLabel>
+        <ControlType>MenuItemButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i47">
+        <Description>Click OK.</Description>
+        <NodeId>i47</NodeId>
+        <Sequence>18</Sequence>
+        <ControlName>OkButton</ControlName>
+        <ControlLabel>OK</ControlLabel>
+        <ControlType>CommandButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
 </UserActionsWithDetails>
- 
