@@ -37,6 +37,8 @@ def generate_xpath_from_control(control_type, control_name, control_label, descr
     elif control_type == "grid":
         if value == "": 
             return f"//div[contains(@class,'fixedDataTableRowLayout_')]"
+        elif value == "true" or value == "false":
+            return f"//div[contains(@class,'fixedDataTableRowLayout_')]/div[@aria-rowindex='1']"
         #if value !='' or value != "true" or value != "false":
         else:
             return f"//div[contains(@class,'fixedDataTableRowLayout_')]/div[@aria-rowindex='{str(int(value) + 1) }']"

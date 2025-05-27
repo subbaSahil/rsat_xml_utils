@@ -382,3 +382,48 @@ def scroll_and_click_row(driver, by, container_xpath, target_xpath, timeout=10, 
             print(f"Unexpected error: {e}")
 
     print("Visible container not found.")
+
+
+
+def scroll_right(driver, by, container_xpath, target_xpath, target_xpath_2 , timeout=10, max_scrolls=1000):
+    time.sleep(2)
+    # Try multiple container elements (if indexed)
+    for i in range(1, 10):
+        indexed_xpath = f"({container_xpath})[{i}]"
+        try:
+            container = WebDriverWait(driver, timeout).until(
+                EC.presence_of_element_located((By.XPATH, indexed_xpath))
+            )
+
+            if container.is_displayed():
+                print(f"Container found: {indexed_xpath}")
+                actions = ActionChains(driver)
+
+                scroll_key = Keys.ARROW_RIGHT  # Default horizontal scroll key
+
+                for _ in range(max_scrolls):
+                    try:
+                        element_to_click = None
+                        if check_element_exist(driver, by, target_xpath):
+                            element_to_click = WebDriverWait(driver, 5).until(
+                                EC.visibility_of_element_located((by, target_xpath))
+                            )
+                        else:
+                            element_to_click = WebDriverWait(driver, 5).until(
+                                EC.visibility_of_element_located((by, target_xpath_2))
+                            )
+                        element_to_click.click()
+                        print(f"Clicked element: {target_xpath}")
+                        return
+                    except TimeoutException:
+                        actions.move_to_element(container).click().send_keys(scroll_key).perform()
+                        time.sleep(0.5)
+
+                raise TimeoutException(f"Element {target_xpath} not found after scrolling.")
+
+        except TimeoutException as e:
+            print(f"Timeout or not displayed: {e}")
+        except Exception as e:
+            print(f"Unexpected error: {e}")
+
+    print("Visible container not found.")
