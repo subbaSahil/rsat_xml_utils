@@ -167,7 +167,7 @@ def generate_selenium_script(controls):
         elif description == "Click Save.":
             new_or_edit_or_save = "Save"    
        
-        elif description.strip() == "In the list, find and select the desired record.":
+        elif description.strip() == "In the list, find and select the desired record." or description.strip() == "In the list, mark the selected row.":
             grid_for_table_or_data_selection= "table"
             select_a_grid_or_click_a_input_anchor_flag = "select_row"
         elif description.strip() == "In the list, click the link in the selected row.":

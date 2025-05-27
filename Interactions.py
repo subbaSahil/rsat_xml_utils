@@ -76,6 +76,7 @@ def wait_and_click(driver, by, base_xpath, timeout=10):
                     element.click()
             else:
                 WebDriverWait(driver, timeout).until(EC.element_to_be_clickable((by, base_xpath)))
+                driver.execute_script("arguments[0].scrollIntoView({block: 'center', behavior: 'smooth'});", element)
                 element.click()
                 print(f"Clicked element with {base_xpath}")
 
@@ -119,15 +120,16 @@ def mouse_click(driver, by, value, timeout=10):
 
 def wait_and_send_keys(driver, by, value, keys,timeout=20):
     element = WebDriverWait(driver, timeout).until(EC.element_to_be_clickable((by, value)))
+    driver.execute_script("arguments[0].scrollIntoView({block: 'center', behavior: 'smooth'});", element)
     time.sleep(0.5)
     element.click()
-    element.clear()
     element.send_keys(keys)
     time.sleep(1)
     # element.send_keys(Keys.RETURN)
 
 def wait_send_keys_and_enter(driver, by, value,keys,timeout=20):
     element = WebDriverWait(driver, timeout).until(EC.element_to_be_clickable((by, value)))
+    driver.execute_script("arguments[0].scrollIntoView({block: 'center', behavior: 'smooth'});", element)
     element.click()
     element.clear()
     time.sleep(0.5)
@@ -142,6 +144,9 @@ def check_element_exist(driver, by, value, timeout=10):
         )
         return True
     except TimeoutException:
+        return False
+    except Exception as e:
+        print(f"Unexpected error in check_element_exist: {e}")
         return False
 
 def checkInputExpanded(driver, by, value, timeout=10):
@@ -160,6 +165,7 @@ def checkInputExpanded(driver, by, value, timeout=10):
 
 def clear_input_field_and_send_keys(driver, by, value, keys, timeout=20):
     element = WebDriverWait(driver, timeout).until(EC.element_to_be_clickable((by, value)))
+    driver.execute_script("arguments[0].scrollIntoView({block: 'center', behavior: 'smooth'});", element)
     element.click()
     time.sleep(0.5)  # brief wait before sending keys
     element.send_keys(Keys.CONTROL + "a")  # Select all text
@@ -385,9 +391,8 @@ def scroll_and_click_row(driver, by, container_xpath, target_xpath, timeout=10, 
 
 
 
-def scroll_right(driver, by, container_xpath, target_xpath, target_xpath_2 , timeout=10, max_scrolls=1000):
+def scroll_right(driver, by, container_xpath, target_xpath, target_xpath_2, timeout=10, max_scrolls=1000):
     time.sleep(2)
-    # Try multiple container elements (if indexed)
     for i in range(1, 10):
         indexed_xpath = f"({container_xpath})[{i}]"
         try:
@@ -399,31 +404,65 @@ def scroll_right(driver, by, container_xpath, target_xpath, target_xpath_2 , tim
                 print(f"Container found: {indexed_xpath}")
                 actions = ActionChains(driver)
 
-                scroll_key = Keys.ARROW_RIGHT  # Default horizontal scroll key
-
+                scroll_key = Keys.ARROW_RIGHT
+                scroll_amount = 200  # pixels for JS scroll
                 for _ in range(max_scrolls):
                     try:
-                        element_to_click = None
                         if check_element_exist(driver, by, target_xpath):
                             element_to_click = WebDriverWait(driver, 5).until(
                                 EC.visibility_of_element_located((by, target_xpath))
                             )
-                        else:
+                            element_to_click.click()
+                            print(f"Clicked element: {target_xpath}")
+                            return
+
+                        elif check_element_exist(driver, by, target_xpath_2):
                             element_to_click = WebDriverWait(driver, 5).until(
                                 EC.visibility_of_element_located((by, target_xpath_2))
                             )
-                        element_to_click.click()
-                        print(f"Clicked element: {target_xpath}")
-                        return
+                            element_to_click.click()
+                            print(f"Clicked element: {target_xpath_2}")
+                            return
+
                     except TimeoutException:
-                        actions.move_to_element(container).click().send_keys(scroll_key).perform()
+                        # Try ActionChains key scroll
+                        try:
+                            actions.move_to_element(container).click().send_keys(scroll_key).perform()
+                        except:
+                            pass
+                        
+                        # Try JavaScript pixel scroll
+                        try:
+                            driver.execute_script("arguments[0].scrollLeft += arguments[1];", container, scroll_amount)
+                        except Exception as e:
+                            print(f"JS scroll error: {e}")
+
                         time.sleep(0.5)
 
                 raise TimeoutException(f"Element {target_xpath} not found after scrolling.")
 
         except TimeoutException as e:
-            print(f"Timeout or not displayed: {e}")
+            print(f"Timeout or not displayed for container: {e}")
         except Exception as e:
             print(f"Unexpected error: {e}")
 
     print("Visible container not found.")
+
+def scroll_into_view(driver, by, value, timeout=10):
+    """
+    Scrolls the specified element into view using JavaScript.
+    Args:
+        driver: Selenium WebDriver instance.
+        by: Locator strategy (By.XPATH, By.ID, etc.).
+        value: The actual locator value.
+        timeout: Time to wait for the element (default 10 seconds).
+    """
+    try:
+        element = WebDriverWait(driver, timeout).until(
+            EC.presence_of_element_located((by, value))
+        )
+        driver.execute_script("arguments[0].scrollIntoView({block: 'center', behavior: 'smooth'});", element)
+        time.sleep(0.5)  # Optional wait after scrolling
+         # Click the element after scrolling
+    except TimeoutException:
+        print(f"Element not found for scrolling: {value}")
