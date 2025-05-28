@@ -108,6 +108,7 @@ def generate_selenium_script(controls):
     grid_for_table_or_data_selection = ""
     previous_control_type = None
     previous_control_description = None
+    previous_user_action_value = None
     select_a_grid_or_click_a_input_anchor_flag = None
     filter_manager_value = None
     lines = [
@@ -226,12 +227,12 @@ def generate_selenium_script(controls):
                 lines.append(f"     else:")
                 lines.append(f"          ActionChains(driver).move_to_element(driver.find_element(By.XPATH, \"{xpath[2]}\")).perform()")
                 lines.append(f"          Interactions.wait_and_send_keys(driver, By.XPATH, \"{xpath[2]}\", \"{value}\")")
-            elif ctype in ["input" , "referencegroup","segmentedentry"] :
-                input_name = xpath[0]
-                input_label= xpath[1]
+            elif ctype in ["input" , "referencegroup"] :
+                
                 edited_value = value
                 if ctype == "input":
-                    input_flag = True
+                    input_name = xpath[0]
+                    input_label= xpath[1]
                 if new_or_edit_or_save == "Edit":
                     lines.append(f"# Clicking button: {name}")
                 else:
@@ -311,13 +312,17 @@ def generate_selenium_script(controls):
                 lines.append(f"if(Interactions.check_input_ancestor_is_table(driver, By.XPATH, \"{xpath[0]}\") or Interactions.check_input_ancestor_is_table(driver, By.XPATH, \"{xpath[1]}\") ):")
                 lines.append(f"    #clicking inside grid: {name}")
                 lines.append(f"    if(Interactions.check_element_exist(driver, By.XPATH, \"{'('+xpath[0] +')[1]'}\")):")
+                lines.append(f"         ActionChains(driver).move_to_element(driver.find_element(By.XPATH,\"{'('+xpath[0] +')[1]'}\")).perform()")
                 lines.append(f"         Interactions.clear_input_field_and_send_keys(driver, By.XPATH, \"{'('+xpath[0] +')[1]'}\", \"{value}\")")
                 lines.append(f"    elif(Interactions.check_element_exist(driver, By.XPATH, \"{'('+xpath[1] +')[1]'}\")):")
+                lines.append(f"         ActionChains(driver).move_to_element(driver.find_element(By.XPATH,\"{'('+xpath[1] +')[1]'}\")).perform()")
                 lines.append(f"         Interactions.clear_input_field_and_send_keys(driver, By.XPATH, \"{'('+xpath[1] +')[1]'}\", \"{value}\")")
                 lines.append(f"else:")
                 lines.append(f"    if(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[0]}\")):")
+                lines.append(f"         ActionChains(driver).move_to_element(driver.find_element(By.XPATH,\"{xpath[0]}\")).perform()")
                 lines.append(f"         Interactions.clear_input_field_and_send_keys(driver, By.XPATH, \"{xpath[0]}\", \"{value}\")")
                 lines.append(f"    elif(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[1]}\")):")
+                lines.append(f"         ActionChains(driver).move_to_element(driver.find_element(By.XPATH,\"{xpath[1]}\")).perform()")
                 lines.append(f"         Interactions.clear_input_field_and_send_keys(driver, By.XPATH, \"{xpath[1]}\", \"{value}\")")
                 lines.append(f"    Interactions.press_enter(driver, By.XPATH, \"//body\")")
             # elif ctype == "commandbutton":
@@ -418,6 +423,7 @@ def generate_selenium_script(controls):
                 #     lines.append(f"     locator=Interactions.get_locator(driver, By.XPATH, \"{locator_for_table_edit_name}\")")
                 #     lines.append(f"     Interactions.wait_and_send_keys(driver, By.XPATH, locator, \"{edited_value}\")")
                 container = "//div[contains(@class,'fixedDataTableRowLayout_')]/ancestor::div[@role='grid']"
+
                 if grid_for_table_or_data_selection == "data_selection":
                     # lines.append(f"Interactions.press_enter(driver, By.XPATH, \"//body\")")
                     pass
