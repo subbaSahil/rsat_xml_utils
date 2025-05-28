@@ -205,7 +205,8 @@ def generate_selenium_script(controls):
                 lines.append(f"elif(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[1]}\")):")
                 lines.append(f"     Interactions.wait_and_click(driver, By.XPATH, \"{xpath[1]}\")")
 
-            elif ctype in ["input" , "referencegroup","segmentedentry"] :
+            
+            elif ctype in ["input" , "referencegroup"] :
                 input_name = xpath[0]
                 input_label= xpath[1]
                 edited_value = value

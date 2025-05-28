@@ -21,7 +21,7 @@ def generate_xpath_from_control(control_type, control_name, control_label, descr
             ]
     elif control_type == "pivotitem":
         return f"//li[contains(@data-dyn-controlname,'{control_name}')]"
-    elif control_type in ["input", "real", "referencegroup","date","radiobutton", "quickfilter","filtermanager", "segmentedentry"]:
+    elif control_type in ["input", "real", "referencegroup","date","radiobutton", "quickfilter","filtermanager"]:
         return [
             f"//input[contains(@name,'{control_name.strip()}')]",
             f"//input[contains(@aria-label,'{control_label.strip()}')]"
@@ -44,8 +44,10 @@ def generate_xpath_from_control(control_type, control_name, control_label, descr
             return f"//div[contains(@class,'fixedDataTableRowLayout_')]/div[@aria-rowindex='{str(int(value) + 1) }']"
     elif control_name == "No Control Name":
         return
-    # elif control_type == "tree":
-    #     if
-    #     return f"//div[@data-dyn-controlname='{control_name}']"
-        
+    elif control_type == "segmentedentry":
+        return [
+            f"//input[contains(@name,'{control_name.strip()}')]",
+            f"//input[contains(@aria-label,'{control_label.strip()}')]",
+            f"//div[@title='{control_label.strip()}']"
+        ]
     
