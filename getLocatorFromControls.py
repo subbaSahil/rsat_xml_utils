@@ -48,6 +48,6 @@ def generate_xpath_from_control(control_type, control_name, control_label, descr
         return [
             f"//input[contains(@name,'{control_name.strip()}')]",
             f"//input[contains(@aria-label,'{control_label.strip()}')]",
-            f"//div[@title='{control_label.strip()}']"
+            f"//input[@title='{control_label.strip()}']"
         ]
     

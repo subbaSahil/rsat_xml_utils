@@ -78,23 +78,23 @@ Interactions.press_enter(driver, By.XPATH, "//input[@value='"+user_input+"']")
 # Inputting into: Posting_OffsetLedgerDimension
 if(Interactions.check_input_ancestor_is_table(driver, By.XPATH, "//input[contains(@name,'Posting_OffsetLedgerDimension')]") or Interactions.check_input_ancestor_is_table(driver, By.XPATH, "//input[contains(@aria-label,'Offset account')]") ):
     #clicking inside grid: Posting_OffsetLedgerDimension
-    if(Interactions.check_element_exist(driver, By.XPATH, "(//input[contains(@name,'Posting_OffsetLedgerDimension')])[1]")):
+     if(Interactions.check_element_exist(driver, By.XPATH, "(//input[contains(@name,'Posting_OffsetLedgerDimension')])[1]")):
           ActionChains(driver).move_to_element(driver.find_element(By.XPATH,"//input[contains(@name,'Posting_OffsetLedgerDimension')]")).perform()
           Interactions.wait_and_send_keys(driver, By.XPATH, "(//input[contains(@name,'Posting_OffsetLedgerDimension')])[1]", "110110")
-    elif(Interactions.check_element_exist(driver, By.XPATH, "(//input[contains(@aria-label,'Offset account')])[1]")):
+     elif(Interactions.check_element_exist(driver, By.XPATH, "(//input[contains(@aria-label,'Offset account')])[1]")):
           ActionChains(driver).move_to_element(driver.find_element(By.XPATH, "//input[contains(@aria-label,'Offset account')]")).perform()
           Interactions.wait_and_send_keys(driver, By.XPATH, "(//input[contains(@aria-label,'Offset account')])[1]", "110110")
-    else:
+     else:
           ActionChains(driver).move_to_element(driver.find_element(By.XPATH, "(//div[@title='Offset account'])[1]")).perform()
           Interactions.wait_and_send_keys(driver, By.XPATH, "(//div[@title='Offset account'])[1]", "110110")
 else:
-    if(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@name,'Posting_OffsetLedgerDimension')]")):
+     if(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@name,'Posting_OffsetLedgerDimension')]")):
          Interactions.wait_and_send_keys(driver, By.XPATH, "//input[contains(@name,'Posting_OffsetLedgerDimension')]", "110110")
-    elif(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@aria-label,'Offset account')]")):
+     elif(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@aria-label,'Offset account')]")):
          Interactions.wait_and_send_keys(driver, By.XPATH, "//input[contains(@aria-label,'Offset account')]", "110110")
-    else:
-          ActionChains(driver).move_to_element(driver.find_element(By.XPATH, "//input[contains(@aria-label,'Offset account')]")).perform()
-          Interactions.wait_and_send_keys(driver, By.XPATH, "(//div[@title='Offset account'])[1]", "110110")
+     else:
+          ActionChains(driver).move_to_element(driver.find_element(By.XPATH, "//div[@title='Offset account']")).perform()
+          Interactions.wait_and_send_keys(driver, By.XPATH, "//div[@title='Offset account']", "110110")
 if(Interactions.check_element_exist(driver, By.XPATH, "//button[@data-dyn-controlname='Ok']")):
      Interactions.wait_and_click(driver, By.XPATH, "//button[@data-dyn-controlname='Ok']")
 elif(Interactions.check_element_exist(driver, By.XPATH, "//button[@aria-label='OK']")):
