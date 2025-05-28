@@ -44,7 +44,7 @@ if filter_manager_cloumn_last_opened == 'Item number' and filter_manager_cloumn_
     Interactions.wait_and_click(driver, By.XPATH, "//div[text()='Item number']")
 else:
     Interactions.wait_and_click(driver, By.XPATH, "//div[text()='Item number']")
-filter_manager_data = Interactions.extract_value_and_operator_from_description("Enter a filter value of 'F00006' on the 'Item number' field using the 'begins with' filter operator.")
+filter_manager_data = Interactions.extract_value_and_operator_from_description("Enter a filter value of 'F00008' on the 'Item number' field using the 'begins with' filter operator.")
 operator = filter_manager_data['operator']
 new_val = filter_manager_data['value']
 field_name = filter_manager_data['field_name']
@@ -72,6 +72,13 @@ elif operator == 'between':
 else:
     Interactions.wait_and_send_keys(driver, By.XPATH, input_field, new_val)
 Interactions.wait_and_click(driver, By.XPATH, apply_button)
+# Clicking button: HeaderGrid
+user_input = input("Press data to select: ")
+Interactions.scroll_and_click_row(driver, By.XPATH, "//div[contains(@class,'fixedDataTableRowLayout_')]/ancestor::div[@role='grid']", f"//input[@value='{user_input}']/ancestor::div[@class='fixedDataTableRowLayout_body']/div[1]//div[@role='checkbox']")
+Interactions.press_enter(driver, By.XPATH, "//input[@value='"+user_input+"']")
+# Clicking (default) on: ActionPaneTabManageInventory
+time.sleep(3)
+Interactions.wait_and_click(driver, By.XPATH, "//button/parent::div[@data-dyn-controlname='ActionPaneTabManageInventory']")
 if(Interactions.check_element_exist(driver, By.XPATH, "//button[@data-dyn-controlname='InventItemOrderSetupAction']")):
      Interactions.wait_and_click(driver, By.XPATH, "//button[@data-dyn-controlname='InventItemOrderSetupAction']")
 elif(Interactions.check_element_exist(driver, By.XPATH, "//button[@aria-label='Default order settings']")):
@@ -83,8 +90,8 @@ elif(Interactions.check_element_exist(driver, By.XPATH, "//button[@aria-label='E
 # Clicking combobox: ctrlDefaultOrderType
 if Interactions.check_element_exist(driver, By.XPATH, "//input[@name='ctrlDefaultOrderType']"):
      Interactions.wait_and_click(driver, By.XPATH, "//input[@name='ctrlDefaultOrderType']")
-elif Interactions.check_element_exist(driver, By.XPATH, "//ul[contains(@aria-labelledby, 'ctrlDefaultOrderType')]//li[@data-dyn-index='1']"):
-     Interactions.wait_and_click(driver, By.XPATH, "//ul[contains(@aria-labelledby, 'ctrlDefaultOrderType')]//li[@data-dyn-index='1']")
+elif Interactions.check_element_exist(driver, By.XPATH, "//ul[contains(@aria-labelledby, 'ctrlDefaultOrderType')]//li[@data-dyn-index='0']"):
+     Interactions.wait_and_click(driver, By.XPATH, "//ul[contains(@aria-labelledby, 'ctrlDefaultOrderType')]//li[@data-dyn-index='0']")
 if(Interactions.check_element_exist(driver, By.XPATH, "//button[@data-dyn-controlname='SystemDefinedSaveButton']")):
      Interactions.wait_and_click(driver, By.XPATH, "//button[@data-dyn-controlname='SystemDefinedSaveButton']")
 elif(Interactions.check_element_exist(driver, By.XPATH, "//button[@aria-label='Save']")):
@@ -147,6 +154,10 @@ elif operator == 'between':
 else:
     Interactions.wait_and_send_keys(driver, By.XPATH, input_field, new_val)
 Interactions.wait_and_click(driver, By.XPATH, apply_button)
+# Clicking button: ListPageGrid
+user_input = input("Press data to select: ")
+Interactions.scroll_and_click_row(driver, By.XPATH, "//div[contains(@class,'fixedDataTableRowLayout_')]/ancestor::div[@role='grid']", f"//input[@value='{user_input}']/ancestor::div[@class='fixedDataTableRowLayout_body']/div[1]//div[@role='checkbox']")
+Interactions.press_enter(driver, By.XPATH, "//input[@value='"+user_input+"']")
 if(Interactions.check_element_exist(driver, By.XPATH, "//button[@data-dyn-controlname='EcoResProductRelease']")):
      Interactions.wait_and_click(driver, By.XPATH, "//button[@data-dyn-controlname='EcoResProductRelease']")
 elif(Interactions.check_element_exist(driver, By.XPATH, "//button[@aria-label='Release products']")):
@@ -158,6 +169,7 @@ elif(Interactions.check_element_exist(driver, By.XPATH, "//button[@aria-label='N
 # Clicking button: GridLegalEntities
 user_input = input("Press data to select: ")
 Interactions.scroll_and_click_row(driver, By.XPATH, "//div[contains(@class,'fixedDataTableRowLayout_')]/ancestor::div[@role='grid']", f"//input[@value='{user_input}']/ancestor::div[@class='fixedDataTableRowLayout_body']/div[1]//div[@role='checkbox']")
+Interactions.press_enter(driver, By.XPATH, "//input[@value='"+user_input+"']")
 if(Interactions.check_element_exist(driver, By.XPATH, "//button[@data-dyn-controlname='Next']")):
      Interactions.wait_and_click(driver, By.XPATH, "//button[@data-dyn-controlname='Next']")
 elif(Interactions.check_element_exist(driver, By.XPATH, "//button[@aria-label='Next']")):
@@ -166,9 +178,6 @@ if(Interactions.check_element_exist(driver, By.XPATH, "//button[@data-dyn-contro
      Interactions.wait_and_click(driver, By.XPATH, "//button[@data-dyn-controlname='Finish']")
 elif(Interactions.check_element_exist(driver, By.XPATH, "//button[@aria-label='Finish']")):
      Interactions.wait_and_click(driver, By.XPATH, "//button[@aria-label='Finish']")
-# Closing the page
-Interactions.click_back_button(driver, By.XPATH, "//button[@data-dyn-controlname='SystemDefinedCloseButton']")
-time.sleep(1)
 # Closing the page
 Interactions.click_back_button(driver, By.XPATH, "//button[@data-dyn-controlname='SystemDefinedCloseButton']")
 time.sleep(1)
@@ -190,10 +199,9 @@ if(Interactions.check_element_exist(driver, By.XPATH, "//button[@data-dyn-contro
 elif(Interactions.check_element_exist(driver, By.XPATH, "//button[@aria-label='Edit']")):
      Interactions.wait_and_click(driver, By.XPATH, "//button[@aria-label='Edit']")
 # Clicking button: InventModelGroupItem_ModelGroupId
-# Clicking button: Grid
-user_input = input("Press data to select: ")
-Interactions.scroll_and_click_row(driver, By.XPATH, "//div[contains(@class,'fixedDataTableRowLayout_')]/ancestor::div[@role='grid']", f"//input[@value='{user_input}']/ancestor::div[@class='fixedDataTableRowLayout_body']/div[1]//div[@role='checkbox']")
-Interactions.press_enter(driver, By.XPATH, "//input[@value='"+user_input+"']")
+# Clicking (default) on: ActionPaneTabDefine
+time.sleep(3)
+Interactions.wait_and_click(driver, By.XPATH, "//button/parent::div[@data-dyn-controlname='ActionPaneTabDefine']")
 if(Interactions.check_element_exist(driver, By.XPATH, "//button[@data-dyn-controlname='DimensionGroups']")):
      Interactions.wait_and_click(driver, By.XPATH, "//button[@data-dyn-controlname='DimensionGroups']")
 elif(Interactions.check_element_exist(driver, By.XPATH, "//button[@aria-label='Dimension groups']")):
@@ -202,13 +210,17 @@ if(Interactions.check_element_exist(driver, By.XPATH, "//button[@data-dyn-contro
      Interactions.wait_and_click(driver, By.XPATH, "//button[@data-dyn-controlname='OKButton']")
 elif(Interactions.check_element_exist(driver, By.XPATH, "//button[@aria-label='OK']")):
      Interactions.wait_and_click(driver, By.XPATH, "//button[@aria-label='OK']")
+# Clicking button: CostPosting_ItemGroupId
 # Clicking button: PurchaseSetup_UnitId
 # Clicking button: SalesSetup_UnitId
-# Clicking button: CostPosting_ItemGroupId
+# Clicking button: InventoryQuantity_UnitId
 if(Interactions.check_element_exist(driver, By.XPATH, "//button[@data-dyn-controlname='SystemDefinedSaveButton']")):
      Interactions.wait_and_click(driver, By.XPATH, "//button[@data-dyn-controlname='SystemDefinedSaveButton']")
 elif(Interactions.check_element_exist(driver, By.XPATH, "//button[@aria-label='Save']")):
      Interactions.wait_and_click(driver, By.XPATH, "//button[@aria-label='Save']")
+# Clicking (default) on: ActionPaneTabDefine
+time.sleep(3)
+Interactions.wait_and_click(driver, By.XPATH, "//button/parent::div[@data-dyn-controlname='ActionPaneTabDefine']")
 if(Interactions.check_element_exist(driver, By.XPATH, "//button[@data-dyn-controlname='Validate']")):
      Interactions.wait_and_click(driver, By.XPATH, "//button[@data-dyn-controlname='Validate']")
 elif(Interactions.check_element_exist(driver, By.XPATH, "//button[@aria-label='Validate']")):
@@ -243,7 +255,7 @@ if filter_manager_cloumn_last_opened == 'Item number' and filter_manager_cloumn_
     Interactions.wait_and_click(driver, By.XPATH, "//div[text()='Item number']")
 else:
     Interactions.wait_and_click(driver, By.XPATH, "//div[text()='Item number']")
-filter_manager_data = Interactions.extract_value_and_operator_from_description("Enter a filter value of 'F00010' on the 'Item number' field using the 'begins with' filter operator.")
+filter_manager_data = Interactions.extract_value_and_operator_from_description("Enter a filter value of 'F00008' on the 'Item number' field using the 'begins with' filter operator.")
 operator = filter_manager_data['operator']
 new_val = filter_manager_data['value']
 field_name = filter_manager_data['field_name']
@@ -283,14 +295,14 @@ elif(Interactions.check_element_exist(driver, By.XPATH, "//button[@aria-label='N
 if(Interactions.check_input_ancestor_is_table(driver, By.XPATH, "//input[contains(@name,'InventDim_InventSiteId')]") or Interactions.check_input_ancestor_is_table(driver, By.XPATH, "//input[contains(@aria-label,'Site')]") ):
     #clicking inside grid: InventDim_InventSiteId
     if(Interactions.check_element_exist(driver, By.XPATH, "(//input[contains(@name,'InventDim_InventSiteId')])[1]")):
-         Interactions.wait_and_send_keys(driver, By.XPATH, "(//input[contains(@name,'InventDim_InventSiteId')])[1]", "4")
+         Interactions.wait_and_send_keys(driver, By.XPATH, "(//input[contains(@name,'InventDim_InventSiteId')])[1]", "2")
     elif(Interactions.check_element_exist(driver, By.XPATH, "(//input[contains(@aria-label,'Site')])[1]")):
-         Interactions.wait_and_send_keys(driver, By.XPATH, "(//input[contains(@aria-label,'Site')])[1]", "4")
+         Interactions.wait_and_send_keys(driver, By.XPATH, "(//input[contains(@aria-label,'Site')])[1]", "2")
 else:
     if(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@name,'InventDim_InventSiteId')]")):
-         Interactions.wait_and_send_keys(driver, By.XPATH, "//input[contains(@name,'InventDim_InventSiteId')]", "4")
+         Interactions.wait_and_send_keys(driver, By.XPATH, "//input[contains(@name,'InventDim_InventSiteId')]", "2")
     elif(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@aria-label,'Site')]")):
-         Interactions.wait_and_send_keys(driver, By.XPATH, "//input[contains(@aria-label,'Site')]", "4")
+         Interactions.wait_and_send_keys(driver, By.XPATH, "//input[contains(@aria-label,'Site')]", "2")
     Interactions.press_enter(driver, By.XPATH, "//body")
 if(Interactions.check_element_exist(driver, By.XPATH, "//button[@data-dyn-controlname='SystemDefinedSaveButton']")):
      Interactions.wait_and_click(driver, By.XPATH, "//button[@data-dyn-controlname='SystemDefinedSaveButton']")

@@ -398,7 +398,6 @@ def generate_selenium_script(controls):
                 if grid_for_table_or_data_selection == "data_selection":
                     # lines.append(f"Interactions.press_enter(driver, By.XPATH, \"//body\")")
                     pass
-                
                 elif select_a_grid_or_click_a_input_anchor_flag == "select_row":
                     lines.append(f"# Clicking button: {name}")
                     lines.append(f"user_input = input(\"Press data to select: \")")
