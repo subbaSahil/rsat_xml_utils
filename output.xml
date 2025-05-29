@@ -1,2 +1,185 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<UserActionsWithDetails><UserAction Ref="i4"><Description>Close the page.</Description><NodeId>i4</NodeId><Sequence>17</Sequence><ControlName>No Control Name</ControlName><ControlLabel /><ControlType /><Value /><CommandName>RequestClose</CommandName><Annotations /></UserAction><UserAction Ref="i6"><Description>Go to Accounts payable &gt; Purchase orders &gt; All purchase orders.</Description><NodeId>i6</NodeId><Sequence>17</Sequence><Navigation>mainmenu</Navigation><Navigation>AccountsPayable</Navigation><Navigation>PurchaseOrders</Navigation><ControlName>No Control Name</ControlName><ControlLabel /><ControlType /><Value /><CommandName /></UserAction><UserAction Ref="i9"><Description>In the list, click the link in the selected row.</Description><NodeId>i9</NodeId><Sequence>17</Sequence><ControlName>Grid</ControlName><ControlLabel /><ControlType>Grid</ControlType><Value /><CommandName>NavigationAction</CommandName></UserAction><UserAction Ref="i11"><Description>On the Action Pane, click Purchase order.</Description><NodeId>i11</NodeId><Sequence>17</Sequence><ControlName>PurchOrder</ControlName><ControlLabel>Purchase order</ControlLabel><ControlType>AppBarTab</ControlType><Value /><CommandName>TabShown</CommandName></UserAction><UserAction Ref="i13"><Description>Close the page.</Description><NodeId>i13</NodeId><Sequence>17</Sequence><ControlName>No Control Name</ControlName><ControlLabel /><ControlType /><Value /><CommandName>RequestClose</CommandName><Annotations /></UserAction><UserAction Ref="i15"><Description>Go to Accounts payable &gt; Vendors &gt; All vendors.</Description><NodeId>i15</NodeId><Sequence>17</Sequence><Navigation>mainmenu</Navigation><Navigation>AccountsPayable</Navigation><Navigation>Vendors</Navigation><ControlName>No Control Name</ControlName><ControlLabel /><ControlType /><Value /><CommandName /></UserAction><UserAction Ref="i18"><Description>In the list, find and select the desired record.</Description><NodeId>i18</NodeId><Sequence>17</Sequence><ControlName>Grid</ControlName><ControlLabel /><ControlType>Grid</ControlType><Value>11</Value><CommandName>ChangeSelectedIndexInCache</CommandName></UserAction><UserAction Ref="i20"><Description>In the list, click the link in the selected row.</Description><NodeId>i20</NodeId><Sequence>17</Sequence><ControlName>Grid</ControlName><ControlLabel /><ControlType>Grid</ControlType><Value /><CommandName>NavigationAction</CommandName></UserAction><UserAction Ref="i22"><Description>On the Action Pane, click Vendor.</Description><NodeId>i22</NodeId><Sequence>17</Sequence><ControlName>VendorTab</ControlName><ControlLabel>Vendor</ControlLabel><ControlType>AppBarTab</ControlType><Value /><CommandName>TabShown</CommandName></UserAction><UserAction Ref="i24"><Description /><NodeId>i24</NodeId><Sequence>17</Sequence><ControlName>AddressGridFormPart</ControlName><ControlLabel /><ControlType>Part</ControlType><Value /><CommandName>OpenFormPart</CommandName></UserAction><UserAction Ref="i26"><Description>Close the page.</Description><NodeId>i26</NodeId><Sequence>17</Sequence><ControlName>No Control Name</ControlName><ControlLabel /><ControlType /><Value /><CommandName>RequestClose</CommandName><Annotations /></UserAction><UserAction Ref="i28"><Description>Go to Accounts receivable &gt; Customers &gt; All customers.</Description><NodeId>i28</NodeId><Sequence>17</Sequence><Navigation>mainmenu</Navigation><Navigation>AccountsReceivable</Navigation><Navigation>Customers</Navigation><ControlName>No Control Name</ControlName><ControlLabel /><ControlType /><Value /><CommandName /></UserAction><UserAction Ref="i31"><Description>In the list, find and select the desired record.</Description><NodeId>i31</NodeId><Sequence>17</Sequence><ControlName>Grid</ControlName><ControlLabel /><ControlType>Grid</ControlType><Value>11</Value><CommandName>ChangeSelectedIndexInCache</CommandName></UserAction><UserAction Ref="i33"><Description>In the list, click the link in the selected row.</Description><NodeId>i33</NodeId><Sequence>17</Sequence><ControlName>Grid</ControlName><ControlLabel /><ControlType>Grid</ControlType><Value /><CommandName>NavigationAction</CommandName></UserAction><UserAction Ref="i35"><Description>On the Action Pane, click Projects.</Description><NodeId>i35</NodeId><Sequence>17</Sequence><ControlName>aptabProjects</ControlName><ControlLabel>Projects</ControlLabel><ControlType>AppBarTab</ControlType><Value /><CommandName>TabShown</CommandName></UserAction><UserAction Ref="i37"><Description /><NodeId>i37</NodeId><Sequence>17</Sequence><ControlName>AddressGridFormPart</ControlName><ControlLabel /><ControlType>Part</ControlType><Value /><CommandName>OpenFormPart</CommandName></UserAction><UserAction Ref="i39"><Description /><NodeId>i39</NodeId><Sequence>17</Sequence><ControlName>ElectronicAddressGridFormPart</ControlName><ControlLabel /><ControlType>Part</ControlType><Value /><CommandName>OpenFormPart</CommandName></UserAction></UserActionsWithDetails>
+<UserActionsWithDetails>
+    <UserAction Ref="i4">
+        <Description>Close the page.</Description>
+        <NodeId>i4</NodeId>
+        <Sequence>17</Sequence>
+        <ControlName>No Control Name</ControlName>
+        <ControlLabel />
+        <ControlType />
+        <Value />
+        <CommandName>RequestClose</CommandName>
+        <Annotations />
+    </UserAction>
+    <UserAction Ref="i6">
+        <Description>Go to Accounts payable &gt; Purchase orders &gt; All purchase orders.</Description>
+        <NodeId>i6</NodeId>
+        <Sequence>17</Sequence>
+        <Navigation>mainmenu</Navigation>
+        <Navigation>AccountsPayable</Navigation>
+        <Navigation>PurchaseOrders</Navigation>
+        <ControlName>No Control Name</ControlName>
+        <ControlLabel />
+        <ControlType />
+        <Value />
+        <CommandName />
+    </UserAction>
+    <UserAction Ref="i9">
+        <Description>In the list, click the link in the selected row.</Description>
+        <NodeId>i9</NodeId>
+        <Sequence>17</Sequence>
+        <ControlName>Grid</ControlName>
+        <ControlLabel />
+        <ControlType>Grid</ControlType>
+        <Value />
+        <CommandName>NavigationAction</CommandName>
+    </UserAction>
+    <UserAction Ref="i11">
+        <Description>On the Action Pane, click Purchase order.</Description>
+        <NodeId>i11</NodeId>
+        <Sequence>17</Sequence>
+        <ControlName>PurchOrder</ControlName>
+        <ControlLabel>Purchase order</ControlLabel>
+        <ControlType>AppBarTab</ControlType>
+        <Value />
+        <CommandName>TabShown</CommandName>
+    </UserAction>
+    <UserAction Ref="i13">
+        <Description>Close the page.</Description>
+        <NodeId>i13</NodeId>
+        <Sequence>17</Sequence>
+        <ControlName>No Control Name</ControlName>
+        <ControlLabel />
+        <ControlType />
+        <Value />
+        <CommandName>RequestClose</CommandName>
+        <Annotations />
+    </UserAction>
+    <UserAction Ref="i15">
+        <Description>Go to Accounts payable &gt; Vendors &gt; All vendors.</Description>
+        <NodeId>i15</NodeId>
+        <Sequence>17</Sequence>
+        <Navigation>mainmenu</Navigation>
+        <Navigation>AccountsPayable</Navigation>
+        <Navigation>Vendors</Navigation>
+        <ControlName>No Control Name</ControlName>
+        <ControlLabel />
+        <ControlType />
+        <Value />
+        <CommandName />
+    </UserAction>
+    <UserAction Ref="i18">
+        <Description>In the list, find and select the desired record.</Description>
+        <NodeId>i18</NodeId>
+        <Sequence>17</Sequence>
+        <ControlName>Grid</ControlName>
+        <ControlLabel />
+        <ControlType>Grid</ControlType>
+        <Value>11</Value>
+        <CommandName>ChangeSelectedIndexInCache</CommandName>
+    </UserAction>
+    <UserAction Ref="i20">
+        <Description>In the list, click the link in the selected row.</Description>
+        <NodeId>i20</NodeId>
+        <Sequence>17</Sequence>
+        <ControlName>Grid</ControlName>
+        <ControlLabel />
+        <ControlType>Grid</ControlType>
+        <Value />
+        <CommandName>NavigationAction</CommandName>
+    </UserAction>
+    <UserAction Ref="i22">
+        <Description>On the Action Pane, click Vendor.</Description>
+        <NodeId>i22</NodeId>
+        <Sequence>17</Sequence>
+        <ControlName>VendorTab</ControlName>
+        <ControlLabel>Vendor</ControlLabel>
+        <ControlType>AppBarTab</ControlType>
+        <Value />
+        <CommandName>TabShown</CommandName>
+    </UserAction>
+    <UserAction Ref="i24">
+        <Description />
+        <NodeId>i24</NodeId>
+        <Sequence>17</Sequence>
+        <ControlName>AddressGridFormPart</ControlName>
+        <ControlLabel />
+        <ControlType>Part</ControlType>
+        <Value />
+        <CommandName>OpenFormPart</CommandName>
+    </UserAction>
+    <UserAction Ref="i26">
+        <Description>Close the page.</Description>
+        <NodeId>i26</NodeId>
+        <Sequence>17</Sequence>
+        <ControlName>No Control Name</ControlName>
+        <ControlLabel />
+        <ControlType />
+        <Value />
+        <CommandName>RequestClose</CommandName>
+        <Annotations />
+    </UserAction>
+    <UserAction Ref="i28">
+        <Description>Go to Accounts receivable &gt; Customers &gt; All customers.</Description>
+        <NodeId>i28</NodeId>
+        <Sequence>17</Sequence>
+        <Navigation>mainmenu</Navigation>
+        <Navigation>AccountsReceivable</Navigation>
+        <Navigation>Customers</Navigation>
+        <ControlName>No Control Name</ControlName>
+        <ControlLabel />
+        <ControlType />
+        <Value />
+        <CommandName />
+    </UserAction>
+    <UserAction Ref="i31">
+        <Description>In the list, find and select the desired record.</Description>
+        <NodeId>i31</NodeId>
+        <Sequence>17</Sequence>
+        <ControlName>Grid</ControlName>
+        <ControlLabel />
+        <ControlType>Grid</ControlType>
+        <Value>11</Value>
+        <CommandName>ChangeSelectedIndexInCache</CommandName>
+    </UserAction>
+    <UserAction Ref="i33">
+        <Description>In the list, click the link in the selected row.</Description>
+        <NodeId>i33</NodeId>
+        <Sequence>17</Sequence>
+        <ControlName>Grid</ControlName>
+        <ControlLabel />
+        <ControlType>Grid</ControlType>
+        <Value />
+        <CommandName>NavigationAction</CommandName>
+    </UserAction>
+    <UserAction Ref="i35">
+        <Description>On the Action Pane, click Projects.</Description>
+        <NodeId>i35</NodeId>
+        <Sequence>17</Sequence>
+        <ControlName>aptabProjects</ControlName>
+        <ControlLabel>Projects</ControlLabel>
+        <ControlType>AppBarTab</ControlType>
+        <Value />
+        <CommandName>TabShown</CommandName>
+    </UserAction>
+    <UserAction Ref="i37">
+        <Description />
+        <NodeId>i37</NodeId>
+        <Sequence>17</Sequence>
+        <ControlName>AddressGridFormPart</ControlName>
+        <ControlLabel />
+        <ControlType>Part</ControlType>
+        <Value />
+        <CommandName>OpenFormPart</CommandName>
+    </UserAction>
+    <UserAction Ref="i39">
+        <Description />
+        <NodeId>i39</NodeId>
+        <Sequence>17</Sequence>
+        <ControlName>ElectronicAddressGridFormPart</ControlName>
+        <ControlLabel />
+        <ControlType>Part</ControlType>
+        <Value />
+        <CommandName>OpenFormPart</CommandName>
+    </UserAction>
+</UserActionsWithDetails>

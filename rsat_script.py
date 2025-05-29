@@ -21,8 +21,7 @@ filter_manager_dropdown_item_index = 1
 column_to_open = ""
 user_input = None
 # Closing the page
-Interactions.click_back_button(driver, By.XPATH, "//button[@data-dyn-controlname='SystemDefinedCloseButton']")
-time.sleep(1)
+
 Interactions.wait_and_click(driver, By.XPATH, "//div[@aria-label='Modules']")
 # Clicking navigation: Accounts payable
 Interactions.wait_and_click(driver, By.XPATH, "//a[@data-dyn-title='Accounts payable']")
@@ -56,7 +55,7 @@ time.sleep(1)
 # Clicking button: Grid
 user_input = input("Press data to select: ")
 Interactions.scroll_and_click_row(driver, By.XPATH, "//div[contains(@class,'fixedDataTableRowLayout_')]/ancestor::div[@role='grid']", f"//input[@value='{user_input}']/ancestor::div[@class='fixedDataTableRowLayout_body']/div[1]//div[@role='checkbox']")
-Interactions.press_enter(driver, By.XPATH, "//input[@value='"+user_input+"']")
+"Skipping grid"
 # Clicking (default) on: VendorTab
 time.sleep(3)
 Interactions.wait_and_click(driver, By.XPATH, "//button/parent::div[@data-dyn-controlname='VendorTab']")
@@ -76,7 +75,8 @@ time.sleep(1)
 # Clicking button: Grid
 user_input = input("Press data to select: ")
 Interactions.scroll_and_click_row(driver, By.XPATH, "//div[contains(@class,'fixedDataTableRowLayout_')]/ancestor::div[@role='grid']", f"//input[@value='{user_input}']/ancestor::div[@class='fixedDataTableRowLayout_body']/div[1]//div[@role='checkbox']")
-Interactions.press_enter(driver, By.XPATH, "//input[@value='"+user_input+"']")
+if(len(user_input) <= 6):
+    Interactions.press_enter(driver, By.XPATH, "//input[@value='"+user_input+"']")
 # Clicking (default) on: aptabProjects
 time.sleep(3)
 Interactions.wait_and_click(driver, By.XPATH, "//button/parent::div[@data-dyn-controlname='aptabProjects']")

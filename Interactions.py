@@ -164,16 +164,10 @@ def clear_input_field_and_send_keys(driver, by, value, keys, timeout=20):
     try:
         # Wait for the element to be clickable and store it
         element = WebDriverWait(driver, timeout).until(EC.element_to_be_clickable((by, value)))
-
-        # Scroll to and focus on the element
-        # ActionChains(driver).move_to_element(driver.find_element(by, value)).perform()
         time.sleep(0.5)  # Short buffer time before interaction
         element.click()
-        # Clear existing text
         element.send_keys(Keys.CONTROL + "a")
         element.send_keys(Keys.DELETE)
-
-        # Send new text
         element.send_keys(keys)
         time.sleep(1)  # Give the page time to register input
 

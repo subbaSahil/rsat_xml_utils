@@ -233,8 +233,8 @@ def generate_selenium_script(controls):
                 if ctype == "input":
                     input_name = xpath[0]
                     input_label= xpath[1]
-                if new_or_edit_or_save == "Edit":
-                    lines.append(f"# Clicking button: {name}")
+                # if new_or_edit_or_save == "Edit":
+                #     lines.append(f"# Clicking button: {name}")
                 else:
                     if command_name == "ResolveChanges":
                         lines.append(f"# Clicking button: {name}")
