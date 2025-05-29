@@ -9,6 +9,28 @@ XML_PATH = "output.xml"
 OUTPUT_SCRIPT = "rsat_script.py"
 
 # global varaiables for managing the generation of script
+def input_for_filterpane(value):
+    if value and ";" in value:
+        return [part.strip() for part in value.split(";") if part.strip()]
+    elif value:
+        return [value.strip()]
+    else:
+        return []
+def extracted_values_for_filterpane_control(parts):
+    matches = re.findall(r'"(.*?)"', parts)
+ 
+    if len(matches) >= 3:
+        return {
+            "value": matches[0],
+            "field": matches[1],
+            "operator": matches[2]
+        }
+    else:
+        return {
+            "value": None,
+            "field": None,
+            "operator": None
+        }
 
 def heirarchy_for_tree(value):
     if value and "\\" in value:
@@ -120,6 +142,7 @@ def generate_selenium_script(controls):
     select_a_grid_or_click_a_input_anchor_flag = None
     ignore_grid = False
     filter_manager_value = None
+    input_flag_for_grid = False
     lines = [
         "from selenium import webdriver",
         "from selenium.webdriver.common.by import By",
@@ -295,9 +318,14 @@ def generate_selenium_script(controls):
                     lines.append(f"# clicking dropdown for Tree")
                     lines.append(f"Interactions.wait_and_click(driver, By.XPATH, \"//input[@role='combobox']/parent::div/parent::div/following-sibling::div\")")
                 elif command_name == "ExecuteHyperlink" and ctype == "input" and description.startswith("Click to follow the link in the "):
-                    lines.append("user_input = input('Enter the value for the hyperlink: ')")
-                    lines.append("Interactions.wait_and_click(driver, By.XPATH, \"//input[@title='\"+user_input+\"']\")")
-                    lines.append(f"Interactions.wait_and_click(driver, By.XPATH, \"//div[text()='\"+user_input+\"']\")")
+                    if name == "EcoResProduct_DisplayProductNumber":
+                        lines.append("user_input = input('Enter the value for the hyperlink: ')")
+                        lines.append("Interactions.wait_and_click(driver, By.XPATH, \"//div[@name='EcoResProduct_DisplayProductNumber' and text()='\"+user_input+\"']\")")
+                        
+                    else:
+                        lines.append("user_input = input('Enter the value for the hyperlink: ')")
+                        lines.append("Interactions.wait_and_click(driver, By.XPATH, \"//input[@value='\"+user_input+\"']\")")
+                        lines.append(f"Interactions.press_enter(driver, By.XPATH, \"//input[@value='\"+user_input+\"']\")")
                 elif ctype == "input" and command_name == "RequestPopup":
                     lines.append(f"# Inputting into: {name}")
                     lines.append(f"if(Interactions.check_input_ancestor_is_table(driver, By.XPATH, \"{xpath[0]}\") or Interactions.check_input_ancestor_is_table(driver, By.XPATH, \"{xpath[1]}\") ):")
@@ -481,17 +509,24 @@ def generate_selenium_script(controls):
                 #     lines.append("time.sleep(0.5)")
 
                 previous_desc = f"In the {previous_control_label} field, enter or select a value."
+                
                 if previous_control_type == "input" and previous_control_description == previous_desc:
                     lines.append("\"Skipping grid since previous was control was input\"")
+                    input_flag_for_grid = True
                     # ignore_grid = True
                 elif previous_control_type == "grid" and "In the list, select row" in previous_control_description:
                     lines.append("\"Skipping grid selection due input in the ancestor\"")
-                elif description.strip() == "In the list, mark the selected row." and name == "LineSpec":
+                elif description.strip() == "In the list, mark the selected row." and command_name == "MarkActiveRow":
                     lines.append("\"Skipping grid since it is deafault behavior of d365\"")
                 elif previous_control_type == "input" and previous_control_description == previous_desc and description.strip() == "In the list, find and select the desired record.":
+                    
                     lines.append("\"Skipping grid\"")
                 elif previous_control_type == "grid" and previous_control_description == "In the list, find and select the desired record." and description.strip() == "In the list, click the link in the selected row.":
-                    lines.append("\"Skipping grid\"")
+                    if input_flag_for_grid == False:
+                        lines.append(f"Interactions.press_enter(driver, By.XPATH, \"//input[@value='\"+user_input+\"']\")")
+                        input_flag_for_grid = True
+                    else:
+                        lines.append("\"Skipping grid since previous was input\"")
                 elif select_a_grid_or_click_a_input_anchor_flag == "select_row":
                     lines.append(f"# Clicking button: {name}")
                     lines.append(f"user_input = input(\"Press data to select: \")")
@@ -509,6 +544,33 @@ def generate_selenium_script(controls):
                         # lines.append(f"Interactions.wait_and_click(driver, By.XPATH, \"//input[@value='\"+user_input+\"']\")")
                         lines.append(f"Interactions.press_enter(driver, By.XPATH, \"//input[@value='\"+user_input+\"']\")")
 
+            elif ctype in ["filterpane"]:
+                if command_name == "ApplyFilters":
+                    extracted_parts =input_for_filterpane(value)
+                    for part in extracted_parts:
+                        key_values = extracted_values_for_filterpane_control(part)
+                        print(key_values)
+                        field = key_values.get("field")
+                        operator = key_values.get("operator")
+                        val = key_values.get("value")
+           
+                        if val is not None and val != "":
+                            lines.append(f"#Applying filter:")  
+                            #sending filter operator
+                            if operator != "begins with":
+                                lines.append(f"Interactions.wait_and_click(driver, By.XPATH, \"//div[@title='{field}']/following-sibling::div/button\")")
+                                lines.append(f"Interactions.wait_and_click(driver, By.XPATH, \"//span[text()='{operator}']/parent::div/parent::button[@data-dyn-role='MenuItem']\")")
+                            #sending inputs
+                            lines.append(f"Interactions.clear_input_field_and_send_keys(driver, By.XPATH, \"//div[@title='Item number']/parent::div/parent::div/following-sibling::div//input\",\"{val}\")")      
+                            lines.append(f"Interactions.wait_and_click(driver, By.XPATH, \"{xpath[0]}\")")
+                           
+                if command_name=="ResetFilters":
+                    lines.append(f"#Resetting filter")
+                    lines.append(f"Interactions.wait_and_click(driver, By.XPATH, \"{xpath[1]}\")")
+                if command_name=="AddAFilterField":
+                    lines.append(f"Interactions.wait_and_click(driver, By.XPATH, \"{xpath[2]}\")")
+                   
+ 
                
             # else:
             #     lines.append(f"# Clicking (default) on: {name}")

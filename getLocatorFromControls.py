@@ -50,4 +50,9 @@ def generate_xpath_from_control(control_type, control_name, control_label, descr
             f"//input[contains(@aria-label,'{control_label.strip()}')]",
             f"//input[@title='{control_label.strip()}']"
         ]
-    
+    elif control_type=="filterpane":
+        return ["//span[text()='Apply']//ancestor::button" ,
+                "//span[text()='Reset']//ancestor::button",
+                "//span[text()='Add']//ancestor::button"
+        ]  
+ 
