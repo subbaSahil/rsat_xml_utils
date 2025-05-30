@@ -3,7 +3,7 @@
     <UserAction Ref="i4">
         <Description>Close the page.</Description>
         <NodeId>i4</NodeId>
-        <Sequence>3</Sequence>
+        <Sequence>18</Sequence>
         <ControlName>No Control Name</ControlName>
         <ControlLabel />
         <ControlType />
@@ -11,27 +11,179 @@
         <CommandName>RequestClose</CommandName>
         <Annotations />
     </UserAction>
-    <UserAction Ref="i6">
-        <Description>Go to Inventory management &gt; Inquiries and reports &gt; On-hand list.</Description>
-        <NodeId>i6</NodeId>
-        <Sequence>3</Sequence>
+    <UserAction Ref="i7">
+        <Description>In the Item number field, type a value.</Description>
+        <NodeId>i7</NodeId>
+        <Sequence>18</Sequence>
+        <ControlName>PurchLine_ItemId</ControlName>
+        <ControlLabel>Item number</ControlLabel>
+        <ControlType>Input</ControlType>
+        <Value />
+        <CommandName />
+    </UserAction>
+    <UserAction Ref="i9">
+        <Description>Close the page.</Description>
+        <NodeId>i9</NodeId>
+        <Sequence>18</Sequence>
+        <ControlName>No Control Name</ControlName>
+        <ControlLabel />
+        <ControlType />
+        <Value />
+        <CommandName>RequestClose</CommandName>
+        <Annotations />
+    </UserAction>
+    <UserAction Ref="i11">
+        <Description>Click Remove.</Description>
+        <NodeId>i11</NodeId>
+        <Sequence>18</Sequence>
+        <ControlName>LineStripDelete</ControlName>
+        <ControlLabel>Remove</ControlLabel>
+        <ControlType>CommandButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i13">
+        <Description>Close the page.</Description>
+        <NodeId>i13</NodeId>
+        <Sequence>18</Sequence>
+        <ControlName>No Control Name</ControlName>
+        <ControlLabel />
+        <ControlType />
+        <Value />
+        <CommandName>RequestClose</CommandName>
+        <Annotations />
+    </UserAction>
+    <UserAction Ref="i15">
+        <Description>Go to Accounts payable &gt; Purchase orders &gt; All purchase orders.</Description>
+        <NodeId>i15</NodeId>
+        <Sequence>18</Sequence>
         <Navigation>mainmenu</Navigation>
-        <Navigation>InventoryManagement</Navigation>
-        <Navigation>InquiriesAndReports</Navigation>
+        <Navigation>AccountsPayable</Navigation>
+        <Navigation>PurchaseOrders</Navigation>
         <ControlName>No Control Name</ControlName>
         <ControlLabel />
         <ControlType />
         <Value />
         <CommandName />
     </UserAction>
-    <UserAction Ref="i9">
-        <Description>Apply the following filters: Enter a filter value of "GA0002" on the "Item number" field using the "contains" filter operator; Enter a filter value of "2" on the "Site" field using the "contains" filter operator; Enter a filter value of "11-UND" on the "Warehouse" field using the "is not" filter operator; Enter a filter value of "000002" on the "Serial number" field using the "contains" filter operator; Enter a filter value of "" on the "Batch number" field using the "begins with" filter operator; Enter a filter value of "abc" on the "Search name" field using the "does not contain" filter operator</Description>
-        <NodeId>i9</NodeId>
-        <Sequence>3</Sequence>
-        <ControlName>SystemDefinedFilterPane</ControlName>
+    <UserAction Ref="i18">
+        <Description>In the list, find and select the desired record.</Description>
+        <NodeId>i18</NodeId>
+        <Sequence>18</Sequence>
+        <ControlName>Grid</ControlName>
         <ControlLabel />
-        <ControlType>FilterPane</ControlType>
-        <Value>Enter a filter value of "GA0002" on the "Item number" field using the "contains" filter operator; Enter a filter value of "2" on the "Site" field using the "contains" filter operator; Enter a filter value of "11-UND" on the "Warehouse" field using the "is not" filter operator; Enter a filter value of "000002" on the "Serial number" field using the "contains" filter operator; Enter a filter value of "" on the "Batch number" field using the "begins with" filter operator; Enter a filter value of "abc" on the "Search name" field using the "does not contain" filter operator</Value>
-        <CommandName>ApplyFilters</CommandName>
+        <ControlType>Grid</ControlType>
+        <Value>7</Value>
+        <CommandName>ChangeSelectedIndexInCache</CommandName>
+    </UserAction>
+    <UserAction Ref="i20">
+        <Description>In the list, click the link in the selected row.</Description>
+        <NodeId>i20</NodeId>
+        <Sequence>18</Sequence>
+        <ControlName>Grid</ControlName>
+        <ControlLabel />
+        <ControlType>Grid</ControlType>
+        <Value />
+        <CommandName>NavigationAction</CommandName>
+    </UserAction>
+    <UserAction Ref="i22">
+        <Description>Click Add line.</Description>
+        <NodeId>i22</NodeId>
+        <Sequence>18</Sequence>
+        <ControlName>LineStripNew</ControlName>
+        <ControlLabel>Add line</ControlLabel>
+        <ControlType>CommandButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i24">
+        <Description>In the list, mark the selected row.</Description>
+        <NodeId>i24</NodeId>
+        <Sequence>18</Sequence>
+        <ControlName>LineSpec</ControlName>
+        <ControlLabel />
+        <ControlType>Grid</ControlType>
+        <Value />
+        <CommandName>MarkActiveRow</CommandName>
+    </UserAction>
+    <UserAction Ref="i26">
+        <Description>In the Item number field, enter or select a value.</Description>
+        <NodeId>i26</NodeId>
+        <Sequence>18</Sequence>
+        <ControlName>PurchLine_ItemId</ControlName>
+        <ControlLabel>Item number</ControlLabel>
+        <ControlType>Input</ControlType>
+        <Value>0002</Value>
+        <CommandName>RequestPopup</CommandName>
+    </UserAction>
+    <UserAction Ref="i30">
+        <Description>In the list, select row 2.</Description>
+        <NodeId>i30</NodeId>
+        <Sequence>18</Sequence>
+        <ControlName>Grid</ControlName>
+        <ControlLabel />
+        <ControlType>Grid</ControlType>
+        <Value>2</Value>
+        <CommandName>ChangeSelectedIndexInCache</CommandName>
+    </UserAction>
+    <UserAction Ref="i32">
+        <Description>In the list, click the link in the selected row.</Description>
+        <NodeId>i32</NodeId>
+        <Sequence>18</Sequence>
+        <ControlName>Grid</ControlName>
+        <ControlLabel />
+        <ControlType>Grid</ControlType>
+        <Value />
+        <CommandName>NavigationAction</CommandName>
+    </UserAction>
+    <UserAction Ref="i34">
+        <Description>In the Procurement category field, enter or select a value.</Description>
+        <NodeId>i34</NodeId>
+        <Sequence>18</Sequence>
+        <ControlName>PurchLine_ProcurementCategory</ControlName>
+        <ControlLabel>Procurement category</ControlLabel>
+        <ControlType>ReferenceGroup</ControlType>
+        <Value />
+        <CommandName>ResolveChanges</CommandName>
+    </UserAction>
+    <UserAction Ref="i38">
+        <Description>In the tree, expand 'CORP PROCUREMENT CATEGORIES (OFFICE EQUIPMENT AND ACCESSORIES AND SUPPLIES)\WORKPLACE SERVICES (WORKPLACE SERVICES)'.</Description>
+        <NodeId>i38</NodeId>
+        <Sequence>18</Sequence>
+        <ControlName>ctrlFormTree</ControlName>
+        <ControlLabel />
+        <ControlType>Tree</ControlType>
+        <Value>CORP PROCUREMENT CATEGORIES (OFFICE EQUIPMENT AND ACCESSORIES AND SUPPLIES)\WORKPLACE SERVICES (WORKPLACE SERVICES)</Value>
+        <CommandName>ExpandingPath</CommandName>
+    </UserAction>
+    <UserAction Ref="i40">
+        <Description>In the tree, select 'CORP PROCUREMENT CATEGORIES (OFFICE EQUIPMENT AND ACCESSORIES AND SUPPLIES)\WORKPLACE SERVICES (WORKPLACE SERVICES)\Cleaning (Cleaning)'.</Description>
+        <NodeId>i40</NodeId>
+        <Sequence>18</Sequence>
+        <ControlName>ctrlFormTree</ControlName>
+        <ControlLabel />
+        <ControlType>Tree</ControlType>
+        <Value>CORP PROCUREMENT CATEGORIES (OFFICE EQUIPMENT AND ACCESSORIES AND SUPPLIES)\WORKPLACE SERVICES (WORKPLACE SERVICES)\Cleaning (Cleaning)</Value>
+        <CommandName>SelectionPathChanged</CommandName>
+    </UserAction>
+    <UserAction Ref="i42">
+        <Description>Click OK.</Description>
+        <NodeId>i42</NodeId>
+        <Sequence>18</Sequence>
+        <ControlName>OKButton</ControlName>
+        <ControlLabel>OK</ControlLabel>
+        <ControlType>CommandButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i44">
+        <Description>In the list, mark the selected row.</Description>
+        <NodeId>i44</NodeId>
+        <Sequence>18</Sequence>
+        <ControlName>LineSpec</ControlName>
+        <ControlLabel />
+        <ControlType>Grid</ControlType>
+        <Value />
+        <CommandName>MarkActiveRow</CommandName>
     </UserAction>
 </UserActionsWithDetails>
