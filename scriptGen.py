@@ -142,6 +142,7 @@ def generate_selenium_script(controls):
     select_a_grid_or_click_a_input_anchor_flag = None
     ignore_grid = False
     filter_manager_value = None
+    quickFilterValue = None
     input_flag_for_grid = False
     lines = [
         "from selenium import webdriver",
@@ -366,6 +367,7 @@ def generate_selenium_script(controls):
                 #         lines.append(f"    Interactions.wait_and_send_keys(driver, By.XPATH, locator, \"{value}\")")
                
             elif ctype in["quickfilter"]:
+                quickFilterValue = filtervalue
                 lines.append(f"# Inputting into: {name}")
                 # xpath_controlname = xpath[0]+"/following-sibling::div"
                 lines.append(f"if(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[0]}\")):")
@@ -519,7 +521,6 @@ def generate_selenium_script(controls):
                 elif description.strip() == "In the list, mark the selected row." and command_name == "MarkActiveRow":
                     lines.append("\"Skipping grid since it is deafault behavior of d365\"")
                 elif previous_control_type == "input" and previous_control_description == previous_desc and description.strip() == "In the list, find and select the desired record.":
-                    
                     lines.append("\"Skipping grid\"")
                 elif previous_control_type == "grid" and previous_control_description == "In the list, find and select the desired record." and description.strip() == "In the list, click the link in the selected row.":
                     if input_flag_for_grid == False:
@@ -532,18 +533,20 @@ def generate_selenium_script(controls):
                     lines.append(f"user_input = input(\"Press data to select: \")")
                     lines.append(f"Interactions.scroll_and_click_row(driver, By.XPATH, \"{container}\", f\"//input[@value='{{user_input}}']/ancestor::div[@class='fixedDataTableRowLayout_body']/div[1]//div[@role='checkbox']\")")
                 elif select_a_grid_or_click_a_input_anchor_flag == "click_row":
-                    if previous_control_type == "grid" and previous_control_description == "In the list, find and select the desired record.":   
-                        # lines.append(f"# Clicking button: {name}")
-                        # lines.append(f"user_input = input(\"Press data to select: \")")
-                        # lines.append(f"Interactions.scroll_and_click_row(driver, By.XPATH, \"{container}\", f\"//input[@value='{{user_input}}']\")")
-                        lines.append(f"Interactions.press_enter(driver, By.XPATH, \"//input[@value='\"+user_input+\"']\")")
+                    print("quickfilter then grid") 
+                    if previous_control_type == "grid" and previous_control_description == "In the list, find and select the desired record.":
+                            lines.append(f"Interactions.press_enter(driver, By.XPATH, \"//input[@value='\"+user_input+\"']\")")
+                    elif  previous_control_type == "quickfilter":
+                            lines.append(f"# Clicking button: {name}")
+                            lines.append(f"Interactions.wait_and_click(driver, By.XPATH, f\"//input[@value='{quickFilterValue}']/ancestor::div[@class='fixedDataTableRowLayout_body']/div[1]//div[@role='checkbox']\")")
+                            lines.append(f"Interactions.press_enter(driver, By.XPATH, \"//input[@value='{quickFilterValue}']\")")
                     else:
                         lines.append(f"# Clicking button: {name}")
                         lines.append(f"user_input = input(\"Press data to select: \")")
                         lines.append(f"Interactions.scroll_and_click_row(driver, By.XPATH, \"{container}\", f\"//input[@value='{{user_input}}']/ancestor::div[@class='fixedDataTableRowLayout_body']/div[1]//div[@role='checkbox']\")")
                         # lines.append(f"Interactions.wait_and_click(driver, By.XPATH, \"//input[@value='\"+user_input+\"']\")")
                         lines.append(f"Interactions.press_enter(driver, By.XPATH, \"//input[@value='\"+user_input+\"']\")")
-
+                
             elif ctype in ["filterpane"]:
                 if command_name == "ApplyFilters":
                     extracted_parts =input_for_filterpane(value)
@@ -559,9 +562,10 @@ def generate_selenium_script(controls):
                             #sending filter operator
                             if operator != "begins with":
                                 lines.append(f"Interactions.wait_and_click(driver, By.XPATH, \"//div[@title='{field}']/following-sibling::div/button\")")
-                                lines.append(f"Interactions.wait_and_click(driver, By.XPATH, \"//span[text()='{operator}']/parent::div/parent::button[@data-dyn-role='MenuItem']\")")
+                                lines.append(f"Interactions.wait_and_click(driver, By.XPATH, \"//div[@data-dyn-role='FilterPane']/ancestor::div[@id='mainContainer']/following-sibling::div/div/button/div/span[text()='{operator}']\")")
+                                # lines.append(f"Interactions.wait_and_click(driver, By.XPATH, \"//span[text()='{operator}']/parent::div/parent::button[@data-dyn-role='MenuItem']\")")
                             #sending inputs
-                            lines.append(f"Interactions.clear_input_field_and_send_keys(driver, By.XPATH, \"//div[@title='Item number']/parent::div/parent::div/following-sibling::div//input\",\"{val}\")")      
+                            lines.append(f"Interactions.clear_input_field_and_send_keys(driver, By.XPATH, \"//div[@title='{field}']/parent::div/parent::div/following-sibling::div//input\",\"{val}\")")      
                             lines.append(f"Interactions.wait_and_click(driver, By.XPATH, \"{xpath[0]}\")")
                            
                 if command_name=="ResetFilters":

@@ -1,281 +1,37 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<UserActionsWithDetails
-    xmlns:ns0="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Client.ServerForm.TaskRecording"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <UserAction Ref="i3">
-        <Description>Go to Procurement and sourcing &gt; Purchase orders &gt; All purchase orders.</Description>
-        <NodeId>i3</NodeId>
-        <Sequence>24</Sequence>
-        <Navigation>mainmenu</Navigation>
-        <Navigation>ProcurementAndSourcing</Navigation>
-        <Navigation>PurchaseOrders</Navigation>
+<UserActionsWithDetails>
+    <UserAction Ref="i4">
+        <Description>Close the page.</Description>
+        <NodeId>i4</NodeId>
+        <Sequence>3</Sequence>
         <ControlName>No Control Name</ControlName>
         <ControlLabel />
         <ControlType />
         <Value />
-        <CommandName />
+        <CommandName>RequestClose</CommandName>
+        <Annotations />
     </UserAction>
     <UserAction Ref="i6">
-        <Description>Open Purchase order column filter.</Description>
+        <Description>Go to Inventory management &gt; Inquiries and reports &gt; On-hand list.</Description>
         <NodeId>i6</NodeId>
-        <Sequence>24</Sequence>
-        <ControlName>SystemDefinedFilterManager</ControlName>
-        <ControlLabel />
-        <ControlType>FilterManager</ControlType>
-        <Value>
-            [{"Capability":null,"DataSourceName":"","FieldArrayIndex":1,"FieldName":"PurchId","FormDataSourceName":"PurchTable","IsEditable":"Yes","IsQueryFilter":"Yes","MasterFormDataSourceName":"","Operator":"Matches","RecordingReferences":[],"SFKReplacementFieldBinding":"","TableId":0,"Values":[""],"Version":2}]</Value>
-        <CommandName>GetFilters</CommandName>
-    </UserAction>
-    <UserAction Ref="i8">
-        <Description>Enter a filter value of "00001364" on the "Purchase order" field using the "is exactly" filter operator.</Description>
-        <NodeId>i8</NodeId>
-        <Sequence>24</Sequence>
-        <ControlName>SystemDefinedFilterManager</ControlName>
-        <ControlLabel />
-        <ControlType>FilterManager</ControlType>
-        <Value>
-            [{"Capability":{"DisplayDataType":"String","DomainValues":null,"FieldId":0,"FieldLabel":"Purchase
-            order","FieldName":"","RelationLabel":"","SFKReplacementFieldBinding":"","ShowLookup":false,"TableId":0,"Version":2},"DataSourceName":"PurchTable","FieldArrayIndex":1,"FieldName":"PurchId","FormDataSourceName":"PurchTable","IsEditable":"Yes","IsQueryFilter":"Yes","MasterFormDataSourceName":"PurchTable","Operator":"Is","RecordingReferences":[],"SFKReplacementFieldBinding":"","TableId":9669,"Values":["00001364"],"Version":2}]</Value>
-        <CommandName>ApplyFiltersForTaskRecorder</CommandName>
-    </UserAction>
-    <UserAction Ref="i10">
-        <Description>In the list, click the link in the selected row.</Description>
-        <NodeId>i10</NodeId>
-        <Sequence>24</Sequence>
-        <ControlName>Grid</ControlName>
-        <ControlLabel />
-        <ControlType>Grid</ControlType>
-        <Value />
-        <CommandName>NavigationAction</CommandName>
-    </UserAction>
-    <UserAction Ref="i12">
-        <Description>Click Edit.</Description>
-        <NodeId>i12</NodeId>
-        <Sequence>24</Sequence>
-        <ControlName>SystemDefinedViewEditButton</ControlName>
-        <ControlLabel>Edit</ControlLabel>
-        <ControlType>CommandButton</ControlType>
-        <Value />
-        <CommandName>Click</CommandName>
-    </UserAction>
-    <UserAction Ref="i14">
-        <Description>Click Add line.</Description>
-        <NodeId>i14</NodeId>
-        <Sequence>24</Sequence>
-        <ControlName>LineStripNew</ControlName>
-        <ControlLabel>Add line</ControlLabel>
-        <ControlType>CommandButton</ControlType>
-        <Value />
-        <CommandName>Click</CommandName>
-    </UserAction>
-    <UserAction Ref="i16">
-        <Description>In the list, mark the selected row.</Description>
-        <NodeId>i16</NodeId>
-        <Sequence>24</Sequence>
-        <ControlName>LineSpec</ControlName>
-        <ControlLabel />
-        <ControlType>Grid</ControlType>
-        <Value />
-        <CommandName>MarkActiveRow</CommandName>
-    </UserAction>
-    <UserAction Ref="i18">
-        <Description>In the Item number field, enter or select a value.</Description>
-        <NodeId>i18</NodeId>
-        <Sequence>24</Sequence>
-        <ControlName>PurchLine_ItemId</ControlName>
-        <ControlLabel>Item number</ControlLabel>
-        <ControlType>Input</ControlType>
-        <Value />
-        <CommandName>RequestPopup</CommandName>
-    </UserAction>
-    <UserAction Ref="i21">
-        <Description>Close the page.</Description>
-        <NodeId>i21</NodeId>
-        <Sequence>24</Sequence>
+        <Sequence>3</Sequence>
+        <Navigation>mainmenu</Navigation>
+        <Navigation>InventoryManagement</Navigation>
+        <Navigation>InquiriesAndReports</Navigation>
         <ControlName>No Control Name</ControlName>
         <ControlLabel />
         <ControlType />
         <Value />
-        <CommandName>RequestClose</CommandName>
-        <Annotations>
-            <ns0:Annotation xsi:type="TaskGuideAnnotation">
-                <ns0:Description xsi:nil="true" />
-                <ns0:ExampleText xsi:nil="true" />
-                <ns0:GlobalId xsi:nil="true" />
-                <ns0:Hidden>true</ns0:Hidden>
-                <ns0:RecordingValueType>Preferred</ns0:RecordingValueType>
-                <ns0:Title xsi:nil="true" />
-            </ns0:Annotation>
-        </Annotations>
-    </UserAction>
-    <UserAction Ref="i23">
-        <Description>In the Item number field, type a value.</Description>
-        <NodeId>i23</NodeId>
-        <Sequence>24</Sequence>
-        <ControlName>PurchLine_ItemId</ControlName>
-        <ControlLabel>Item number</ControlLabel>
-        <ControlType>Input</ControlType>
-        <Value>0001</Value>
         <CommandName />
     </UserAction>
-    <UserAction Ref="i25">
-        <Description>In the Site field, enter or select a value.</Description>
-        <NodeId>i25</NodeId>
-        <Sequence>24</Sequence>
-        <ControlName>InventoryDimensionsGrid_InventSiteId</ControlName>
-        <ControlLabel>Site</ControlLabel>
-        <ControlType>Input</ControlType>
-        <Value />
-        <CommandName>RequestPopup</CommandName>
-    </UserAction>
-    <UserAction Ref="i28">
-        <Description>Close the page.</Description>
-        <NodeId>i28</NodeId>
-        <Sequence>24</Sequence>
-        <ControlName>No Control Name</ControlName>
+    <UserAction Ref="i9">
+        <Description>Apply the following filters: Enter a filter value of "GA0002" on the "Item number" field using the "contains" filter operator; Enter a filter value of "2" on the "Site" field using the "contains" filter operator; Enter a filter value of "11-UND" on the "Warehouse" field using the "is not" filter operator; Enter a filter value of "000002" on the "Serial number" field using the "contains" filter operator; Enter a filter value of "" on the "Batch number" field using the "begins with" filter operator; Enter a filter value of "abc" on the "Search name" field using the "does not contain" filter operator</Description>
+        <NodeId>i9</NodeId>
+        <Sequence>3</Sequence>
+        <ControlName>SystemDefinedFilterPane</ControlName>
         <ControlLabel />
-        <ControlType />
-        <Value />
-        <CommandName>RequestClose</CommandName>
-        <Annotations>
-            <ns0:Annotation xsi:type="TaskGuideAnnotation">
-                <ns0:Description xsi:nil="true" />
-                <ns0:ExampleText xsi:nil="true" />
-                <ns0:GlobalId xsi:nil="true" />
-                <ns0:Hidden>true</ns0:Hidden>
-                <ns0:RecordingValueType>Preferred</ns0:RecordingValueType>
-                <ns0:Title xsi:nil="true" />
-            </ns0:Annotation>
-        </Annotations>
-    </UserAction>
-    <UserAction Ref="i30">
-        <Description>In the Site field, type a value.</Description>
-        <NodeId>i30</NodeId>
-        <Sequence>24</Sequence>
-        <ControlName>InventoryDimensionsGrid_InventSiteId</ControlName>
-        <ControlLabel>Site</ControlLabel>
-        <ControlType>Input</ControlType>
-        <Value>1</Value>
-        <CommandName />
-    </UserAction>
-    <UserAction Ref="i32">
-        <Description>In the Warehouse field, enter or select a value.</Description>
-        <NodeId>i32</NodeId>
-        <Sequence>24</Sequence>
-        <ControlName>InventoryDimensionsGrid_InventLocationId</ControlName>
-        <ControlLabel>Warehouse</ControlLabel>
-        <ControlType>Input</ControlType>
-        <Value />
-        <CommandName>RequestPopup</CommandName>
-    </UserAction>
-    <UserAction Ref="i35">
-        <Description>Close the page.</Description>
-        <NodeId>i35</NodeId>
-        <Sequence>24</Sequence>
-        <ControlName>No Control Name</ControlName>
-        <ControlLabel />
-        <ControlType />
-        <Value />
-        <CommandName>RequestClose</CommandName>
-        <Annotations>
-            <ns0:Annotation xsi:type="TaskGuideAnnotation">
-                <ns0:Description xsi:nil="true" />
-                <ns0:ExampleText xsi:nil="true" />
-                <ns0:GlobalId xsi:nil="true" />
-                <ns0:Hidden>true</ns0:Hidden>
-                <ns0:RecordingValueType>Preferred</ns0:RecordingValueType>
-                <ns0:Title xsi:nil="true" />
-            </ns0:Annotation>
-        </Annotations>
-    </UserAction>
-    <UserAction Ref="i37">
-        <Description>In the Warehouse field, type a value.</Description>
-        <NodeId>i37</NodeId>
-        <Sequence>24</Sequence>
-        <ControlName>InventoryDimensionsGrid_InventLocationId</ControlName>
-        <ControlLabel>Warehouse</ControlLabel>
-        <ControlType>Input</ControlType>
-        <Value>11</Value>
-        <CommandName />
-    </UserAction>
-    <UserAction Ref="i39">
-        <Description>In the Quantity field, enter a number.</Description>
-        <NodeId>i39</NodeId>
-        <Sequence>24</Sequence>
-        <ControlName>PurchLine_PurchQtyGrid</ControlName>
-        <ControlLabel>Quantity</ControlLabel>
-        <ControlType>Real</ControlType>
-        <Value>10.00</Value>
-        <CommandName />
-    </UserAction>
-    <UserAction Ref="i41">
-        <Description>In the Unit price field, enter a number.</Description>
-        <NodeId>i41</NodeId>
-        <Sequence>24</Sequence>
-        <ControlName>PurchLine_PurchPriceGrid</ControlName>
-        <ControlLabel>Unit price</ControlLabel>
-        <ControlType>Real</ControlType>
-        <Value>90.00</Value>
-        <CommandName />
-    </UserAction>
-    <UserAction Ref="i43">
-        <Description>Click the Delivery tab.</Description>
-        <NodeId>i43</NodeId>
-        <Sequence>24</Sequence>
-        <ControlName>TabLineDelivery</ControlName>
-        <ControlLabel>Delivery</ControlLabel>
-        <ControlType>PivotItem</ControlType>
-        <Value>true</Value>
-        <CommandName>ActivateTab</CommandName>
-    </UserAction>
-    <UserAction Ref="i45">
-        <Description>In the Requested receipt date field, enter a date.</Description>
-        <NodeId>i45</NodeId>
-        <Sequence>24</Sequence>
-        <ControlName>DeliveryDate</ControlName>
-        <ControlLabel>Requested receipt date</ControlLabel>
-        <ControlType>Date</ControlType>
-        <Value>2025-05-29</Value>
-        <CommandName />
-    </UserAction>
-    <UserAction Ref="i48">
-        <Description>Click OK.</Description>
-        <NodeId>i48</NodeId>
-        <Sequence>24</Sequence>
-        <ControlName>OkButton</ControlName>
-        <ControlLabel>OK</ControlLabel>
-        <ControlType>CommandButton</ControlType>
-        <Value />
-        <CommandName>Click</CommandName>
-    </UserAction>
-    <UserAction Ref="i50">
-        <Description>In the Confirmed receipt date field, enter a date.</Description>
-        <NodeId>i50</NodeId>
-        <Sequence>24</Sequence>
-        <ControlName>ConfirmedDlv</ControlName>
-        <ControlLabel>Confirmed receipt date</ControlLabel>
-        <ControlType>Date</ControlType>
-        <Value>2025-05-29</Value>
-        <CommandName />
-    </UserAction>
-    <UserAction Ref="i52">
-        <Description>Click Save.</Description>
-        <NodeId>i52</NodeId>
-        <Sequence>24</Sequence>
-        <ControlName>SystemDefinedSaveButton</ControlName>
-        <ControlLabel>Save</ControlLabel>
-        <ControlType>CommandButton</ControlType>
-        <Value />
-        <CommandName>Click</CommandName>
-    </UserAction>
-    <UserAction Ref="i54">
-        <Description>Click the form caption.</Description>
-        <NodeId>i54</NodeId>
-        <Sequence>24</Sequence>
-        <ControlName>No Control Name</ControlName>
-        <ControlLabel />
-        <ControlType />
-        <Value />
-        <CommandName>OpenGridView</CommandName>
+        <ControlType>FilterPane</ControlType>
+        <Value>Enter a filter value of "GA0002" on the "Item number" field using the "contains" filter operator; Enter a filter value of "2" on the "Site" field using the "contains" filter operator; Enter a filter value of "11-UND" on the "Warehouse" field using the "is not" filter operator; Enter a filter value of "000002" on the "Serial number" field using the "contains" filter operator; Enter a filter value of "" on the "Batch number" field using the "begins with" filter operator; Enter a filter value of "abc" on the "Search name" field using the "does not contain" filter operator</Value>
+        <CommandName>ApplyFilters</CommandName>
     </UserAction>
 </UserActionsWithDetails>
