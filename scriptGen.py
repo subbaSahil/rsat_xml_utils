@@ -562,9 +562,7 @@ def generate_selenium_script(controls):
                             #sending filter operator
                             if operator != "begins with":
                                 lines.append(f"Interactions.wait_and_click(driver, By.XPATH, \"//div[@title='{field}']/following-sibling::div/button\")")
-                                lines.append(f"Interactions.wait_and_click(driver, By.XPATH, \"//div[@data-dyn-role='FilterPane']/ancestor::div[@id='mainContainer']/following-sibling::div/div/button/div/span[text()='{operator}']\")")
-                                # lines.append(f"Interactions.wait_and_click(driver, By.XPATH, \"//span[text()='{operator}']/parent::div/parent::button[@data-dyn-role='MenuItem']\")")
-                            #sending inputs
+                                lines.append(f"Interactions.wait_and_click(driver, By.XPATH, \"//div[@data-dyn-role='FilterPane']/ancestor::div[@id='mainContainer']/following-sibling::div/div/button/div/span[text()='{operator}']\")")                            #sending inputs
                             lines.append(f"Interactions.clear_input_field_and_send_keys(driver, By.XPATH, \"//div[@title='{field}']/parent::div/parent::div/following-sibling::div//input\",\"{val}\")")      
                             lines.append(f"Interactions.wait_and_click(driver, By.XPATH, \"{xpath[0]}\")")
                            
