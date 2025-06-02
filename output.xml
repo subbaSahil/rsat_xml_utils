@@ -1,82 +1,123 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <UserActionsWithDetails>
-    <UserAction Ref="i3">
-        <Description>Go to General ledger &gt; Journal setup &gt; Journal names.</Description>
-        <NodeId>i3</NodeId>
-        <Sequence>8</Sequence>
+    <UserAction Ref="i4">
+        <Description>Close the page.</Description>
+        <NodeId>i4</NodeId>
+        <Sequence>12</Sequence>
+        <ControlName>No Control Name</ControlName>
+        <ControlLabel />
+        <ControlType />
+        <Value />
+        <CommandName>RequestClose</CommandName>
+        <Annotations />
+    </UserAction>
+    <UserAction Ref="i6">
+        <Description>Go to Accounts payable &gt; Purchase orders &gt; All purchase orders.</Description>
+        <NodeId>i6</NodeId>
+        <Sequence>12</Sequence>
         <Navigation>mainmenu</Navigation>
-        <Navigation>GeneralLedger</Navigation>
-        <Navigation>JournalSetup</Navigation>
+        <Navigation>AccountsPayable</Navigation>
+        <Navigation>PurchaseOrders</Navigation>
         <ControlName>No Control Name</ControlName>
         <ControlLabel />
         <ControlType />
         <Value />
         <CommandName />
     </UserAction>
-    <UserAction Ref="i6">
-        <Description>Click Show or hide control.</Description>
-        <NodeId>i6</NodeId>
-        <Sequence>8</Sequence>
-        <ControlName>SystemDefinedShowListButton</ControlName>
-        <ControlLabel>Show list</ControlLabel>
-        <ControlType>ToggleButton</ControlType>
-        <Value />
-        <CommandName>Click</CommandName>
+    <UserAction Ref="i9">
+        <Description>In the list, find and select the desired record.</Description>
+        <NodeId>i9</NodeId>
+        <Sequence>12</Sequence>
+        <ControlName>Grid</ControlName>
+        <ControlLabel />
+        <ControlType>Grid</ControlType>
+        <Value>7</Value>
+        <CommandName>ChangeSelectedIndexInCache</CommandName>
     </UserAction>
-    <UserAction Ref="i8">
-        <Description>Click New.</Description>
-        <NodeId>i8</NodeId>
-        <Sequence>8</Sequence>
-        <ControlName>SystemDefinedNewButton</ControlName>
-        <ControlLabel>New</ControlLabel>
-        <ControlType>CommandButton</ControlType>
-        <Value />
-        <CommandName>Click</CommandName>
-    </UserAction>
-    <UserAction Ref="i10">
-        <Description>In the Name field, type a value.</Description>
-        <NodeId>i10</NodeId>
-        <Sequence>8</Sequence>
-        <ControlName>LedgerJournalName_JournalName</ControlName>
-        <ControlLabel>Name</ControlLabel>
-        <ControlType>Input</ControlType>
-        <Value>aaa</Value>
-        <CommandName />
-    </UserAction>
-    <UserAction Ref="i12">
-        <Description>In the Description field, type a value.</Description>
-        <NodeId>i12</NodeId>
-        <Sequence>8</Sequence>
-        <ControlName>LedgerJournalName_Name</ControlName>
-        <ControlLabel>Description</ControlLabel>
-        <ControlType>Input</ControlType>
-        <Value>abcd</Value>
-        <CommandName />
-    </UserAction>
-    <UserAction Ref="i14">
-        <Description>In the Voucher series field, enter or select a value.</Description>
-        <NodeId>i14</NodeId>
-        <Sequence>8</Sequence>
-        <ControlName>VoucherNumber_NumberSequenceTable</ControlName>
-        <ControlLabel>Voucher series</ControlLabel>
-        <ControlType>ReferenceGroup</ControlType>
-        <Value />
-        <CommandName>ResolveChanges</CommandName>
-    </UserAction>
-    <UserAction Ref="i18">
+    <UserAction Ref="i11">
         <Description>In the list, click the link in the selected row.</Description>
-        <NodeId>i18</NodeId>
-        <Sequence>8</Sequence>
+        <NodeId>i11</NodeId>
+        <Sequence>12</Sequence>
         <ControlName>Grid</ControlName>
         <ControlLabel />
         <ControlType>Grid</ControlType>
         <Value />
         <CommandName>NavigationAction</CommandName>
     </UserAction>
-    <UserAction Ref="i20">
+    <UserAction Ref="i13">
+        <Description>Click Add line.</Description>
+        <NodeId>i13</NodeId>
+        <Sequence>12</Sequence>
+        <ControlName>LineStripNew</ControlName>
+        <ControlLabel>Add line</ControlLabel>
+        <ControlType>CommandButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i15">
+        <Description>In the list, mark the selected row.</Description>
+        <NodeId>i15</NodeId>
+        <Sequence>12</Sequence>
+        <ControlName>LineSpec</ControlName>
+        <ControlLabel />
+        <ControlType>Grid</ControlType>
+        <Value />
+        <CommandName>MarkActiveRow</CommandName>
+    </UserAction>
+    <UserAction Ref="i17">
+        <Description>In the Item number field, enter or select a value.</Description>
+        <NodeId>i17</NodeId>
+        <Sequence>12</Sequence>
+        <ControlName>PurchLine_ItemId</ControlName>
+        <ControlLabel>Item number</ControlLabel>
+        <ControlType>Input</ControlType>
+        <Value>D0004</Value>
+        <CommandName>RequestPopup</CommandName>
+    </UserAction>
+    <UserAction Ref="i21">
+        <Description>In the list, select row 20.</Description>
+        <NodeId>i21</NodeId>
+        <Sequence>12</Sequence>
+        <ControlName>Grid</ControlName>
+        <ControlLabel />
+        <ControlType>Grid</ControlType>
+        <Value>20</Value>
+        <CommandName>ChangeSelectedIndexInCache</CommandName>
+    </UserAction>
+    <UserAction Ref="i23">
+        <Description>In the list, click the link in the selected row.</Description>
+        <NodeId>i23</NodeId>
+        <Sequence>12</Sequence>
+        <ControlName>Grid</ControlName>
+        <ControlLabel />
+        <ControlType>Grid</ControlType>
+        <Value />
+        <CommandName>NavigationAction</CommandName>
+    </UserAction>
+    <UserAction Ref="i25">
+        <Description>In the Quantity field, enter a number.</Description>
+        <NodeId>i25</NodeId>
+        <Sequence>12</Sequence>
+        <ControlName>PurchLine_PurchQtyGrid</ControlName>
+        <ControlLabel>Quantity</ControlLabel>
+        <ControlType>Real</ControlType>
+        <Value>11.00</Value>
+        <CommandName />
+    </UserAction>
+    <UserAction Ref="i27">
+        <Description>In the Receive now field, enter a number.</Description>
+        <NodeId>i27</NodeId>
+        <Sequence>12</Sequence>
+        <ControlName>PurchLine_PurchReceivedNow</ControlName>
+        <ControlLabel>Receive now</ControlLabel>
+        <ControlType>Real</ControlType>
+        <Value>12.00</Value>
+        <CommandName />
+    </UserAction>
+    <UserAction Ref="i29">
         <Description>Click Save.</Description>
-        <NodeId>i20</NodeId>
-        <Sequence>8</Sequence>
+        <NodeId>i29</NodeId>
+        <Sequence>12</Sequence>
         <ControlName>SystemDefinedSaveButton</ControlName>
         <ControlLabel>Save</ControlLabel>
         <ControlType>CommandButton</ControlType>
@@ -84,4 +125,3 @@
         <CommandName>Click</CommandName>
     </UserAction>
 </UserActionsWithDetails>
- 

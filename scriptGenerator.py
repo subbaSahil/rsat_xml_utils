@@ -145,6 +145,7 @@ def generate_selenium_script(controls):
     quickFilterValue = None
     input_flag_for_grid = False
     first_occurence_of_navigation = False
+    add_line_flag = False
     lines = [
         "from selenium import webdriver",
         "from selenium.webdriver.common.by import By",
@@ -216,7 +217,8 @@ def generate_selenium_script(controls):
             elif description == "Click New.":
                 new_or_edit_or_save = "New"
             elif description == "Click Save.":
-                new_or_edit_or_save = "Save"    
+                if add_line_flag == True:
+                    add_line_flag = False    
 
             elif description.strip() == "In the list, find and select the desired record." :
                 grid_for_table_or_data_selection= "table"
@@ -225,7 +227,8 @@ def generate_selenium_script(controls):
                 select_a_grid_or_click_a_input_anchor_flag = "click_row"
             # elif description.startswith("In the list, select row"):
             #     grid_for_table_or_data_selection = "data_selection"
-
+            elif description.strip() == "Click Add line.":
+                add_line_flag = True
 
             elif description and description.strip() == "Use the shortcut for switching to View or Edit mode.":
                 lines.append("# going to edit view mode")
@@ -333,6 +336,18 @@ def generate_selenium_script(controls):
                             lines.append("user_input = input('Enter the value for the hyperlink: ')")
                             lines.append("Interactions.wait_and_click(driver, By.XPATH, \"//input[@value='\"+user_input+\"']\")")
                             lines.append(f"Interactions.press_enter(driver, By.XPATH, \"//input[@value='\"+user_input+\"']\")")
+                    elif add_line_flag:
+                        lines.append("line_number_input = \"//div[text()='Item number'  or text()='Line number' ]/ancestor::div[contains(@class,'fixedDataTableRowLayout_')]/ancestor::div[@role='grid']//input[contains(@aria-label,'Line number')]\"")
+                        lines.append("count = Interactions.check_for_item_number_count(driver, By.XPATH, line_number_input)")
+                        lines.append("row_number = Interactions.get_row_number_for_line_item(driver, By.XPATH, line_number_input,count)")
+                        lines.append(f"if(Interactions.check_input_ancestor_is_table(driver, By.XPATH, \"{xpath[0]}\") or Interactions.check_input_ancestor_is_table(driver, By.XPATH, \"{xpath[1]}\") ):")
+                        lines.append(f"    #clicking inside grid: {name}")
+                        lines.append(f"    if(Interactions.check_element_exist(driver, By.XPATH, \"{'('+xpath[0] +')["+row_number+"]'}\")):")
+                        lines.append(f"          ActionChains(driver).move_to_element(driver.find_element(By.XPATH,\"{'('+xpath[0] +')["+row_number+"]'}\")).perform()")
+                        lines.append(f"          Interactions.wait_and_send_keys(driver, By.XPATH, \"{'('+xpath[0] +')["+row_number+"]'}\", \"{value}\")")
+                        lines.append(f"    elif(Interactions.check_element_exist(driver, By.XPATH, \"{'('+xpath[1] +')["+row_number+"]'}\")):")
+                        lines.append(f"          ActionChains(driver).move_to_element(driver.find_element(By.XPATH, \"{'('+xpath[1] +')["+row_number+"]'}\")).perform()")
+                        lines.append(f"          Interactions.wait_and_send_keys(driver, By.XPATH, \"{'('+xpath[1] +')["+row_number+"]'}\", \"{value}\")")
                     else:
                         lines.append(f"# Inputting into: {name}")
                         lines.append(f"if(Interactions.check_input_ancestor_is_table(driver, By.XPATH, \"{xpath[0]}\") or Interactions.check_input_ancestor_is_table(driver, By.XPATH, \"{xpath[1]}\") ):")
@@ -400,22 +415,35 @@ def generate_selenium_script(controls):
                     lines.append(f"elif(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[1]}\")):")
                     lines.append(f"    Interactions.clear_input_field_and_send_keys(driver, By.XPATH, \"{xpath[1]}\", \"{date}\")")
                 elif ctype == "real":
-                    lines.append(f"if(Interactions.check_input_ancestor_is_table(driver, By.XPATH, \"{xpath[0]}\") or Interactions.check_input_ancestor_is_table(driver, By.XPATH, \"{xpath[1]}\") ):")
-                    lines.append(f"    #clicking inside grid: {name}")
-                    lines.append(f"    if(Interactions.check_element_exist(driver, By.XPATH, \"{'('+xpath[0] +')[1]'}\")):")
-                    lines.append(f"         ActionChains(driver).move_to_element(driver.find_element(By.XPATH,\"{'('+xpath[0] +')[1]'}\")).perform()")
-                    lines.append(f"         Interactions.clear_input_field_and_send_keys(driver, By.XPATH, \"{'('+xpath[0] +')[1]'}\", \"{value}\")")
-                    lines.append(f"    elif(Interactions.check_element_exist(driver, By.XPATH, \"{'('+xpath[1] +')[1]'}\")):")
-                    lines.append(f"         ActionChains(driver).move_to_element(driver.find_element(By.XPATH,\"{'('+xpath[1] +')[1]'}\")).perform()")
-                    lines.append(f"         Interactions.clear_input_field_and_send_keys(driver, By.XPATH, \"{'('+xpath[1] +')[1]'}\", \"{value}\")")
-                    lines.append(f"else:")
-                    lines.append(f"    if(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[0]}\")):")
-                    lines.append(f"         ActionChains(driver).move_to_element(driver.find_element(By.XPATH,\"{xpath[0]}\")).perform()")
-                    lines.append(f"         Interactions.clear_input_field_and_send_keys(driver, By.XPATH, \"{xpath[0]}\", \"{value}\")")
-                    lines.append(f"    elif(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[1]}\")):")
-                    lines.append(f"         ActionChains(driver).move_to_element(driver.find_element(By.XPATH,\"{xpath[1]}\")).perform()")
-                    lines.append(f"         Interactions.clear_input_field_and_send_keys(driver, By.XPATH, \"{xpath[1]}\", \"{value}\")")
-                    lines.append(f"    Interactions.press_enter(driver, By.XPATH, \"//body\")")
+                    if add_line_flag:
+                        lines.append("line_number_input = \"//div[text()='Item number'  or text()='Line number' ]/ancestor::div[contains(@class,'fixedDataTableRowLayout_')]/ancestor::div[@role='grid']//input[contains(@aria-label,'Line number')]\"")
+                        lines.append("count = Interactions.check_for_item_number_count(driver, By.XPATH, line_number_input)")
+                        lines.append("row_number = Interactions.get_row_number_for_line_item(driver, By.XPATH, line_number_input,count)")
+                        lines.append(f"if(Interactions.check_input_ancestor_is_table(driver, By.XPATH, \"{xpath[0]}\") or Interactions.check_input_ancestor_is_table(driver, By.XPATH, \"{xpath[1]}\") ):")
+                        lines.append(f"    #clicking inside grid: {name}")
+                        lines.append(f"    if(Interactions.check_element_exist(driver, By.XPATH, \"{'('+xpath[0] +')["+row_number+"]'}\")):")
+                        lines.append(f"          ActionChains(driver).move_to_element(driver.find_element(By.XPATH,\"{'('+xpath[0] +')["+row_number+"]'}\")).perform()")
+                        lines.append(f"          Interactions.wait_and_send_keys(driver, By.XPATH, \"{'('+xpath[0] +')["+row_number+"]'}\", \"{value}\")")
+                        lines.append(f"    elif(Interactions.check_element_exist(driver, By.XPATH, \"{'('+xpath[1] +')["+row_number+"]'}\")):")
+                        lines.append(f"          ActionChains(driver).move_to_element(driver.find_element(By.XPATH, \"{'('+xpath[1] +')["+row_number+"]'}\")).perform()")
+                        lines.append(f"          Interactions.wait_and_send_keys(driver, By.XPATH, \"{'('+xpath[1] +')["+row_number+"]'}\", \"{value}\")")
+                    else:
+                        lines.append(f"if(Interactions.check_input_ancestor_is_table(driver, By.XPATH, \"{xpath[0]}\") or Interactions.check_input_ancestor_is_table(driver, By.XPATH, \"{xpath[1]}\") ):")
+                        lines.append(f"    #clicking inside grid: {name}")
+                        lines.append(f"    if(Interactions.check_element_exist(driver, By.XPATH, \"{'('+xpath[0] +')[1]'}\")):")
+                        lines.append(f"         ActionChains(driver).move_to_element(driver.find_element(By.XPATH,\"{'('+xpath[0] +')[1]'}\")).perform()")
+                        lines.append(f"         Interactions.clear_input_field_and_send_keys(driver, By.XPATH, \"{'('+xpath[0] +')[1]'}\", \"{value}\")")
+                        lines.append(f"    elif(Interactions.check_element_exist(driver, By.XPATH, \"{'('+xpath[1] +')[1]'}\")):")
+                        lines.append(f"         ActionChains(driver).move_to_element(driver.find_element(By.XPATH,\"{'('+xpath[1] +')[1]'}\")).perform()")
+                        lines.append(f"         Interactions.clear_input_field_and_send_keys(driver, By.XPATH, \"{'('+xpath[1] +')[1]'}\", \"{value}\")")
+                        lines.append(f"else:")
+                        lines.append(f"    if(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[0]}\")):")
+                        lines.append(f"         ActionChains(driver).move_to_element(driver.find_element(By.XPATH,\"{xpath[0]}\")).perform()")
+                        lines.append(f"         Interactions.clear_input_field_and_send_keys(driver, By.XPATH, \"{xpath[0]}\", \"{value}\")")
+                        lines.append(f"    elif(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[1]}\")):")
+                        lines.append(f"         ActionChains(driver).move_to_element(driver.find_element(By.XPATH,\"{xpath[1]}\")).perform()")
+                        lines.append(f"         Interactions.clear_input_field_and_send_keys(driver, By.XPATH, \"{xpath[1]}\", \"{value}\")")
+                        lines.append(f"    Interactions.press_enter(driver, By.XPATH, \"//body\")")
                 # elif ctype == "commandbutton":
                 #     lines.append(f"# Clicking button: {name}")
                 #     lines.append(f"Interactions.wait_and_click(driver, By.XPATH, \"{xpath}\")")
@@ -518,6 +546,7 @@ def generate_selenium_script(controls):
                     #     lines.append("time.sleep(0.5)")
 
                     previous_desc = f"In the {previous_control_label} field, enter or select a value."
+
                     if previous_control_type == "input" and previous_control_description == previous_desc:
                         lines.append("\"Skipping grid since previous was control was input\"")
                         input_flag_for_grid = True
@@ -556,7 +585,9 @@ def generate_selenium_script(controls):
                             lines.append(f"user_input = input(\"Press data to select: \")")
                             lines.append(f"Interactions.scroll_and_click_row(driver, By.XPATH, \"{container}\", f\"//input[@value='{{user_input}}']/ancestor::div[@class='fixedDataTableRowLayout_body']/div[1]//div[@role='checkbox']\")")
                             # lines.append(f"Interactions.wait_and_click(driver, By.XPATH, \"//input[@value='\"+user_input+\"']\")")
-                            lines.append(f"Interactions.press_enter(driver, By.XPATH, \"//input[@value='\"+user_input+\"']\")")    
+                            lines.append(f"Interactions.press_enter(driver, By.XPATH, \"//input[@value='\"+user_input+\"']\")")
+                    
+
                 elif ctype in ["filterpane"]:
                     if command_name == "ApplyFilters":
                         extracted_parts =input_for_filterpane(value)
@@ -581,6 +612,14 @@ def generate_selenium_script(controls):
                         lines.append(f"Interactions.wait_and_click(driver, By.XPATH, \"{xpath[1]}\")")
                     if command_name=="AddAFilterField":
                         lines.append(f"Interactions.wait_and_click(driver, By.XPATH, \"{xpath[2]}\")")
+
+    
+
+                # else:
+                #     lines.append(f"# Clicking (default) on: {name}")
+                #     lines.append(f"Interactions.wait_and_click(driver, By.XPATH, \"{xpath}\")")
+            # else:
+            #     lines.append(f"# ❌ Locator not found for: {name} (Type: {ctype})")
             previous_control_type = ctype
             previous_control_description = description
             previous_user_action_value = value

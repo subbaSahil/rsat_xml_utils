@@ -40,29 +40,30 @@ elif(Interactions.check_element_exist(driver, By.XPATH, "//button[@aria-label='A
      Interactions.wait_and_click(driver, By.XPATH, "//button[@aria-label='Add line']")
 "Skipping grid since it is deafault behavior of d365"
 # Inputting into: PurchLine_ItemId
-line_item_container = "//div[text()='Item number'  or text()='Line number' ]/ancestor::div[contains(@class,'fixedDataTableRowLayout_')]/ancestor::div[@role='grid']"
-item_number_input = "//div[text()='Item number'  or text()='Line number' ]/ancestor::div[contains(@class,'fixedDataTableRowLayout_')]/ancestor::div[@role='grid']//input[contains(@aria-label,'Item number')]"
-count = Interactions.check_for_item_number_count(driver, By.XPATH, item_number_input)
-
+# line_item_container = "//div[text()='Item number'  or text()='Line number' ]/ancestor::div[contains(@class,'fixedDataTableRowLayout_')]/ancestor::div[@role='grid']"
+line_number_input = "//div[text()='Item number'  or text()='Line number' ]/ancestor::div[contains(@class,'fixedDataTableRowLayout_')]/ancestor::div[@role='grid']//input[contains(@aria-label,'Line number')]"
+count = Interactions.check_for_item_number_count(driver, By.XPATH, line_number_input)
+row_number = Interactions.get_row_number_for_line_item(driver, By.XPATH, line_number_input,count)
 
 
 if(Interactions.check_input_ancestor_is_table(driver, By.XPATH, "//input[contains(@name,'PurchLine_ItemId')]") or Interactions.check_input_ancestor_is_table(driver, By.XPATH, "//input[contains(@aria-label,'Item number')]") ):
     #clicking inside grid: PurchLine_ItemId
-    if(Interactions.check_element_exist(driver, By.XPATH, "(//input[contains(@name,'PurchLine_ItemId')])[1]")):
+    if(Interactions.check_element_exist(driver, By.XPATH, f"(//input[contains(@name,'PurchLine_ItemId')])[{row_number}]")):
           ActionChains(driver).move_to_element(driver.find_element(By.XPATH,"//input[contains(@name,'PurchLine_ItemId')]")).perform()
-          Interactions.wait_and_send_keys(driver, By.XPATH, "(//input[contains(@name,'PurchLine_ItemId')])[1]", "C0004")
-    elif(Interactions.check_element_exist(driver, By.XPATH, "(//input[contains(@aria-label,'Item number')])[1]")):
+          Interactions.wait_and_send_keys(driver, By.XPATH, f"(//input[contains(@name,'PurchLine_ItemId')])[{row_number}]", "C0004")
+    elif(Interactions.check_element_exist(driver, By.XPATH, f"(//input[contains(@aria-label,'Item number')])[{row_number}]")):
           ActionChains(driver).move_to_element(driver.find_element(By.XPATH, "//input[contains(@aria-label,'Item number')]")).perform()
-          Interactions.wait_and_send_keys(driver, By.XPATH, "(//input[contains(@aria-label,'Item number')])[1]", "C0004")
-else:
-    if(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@name,'PurchLine_ItemId')]")):
-         Interactions.wait_and_send_keys(driver, By.XPATH, "//input[contains(@name,'PurchLine_ItemId')]", "C0004")
-    elif(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@aria-label,'Item number')]")):
-         Interactions.wait_and_send_keys(driver, By.XPATH, "//input[contains(@aria-label,'Item number')]", "C0004")
-    Interactions.press_enter(driver, By.XPATH, "//body")
+          Interactions.wait_and_send_keys(driver, By.XPATH, f"(//input[contains(@aria-label,'Item number')])[{row_number}]", "C0004")
+# else:
+#     if(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@name,'PurchLine_ItemId')]")):
+#          Interactions.wait_and_send_keys(driver, By.XPATH, "//input[contains(@name,'PurchLine_ItemId')]", "C0004")
+#     elif(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@aria-label,'Item number')]")):
+#          Interactions.wait_and_send_keys(driver, By.XPATH, "//input[contains(@aria-label,'Item number')]", "C0004")
+#     Interactions.press_enter(driver, By.XPATH, "//body")
 "Skipping grid since previous was control was input"
 "Skipping grid selection due input in the ancestor"
 # Inputting into: PurchLine_VariantId
 
 print("test case passed")
+time.sleep(10)
 driver.quit()
