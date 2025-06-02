@@ -322,7 +322,8 @@ def generate_selenium_script(controls):
                             lines.append("time.sleep(1)")
                     elif ctype == "referencegroup" and command_name == "ResolveChanges":
                         lines.append(f"# clicking dropdown for Tree")
-                        lines.append(f"Interactions.wait_and_click(driver, By.XPATH, \"//input[@role='combobox']/parent::div/parent::div/following-sibling::div\")")
+                        # lines.append(f"Interactions.wait_and_click(driver, By.XPATH, \"//input[@role='combobox']/parent::div/parent::div/following-sibling::div\")")
+                        lines.append(f"Interactions.wait_and_click(driver, By.XPATH, \"//input[contains(@name,'{name}')]/parent::div/parent::div/following-sibling::div/div\")")
                     elif command_name == "ExecuteHyperlink" and ctype == "input" and description.startswith("Click to follow the link in the "):
                         if name == "EcoResProduct_DisplayProductNumber":
                             lines.append("user_input = input('Enter the value for the hyperlink: ')")
@@ -332,7 +333,7 @@ def generate_selenium_script(controls):
                             lines.append("user_input = input('Enter the value for the hyperlink: ')")
                             lines.append("Interactions.wait_and_click(driver, By.XPATH, \"//input[@value='\"+user_input+\"']\")")
                             lines.append(f"Interactions.press_enter(driver, By.XPATH, \"//input[@value='\"+user_input+\"']\")")
-                    elif ctype == "input" and command_name == "RequestPopup":
+                    else:
                         lines.append(f"# Inputting into: {name}")
                         lines.append(f"if(Interactions.check_input_ancestor_is_table(driver, By.XPATH, \"{xpath[0]}\") or Interactions.check_input_ancestor_is_table(driver, By.XPATH, \"{xpath[1]}\") ):")
                         lines.append(f"    #clicking inside grid: {name}")
@@ -432,9 +433,10 @@ def generate_selenium_script(controls):
                 elif ctype == "combobox":
                     lines.append(f"# Clicking combobox: {name}")
                     lines.append(f"if Interactions.check_element_exist(driver, By.XPATH, \"{xpath[0]}\"):")
-                    lines.append(f"     Interactions.wait_and_click(driver, By.XPATH, \"{xpath[0]}\")")
-                    # lines.append(f"elif Interactions.check_element_exist(driver, By.XPATH, \"{xpath[1]}\"):")
-                    lines.append(f"     Interactions.wait_and_click(driver, By.XPATH, \"{xpath[1]}\")")
+                    lines.append(f"    Interactions.wait_and_click(driver, By.XPATH, \"{xpath[0]}\")")
+                    lines.append(f"    if Interactions.check_element_exist(driver, By.XPATH, \"{xpath[1]}\"):")
+                    lines.append(f"        Interactions.wait_and_click(driver, By.XPATH, \"{xpath[1]}\")")
+                    lines.append(f"    else: Interactions.scroll(driver, By.XPATH, \"{xpath[2]}\", f\"{xpath[1]}\")")
                 elif ctype == "appbartab":
                     lines.append(f"# Clicking (default) on: {name}")
                     lines.append("time.sleep(3)")
@@ -534,23 +536,29 @@ def generate_selenium_script(controls):
                         else:
                             lines.append("\"Skipping grid since previous was input\"")
                     elif select_a_grid_or_click_a_input_anchor_flag == "select_row":
+                        print("selecting row in grid")
                         lines.append(f"# Clicking button: {name}")
                         lines.append(f"user_input = input(\"Press data to select: \")")
                         lines.append(f"Interactions.scroll_and_click_row(driver, By.XPATH, \"{container}\", f\"//input[@value='{{user_input}}']/ancestor::div[@class='fixedDataTableRowLayout_body']/div[1]//div[@role='checkbox']\")")
                     elif select_a_grid_or_click_a_input_anchor_flag == "click_row":
-                        print("quickfilter then grid") 
                         if previous_control_type == "grid" and previous_control_description == "In the list, find and select the desired record.":
                                 lines.append(f"Interactions.press_enter(driver, By.XPATH, \"//input[@value='\"+user_input+\"']\")")
                         elif  previous_control_type == "quickfilter":
                                 lines.append(f"# Clicking button: {name}")
                                 lines.append(f"Interactions.wait_and_click(driver, By.XPATH, f\"//input[@value='{quickFilterValue}']/ancestor::div[@class='fixedDataTableRowLayout_body']/div[1]//div[@role='checkbox']\")")
                                 lines.append(f"Interactions.press_enter(driver, By.XPATH, \"//input[@value='{quickFilterValue}']\")")
+                        elif previous_control_type == "referencegroup":
+                            lines.append(f"# Clicking button: {name}")
+                            lines.append(f"user_input = input(\"Press data to select: \")")
+                            lines.append(f"Interactions.scroll_and_click_row(driver, By.XPATH, \"{container}\", f\"//input[@value='{{user_input}}']/ancestor::div[@class='fixedDataTableRowLayout_body']\")")
+                            lines.append(f"Interactions.press_enter(driver, By.XPATH, \"//input[@value='\"+user_input+\"']\")")
                         else:
                             lines.append(f"# Clicking button: {name}")
                             lines.append(f"user_input = input(\"Press data to select: \")")
                             lines.append(f"Interactions.scroll_and_click_row(driver, By.XPATH, \"{container}\", f\"//input[@value='{{user_input}}']/ancestor::div[@class='fixedDataTableRowLayout_body']/div[1]//div[@role='checkbox']\")")
                             # lines.append(f"Interactions.wait_and_click(driver, By.XPATH, \"//input[@value='\"+user_input+\"']\")")
                             lines.append(f"Interactions.press_enter(driver, By.XPATH, \"//input[@value='\"+user_input+\"']\")")
+                    
 
                 elif ctype in ["filterpane"]:
                     if command_name == "ApplyFilters":

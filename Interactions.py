@@ -357,7 +357,6 @@ def scroll_and_click_row(driver, by, container_xpath, target_xpath, timeout=10, 
             if container.is_displayed():
                 print(f"Container found: {indexed_xpath}")
                 actions = ActionChains(driver)
-
                 # Determine scroll direction
                 count = container.get_attribute("aria-rowcount")
                 last_row_xpath = f"//div[contains(@class,'fixedDataTableRowLayout_')]/div[@aria-rowindex='{count}']"
@@ -463,3 +462,118 @@ def scroll_into_view(driver, by, value, timeout=10):
          # Click the element after scrolling
     except TimeoutException:
         print(f"Element not found for scrolling: {value}")
+
+
+def scroll(driver, by, container_xpath, target_xpath, timeout=10, max_scrolls=1000):
+    for i in range(1, 10):
+        indexed_xpath = f"({container_xpath})[{i}]"
+        try:
+            container = WebDriverWait(driver, timeout).until(
+                EC.presence_of_element_located((By.XPATH, indexed_xpath))
+            )
+            # Check if the container is displayed
+            scroll_amount = 50  # pixels for JS scroll
+            if container.is_displayed():
+                print(f"Container found: {indexed_xpath}")
+                actions = ActionChains(driver)
+                for _ in range(max_scrolls):
+                    try:
+                        if check_element_exist(driver, by, target_xpath):
+                            element_to_click = WebDriverWait(driver, 5).until(
+                                EC.visibility_of_element_located((by, target_xpath))
+                            )
+                            element_to_click.click()
+                            print(f"Clicked element: {target_xpath}")
+                            return
+
+                    except TimeoutException:
+                        # Try ActionChains key scroll
+                        try:
+                            actions.move_to_element(container).click().send_keys(Keys.PAGE_DOWN).perform()
+                        except:
+                            pass
+                        # Try JavaScript pixel scroll
+                        try:
+                            driver.execute_script("arguments[0].scrollLeft += arguments[1];", container, scroll_amount)
+                        except Exception as e:
+                            print(f"JS scroll error: {e}")
+
+                        time.sleep(0.5)
+
+                raise TimeoutException(f"Element {target_xpath} not found after scrolling.")
+        except TimeoutException as e:
+            print(f"Timeout or not displayed for container: {e}")
+        except Exception as e:
+            print(f"Unexpected error: {e}")
+    print("Visible container not found.")
+
+
+def scroll(driver, by, container_xpath, target_xpath, timeout=10, max_scrolls=50):
+    scroll_amount = 200  # Adjust based on UI speed
+    wait = WebDriverWait(driver, timeout)
+
+    for i in range(1, 10):
+        indexed_xpath = f"({container_xpath})[{i}]"
+        try:
+            container = wait.until(EC.presence_of_element_located((By.XPATH, indexed_xpath)))
+
+            if container.is_displayed():
+                print(f"Container found: {indexed_xpath}")
+
+                for scroll_try in range(max_scrolls):
+                    if check_element_exist(driver, by, target_xpath):
+                        try:
+                            element_to_click = wait.until(
+                                EC.element_to_be_clickable((by, target_xpath))
+                            )
+                            # Scroll directly to the element
+                            driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", element_to_click)
+                            element_to_click.click()
+                            print(f"Clicked element: {target_xpath}")
+                            return
+                        except Exception as click_err:
+                            print(f"Element found but not clickable yet: {click_err}")
+                            time.sleep(0.5)
+
+                    # Scroll container by pixel
+                    driver.execute_script("arguments[0].scrollTop += arguments[1];", container, scroll_amount)
+                    time.sleep(0.5)
+
+                raise TimeoutException(f"Element {target_xpath} not found after scrolling.")
+
+        except TimeoutException as e:
+            print(f"Timeout for container [{indexed_xpath}]: {e}")
+        except Exception as e:
+            print(f"Unexpected error: {e}")
+
+    print("No visible scrollable container found.")
+
+
+def check_for_item_number_count(driver, by, item_number_xpath, timeout=10):
+    try:
+        item_number_count = WebDriverWait(driver, timeout).until(
+            EC.presence_of_all_elements_located((by, item_number_xpath))
+        )
+        count = len(item_number_count)
+        print(f"Found {count} item(s).")
+        return count
+    except TimeoutException:
+        print("Item elements not found within timeout.")
+        return 0
+
+def get_row_number_for_line_item(driver, by, item_number_xpath, total_items_count, timeout=10):
+    try:
+        for i in range(1, total_items_count + 1):
+            indexed_xpath = f"({item_number_xpath})[{i}]"
+            try:
+                item_element = WebDriverWait(driver, timeout).until(
+                    EC.presence_of_element_located((by, indexed_xpath))
+                )
+                if item_element.is_displayed():
+                    return i  # Return the row number of the first visible item
+            except TimeoutException:
+                continue
+        return None  # Not found
+    except TimeoutException:
+        print("Item elements not found within timeout.")
+        return None
