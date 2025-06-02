@@ -38,31 +38,20 @@ if(Interactions.check_element_exist(driver, By.XPATH, "//button[@data-dyn-contro
      Interactions.wait_and_click(driver, By.XPATH, "//button[@data-dyn-controlname='LineStripNew']")
 elif(Interactions.check_element_exist(driver, By.XPATH, "//button[@aria-label='Add line']")):
      Interactions.wait_and_click(driver, By.XPATH, "//button[@aria-label='Add line']")
-"Skipping grid since it is deafault behavior of d365"
 line_number_input = "//div[text()='Item number'  or text()='Line number' ]/ancestor::div[contains(@class,'fixedDataTableRowLayout_')]/ancestor::div[@role='grid']//input[contains(@aria-label,'Line number')]"
 count = Interactions.check_for_item_number_count(driver, By.XPATH, line_number_input)
 row_number = Interactions.get_row_number_for_line_item(driver, By.XPATH, line_number_input,count)
+"Skipping grid since it is deafault behavior of d365"
 if(Interactions.check_input_ancestor_is_table(driver, By.XPATH, "//input[contains(@name,'PurchLine_ItemId')]") or Interactions.check_input_ancestor_is_table(driver, By.XPATH, "//input[contains(@aria-label,'Item number')]") ):
     #clicking inside grid: PurchLine_ItemId
     if(Interactions.check_element_exist(driver, By.XPATH, "(//input[contains(@name,'PurchLine_ItemId')])["+row_number+"]")):
           ActionChains(driver).move_to_element(driver.find_element(By.XPATH,"(//input[contains(@name,'PurchLine_ItemId')])["+row_number+"]")).perform()
-          Interactions.wait_and_send_keys(driver, By.XPATH, "(//input[contains(@name,'PurchLine_ItemId')])["+row_number+"]", "D0004")
+          Interactions.wait_and_send_keys(driver, By.XPATH, "(//input[contains(@name,'PurchLine_ItemId')])["+row_number+"]", "P0004")
     elif(Interactions.check_element_exist(driver, By.XPATH, "(//input[contains(@aria-label,'Item number')])["+row_number+"]")):
           ActionChains(driver).move_to_element(driver.find_element(By.XPATH, "(//input[contains(@aria-label,'Item number')])["+row_number+"]")).perform()
-          Interactions.wait_and_send_keys(driver, By.XPATH, "(//input[contains(@aria-label,'Item number')])["+row_number+"]", "D0004")
+          Interactions.wait_and_send_keys(driver, By.XPATH, "(//input[contains(@aria-label,'Item number')])["+row_number+"]", "P0004")
 "Skipping grid since previous was control was input"
 "Skipping grid selection due input in the ancestor"
-line_number_input = "//div[text()='Item number'  or text()='Line number' ]/ancestor::div[contains(@class,'fixedDataTableRowLayout_')]/ancestor::div[@role='grid']//input[contains(@aria-label,'Line number')]"
-count = Interactions.check_for_item_number_count(driver, By.XPATH, line_number_input)
-row_number = Interactions.get_row_number_for_line_item(driver, By.XPATH, line_number_input,count)
-if(Interactions.check_input_ancestor_is_table(driver, By.XPATH, "//input[contains(@name,'PurchLine_PurchQtyGrid')]") or Interactions.check_input_ancestor_is_table(driver, By.XPATH, "//input[contains(@aria-label,'Quantity')]") ):
-    #clicking inside grid: PurchLine_PurchQtyGrid
-    if(Interactions.check_element_exist(driver, By.XPATH, "(//input[contains(@name,'PurchLine_PurchQtyGrid')])["+row_number+"]")):
-          ActionChains(driver).move_to_element(driver.find_element(By.XPATH,"(//input[contains(@name,'PurchLine_PurchQtyGrid')])["+row_number+"]")).perform()
-          Interactions.wait_and_send_keys(driver, By.XPATH, "(//input[contains(@name,'PurchLine_PurchQtyGrid')])["+row_number+"]", "11.00")
-    elif(Interactions.check_element_exist(driver, By.XPATH, "(//input[contains(@aria-label,'Quantity')])["+row_number+"]")):
-          ActionChains(driver).move_to_element(driver.find_element(By.XPATH, "(//input[contains(@aria-label,'Quantity')])["+row_number+"]")).perform()
-          Interactions.wait_and_send_keys(driver, By.XPATH, "(//input[contains(@aria-label,'Quantity')])["+row_number+"]", "11.00")
 line_number_input = "//div[text()='Item number'  or text()='Line number' ]/ancestor::div[contains(@class,'fixedDataTableRowLayout_')]/ancestor::div[@role='grid']//input[contains(@aria-label,'Line number')]"
 count = Interactions.check_for_item_number_count(driver, By.XPATH, line_number_input)
 row_number = Interactions.get_row_number_for_line_item(driver, By.XPATH, line_number_input,count)
@@ -70,10 +59,43 @@ if(Interactions.check_input_ancestor_is_table(driver, By.XPATH, "//input[contain
     #clicking inside grid: PurchLine_PurchReceivedNow
     if(Interactions.check_element_exist(driver, By.XPATH, "(//input[contains(@name,'PurchLine_PurchReceivedNow')])["+row_number+"]")):
           ActionChains(driver).move_to_element(driver.find_element(By.XPATH,"(//input[contains(@name,'PurchLine_PurchReceivedNow')])["+row_number+"]")).perform()
-          Interactions.wait_and_send_keys(driver, By.XPATH, "(//input[contains(@name,'PurchLine_PurchReceivedNow')])["+row_number+"]", "12.00")
+          Interactions.wait_and_send_keys(driver, By.XPATH, "(//input[contains(@name,'PurchLine_PurchReceivedNow')])["+row_number+"]", "1.00")
     elif(Interactions.check_element_exist(driver, By.XPATH, "(//input[contains(@aria-label,'Receive now')])["+row_number+"]")):
           ActionChains(driver).move_to_element(driver.find_element(By.XPATH, "(//input[contains(@aria-label,'Receive now')])["+row_number+"]")).perform()
-          Interactions.wait_and_send_keys(driver, By.XPATH, "(//input[contains(@aria-label,'Receive now')])["+row_number+"]", "12.00")
+          Interactions.wait_and_send_keys(driver, By.XPATH, "(//input[contains(@aria-label,'Receive now')])["+row_number+"]", "1.00")
+if(Interactions.check_element_exist(driver, By.XPATH, "//button[@data-dyn-controlname='SystemDefinedSaveButton']")):
+     Interactions.wait_and_click(driver, By.XPATH, "//button[@data-dyn-controlname='SystemDefinedSaveButton']")
+elif(Interactions.check_element_exist(driver, By.XPATH, "//button[@aria-label='Save']")):
+     Interactions.wait_and_click(driver, By.XPATH, "//button[@aria-label='Save']")
+if(Interactions.check_element_exist(driver, By.XPATH, "//button[@data-dyn-controlname='LineStripNew']")):
+     Interactions.wait_and_click(driver, By.XPATH, "//button[@data-dyn-controlname='LineStripNew']")
+elif(Interactions.check_element_exist(driver, By.XPATH, "//button[@aria-label='Add line']")):
+     Interactions.wait_and_click(driver, By.XPATH, "//button[@aria-label='Add line']")
+line_number_input = "//div[text()='Item number'  or text()='Line number' ]/ancestor::div[contains(@class,'fixedDataTableRowLayout_')]/ancestor::div[@role='grid']//input[contains(@aria-label,'Line number')]"
+count = Interactions.check_for_item_number_count(driver, By.XPATH, line_number_input)
+row_number = Interactions.get_row_number_for_line_item(driver, By.XPATH, line_number_input,count)
+"Skipping grid since it is deafault behavior of d365"
+if(Interactions.check_input_ancestor_is_table(driver, By.XPATH, "//input[contains(@name,'PurchLine_ItemId')]") or Interactions.check_input_ancestor_is_table(driver, By.XPATH, "//input[contains(@aria-label,'Item number')]") ):
+    #clicking inside grid: PurchLine_ItemId
+    if(Interactions.check_element_exist(driver, By.XPATH, "(//input[contains(@name,'PurchLine_ItemId')])["+row_number+"]")):
+          ActionChains(driver).move_to_element(driver.find_element(By.XPATH,"(//input[contains(@name,'PurchLine_ItemId')])["+row_number+"]")).perform()
+          Interactions.wait_and_send_keys(driver, By.XPATH, "(//input[contains(@name,'PurchLine_ItemId')])["+row_number+"]", "M0056")
+    elif(Interactions.check_element_exist(driver, By.XPATH, "(//input[contains(@aria-label,'Item number')])["+row_number+"]")):
+          ActionChains(driver).move_to_element(driver.find_element(By.XPATH, "(//input[contains(@aria-label,'Item number')])["+row_number+"]")).perform()
+          Interactions.wait_and_send_keys(driver, By.XPATH, "(//input[contains(@aria-label,'Item number')])["+row_number+"]", "M0056")
+"Skipping grid since previous was control was input"
+"Skipping grid selection due input in the ancestor"
+line_number_input = "//div[text()='Item number'  or text()='Line number' ]/ancestor::div[contains(@class,'fixedDataTableRowLayout_')]/ancestor::div[@role='grid']//input[contains(@aria-label,'Line number')]"
+count = Interactions.check_for_item_number_count(driver, By.XPATH, line_number_input)
+row_number = Interactions.get_row_number_for_line_item(driver, By.XPATH, line_number_input,count)
+if(Interactions.check_input_ancestor_is_table(driver, By.XPATH, "//input[contains(@name,'PurchLine_PurchReceivedNow')]") or Interactions.check_input_ancestor_is_table(driver, By.XPATH, "//input[contains(@aria-label,'Receive now')]") ):
+    #clicking inside grid: PurchLine_PurchReceivedNow
+    if(Interactions.check_element_exist(driver, By.XPATH, "(//input[contains(@name,'PurchLine_PurchReceivedNow')])["+row_number+"]")):
+          ActionChains(driver).move_to_element(driver.find_element(By.XPATH,"(//input[contains(@name,'PurchLine_PurchReceivedNow')])["+row_number+"]")).perform()
+          Interactions.wait_and_send_keys(driver, By.XPATH, "(//input[contains(@name,'PurchLine_PurchReceivedNow')])["+row_number+"]", "2.00")
+    elif(Interactions.check_element_exist(driver, By.XPATH, "(//input[contains(@aria-label,'Receive now')])["+row_number+"]")):
+          ActionChains(driver).move_to_element(driver.find_element(By.XPATH, "(//input[contains(@aria-label,'Receive now')])["+row_number+"]")).perform()
+          Interactions.wait_and_send_keys(driver, By.XPATH, "(//input[contains(@aria-label,'Receive now')])["+row_number+"]", "2.00")
 if(Interactions.check_element_exist(driver, By.XPATH, "//button[@data-dyn-controlname='SystemDefinedSaveButton']")):
      Interactions.wait_and_click(driver, By.XPATH, "//button[@data-dyn-controlname='SystemDefinedSaveButton']")
 elif(Interactions.check_element_exist(driver, By.XPATH, "//button[@aria-label='Save']")):

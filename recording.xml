@@ -1,10 +1,10 @@
 <Recording xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Client.ServerForm.TaskRecording">
-<CanonicalId>63049316-4880-45cc-acce-752e6c2c5685</CanonicalId>
-<CurrentSequence>70</CurrentSequence>
+<CanonicalId>76c5af2b-edd3-4880-958d-80bfbbf1d651</CanonicalId>
+<CurrentSequence>110</CurrentSequence>
 <Description/>
 <FormContexts xmlns:d2p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
 <d2p1:KeyValueOfstringFormContextyaScvdpM>
-<d2p1:Key>7947_PurchTable_a168d470-c4df-473c-9755-c786445b009e</d2p1:Key>
+<d2p1:Key>3_PurchTable_bd2be644-ef9b-409b-8e58-2216be887fce</d2p1:Key>
 <d2p1:Value>
 <Annotations>
 <Annotation i:type="FormAnnotation">
@@ -12,14 +12,14 @@
 <ConfigurationScope>41</ConfigurationScope>
 <FilterCommandName>ApplyFilters</FilterCommandName>
 <FilterControlName>SystemDefinedFilterPane</FilterControlName>
-<FormViewOptionType>1</FormViewOptionType>
+<FormViewOptionType>0</FormViewOptionType>
 <MenuItemLabel>All purchase orders</MenuItemLabel>
 <MenuItemName>PurchTableListPage</MenuItemName>
 <MenuItemType>Display</MenuItemType>
 <PublishedFromConfiguration>0</PublishedFromConfiguration>
 </Annotation>
 </Annotations>
-<FormID>7947_PurchTable_a168d470-c4df-473c-9755-c786445b009e</FormID>
+<FormID>3_PurchTable_bd2be644-ef9b-409b-8e58-2216be887fce</FormID>
 <FormName>PurchTable</FormName>
 <HasMetadata>true</HasMetadata>
 <RecordingName>PurchTable</RecordingName>
@@ -27,7 +27,30 @@
 </d2p1:Value>
 </d2p1:KeyValueOfstringFormContextyaScvdpM>
 <d2p1:KeyValueOfstringFormContextyaScvdpM>
-<d2p1:Key>19602_PurchTable_a168d470-c4df-473c-9755-c786445b009e</d2p1:Key>
+<d2p1:Key>9202_VendTable_bd2be644-ef9b-409b-8e58-2216be887fce</d2p1:Key>
+<d2p1:Value>
+<Annotations>
+<Annotation i:type="FormAnnotation">
+<ConfigurationOwnerName>VendTable</ConfigurationOwnerName>
+<ConfigurationScope>10</ConfigurationScope>
+<FilterCommandName>ApplyFilters</FilterCommandName>
+<FilterControlName>SystemDefinedFilterPane</FilterControlName>
+<FormViewOptionType>0</FormViewOptionType>
+<MenuItemLabel>All vendors</MenuItemLabel>
+<MenuItemName>VendTableListPage</MenuItemName>
+<MenuItemType>Display</MenuItemType>
+<PublishedFromConfiguration>0</PublishedFromConfiguration>
+</Annotation>
+</Annotations>
+<FormID>9202_VendTable_bd2be644-ef9b-409b-8e58-2216be887fce</FormID>
+<FormName>VendTable</FormName>
+<HasMetadata>true</HasMetadata>
+<RecordingName>VendTable</RecordingName>
+<Sequence>8</Sequence>
+</d2p1:Value>
+</d2p1:KeyValueOfstringFormContextyaScvdpM>
+<d2p1:KeyValueOfstringFormContextyaScvdpM>
+<d2p1:Key>13042_PurchTable_bd2be644-ef9b-409b-8e58-2216be887fce</d2p1:Key>
 <d2p1:Value>
 <Annotations>
 <Annotation i:type="FormAnnotation">
@@ -53,30 +76,41 @@
 <PublishedFromConfiguration>0</PublishedFromConfiguration>
 </Annotation>
 </Annotations>
-<FormID>19602_PurchTable_a168d470-c4df-473c-9755-c786445b009e</FormID>
+<FormID>13042_PurchTable_bd2be644-ef9b-409b-8e58-2216be887fce</FormID>
 <FormName>PurchTable</FormName>
 <HasMetadata>true</HasMetadata>
 <RecordingName>PurchTable</RecordingName>
-<Sequence>8</Sequence>
+<Sequence>15</Sequence>
 </d2p1:Value>
 </d2p1:KeyValueOfstringFormContextyaScvdpM>
 <d2p1:KeyValueOfstringFormContextyaScvdpM>
-<d2p1:Key>30336_InventItemIdLookupPurchase_a168d470-c4df-473c-9755-c786445b009e</d2p1:Key>
+<d2p1:Key>19597_InventItemIdLookupPurchase_bd2be644-ef9b-409b-8e58-2216be887fce</d2p1:Key>
 <d2p1:Value>
 <Annotations i:nil="true"/>
-<FormID>30336_InventItemIdLookupPurchase_a168d470-c4df-473c-9755-c786445b009e</FormID>
+<FormID>19597_InventItemIdLookupPurchase_bd2be644-ef9b-409b-8e58-2216be887fce</FormID>
 <FormName>InventItemIdLookupPurchase</FormName>
 <HasMetadata>true</HasMetadata>
 <RecordingName>InventItemIdLookupPurchase</RecordingName>
-<Sequence>51</Sequence>
+<Sequence>58</Sequence>
+</d2p1:Value>
+</d2p1:KeyValueOfstringFormContextyaScvdpM>
+<d2p1:KeyValueOfstringFormContextyaScvdpM>
+<d2p1:Key>20245_InventItemIdLookupPurchase_bd2be644-ef9b-409b-8e58-2216be887fce</d2p1:Key>
+<d2p1:Value>
+<Annotations i:nil="true"/>
+<FormID>20245_InventItemIdLookupPurchase_bd2be644-ef9b-409b-8e58-2216be887fce</FormID>
+<FormName>InventItemIdLookupPurchase</FormName>
+<HasMetadata>true</HasMetadata>
+<RecordingName>InventItemIdLookupPurchase</RecordingName>
+<Sequence>94</Sequence>
 </d2p1:Value>
 </d2p1:KeyValueOfstringFormContextyaScvdpM>
 </FormContexts>
-<Name>add_new_line</Name>
+<Name>add_new_line_3</Name>
 <RootScope xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Id="i1">
 <CustomDescription i:nil="true"/>
 <Description i:nil="true"/>
-<Id>a168d470-c4df-473c-9755-c786445b009e</Id>
+<Id>bd2be644-ef9b-409b-8e58-2216be887fce</Id>
 <Parent i:nil="true"/>
 <ParentSequence>0</ParentSequence>
 <ScreenshotUri i:nil="true"/>
@@ -85,7 +119,7 @@
 <Node z:Id="i2" i:type="Scope">
 <CustomDescription i:nil="true"/>
 <Description/>
-<Id>7947_PurchTable_a168d470-c4df-473c-9755-c786445b009e</Id>
+<Id>3_PurchTable_bd2be644-ef9b-409b-8e58-2216be887fce</Id>
 <Parent z:Ref="i1"/>
 <ParentSequence>0</ParentSequence>
 <ScreenshotUri i:nil="true"/>
@@ -94,7 +128,7 @@
 <Node z:Id="i3" i:type="Scope">
 <CustomDescription i:nil="true"/>
 <Description/>
-<Id>7947RequestClose_a168d470-c4df-473c-9755-c786445b009e</Id>
+<Id>3RequestClose_bd2be644-ef9b-409b-8e58-2216be887fce</Id>
 <Parent z:Ref="i2"/>
 <ParentSequence>1</ParentSequence>
 <ScreenshotUri i:nil="true"/>
@@ -103,17 +137,17 @@
 <Node z:Id="i4" i:type="CommandUserAction">
 <CustomDescription i:nil="true"/>
 <Description>Close the page.</Description>
-<Id>7947RequestClose_a168d470-c4df-473c-9755-c786445b009ex4</Id>
+<Id>3RequestClose_bd2be644-ef9b-409b-8e58-2216be887fcex4</Id>
 <Parent z:Ref="i3"/>
 <ParentSequence>3</ParentSequence>
 <ScreenshotUri i:nil="true"/>
 <Sequence>4</Sequence>
 <Annotations/>
-<GlobalId>1ff535b8-7f32-4f88-907b-e9bb75702ae9</GlobalId>
+<GlobalId>c43abb6b-76cc-4338-999f-d0230ad53d96</GlobalId>
 <SystemGenerated>false</SystemGenerated>
 <ControlLabel/>
 <ControlLabelId/>
-<FormId>7947_PurchTable_a168d470-c4df-473c-9755-c786445b009e</FormId>
+<FormId>3_PurchTable_bd2be644-ef9b-409b-8e58-2216be887fce</FormId>
 <ListContext i:nil="true"/>
 <RowIndex i:nil="true"/>
 <Arguments/>
@@ -140,7 +174,7 @@
 <Node z:Id="i5" i:type="Scope">
 <CustomDescription i:nil="true"/>
 <Description/>
-<Id>MenuItempurchtablelistpage_a168d470-c4df-473c-9755-c786445b009e</Id>
+<Id>MenuItemvendtablelistpage_bd2be644-ef9b-409b-8e58-2216be887fce</Id>
 <Parent z:Ref="i1"/>
 <ParentSequence>0</ParentSequence>
 <ScreenshotUri i:nil="true"/>
@@ -148,14 +182,103 @@
 <Children>
 <Node z:Id="i6" i:type="MenuItemUserAction">
 <CustomDescription i:nil="true"/>
-<Description>Go to Accounts payable > Purchase orders > All purchase orders.</Description>
-<Id>MenuItempurchtablelistpage_a168d470-c4df-473c-9755-c786445b009ex6</Id>
+<Description>Go to Accounts payable > Vendors > All vendors.</Description>
+<Id>MenuItemvendtablelistpage_bd2be644-ef9b-409b-8e58-2216be887fcex6</Id>
 <Parent z:Ref="i5"/>
 <ParentSequence>5</ParentSequence>
 <ScreenshotUri i:nil="true"/>
 <Sequence>6</Sequence>
 <Annotations/>
-<GlobalId>bd02ad9c-6a83-41a5-8863-63bc7e87c851</GlobalId>
+<GlobalId>868da6dc-c388-4c18-b383-5286aa9e3eb7</GlobalId>
+<SystemGenerated>false</SystemGenerated>
+<MenuItemName>vendtablelistpage</MenuItemName>
+<MenuItemType>Display</MenuItemType>
+<NavigationPath xmlns:d7p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+<d7p1:string>mainmenu</d7p1:string>
+<d7p1:string>AccountsPayable</d7p1:string>
+<d7p1:string>Vendors</d7p1:string>
+</NavigationPath>
+</Node>
+<Node z:Id="i7" i:type="Scope">
+<CustomDescription i:nil="true"/>
+<Description/>
+<Id>9202_VendTable_bd2be644-ef9b-409b-8e58-2216be887fce</Id>
+<Parent z:Ref="i5"/>
+<ParentSequence>5</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>7</Sequence>
+<Children>
+<Node z:Id="i8" i:type="Scope">
+<CustomDescription i:nil="true"/>
+<Description/>
+<Id>9202RequestClose_bd2be644-ef9b-409b-8e58-2216be887fce</Id>
+<Parent z:Ref="i7"/>
+<ParentSequence>7</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>10</Sequence>
+<Children>
+<Node z:Id="i9" i:type="CommandUserAction">
+<CustomDescription i:nil="true"/>
+<Description>Close the page.</Description>
+<Id>9202RequestClose_bd2be644-ef9b-409b-8e58-2216be887fcex11</Id>
+<Parent z:Ref="i8"/>
+<ParentSequence>10</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>11</Sequence>
+<Annotations/>
+<GlobalId>8998e474-241f-494c-8a57-e39c85d615df</GlobalId>
+<SystemGenerated>false</SystemGenerated>
+<ControlLabel/>
+<ControlLabelId/>
+<FormId>9202_VendTable_bd2be644-ef9b-409b-8e58-2216be887fce</FormId>
+<ListContext i:nil="true"/>
+<RowIndex i:nil="true"/>
+<Arguments/>
+<CommandName>RequestClose</CommandName>
+<ControlName/>
+<ControlType/>
+<LabelId>@SysTaskRecorder:CloseForm</LabelId>
+<ReturnType>Void</ReturnType>
+<ReturnValue i:nil="true"/>
+<TaskId i:nil="true"/>
+</Node>
+</Children>
+<IsForm>false</IsForm>
+<IsStepGroup>false</IsStepGroup>
+<Name>RequestClose</Name>
+<ScopeType>Private</ScopeType>
+</Node>
+</Children>
+<IsForm>true</IsForm>
+<IsStepGroup>false</IsStepGroup>
+<Name>VendTable</Name>
+<ScopeType>Public</ScopeType>
+</Node>
+</Children>
+<IsForm>false</IsForm>
+<IsStepGroup>false</IsStepGroup>
+<Name>MenuItem_vendtablelistpage</Name>
+<ScopeType>Private</ScopeType>
+</Node>
+<Node z:Id="i10" i:type="Scope">
+<CustomDescription i:nil="true"/>
+<Description/>
+<Id>MenuItempurchtablelistpage_bd2be644-ef9b-409b-8e58-2216be887fce</Id>
+<Parent z:Ref="i1"/>
+<ParentSequence>0</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>12</Sequence>
+<Children>
+<Node z:Id="i11" i:type="MenuItemUserAction">
+<CustomDescription i:nil="true"/>
+<Description>Go to Accounts payable > Purchase orders > All purchase orders.</Description>
+<Id>MenuItempurchtablelistpage_bd2be644-ef9b-409b-8e58-2216be887fcex13</Id>
+<Parent z:Ref="i10"/>
+<ParentSequence>12</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>13</Sequence>
+<Annotations/>
+<GlobalId>032542b1-90b5-46b6-bec1-bf753bb7597b</GlobalId>
 <SystemGenerated>false</SystemGenerated>
 <MenuItemName>purchtablelistpage</MenuItemName>
 <MenuItemType>Display</MenuItemType>
@@ -165,44 +288,44 @@
 <d7p1:string>PurchaseOrders</d7p1:string>
 </NavigationPath>
 </Node>
-<Node z:Id="i7" i:type="Scope">
+<Node z:Id="i12" i:type="Scope">
 <CustomDescription i:nil="true"/>
 <Description/>
-<Id>19602_PurchTable_a168d470-c4df-473c-9755-c786445b009e</Id>
-<Parent z:Ref="i5"/>
-<ParentSequence>5</ParentSequence>
+<Id>13042_PurchTable_bd2be644-ef9b-409b-8e58-2216be887fce</Id>
+<Parent z:Ref="i10"/>
+<ParentSequence>12</ParentSequence>
 <ScreenshotUri i:nil="true"/>
-<Sequence>7</Sequence>
+<Sequence>14</Sequence>
 <Children>
-<Node z:Id="i8" i:type="Scope">
+<Node z:Id="i13" i:type="Scope">
 <CustomDescription i:nil="true"/>
 <Description/>
-<Id>20970ChangeSelectedIndexInCache_a168d470-c4df-473c-9755-c786445b009e</Id>
-<Parent z:Ref="i7"/>
-<ParentSequence>21</ParentSequence>
+<Id>14410ChangeSelectedIndexInCache_bd2be644-ef9b-409b-8e58-2216be887fce</Id>
+<Parent z:Ref="i12"/>
+<ParentSequence>28</ParentSequence>
 <ScreenshotUri i:nil="true"/>
-<Sequence>22</Sequence>
+<Sequence>29</Sequence>
 <Children>
-<Node z:Id="i9" i:type="CommandUserAction">
+<Node z:Id="i14" i:type="CommandUserAction">
 <CustomDescription i:nil="true"/>
 <Description>In the list, find and select the desired record.</Description>
-<Id>20970ChangeSelectedIndexInCache_a168d470-c4df-473c-9755-c786445b009ex23</Id>
-<Parent z:Ref="i8"/>
-<ParentSequence>22</ParentSequence>
+<Id>14410ChangeSelectedIndexInCache_bd2be644-ef9b-409b-8e58-2216be887fcex30</Id>
+<Parent z:Ref="i13"/>
+<ParentSequence>29</ParentSequence>
 <ScreenshotUri i:nil="true"/>
-<Sequence>23</Sequence>
+<Sequence>30</Sequence>
 <Annotations/>
-<GlobalId>eafbd270-c77a-45d0-811b-71cac44aca70</GlobalId>
+<GlobalId>e270f8c7-033b-4434-98d0-565d7422fcba</GlobalId>
 <SystemGenerated>false</SystemGenerated>
 <ControlLabel/>
 <ControlLabelId/>
-<FormId>19602_PurchTable_a168d470-c4df-473c-9755-c786445b009e</FormId>
+<FormId>13042_PurchTable_bd2be644-ef9b-409b-8e58-2216be887fce</FormId>
 <ListContext>Grid</ListContext>
 <RowIndex i:nil="true"/>
 <Arguments>
 <CommandArgument>
 <IsReference>false</IsReference>
-<Value>7</Value>
+<Value>20</Value>
 </CommandArgument>
 <CommandArgument>
 <IsReference>false</IsReference>
@@ -231,29 +354,29 @@
 <Name>Grid_ChangeSelectedIndexInCache</Name>
 <ScopeType>Private</ScopeType>
 </Node>
-<Node z:Id="i10" i:type="Scope">
+<Node z:Id="i15" i:type="Scope">
 <CustomDescription i:nil="true"/>
 <Description/>
-<Id>20970NavigationAction_a168d470-c4df-473c-9755-c786445b009e</Id>
-<Parent z:Ref="i7"/>
-<ParentSequence>21</ParentSequence>
+<Id>14410NavigationAction_bd2be644-ef9b-409b-8e58-2216be887fce</Id>
+<Parent z:Ref="i12"/>
+<ParentSequence>28</ParentSequence>
 <ScreenshotUri i:nil="true"/>
-<Sequence>36</Sequence>
+<Sequence>43</Sequence>
 <Children>
-<Node z:Id="i11" i:type="CommandUserAction">
+<Node z:Id="i16" i:type="CommandUserAction">
 <CustomDescription i:nil="true"/>
 <Description>In the list, click the link in the selected row.</Description>
-<Id>20970NavigationAction_a168d470-c4df-473c-9755-c786445b009ex37</Id>
-<Parent z:Ref="i10"/>
-<ParentSequence>36</ParentSequence>
+<Id>14410NavigationAction_bd2be644-ef9b-409b-8e58-2216be887fcex44</Id>
+<Parent z:Ref="i15"/>
+<ParentSequence>43</ParentSequence>
 <ScreenshotUri i:nil="true"/>
-<Sequence>37</Sequence>
+<Sequence>44</Sequence>
 <Annotations/>
-<GlobalId>97f6a1f1-ccd4-491a-acc5-6da9b1993073</GlobalId>
+<GlobalId>51748b3b-b997-44a5-9590-eb018515a86a</GlobalId>
 <SystemGenerated>false</SystemGenerated>
 <ControlLabel/>
 <ControlLabelId/>
-<FormId>19602_PurchTable_a168d470-c4df-473c-9755-c786445b009e</FormId>
+<FormId>13042_PurchTable_bd2be644-ef9b-409b-8e58-2216be887fce</FormId>
 <ListContext>Grid</ListContext>
 <RowIndex i:nil="true"/>
 <Arguments/>
@@ -271,29 +394,29 @@
 <Name>Grid_NavigationAction</Name>
 <ScopeType>Private</ScopeType>
 </Node>
-<Node z:Id="i12" i:type="Scope">
+<Node z:Id="i17" i:type="Scope">
 <CustomDescription i:nil="true"/>
 <Description/>
-<Id>20923_0Click_a168d470-c4df-473c-9755-c786445b009e</Id>
-<Parent z:Ref="i7"/>
-<ParentSequence>38</ParentSequence>
+<Id>14363_0Click_bd2be644-ef9b-409b-8e58-2216be887fce</Id>
+<Parent z:Ref="i12"/>
+<ParentSequence>45</ParentSequence>
 <ScreenshotUri i:nil="true"/>
-<Sequence>39</Sequence>
+<Sequence>46</Sequence>
 <Children>
-<Node z:Id="i13" i:type="CommandUserAction">
+<Node z:Id="i18" i:type="CommandUserAction">
 <CustomDescription i:nil="true"/>
 <Description>Click Add line.</Description>
-<Id>20923_0Click_a168d470-c4df-473c-9755-c786445b009ex40</Id>
-<Parent z:Ref="i12"/>
-<ParentSequence>39</ParentSequence>
+<Id>14363_0Click_bd2be644-ef9b-409b-8e58-2216be887fcex47</Id>
+<Parent z:Ref="i17"/>
+<ParentSequence>46</ParentSequence>
 <ScreenshotUri i:nil="true"/>
-<Sequence>40</Sequence>
+<Sequence>47</Sequence>
 <Annotations/>
-<GlobalId>6e2a0b15-fe80-4de0-99e5-0b3f4109860a</GlobalId>
+<GlobalId>d973a64f-3084-45be-8d59-cae0023234e8</GlobalId>
 <SystemGenerated>false</SystemGenerated>
 <ControlLabel>Add line</ControlLabel>
 <ControlLabelId>@SYS319116</ControlLabelId>
-<FormId>19602_PurchTable_a168d470-c4df-473c-9755-c786445b009e</FormId>
+<FormId>13042_PurchTable_bd2be644-ef9b-409b-8e58-2216be887fce</FormId>
 <ListContext i:nil="true"/>
 <RowIndex i:nil="true"/>
 <Arguments/>
@@ -311,29 +434,29 @@
 <Name>LineStripNew_Click</Name>
 <ScopeType>Private</ScopeType>
 </Node>
-<Node z:Id="i14" i:type="Scope">
+<Node z:Id="i19" i:type="Scope">
 <CustomDescription i:nil="true"/>
 <Description/>
-<Id>20937MarkActiveRow_a168d470-c4df-473c-9755-c786445b009e</Id>
-<Parent z:Ref="i7"/>
-<ParentSequence>45</ParentSequence>
+<Id>14377MarkActiveRow_bd2be644-ef9b-409b-8e58-2216be887fce</Id>
+<Parent z:Ref="i12"/>
+<ParentSequence>52</ParentSequence>
 <ScreenshotUri i:nil="true"/>
-<Sequence>46</Sequence>
+<Sequence>53</Sequence>
 <Children>
-<Node z:Id="i15" i:type="CommandUserAction">
+<Node z:Id="i20" i:type="CommandUserAction">
 <CustomDescription i:nil="true"/>
 <Description>In the list, mark the selected row.</Description>
-<Id>20937MarkActiveRow_a168d470-c4df-473c-9755-c786445b009ex47</Id>
-<Parent z:Ref="i14"/>
-<ParentSequence>46</ParentSequence>
+<Id>14377MarkActiveRow_bd2be644-ef9b-409b-8e58-2216be887fcex54</Id>
+<Parent z:Ref="i19"/>
+<ParentSequence>53</ParentSequence>
 <ScreenshotUri i:nil="true"/>
-<Sequence>47</Sequence>
+<Sequence>54</Sequence>
 <Annotations/>
-<GlobalId>9e4a194d-d7aa-4fd0-b7de-e1f2f7ceead5</GlobalId>
+<GlobalId>4adb2eb4-dec6-499f-bd19-1e53bc775778</GlobalId>
 <SystemGenerated>false</SystemGenerated>
 <ControlLabel/>
 <ControlLabelId/>
-<FormId>19602_PurchTable_a168d470-c4df-473c-9755-c786445b009e</FormId>
+<FormId>13042_PurchTable_bd2be644-ef9b-409b-8e58-2216be887fce</FormId>
 <ListContext>LineSpec</ListContext>
 <RowIndex i:nil="true"/>
 <Arguments/>
@@ -345,26 +468,26 @@
 <ReturnValue i:nil="true"/>
 <TaskId i:nil="true"/>
 </Node>
-<Node z:Id="i16" i:type="Scope">
+<Node z:Id="i21" i:type="Scope">
 <CustomDescription i:nil="true"/>
 <Description i:nil="true"/>
-<Id>20943RequestPopup_a168d470-c4df-473c-9755-c786445b009e</Id>
-<Parent z:Ref="i14"/>
-<ParentSequence>48</ParentSequence>
+<Id>14383RequestPopup_bd2be644-ef9b-409b-8e58-2216be887fce</Id>
+<Parent z:Ref="i19"/>
+<ParentSequence>55</ParentSequence>
 <ScreenshotUri i:nil="true"/>
-<Sequence>49</Sequence>
+<Sequence>56</Sequence>
 <Children>
-<Node z:Id="i17" i:type="CommandUserAction">
+<Node z:Id="i22" i:type="CommandUserAction">
 <CustomDescription i:nil="true"/>
 <Description>In the Item number field, enter or select a value.</Description>
-<Id>20943RequestPopup_a168d470-c4df-473c-9755-c786445b009ex50</Id>
-<Parent z:Ref="i16"/>
-<ParentSequence>49</ParentSequence>
+<Id>14383RequestPopup_bd2be644-ef9b-409b-8e58-2216be887fcex57</Id>
+<Parent z:Ref="i21"/>
+<ParentSequence>56</ParentSequence>
 <ScreenshotUri i:nil="true"/>
-<Sequence>50</Sequence>
+<Sequence>57</Sequence>
 <Annotations>
 <Annotation i:type="CanonicalActionAnnotation">
-<CanonicalUserAction z:Id="i18" i:type="PropertyUserAction">
+<CanonicalUserAction z:Id="i23" i:type="PropertyUserAction">
 <CustomDescription i:nil="true"/>
 <Description i:nil="true"/>
 <Id i:nil="true"/>
@@ -379,11 +502,11 @@
 <TableName>InventTableExpanded</TableName>
 </Annotation>
 </Annotations>
-<GlobalId>1108cd4e-77df-4d0a-8797-a5d50238862a</GlobalId>
+<GlobalId>7b7cd467-b8ca-4374-b5be-26845cdc45d6</GlobalId>
 <SystemGenerated>false</SystemGenerated>
 <ControlLabel>Item number</ControlLabel>
 <ControlLabelId>@SYS12836</ControlLabelId>
-<FormId>19602_PurchTable_a168d470-c4df-473c-9755-c786445b009e</FormId>
+<FormId>13042_PurchTable_bd2be644-ef9b-409b-8e58-2216be887fce</FormId>
 <ListContext i:nil="true"/>
 <RowIndex i:nil="true"/>
 <BoundDataSource>PurchLine</BoundDataSource>
@@ -394,16 +517,16 @@
 <LabelId i:nil="true"/>
 <PropertyName>Value</PropertyName>
 <UserActionType>Input</UserActionType>
-<Value>D0004</Value>
+<Value>P0004</Value>
 <ValueLabel i:nil="true"/>
 </CanonicalUserAction>
 </Annotation>
 </Annotations>
-<GlobalId>940f5e48-ad5a-48bd-9e2d-0269d0f24054</GlobalId>
+<GlobalId>fe686cf4-fff0-491c-9600-d3b236d82363</GlobalId>
 <SystemGenerated>false</SystemGenerated>
 <ControlLabel>Item number</ControlLabel>
 <ControlLabelId>@SYS12836</ControlLabelId>
-<FormId>19602_PurchTable_a168d470-c4df-473c-9755-c786445b009e</FormId>
+<FormId>13042_PurchTable_bd2be644-ef9b-409b-8e58-2216be887fce</FormId>
 <ListContext>LineSpec</ListContext>
 <RowIndex i:nil="true"/>
 <Arguments/>
@@ -415,32 +538,32 @@
 <ReturnValue i:nil="true"/>
 <TaskId i:nil="true"/>
 </Node>
-<Node z:Id="i19" i:type="Scope">
+<Node z:Id="i24" i:type="Scope">
 <CustomDescription i:nil="true"/>
 <Description/>
-<Id>30336_InventItemIdLookupPurchase_a168d470-c4df-473c-9755-c786445b009e</Id>
-<Parent z:Ref="i16"/>
-<ParentSequence>49</ParentSequence>
-<ScreenshotUri i:nil="true"/>
-<Sequence>52</Sequence>
-<Children>
-<Node z:Id="i20" i:type="Scope">
-<CustomDescription i:nil="true"/>
-<Description/>
-<Id>30423ChangeSelectedIndexInCache_a168d470-c4df-473c-9755-c786445b009e</Id>
-<Parent z:Ref="i19"/>
-<ParentSequence>57</ParentSequence>
-<ScreenshotUri i:nil="true"/>
-<Sequence>58</Sequence>
-<Children>
-<Node z:Id="i21" i:type="CommandUserAction">
-<CustomDescription i:nil="true"/>
-<Description>In the list, select row 20.</Description>
-<Id>30423ChangeSelectedIndexInCache_a168d470-c4df-473c-9755-c786445b009ex59</Id>
-<Parent z:Ref="i20"/>
-<ParentSequence>58</ParentSequence>
+<Id>19597_InventItemIdLookupPurchase_bd2be644-ef9b-409b-8e58-2216be887fce</Id>
+<Parent z:Ref="i21"/>
+<ParentSequence>56</ParentSequence>
 <ScreenshotUri i:nil="true"/>
 <Sequence>59</Sequence>
+<Children>
+<Node z:Id="i25" i:type="Scope">
+<CustomDescription i:nil="true"/>
+<Description/>
+<Id>19684ChangeSelectedIndexInCache_bd2be644-ef9b-409b-8e58-2216be887fce</Id>
+<Parent z:Ref="i24"/>
+<ParentSequence>64</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>65</Sequence>
+<Children>
+<Node z:Id="i26" i:type="CommandUserAction">
+<CustomDescription i:nil="true"/>
+<Description>In the list, select row 149.</Description>
+<Id>19684ChangeSelectedIndexInCache_bd2be644-ef9b-409b-8e58-2216be887fcex66</Id>
+<Parent z:Ref="i25"/>
+<ParentSequence>65</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>66</Sequence>
 <Annotations>
 <Annotation i:type="TaskGuideAnnotation">
 <Description i:nil="true"/>
@@ -451,17 +574,17 @@
 <Title i:nil="true"/>
 </Annotation>
 </Annotations>
-<GlobalId>a2d717aa-e93c-44e5-a5c6-d96225ea85e4</GlobalId>
+<GlobalId>e11d28b9-9d04-474f-8c1e-ee24e4e8cd8c</GlobalId>
 <SystemGenerated>false</SystemGenerated>
 <ControlLabel/>
 <ControlLabelId/>
-<FormId>30336_InventItemIdLookupPurchase_a168d470-c4df-473c-9755-c786445b009e</FormId>
+<FormId>19597_InventItemIdLookupPurchase_bd2be644-ef9b-409b-8e58-2216be887fce</FormId>
 <ListContext>Grid</ListContext>
 <RowIndex i:nil="true"/>
 <Arguments>
 <CommandArgument>
 <IsReference>false</IsReference>
-<Value>20</Value>
+<Value>149</Value>
 </CommandArgument>
 <CommandArgument>
 <IsReference>false</IsReference>
@@ -490,23 +613,23 @@
 <Name>Grid_ChangeSelectedIndexInCache</Name>
 <ScopeType>Private</ScopeType>
 </Node>
-<Node z:Id="i22" i:type="Scope">
+<Node z:Id="i27" i:type="Scope">
 <CustomDescription i:nil="true"/>
 <Description/>
-<Id>30423NavigationAction_a168d470-c4df-473c-9755-c786445b009e</Id>
-<Parent z:Ref="i19"/>
-<ParentSequence>57</ParentSequence>
+<Id>19684NavigationAction_bd2be644-ef9b-409b-8e58-2216be887fce</Id>
+<Parent z:Ref="i24"/>
+<ParentSequence>64</ParentSequence>
 <ScreenshotUri i:nil="true"/>
-<Sequence>60</Sequence>
+<Sequence>67</Sequence>
 <Children>
-<Node z:Id="i23" i:type="CommandUserAction">
+<Node z:Id="i28" i:type="CommandUserAction">
 <CustomDescription i:nil="true"/>
 <Description>In the list, click the link in the selected row.</Description>
-<Id>30423NavigationAction_a168d470-c4df-473c-9755-c786445b009ex61</Id>
-<Parent z:Ref="i22"/>
-<ParentSequence>60</ParentSequence>
+<Id>19684NavigationAction_bd2be644-ef9b-409b-8e58-2216be887fcex68</Id>
+<Parent z:Ref="i27"/>
+<ParentSequence>67</ParentSequence>
 <ScreenshotUri i:nil="true"/>
-<Sequence>61</Sequence>
+<Sequence>68</Sequence>
 <Annotations>
 <Annotation i:type="TaskGuideAnnotation">
 <Description i:nil="true"/>
@@ -517,11 +640,11 @@
 <Title i:nil="true"/>
 </Annotation>
 </Annotations>
-<GlobalId>6ec4f1a1-bf9a-4ffe-a87d-3083e386f95d</GlobalId>
+<GlobalId>98d8d00b-d89a-45a7-b1e8-5b3eeee0423b</GlobalId>
 <SystemGenerated>false</SystemGenerated>
 <ControlLabel/>
 <ControlLabelId/>
-<FormId>30336_InventItemIdLookupPurchase_a168d470-c4df-473c-9755-c786445b009e</FormId>
+<FormId>19597_InventItemIdLookupPurchase_bd2be644-ef9b-409b-8e58-2216be887fce</FormId>
 <ListContext>Grid</ListContext>
 <RowIndex i:nil="true"/>
 <Arguments/>
@@ -557,71 +680,29 @@
 <Name>LineSpec_MarkActiveRow</Name>
 <ScopeType>Private</ScopeType>
 </Node>
-<Node z:Id="i24" i:type="Scope">
+<Node z:Id="i29" i:type="Scope">
 <CustomDescription i:nil="true"/>
 <Description/>
-<Id>20952Value_a168d470-c4df-473c-9755-c786445b009e</Id>
-<Parent z:Ref="i7"/>
-<ParentSequence>62</ParentSequence>
+<Id>14401Value_bd2be644-ef9b-409b-8e58-2216be887fce</Id>
+<Parent z:Ref="i12"/>
+<ParentSequence>69</ParentSequence>
 <ScreenshotUri i:nil="true"/>
-<Sequence>63</Sequence>
+<Sequence>70</Sequence>
 <Children>
-<Node z:Id="i25" i:type="PropertyUserAction">
-<CustomDescription i:nil="true"/>
-<Description>In the Quantity field, enter a number.</Description>
-<Id>20952Value_a168d470-c4df-473c-9755-c786445b009ex64</Id>
-<Parent z:Ref="i24"/>
-<ParentSequence>63</ParentSequence>
-<ScreenshotUri i:nil="true"/>
-<Sequence>64</Sequence>
-<Annotations/>
-<GlobalId>a36ceab8-f080-4037-8da1-20ac859f5427</GlobalId>
-<SystemGenerated>false</SystemGenerated>
-<ControlLabel>Quantity</ControlLabel>
-<ControlLabelId>@SYS14578</ControlLabelId>
-<FormId>19602_PurchTable_a168d470-c4df-473c-9755-c786445b009e</FormId>
-<ListContext>LineSpec</ListContext>
-<RowIndex i:nil="true"/>
-<BoundDataSource>PurchLine</BoundDataSource>
-<BoundProperty>PurchQty</BoundProperty>
-<ControlName>PurchLine_PurchQtyGrid</ControlName>
-<ControlType>Real</ControlType>
-<IsReference>false</IsReference>
-<LabelId i:nil="true"/>
-<PropertyName>Value</PropertyName>
-<UserActionType>Input</UserActionType>
-<Value>11.00</Value>
-<ValueLabel i:nil="true"/>
-</Node>
-</Children>
-<IsForm>false</IsForm>
-<IsStepGroup>false</IsStepGroup>
-<Name>PurchLine_PurchQtyGrid_Value</Name>
-<ScopeType>Private</ScopeType>
-</Node>
-<Node z:Id="i26" i:type="Scope">
-<CustomDescription i:nil="true"/>
-<Description/>
-<Id>20961Value_a168d470-c4df-473c-9755-c786445b009e</Id>
-<Parent z:Ref="i7"/>
-<ParentSequence>65</ParentSequence>
-<ScreenshotUri i:nil="true"/>
-<Sequence>66</Sequence>
-<Children>
-<Node z:Id="i27" i:type="PropertyUserAction">
+<Node z:Id="i30" i:type="PropertyUserAction">
 <CustomDescription i:nil="true"/>
 <Description>In the Receive now field, enter a number.</Description>
-<Id>20961Value_a168d470-c4df-473c-9755-c786445b009ex67</Id>
-<Parent z:Ref="i26"/>
-<ParentSequence>66</ParentSequence>
+<Id>14401Value_bd2be644-ef9b-409b-8e58-2216be887fcex71</Id>
+<Parent z:Ref="i29"/>
+<ParentSequence>70</ParentSequence>
 <ScreenshotUri i:nil="true"/>
-<Sequence>67</Sequence>
+<Sequence>71</Sequence>
 <Annotations/>
-<GlobalId>8567cce9-f530-463e-a515-23177a32192c</GlobalId>
+<GlobalId>cdd0f5d4-2e33-458c-9a7e-79f4c519e833</GlobalId>
 <SystemGenerated>false</SystemGenerated>
 <ControlLabel>Receive now</ControlLabel>
 <ControlLabelId>@SYS1743</ControlLabelId>
-<FormId>19602_PurchTable_a168d470-c4df-473c-9755-c786445b009e</FormId>
+<FormId>13042_PurchTable_bd2be644-ef9b-409b-8e58-2216be887fce</FormId>
 <ListContext>LineSpec</ListContext>
 <RowIndex i:nil="true"/>
 <BoundDataSource>PurchLine</BoundDataSource>
@@ -632,7 +713,7 @@
 <LabelId i:nil="true"/>
 <PropertyName>Value</PropertyName>
 <UserActionType>Input</UserActionType>
-<Value>12.00</Value>
+<Value>1.00</Value>
 <ValueLabel i:nil="true"/>
 </Node>
 </Children>
@@ -641,29 +722,397 @@
 <Name>PurchLine_PurchReceivedNow_Value</Name>
 <ScopeType>Private</ScopeType>
 </Node>
-<Node z:Id="i28" i:type="Scope">
+<Node z:Id="i31" i:type="Scope">
 <CustomDescription i:nil="true"/>
 <Description/>
-<Id>30324_0Click_a168d470-c4df-473c-9755-c786445b009e</Id>
-<Parent z:Ref="i7"/>
-<ParentSequence>68</ParentSequence>
+<Id>19585_0Click_bd2be644-ef9b-409b-8e58-2216be887fce</Id>
+<Parent z:Ref="i12"/>
+<ParentSequence>72</ParentSequence>
 <ScreenshotUri i:nil="true"/>
-<Sequence>69</Sequence>
+<Sequence>73</Sequence>
 <Children>
-<Node z:Id="i29" i:type="CommandUserAction">
+<Node z:Id="i32" i:type="CommandUserAction">
 <CustomDescription i:nil="true"/>
 <Description>Click Save.</Description>
-<Id>30324_0Click_a168d470-c4df-473c-9755-c786445b009ex70</Id>
-<Parent z:Ref="i28"/>
-<ParentSequence>69</ParentSequence>
+<Id>19585_0Click_bd2be644-ef9b-409b-8e58-2216be887fcex74</Id>
+<Parent z:Ref="i31"/>
+<ParentSequence>73</ParentSequence>
 <ScreenshotUri i:nil="true"/>
-<Sequence>70</Sequence>
+<Sequence>74</Sequence>
 <Annotations/>
-<GlobalId>c6173ca2-b129-4b87-b17b-38f6036071b4</GlobalId>
+<GlobalId>c677b9c4-a048-46e4-a8a7-24a07196f49f</GlobalId>
 <SystemGenerated>false</SystemGenerated>
 <ControlLabel>Save</ControlLabel>
 <ControlLabelId/>
-<FormId>19602_PurchTable_a168d470-c4df-473c-9755-c786445b009e</FormId>
+<FormId>13042_PurchTable_bd2be644-ef9b-409b-8e58-2216be887fce</FormId>
+<ListContext i:nil="true"/>
+<RowIndex i:nil="true"/>
+<Arguments/>
+<CommandName>Click</CommandName>
+<ControlName>SystemDefinedSaveButton</ControlName>
+<ControlType>CommandButton</ControlType>
+<LabelId i:nil="true"/>
+<ReturnType>Void</ReturnType>
+<ReturnValue i:nil="true"/>
+<TaskId>272</TaskId>
+</Node>
+</Children>
+<IsForm>false</IsForm>
+<IsStepGroup>false</IsStepGroup>
+<Name>SystemDefinedSaveButton_Click</Name>
+<ScopeType>Private</ScopeType>
+</Node>
+<Node z:Id="i33" i:type="Scope">
+<CustomDescription i:nil="true"/>
+<Description/>
+<Id>14363_0Click_bd2be644-ef9b-409b-8e58-2216be887fce</Id>
+<Parent z:Ref="i12"/>
+<ParentSequence>81</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>82</Sequence>
+<Children>
+<Node z:Id="i34" i:type="CommandUserAction">
+<CustomDescription i:nil="true"/>
+<Description>Click Add line.</Description>
+<Id>14363_0Click_bd2be644-ef9b-409b-8e58-2216be887fcex83</Id>
+<Parent z:Ref="i33"/>
+<ParentSequence>82</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>83</Sequence>
+<Annotations/>
+<GlobalId>b3859f77-4831-4040-a24c-8d98f0d96cc8</GlobalId>
+<SystemGenerated>false</SystemGenerated>
+<ControlLabel>Add line</ControlLabel>
+<ControlLabelId>@SYS319116</ControlLabelId>
+<FormId>13042_PurchTable_bd2be644-ef9b-409b-8e58-2216be887fce</FormId>
+<ListContext i:nil="true"/>
+<RowIndex i:nil="true"/>
+<Arguments/>
+<CommandName>Click</CommandName>
+<ControlName>LineStripNew</ControlName>
+<ControlType>CommandButton</ControlType>
+<LabelId i:nil="true"/>
+<ReturnType>Void</ReturnType>
+<ReturnValue i:nil="true"/>
+<TaskId>260</TaskId>
+</Node>
+</Children>
+<IsForm>false</IsForm>
+<IsStepGroup>false</IsStepGroup>
+<Name>LineStripNew_Click</Name>
+<ScopeType>Private</ScopeType>
+</Node>
+<Node z:Id="i35" i:type="Scope">
+<CustomDescription i:nil="true"/>
+<Description/>
+<Id>14377MarkActiveRow_bd2be644-ef9b-409b-8e58-2216be887fce</Id>
+<Parent z:Ref="i12"/>
+<ParentSequence>88</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>89</Sequence>
+<Children>
+<Node z:Id="i36" i:type="CommandUserAction">
+<CustomDescription i:nil="true"/>
+<Description>In the list, mark the selected row.</Description>
+<Id>14377MarkActiveRow_bd2be644-ef9b-409b-8e58-2216be887fcex90</Id>
+<Parent z:Ref="i35"/>
+<ParentSequence>89</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>90</Sequence>
+<Annotations/>
+<GlobalId>2696ce70-1ef5-452b-a67f-a816b3f11adb</GlobalId>
+<SystemGenerated>false</SystemGenerated>
+<ControlLabel/>
+<ControlLabelId/>
+<FormId>13042_PurchTable_bd2be644-ef9b-409b-8e58-2216be887fce</FormId>
+<ListContext>LineSpec</ListContext>
+<RowIndex i:nil="true"/>
+<Arguments/>
+<CommandName>MarkActiveRow</CommandName>
+<ControlName>LineSpec</ControlName>
+<ControlType>Grid</ControlType>
+<LabelId/>
+<ReturnType>Void</ReturnType>
+<ReturnValue i:nil="true"/>
+<TaskId i:nil="true"/>
+</Node>
+<Node z:Id="i37" i:type="Scope">
+<CustomDescription i:nil="true"/>
+<Description i:nil="true"/>
+<Id>14383RequestPopup_bd2be644-ef9b-409b-8e58-2216be887fce</Id>
+<Parent z:Ref="i35"/>
+<ParentSequence>91</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>92</Sequence>
+<Children>
+<Node z:Id="i38" i:type="CommandUserAction">
+<CustomDescription i:nil="true"/>
+<Description>In the Item number field, enter or select a value.</Description>
+<Id>14383RequestPopup_bd2be644-ef9b-409b-8e58-2216be887fcex93</Id>
+<Parent z:Ref="i37"/>
+<ParentSequence>92</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>93</Sequence>
+<Annotations>
+<Annotation i:type="CanonicalActionAnnotation">
+<CanonicalUserAction z:Id="i39" i:type="PropertyUserAction">
+<CustomDescription i:nil="true"/>
+<Description i:nil="true"/>
+<Id i:nil="true"/>
+<Parent i:nil="true"/>
+<ParentSequence>0</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>0</Sequence>
+<Annotations>
+<Annotation i:type="LookupAnnotation">
+<ParentFormName>PurchTable</ParentFormName>
+<ReferenceDataSource i:nil="true"/>
+<TableName>InventTableExpanded</TableName>
+</Annotation>
+</Annotations>
+<GlobalId>847586da-c8ad-4afb-9e96-f2f9322c7e83</GlobalId>
+<SystemGenerated>false</SystemGenerated>
+<ControlLabel>Item number</ControlLabel>
+<ControlLabelId>@SYS12836</ControlLabelId>
+<FormId>13042_PurchTable_bd2be644-ef9b-409b-8e58-2216be887fce</FormId>
+<ListContext i:nil="true"/>
+<RowIndex i:nil="true"/>
+<BoundDataSource>PurchLine</BoundDataSource>
+<BoundProperty>ItemId</BoundProperty>
+<ControlName>PurchLine_ItemId</ControlName>
+<ControlType>Input</ControlType>
+<IsReference>false</IsReference>
+<LabelId i:nil="true"/>
+<PropertyName>Value</PropertyName>
+<UserActionType>Input</UserActionType>
+<Value>M0056</Value>
+<ValueLabel i:nil="true"/>
+</CanonicalUserAction>
+</Annotation>
+</Annotations>
+<GlobalId>4412ee60-0e7c-4b34-a450-a707de59d09e</GlobalId>
+<SystemGenerated>false</SystemGenerated>
+<ControlLabel>Item number</ControlLabel>
+<ControlLabelId>@SYS12836</ControlLabelId>
+<FormId>13042_PurchTable_bd2be644-ef9b-409b-8e58-2216be887fce</FormId>
+<ListContext>LineSpec</ListContext>
+<RowIndex i:nil="true"/>
+<Arguments/>
+<CommandName>RequestPopup</CommandName>
+<ControlName>PurchLine_ItemId</ControlName>
+<ControlType>Input</ControlType>
+<LabelId>@SysTaskRecorder:SetValueFromLookUp</LabelId>
+<ReturnType>Void</ReturnType>
+<ReturnValue i:nil="true"/>
+<TaskId i:nil="true"/>
+</Node>
+<Node z:Id="i40" i:type="Scope">
+<CustomDescription i:nil="true"/>
+<Description/>
+<Id>20245_InventItemIdLookupPurchase_bd2be644-ef9b-409b-8e58-2216be887fce</Id>
+<Parent z:Ref="i37"/>
+<ParentSequence>92</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>95</Sequence>
+<Children>
+<Node z:Id="i41" i:type="Scope">
+<CustomDescription i:nil="true"/>
+<Description/>
+<Id>20332ChangeSelectedIndexInCache_bd2be644-ef9b-409b-8e58-2216be887fce</Id>
+<Parent z:Ref="i40"/>
+<ParentSequence>100</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>101</Sequence>
+<Children>
+<Node z:Id="i42" i:type="CommandUserAction">
+<CustomDescription i:nil="true"/>
+<Description>In the list, select row 125.</Description>
+<Id>20332ChangeSelectedIndexInCache_bd2be644-ef9b-409b-8e58-2216be887fcex102</Id>
+<Parent z:Ref="i41"/>
+<ParentSequence>101</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>102</Sequence>
+<Annotations>
+<Annotation i:type="TaskGuideAnnotation">
+<Description i:nil="true"/>
+<ExampleText i:nil="true"/>
+<GlobalId i:nil="true"/>
+<Hidden>true</Hidden>
+<RecordingValueType>Preferred</RecordingValueType>
+<Title i:nil="true"/>
+</Annotation>
+</Annotations>
+<GlobalId>10e86f5a-144f-4910-89e5-269e872bd1d0</GlobalId>
+<SystemGenerated>false</SystemGenerated>
+<ControlLabel/>
+<ControlLabelId/>
+<FormId>20245_InventItemIdLookupPurchase_bd2be644-ef9b-409b-8e58-2216be887fce</FormId>
+<ListContext>Grid</ListContext>
+<RowIndex i:nil="true"/>
+<Arguments>
+<CommandArgument>
+<IsReference>false</IsReference>
+<Value>125</Value>
+</CommandArgument>
+<CommandArgument>
+<IsReference>false</IsReference>
+<Value>4</Value>
+</CommandArgument>
+<CommandArgument>
+<IsReference>false</IsReference>
+<Value>1</Value>
+</CommandArgument>
+<CommandArgument>
+<IsReference>false</IsReference>
+<Value>first</Value>
+</CommandArgument>
+</Arguments>
+<CommandName>ChangeSelectedIndexInCache</CommandName>
+<ControlName>Grid</ControlName>
+<ControlType>Grid</ControlType>
+<LabelId/>
+<ReturnType>Void</ReturnType>
+<ReturnValue i:nil="true"/>
+<TaskId i:nil="true"/>
+</Node>
+</Children>
+<IsForm>false</IsForm>
+<IsStepGroup>false</IsStepGroup>
+<Name>Grid_ChangeSelectedIndexInCache</Name>
+<ScopeType>Private</ScopeType>
+</Node>
+<Node z:Id="i43" i:type="Scope">
+<CustomDescription i:nil="true"/>
+<Description/>
+<Id>20332NavigationAction_bd2be644-ef9b-409b-8e58-2216be887fce</Id>
+<Parent z:Ref="i40"/>
+<ParentSequence>100</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>103</Sequence>
+<Children>
+<Node z:Id="i44" i:type="CommandUserAction">
+<CustomDescription i:nil="true"/>
+<Description>In the list, click the link in the selected row.</Description>
+<Id>20332NavigationAction_bd2be644-ef9b-409b-8e58-2216be887fcex104</Id>
+<Parent z:Ref="i43"/>
+<ParentSequence>103</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>104</Sequence>
+<Annotations>
+<Annotation i:type="TaskGuideAnnotation">
+<Description i:nil="true"/>
+<ExampleText i:nil="true"/>
+<GlobalId i:nil="true"/>
+<Hidden>true</Hidden>
+<RecordingValueType>Preferred</RecordingValueType>
+<Title i:nil="true"/>
+</Annotation>
+</Annotations>
+<GlobalId>43249687-dcc0-419e-b708-4995d6737a5e</GlobalId>
+<SystemGenerated>false</SystemGenerated>
+<ControlLabel/>
+<ControlLabelId/>
+<FormId>20245_InventItemIdLookupPurchase_bd2be644-ef9b-409b-8e58-2216be887fce</FormId>
+<ListContext>Grid</ListContext>
+<RowIndex i:nil="true"/>
+<Arguments/>
+<CommandName>NavigationAction</CommandName>
+<ControlName>Grid</ControlName>
+<ControlType>Grid</ControlType>
+<LabelId/>
+<ReturnType>Void</ReturnType>
+<ReturnValue i:nil="true"/>
+<TaskId i:nil="true"/>
+</Node>
+</Children>
+<IsForm>false</IsForm>
+<IsStepGroup>false</IsStepGroup>
+<Name>Grid_NavigationAction</Name>
+<ScopeType>Private</ScopeType>
+</Node>
+</Children>
+<IsForm>true</IsForm>
+<IsStepGroup>false</IsStepGroup>
+<Name>InventItemIdLookupPurchase</Name>
+<ScopeType>Private</ScopeType>
+</Node>
+</Children>
+<IsForm>false</IsForm>
+<IsStepGroup>true</IsStepGroup>
+<Name>PurchLine_ItemId_RequestPopup</Name>
+<ScopeType>Private</ScopeType>
+</Node>
+</Children>
+<IsForm>false</IsForm>
+<IsStepGroup>false</IsStepGroup>
+<Name>LineSpec_MarkActiveRow</Name>
+<ScopeType>Private</ScopeType>
+</Node>
+<Node z:Id="i45" i:type="Scope">
+<CustomDescription i:nil="true"/>
+<Description/>
+<Id>14401Value_bd2be644-ef9b-409b-8e58-2216be887fce</Id>
+<Parent z:Ref="i12"/>
+<ParentSequence>105</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>106</Sequence>
+<Children>
+<Node z:Id="i46" i:type="PropertyUserAction">
+<CustomDescription i:nil="true"/>
+<Description>In the Receive now field, enter a number.</Description>
+<Id>14401Value_bd2be644-ef9b-409b-8e58-2216be887fcex107</Id>
+<Parent z:Ref="i45"/>
+<ParentSequence>106</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>107</Sequence>
+<Annotations/>
+<GlobalId>c1f3cf93-e7f2-4260-91a5-a6ddf46d37be</GlobalId>
+<SystemGenerated>false</SystemGenerated>
+<ControlLabel>Receive now</ControlLabel>
+<ControlLabelId>@SYS1743</ControlLabelId>
+<FormId>13042_PurchTable_bd2be644-ef9b-409b-8e58-2216be887fce</FormId>
+<ListContext>LineSpec</ListContext>
+<RowIndex i:nil="true"/>
+<BoundDataSource>PurchLine</BoundDataSource>
+<BoundProperty>PurchReceivedNow</BoundProperty>
+<ControlName>PurchLine_PurchReceivedNow</ControlName>
+<ControlType>Real</ControlType>
+<IsReference>false</IsReference>
+<LabelId i:nil="true"/>
+<PropertyName>Value</PropertyName>
+<UserActionType>Input</UserActionType>
+<Value>2.00</Value>
+<ValueLabel i:nil="true"/>
+</Node>
+</Children>
+<IsForm>false</IsForm>
+<IsStepGroup>false</IsStepGroup>
+<Name>PurchLine_PurchReceivedNow_Value</Name>
+<ScopeType>Private</ScopeType>
+</Node>
+<Node z:Id="i47" i:type="Scope">
+<CustomDescription i:nil="true"/>
+<Description/>
+<Id>19585_0Click_bd2be644-ef9b-409b-8e58-2216be887fce</Id>
+<Parent z:Ref="i12"/>
+<ParentSequence>108</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>109</Sequence>
+<Children>
+<Node z:Id="i48" i:type="CommandUserAction">
+<CustomDescription i:nil="true"/>
+<Description>Click Save.</Description>
+<Id>19585_0Click_bd2be644-ef9b-409b-8e58-2216be887fcex110</Id>
+<Parent z:Ref="i47"/>
+<ParentSequence>109</ParentSequence>
+<ScreenshotUri i:nil="true"/>
+<Sequence>110</Sequence>
+<Annotations/>
+<GlobalId>dff13cef-385f-43f7-9e47-f8b0221b421a</GlobalId>
+<SystemGenerated>false</SystemGenerated>
+<ControlLabel>Save</ControlLabel>
+<ControlLabelId/>
+<FormId>13042_PurchTable_bd2be644-ef9b-409b-8e58-2216be887fce</FormId>
 <ListContext i:nil="true"/>
 <RowIndex i:nil="true"/>
 <Arguments/>
@@ -696,7 +1145,7 @@
 </Children>
 <IsForm>false</IsForm>
 <IsStepGroup>false</IsStepGroup>
-<Name>add_new_line</Name>
+<Name>add_new_line_3</Name>
 <ScopeType>Public</ScopeType>
 </RootScope>
 <UserActions xmlns:d2p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
@@ -704,14 +1153,22 @@
 <d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i6"/>
 <d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i9"/>
 <d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i11"/>
-<d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i13"/>
-<d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i15"/>
-<d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i17"/>
-<d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i21"/>
-<d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i23"/>
-<d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i25"/>
-<d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i27"/>
-<d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i29"/>
+<d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i14"/>
+<d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i16"/>
+<d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i18"/>
+<d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i20"/>
+<d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i22"/>
+<d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i26"/>
+<d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i28"/>
+<d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i30"/>
+<d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i32"/>
+<d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i34"/>
+<d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i36"/>
+<d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i38"/>
+<d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i42"/>
+<d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i44"/>
+<d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i46"/>
+<d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i48"/>
 </UserActions>
 <Version>1</Version>
 </Recording>

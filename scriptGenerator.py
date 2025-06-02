@@ -286,6 +286,10 @@ def generate_selenium_script(controls):
                     lines.append(f"     Interactions.wait_and_click(driver, By.XPATH, \"{xpath[0]}\")")
                     lines.append(f"elif(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[1]}\")):")
                     lines.append(f"     Interactions.wait_and_click(driver, By.XPATH, \"{xpath[1]}\")")
+                    if add_line_flag and ctype == "commandbutton":
+                        lines.append("line_number_input = \"//div[text()='Item number'  or text()='Line number' ]/ancestor::div[contains(@class,'fixedDataTableRowLayout_')]/ancestor::div[@role='grid']//input[contains(@aria-label,'Line number')]\"")
+                        lines.append("count = Interactions.check_for_item_number_count(driver, By.XPATH, line_number_input)")
+                        lines.append("row_number = Interactions.get_row_number_for_line_item(driver, By.XPATH, line_number_input,count)")
                 elif ctype in ["menubutton", "menuitem"]:
                     lines.append(f"if(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[0]}\")):")
                     lines.append(f"     Interactions.wait_and_click(driver, By.XPATH, \"{xpath[0]}\")")
@@ -337,9 +341,6 @@ def generate_selenium_script(controls):
                             lines.append("Interactions.wait_and_click(driver, By.XPATH, \"//input[@value='\"+user_input+\"']\")")
                             lines.append(f"Interactions.press_enter(driver, By.XPATH, \"//input[@value='\"+user_input+\"']\")")
                     elif add_line_flag:
-                        lines.append("line_number_input = \"//div[text()='Item number'  or text()='Line number' ]/ancestor::div[contains(@class,'fixedDataTableRowLayout_')]/ancestor::div[@role='grid']//input[contains(@aria-label,'Line number')]\"")
-                        lines.append("count = Interactions.check_for_item_number_count(driver, By.XPATH, line_number_input)")
-                        lines.append("row_number = Interactions.get_row_number_for_line_item(driver, By.XPATH, line_number_input,count)")
                         lines.append(f"if(Interactions.check_input_ancestor_is_table(driver, By.XPATH, \"{xpath[0]}\") or Interactions.check_input_ancestor_is_table(driver, By.XPATH, \"{xpath[1]}\") ):")
                         lines.append(f"    #clicking inside grid: {name}")
                         lines.append(f"    if(Interactions.check_element_exist(driver, By.XPATH, \"{'('+xpath[0] +')["+row_number+"]'}\")):")
