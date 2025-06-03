@@ -1,13 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<UserActionsWithDetails xmlns:ns0="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Client.ServerForm.TaskRecording"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<UserActionsWithDetails>
     <UserAction Ref="i3">
-        <Description>Go to General ledger &gt; Journal setup &gt; Journal names.</Description>
+        <Description>Go to General ledger &gt; Periodic tasks &gt; Periodic journals.</Description>
         <NodeId>i3</NodeId>
-        <Sequence>11</Sequence>
+        <Sequence>14</Sequence>
         <Navigation>mainmenu</Navigation>
         <Navigation>GeneralLedger</Navigation>
-        <Navigation>JournalSetup</Navigation>
+        <Navigation>PeriodicTasks</Navigation>
         <ControlName>No Control Name</ControlName>
         <ControlLabel />
         <ControlType />
@@ -15,95 +14,139 @@
         <CommandName />
     </UserAction>
     <UserAction Ref="i6">
-        <Description>Click New.</Description>
+        <Description>In the list, find and select the desired record.</Description>
         <NodeId>i6</NodeId>
-        <Sequence>11</Sequence>
-        <ControlName>SystemDefinedNewButton</ControlName>
-        <ControlLabel>New</ControlLabel>
-        <ControlType>CommandButton</ControlType>
+        <Sequence>14</Sequence>
+        <ControlName>GridOverview</ControlName>
+        <ControlLabel />
+        <ControlType>Grid</ControlType>
+        <Value>2</Value>
+        <CommandName>ChangeSelectedIndexInCache</CommandName>
+    </UserAction>
+    <UserAction Ref="i8">
+        <Description>Click Lines.</Description>
+        <NodeId>i8</NodeId>
+        <Sequence>14</Sequence>
+        <ControlName>JournalLines</ControlName>
+        <ControlLabel>Lines</ControlLabel>
+        <ControlType>MenuItemButton</ControlType>
         <Value />
         <CommandName>Click</CommandName>
     </UserAction>
-    <UserAction Ref="i8">
-        <Description>In the Name field, type a value.</Description>
-        <NodeId>i8</NodeId>
-        <Sequence>11</Sequence>
-        <ControlName>LedgerJournalName_JournalName</ControlName>
-        <ControlLabel>Name</ControlLabel>
-        <ControlType>Input</ControlType>
-        <Value>test 10</Value>
-        <CommandName />
-    </UserAction>
-    <UserAction Ref="i10">
-        <Description>In the Description field, type a value.</Description>
-        <NodeId>i10</NodeId>
-        <Sequence>11</Sequence>
-        <ControlName>LedgerJournalName_Name</ControlName>
-        <ControlLabel>Description</ControlLabel>
-        <ControlType>Input</ControlType>
-        <Value>testing 1</Value>
-        <CommandName />
-    </UserAction>
-    <UserAction Ref="i12">
-        <Description>In the Journal type field, select an option.</Description>
-        <NodeId>i12</NodeId>
-        <Sequence>11</Sequence>
-        <ControlName>JournalType_JournalType</ControlName>
-        <ControlLabel>Journal type</ControlLabel>
-        <ControlType>ComboBox</ControlType>
-        <Value>31</Value>
-        <CommandName />
-    </UserAction>
-    <UserAction Ref="i14">
-        <Description>In the Voucher series field, enter or select a value.</Description>
-        <NodeId>i14</NodeId>
-        <Sequence>11</Sequence>
-        <ControlName>VoucherNumber_NumberSequenceTable</ControlName>
-        <ControlLabel>Voucher series</ControlLabel>
-        <ControlType>ReferenceGroup</ControlType>
-        <Value />
-        <CommandName>ResolveChanges</CommandName>
-    </UserAction>
-    <UserAction Ref="i19">
-        <Description>In the Voucher series field, enter or select a value.</Description>
-        <NodeId>i19</NodeId>
-        <Sequence>11</Sequence>
-        <ControlName>VoucherNumber_NumberSequenceTable_NumberSequence</ControlName>
-        <ControlLabel>Voucher series</ControlLabel>
-        <ControlType>Input</ControlType>
-        <Value />
-        <CommandName>RequestPopup</CommandName>
-    </UserAction>
-    <UserAction Ref="i22">
-        <Description>In the list, select row 3.</Description>
-        <NodeId>i22</NodeId>
-        <Sequence>11</Sequence>
-        <ControlName>Grid</ControlName>
-        <ControlLabel />
-        <ControlType>Grid</ControlType>
-        <Value>3</Value>
-        <CommandName>ChangeSelectedIndexInCache</CommandName>
-    </UserAction>
-    <UserAction Ref="i24">
-        <Description>In the list, click the link in the selected row.</Description>
-        <NodeId>i24</NodeId>
-        <Sequence>11</Sequence>
+    <UserAction Ref="i11">
+        <Description>In the list, mark the selected row.</Description>
+        <NodeId>i11</NodeId>
+        <Sequence>14</Sequence>
         <ControlName>Grid</ControlName>
         <ControlLabel />
         <ControlType>Grid</ControlType>
         <Value />
-        <CommandName>NavigationAction</CommandName>
+        <CommandName>MarkActiveRow</CommandName>
     </UserAction>
-    <UserAction Ref="i26">
+    <UserAction Ref="i13">
+        <Description>In the Voucher field, type a value.</Description>
+        <NodeId>i13</NodeId>
+        <Sequence>14</Sequence>
+        <ControlName>LedgerJournalTrans_Voucher</ControlName>
+        <ControlLabel>Voucher</ControlLabel>
+        <ControlType>Input</ControlType>
+        <Value>ok</Value>
+        <CommandName />
+    </UserAction>
+    <UserAction Ref="i15">
         <Description>Click Save.</Description>
-        <NodeId>i26</NodeId>
-        <Sequence>11</Sequence>
+        <NodeId>i15</NodeId>
+        <Sequence>14</Sequence>
         <ControlName>SystemDefinedSaveButton</ControlName>
         <ControlLabel>Save</ControlLabel>
         <ControlType>CommandButton</ControlType>
         <Value />
         <CommandName>Click</CommandName>
     </UserAction>
+    <UserAction Ref="i17">
+        <Description>Close the page.</Description>
+        <NodeId>i17</NodeId>
+        <Sequence>14</Sequence>
+        <ControlName>No Control Name</ControlName>
+        <ControlLabel />
+        <ControlType />
+        <Value />
+        <CommandName>RequestClose</CommandName>
+        <Annotations />
+    </UserAction>
+    <UserAction Ref="i19">
+        <Description>Close the page.</Description>
+        <NodeId>i19</NodeId>
+        <Sequence>14</Sequence>
+        <ControlName>No Control Name</ControlName>
+        <ControlLabel />
+        <ControlType />
+        <Value />
+        <CommandName>RequestClose</CommandName>
+        <Annotations />
+    </UserAction>
+    <UserAction Ref="i20">
+        <Description>Go to General ledger &gt; Periodic tasks &gt; Periodic journals.</Description>
+        <NodeId>i20</NodeId>
+        <Sequence>14</Sequence>
+        <Navigation>mainmenu</Navigation>
+        <Navigation>GeneralLedger</Navigation>
+        <Navigation>PeriodicTasks</Navigation>
+        <ControlName>No Control Name</ControlName>
+        <ControlLabel />
+        <ControlType />
+        <Value />
+        <CommandName />
+    </UserAction>
+    <UserAction Ref="i23">
+        <Description>In the list, find and select the desired record.</Description>
+        <NodeId>i23</NodeId>
+        <Sequence>14</Sequence>
+        <ControlName>GridOverview</ControlName>
+        <ControlLabel />
+        <ControlType>Grid</ControlType>
+        <Value>2</Value>
+        <CommandName>ChangeSelectedIndexInCache</CommandName>
+    </UserAction>
+    <UserAction Ref="i25">
+        <Description>Click Lines.</Description>
+        <NodeId>i25</NodeId>
+        <Sequence>14</Sequence>
+        <ControlName>JournalLines</ControlName>
+        <ControlLabel>Lines</ControlLabel>
+        <ControlType>MenuItemButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i28">
+        <Description>Click Print.</Description>
+        <NodeId>i28</NodeId>
+        <Sequence>14</Sequence>
+        <ControlName>Print_MenuButton</ControlName>
+        <ControlLabel>Print</ControlLabel>
+        <ControlType>MenuButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i30">
+        <Description>Click Journal.</Description>
+        <NodeId>i30</NodeId>
+        <Sequence>14</Sequence>
+        <ControlName>JounalDetails</ControlName>
+        <ControlLabel>Journal</ControlLabel>
+        <ControlType>MenuItem</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i33">
+        <Description>Click OK.</Description>
+        <NodeId>i33</NodeId>
+        <Sequence>14</Sequence>
+        <ControlName>CommandButton</ControlName>
+        <ControlLabel>OK</ControlLabel>
+        <ControlType>CommandButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
 </UserActionsWithDetails>
- 
  
