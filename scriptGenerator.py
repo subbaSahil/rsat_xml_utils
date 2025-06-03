@@ -148,6 +148,7 @@ def generate_selenium_script(controls):
     add_line_flag = False
     dailog_box_line_items = False
     new_line_item_in_dailog_box_item = False
+    new_line_in_dailog_already_exist = False
     lines = [
         "from selenium import webdriver",
         "from selenium.webdriver.common.by import By",
@@ -352,7 +353,6 @@ def generate_selenium_script(controls):
                         if name == "EcoResProduct_DisplayProductNumber":
                             lines.append("user_input = input('Enter the value for the hyperlink: ')")
                             lines.append("Interactions.wait_and_click(driver, By.XPATH, \"//div[@name='EcoResProduct_DisplayProductNumber' and text()='\"+user_input+\"']\")")
-
                         else:
                             lines.append("user_input = input('Enter the value for the hyperlink: ')")
                             lines.append("Interactions.wait_and_click(driver, By.XPATH, \"//input[@value='\"+user_input+\"']\")")
@@ -367,11 +367,26 @@ def generate_selenium_script(controls):
                         lines.append(f"          ActionChains(driver).move_to_element(driver.find_element(By.XPATH, \"{'('+xpath[1] +')["+row_number+"]'}\")).perform()")
                         lines.append(f"          Interactions.wait_and_send_keys(driver, By.XPATH, \"{'('+xpath[1] +')["+row_number+"]'}\", \"{value}\")")
                     elif dailog_box_line_items:
-                        lines.append(f"if(Interactions.check_element_exist(driver, By.XPATH, \"{dailog_box_container}\")):")
-                        lines.append(f"     if(Interactions.check_input_ancestor_is_table(driver, By.XPATH, \"{xpath[0]}\") or Interactions.check_input_ancestor_is_table(driver, By.XPATH, \"{xpath[1]}\") ):")
-                        lines.append(f"          Interactions.clear_input_field_and_send_keys(driver, By.XPATH, \"{dailog_box_container+xpath[0]}\", \"{value}\")")
-                        lines.append(f"     elif(Interactions.check_element_exist(driver, By.XPATH,\"{dailog_box_container+xpath[1]}\")):")
-                        lines.append(f"          Interactions.clear_input_field_and_send_keys(driver, By.XPATH, \"{dailog_box_container+xpath[1]}\", \"{value}\")")
+                        if new_line_item_in_dailog_box_item:
+                            if not new_line_in_dailog_already_exist:
+                                new_line_in_dailog_already_exist = True
+                                lines.append(f"dailog_box_line_count = Interactions.check_for_line_item_count(driver, By.XPATH, \"{dailog_box_container}//input[contains(@aria-label,'Line number')]\")")
+                                lines.append(f"max_line_number = Interactions.get_max_value_from_elements(driver, By.XPATH, \"{dailog_box_container}//input[contains(@aria-label,'Line number')]\", dailog_box_line_count)")
+
+                        lines.append(f"if Interactions.check_element_exist(driver, By.XPATH, \"{dailog_box_container}\"):")
+
+                        # Generate dynamic XPath using value match
+                        lines.append(f"    target_xpath_1 = f\"{dailog_box_container}//input[contains(@aria-label, 'Line number') and @value='{{max_line_number}}']/ancestor::div[@role='gridcell']/following-sibling::div{xpath[0]}\"")
+                        lines.append(f"    target_xpath_2 = f\"{dailog_box_container}//input[contains(@aria-label, 'Line number') and @value='{{max_line_number}}']/ancestor::div[@role='gridcell']/following-sibling::div{xpath[1]}\"")
+                        lines.append(f"    if Interactions.check_element_exist(driver, By.XPATH, target_xpath_1):")
+                        lines.append(f"        Interactions.clear_input_field_and_send_keys(driver, By.XPATH, target_xpath_1, \"{value}\")")
+
+                        lines.append(f"    elif Interactions.check_element_exist(driver, By.XPATH, target_xpath_2):")
+                        lines.append(f"        Interactions.clear_input_field_and_send_keys(driver, By.XPATH, target_xpath_2, \"{value}\")")
+
+                        lines.append("    else:")
+                        lines.append(f"        print(\"Element not found in either dynamic or fallback XPath for: {name}\")")
+                        
                     else:
                         lines.append(f"# Inputting into: {name}")
                         lines.append(f"if(Interactions.check_input_ancestor_is_table(driver, By.XPATH, \"{xpath[0]}\") or Interactions.check_input_ancestor_is_table(driver, By.XPATH, \"{xpath[1]}\") ):")
@@ -431,24 +446,44 @@ def generate_selenium_script(controls):
                 elif ctype == "datetime":
                     dt = datetime.datetime.fromisoformat(value)
                     formatted_value = dt.strftime("%#m/%#d/%Y %#I:%M %p")
-                    # lines.append(f"Interactions.send_input_with_clear(driver, By.XPATH, \"{xpath}\", \"{formatted_value}\")")
                     lines.append(f"if Interactions.check_element_exist(driver, By.XPATH, \"{xpath[0]}\"):")
                     lines.append(f"    Interactions.wait_and_send_keys(driver, By.XPATH, \"{xpath[0]}\", \"{formatted_value}\",Keys.RETURN)")
                     lines.append(f"elif Interactions.check_element_exist(driver, By.XPATH, \"{xpath[1]}\"):")
                     lines.append(f"    Interactions.wait_and_send_keys(driver, By.XPATH, \"{xpath[1]}\", \"{formatted_value}\",Keys.RETURN)")
                 elif ctype == "date":
                     date = convert_date_format(value)
-                    lines.append(f"if(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[0]}\")):")
-                    lines.append(f"    Interactions.get_locator(driver, By.XPATH, \"{xpath[1]}\")")
-                    lines.append(f"    Interactions.clear_input_field_and_send_keys(driver, By.XPATH, \"{xpath[0]}\", \"{date}\")")
-                    lines.append(f"elif(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[1]}\")):")
-                    lines.append(f"    Interactions.clear_input_field_and_send_keys(driver, By.XPATH, \"{xpath[1]}\", \"{date}\")")
+                    if dailog_box_line_items:
+                        if new_line_item_in_dailog_box_item:
+                            if not new_line_in_dailog_already_exist:
+                                new_line_in_dailog_already_exist = True
+                                lines.append(f"dailog_box_line_count = Interactions.check_for_line_item_count(driver, By.XPATH, \"{dailog_box_container}//input[contains(@aria-label,'Line number')]\")")
+                                lines.append(f"max_line_number = Interactions.get_max_value_from_elements(driver, By.XPATH, \"{dailog_box_container}//input[contains(@aria-label,'Line number')]\", dailog_box_line_count)")
+
+                        lines.append(f"if Interactions.check_element_exist(driver, By.XPATH, \"{dailog_box_container}\"):")
+
+                        # Generate dynamic XPath using value match
+                        lines.append(f"    target_xpath_1 = f\"{dailog_box_container}//input[contains(@aria-label, 'Line number') and @value='{{max_line_number}}']/ancestor::div[@role='gridcell']/following-sibling::div{xpath[0]}\"")
+                        lines.append(f"    target_xpath_2 = f\"{dailog_box_container}//input[contains(@aria-label, 'Line number') and @value='{{max_line_number}}']/ancestor::div[@role='gridcell']/following-sibling::div{xpath[1]}\"")
+                        lines.append(f"    if Interactions.check_element_exist(driver, By.XPATH, target_xpath_1):")
+                        lines.append(f"        Interactions.clear_input_field_and_send_keys(driver, By.XPATH, target_xpath_1, \"{date}\")")
+
+                        lines.append(f"    elif Interactions.check_element_exist(driver, By.XPATH, target_xpath_2):")
+                        lines.append(f"        Interactions.clear_input_field_and_send_keys(driver, By.XPATH, target_xpath_2, \"{date}\")")
+
+                        lines.append("    else:")
+                        lines.append(f"        print(\"Element not found in either dynamic or fallback XPath for: {name}\")")
+                    else:
+                        lines.append(f"if(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[0]}\")):")
+                        lines.append(f"    Interactions.get_locator(driver, By.XPATH, \"{xpath[1]}\")")
+                        lines.append(f"    Interactions.clear_input_field_and_send_keys(driver, By.XPATH, \"{xpath[0]}\", \"{date}\")")
+                        lines.append(f"elif(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[1]}\")):")
+                        lines.append(f"    Interactions.clear_input_field_and_send_keys(driver, By.XPATH, \"{xpath[1]}\", \"{date}\")")
                 elif ctype == "real":
-                    dailog_box_container = "//div[@class='DialogContent group editMode no-caption-group col1 fill-width layout-container layout-vertical']"
+                    dailog_box_container = "//div[@class='dialog-popup-content editMode Dialog fill-width fill-height layout-container layout-vertical']"
                     if add_line_flag:
                         lines.append("line_number_input = \"//div[text()='Item number'  or text()='Line number' ]/ancestor::div[contains(@class,'fixedDataTableRowLayout_')]/ancestor::div[@role='grid']//input[contains(@aria-label,'Line number')]\"")
                         lines.append("count = Interactions.check_for_item_number_count(driver, By.XPATH, line_number_input)")
-                        lines.append("row_number = Interactions.get_row_number_for_line_item(driver, By.XPATH, line_number_input,count)")
+                        lines.append("row_number = Interactions.get_max_value_from_elements(driver, By.XPATH, line_number_input,count)")
                         lines.append(f"if(Interactions.check_input_ancestor_is_table(driver, By.XPATH, \"{xpath[0]}\") or Interactions.check_input_ancestor_is_table(driver, By.XPATH, \"{xpath[1]}\") ):")
                         lines.append(f"    #clicking inside grid: {name}")
                         lines.append(f"    if(Interactions.check_element_exist(driver, By.XPATH, \"{'('+xpath[0] +')["+row_number+"]'}\")):")
@@ -457,15 +492,38 @@ def generate_selenium_script(controls):
                         lines.append(f"    elif(Interactions.check_element_exist(driver, By.XPATH, \"{'('+xpath[1] +')["+row_number+"]'}\")):")
                         lines.append(f"          ActionChains(driver).move_to_element(driver.find_element(By.XPATH, \"{'('+xpath[1] +')["+row_number+"]'}\")).perform()")
                         lines.append(f"          Interactions.wait_and_send_keys(driver, By.XPATH, \"{'('+xpath[1] +')["+row_number+"]'}\", \"{value}\")")
+                    # elif dailog_box_line_items:
+                    #     if new_line_item_in_dailog_box_item:
+                    #         lines.append(f"dailog_box_line_count = Interactions.check_for_line_item_count(driver, By.XPATH, \"{dailog_box_container + "//input[contains(@aria-label,'Line number')]"}\")")
+                    #         lines.append(f"max_line_number = Interactions.get_row_number_for_line_item(driver, By.XPATH, \"{dailog_box_container}//input[contains(@aria-label,'Line number')]\",dailog_box_line_count)")
+                    #     lines.append(f"if(Interactions.check_element_exist(driver, By.XPATH, \"{dailog_box_container}\")):")
+                    #     lines.append(f"    if(Interactions.check_element_exist(driver, By.XPATH, f\"({dailog_box_container + xpath[0]})[{{max_line_number}}]\") or Interactions.check_input_ancestor_is_table(driver, By.XPATH, \"({dailog_box_container + xpath[1]})[{{max_line_number}}]\")):")
+                    #     lines.append(f"        Interactions.clear_input_field_and_send_keys(driver, By.XPATH, f\"({dailog_box_container + xpath[0]})[{{max_line_number}}]\", \"{value}\")")
+                    #     lines.append(f"    elif(Interactions.check_element_exist(driver, By.XPATH, f\"({dailog_box_container + xpath[1]})[{{max_line_number}}]\")):")
+                    #     lines.append(f"        Interactions.clear_input_field_and_send_keys(driver, By.XPATH, f\"({dailog_box_container + xpath[1]})[{{max_line_number}}]\", \"{value}\")")
+                    #     lines.append("    else:")
+                    #     lines.append(f"        print(\"Element not found in either primary or fallback XPath for: {name}\")")
                     elif dailog_box_line_items:
                         if new_line_item_in_dailog_box_item:
-                            lines.append(f"dailog_box_line_count = Interactions.check_for_line_item_count(driver, By.XPATH, \"{dailog_box_container + "//input[contains(@aria-label,'Line number')]"}\")")
-                            lines.append(f"row_number = Interactions.get_row_number_for_line_item(driver, By.XPATH, \"{dailog_box_container}//input[contains(@aria-label,'Line number')]\",dailog_box_line_count)")
-                        lines.append(f"if(Interactions.check_element_exist(driver, By.XPATH, \"{dailog_box_container}\")):")
-                        lines.append(f"     if(Interactions.check_input_ancestor_is_table(driver, By.XPATH, \"{xpath[0]}\") or Interactions.check_input_ancestor_is_table(driver, By.XPATH, \"{xpath[1]}\") ):")
-                        lines.append(f"          Interactions.clear_input_field_and_send_keys(driver, By.XPATH, \"{dailog_box_container+xpath[0]}\", \"{value}\")")
-                        lines.append(f"     elif(Interactions.check_element_exist(driver, By.XPATH,\"{dailog_box_container+xpath[1]}\")):")
-                        lines.append(f"          Interactions.clear_input_field_and_send_keys(driver, By.XPATH, \"{dailog_box_container+xpath[1]}\", \"{value}\")")
+                            if not new_line_in_dailog_already_exist:
+                                new_line_in_dailog_already_exist = True
+                                lines.append(f"dailog_box_line_count = Interactions.check_for_line_item_count(driver, By.XPATH, \"{dailog_box_container}//input[contains(@aria-label,'Line number')]\")")
+                                lines.append(f"max_line_number = Interactions.get_max_value_from_elements(driver, By.XPATH, \"{dailog_box_container}//input[contains(@aria-label,'Line number')]\", dailog_box_line_count)")
+
+                        lines.append(f"if Interactions.check_element_exist(driver, By.XPATH, \"{dailog_box_container}\"):")
+
+                        # Generate dynamic XPath using value match
+                        lines.append(f"    target_xpath_1 = f\"{dailog_box_container}//input[contains(@aria-label, 'Line number') and @value='{{max_line_number}}']/ancestor::div[@role='gridcell']/following-sibling::div{xpath[0]}\"")
+                        lines.append(f"    target_xpath_2 = f\"{dailog_box_container}//input[contains(@aria-label, 'Line number') and @value='{{max_line_number}}']/ancestor::div[@role='gridcell']/following-sibling::div{xpath[1]}\"")
+                        lines.append(f"    if Interactions.check_element_exist(driver, By.XPATH, target_xpath_1):")
+                        lines.append(f"        Interactions.clear_input_field_and_send_keys(driver, By.XPATH, target_xpath_1, \"{value}\")")
+
+                        lines.append(f"    elif Interactions.check_element_exist(driver, By.XPATH, target_xpath_2):")
+                        lines.append(f"        Interactions.clear_input_field_and_send_keys(driver, By.XPATH, target_xpath_2, \"{value}\")")
+
+                        lines.append("    else:")
+                        lines.append(f"        print(\"Element not found in either dynamic or fallback XPath for: {name}\")")
+
                     else:
                         lines.append(f"if(Interactions.check_input_ancestor_is_table(driver, By.XPATH, \"{xpath[0]}\") or Interactions.check_input_ancestor_is_table(driver, By.XPATH, \"{xpath[1]}\") ):")
                         lines.append(f"    #clicking inside grid: {name}")
@@ -603,7 +661,6 @@ def generate_selenium_script(controls):
                         else:
                             lines.append("\"Skipping grid since previous was input\"")
                     elif select_a_grid_or_click_a_input_anchor_flag == "select_row":
-                        print("selecting row in grid")
                         lines.append(f"# Clicking button: {name}")
                         lines.append(f"user_input = input(\"Press data to select: \")")
                         lines.append(f"Interactions.scroll_and_click_row(driver, By.XPATH, \"{container}\", f\"//input[@value='{{user_input}}']/ancestor::div[@class='fixedDataTableRowLayout_body']/div[1]//div[@role='checkbox']\")")

@@ -292,34 +292,6 @@ def click_back_button(driver, by, base_xpath,timeout=10):
         except Exception as e:
             print(f"Attempt {i} failed for xpath : {xpath}")
 
-# def scroll_and_click_row(driver, by, container_xpath, target_xpath, timeout=10, max_scrolls=20):
-#     time.sleep(2)
-#     try:
-#         actions = ActionChains(driver)
-#         container = WebDriverWait(driver, timeout).until(
-#             EC.presence_of_element_located((by, container_xpath))
-#         )
-#         scroll_driection = None
-#         count = container.get_attribute("aria-rowcount")
-#         if(check_element_exist(driver, by, f"//div[contains(@class,'fixedDataTableRowLayout_')]/div[@aria-rowindex='{count}']")):
-#             scroll_driection = Keys.PAGE_UP
-#         else:
-#             scroll_driection = Keys.PAGE_DOWN
-#         for _ in range(max_scrolls):
-#             try:
-#                 element_to_click = WebDriverWait(driver, 1).until(
-#                     EC.visibility_of_element_located((by, target_xpath))
-#                 )
-#                 element_to_click.click()
-#                 return
-#             except TimeoutException:
-#                 actions.move_to_element(container).click().send_keys(scroll_driection).perform()
-#                 time.sleep(0.5)
-
-#         raise TimeoutException(f"Element {target_xpath} not found after scrolling.")
-
-#     except TimeoutException as e:
-#         print(f"Timeout: {e}")
 
 def check_input_ancestor_is_table(driver, by, value_xpath, timeout=10):
     """
@@ -335,7 +307,6 @@ def check_input_ancestor_is_table(driver, by, value_xpath, timeout=10):
     except TimeoutException:
         return False
    
-    
 
 def extract_quickfilter_value(description):
     match = re.search(r"with a value of '([^']+)'", description)
@@ -484,8 +455,6 @@ def get_row_number_for_line_item(driver, by, line_item_container, total_items_co
         for i in range(1, total_items_count + 1):
             line_indexed_xpath = f"({line_number_xpath})[{i}]"
             item_indexed_xpath = f"({item_number_xpath})[{i}]"
-            print(line_indexed_xpath)
-            print(item_indexed_xpath)
             try:
                 item_element = WebDriverWait(driver, timeout).until(
                     EC.presence_of_element_located((by, line_indexed_xpath))
@@ -518,24 +487,26 @@ def check_element_has_child_elements(driver, by, element_xpath, timeout=10):
     except TimeoutException:
         return False
 
-def get_max_value_from_elements(driver, by, element_xpath, timeout=10):
+def get_max_value_from_elements(driver, by, element_xpath, count, timeout=10):
+    max_value = 0
     try:
-        elements = WebDriverWait(driver, timeout).until(
-            EC.presence_of_all_elements_located((by, element_xpath))
-        )
-        # Extract numeric values and find the maximum
-        max_value = 0
-        for i in range(1, len(elements) + 1):
+        for i in range(1, count + 1):  # Include the last element
             indexed_xpath = f"({element_xpath})[{i}]"
             element = WebDriverWait(driver, timeout).until(
                 EC.presence_of_element_located((by, indexed_xpath))
             )
-            value = int(element.get_attribute("value"))
-            if value > max_value:
-                max_value = value
-        
+            raw_value = element.get_attribute("value")
+            try:
+                value = int(raw_value)
+                if value > max_value:
+                    max_value = value
+            except (ValueError, TypeError):
+                print(f"Warning: Could not convert value '{raw_value}' to int at index {i}")
+                continue
+
         return max_value
     except TimeoutException:
+        print("Timeout while waiting for elements.")
         return None
     
 
