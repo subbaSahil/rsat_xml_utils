@@ -146,6 +146,7 @@ def generate_selenium_script(controls):
     input_flag_for_grid = False
     first_occurence_of_navigation = False
     add_line_flag = False
+    dailog_box_line_items = False
     lines = [
         "from selenium import webdriver",
         "from selenium.webdriver.common.by import By",
@@ -162,7 +163,8 @@ def generate_selenium_script(controls):
         "filter_manager_cloumn_last_opened = \"\"",
         "filter_manager_dropdown_item_index = 1\n",
         "column_to_open = \"\"",
-        "user_input = None",
+        "user_input = None\n",
+        "save_line_items_without_errors = False\n",
         # "Interactions.wait_and_click(driver, By.XPATH, \"//div[@aria-label='Modules']\")\n"
     ]
 
@@ -216,9 +218,9 @@ def generate_selenium_script(controls):
                 new_or_edit_or_save = "Edit"
             elif description == "Click New.":
                 new_or_edit_or_save = "New"
-            elif description == "Click Save.":
-                if add_line_flag == True:
-                    add_line_flag = False    
+            # elif description == "Click Save.":
+            #     if add_line_flag == True:
+            #         add_line_flag = False    
 
             elif description.strip() == "In the list, find and select the desired record." :
                 grid_for_table_or_data_selection= "table"
@@ -234,7 +236,11 @@ def generate_selenium_script(controls):
                 lines.append("# going to edit view mode")
                 lines.append("Interactions.click_back_button(driver, By.XPATH, \"//button[@data-dyn-controlname='SystemDefinedViewEditButton']\")")
                 lines.append("time.sleep(1)")
-                continue       
+                continue  
+
+            elif previous_control_description == "Click Purchase order line." and description.strip() == "Click Delivery schedule.":
+                dailog_box_line_items = True
+
             xpath = generate_xpath_from_control(ctype, name,label, description, value,second_word)
 
             multi_input_desc = [
@@ -286,10 +292,16 @@ def generate_selenium_script(controls):
                     lines.append(f"     Interactions.wait_and_click(driver, By.XPATH, \"{xpath[0]}\")")
                     lines.append(f"elif(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[1]}\")):")
                     lines.append(f"     Interactions.wait_and_click(driver, By.XPATH, \"{xpath[1]}\")")
-                    if add_line_flag and ctype == "commandbutton":
+                    if add_line_flag and ctype == "commandbutton" and description == "Click Add line.":
                         lines.append("line_number_input = \"//div[text()='Item number'  or text()='Line number' ]/ancestor::div[contains(@class,'fixedDataTableRowLayout_')]/ancestor::div[@role='grid']//input[contains(@aria-label,'Line number')]\"")
                         lines.append("count = Interactions.check_for_item_number_count(driver, By.XPATH, line_number_input)")
                         lines.append("row_number = Interactions.get_row_number_for_line_item(driver, By.XPATH, line_number_input,count)")
+                    # elif add_line_flag and ctype == "commandbutton" and description == "Click Save.":
+                    #     lines.append("if Interactions.check_element_has_child_elements(driver, By.XPATH, \"//div[@class='messageBar-messageRegion']//ol\") <=0:")
+                    #     lines.append("     print(\"There are no errors in the form, please check the messages.\")")
+                         
+                    #     lines.append("else:")
+                    #     lines.append("     print(\"There are errors in the form, please check the messages.\")")
                 elif ctype in ["menubutton", "menuitem"]:
                     lines.append(f"if(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[0]}\")):")
                     lines.append(f"     Interactions.wait_and_click(driver, By.XPATH, \"{xpath[0]}\")")
@@ -318,6 +330,7 @@ def generate_selenium_script(controls):
                     lines.append(f"          ActionChains(driver).move_to_element(driver.find_element(By.XPATH, \"{xpath[2]}\")).perform()")
                     lines.append(f"          Interactions.wait_and_send_keys(driver, By.XPATH, \"{xpath[2]}\", \"{value}\")")
                 elif ctype in ["input" , "referencegroup"] :
+                    dailog_box_container = "//div[@class='DialogContent group editMode no-caption-group col1 fill-width layout-container layout-vertical']"
                     edited_value = value
                     # if ctype == "input":
                     #     input_name = xpath[0]
@@ -349,6 +362,10 @@ def generate_selenium_script(controls):
                         lines.append(f"    elif(Interactions.check_element_exist(driver, By.XPATH, \"{'('+xpath[1] +')["+row_number+"]'}\")):")
                         lines.append(f"          ActionChains(driver).move_to_element(driver.find_element(By.XPATH, \"{'('+xpath[1] +')["+row_number+"]'}\")).perform()")
                         lines.append(f"          Interactions.wait_and_send_keys(driver, By.XPATH, \"{'('+xpath[1] +')["+row_number+"]'}\", \"{value}\")")
+                    elif dailog_box_line_items:
+                        lines.append(f"if(Interactions.check_element_exist(driver, By.XPATH, {dailog_box_container})):")
+                        lines.append(f"     if(Interactions.check_input_ancestor_is_table(driver, By.XPATH, \"{xpath[0]}\") or Interactions.check_input_ancestor_is_table(driver, By.XPATH, \"{xpath[1]}\") ):")
+                        lines.append(f"          Interactions.")
                     else:
                         lines.append(f"# Inputting into: {name}")
                         lines.append(f"if(Interactions.check_input_ancestor_is_table(driver, By.XPATH, \"{xpath[0]}\") or Interactions.check_input_ancestor_is_table(driver, By.XPATH, \"{xpath[1]}\") ):")
@@ -574,7 +591,10 @@ def generate_selenium_script(controls):
                                 lines.append(f"Interactions.press_enter(driver, By.XPATH, \"//input[@value='\"+user_input+\"']\")")
                         elif  previous_control_type == "quickfilter":
                                 lines.append(f"# Clicking button: {name}")
-                                lines.append(f"Interactions.wait_and_click(driver, By.XPATH, f\"//input[@value='{quickFilterValue}']/ancestor::div[@class='fixedDataTableRowLayout_body']/div[1]//div[@role='checkbox']\")")
+                                lines.append(f"if Interactions.check_element_exist(driver, By.XPATH, f\"//input[@value='{quickFilterValue}']/ancestor::div[@class='fixedDataTableRowLayout_body']/div[1]//div[@role='checkbox']\"):")
+                                lines.append(f"     Interactions.wait_and_click(driver, By.XPATH, f\"//input[@value='{quickFilterValue}']/ancestor::div[@class='fixedDataTableRowLayout_body']/div[1]//div[@role='checkbox']\")")
+                                lines.append("else:")
+                                lines.append(f"     Interactions.wait_and_click(driver, By.XPATH, f\"//input[@value='{quickFilterValue}']\")")
                                 lines.append(f"Interactions.press_enter(driver, By.XPATH, \"//input[@value='{quickFilterValue}']\")")
                         elif previous_control_type == "referencegroup":
                             lines.append(f"# Clicking button: {name}")
