@@ -465,7 +465,7 @@ def scroll_into_view(driver, by, value, timeout=10):
 
 
 
-def check_for_item_number_count(driver, by, item_number_xpath, timeout=10):
+def check_for_line_item_count(driver, by, item_number_xpath, timeout=10):
     try:
         item_number_count = WebDriverWait(driver, timeout).until(
             EC.presence_of_all_elements_located((by, item_number_xpath))
@@ -477,16 +477,25 @@ def check_for_item_number_count(driver, by, item_number_xpath, timeout=10):
         print("Item elements not found within timeout.")
         return 0
 
-def get_row_number_for_line_item(driver, by, item_number_xpath, total_items_count, timeout=10):
+def get_row_number_for_line_item(driver, by, line_item_container, total_items_count, timeout=10):
+    line_number_xpath = line_item_container+"//input[contains(@aria-label,'Line number')]"
+    item_number_xpath = line_item_container+"//input[contains(@aria-label,'Item number')]"
     try:
         for i in range(1, total_items_count + 1):
-            indexed_xpath = f"({item_number_xpath})[{i}]"
+            line_indexed_xpath = f"({line_number_xpath})[{i}]"
+            item_indexed_xpath = f"({item_number_xpath})[{i}]"
+            print(line_indexed_xpath)
+            print(item_indexed_xpath)
             try:
                 item_element = WebDriverWait(driver, timeout).until(
-                    EC.presence_of_element_located((by, indexed_xpath))
+                    EC.presence_of_element_located((by, line_indexed_xpath))
+                )
+                item_element_2 = WebDriverWait(driver, timeout).until(
+                    EC.presence_of_element_located((by, item_indexed_xpath))
                 )
                 value_attr = item_element.get_attribute("value")
-                if not value_attr:
+                value_attr_2 = item_element_2.get_attribute("value")
+                if not value_attr and not value_attr_2:
                     return str(i)
                       # Return the row number of the first visible item
             except TimeoutException:
