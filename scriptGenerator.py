@@ -405,6 +405,11 @@ def generate_selenium_script(controls):
                     #         lines.append(f"elif(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[1]}\")):")
                     #         lines.append(f"    locator=Interactions.get_locator(driver, By.XPATH, \"{xpath[1]}\")")
                     #         lines.append(f"    Interactions.wait_and_send_keys(driver, By.XPATH, locator, \"{value}\")")
+                elif ctype == "listbox":
+                    lines.append(f"# Clicking listbox: {name}")
+                    lines.append(f"Interactions.wait_and_click(driver, By.XPATH, \"{xpath}\")")
+ 
+               
 
                 elif ctype in["quickfilter"]:
                     quickFilterValue = filtervalue
@@ -480,10 +485,10 @@ def generate_selenium_script(controls):
                 elif ctype == "combobox":
                     lines.append(f"# Clicking combobox: {name}")
                     lines.append(f"if Interactions.check_element_exist(driver, By.XPATH, \"{xpath[0]}\"):")
-                    lines.append(f"    Interactions.wait_and_click(driver, By.XPATH, \"{xpath[0]}\")")
-                    lines.append(f"    if Interactions.check_element_exist(driver, By.XPATH, \"{xpath[1]}\"):")
-                    lines.append(f"        Interactions.wait_and_click(driver, By.XPATH, \"{xpath[1]}\")")
-                    lines.append(f"    else: Interactions.scroll(driver, By.XPATH, \"{xpath[2]}\", f\"{xpath[1]}\")")
+                    lines.append(f"     Interactions.wait_and_click(driver, By.XPATH, \"{xpath[0]}\")")
+                    lines.append(f"     if Interactions.check_element_exist(driver, By.XPATH, \"{xpath[1]}\"):")
+                    lines.append(f"         Interactions.wait_and_click(driver, By.XPATH, \"{xpath[1]}\")")
+                    lines.append(f"     else:Interactions.scroll_and_click_dropdown_item(driver, \"{xpath[2]}\",By.XPATH, \"{xpath[1]}\")")
                 elif ctype == "appbartab":
                     lines.append(f"# Clicking (default) on: {name}")
                     lines.append("time.sleep(3)")

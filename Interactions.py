@@ -537,3 +537,28 @@ def get_max_value_from_elements(driver, by, element_xpath, timeout=10):
         return max_value
     except TimeoutException:
         return None
+    
+
+def scroll_and_click_dropdown_item(driver, container_xpath, target_by, target_locator, timeout=10, max_scrolls=30):
+    try:
+        container = WebDriverWait(driver, timeout).until(
+            EC.presence_of_element_located((By.XPATH, container_xpath))
+        )
+ 
+        for _ in range(max_scrolls):
+            try:
+                target = WebDriverWait(driver, 1).until(
+                    EC.element_to_be_clickable((target_by, target_locator))
+                )
+                target.click()
+                print(f"✅ Clicked target: {target_locator}")
+                return True
+            except:
+                # Scroll container using JavaScript
+                driver.execute_script("arguments[0].scrollTop = arguments[0].scrollTop + arguments[0].offsetHeight;", container)
+                time.sleep(0.3)
+ 
+        raise Exception(f"❌ Could not find target after scrolling: {target_locator}")
+    except Exception as e:
+        print(f"[scroll_and_click_dropdown_item] Error: {e}")
+        return False

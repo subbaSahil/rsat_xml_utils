@@ -55,5 +55,7 @@ def generate_xpath_from_control(control_type, control_name, control_label, descr
         return ["//span[text()='Apply']//ancestor::button" ,
                 "//span[text()='Reset']//ancestor::button",
                 "//span[text()='Add']//ancestor::button"
-        ]  
+        ]
+    elif control_type == "listbox":
+        return f"//ul[contains(@id,'{control_name}')]//li[@data-dyn-index='{value}']"  
  
