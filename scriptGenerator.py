@@ -221,6 +221,10 @@ def generate_selenium_script(controls):
             elif description == "Click New.":
                 if dailog_box_line_items:
                     new_line_item_in_dailog_box_item = True
+            elif previous_control_description == "Click OK." and description == "Click Yes.":
+                if dailog_box_line_items:
+                    new_line_in_dailog_already_exist = False
+                    dailog_box_line_items = False
 
             # elif description == "Click Save.":
             #     if add_line_flag == True:
@@ -357,7 +361,7 @@ def generate_selenium_script(controls):
                             lines.append("user_input = input('Enter the value for the hyperlink: ')")
                             lines.append("Interactions.wait_and_click(driver, By.XPATH, \"//input[@value='\"+user_input+\"']\")")
                             lines.append(f"Interactions.press_enter(driver, By.XPATH, \"//input[@value='\"+user_input+\"']\")")
-                    elif add_line_flag:
+                    elif add_line_flag and not dailog_box_line_items:
                         lines.append(f"if(Interactions.check_input_ancestor_is_table(driver, By.XPATH, \"{xpath[0]}\") or Interactions.check_input_ancestor_is_table(driver, By.XPATH, \"{xpath[1]}\") ):")
                         lines.append(f"    #clicking inside grid: {name}")
                         lines.append(f"    if(Interactions.check_element_exist(driver, By.XPATH, \"{'('+xpath[0] +')["+row_number+"]'}\")):")
@@ -480,7 +484,7 @@ def generate_selenium_script(controls):
                         lines.append(f"    Interactions.clear_input_field_and_send_keys(driver, By.XPATH, \"{xpath[1]}\", \"{date}\")")
                 elif ctype == "real":
                     dailog_box_container = "//div[@class='dialog-popup-content editMode Dialog fill-width fill-height layout-container layout-vertical']"
-                    if add_line_flag:
+                    if add_line_flag and not dailog_box_line_items:
                         lines.append("line_number_input = \"//div[text()='Item number'  or text()='Line number' ]/ancestor::div[contains(@class,'fixedDataTableRowLayout_')]/ancestor::div[@role='grid']//input[contains(@aria-label,'Line number')]\"")
                         lines.append("count = Interactions.check_for_item_number_count(driver, By.XPATH, line_number_input)")
                         lines.append("row_number = Interactions.get_max_value_from_elements(driver, By.XPATH, line_number_input,count)")
