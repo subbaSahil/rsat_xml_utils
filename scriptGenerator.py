@@ -225,9 +225,9 @@ def generate_selenium_script(controls):
                 if dailog_box_line_items:
                     dailog_box_line_items = False
 
-            # elif description == "Click Save.":
-            #     if add_line_flag == True:
-            #         add_line_flag = False    
+            elif description == "Click Save.":
+                if add_line_flag == True:
+                    add_line_flag = False    
 
             elif description.strip() == "In the list, find and select the desired record." :
                 grid_for_table_or_data_selection= "table"
@@ -236,7 +236,7 @@ def generate_selenium_script(controls):
                 select_a_grid_or_click_a_input_anchor_flag = "click_row"
             # elif description.startswith("In the list, select row"):
             #     grid_for_table_or_data_selection = "data_selection"
-            elif description.strip() == "Click Add line.":
+            elif description == "Click Add line.":
                 add_line_flag = True
 
             elif description and description.strip() == "Use the shortcut for switching to View or Edit mode.":
@@ -485,10 +485,10 @@ def generate_selenium_script(controls):
                         lines.append(f"    Interactions.clear_input_field_and_send_keys(driver, By.XPATH, \"{xpath[1]}\", \"{date}\")")
                 elif ctype == "real":
                     dailog_box_container = "//div[@class='dialog-popup-content editMode Dialog fill-width fill-height layout-container layout-vertical']"
-                    if add_line_flag and not dailog_box_line_items:
+                    if add_line_flag:
                         lines.append("line_number_input = \"//div[text()='Item number'  or text()='Line number' ]/ancestor::div[contains(@class,'fixedDataTableRowLayout_')]/ancestor::div[@role='grid']//input[contains(@aria-label,'Line number')]\"")
                         lines.append("count = Interactions.check_for_line_item_count(driver, By.XPATH, line_number_input)")
-                        lines.append("row_number = Interactions.get_max_value_from_elements(driver, By.XPATH, line_number_input,count)")
+                        lines.append("row_number = Interactions.get_row_number_for_line_item(driver, By.XPATH, \"//div[text()='Item number'  or text()='Line number' ]/ancestor::div[contains(@class,'fixedDataTableRowLayout_')]/ancestor::div[@role='grid']\",count)")
                         lines.append(f"if(Interactions.check_input_ancestor_is_table(driver, By.XPATH, \"{xpath[0]}\") or Interactions.check_input_ancestor_is_table(driver, By.XPATH, \"{xpath[1]}\") ):")
                         lines.append(f"    #clicking inside grid: {name}")
                         lines.append(f"    if(Interactions.check_element_exist(driver, By.XPATH, \"{'('+xpath[0] +')["+row_number+"]'}\")):")
