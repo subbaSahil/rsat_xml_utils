@@ -358,8 +358,12 @@ def generate_selenium_script(controls):
                             lines.append("Interactions.wait_and_click(driver, By.XPATH, \"//div[@name='EcoResProduct_DisplayProductNumber' and text()='\"+user_input+\"']\")")
                         else:
                             lines.append("user_input = input('Enter the value for the hyperlink: ')")
-                            lines.append("Interactions.wait_and_click(driver, By.XPATH, \"//input[@value='\"+user_input+\"']\")")
-                            lines.append(f"Interactions.press_enter(driver, By.XPATH, \"//input[@value='\"+user_input+\"']\")")
+                            lines.append(f"if Interactions.check_element_exist(driver, By.XPATH, \"//div[contains(@data-dyn-savedtooltip,'\"+user_input+\"')]/preceding-sibling::label[text()='{label}']\"):")
+                            lines.append(f"     Interactions.wait_and_click(driver, By.XPATH,  \"//div[contains(@data-dyn-savedtooltip,'\"+user_input+\"')]/preceding-sibling::label[text()='{label}']\")")
+                            lines.append(f"     Interactions.press_enter(driver, By.XPATH, \"//div[contains(@data-dyn-savedtooltip,'\"+user_input+\"')]/preceding-sibling::label[text()='{label}']\")")
+                            lines.append(f"elif Interactions.check_element_exist(driver, By.XPATH, \"//input[contains(@title,'\"+user_input+\"')]/preceding-sibling::label[text()='{label}']\"):")
+                            lines.append(f"     Interactions.wait_and_click(driver, By.XPATH,  \"//input[contains(@title,'\"+user_input+\"')]/preceding-sibling::label[text()='{label}']\")")
+                            lines.append(f"     Interactions.press_enter(driver, By.XPATH, \"//input[contains(@title,'\"+user_input+\"')]/preceding-sibling::label[text()='{label}']\")")
                     elif add_line_flag and not dailog_box_line_items:
                         lines.append(f"if(Interactions.check_input_ancestor_is_table(driver, By.XPATH, \"{xpath[0]}\") or Interactions.check_input_ancestor_is_table(driver, By.XPATH, \"{xpath[1]}\") ):")
                         lines.append(f"    #clicking inside grid: {name}")
@@ -485,7 +489,7 @@ def generate_selenium_script(controls):
                         lines.append(f"    Interactions.clear_input_field_and_send_keys(driver, By.XPATH, \"{xpath[1]}\", \"{date}\")")
                 elif ctype == "real":
                     dailog_box_container = "//div[@class='dialog-popup-content editMode Dialog fill-width fill-height layout-container layout-vertical']"
-                    if add_line_flag:
+                    if add_line_flag and not dailog_box_line_items:
                         # lines.append("line_number_input = \"//div[text()='Item number'  or text()='Line number' ]/ancestor::div[contains(@class,'fixedDataTableRowLayout_')]/ancestor::div[@role='grid']//input[contains(@aria-label,'Line number')]\"")
                         # lines.append("count = Interactions.check_for_line_item_count(driver, By.XPATH, line_number_input)")
                         # lines.append("row_number = Interactions.get_row_number_for_line_item(driver, By.XPATH, \"//div[text()='Item number'  or text()='Line number' ]/ancestor::div[contains(@class,'fixedDataTableRowLayout_')]/ancestor::div[@role='grid']\",count)")
@@ -749,4 +753,4 @@ def getScript():
     return selenium_code
 print(f"✅ Selenium script generated in: {OUTPUT_SCRIPT}")
 
-getScript()
+getScript() 
