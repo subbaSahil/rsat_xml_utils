@@ -85,8 +85,6 @@ elif(Interactions.check_element_exist(driver, By.XPATH, "//button[@aria-label='A
      Interactions.wait_and_click(driver, By.XPATH, "//button[@aria-label='Add line']")
 count = Interactions.check_for_line_item_count(driver, By.XPATH, "//div[text()='Item number'  or text()='Line number' ]/ancestor::div[contains(@class,'fixedDataTableRowLayout_')]/ancestor::div[@role='grid']//input[contains(@aria-label,'Line number')]")
 row_number = Interactions.get_row_number_for_line_item(driver, By.XPATH, "//div[text()='Item number'  or text()='Line number' ]/ancestor::div[contains(@class,'fixedDataTableRowLayout_')]/ancestor::div[@role='grid']",count)
-print(row_number)
-
 if(Interactions.check_input_ancestor_is_table(driver, By.XPATH, "//input[contains(@name,'PurchLine_ItemId')]") or Interactions.check_input_ancestor_is_table(driver, By.XPATH, "//input[contains(@aria-label,'Item number')]") ):
     #clicking inside grid: PurchLine_ItemId
     if(Interactions.check_element_exist(driver, By.XPATH, "(//input[contains(@name,'PurchLine_ItemId')])["+row_number+"]")):
@@ -97,10 +95,6 @@ if(Interactions.check_input_ancestor_is_table(driver, By.XPATH, "//input[contain
           Interactions.wait_and_send_keys(driver, By.XPATH, "(//input[contains(@aria-label,'Item number')])["+row_number+"]", "0001")
 "Skipping grid since previous was control was input"
 "Skipping grid since it is deafault behavior of d365"
-line_number_input = "//div[text()='Item number'  or text()='Line number' ]/ancestor::div[contains(@class,'fixedDataTableRowLayout_')]/ancestor::div[@role='grid']//input[contains(@aria-label,'Line number')]"
-count = Interactions.check_for_line_item_count(driver, By.XPATH, line_number_input)
-row_number = Interactions.get_row_number_for_line_item(driver, By.XPATH, "//div[text()='Item number'  or text()='Line number' ]/ancestor::div[contains(@class,'fixedDataTableRowLayout_')]/ancestor::div[@role='grid']",count)
-print(row_number)
 if(Interactions.check_input_ancestor_is_table(driver, By.XPATH, "//input[contains(@name,'PurchLine_PurchQtyGrid')]") or Interactions.check_input_ancestor_is_table(driver, By.XPATH, "//input[contains(@aria-label,'Quantity')]") ):
     #clicking inside grid: PurchLine_PurchQtyGrid
     if(Interactions.check_element_exist(driver, By.XPATH, "(//input[contains(@name,'PurchLine_PurchQtyGrid')])["+row_number+"]")):
@@ -109,11 +103,6 @@ if(Interactions.check_input_ancestor_is_table(driver, By.XPATH, "//input[contain
     elif(Interactions.check_element_exist(driver, By.XPATH, "(//input[contains(@aria-label,'Quantity')])["+row_number+"]")):
           ActionChains(driver).move_to_element(driver.find_element(By.XPATH, "(//input[contains(@aria-label,'Quantity')])["+row_number+"]")).perform()
           Interactions.wait_and_send_keys(driver, By.XPATH, "(//input[contains(@aria-label,'Quantity')])["+row_number+"]", "2.00")
-line_number_input = "//div[text()='Item number'  or text()='Line number' ]/ancestor::div[contains(@class,'fixedDataTableRowLayout_')]/ancestor::div[@role='grid']//input[contains(@aria-label,'Line number')]"
-count = Interactions.check_for_line_item_count(driver, By.XPATH, line_number_input)
-row_number = Interactions.get_row_number_for_line_item(driver, By.XPATH, "//div[text()='Item number'  or text()='Line number' ]/ancestor::div[contains(@class,'fixedDataTableRowLayout_')]/ancestor::div[@role='grid']",count)
-print(row_number)
-
 if(Interactions.check_input_ancestor_is_table(driver, By.XPATH, "//input[contains(@name,'PurchLine_PurchPriceGrid')]") or Interactions.check_input_ancestor_is_table(driver, By.XPATH, "//input[contains(@aria-label,'Unit price')]") ):
     #clicking inside grid: PurchLine_PurchPriceGrid
     if(Interactions.check_element_exist(driver, By.XPATH, "(//input[contains(@name,'PurchLine_PurchPriceGrid')])["+row_number+"]")):
