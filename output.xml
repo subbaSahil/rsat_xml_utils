@@ -74,7 +74,7 @@
         <Value />
         <CommandName>Click</CommandName>
     </UserAction>
-    <UserAction Ref="i20">
+    <!-- <UserAction Ref="i20">
         <Description>Click New.</Description>
         <NodeId>i20</NodeId>
         <Sequence>15</Sequence>
@@ -83,7 +83,7 @@
         <ControlType>CommandButton</ControlType>
         <Value />
         <CommandName>Click</CommandName>
-    </UserAction>
+    </UserAction> -->
     <UserAction Ref="i22">
         <Description>In the Quantity field, enter a number.</Description>
         <NodeId>i22</NodeId>

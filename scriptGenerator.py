@@ -223,7 +223,6 @@ def generate_selenium_script(controls):
                     new_line_item_in_dailog_box_item = True
             elif previous_control_description == "Click OK." and description == "Click Yes.":
                 if dailog_box_line_items:
-                    new_line_in_dailog_already_exist = False
                     dailog_box_line_items = False
 
             # elif description == "Click Save.":
@@ -372,16 +371,17 @@ def generate_selenium_script(controls):
                         lines.append(f"          Interactions.wait_and_send_keys(driver, By.XPATH, \"{'('+xpath[1] +')["+row_number+"]'}\", \"{value}\")")
                     elif dailog_box_line_items:
                         if new_line_item_in_dailog_box_item:
-                            if not new_line_in_dailog_already_exist:
+                            if new_line_in_dailog_already_exist == False:
                                 new_line_in_dailog_already_exist = True
                                 lines.append(f"dailog_box_line_count = Interactions.check_for_line_item_count(driver, By.XPATH, \"{dailog_box_container}//input[contains(@aria-label,'Line number')]\")")
-                                lines.append(f"max_line_number = Interactions.get_max_value_from_elements(driver, By.XPATH, \"{dailog_box_container}//input[contains(@aria-label,'Line number')]\", dailog_box_line_count)")
-
+                                lines.append(f"line_number = Interactions.get_max_value_from_elements(driver, By.XPATH, \"{dailog_box_container}//input[contains(@aria-label,'Line number')]\", dailog_box_line_count)")
+                        else:
+                            lines.append("line_number = input('Enter the line number: ')")
                         lines.append(f"if Interactions.check_element_exist(driver, By.XPATH, \"{dailog_box_container}\"):")
 
                         # Generate dynamic XPath using value match
-                        lines.append(f"    target_xpath_1 = f\"{dailog_box_container}//input[contains(@aria-label, 'Line number') and @value='{{max_line_number}}']/ancestor::div[@role='gridcell']/following-sibling::div{xpath[0]}\"")
-                        lines.append(f"    target_xpath_2 = f\"{dailog_box_container}//input[contains(@aria-label, 'Line number') and @value='{{max_line_number}}']/ancestor::div[@role='gridcell']/following-sibling::div{xpath[1]}\"")
+                        lines.append(f"    target_xpath_1 = f\"{dailog_box_container}//input[contains(@aria-label, 'Line number') and @value='{{line_number}}']/ancestor::div[@role='gridcell']/following-sibling::div{xpath[0]}\"")
+                        lines.append(f"    target_xpath_2 = f\"{dailog_box_container}//input[contains(@aria-label, 'Line number') and @value='{{line_number}}']/ancestor::div[@role='gridcell']/following-sibling::div{xpath[1]}\"")
                         lines.append(f"    if Interactions.check_element_exist(driver, By.XPATH, target_xpath_1):")
                         lines.append(f"        Interactions.clear_input_field_and_send_keys(driver, By.XPATH, target_xpath_1, \"{value}\")")
 
@@ -458,16 +458,17 @@ def generate_selenium_script(controls):
                     date = convert_date_format(value)
                     if dailog_box_line_items:
                         if new_line_item_in_dailog_box_item:
-                            if not new_line_in_dailog_already_exist:
+                            if new_line_in_dailog_already_exist == False:
                                 new_line_in_dailog_already_exist = True
                                 lines.append(f"dailog_box_line_count = Interactions.check_for_line_item_count(driver, By.XPATH, \"{dailog_box_container}//input[contains(@aria-label,'Line number')]\")")
-                                lines.append(f"max_line_number = Interactions.get_max_value_from_elements(driver, By.XPATH, \"{dailog_box_container}//input[contains(@aria-label,'Line number')]\", dailog_box_line_count)")
-
+                                lines.append(f"line_number = Interactions.get_max_value_from_elements(driver, By.XPATH, \"{dailog_box_container}//input[contains(@aria-label,'Line number')]\", dailog_box_line_count)")
+                        else:
+                            lines.append("line_number = input('Enter the line number: ')")
                         lines.append(f"if Interactions.check_element_exist(driver, By.XPATH, \"{dailog_box_container}\"):")
 
                         # Generate dynamic XPath using value match
-                        lines.append(f"    target_xpath_1 = f\"{dailog_box_container}//input[contains(@aria-label, 'Line number') and @value='{{max_line_number}}']/ancestor::div[@role='gridcell']/following-sibling::div{xpath[0]}\"")
-                        lines.append(f"    target_xpath_2 = f\"{dailog_box_container}//input[contains(@aria-label, 'Line number') and @value='{{max_line_number}}']/ancestor::div[@role='gridcell']/following-sibling::div{xpath[1]}\"")
+                        lines.append(f"    target_xpath_1 = f\"{dailog_box_container}//input[contains(@aria-label, 'Line number') and @value='{{line_number}}']/ancestor::div[@role='gridcell']/following-sibling::div{xpath[0]}\"")
+                        lines.append(f"    target_xpath_2 = f\"{dailog_box_container}//input[contains(@aria-label, 'Line number') and @value='{{line_number}}']/ancestor::div[@role='gridcell']/following-sibling::div{xpath[1]}\"")
                         lines.append(f"    if Interactions.check_element_exist(driver, By.XPATH, target_xpath_1):")
                         lines.append(f"        Interactions.clear_input_field_and_send_keys(driver, By.XPATH, target_xpath_1, \"{date}\")")
 
@@ -486,7 +487,7 @@ def generate_selenium_script(controls):
                     dailog_box_container = "//div[@class='dialog-popup-content editMode Dialog fill-width fill-height layout-container layout-vertical']"
                     if add_line_flag and not dailog_box_line_items:
                         lines.append("line_number_input = \"//div[text()='Item number'  or text()='Line number' ]/ancestor::div[contains(@class,'fixedDataTableRowLayout_')]/ancestor::div[@role='grid']//input[contains(@aria-label,'Line number')]\"")
-                        lines.append("count = Interactions.check_for_item_number_count(driver, By.XPATH, line_number_input)")
+                        lines.append("count = Interactions.check_for_line_item_count(driver, By.XPATH, line_number_input)")
                         lines.append("row_number = Interactions.get_max_value_from_elements(driver, By.XPATH, line_number_input,count)")
                         lines.append(f"if(Interactions.check_input_ancestor_is_table(driver, By.XPATH, \"{xpath[0]}\") or Interactions.check_input_ancestor_is_table(driver, By.XPATH, \"{xpath[1]}\") ):")
                         lines.append(f"    #clicking inside grid: {name}")
@@ -499,26 +500,27 @@ def generate_selenium_script(controls):
                     # elif dailog_box_line_items:
                     #     if new_line_item_in_dailog_box_item:
                     #         lines.append(f"dailog_box_line_count = Interactions.check_for_line_item_count(driver, By.XPATH, \"{dailog_box_container + "//input[contains(@aria-label,'Line number')]"}\")")
-                    #         lines.append(f"max_line_number = Interactions.get_row_number_for_line_item(driver, By.XPATH, \"{dailog_box_container}//input[contains(@aria-label,'Line number')]\",dailog_box_line_count)")
+                    #         lines.append(f"line_number = Interactions.get_row_number_for_line_item(driver, By.XPATH, \"{dailog_box_container}//input[contains(@aria-label,'Line number')]\",dailog_box_line_count)")
                     #     lines.append(f"if(Interactions.check_element_exist(driver, By.XPATH, \"{dailog_box_container}\")):")
-                    #     lines.append(f"    if(Interactions.check_element_exist(driver, By.XPATH, f\"({dailog_box_container + xpath[0]})[{{max_line_number}}]\") or Interactions.check_input_ancestor_is_table(driver, By.XPATH, \"({dailog_box_container + xpath[1]})[{{max_line_number}}]\")):")
-                    #     lines.append(f"        Interactions.clear_input_field_and_send_keys(driver, By.XPATH, f\"({dailog_box_container + xpath[0]})[{{max_line_number}}]\", \"{value}\")")
-                    #     lines.append(f"    elif(Interactions.check_element_exist(driver, By.XPATH, f\"({dailog_box_container + xpath[1]})[{{max_line_number}}]\")):")
-                    #     lines.append(f"        Interactions.clear_input_field_and_send_keys(driver, By.XPATH, f\"({dailog_box_container + xpath[1]})[{{max_line_number}}]\", \"{value}\")")
+                    #     lines.append(f"    if(Interactions.check_element_exist(driver, By.XPATH, f\"({dailog_box_container + xpath[0]})[{{line_number}}]\") or Interactions.check_input_ancestor_is_table(driver, By.XPATH, \"({dailog_box_container + xpath[1]})[{{line_number}}]\")):")
+                    #     lines.append(f"        Interactions.clear_input_field_and_send_keys(driver, By.XPATH, f\"({dailog_box_container + xpath[0]})[{{line_number}}]\", \"{value}\")")
+                    #     lines.append(f"    elif(Interactions.check_element_exist(driver, By.XPATH, f\"({dailog_box_container + xpath[1]})[{{line_number}}]\")):")
+                    #     lines.append(f"        Interactions.clear_input_field_and_send_keys(driver, By.XPATH, f\"({dailog_box_container + xpath[1]})[{{line_number}}]\", \"{value}\")")
                     #     lines.append("    else:")
                     #     lines.append(f"        print(\"Element not found in either primary or fallback XPath for: {name}\")")
                     elif dailog_box_line_items:
                         if new_line_item_in_dailog_box_item:
-                            if not new_line_in_dailog_already_exist:
+                            if new_line_in_dailog_already_exist == False:
                                 new_line_in_dailog_already_exist = True
                                 lines.append(f"dailog_box_line_count = Interactions.check_for_line_item_count(driver, By.XPATH, \"{dailog_box_container}//input[contains(@aria-label,'Line number')]\")")
-                                lines.append(f"max_line_number = Interactions.get_max_value_from_elements(driver, By.XPATH, \"{dailog_box_container}//input[contains(@aria-label,'Line number')]\", dailog_box_line_count)")
-
+                                lines.append(f"line_number = Interactions.get_max_value_from_elements(driver, By.XPATH, \"{dailog_box_container}//input[contains(@aria-label,'Line number')]\", dailog_box_line_count)")
+                        else:
+                            lines.append("line_number = input('Enter the line number: ')")
                         lines.append(f"if Interactions.check_element_exist(driver, By.XPATH, \"{dailog_box_container}\"):")
 
                         # Generate dynamic XPath using value match
-                        lines.append(f"    target_xpath_1 = f\"{dailog_box_container}//input[contains(@aria-label, 'Line number') and @value='{{max_line_number}}']/ancestor::div[@role='gridcell']/following-sibling::div{xpath[0]}\"")
-                        lines.append(f"    target_xpath_2 = f\"{dailog_box_container}//input[contains(@aria-label, 'Line number') and @value='{{max_line_number}}']/ancestor::div[@role='gridcell']/following-sibling::div{xpath[1]}\"")
+                        lines.append(f"    target_xpath_1 = f\"{dailog_box_container}//input[contains(@aria-label, 'Line number') and @value='{{line_number}}']/ancestor::div[@role='gridcell']/following-sibling::div{xpath[0]}\"")
+                        lines.append(f"    target_xpath_2 = f\"{dailog_box_container}//input[contains(@aria-label, 'Line number') and @value='{{line_number}}']/ancestor::div[@role='gridcell']/following-sibling::div{xpath[1]}\"")
                         lines.append(f"    if Interactions.check_element_exist(driver, By.XPATH, target_xpath_1):")
                         lines.append(f"        Interactions.clear_input_field_and_send_keys(driver, By.XPATH, target_xpath_1, \"{value}\")")
 

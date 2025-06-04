@@ -46,15 +46,10 @@ if(Interactions.check_element_exist(driver, By.XPATH, "//button[@name='buttonDel
      Interactions.wait_and_click(driver, By.XPATH, "//button[@name='buttonDeliverySchedule']")
 elif(Interactions.check_element_exist(driver, By.XPATH, "//span[text()='Delivery schedule']/ancestor::button")):
      Interactions.wait_and_click(driver, By.XPATH, "//span[text()='Delivery schedule']/ancestor::button")
-if(Interactions.check_element_exist(driver, By.XPATH, "//button[@data-dyn-controlname='NewCommandButton']")):
-     Interactions.wait_and_click(driver, By.XPATH, "//button[@data-dyn-controlname='NewCommandButton']")
-elif(Interactions.check_element_exist(driver, By.XPATH, "//button[@aria-label='New']")):
-     Interactions.wait_and_click(driver, By.XPATH, "//button[@aria-label='New']")
-dailog_box_line_count = Interactions.check_for_line_item_count(driver, By.XPATH, "//div[@class='dialog-popup-content editMode Dialog fill-width fill-height layout-container layout-vertical']//input[contains(@aria-label,'Line number')]")
-max_line_number = Interactions.get_max_value_from_elements(driver, By.XPATH, "//div[@class='dialog-popup-content editMode Dialog fill-width fill-height layout-container layout-vertical']//input[contains(@aria-label,'Line number')]", dailog_box_line_count)
+line_number = input('Enter the line number: ')
 if Interactions.check_element_exist(driver, By.XPATH, "//div[@class='dialog-popup-content editMode Dialog fill-width fill-height layout-container layout-vertical']"):
-    target_xpath_1 = f"//div[@class='dialog-popup-content editMode Dialog fill-width fill-height layout-container layout-vertical']//input[contains(@aria-label, 'Line number') and @value='{max_line_number}']/ancestor::div[@role='gridcell']/following-sibling::div//input[contains(@name,'PurchLine_PurchQty')]"
-    target_xpath_2 = f"//div[@class='dialog-popup-content editMode Dialog fill-width fill-height layout-container layout-vertical']//input[contains(@aria-label, 'Line number') and @value='{max_line_number}']/ancestor::div[@role='gridcell']/following-sibling::div//input[contains(@aria-label,'Quantity')]"
+    target_xpath_1 = f"//div[@class='dialog-popup-content editMode Dialog fill-width fill-height layout-container layout-vertical']//input[contains(@aria-label, 'Line number') and @value='{line_number}']/ancestor::div[@role='gridcell']/following-sibling::div//input[contains(@name,'PurchLine_PurchQty')]"
+    target_xpath_2 = f"//div[@class='dialog-popup-content editMode Dialog fill-width fill-height layout-container layout-vertical']//input[contains(@aria-label, 'Line number') and @value='{line_number}']/ancestor::div[@role='gridcell']/following-sibling::div//input[contains(@aria-label,'Quantity')]"
     if Interactions.check_element_exist(driver, By.XPATH, target_xpath_1):
         Interactions.clear_input_field_and_send_keys(driver, By.XPATH, target_xpath_1, "2.00")
     elif Interactions.check_element_exist(driver, By.XPATH, target_xpath_2):
@@ -62,18 +57,20 @@ if Interactions.check_element_exist(driver, By.XPATH, "//div[@class='dialog-popu
     else:
         print("Element not found in either dynamic or fallback XPath for: PurchLine_PurchQty")
 "Skipping grid since it is deafault behavior of d365"
+line_number = input('Enter the line number: ')
 if Interactions.check_element_exist(driver, By.XPATH, "//div[@class='dialog-popup-content editMode Dialog fill-width fill-height layout-container layout-vertical']"):
-    target_xpath_1 = f"//div[@class='dialog-popup-content editMode Dialog fill-width fill-height layout-container layout-vertical']//input[contains(@aria-label, 'Line number') and @value='{max_line_number}']/ancestor::div[@role='gridcell']/following-sibling::div//input[contains(@name,'PurchLine_DeliveryDate')]"
-    target_xpath_2 = f"//div[@class='dialog-popup-content editMode Dialog fill-width fill-height layout-container layout-vertical']//input[contains(@aria-label, 'Line number') and @value='{max_line_number}']/ancestor::div[@role='gridcell']/following-sibling::div//input[contains(@aria-label,'Requested receipt date')]"
+    target_xpath_1 = f"//div[@class='dialog-popup-content editMode Dialog fill-width fill-height layout-container layout-vertical']//input[contains(@aria-label, 'Line number') and @value='{line_number}']/ancestor::div[@role='gridcell']/following-sibling::div//input[contains(@name,'PurchLine_DeliveryDate')]"
+    target_xpath_2 = f"//div[@class='dialog-popup-content editMode Dialog fill-width fill-height layout-container layout-vertical']//input[contains(@aria-label, 'Line number') and @value='{line_number}']/ancestor::div[@role='gridcell']/following-sibling::div//input[contains(@aria-label,'Requested receipt date')]"
     if Interactions.check_element_exist(driver, By.XPATH, target_xpath_1):
         Interactions.clear_input_field_and_send_keys(driver, By.XPATH, target_xpath_1, "01/31/2017")
     elif Interactions.check_element_exist(driver, By.XPATH, target_xpath_2):
         Interactions.clear_input_field_and_send_keys(driver, By.XPATH, target_xpath_2, "01/31/2017")
     else:
         print("Element not found in either dynamic or fallback XPath for: PurchLine_DeliveryDate")
+line_number = input('Enter the line number: ')
 if Interactions.check_element_exist(driver, By.XPATH, "//div[@class='dialog-popup-content editMode Dialog fill-width fill-height layout-container layout-vertical']"):
-    target_xpath_1 = f"//div[@class='dialog-popup-content editMode Dialog fill-width fill-height layout-container layout-vertical']//input[contains(@aria-label, 'Line number') and @value='{max_line_number}']/ancestor::div[@role='gridcell']/following-sibling::div//input[contains(@name,'PurchLine_ConfirmedDlv')]"
-    target_xpath_2 = f"//div[@class='dialog-popup-content editMode Dialog fill-width fill-height layout-container layout-vertical']//input[contains(@aria-label, 'Line number') and @value='{max_line_number}']/ancestor::div[@role='gridcell']/following-sibling::div//input[contains(@aria-label,'Confirmed receipt date')]"
+    target_xpath_1 = f"//div[@class='dialog-popup-content editMode Dialog fill-width fill-height layout-container layout-vertical']//input[contains(@aria-label, 'Line number') and @value='{line_number}']/ancestor::div[@role='gridcell']/following-sibling::div//input[contains(@name,'PurchLine_ConfirmedDlv')]"
+    target_xpath_2 = f"//div[@class='dialog-popup-content editMode Dialog fill-width fill-height layout-container layout-vertical']//input[contains(@aria-label, 'Line number') and @value='{line_number}']/ancestor::div[@role='gridcell']/following-sibling::div//input[contains(@aria-label,'Confirmed receipt date')]"
     if Interactions.check_element_exist(driver, By.XPATH, target_xpath_1):
         Interactions.clear_input_field_and_send_keys(driver, By.XPATH, target_xpath_1, "06/30/2025")
     elif Interactions.check_element_exist(driver, By.XPATH, target_xpath_2):
