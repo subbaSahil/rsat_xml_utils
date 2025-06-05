@@ -136,6 +136,7 @@ def generate_selenium_script(controls):
     input_name = ""
     grid_for_table_or_data_selection = ""
     previous_control_type = None
+    previous_control_name = ""
     previous_control_description = ""
     previous_user_action_value = None
     previous_control_label = None
@@ -317,26 +318,37 @@ def generate_selenium_script(controls):
                     lines.append(f"     Interactions.wait_and_click(driver, By.XPATH, \"{xpath[1]}\")")
 
                 elif ctype == "segmentedentry":
-                    lines.append(f"# Inputting into: {name}")
-                    lines.append(f"if(Interactions.check_input_ancestor_is_table(driver, By.XPATH, \"{xpath[0]}\") or Interactions.check_input_ancestor_is_table(driver, By.XPATH, \"{xpath[1]}\") ):")
-                    lines.append(f"    #clicking inside grid: {name}")
-                    lines.append(f"     if(Interactions.check_element_exist(driver, By.XPATH, \"{'('+xpath[0] +')[1]'}\")):")
-                    lines.append(f"          ActionChains(driver).move_to_element(driver.find_element(By.XPATH,\"{xpath[0]}\")).perform()")
-                    lines.append(f"          Interactions.clear_input_field_and_send_keys(driver, By.XPATH, \"{'('+xpath[0] +')[1]'}\", \"{value}\")")
-                    lines.append(f"     elif(Interactions.check_element_exist(driver, By.XPATH, \"{'('+xpath[1] +')[1]'}\")):")
-                    lines.append(f"          ActionChains(driver).move_to_element(driver.find_element(By.XPATH, \"{xpath[1]}\")).perform()")
-                    lines.append(f"          Interactions.clear_input_field_and_send_keys(driver, By.XPATH, \"{'('+xpath[1] +')[1]'}\", \"{value}\")")
-                    lines.append(f"     else:")
-                    lines.append(f"          ActionChains(driver).move_to_element(driver.find_element(By.XPATH, \"{'('+xpath[2] +')[1]'}\")).perform()")
-                    lines.append(f"          Interactions.clear_input_field_and_send_keys(driver, By.XPATH, \"{'('+xpath[2] +')[1]'}\", \"{value}\")")
-                    lines.append(f"else:")
-                    lines.append(f"     if(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[0]}\")):")
-                    lines.append(f"         Interactions.clear_input_field_and_send_keys(driver, By.XPATH, \"{xpath[0]}\", \"{value}\")")
-                    lines.append(f"     elif(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[1]}\")):")
-                    lines.append(f"         Interactions.clear_input_field_and_send_keys(driver, By.XPATH, \"{xpath[1]}\", \"{value}\")")
-                    lines.append(f"     else:")
-                    lines.append(f"          ActionChains(driver).move_to_element(driver.find_element(By.XPATH, \"{xpath[2]}\")).perform()")
-                    lines.append(f"          Interactions.clear_input_field_and_send_keys(driver, By.XPATH, \"{xpath[2]}\", \"{value}\")")
+                    if "SegmentedEntry" in name and label== "Main account":
+                        expand_button = f"//div[contains(@data-dyn-controlname,'{Interactions.remove_trailing_grid(previous_control_name)}')]/div/button"
+                        lines.append(f"if Interactions.check_aria_expanded(driver, By.XPATH, \"{expand_button}\") == True:")
+                        lines.append(f"    Interactions.wait_and_click(driver, By.XPATH, \"{expand_button}\")")
+                        if previous_control_type == "grid" and "LedgerDimension" in previous_control_name:
+                             account_input = f"(//div[@data-dyn-controlname='{name}']//input)[{previous_user_action_value}]"
+                             lines.append(f"ActionChains(driver).move_to_element(driver.find_element(By.XPATH,\"{account_input}\")).perform()")
+                             lines.append(f"Interactions.clear_input_field_and_send_keys(driver, By.XPATH, \"{account_input}\", \"{value}\")") 
+                        else:
+                            account_input = f"(//div[@data-dyn-controlname='{name}']//input)[1]"
+                            lines.append(f"     Interactions.clear_input_field_and_send_keys(driver, By.XPATH, \"{account_input}\", \"{value}\")")
+                    # lines.append(f"# Inputting into: {name}")
+                    # lines.append(f"if(Interactions.check_input_ancestor_is_table(driver, By.XPATH, \"{xpath[0]}\") or Interactions.check_input_ancestor_is_table(driver, By.XPATH, \"{xpath[1]}\") ):")
+                    # lines.append(f"    #clicking inside grid: {name}")
+                    # lines.append(f"     if(Interactions.check_element_exist(driver, By.XPATH, \"{'('+xpath[0] +')[1]'}\")):")
+                    # lines.append(f"          ActionChains(driver).move_to_element(driver.find_element(By.XPATH,\"{xpath[0]}\")).perform()")
+                    # lines.append(f"          Interactions.clear_input_field_and_send_keys(driver, By.XPATH, \"{'('+xpath[0] +')[1]'}\", \"{value}\")")
+                    # lines.append(f"     elif(Interactions.check_element_exist(driver, By.XPATH, \"{'('+xpath[1] +')[1]'}\")):")
+                    # lines.append(f"          ActionChains(driver).move_to_element(driver.find_element(By.XPATH, \"{xpath[1]}\")).perform()")
+                    # lines.append(f"          Interactions.clear_input_field_and_send_keys(driver, By.XPATH, \"{'('+xpath[1] +')[1]'}\", \"{value}\")")
+                    # lines.append(f"     else:")
+                    # lines.append(f"          ActionChains(driver).move_to_element(driver.find_element(By.XPATH, \"{'('+xpath[2] +')[1]'}\")).perform()")
+                    # lines.append(f"          Interactions.clear_input_field_and_send_keys(driver, By.XPATH, \"{'('+xpath[2] +')[1]'}\", \"{value}\")")
+                    # lines.append(f"else:")
+                    # lines.append(f"     if(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[0]}\")):")
+                    # lines.append(f"         Interactions.clear_input_field_and_send_keys(driver, By.XPATH, \"{xpath[0]}\", \"{value}\")")
+                    # lines.append(f"     elif(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[1]}\")):")
+                    # lines.append(f"         Interactions.clear_input_field_and_send_keys(driver, By.XPATH, \"{xpath[1]}\", \"{value}\")")
+                    # lines.append(f"     else:")
+                    # lines.append(f"          ActionChains(driver).move_to_element(driver.find_element(By.XPATH, \"{xpath[2]}\")).perform()")
+                    # lines.append(f"          Interactions.clear_input_field_and_send_keys(driver, By.XPATH, \"{xpath[2]}\", \"{value}\")")
                 elif ctype in ["input" , "referencegroup"] :
                     dailog_box_container = "//div[@class='DialogContent group editMode no-caption-group col1 fill-width layout-container layout-vertical']"
                     edited_value = value
@@ -367,12 +379,12 @@ def generate_selenium_script(controls):
                     elif add_line_flag and not dailog_box_line_items:
                         lines.append(f"if(Interactions.check_input_ancestor_is_table(driver, By.XPATH, \"{xpath[0]}\") or Interactions.check_input_ancestor_is_table(driver, By.XPATH, \"{xpath[1]}\") ):")
                         lines.append(f"    #clicking inside grid: {name}")
-                        lines.append(f"    if(Interactions.check_element_exist(driver, By.XPATH, \"{'('+xpath[0] +')["+row_number+"]'}\")):")
-                        lines.append(f"          ActionChains(driver).move_to_element(driver.find_element(By.XPATH,\"{'('+xpath[0] +')["+row_number+"]'}\")).perform()")
-                        lines.append(f"          Interactions.wait_and_send_keys(driver, By.XPATH, \"{'('+xpath[0] +')["+row_number+"]'}\", \"{value}\")")
-                        lines.append(f"    elif(Interactions.check_element_exist(driver, By.XPATH, \"{'('+xpath[1] +')["+row_number+"]'}\")):")
-                        lines.append(f"          ActionChains(driver).move_to_element(driver.find_element(By.XPATH, \"{'('+xpath[1] +')["+row_number+"]'}\")).perform()")
-                        lines.append(f"          Interactions.wait_and_send_keys(driver, By.XPATH, \"{'('+xpath[1] +')["+row_number+"]'}\", \"{value}\")")
+                        lines.append("    if(Interactions.check_element_exist(driver, By.XPATH, \"(" + xpath[0] + ")[\" + row_number + \"]\")):")
+                        lines.append("          ActionChains(driver).move_to_element(driver.find_element(By.XPATH,\"(" + xpath[0] + ")[\" + row_number + \"]\")).perform()")
+                        lines.append("          Interactions.wait_and_send_keys(driver, By.XPATH, \"(" + xpath[0] + ")[\" + row_number + \"]\", \"" + value + "\")")
+                        lines.append("    elif(Interactions.check_element_exist(driver, By.XPATH, \"(" + xpath[1] + ")[\" + row_number + \"]\")):")
+                        lines.append("          ActionChains(driver).move_to_element(driver.find_element(By.XPATH, \"(" + xpath[1] + ")[\" + row_number + \"]\")).perform()")
+                        lines.append("          Interactions.wait_and_send_keys(driver, By.XPATH, \"(" + xpath[1] + ")[\" + row_number + \"]\", \"" + value + "\")")
                     elif dailog_box_line_items:
                         if new_line_item_in_dailog_box_item:
                             if new_line_in_dailog_already_exist == False:
@@ -495,12 +507,17 @@ def generate_selenium_script(controls):
                         # lines.append("row_number = Interactions.get_row_number_for_line_item(driver, By.XPATH, \"//div[text()='Item number'  or text()='Line number' ]/ancestor::div[contains(@class,'fixedDataTableRowLayout_')]/ancestor::div[@role='grid']\",count)")
                         lines.append(f"if(Interactions.check_input_ancestor_is_table(driver, By.XPATH, \"{xpath[0]}\") or Interactions.check_input_ancestor_is_table(driver, By.XPATH, \"{xpath[1]}\") ):")
                         lines.append(f"    #clicking inside grid: {name}")
-                        lines.append(f"    if(Interactions.check_element_exist(driver, By.XPATH, \"{'('+xpath[0] +')["+row_number+"]'}\")):")
-                        lines.append(f"          ActionChains(driver).move_to_element(driver.find_element(By.XPATH,\"{'('+xpath[0] +')["+row_number+"]'}\")).perform()")
-                        lines.append(f"          Interactions.wait_and_send_keys(driver, By.XPATH, \"{'('+xpath[0] +')["+row_number+"]'}\", \"{value}\")")
-                        lines.append(f"    elif(Interactions.check_element_exist(driver, By.XPATH, \"{'('+xpath[1] +')["+row_number+"]'}\")):")
-                        lines.append(f"          ActionChains(driver).move_to_element(driver.find_element(By.XPATH, \"{'('+xpath[1] +')["+row_number+"]'}\")).perform()")
-                        lines.append(f"          Interactions.wait_and_send_keys(driver, By.XPATH, \"{'('+xpath[1] +')["+row_number+"]'}\", \"{value}\")")
+                        # lines.append(f"    if(Interactions.check_element_exist(driver, By.XPATH, \"({xpath[0]})[\" + str(row_number) + \"]\")):")
+                        lines.append("    if(Interactions.check_element_exist(driver, By.XPATH, \"(" + xpath[0] + ")[\" + row_number + \"]\")):")
+                        # lines.append(f"    if(Interactions.check_element_exist(driver, By.XPATH, \"({xpath[0]})[\" + str(row_number) + \"]\")):")
+                        lines.append("          ActionChains(driver).move_to_element(driver.find_element(By.XPATH, \"("+xpath[0]+")[\" + row_number + \"]\")).perform()")
+                        lines.append("          Interactions.wait_and_send_keys(driver, By.XPATH, \"("+xpath[0]+")[\" + row_number + \"]\", \""+ value + "\")")
+                        lines.append("    elif(Interactions.check_element_exist(driver, By.XPATH, \"("+xpath[1]+")[\" + row_number + \"]\")):")
+                        lines.append("          ActionChains(driver).move_to_element(driver.find_element(By.XPATH, \"("+xpath[1]+")[\" + row_number + \"]\")).perform()")
+                        lines.append("          Interactions.wait_and_send_keys(driver, By.XPATH, \"("+xpath[1]+")[\" + row_number + \"]\", \""+ value + "\")")
+                        # lines.append("          Interactions.wait_and_send_keys(driver, By.XPATH, \"(" + xpath[1] + ")[\" + row_number + \"]\", \"" + value + "\")")
+ 
+ 
                     # elif dailog_box_line_items:
                     #     if new_line_item_in_dailog_box_item:
                     #         lines.append(f"dailog_box_line_count = Interactions.check_for_line_item_count(driver, By.XPATH, \"{dailog_box_container + "//input[contains(@aria-label,'Line number')]"}\")")
@@ -559,12 +576,24 @@ def generate_selenium_script(controls):
                     lines.append(f"if(Interactions.check_element_exist(driver, By.XPATH, \"{xpath}\")):")
                     lines.append(f"    Interactions.wait_and_send_keys(driver, By.XPATH, \"{xpath}\", \"{value}\")")
                 elif ctype == "checkbox":
-                    lines.append(f"# Clicking checkbox: {name}")
-                    lines.append(f"if(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[0]}\")):")
-                    lines.append(f"    Interactions.wait_and_click(driver, By.XPATH, \"{xpath[0]}\")")
-                    lines.append(f"elif(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[1]}\")):")
-                    lines.append(f"    Interactions.wait_and_click(driver, By.XPATH, \"{xpath[1]}\")")
-                    # lines.append(f"    Interactions.wait_and_click(driver, By.XPATH, \"//div[text()='{xpath[1]}']\")")
+                    if description == "Select the Enable check box." and label == "Enable":
+                        if previous_control_type == "grid" and previous_user_action_value == "":
+                            first_checkbox_xpath = f"(//div[contains(@id,'{name}')]//span)[1]"
+                            lines.append(f"if Interactions.check_if_checkbox_is_checked(driver, By.XPATH, \"{first_checkbox_xpath}\", {value}) == False:")
+                            lines.append(f"    Interactions.wait_and_click(driver, By.XPATH, \"{first_checkbox_xpath}\")")
+                        elif previous_control_type == "grid" and previous_user_action_value != "":
+                            check_box_xpath = f"(//div[contains(@id,'{name}')]//span)[{previous_user_action_value}]"
+                            lines.append(f"if Interactions.check_if_checkbox_is_checked(driver, By.XPATH, \"{check_box_xpath}\", {value}) == False:")
+                            lines.append(f"    Interactions.wait_and_click(driver, By.XPATH, \"{check_box_xpath}\")")
+                    else:
+                        lines.append(f"# Clicking checkbox: {name}")
+                        lines.append(f"if(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[0]}\")):")
+                        lines.append(f"    if Interactions.check_if_checkbox_is_checked(driver, By.XPATH, \"{xpath[0]}\", {value}) == False:")
+                        lines.append(f"         Interactions.wait_and_click(driver, By.XPATH, \"{xpath[0]}\")")
+                        lines.append(f"elif(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[1]}\")):")
+                        lines.append(f"    if Interactions.check_if_checkbox_is_checked(driver, By.XPATH, \"{xpath[1]}\", {value}) == False:")
+                        lines.append(f"         Interactions.wait_and_click(driver, By.XPATH, \"{xpath[1]}\")")
+                        # lines.append(f"    Interactions.wait_and_click(driver, By.XPATH, \"//div[text()='{xpath[1]}']\")")
                 elif ctype == "combobox":
                     lines.append(f"# Clicking combobox: {name}")
                     lines.append(f"if Interactions.check_element_exist(driver, By.XPATH, \"{xpath[0]}\"):")
@@ -670,6 +699,10 @@ def generate_selenium_script(controls):
                             input_flag_for_grid = True
                         else:
                             lines.append("\"Skipping grid since previous was input\"")
+                    elif description.strip() == "In the list, find and select the desired record." and name == "ChangeProposalGrid":
+                        pass
+                    elif ctype == "grid" and description.strip() == "In the list, find and select the desired record." and "LedgerDimensionGrid" in name:
+                        pass
                     elif select_a_grid_or_click_a_input_anchor_flag == "select_row":
                         lines.append(f"# Clicking button: {name}")
                         lines.append(f"user_input = input(\"Press data to select: \")")
@@ -730,6 +763,7 @@ def generate_selenium_script(controls):
             # else:
             #     lines.append(f"# ❌ Locator not found for: {name} (Type: {ctype})")
             previous_control_type = ctype
+            previous_control_name = name
             previous_control_description = description
             previous_user_action_value = value
             previous_control_label = label

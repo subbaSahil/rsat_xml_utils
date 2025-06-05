@@ -535,3 +535,35 @@ def scroll_and_click_dropdown_item(driver, container_xpath, target_by, target_lo
     except Exception as e:
         print(f"[scroll_and_click_dropdown_item] Error: {e}")
         return False
+
+
+def check_if_checkbox_is_checked(driver, by, xpath, value, timeout=10):
+    try:
+        checkbox = WebDriverWait(driver, timeout).until(
+            EC.presence_of_element_located((by, xpath))
+        )
+        aria_checked = checkbox.get_attribute("aria-checked")
+        if aria_checked == str(value).lower():
+            return True
+        else:
+            return False
+    except TimeoutException:
+        return False
+    
+def check_aria_expanded(driver, by, xpath, timeout=10):
+    try:
+        checkbox = WebDriverWait(driver, timeout).until(
+            EC.presence_of_element_located((by, xpath))
+        )
+        aria_expanded = checkbox.get_attribute("aria-expanded")
+        if aria_expanded == "false":
+            return True
+        else:
+            return False
+    except TimeoutException:
+        return False
+    
+def remove_trailing_grid(text):
+    if text.endswith("Grid"):
+        return text[:-4]  # Remove last 4 characters
+    return text
