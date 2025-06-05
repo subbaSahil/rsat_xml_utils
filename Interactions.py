@@ -567,3 +567,40 @@ def remove_trailing_grid(text):
     if text.endswith("Grid"):
         return text[:-4]  # Remove last 4 characters
     return text
+
+def scroll_and_click(driver, by, container_xpath, target_xpath, timeout=10, max_scrolls=100):
+    time.sleep(2)
+    # Try multiple container elements (if indexed)
+    for i in range(1, 10):
+        indexed_xpath = f"({container_xpath})[{i}]"
+        try:
+            container = WebDriverWait(driver, timeout).until(
+                EC.presence_of_element_located((By.XPATH, indexed_xpath))
+            )
+           
+            if container.is_displayed():
+                print(f"Container found: {indexed_xpath}")
+                actions = ActionChains(driver)
+                scroll_direction = Keys.PAGE_DOWN
+ 
+                for _ in range(max_scrolls):
+                    try:
+                        element_to_click = WebDriverWait(driver, 8).until(
+                            EC.visibility_of_element_located((by, target_xpath))
+                        )
+                        element_to_click.click()
+                        print(f"Clicked element: {target_xpath}")
+                        return
+                    except TimeoutException:
+                        actions.move_to_element(container).click().send_keys(scroll_direction).perform()
+                        time.sleep(0.5)
+ 
+                raise TimeoutException(f"Element {target_xpath} not found after scrolling.")
+ 
+        except TimeoutException as e:
+            print(f"Timeout or not displayed: {e}")
+        except Exception as e:
+            print(f"Unexpected error: {e}")
+ 
+    print("Visible container not found.")
+ 

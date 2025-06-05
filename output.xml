@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <UserActionsWithDetails>
     <UserAction Ref="i3">
-        <Description>Go to Inventory management &gt; Setup &gt; Inventory &gt; Item groups.</Description>
+        <Description>Go to General ledger &gt; Chart of accounts &gt; Dimensions &gt; Financial dimension sets.</Description>
         <NodeId>i3</NodeId>
-        <Sequence>24</Sequence>
+        <Sequence>7</Sequence>
         <Navigation>mainmenu</Navigation>
-        <Navigation>InventoryManagement</Navigation>
-        <Navigation>Setup</Navigation>
-        <Navigation>Inventory</Navigation>
+        <Navigation>GeneralLedger</Navigation>
+        <Navigation>ChartOfAccounts</Navigation>
+        <Navigation>Dimensions</Navigation>
         <ControlName>No Control Name</ControlName>
         <ControlLabel />
         <ControlType />
@@ -17,7 +17,7 @@
     <UserAction Ref="i6">
         <Description>Click New.</Description>
         <NodeId>i6</NodeId>
-        <Sequence>24</Sequence>
+        <Sequence>7</Sequence>
         <ControlName>SystemDefinedNewButton</ControlName>
         <ControlLabel>New</ControlLabel>
         <ControlType>CommandButton</ControlType>
@@ -25,219 +25,49 @@
         <CommandName>Click</CommandName>
     </UserAction>
     <UserAction Ref="i8">
-        <Description>In the Item group field, type a value.</Description>
+        <Description>In the Financial dimension set field, type a value.</Description>
         <NodeId>i8</NodeId>
-        <Sequence>24</Sequence>
-        <ControlName>InventItemGroup_ItemGroup</ControlName>
-        <ControlLabel>Item group</ControlLabel>
+        <Sequence>7</Sequence>
+        <ControlName>DetailAutoIdentification_Name</ControlName>
+        <ControlLabel>Financial dimension set</ControlLabel>
         <ControlType>Input</ControlType>
-        <Value>Keyboard</Value>
+        <Value>Product</Value>
         <CommandName />
     </UserAction>
     <UserAction Ref="i10">
         <Description>In the Name field, type a value.</Description>
         <NodeId>i10</NodeId>
-        <Sequence>24</Sequence>
-        <ControlName>InventItemGroup_GroupName</ControlName>
+        <Sequence>7</Sequence>
+        <ControlName>DetailAutoIdentification_Description</ControlName>
         <ControlLabel>Name</ControlLabel>
         <ControlType>Input</ControlType>
-        <Value>Keyboard</Value>
+        <Value>Product</Value>
         <CommandName />
     </UserAction>
     <UserAction Ref="i12">
-        <Description>Click Save.</Description>
+        <Description>In the list, find and select the desired record.</Description>
         <NodeId>i12</NodeId>
-        <Sequence>24</Sequence>
-        <ControlName>SystemDefinedSaveButton</ControlName>
-        <ControlLabel>Save</ControlLabel>
-        <ControlType>CommandButton</ControlType>
+        <Sequence>7</Sequence>
+        <ControlName>GroupComposition_Panel_ViewAvailable</ControlName>
+        <ControlLabel />
+        <ControlType>Grid</ControlType>
+        <Value>12</Value>
+        <CommandName>ChangeSelectedIndex</CommandName>
+    </UserAction>
+    <UserAction Ref="i14">
+        <Description>Click Add.</Description>
+        <NodeId>i14</NodeId>
+        <Sequence>7</Sequence>
+        <ControlName>GroupComposition_Panel_Add</ControlName>
+        <ControlLabel>Add</ControlLabel>
+        <ControlType>Button</ControlType>
         <Value />
         <CommandName>Click</CommandName>
     </UserAction>
-    <UserAction Ref="i14">
-        <Description>In the list, find and select the desired record.</Description>
-        <NodeId>i14</NodeId>
-        <Sequence>24</Sequence>
-        <ControlName>SalesLedgerDimensionGrid</ControlName>
-        <ControlLabel />
-        <ControlType>Grid</ControlType>
-        <Value>2</Value>
-        <CommandName>ChangeSelectedIndexInCache</CommandName>
-    </UserAction>
     <UserAction Ref="i16">
-        <Description>In the Main account field, specify the desired values.</Description>
-        <NodeId>i16</NodeId>
-        <Sequence>24</Sequence>
-        <ControlName>SalesSegmentedEntry</ControlName>
-        <ControlLabel>Main account</ControlLabel>
-        <ControlType>SegmentedEntry</ControlType>
-        <Value>110110</Value>
-        <CommandName />
-    </UserAction>
-    <UserAction Ref="i18">
-        <Description>In the list, find and select the desired record.</Description>
-        <NodeId>i18</NodeId>
-        <Sequence>24</Sequence>
-        <ControlName>SalesLedgerDimensionGrid</ControlName>
-        <ControlLabel />
-        <ControlType>Grid</ControlType>
-        <Value>3</Value>
-        <CommandName>ChangeSelectedIndexInCache</CommandName>
-    </UserAction>
-    <UserAction Ref="i20">
-        <Description>In the Main account field, specify the desired values.</Description>
-        <NodeId>i20</NodeId>
-        <Sequence>24</Sequence>
-        <ControlName>SalesSegmentedEntry</ControlName>
-        <ControlLabel>Main account</ControlLabel>
-        <ControlType>SegmentedEntry</ControlType>
-        <Value>110120</Value>
-        <CommandName />
-    </UserAction>
-    <UserAction Ref="i22">
-        <Description>In the list, find and select the desired record.</Description>
-        <NodeId>i22</NodeId>
-        <Sequence>24</Sequence>
-        <ControlName>SalesLedgerDimensionGrid</ControlName>
-        <ControlLabel />
-        <ControlType>Grid</ControlType>
-        <Value>4</Value>
-        <CommandName>ChangeSelectedIndexInCache</CommandName>
-    </UserAction>
-    <UserAction Ref="i24">
-        <Description>In the Main account field, specify the desired values.</Description>
-        <NodeId>i24</NodeId>
-        <Sequence>24</Sequence>
-        <ControlName>SalesSegmentedEntry</ControlName>
-        <ControlLabel>Main account</ControlLabel>
-        <ControlType>SegmentedEntry</ControlType>
-        <Value>110130</Value>
-        <CommandName />
-    </UserAction>
-    <UserAction Ref="i26">
-        <Description>In the list, find and select the desired record.</Description>
-        <NodeId>i26</NodeId>
-        <Sequence>24</Sequence>
-        <ControlName>PurchLedgerDimensionGrid</ControlName>
-        <ControlLabel />
-        <ControlType>Grid</ControlType>
-        <Value>2</Value>
-        <CommandName>ChangeSelectedIndexInCache</CommandName>
-    </UserAction>
-    <UserAction Ref="i28">
-        <Description>In the Main account field, specify the desired values.</Description>
-        <NodeId>i28</NodeId>
-        <Sequence>24</Sequence>
-        <ControlName>PurchSegmentedEntry</ControlName>
-        <ControlLabel>Main account</ControlLabel>
-        <ControlType>SegmentedEntry</ControlType>
-        <Value>110115</Value>
-        <CommandName />
-    </UserAction>
-    <UserAction Ref="i30">
-        <Description>In the list, find and select the desired record.</Description>
-        <NodeId>i30</NodeId>
-        <Sequence>24</Sequence>
-        <ControlName>PurchLedgerDimensionGrid</ControlName>
-        <ControlLabel />
-        <ControlType>Grid</ControlType>
-        <Value>3</Value>
-        <CommandName>ChangeSelectedIndexInCache</CommandName>
-    </UserAction>
-    <UserAction Ref="i32">
-        <Description>In the Main account field, specify the desired values.</Description>
-        <NodeId>i32</NodeId>
-        <Sequence>24</Sequence>
-        <ControlName>PurchSegmentedEntry</ControlName>
-        <ControlLabel>Main account</ControlLabel>
-        <ControlType>SegmentedEntry</ControlType>
-        <Value>110130</Value>
-        <CommandName />
-    </UserAction>
-    <UserAction Ref="i34">
-        <Description>In the list, find and select the desired record.</Description>
-        <NodeId>i34</NodeId>
-        <Sequence>24</Sequence>
-        <ControlName>PurchLedgerDimensionGrid</ControlName>
-        <ControlLabel />
-        <ControlType>Grid</ControlType>
-        <Value>4</Value>
-        <CommandName>ChangeSelectedIndexInCache</CommandName>
-    </UserAction>
-    <UserAction Ref="i36">
-        <Description>In the Main account field, specify the desired values.</Description>
-        <NodeId>i36</NodeId>
-        <Sequence>24</Sequence>
-        <ControlName>PurchSegmentedEntry</ControlName>
-        <ControlLabel>Main account</ControlLabel>
-        <ControlType>SegmentedEntry</ControlType>
-        <Value>110140</Value>
-        <CommandName />
-    </UserAction>
-    <UserAction Ref="i38">
-        <Description>In the list, find and select the desired record.</Description>
-        <NodeId>i38</NodeId>
-        <Sequence>24</Sequence>
-        <ControlName>InventLedgerDimensionGrid</ControlName>
-        <ControlLabel />
-        <ControlType>Grid</ControlType>
-        <Value>2</Value>
-        <CommandName>ChangeSelectedIndexInCache</CommandName>
-    </UserAction>
-    <UserAction Ref="i40">
-        <Description>In the Main account field, specify the desired values.</Description>
-        <NodeId>i40</NodeId>
-        <Sequence>24</Sequence>
-        <ControlName>InventSegmentedEntry</ControlName>
-        <ControlLabel>Main account</ControlLabel>
-        <ControlType>SegmentedEntry</ControlType>
-        <Value>110110</Value>
-        <CommandName />
-    </UserAction>
-    <UserAction Ref="i42">
-        <Description>In the list, find and select the desired record.</Description>
-        <NodeId>i42</NodeId>
-        <Sequence>24</Sequence>
-        <ControlName>InventLedgerDimensionGrid</ControlName>
-        <ControlLabel />
-        <ControlType>Grid</ControlType>
-        <Value>3</Value>
-        <CommandName>ChangeSelectedIndexInCache</CommandName>
-    </UserAction>
-    <UserAction Ref="i44">
-        <Description>In the Main account field, specify the desired values.</Description>
-        <NodeId>i44</NodeId>
-        <Sequence>24</Sequence>
-        <ControlName>InventSegmentedEntry</ControlName>
-        <ControlLabel>Main account</ControlLabel>
-        <ControlType>SegmentedEntry</ControlType>
-        <Value>110150</Value>
-        <CommandName />
-    </UserAction>
-    <UserAction Ref="i46">
-        <Description>In the list, find and select the desired record.</Description>
-        <NodeId>i46</NodeId>
-        <Sequence>24</Sequence>
-        <ControlName>InventLedgerDimensionGrid</ControlName>
-        <ControlLabel />
-        <ControlType>Grid</ControlType>
-        <Value>4</Value>
-        <CommandName>ChangeSelectedIndexInCache</CommandName>
-    </UserAction>
-    <UserAction Ref="i48">
-        <Description>In the Main account field, specify the desired values.</Description>
-        <NodeId>i48</NodeId>
-        <Sequence>24</Sequence>
-        <ControlName>InventSegmentedEntry</ControlName>
-        <ControlLabel>Main account</ControlLabel>
-        <ControlType>SegmentedEntry</ControlType>
-        <Value>110160</Value>
-        <CommandName />
-    </UserAction>
-    <UserAction Ref="i50">
         <Description>Click Save.</Description>
-        <NodeId>i50</NodeId>
-        <Sequence>24</Sequence>
+        <NodeId>i16</NodeId>
+        <Sequence>7</Sequence>
         <ControlName>SystemDefinedSaveButton</ControlName>
         <ControlLabel>Save</ControlLabel>
         <ControlType>CommandButton</ControlType>
@@ -245,3 +75,5 @@
         <CommandName>Click</CommandName>
     </UserAction>
 </UserActionsWithDetails>
+ 
+ 

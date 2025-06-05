@@ -24,92 +24,59 @@ user_input = None
 save_line_items_without_errors = False
 
 Interactions.wait_and_click(driver, By.XPATH, "//div[@aria-label='Modules']")
-# Clicking navigation: Inventory management
-Interactions.wait_and_click(driver, By.XPATH, "//a[@data-dyn-title='Inventory management']")
+# Clicking navigation: General ledger
+Interactions.wait_and_click(driver, By.XPATH, "//a[@data-dyn-title='General ledger']")
 time.sleep(1)
-# Clicking navigation: Setup
-Interactions.wait_and_click(driver, By.XPATH, "//a[@data-dyn-title='Setup']")
+# Clicking navigation: Chart of accounts
+Interactions.wait_and_click(driver, By.XPATH, "//a[@data-dyn-title='Chart of accounts']")
 time.sleep(1)
-# Clicking navigation: Inventory
-Interactions.wait_and_click(driver, By.XPATH, "//a[@data-dyn-title='Inventory']")
+# Clicking navigation: Dimensions
+Interactions.wait_and_click(driver, By.XPATH, "//a[@data-dyn-title='Dimensions']")
 time.sleep(1)
-# Clicking navigation: Item groups
-Interactions.wait_and_click(driver, By.XPATH, "//a[@data-dyn-title='Item groups']")
+# Clicking navigation: Financial dimension sets
+Interactions.wait_and_click(driver, By.XPATH, "//a[@data-dyn-title='Financial dimension sets']")
 time.sleep(1)
 if(Interactions.check_element_exist(driver, By.XPATH, "//button[@data-dyn-controlname='SystemDefinedNewButton']")):
      Interactions.wait_and_click(driver, By.XPATH, "//button[@data-dyn-controlname='SystemDefinedNewButton']")
 elif(Interactions.check_element_exist(driver, By.XPATH, "//button[@aria-label='New']")):
      Interactions.wait_and_click(driver, By.XPATH, "//button[@aria-label='New']")
-# Inputting into: InventItemGroup_ItemGroup
-if(Interactions.check_input_ancestor_is_table(driver, By.XPATH, "//input[contains(@name,'InventItemGroup_ItemGroup')]") or Interactions.check_input_ancestor_is_table(driver, By.XPATH, "//input[contains(@aria-label,'Item group')]") ):
-    #clicking inside grid: InventItemGroup_ItemGroup
-    if(Interactions.check_element_exist(driver, By.XPATH, "(//input[contains(@name,'InventItemGroup_ItemGroup')])[1]")):
-          ActionChains(driver).move_to_element(driver.find_element(By.XPATH,"//input[contains(@name,'InventItemGroup_ItemGroup')]")).perform()
-          Interactions.wait_and_send_keys(driver, By.XPATH, "(//input[contains(@name,'InventItemGroup_ItemGroup')])[1]", "Keyboard")
-    elif(Interactions.check_element_exist(driver, By.XPATH, "(//input[contains(@aria-label,'Item group')])[1]")):
-          ActionChains(driver).move_to_element(driver.find_element(By.XPATH, "//input[contains(@aria-label,'Item group')]")).perform()
-          Interactions.wait_and_send_keys(driver, By.XPATH, "(//input[contains(@aria-label,'Item group')])[1]", "Keyboard")
+# Inputting into: DetailAutoIdentification_Name
+if(Interactions.check_input_ancestor_is_table(driver, By.XPATH, "//input[contains(@name,'DetailAutoIdentification_Name')]") or Interactions.check_input_ancestor_is_table(driver, By.XPATH, "//input[contains(@aria-label,'Financial dimension set')]") ):
+    #clicking inside grid: DetailAutoIdentification_Name
+    if(Interactions.check_element_exist(driver, By.XPATH, "(//input[contains(@name,'DetailAutoIdentification_Name')])[1]")):
+          ActionChains(driver).move_to_element(driver.find_element(By.XPATH,"//input[contains(@name,'DetailAutoIdentification_Name')]")).perform()
+          Interactions.wait_and_send_keys(driver, By.XPATH, "(//input[contains(@name,'DetailAutoIdentification_Name')])[1]", "Product")
+    elif(Interactions.check_element_exist(driver, By.XPATH, "(//input[contains(@aria-label,'Financial dimension set')])[1]")):
+          ActionChains(driver).move_to_element(driver.find_element(By.XPATH, "//input[contains(@aria-label,'Financial dimension set')]")).perform()
+          Interactions.wait_and_send_keys(driver, By.XPATH, "(//input[contains(@aria-label,'Financial dimension set')])[1]", "Product")
 else:
-    if(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@name,'InventItemGroup_ItemGroup')]")):
-         Interactions.wait_and_send_keys(driver, By.XPATH, "//input[contains(@name,'InventItemGroup_ItemGroup')]", "Keyboard")
-    elif(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@aria-label,'Item group')]")):
-         Interactions.wait_and_send_keys(driver, By.XPATH, "//input[contains(@aria-label,'Item group')]", "Keyboard")
+    if(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@name,'DetailAutoIdentification_Name')]")):
+         Interactions.wait_and_send_keys(driver, By.XPATH, "//input[contains(@name,'DetailAutoIdentification_Name')]", "Product")
+    elif(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@aria-label,'Financial dimension set')]")):
+         Interactions.wait_and_send_keys(driver, By.XPATH, "//input[contains(@aria-label,'Financial dimension set')]", "Product")
     Interactions.press_enter(driver, By.XPATH, "//body")
-# Inputting into: InventItemGroup_GroupName
-if(Interactions.check_input_ancestor_is_table(driver, By.XPATH, "//input[contains(@name,'InventItemGroup_GroupName')]") or Interactions.check_input_ancestor_is_table(driver, By.XPATH, "//input[contains(@aria-label,'Name')]") ):
-    #clicking inside grid: InventItemGroup_GroupName
-    if(Interactions.check_element_exist(driver, By.XPATH, "(//input[contains(@name,'InventItemGroup_GroupName')])[1]")):
-          ActionChains(driver).move_to_element(driver.find_element(By.XPATH,"//input[contains(@name,'InventItemGroup_GroupName')]")).perform()
-          Interactions.wait_and_send_keys(driver, By.XPATH, "(//input[contains(@name,'InventItemGroup_GroupName')])[1]", "Keyboard")
+# Inputting into: DetailAutoIdentification_Description
+if(Interactions.check_input_ancestor_is_table(driver, By.XPATH, "//input[contains(@name,'DetailAutoIdentification_Description')]") or Interactions.check_input_ancestor_is_table(driver, By.XPATH, "//input[contains(@aria-label,'Name')]") ):
+    #clicking inside grid: DetailAutoIdentification_Description
+    if(Interactions.check_element_exist(driver, By.XPATH, "(//input[contains(@name,'DetailAutoIdentification_Description')])[1]")):
+          ActionChains(driver).move_to_element(driver.find_element(By.XPATH,"//input[contains(@name,'DetailAutoIdentification_Description')]")).perform()
+          Interactions.wait_and_send_keys(driver, By.XPATH, "(//input[contains(@name,'DetailAutoIdentification_Description')])[1]", "Product")
     elif(Interactions.check_element_exist(driver, By.XPATH, "(//input[contains(@aria-label,'Name')])[1]")):
           ActionChains(driver).move_to_element(driver.find_element(By.XPATH, "//input[contains(@aria-label,'Name')]")).perform()
-          Interactions.wait_and_send_keys(driver, By.XPATH, "(//input[contains(@aria-label,'Name')])[1]", "Keyboard")
+          Interactions.wait_and_send_keys(driver, By.XPATH, "(//input[contains(@aria-label,'Name')])[1]", "Product")
 else:
-    if(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@name,'InventItemGroup_GroupName')]")):
-         Interactions.wait_and_send_keys(driver, By.XPATH, "//input[contains(@name,'InventItemGroup_GroupName')]", "Keyboard")
+    if(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@name,'DetailAutoIdentification_Description')]")):
+         Interactions.wait_and_send_keys(driver, By.XPATH, "//input[contains(@name,'DetailAutoIdentification_Description')]", "Product")
     elif(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@aria-label,'Name')]")):
-         Interactions.wait_and_send_keys(driver, By.XPATH, "//input[contains(@aria-label,'Name')]", "Keyboard")
+         Interactions.wait_and_send_keys(driver, By.XPATH, "//input[contains(@aria-label,'Name')]", "Product")
     Interactions.press_enter(driver, By.XPATH, "//body")
-if(Interactions.check_element_exist(driver, By.XPATH, "//button[@data-dyn-controlname='SystemDefinedSaveButton']")):
-     Interactions.wait_and_click(driver, By.XPATH, "//button[@data-dyn-controlname='SystemDefinedSaveButton']")
-elif(Interactions.check_element_exist(driver, By.XPATH, "//button[@aria-label='Save']")):
-     Interactions.wait_and_click(driver, By.XPATH, "//button[@aria-label='Save']")
-if Interactions.check_aria_expanded(driver, By.XPATH, "//div[contains(@data-dyn-controlname,'SalesLedgerDimension')]/div/button") == True:
-    Interactions.wait_and_click(driver, By.XPATH, "//div[contains(@data-dyn-controlname,'SalesLedgerDimension')]/div/button")
-ActionChains(driver).move_to_element(driver.find_element(By.XPATH,"(//div[@data-dyn-controlname='SalesSegmentedEntry']//input)[2]")).perform()
-Interactions.clear_input_field_and_send_keys(driver, By.XPATH, "(//div[@data-dyn-controlname='SalesSegmentedEntry']//input)[2]", "110110")
-if Interactions.check_aria_expanded(driver, By.XPATH, "//div[contains(@data-dyn-controlname,'SalesLedgerDimension')]/div/button") == True:
-    Interactions.wait_and_click(driver, By.XPATH, "//div[contains(@data-dyn-controlname,'SalesLedgerDimension')]/div/button")
-ActionChains(driver).move_to_element(driver.find_element(By.XPATH,"(//div[@data-dyn-controlname='SalesSegmentedEntry']//input)[3]")).perform()
-Interactions.clear_input_field_and_send_keys(driver, By.XPATH, "(//div[@data-dyn-controlname='SalesSegmentedEntry']//input)[3]", "110120")
-if Interactions.check_aria_expanded(driver, By.XPATH, "//div[contains(@data-dyn-controlname,'SalesLedgerDimension')]/div/button") == True:
-    Interactions.wait_and_click(driver, By.XPATH, "//div[contains(@data-dyn-controlname,'SalesLedgerDimension')]/div/button")
-ActionChains(driver).move_to_element(driver.find_element(By.XPATH,"(//div[@data-dyn-controlname='SalesSegmentedEntry']//input)[4]")).perform()
-Interactions.clear_input_field_and_send_keys(driver, By.XPATH, "(//div[@data-dyn-controlname='SalesSegmentedEntry']//input)[4]", "110130")
-if Interactions.check_aria_expanded(driver, By.XPATH, "//div[contains(@data-dyn-controlname,'PurchLedgerDimension')]/div/button") == True:
-    Interactions.wait_and_click(driver, By.XPATH, "//div[contains(@data-dyn-controlname,'PurchLedgerDimension')]/div/button")
-ActionChains(driver).move_to_element(driver.find_element(By.XPATH,"(//div[@data-dyn-controlname='PurchSegmentedEntry']//input)[2]")).perform()
-Interactions.clear_input_field_and_send_keys(driver, By.XPATH, "(//div[@data-dyn-controlname='PurchSegmentedEntry']//input)[2]", "110115")
-if Interactions.check_aria_expanded(driver, By.XPATH, "//div[contains(@data-dyn-controlname,'PurchLedgerDimension')]/div/button") == True:
-    Interactions.wait_and_click(driver, By.XPATH, "//div[contains(@data-dyn-controlname,'PurchLedgerDimension')]/div/button")
-ActionChains(driver).move_to_element(driver.find_element(By.XPATH,"(//div[@data-dyn-controlname='PurchSegmentedEntry']//input)[3]")).perform()
-Interactions.clear_input_field_and_send_keys(driver, By.XPATH, "(//div[@data-dyn-controlname='PurchSegmentedEntry']//input)[3]", "110130")
-if Interactions.check_aria_expanded(driver, By.XPATH, "//div[contains(@data-dyn-controlname,'PurchLedgerDimension')]/div/button") == True:
-    Interactions.wait_and_click(driver, By.XPATH, "//div[contains(@data-dyn-controlname,'PurchLedgerDimension')]/div/button")
-ActionChains(driver).move_to_element(driver.find_element(By.XPATH,"(//div[@data-dyn-controlname='PurchSegmentedEntry']//input)[4]")).perform()
-Interactions.clear_input_field_and_send_keys(driver, By.XPATH, "(//div[@data-dyn-controlname='PurchSegmentedEntry']//input)[4]", "110140")
-if Interactions.check_aria_expanded(driver, By.XPATH, "//div[contains(@data-dyn-controlname,'InventLedgerDimension')]/div/button") == True:
-    Interactions.wait_and_click(driver, By.XPATH, "//div[contains(@data-dyn-controlname,'InventLedgerDimension')]/div/button")
-ActionChains(driver).move_to_element(driver.find_element(By.XPATH,"(//div[@data-dyn-controlname='InventSegmentedEntry']//input)[2]")).perform()
-Interactions.clear_input_field_and_send_keys(driver, By.XPATH, "(//div[@data-dyn-controlname='InventSegmentedEntry']//input)[2]", "110110")
-if Interactions.check_aria_expanded(driver, By.XPATH, "//div[contains(@data-dyn-controlname,'InventLedgerDimension')]/div/button") == True:
-    Interactions.wait_and_click(driver, By.XPATH, "//div[contains(@data-dyn-controlname,'InventLedgerDimension')]/div/button")
-ActionChains(driver).move_to_element(driver.find_element(By.XPATH,"(//div[@data-dyn-controlname='InventSegmentedEntry']//input)[3]")).perform()
-Interactions.clear_input_field_and_send_keys(driver, By.XPATH, "(//div[@data-dyn-controlname='InventSegmentedEntry']//input)[3]", "110150")
-if Interactions.check_aria_expanded(driver, By.XPATH, "//div[contains(@data-dyn-controlname,'InventLedgerDimension')]/div/button") == True:
-    Interactions.wait_and_click(driver, By.XPATH, "//div[contains(@data-dyn-controlname,'InventLedgerDimension')]/div/button")
-ActionChains(driver).move_to_element(driver.find_element(By.XPATH,"(//div[@data-dyn-controlname='InventSegmentedEntry']//input)[4]")).perform()
-Interactions.clear_input_field_and_send_keys(driver, By.XPATH, "(//div[@data-dyn-controlname='InventSegmentedEntry']//input)[4]", "110160")
+# Clicking button: GroupComposition_Panel_ViewAvailable
+user_input = input("Press data to select: ")
+Interactions.scroll_and_click(driver, By.XPATH, "//div[@data-dyn-controlname='GroupComposition_Panel_ViewAvailable//div[contains(@class,'fixedDataTableRowLayout_')]/ancestor::div[@role='grid']", f"//input[@value='{user_input}']")
+if(Interactions.check_element_exist(driver, By.XPATH, "//button[@data-dyn-controlname='GroupComposition_Panel_Add']")):
+     Interactions.wait_and_click(driver, By.XPATH, "//button[@data-dyn-controlname='GroupComposition_Panel_Add']")
+elif(Interactions.check_element_exist(driver, By.XPATH, "//button[@aria-label='Add']")):
+     Interactions.wait_and_click(driver, By.XPATH, "//button[@aria-label='Add']")
 if(Interactions.check_element_exist(driver, By.XPATH, "//button[@data-dyn-controlname='SystemDefinedSaveButton']")):
      Interactions.wait_and_click(driver, By.XPATH, "//button[@data-dyn-controlname='SystemDefinedSaveButton']")
 elif(Interactions.check_element_exist(driver, By.XPATH, "//button[@aria-label='Save']")):
