@@ -71,7 +71,7 @@
         <ControlName>PurchSegmentedEntry</ControlName>
         <ControlLabel>Main account</ControlLabel>
         <ControlType>SegmentedEntry</ControlType>
-        <Value>110115</Value>
+        <Value>110110</Value>
         <CommandName />
     </UserAction>
     <UserAction Ref="i18">

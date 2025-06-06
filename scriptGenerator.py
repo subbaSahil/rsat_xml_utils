@@ -323,7 +323,7 @@ def generate_selenium_script(controls):
 
                 elif ctype == "segmentedentry":
                     if "SegmentedEntry" in name and label== "Main account":
-                        expand_button = f"//div[contains(@data-dyn-controlname,'{Interactions.remove_trailing_grid(previous_control_name)}')]/div/button"
+                        expand_button = f"//div[@data-dyn-controlname='{name}']/ancestor::div[@role='group']/preceding-sibling::div[@role='heading']//button"
                         lines.append(f"if Interactions.check_aria_expanded(driver, By.XPATH, \"{expand_button}\") == True:")
                         lines.append(f"    Interactions.wait_and_click(driver, By.XPATH, \"{expand_button}\")")
                         if previous_control_type == "grid" and "LedgerDimension" in previous_control_name:

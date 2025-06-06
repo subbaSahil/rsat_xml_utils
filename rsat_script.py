@@ -74,12 +74,12 @@ if(Interactions.check_element_exist(driver, By.XPATH, "//button[@data-dyn-contro
      Interactions.wait_and_click(driver, By.XPATH, "//button[@data-dyn-controlname='SystemDefinedSaveButton']")
 elif(Interactions.check_element_exist(driver, By.XPATH, "//button[@aria-label='Save']")):
      Interactions.wait_and_click(driver, By.XPATH, "//button[@aria-label='Save']")
-if Interactions.check_aria_expanded(driver, By.XPATH, "//div[contains(@data-dyn-controlname,'SystemDefinedSaveButton')]/div/button") == True:
-    Interactions.wait_and_click(driver, By.XPATH, "//div[contains(@data-dyn-controlname,'SystemDefinedSaveButton')]/div/button")
+if Interactions.check_aria_expanded(driver, By.XPATH, "//div[@data-dyn-controlname='SalesSegmentedEntry']/ancestor::div[@role='group']/preceding-sibling::div[@role='heading']//button") == True:
+    Interactions.wait_and_click(driver, By.XPATH, "//div[@data-dyn-controlname='SalesSegmentedEntry']/ancestor::div[@role='group']/preceding-sibling::div[@role='heading']//button")
 Interactions.clear_input_field_and_send_keys(driver, By.XPATH, "(//div[@data-dyn-controlname='SalesSegmentedEntry']//input)[1]", "110115")
-if Interactions.check_aria_expanded(driver, By.XPATH, "//div[contains(@data-dyn-controlname,'SalesSegmentedEntry')]/div/button") == True:
-    Interactions.wait_and_click(driver, By.XPATH, "//div[contains(@data-dyn-controlname,'SalesSegmentedEntry')]/div/button")
-Interactions.clear_input_field_and_send_keys(driver, By.XPATH, "(//div[@data-dyn-controlname='PurchSegmentedEntry']//input)[1]", "110115")
+if Interactions.check_aria_expanded(driver, By.XPATH, "//div[@data-dyn-controlname='PurchSegmentedEntry']/ancestor::div[@role='group']/preceding-sibling::div[@role='heading']//button") == True:
+    Interactions.wait_and_click(driver, By.XPATH, "//div[@data-dyn-controlname='PurchSegmentedEntry']/ancestor::div[@role='group']/preceding-sibling::div[@role='heading']//button")
+Interactions.clear_input_field_and_send_keys(driver, By.XPATH, "(//div[@data-dyn-controlname='PurchSegmentedEntry']//input)[1]", "110110")
 if(Interactions.check_element_exist(driver, By.XPATH, "//button[@data-dyn-controlname='SystemDefinedSaveButton']")):
      Interactions.wait_and_click(driver, By.XPATH, "//button[@data-dyn-controlname='SystemDefinedSaveButton']")
 elif(Interactions.check_element_exist(driver, By.XPATH, "//button[@aria-label='Save']")):
