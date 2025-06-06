@@ -150,6 +150,7 @@ def generate_selenium_script(controls):
     dailog_box_line_items = False
     new_line_item_in_dailog_box_item = False
     new_line_in_dailog_already_exist = False
+    multiple_select_button = False
     lines = [
         "from selenium import webdriver",
         "from selenium.webdriver.common.by import By",
@@ -228,8 +229,9 @@ def generate_selenium_script(controls):
 
             elif description == "Click Save.":
                 if add_line_flag == True:
-                    add_line_flag = False    
-
+                    add_line_flag = False   
+            elif  description.strip() == "Click Select." and previous_control_type == "grid" and "In the list, select row" in previous_control_description:
+                multiple_select_button = False
             elif description.strip() == "In the list, find and select the desired record." :
                 grid_for_table_or_data_selection= "table"
                 select_a_grid_or_click_a_input_anchor_flag = "select_row"
@@ -655,13 +657,21 @@ def generate_selenium_script(controls):
                 elif ctype == "grid":   
                     container = "//div[contains(@class,'fixedDataTableRowLayout_')]/ancestor::div[@role='grid']"
                     previous_desc = f"In the {previous_control_label} field, enter or select a value."
-
-                    if previous_control_type == "input" and previous_control_description == previous_desc:
+                    if previous_control_type == "input" and previous_control_description == previous_desc and previous_control_label != "Broker":
                         lines.append("\"Skipping grid since previous was control was input\"")
                         input_flag_for_grid = True
                         # ignore_grid = True
+                    # the broker multple input
+                    elif ctype =="grid" and previous_control_type == "input" and previous_control_description == "In the Broker field, enter or select a value." and previous_control_label == "Broker":
+                        lines.append("user_input = input(\"Press data to select: \")")
+                        lines.append(f"Interactions.scroll_and_click(driver, By.XPATH, \"{container}\", f\"//input[@value='{{user_input}}']/ancestor::div[@class='fixedDataTableRowLayout_body']/div[1]//div[@role='checkbox']\")")
+                        multiple_select_button = True
                     elif previous_control_type == "grid" and "In the list, select row" in previous_control_description:
-                        lines.append("\"Skipping grid selection due input in the ancestor\"")
+                        if multiple_select_button == True:
+                            lines.append("user_input = input(\"Press data to select: \")")
+                            lines.append(f"Interactions.scroll_and_click(driver, By.XPATH, \"{container}\", f\"//input[@value='{{user_input}}']/ancestor::div[@class='fixedDataTableRowLayout_body']/div[1]//div[@role='checkbox']\")")
+                        else:
+                            lines.append("\"Skipping grid selection due input in the ancestor\"")
                     elif description.strip() == "In the list, mark the selected row." and command_name == "MarkActiveRow":
                         lines.append("\"Skipping grid since it is deafault behavior of d365\"")
                     elif previous_control_type == "input" and previous_control_description == previous_desc and description.strip() == "In the list, find and select the desired record.":
@@ -678,6 +688,7 @@ def generate_selenium_script(controls):
                     elif ctype == "grid" and description.strip() == "In the list, find and select the desired record." and "LedgerDimensionGrid" in name:
                         pass
                     elif select_a_grid_or_click_a_input_anchor_flag == "select_row":
+                        
                         if command_name == "ChangeSelectedIndex":
                             container2 = f"//div[@data-dyn-controlname='{name}//div[contains(@class,'fixedDataTableRowLayout_')]/ancestor::div[@role='grid']"
                             lines.append(f"# Clicking button: {name}")
