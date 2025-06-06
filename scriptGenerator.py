@@ -332,7 +332,7 @@ def generate_selenium_script(controls):
                              lines.append(f"Interactions.clear_input_field_and_send_keys(driver, By.XPATH, \"{account_input}\", \"{value}\")") 
                         else:
                             account_input = f"(//div[@data-dyn-controlname='{name}']//input)[1]"
-                            lines.append(f"     Interactions.clear_input_field_and_send_keys(driver, By.XPATH, \"{account_input}\", \"{value}\")")
+                            lines.append(f"Interactions.clear_input_field_and_send_keys(driver, By.XPATH, \"{account_input}\", \"{value}\")")
                     else:
                         lines.append(f"# Inputting into: {name}")
                         lines.append(f"if(Interactions.check_input_ancestor_is_table(driver, By.XPATH, \"{xpath[0]}\") or Interactions.check_input_ancestor_is_table(driver, By.XPATH, \"{xpath[1]}\") ):")
