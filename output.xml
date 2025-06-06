@@ -1,79 +1,458 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <UserActionsWithDetails>
-    <UserAction Ref="i3">
-        <Description>Go to General ledger &gt; Chart of accounts &gt; Dimensions &gt; Financial dimension sets.</Description>
-        <NodeId>i3</NodeId>
-        <Sequence>7</Sequence>
-        <Navigation>mainmenu</Navigation>
-        <Navigation>GeneralLedger</Navigation>
-        <Navigation>ChartOfAccounts</Navigation>
-        <Navigation>Dimensions</Navigation>
-        <ControlName>No Control Name</ControlName>
-        <ControlLabel />
-        <ControlType />
-        <Value />
-        <CommandName />
-    </UserAction>
-    <UserAction Ref="i6">
-        <Description>Click New.</Description>
-        <NodeId>i6</NodeId>
-        <Sequence>7</Sequence>
-        <ControlName>SystemDefinedNewButton</ControlName>
-        <ControlLabel>New</ControlLabel>
-        <ControlType>CommandButton</ControlType>
-        <Value />
-        <CommandName>Click</CommandName>
-    </UserAction>
-    <UserAction Ref="i8">
-        <Description>In the Financial dimension set field, type a value.</Description>
-        <NodeId>i8</NodeId>
-        <Sequence>7</Sequence>
-        <ControlName>DetailAutoIdentification_Name</ControlName>
-        <ControlLabel>Financial dimension set</ControlLabel>
-        <ControlType>Input</ControlType>
-        <Value>Product</Value>
-        <CommandName />
-    </UserAction>
-    <UserAction Ref="i10">
-        <Description>In the Name field, type a value.</Description>
-        <NodeId>i10</NodeId>
-        <Sequence>7</Sequence>
-        <ControlName>DetailAutoIdentification_Description</ControlName>
-        <ControlLabel>Name</ControlLabel>
-        <ControlType>Input</ControlType>
-        <Value>Product</Value>
-        <CommandName />
-    </UserAction>
-    <UserAction Ref="i12">
-        <Description>In the list, find and select the desired record.</Description>
-        <NodeId>i12</NodeId>
-        <Sequence>7</Sequence>
-        <ControlName>GroupComposition_Panel_ViewAvailable</ControlName>
-        <ControlLabel />
-        <ControlType>Grid</ControlType>
-        <Value>12</Value>
-        <CommandName>ChangeSelectedIndex</CommandName>
-    </UserAction>
-    <UserAction Ref="i14">
-        <Description>Click Add.</Description>
-        <NodeId>i14</NodeId>
-        <Sequence>7</Sequence>
-        <ControlName>GroupComposition_Panel_Add</ControlName>
-        <ControlLabel>Add</ControlLabel>
-        <ControlType>Button</ControlType>
-        <Value />
-        <CommandName>Click</CommandName>
-    </UserAction>
-    <UserAction Ref="i16">
-        <Description>Click Save.</Description>
-        <NodeId>i16</NodeId>
-        <Sequence>7</Sequence>
-        <ControlName>SystemDefinedSaveButton</ControlName>
-        <ControlLabel>Save</ControlLabel>
-        <ControlType>CommandButton</ControlType>
-        <Value />
-        <CommandName>Click</CommandName>
-    </UserAction>
+  <UserAction Ref="i3">
+    <Description>Go to Inventory management &gt; Inbound orders &gt; Transfer order.</Description>
+    <NodeId>i3</NodeId>
+    <Sequence>45</Sequence>
+    <Navigation>mainmenu</Navigation>
+    <Navigation>InventoryManagement</Navigation>
+    <Navigation>InboundOrders</Navigation>
+    <ControlName>No Control Name</ControlName>
+    <ControlLabel />
+    <ControlType />
+    <Value />
+    <CommandName />
+  </UserAction>
+  <UserAction Ref="i6">
+    <Description>Click New.</Description>
+    <NodeId>i6</NodeId>
+    <Sequence>45</Sequence>
+    <ControlName>SystemDefinedNewButton</ControlName>
+    <ControlLabel>New</ControlLabel>
+    <ControlType>CommandButton</ControlType>
+    <Value />
+    <CommandName>Click</CommandName>
+  </UserAction>
+  <UserAction Ref="i8">
+    <Description>In the From warehouse field, enter or select a value.</Description>
+    <NodeId>i8</NodeId>
+    <Sequence>45</Sequence>
+    <ControlName>LineViewHeader_InventLocationIdFrom</ControlName>
+    <ControlLabel>From warehouse</ControlLabel>
+    <ControlType>Input</ControlType>
+    <Value>11</Value>
+    <CommandName>RequestPopup</CommandName>
+  </UserAction>
+  <UserAction Ref="i12">
+    <Description>In the list, click the link in the selected row.</Description>
+    <NodeId>i12</NodeId>
+    <Sequence>45</Sequence>
+    <ControlName>GridInventLocation</ControlName>
+    <ControlLabel />
+    <ControlType>Grid</ControlType>
+    <Value />
+    <CommandName>NavigationAction</CommandName>
+  </UserAction>
+  <UserAction Ref="i14">
+    <Description>In the To warehouse field, enter or select a value.</Description>
+    <NodeId>i14</NodeId>
+    <Sequence>45</Sequence>
+    <ControlName>LineViewHeader_InventLocationIdTo</ControlName>
+    <ControlLabel>To warehouse</ControlLabel>
+    <ControlType>Input</ControlType>
+    <Value>21</Value>
+    <CommandName>RequestPopup</CommandName>
+  </UserAction>
+  <UserAction Ref="i18">
+    <Description>In the list, select row 6.</Description>
+    <NodeId>i18</NodeId>
+    <Sequence>45</Sequence>
+    <ControlName>GridInventLocation</ControlName>
+    <ControlLabel />
+    <ControlType>Grid</ControlType>
+    <Value>6</Value>
+    <CommandName>ChangeSelectedIndexInCache</CommandName>
+  </UserAction>
+  <UserAction Ref="i20">
+    <Description>In the list, click the link in the selected row.</Description>
+    <NodeId>i20</NodeId>
+    <Sequence>45</Sequence>
+    <ControlName>GridInventLocation</ControlName>
+    <ControlLabel />
+    <ControlType>Grid</ControlType>
+    <Value />
+    <CommandName>NavigationAction</CommandName>
+  </UserAction>
+  <UserAction Ref="i22">
+    <Description>Click Add.</Description>
+    <NodeId>i22</NodeId>
+    <Sequence>45</Sequence>
+    <ControlName>CopyOfAddButton</ControlName>
+    <ControlLabel>Add</ControlLabel>
+    <ControlType>CommandButton</ControlType>
+    <Value />
+    <CommandName>Click</CommandName>
+  </UserAction>
+  <UserAction Ref="i24">
+    <Description>In the list, mark the selected row.</Description>
+    <NodeId>i24</NodeId>
+    <Sequence>45</Sequence>
+    <ControlName>GridLine</ControlName>
+    <ControlLabel />
+    <ControlType>Grid</ControlType>
+    <Value />
+    <CommandName>MarkActiveRow</CommandName>
+  </UserAction>
+  <UserAction Ref="i26">
+    <Description>In the Item number field, enter or select a value.</Description>
+    <NodeId>i26</NodeId>
+    <Sequence>45</Sequence>
+    <ControlName>InventTransferLine_ItemId</ControlName>
+    <ControlLabel>Item number</ControlLabel>
+    <ControlType>Input</ControlType>
+    <Value>1000</Value>
+    <CommandName>RequestPopup</CommandName>
+  </UserAction>
+  <UserAction Ref="i30">
+    <Description>In the list, select row 2.</Description>
+    <NodeId>i30</NodeId>
+    <Sequence>45</Sequence>
+    <ControlName>Grid</ControlName>
+    <ControlLabel />
+    <ControlType>Grid</ControlType>
+    <Value>2</Value>
+    <CommandName>ChangeSelectedIndexInCache</CommandName>
+  </UserAction>
+  <UserAction Ref="i32">
+    <Description>In the list, click the link in the selected row.</Description>
+    <NodeId>i32</NodeId>
+    <Sequence>45</Sequence>
+    <ControlName>Grid</ControlName>
+    <ControlLabel />
+    <ControlType>Grid</ControlType>
+    <Value />
+    <CommandName>NavigationAction</CommandName>
+  </UserAction>
+  <UserAction Ref="i34">
+    <Description>Click Inventory.</Description>
+    <NodeId>i34</NodeId>
+    <Sequence>45</Sequence>
+    <ControlName>Inventory</ControlName>
+    <ControlLabel>Inventory</ControlLabel>
+    <ControlType>MenuButton</ControlType>
+    <Value />
+    <CommandName>Click</CommandName>
+  </UserAction>
+  <UserAction Ref="i36">
+    <Description>Click On-hand.</Description>
+    <NodeId>i36</NodeId>
+    <Sequence>45</Sequence>
+    <ControlName>InventOnhand</ControlName>
+    <ControlLabel>On-hand</ControlLabel>
+    <ControlType>MenuItem</ControlType>
+    <Value />
+    <CommandName>Click</CommandName>
+  </UserAction>
+  <UserAction Ref="i39">
+    <Description>Click Close.</Description>
+    <NodeId>i39</NodeId>
+    <Sequence>45</Sequence>
+    <ControlName>DialogCloseCommandButton</ControlName>
+    <ControlLabel>Close</ControlLabel>
+    <ControlType>CommandButton</ControlType>
+    <Value />
+    <CommandName>Click</CommandName>
+  </UserAction>
+  <UserAction Ref="i41">
+    <Description>In the Transfer quantity field, enter a number.</Description>
+    <NodeId>i41</NodeId>
+    <Sequence>45</Sequence>
+    <ControlName>InventTransferLine_QtyTransfer</ControlName>
+    <ControlLabel>Transfer quantity</ControlLabel>
+    <ControlType>Real</ControlType>
+    <Value>10.00</Value>
+    <CommandName />
+  </UserAction>
+  <UserAction Ref="i43">
+    <Description>On the Action Pane, click Ship.</Description>
+    <NodeId>i43</NodeId>
+    <Sequence>45</Sequence>
+    <ControlName>ShipmentTab</ControlName>
+    <ControlLabel>Ship</ControlLabel>
+    <ControlType>AppBarTab</ControlType>
+    <Value />
+    <CommandName>TabShown</CommandName>
+  </UserAction>
+  <UserAction Ref="i45">
+    <Description>Click Generate picking list.</Description>
+    <NodeId>i45</NodeId>
+    <Sequence>45</Sequence>
+    <ControlName>ButtonInventTransferPick</ControlName>
+    <ControlLabel>Generate picking list</ControlLabel>
+    <ControlType>MenuItemButton</ControlType>
+    <Value />
+    <CommandName>Click</CommandName>
+  </UserAction>
+  <UserAction Ref="i48">
+    <Description>In the list, mark the selected row.</Description>
+    <NodeId>i48</NodeId>
+    <Sequence>45</Sequence>
+    <ControlName>GridTable</ControlName>
+    <ControlLabel />
+    <ControlType>Grid</ControlType>
+    <Value />
+    <CommandName>MarkActiveRow</CommandName>
+  </UserAction>
+  <UserAction Ref="i50">
+    <Description>In the Update field, select an option.</Description>
+    <NodeId>i50</NodeId>
+    <Sequence>45</Sequence>
+    <ControlName>InventTransferParmTable_pickUpdateQty</ControlName>
+    <ControlLabel>Update</ControlLabel>
+    <ControlType>ComboBox</ControlType>
+    <Value>3</Value>
+    <CommandName />
+  </UserAction>
+  <UserAction Ref="i52">
+    <Description>Click OK.</Description>
+    <NodeId>i52</NodeId>
+    <Sequence>45</Sequence>
+    <ControlName>OK</ControlName>
+    <ControlLabel>OK</ControlLabel>
+    <ControlType>CommandButton</ControlType>
+    <Value />
+    <CommandName>Click</CommandName>
+  </UserAction>
+  <UserAction Ref="i54">
+    <Description>Click Picking list registration.</Description>
+    <NodeId>i54</NodeId>
+    <Sequence>45</Sequence>
+    <ControlName>buttonInventPickingListRegistrate</ControlName>
+    <ControlLabel>Picking list registration</ControlLabel>
+    <ControlType>MenuItemButton</ControlType>
+    <Value />
+    <CommandName>Click</CommandName>
+  </UserAction>
+  <UserAction Ref="i57">
+    <Description>Click Functions.</Description>
+    <NodeId>i57</NodeId>
+    <Sequence>45</Sequence>
+    <ControlName>Functions</ControlName>
+    <ControlLabel>Functions</ControlLabel>
+    <ControlType>MenuButton</ControlType>
+    <Value />
+    <CommandName>Click</CommandName>
+  </UserAction>
+  <UserAction Ref="i59">
+    <Description>Click Start picking route.</Description>
+    <NodeId>i59</NodeId>
+    <Sequence>45</Sequence>
+    <ControlName>WMSPickingRouteStart</ControlName>
+    <ControlLabel>Start picking route</ControlLabel>
+    <ControlType>MenuItem</ControlType>
+    <Value />
+    <CommandName>Click</CommandName>
+  </UserAction>
+  <UserAction Ref="i62">
+    <Description>Click OK.</Description>
+    <NodeId>i62</NodeId>
+    <Sequence>45</Sequence>
+    <ControlName>OkButton</ControlName>
+    <ControlLabel>OK</ControlLabel>
+    <ControlType>CommandButton</ControlType>
+    <Value />
+    <CommandName>Click</CommandName>
+  </UserAction>
+  <UserAction Ref="i64">
+    <Description>Click Updates.</Description>
+    <NodeId>i64</NodeId>
+    <Sequence>45</Sequence>
+    <ControlName>UpdatesMenuButton</ControlName>
+    <ControlLabel>Updates</ControlLabel>
+    <ControlType>MenuButton</ControlType>
+    <Value />
+    <CommandName>Click</CommandName>
+  </UserAction>
+  <UserAction Ref="i66">
+    <Description>Click Update all.</Description>
+    <NodeId>i66</NodeId>
+    <Sequence>45</Sequence>
+    <ControlName>PickAllButton</ControlName>
+    <ControlLabel>Update all</ControlLabel>
+    <ControlType>MenuItem</ControlType>
+    <Value />
+    <CommandName>Click</CommandName>
+  </UserAction>
+  <UserAction Ref="i68">
+    <Description>Click Save.</Description>
+    <NodeId>i68</NodeId>
+    <Sequence>45</Sequence>
+    <ControlName>SystemDefinedSaveButton</ControlName>
+    <ControlLabel>Save</ControlLabel>
+    <ControlType>CommandButton</ControlType>
+    <Value />
+    <CommandName>Click</CommandName>
+  </UserAction>
+  <UserAction Ref="i70">
+    <Description>Close the page.</Description>
+    <NodeId>i70</NodeId>
+    <Sequence>45</Sequence>
+    <ControlName>No Control Name</ControlName>
+    <ControlLabel />
+    <ControlType />
+    <Value />
+    <CommandName>RequestClose</CommandName>
+    <Annotations />
+  </UserAction>
+  <UserAction Ref="i72">
+    <Description>On the Action Pane, click Receive.</Description>
+    <NodeId>i72</NodeId>
+    <Sequence>45</Sequence>
+    <ControlName>ReceiveTab</ControlName>
+    <ControlLabel>Receive</ControlLabel>
+    <ControlType>AppBarTab</ControlType>
+    <Value />
+    <CommandName>TabShown</CommandName>
+  </UserAction>
+  <UserAction Ref="i74">
+    <Description>On the Action Pane, click Ship.</Description>
+    <NodeId>i74</NodeId>
+    <Sequence>45</Sequence>
+    <ControlName>ShipmentTab</ControlName>
+    <ControlLabel>Ship</ControlLabel>
+    <ControlType>AppBarTab</ControlType>
+    <Value />
+    <CommandName>TabShown</CommandName>
+  </UserAction>
+  <UserAction Ref="i76">
+    <Description>Refresh the page.</Description>
+    <NodeId>i76</NodeId>
+    <Sequence>45</Sequence>
+    <ControlName>No Control Name</ControlName>
+    <ControlLabel />
+    <ControlType />
+    <Value>true</Value>
+    <CommandName>Refresh</CommandName>
+  </UserAction>
+  <UserAction Ref="i78">
+    <Description>Click Ship transfer order.</Description>
+    <NodeId>i78</NodeId>
+    <Sequence>45</Sequence>
+    <ControlName>ButtonInventTransferShip</ControlName>
+    <ControlLabel>Ship transfer order</ControlLabel>
+    <ControlType>MenuItemButton</ControlType>
+    <Value />
+    <CommandName>Click</CommandName>
+  </UserAction>
+  <UserAction Ref="i81">
+    <Description>In the list, mark the selected row.</Description>
+    <NodeId>i81</NodeId>
+    <Sequence>45</Sequence>
+    <ControlName>GridTable</ControlName>
+    <ControlLabel />
+    <ControlType>Grid</ControlType>
+    <Value />
+    <CommandName>MarkActiveRow</CommandName>
+  </UserAction>
+  <UserAction Ref="i83">
+    <Description>In the Update field, select an option.</Description>
+    <NodeId>i83</NodeId>
+    <Sequence>45</Sequence>
+    <ControlName>InventTransferParmTable_ShipUpdateQty</ControlName>
+    <ControlLabel>Update</ControlLabel>
+    <ControlType>ComboBox</ControlType>
+    <Value>4</Value>
+    <CommandName />
+  </UserAction>
+  <UserAction Ref="i85">
+    <Description>Click OK.</Description>
+    <NodeId>i85</NodeId>
+    <Sequence>45</Sequence>
+    <ControlName>OK</ControlName>
+    <ControlLabel>OK</ControlLabel>
+    <ControlType>CommandButton</ControlType>
+    <Value />
+    <CommandName>Click</CommandName>
+  </UserAction>
+  <UserAction Ref="i87">
+    <Description>On the Action Pane, click Receive.</Description>
+    <NodeId>i87</NodeId>
+    <Sequence>45</Sequence>
+    <ControlName>ReceiveTab</ControlName>
+    <ControlLabel>Receive</ControlLabel>
+    <ControlType>AppBarTab</ControlType>
+    <Value />
+    <CommandName>TabShown</CommandName>
+  </UserAction>
+  <UserAction Ref="i89">
+    <Description>Click Receive.</Description>
+    <NodeId>i89</NodeId>
+    <Sequence>45</Sequence>
+    <ControlName>ButtonInventTransferReceive</ControlName>
+    <ControlLabel>Receive</ControlLabel>
+    <ControlType>MenuItemButton</ControlType>
+    <Value />
+    <CommandName>Click</CommandName>
+  </UserAction>
+  <UserAction Ref="i92">
+    <Description>In the list, mark the selected row.</Description>
+    <NodeId>i92</NodeId>
+    <Sequence>45</Sequence>
+    <ControlName>GridTable</ControlName>
+    <ControlLabel />
+    <ControlType>Grid</ControlType>
+    <Value />
+    <CommandName>MarkActiveRow</CommandName>
+  </UserAction>
+  <UserAction Ref="i94">
+    <Description>In the Update field, select an option.</Description>
+    <NodeId>i94</NodeId>
+    <Sequence>45</Sequence>
+    <ControlName>InventTransferParmTable_ReceiveUpdateQty</ControlName>
+    <ControlLabel>Update</ControlLabel>
+    <ControlType>ComboBox</ControlType>
+    <Value>2</Value>
+    <CommandName />
+  </UserAction>
+  <UserAction Ref="i96">
+    <Description>Click OK.</Description>
+    <NodeId>i96</NodeId>
+    <Sequence>45</Sequence>
+    <ControlName>OK</ControlName>
+    <ControlLabel>OK</ControlLabel>
+    <ControlType>CommandButton</ControlType>
+    <Value />
+    <CommandName>Click</CommandName>
+  </UserAction>
+  <UserAction Ref="i100">
+    <Description>Refresh the page.</Description>
+    <NodeId>i100</NodeId>
+    <Sequence>45</Sequence>
+    <ControlName>No Control Name</ControlName>
+    <ControlLabel />
+    <ControlType />
+    <Value>true</Value>
+    <CommandName>Refresh</CommandName>
+  </UserAction>
+  <UserAction Ref="i102">
+    <Description>Click Inventory.</Description>
+    <NodeId>i102</NodeId>
+    <Sequence>45</Sequence>
+    <ControlName>Inventory</ControlName>
+    <ControlLabel>Inventory</ControlLabel>
+    <ControlType>MenuButton</ControlType>
+    <Value />
+    <CommandName>Click</CommandName>
+  </UserAction>
+  <UserAction Ref="i104">
+    <Description>Click On-hand.</Description>
+    <NodeId>i104</NodeId>
+    <Sequence>45</Sequence>
+    <ControlName>InventOnhand</ControlName>
+    <ControlLabel>On-hand</ControlLabel>
+    <ControlType>MenuItem</ControlType>
+    <Value />
+    <CommandName>Click</CommandName>
+  </UserAction>
+  <UserAction Ref="i107">
+    <Description>Click Close.</Description>
+    <NodeId>i107</NodeId>
+    <Sequence>45</Sequence>
+    <ControlName>DialogCloseCommandButton</ControlName>
+    <ControlLabel>Close</ControlLabel>
+    <ControlType>CommandButton</ControlType>
+    <Value />
+    <CommandName>Click</CommandName>
+  </UserAction>
 </UserActionsWithDetails>
- 
  

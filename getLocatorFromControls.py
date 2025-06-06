@@ -9,9 +9,12 @@ def generate_xpath_from_control(control_type, control_name, control_label, descr
     # elif control_type in ["combobox"]:
     #     return f"//div[@data-dyn-controlname='{control_name}']"
     elif control_type == "combobox":
-        return [f"//input[@name='{control_name}']",
+        return [f"//input[@name='{control_name}']/following-sibling::div",
                 f"//ul[contains(@aria-labelledby, '{control_name}')]//li[@data-dyn-index='{value}']",
-                f"//ul[contains(@aria-labelledby, '{control_name}')]"
+                f"//ul[contains(@aria-labelledby, '{control_name}')]",
+                f"//input[@aria-label='{control_label}']/following-sibling::div",
+                f"//ul[contains(@id,'{control_name}')]//li[{value}]",
+                f"//ul[contains(@id, '{control_name}')]"
             ]
     elif control_type == "sectionpage":
         return f"//button[contains(text(),'{control_label}')]"
