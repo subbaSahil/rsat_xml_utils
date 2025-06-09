@@ -150,7 +150,7 @@ def generate_selenium_script(controls):
     dailog_box_line_items = False
     new_line_item_in_dailog_box_item = False
     new_line_in_dailog_already_exist = False
-    multiple_select_button = False
+    # multiple_select_button = False
     lines = [
         "from selenium import webdriver",
         "from selenium.webdriver.common.by import By",
@@ -230,8 +230,8 @@ def generate_selenium_script(controls):
             elif description == "Click Save.":
                 if add_line_flag == True:
                     add_line_flag = False   
-            elif  description.strip() == "Click Select." and previous_control_type == "grid" and "In the list, select row" in previous_control_description:
-                multiple_select_button = False
+            # elif  description.strip() == "Click Select." and previous_control_type == "grid" and "In the list, select row" in previous_control_description:
+            #     multiple_select_button = False
             elif description.strip() == "In the list, find and select the desired record." :
                 grid_for_table_or_data_selection= "table"
                 select_a_grid_or_click_a_input_anchor_flag = "select_row"
@@ -366,7 +366,7 @@ def generate_selenium_script(controls):
                             dropdown_xpath = f"//input[@name='{name}']/following-sibling::div//*[contains(@class, 'lookupButton')]"
                             lines.append(f"# Open dropdown for {label}")
                             lines.append(f"Interactions.wait_and_click(driver, By.XPATH, \"{dropdown_xpath}\")")
-                            lines.append("time.sleep(1)")
+                            lines.append(f"container = \"{dropdown_xpath}/ancestor::div[@id='mainContainer']/following-sibling::div[@data-dyn-role='Popup']//div[contains(@class,'fixedDataTableRowLayout_')]/ancestor::div[@role='grid']\"")
                     elif ctype == "referencegroup" and command_name == "ResolveChanges":
                         lines.append(f"# clicking dropdown for Tree")
                         # lines.append(f"Interactions.wait_and_click(driver, By.XPATH, \"//input[@role='combobox']/parent::div/parent::div/following-sibling::div\")")
@@ -560,6 +560,9 @@ def generate_selenium_script(controls):
                         lines.append(f"elif(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[1]}\")):")
                         lines.append(f"    if Interactions.check_if_checkbox_is_checked(driver, By.XPATH, \"{xpath[1]}\", {value}) == False:")
                         lines.append(f"         Interactions.wait_and_click(driver, By.XPATH, \"{xpath[1]}\")")
+                        lines.append(f"elif(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[2]}\")):")
+                        lines.append(f"    if Interactions.check_if_checkbox_is_checked(driver, By.XPATH, \"{xpath[2]}\", {value}) == False:")
+                        lines.append(f"         Interactions.wait_and_click(driver, By.XPATH, \"{xpath[2]}\")")
                         # lines.append(f"    Interactions.wait_and_click(driver, By.XPATH, \"//div[text()='{xpath[1]}']\")")
                 elif ctype == "combobox":
                     lines.append(f"# Clicking combobox: {name}")
@@ -657,20 +660,27 @@ def generate_selenium_script(controls):
                 elif ctype == "grid":   
                     container = "//div[contains(@class,'fixedDataTableRowLayout_')]/ancestor::div[@role='grid']"
                     previous_desc = f"In the {previous_control_label} field, enter or select a value."
+                    match_desc = description.strip()
+                    match = re.search(r"select row (\d+)", match_desc.lower())
+                    if match:
+                        value = int(match.group(1))  # Convert matched row number to int
+                        locator = f"//div[@aria-rowindex='{value + 1}']/div[@class='fixedDataTableRowLayout_body']//*[@role='checkbox']"
+                        lines.append(f"Interactions.scroll_and_click(driver, By.XPATH, container, \"{locator}\")")
+                        lines.append("time.sleep(0.5)")
                     if previous_control_type == "input" and previous_control_description == previous_desc and previous_control_label != "Broker":
                         lines.append("\"Skipping grid since previous was control was input\"")
                         input_flag_for_grid = True
                         # ignore_grid = True
                     # the broker multple input
-                    elif ctype =="grid" and previous_control_type == "input" and previous_control_description == "In the Broker field, enter or select a value." and previous_control_label == "Broker":
-                        lines.append("user_input = input(\"Press data to select: \")")
-                        lines.append(f"Interactions.scroll_and_click(driver, By.XPATH, \"{container}\", f\"//input[@value='{{user_input}}']/ancestor::div[@class='fixedDataTableRowLayout_body']/div[1]//div[@role='checkbox']\")")
-                        multiple_select_button = True
+                    # elif ctype =="grid" and previous_control_type == "input" and previous_control_description == "In the Broker field, enter or select a value." and previous_control_label == "Broker":
+                    #     lines.append("user_input = input(\"Press data to select: \")")
+                    #     lines.append(f"Interactions.scroll_and_click(driver, By.XPATH, \"{container}\", f\"//input[@value='{{user_input}}']/ancestor::div[@class='fixedDataTableRowLayout_body']/div[1]//div[@role='checkbox']\")")
+                    #     multiple_select_button = True
                     elif previous_control_type == "grid" and "In the list, select row" in previous_control_description:
-                        if multiple_select_button == True:
-                            lines.append("user_input = input(\"Press data to select: \")")
-                            lines.append(f"Interactions.scroll_and_click(driver, By.XPATH, \"{container}\", f\"//input[@value='{{user_input}}']/ancestor::div[@class='fixedDataTableRowLayout_body']/div[1]//div[@role='checkbox']\")")
-                        else:
+                        # if multiple_select_button == True:
+                        #     lines.append("user_input = input(\"Press data to select: \")")
+                        #     lines.append(f"Interactions.scroll_and_click(driver, By.XPATH, \"{container}\", f\"//input[@value='{{user_input}}']/ancestor::div[@class='fixedDataTableRowLayout_body']/div[1]//div[@role='checkbox']\")")
+                        # else:
                             lines.append("\"Skipping grid selection due input in the ancestor\"")
                     elif description.strip() == "In the list, mark the selected row." and command_name == "MarkActiveRow":
                         lines.append("\"Skipping grid since it is deafault behavior of d365\"")
@@ -682,7 +692,10 @@ def generate_selenium_script(controls):
                             lines.append(f"Interactions.press_enter(driver, By.XPATH, \"//input[@value='\"+user_input+\"']\")")
                             input_flag_for_grid = True
                         else:
-                            lines.append("\"Skipping grid since previous was input\"")
+                            if command_name == "NavigationAction":
+                                lines.append(f"Interactions.press_enter(driver, By.XPATH, \"//input[@value='\"+user_input+\"']\")")
+                            else: 
+                                lines.append("\"Skipping grid since previous was input\"")
                     elif description.strip() == "In the list, find and select the desired record." and name == "ChangeProposalGrid":
                         pass
                     elif ctype == "grid" and description.strip() == "In the list, find and select the desired record." and "LedgerDimensionGrid" in name:
@@ -694,9 +707,11 @@ def generate_selenium_script(controls):
                             lines.append(f"# Clicking button: {name}")
                             lines.append(f"user_input = input(\"Press data to select: \")")
                             lines.append(f"Interactions.scroll_and_click(driver, By.XPATH, \"{container2}\", f\"//input[@value='{{user_input}}']\")")
-                        else:
+                        elif command_name == "ChangeSelectedIndexInCache":
+                             lines.append("user_input = input(\"Press data to select: \")")
                              lines.append(f"Interactions.scroll_and_click_row(driver, By.XPATH, \"{container}\", f\"//input[@value='{{user_input}}']/ancestor::div[@class='fixedDataTableRowLayout_body']/div[1]//div[@role='checkbox']\")")
                     elif select_a_grid_or_click_a_input_anchor_flag == "click_row":
+                       
                         if previous_control_type == "grid" and previous_control_description == "In the list, find and select the desired record.":
                                 lines.append(f"Interactions.press_enter(driver, By.XPATH, \"//input[@value='\"+user_input+\"']\")")
                         elif  previous_control_type == "quickfilter":

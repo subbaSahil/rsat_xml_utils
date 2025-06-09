@@ -21,11 +21,12 @@ def generate_xpath_from_control(control_type, control_name, control_label, descr
     elif control_type == "checkbox":
         return [
             f"//label[contains(text(),'{control_label}')]/following-sibling::div/span[1]",
-            f"//span[contains(@id, '{control_name}') and (@class='toggle-box' or @class='checkBox')]"
+            f"//span[contains(@id, '{control_name}') and (@class='toggle-box' or @class='checkBox')]",
+            f"//div[@aria-label='{control_label}']//span"
             ]
     elif control_type == "pivotitem":
         return f"//li[contains(@data-dyn-controlname,'{control_name}')]"
-    elif control_type in ["input", "real", "referencegroup","date","radiobutton", "quickfilter","filtermanager"]:
+    elif control_type in ["input", "real", "referencegroup","date","radiobutton", "quickfilter","filtermanager", "datetime"]:
         return [
             f"//input[contains(@name,'{control_name.strip()}')]",
             f"//input[contains(@aria-label,'{control_label.strip()}')]"
@@ -63,4 +64,6 @@ def generate_xpath_from_control(control_type, control_name, control_label, descr
         return f"//ul[contains(@id,'{control_name}')]//li[@data-dyn-index='{value}']"  
     elif control_type == "integer":
         return f"//div[@name='{control_name}']"
+    elif control_type == "datetime":
+        return []
  

@@ -1,128 +1,231 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <UserActionsWithDetails>
-    <UserAction Ref="i4">
-        <Description>Close the page.</Description>
-        <NodeId>i4</NodeId>
-        <Sequence>12</Sequence>
-        <ControlName>No Control Name</ControlName>
-        <ControlLabel />
-        <ControlType />
-        <Value />
-        <CommandName>RequestClose</CommandName>
-        <Annotations />
-    </UserAction>
-    <UserAction Ref="i6">
-        <Description>Click Delete.</Description>
-        <NodeId>i6</NodeId>
-        <Sequence>12</Sequence>
-        <ControlName>SystemDefinedDeleteButton</ControlName>
-        <ControlLabel>Delete</ControlLabel>
-        <ControlType>CommandButton</ControlType>
-        <Value />
-        <CommandName>Click</CommandName>
-    </UserAction>
-    <UserAction Ref="i8">
-        <Description>Click Delete.</Description>
-        <NodeId>i8</NodeId>
-        <Sequence>12</Sequence>
-        <ControlName>SystemDefinedDeleteButton</ControlName>
-        <ControlLabel>Delete</ControlLabel>
-        <ControlType>CommandButton</ControlType>
-        <Value />
-        <CommandName>Click</CommandName>
-    </UserAction>
-    <UserAction Ref="i10">
-        <Description>Close the page.</Description>
-        <NodeId>i10</NodeId>
-        <Sequence>12</Sequence>
-        <ControlName>No Control Name</ControlName>
-        <ControlLabel />
-        <ControlType />
-        <Value />
-        <CommandName>RequestClose</CommandName>
-        <Annotations />
-    </UserAction>
-    <UserAction Ref="i12">
-        <Description>Go to Accounts payable &gt; Broker and royalties &gt; Broker claims.</Description>
-        <NodeId>i12</NodeId>
-        <Sequence>12</Sequence>
+    <UserAction Ref="i3">
+        <Description>Go to General ledger &gt; Chart of accounts &gt; Accounts &gt; Main accounts.</Description>
+        <NodeId>i3</NodeId>
+        <Sequence>22</Sequence>
         <Navigation>mainmenu</Navigation>
-        <Navigation>AccountsPayable</Navigation>
-        <Navigation>MCRBrokerAndRoyalties</Navigation>
+        <Navigation>GeneralLedger</Navigation>
+        <Navigation>ChartOfAccounts</Navigation>
+        <Navigation>Accounts</Navigation>
         <ControlName>No Control Name</ControlName>
         <ControlLabel />
         <ControlType />
         <Value />
         <CommandName />
     </UserAction>
-    <UserAction Ref="i15">
-        <Description>Click Broker report.</Description>
-        <NodeId>i15</NodeId>
-        <Sequence>12</Sequence>
-        <ControlName>SSRS_OpenBrokerInvoices</ControlName>
-        <ControlLabel>Broker report</ControlLabel>
+    <UserAction Ref="i6">
+        <Description>Click Next.</Description>
+        <NodeId>i6</NodeId>
+        <Sequence>22</Sequence>
+        <ControlName>TreeNext</ControlName>
+        <ControlLabel>Next</ControlLabel>
         <ControlType>Button</ControlType>
         <Value />
         <CommandName>Click</CommandName>
     </UserAction>
-    <UserAction Ref="i18">
-        <Description>In the Broker field, enter or select a value.</Description>
-        <NodeId>i18</NodeId>
-        <Sequence>12</Sequence>
-        <ControlName>Fld1_1</ControlName>
-        <ControlLabel>Broker</ControlLabel>
-        <ControlType>Input</ControlType>
+    <UserAction Ref="i7">
+        <Description>Click Next.</Description>
+        <NodeId>i7</NodeId>
+        <Sequence>22</Sequence>
+        <ControlName>TreeNext</ControlName>
+        <ControlLabel>Next</ControlLabel>
+        <ControlType>Button</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i8">
+        <Description>Click Next.</Description>
+        <NodeId>i8</NodeId>
+        <Sequence>22</Sequence>
+        <ControlName>TreeNext</ControlName>
+        <ControlLabel>Next</ControlLabel>
+        <ControlType>Button</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i9">
+        <Description>Click Next.</Description>
+        <NodeId>i9</NodeId>
+        <Sequence>22</Sequence>
+        <ControlName>TreeNext</ControlName>
+        <ControlLabel>Next</ControlLabel>
+        <ControlType>Button</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i10">
+        <Description>Click Next.</Description>
+        <NodeId>i10</NodeId>
+        <Sequence>22</Sequence>
+        <ControlName>TreeNext</ControlName>
+        <ControlLabel>Next</ControlLabel>
+        <ControlType>Button</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i11">
+        <Description>Click Next.</Description>
+        <NodeId>i11</NodeId>
+        <Sequence>22</Sequence>
+        <ControlName>TreeNext</ControlName>
+        <ControlLabel>Next</ControlLabel>
+        <ControlType>Button</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i13">
+        <Description>In the tree, select '601300, Advertising Expense'.</Description>
+        <NodeId>i13</NodeId>
+        <Sequence>22</Sequence>
+        <ControlName>Tree</ControlName>
+        <ControlLabel />
+        <ControlType>Tree</ControlType>
+        <Value>601300, Advertising Expense</Value>
+        <CommandName>SelectionPathChanged</CommandName>
+    </UserAction>
+    <UserAction Ref="i15">
+        <Description>Click Add to open the drop dialog.</Description>
+        <NodeId>i15</NodeId>
+        <Sequence>22</Sequence>
+        <ControlName>AddLegalEntityOverride</ControlName>
+        <ControlLabel>Add</ControlLabel>
+        <ControlType>DropDialogButton</ControlType>
         <Value />
         <CommandName>RequestPopup</CommandName>
     </UserAction>
-    <UserAction Ref="i21">
-        <Description>In the list, select row 2.</Description>
-        <NodeId>i21</NodeId>
-        <Sequence>12</Sequence>
-        <ControlName>Grid</ControlName>
+    <UserAction Ref="i18">
+        <Description>Use the Quick Filter to find records. For example, filter on the Company field
+            with a value of 'DEMF'.</Description>
+        <NodeId>i18</NodeId>
+        <Sequence>22</Sequence>
+        <ControlName>DataAreaIdQuickFilter</ControlName>
         <ControlLabel />
-        <ControlType>Grid</ControlType>
-        <Value>2</Value>
-        <CommandName>ChangeSelectedIndexInCache</CommandName>
+        <ControlType>QuickFilter</ControlType>
+        <Value>Company</Value>
+        <CommandName>ApplyFilterForTaskRecorder</CommandName>
+    </UserAction>
+    <UserAction Ref="i20">
+        <Description>Click Add.</Description>
+        <NodeId>i20</NodeId>
+        <Sequence>22</Sequence>
+        <ControlName>SelectCompanyInfoBtn</ControlName>
+        <ControlLabel>Add</ControlLabel>
+        <ControlType>Button</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
     </UserAction>
     <UserAction Ref="i22">
-        <Description>In the list, select row 3.</Description>
+        <Description>In the list, mark the selected row.</Description>
         <NodeId>i22</NodeId>
-        <Sequence>12</Sequence>
-        <ControlName>Grid</ControlName>
+        <Sequence>22</Sequence>
+        <ControlName>LegalEntityOverrides</ControlName>
         <ControlLabel />
         <ControlType>Grid</ControlType>
-        <Value>3</Value>
-        <CommandName>ChangeSelectedIndexInCache</CommandName>
+        <Value />
+        <CommandName>MarkActiveRow</CommandName>
     </UserAction>
-    <UserAction Ref="i23">
-        <Description>In the list, select row 8.</Description>
-        <NodeId>i23</NodeId>
-        <Sequence>12</Sequence>
-        <ControlName>Grid</ControlName>
-        <ControlLabel />
-        <ControlType>Grid</ControlType>
-        <Value>8</Value>
-        <CommandName>ChangeSelectedIndexInCache</CommandName>
+    <UserAction Ref="i24">
+        <Description>Select the Allocation check box.</Description>
+        <NodeId>i24</NodeId>
+        <Sequence>22</Sequence>
+        <ControlName>MainAccountLegalEntity_AutoAllocate</ControlName>
+        <ControlLabel>Allocation</ControlLabel>
+        <ControlType>CheckBox</ControlType>
+        <Value>True</Value>
+        <CommandName />
     </UserAction>
-    <UserAction Ref="i25">
-        <Description>Click Select.</Description>
-        <NodeId>i25</NodeId>
-        <Sequence>12</Sequence>
-        <ControlName>OK</ControlName>
-        <ControlLabel>Select</ControlLabel>
+    <UserAction Ref="i26">
+        <Description>Click Allocation terms.</Description>
+        <NodeId>i26</NodeId>
+        <Sequence>22</Sequence>
+        <ControlName>SetupAllocations</ControlName>
+        <ControlLabel>Allocation terms</ControlLabel>
+        <ControlType>MenuItemButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i29">
+        <Description>Click New.</Description>
+        <NodeId>i29</NodeId>
+        <Sequence>22</Sequence>
+        <ControlName>SystemDefinedNewButton</ControlName>
+        <ControlLabel>New</ControlLabel>
         <ControlType>CommandButton</ControlType>
         <Value />
         <CommandName>Click</CommandName>
     </UserAction>
-    <UserAction Ref="i27">
-        <Description>Click OK.</Description>
-        <NodeId>i27</NodeId>
-        <Sequence>12</Sequence>
-        <ControlName>CommandButton</ControlName>
-        <ControlLabel>OK</ControlLabel>
+    <UserAction Ref="i31">
+        <Description>In the Percent field, enter a number.</Description>
+        <NodeId>i31</NodeId>
+        <Sequence>22</Sequence>
+        <ControlName>LedgerAllocation_ValueDetails</ControlName>
+        <ControlLabel>Percent</ControlLabel>
+        <ControlType>Real</ControlType>
+        <Value>20.00</Value>
+        <CommandName />
+    </UserAction>
+    <UserAction Ref="i33">
+        <Description>In the BusinessUnit value field, enter or select a value.</Description>
+        <NodeId>i33</NodeId>
+        <Sequence>22</Sequence>
+        <ControlName>DimensionEntryControlFrom_DECValue_BusinessUnit</ControlName>
+        <ControlLabel>BusinessUnit value</ControlLabel>
+        <ControlType>Input</ControlType>
+        <Value>001</Value>
+        <CommandName>RequestPopup</CommandName>
+    </UserAction>
+    <UserAction Ref="i37">
+        <Description>In the list, click the link in the selected row.</Description>
+        <NodeId>i37</NodeId>
+        <Sequence>22</Sequence>
+        <ControlName>Grid</ControlName>
+        <ControlLabel />
+        <ControlType>Grid</ControlType>
+        <Value />
+        <CommandName>NavigationAction</CommandName>
+    </UserAction>
+    <UserAction Ref="i39">
+        <Description>Click Save.</Description>
+        <NodeId>i39</NodeId>
+        <Sequence>22</Sequence>
+        <ControlName>SystemDefinedSaveButton</ControlName>
+        <ControlLabel>Save</ControlLabel>
         <ControlType>CommandButton</ControlType>
         <Value />
         <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i41">
+        <Description>Close the page.</Description>
+        <NodeId>i41</NodeId>
+        <Sequence>22</Sequence>
+        <ControlName>No Control Name</ControlName>
+        <ControlLabel />
+        <ControlType />
+        <Value />
+        <CommandName>RequestClose</CommandName>
+        <Annotations />
+    </UserAction>
+    <UserAction Ref="i43">
+        <Description>Click Save.</Description>
+        <NodeId>i43</NodeId>
+        <Sequence>22</Sequence>
+        <ControlName>SystemDefinedSaveButton</ControlName>
+        <ControlLabel>Save</ControlLabel>
+        <ControlType>CommandButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i45">
+        <Description>Close the page.</Description>
+        <NodeId>i45</NodeId>
+        <Sequence>22</Sequence>
+        <ControlName>No Control Name</ControlName>
+        <ControlLabel />
+        <ControlType />
+        <Value />
+        <CommandName>RequestClose</CommandName>
+        <Annotations />
     </UserAction>
 </UserActionsWithDetails>
+ 

@@ -359,62 +359,6 @@ def scroll_and_click_row(driver, by, container_xpath, target_xpath, timeout=10, 
 
     print("Visible container not found.")
 
-
-
-def scroll_right(driver, by, container_xpath, target_xpath, target_xpath_2, timeout=10, max_scrolls=1000):
-    time.sleep(2)
-    for i in range(1, 10):
-        indexed_xpath = f"({container_xpath})[{i}]"
-        try:
-            container = WebDriverWait(driver, timeout).until(
-                EC.presence_of_element_located((By.XPATH, indexed_xpath))
-            )
-
-            if container.is_displayed():
-                print(f"Container found: {indexed_xpath}")
-                actions = ActionChains(driver)
-
-                scroll_key = Keys.ARROW_RIGHT
-                scroll_amount = 200  # pixels for JS scroll
-                for _ in range(max_scrolls):
-                    try:
-                        if check_element_exist(driver, by, target_xpath):
-                            element_to_click = WebDriverWait(driver, 5).until(
-                                EC.visibility_of_element_located((by, target_xpath))
-                            )
-                            element_to_click.click()
-                            print(f"Clicked element: {target_xpath}")
-                            return
-
-                        elif check_element_exist(driver, by, target_xpath_2):
-                            element_to_click = WebDriverWait(driver, 5).until(
-                                EC.visibility_of_element_located((by, target_xpath_2))
-                            )
-                            element_to_click.click()
-                            print(f"Clicked element: {target_xpath_2}")
-                            return
-
-                    except TimeoutException:
-                        # Try ActionChains key scroll
-                        try:
-                            actions.move_to_element(container).click().send_keys(scroll_key).perform()
-                        except:
-                            pass
-                        # Try JavaScript pixel scroll
-                        try:
-                            driver.execute_script("arguments[0].scrollLeft += arguments[1];", container, scroll_amount)
-                        except Exception as e:
-                            print(f"JS scroll error: {e}")
-
-                        time.sleep(0.5)
-
-                raise TimeoutException(f"Element {target_xpath} not found after scrolling.")
-        except TimeoutException as e:
-            print(f"Timeout or not displayed for container: {e}")
-        except Exception as e:
-            print(f"Unexpected error: {e}")
-    print("Visible container not found.")
-
 def scroll_into_view(driver, by, value, timeout=10):
     """
     Scrolls the specified element into view using JavaScript.
@@ -512,7 +456,7 @@ def get_max_value_from_elements(driver, by, element_xpath, count, timeout=10):
         return None
     
 
-def scroll_and_click_dropdown_item(driver, container_xpath, target_by, target_locator, timeout=10, max_scrolls=30):
+def scroll_and_click_dropdown_item(driver, by ,container_xpath, target_locator, timeout=10, max_scrolls=30):
     try:
         container = WebDriverWait(driver, timeout).until(
             EC.presence_of_element_located((By.XPATH, container_xpath))
@@ -521,7 +465,7 @@ def scroll_and_click_dropdown_item(driver, container_xpath, target_by, target_lo
         for _ in range(max_scrolls):
             try:
                 target = WebDriverWait(driver, 1).until(
-                    EC.element_to_be_clickable((target_by, target_locator))
+                    EC.element_to_be_clickable((by, target_locator))
                 )
                 target.click()
                 print(f"✅ Clicked target: {target_locator}")
@@ -592,7 +536,7 @@ def scroll_and_click(driver, by, container_xpath, target_xpath, timeout=10, max_
                         print(f"Clicked element: {target_xpath}")
                         return
                     except TimeoutException:
-                        actions.move_to_element(container).click().send_keys(scroll_direction).perform()
+                        actions.move_to_element(container).send_keys(scroll_direction).perform()
                         time.sleep(0.5)
  
                 raise TimeoutException(f"Element {target_xpath} not found after scrolling.")
@@ -604,3 +548,43 @@ def scroll_and_click(driver, by, container_xpath, target_xpath, timeout=10, max_
  
     print("Visible container not found.")
  
+
+def safe_click_checkbox_by_rowindex(driver, container_xpath, target_rowindex, max_scrolls=20):
+    from selenium.webdriver.common.keys import Keys
+    from selenium.webdriver.common.action_chains import ActionChains
+    from selenium.webdriver.support.ui import WebDriverWait
+    from selenium.webdriver.support import expected_conditions as EC
+    from selenium.common.exceptions import TimeoutException
+    import time
+
+    print(f"Trying to click checkbox on rowindex: {target_rowindex}")
+
+    for scroll in range(max_scrolls):
+        rows = driver.find_elements(By.XPATH, "//div[@aria-rowindex]")
+        for row in rows:
+            row_index = row.get_attribute("aria-rowindex")
+            if row_index == str(target_rowindex):
+                try:
+                    checkbox = row.find_element(By.XPATH, ".//div[@class='fixedDataTableRowLayout_body']//*[@role='checkbox']")
+                    driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", checkbox)
+                    time.sleep(0.2)
+                    driver.execute_script("arguments[0].click();", checkbox)
+                    print(f"Clicked checkbox at rowindex {target_rowindex}")
+                    return True
+                except Exception as e:
+                    print(f"Failed to click checkbox at row {target_rowindex}: {e}")
+                    return False
+
+        # If not found, scroll down one page
+        try:
+            container = WebDriverWait(driver, 5).until(
+                EC.presence_of_element_located((By.XPATH, container_xpath))
+            )
+            ActionChains(driver).move_to_element(container).send_keys(Keys.PAGE_DOWN).perform()
+            time.sleep(0.5)
+        except Exception as e:
+            print(f"Scroll error: {e}")
+            break
+
+    print(f"Rowindex {target_rowindex} not found after scrolling.")
+    return False
