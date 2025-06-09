@@ -14,7 +14,8 @@ def generate_xpath_from_control(control_type, control_name, control_label, descr
                 f"//ul[contains(@aria-labelledby, '{control_name}')]",
                 f"//input[@aria-label='{control_label}']/following-sibling::div",
                 f"//ul[contains(@id,'{control_name}')]//li[{value}]",
-                f"//ul[contains(@id, '{control_name}')]"
+                f"//ul[contains(@id, '{control_name}')]",
+                f"//input[@name='{control_name}']/parent::div/following-sibling::div/div"
             ]
     elif control_type == "sectionpage":
         return f"//button[contains(text(),'{control_label}')]"
@@ -64,6 +65,4 @@ def generate_xpath_from_control(control_type, control_name, control_label, descr
         return f"//ul[contains(@id,'{control_name}')]//li[@data-dyn-index='{value}']"  
     elif control_type == "integer":
         return f"//div[@name='{control_name}']"
-    elif control_type == "datetime":
-        return []
  
