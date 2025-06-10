@@ -592,7 +592,11 @@ def generate_selenium_script(controls):
                 elif ctype == "integer":
                     lines.append(f"# Inputting into: {name}")
                     lines.append(f"Interactions.clear_input_field_and_send_keys(driver, By.XPATH, \"{xpath}\", \"{value}\")")
-               
+                elif ctype == "anchorbutton":
+                    lines.append(f"# Clicking (default) on: {name}")
+                    lines.append(f"Interactions.wait_and_click(driver, By.XPATH, \"{xpath}\")")
+                    lines.append(f"Interactions.press_enter(driver, By.XPATH, \"{xpath}\")")
+
                 elif ctype == "pivotitem":
                     lines.append(f"Interactions.wait_and_click(driver, By.XPATH, \"{xpath}\")")
                 elif ctype == "formrunpersonalizationtoolbarcontrol":
