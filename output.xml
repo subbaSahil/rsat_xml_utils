@@ -1,12 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <UserActionsWithDetails>
     <UserAction Ref="i3">
-        <Description>Go to General ledger &gt; Ledger setup &gt; General ledger parameters.</Description>
+        <Description>Go to General ledger &gt; Chart of accounts &gt; Accounts &gt; Main account categories.</Description>
         <NodeId>i3</NodeId>
-        <Sequence>6</Sequence>
+        <Sequence>11</Sequence>
         <Navigation>mainmenu</Navigation>
         <Navigation>GeneralLedger</Navigation>
-        <Navigation>LedgerSetup</Navigation>
+        <Navigation>ChartOfAccounts</Navigation>
+        <Navigation>Accounts</Navigation>
         <ControlName>No Control Name</ControlName>
         <ControlLabel />
         <ControlType />
@@ -14,54 +15,104 @@
         <CommandName />
     </UserAction>
     <UserAction Ref="i6">
-        <Description>Click the Chart of accounts and dimensions tab.</Description>
+        <Description>Click New.</Description>
         <NodeId>i6</NodeId>
-        <Sequence>6</Sequence>
-        <ControlName>DimensionsTab</ControlName>
-        <ControlLabel>Chart of accounts and dimensions</ControlLabel>
-        <ControlType>PivotItem</ControlType>
-        <Value>true</Value>
-        <CommandName>ActivateTab</CommandName>
-    </UserAction>
-    <UserAction Ref="i8">
-        <Description>Click Change delimiter.</Description>
-        <NodeId>i8</NodeId>
-        <Sequence>6</Sequence>
-        <ControlName>UpdateDelimiter</ControlName>
-        <ControlLabel>Change delimiter</ControlLabel>
-        <ControlType>AnchorButton</ControlType>
-        <Value />
-        <CommandName>Click</CommandName>
-    </UserAction>
-    <UserAction Ref="i11">
-        <Description>In the Dimension segment delimiter field, select an option.</Description>
-        <NodeId>i11</NodeId>
-        <Sequence>6</Sequence>
-        <ControlName>Fld1_1</ControlName>
-        <ControlLabel>Dimension segment delimiter</ControlLabel>
-        <ControlType>ComboBox</ControlType>
-        <Value>3</Value>
-        <CommandName />
-    </UserAction>
-    <UserAction Ref="i13">
-        <Description>Click Modify.</Description>
-        <NodeId>i13</NodeId>
-        <Sequence>6</Sequence>
-        <ControlName>UpdateButton</ControlName>
-        <ControlLabel>Modify</ControlLabel>
+        <Sequence>11</Sequence>
+        <ControlName>SystemDefinedNewButton</ControlName>
+        <ControlLabel>New</ControlLabel>
         <ControlType>CommandButton</ControlType>
         <Value />
         <CommandName>Click</CommandName>
     </UserAction>
-    <UserAction Ref="i16">
+    <UserAction Ref="i8">
+        <Description>In the Main account category field, type a value.</Description>
+        <NodeId>i8</NodeId>
+        <Sequence>11</Sequence>
+        <ControlName>LedgerAccountCategory_AccountCategory</ControlName>
+        <ControlLabel>Main account category</ControlLabel>
+        <ControlType>Input</ControlType>
+        <Value>win</Value>
+        <CommandName />
+    </UserAction>
+    <UserAction Ref="i10">
+        <Description>In the Description field, type a value.</Description>
+        <NodeId>i10</NodeId>
+        <Sequence>11</Sequence>
+        <ControlName>LedgerAccountCategory_Description</ControlName>
+        <ControlLabel>Description</ControlLabel>
+        <ControlType>Input</ControlType>
+        <Value>win</Value>
+        <CommandName />
+    </UserAction>
+    <UserAction Ref="i12">
+        <Description>In the Main account type field, select an option.</Description>
+        <NodeId>i12</NodeId>
+        <Sequence>11</Sequence>
+        <ControlName>LedgerAccountCategory_AccountType</ControlName>
+        <ControlLabel>Main account type</ControlLabel>
+        <ControlType>ComboBox</ControlType>
+        <Value>1</Value>
+        <CommandName />
+    </UserAction>
+    <UserAction Ref="i14">
+        <Description>Click Link main accounts.</Description>
+        <NodeId>i14</NodeId>
+        <Sequence>11</Sequence>
+        <ControlName>LinkMainAccounts</ControlName>
+        <ControlLabel>Link main accounts</ControlLabel>
+        <ControlType>MenuItemButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i17">
+        <Description>Select the Linked check box.</Description>
+        <NodeId>i17</NodeId>
+        <Sequence>11</Sequence>
+        <ControlName>Linked</ControlName>
+        <ControlLabel>Linked</ControlLabel>
+        <ControlType>CheckBox</ControlType>
+        <Value>True</Value>
+        <CommandName />
+    </UserAction>
+    <UserAction Ref="i19">
+        <Description>Click OK.</Description>
+        <NodeId>i19</NodeId>
+        <Sequence>11</Sequence>
+        <ControlName>OKButton</ControlName>
+        <ControlLabel>OK</ControlLabel>
+        <ControlType>CommandButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i22">
         <Description>Click Yes.</Description>
-        <NodeId>i16</NodeId>
-        <Sequence>6</Sequence>
+        <NodeId>i22</NodeId>
+        <Sequence>11</Sequence>
         <ControlName>Yes</ControlName>
         <ControlLabel>Yes</ControlLabel>
         <ControlType>CommandButton</ControlType>
         <Value />
         <CommandName>Click</CommandName>
     </UserAction>
+    <UserAction Ref="i24">
+        <Description>Click Save.</Description>
+        <NodeId>i24</NodeId>
+        <Sequence>11</Sequence>
+        <ControlName>SystemDefinedSaveButton</ControlName>
+        <ControlLabel>Save</ControlLabel>
+        <ControlType>CommandButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i26">
+        <Description>Close the page.</Description>
+        <NodeId>i26</NodeId>
+        <Sequence>11</Sequence>
+        <ControlName>No Control Name</ControlName>
+        <ControlLabel />
+        <ControlType />
+        <Value />
+        <CommandName>RequestClose</CommandName>
+        <Annotations />
+    </UserAction>
 </UserActionsWithDetails>
- 

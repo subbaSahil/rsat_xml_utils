@@ -9,6 +9,8 @@ def generate_xpath_from_control(control_type, control_name, control_label, descr
     # elif control_type in ["combobox"]:
     #     return f"//div[@data-dyn-controlname='{control_name}']"
     elif control_type == "combobox":
+        if control_label in ["Main account type"]:
+            value = int(value)+2
         return [f"//input[@name='{control_name}']/following-sibling::div",
                 f"//ul[contains(@aria-labelledby, '{control_name}')]//li[@data-dyn-index='{value}']",
                 f"//ul[contains(@aria-labelledby, '{control_name}')]",
