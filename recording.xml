@@ -1,192 +1,1334 @@
-<Recording xmlns:i="http://www.w3.org/2001/XMLSchema-instance"
-  xmlns="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Client.ServerForm.TaskRecording">
-  <CanonicalId>7c9d058c-1f32-4edf-9e97-22acda8b147b</CanonicalId>
-  <CurrentSequence>18</CurrentSequence>
-  <Description/>
+<?xml version="1.0" encoding="utf-8"?>
+<Recording xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Client.ServerForm.TaskRecording">
+  <CanonicalId>c412fcee-0884-46af-a56a-57bd9d0b5082</CanonicalId>
+  <CurrentSequence>151</CurrentSequence>
+  <Description></Description>
   <FormContexts xmlns:d2p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
     <d2p1:KeyValueOfstringFormContextyaScvdpM>
-      <d2p1:Key>237_MainAccountCategory_0cd75ebb-7176-45f1-bfd3-5740a3420692</d2p1:Key>
+      <d2p1:Key>19126_VendTable_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</d2p1:Key>
       <d2p1:Value>
         <Annotations>
           <Annotation i:type="FormAnnotation">
-            <ConfigurationOwnerName>MainAccountCategory</ConfigurationOwnerName>
-            <ConfigurationScope>41</ConfigurationScope>
+            <ConfigurationOwnerName>VendTable</ConfigurationOwnerName>
+            <ConfigurationScope>10</ConfigurationScope>
             <FilterCommandName>ApplyFilters</FilterCommandName>
             <FilterControlName>SystemDefinedFilterPane</FilterControlName>
             <FormViewOptionType>0</FormViewOptionType>
-            <MenuItemLabel>Main account categories</MenuItemLabel>
-            <MenuItemName>MainAccountCategory</MenuItemName>
+            <MenuItemLabel>All vendors</MenuItemLabel>
+            <MenuItemName>VendTableListPage</MenuItemName>
+            <MenuItemType>Display</MenuItemType>
+            <PublishedFromConfiguration>0</PublishedFromConfiguration>
+          </Annotation>
+          <Annotation i:type="FormAnnotation">
+            <ConfigurationOwnerName>VendTable</ConfigurationOwnerName>
+            <ConfigurationScope>10</ConfigurationScope>
+            <FilterCommandName>ApplyFilters</FilterCommandName>
+            <FilterControlName>SystemDefinedFilterPane</FilterControlName>
+            <FormViewOptionType>1</FormViewOptionType>
+            <MenuItemLabel>All vendors</MenuItemLabel>
+            <MenuItemName>VendTableListPage</MenuItemName>
             <MenuItemType>Display</MenuItemType>
             <PublishedFromConfiguration>0</PublishedFromConfiguration>
           </Annotation>
         </Annotations>
-        <FormID>237_MainAccountCategory_0cd75ebb-7176-45f1-bfd3-5740a3420692</FormID>
-        <FormName>MainAccountCategory</FormName>
+        <FormID>19126_VendTable_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormID>
+        <FormName>VendTable</FormName>
         <HasMetadata>true</HasMetadata>
-        <RecordingName>MainAccountCategory</RecordingName>
-        <Sequence>1</Sequence>
+        <RecordingName>VendTable</RecordingName>
+        <Sequence>4</Sequence>
       </d2p1:Value>
     </d2p1:KeyValueOfstringFormContextyaScvdpM>
     <d2p1:KeyValueOfstringFormContextyaScvdpM>
-      <d2p1:Key>701_MainAccountCategory_0cd75ebb-7176-45f1-bfd3-5740a3420692</d2p1:Key>
+      <d2p1:Key>22631_VendOnHoldUpdate_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</d2p1:Key>
       <d2p1:Value>
         <Annotations>
           <Annotation i:type="FormAnnotation">
-            <ConfigurationOwnerName>MainAccountCategory</ConfigurationOwnerName>
-            <ConfigurationScope>41</ConfigurationScope>
+            <ConfigurationOwnerName></ConfigurationOwnerName>
+            <ConfigurationScope>10</ConfigurationScope>
             <FilterCommandName>ApplyFilters</FilterCommandName>
             <FilterControlName>SystemDefinedFilterPane</FilterControlName>
             <FormViewOptionType>0</FormViewOptionType>
-            <MenuItemLabel>Main account categories</MenuItemLabel>
-            <MenuItemName>MainAccountCategory</MenuItemName>
+            <MenuItemLabel>On hold</MenuItemLabel>
+            <MenuItemName>VendOnHoldUpdate</MenuItemName>
             <MenuItemType>Display</MenuItemType>
             <PublishedFromConfiguration>0</PublishedFromConfiguration>
           </Annotation>
         </Annotations>
-        <FormID>701_MainAccountCategory_0cd75ebb-7176-45f1-bfd3-5740a3420692</FormID>
-        <FormName>MainAccountCategory</FormName>
+        <FormID>22631_VendOnHoldUpdate_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormID>
+        <FormName>VendOnHoldUpdate</FormName>
         <HasMetadata>true</HasMetadata>
-        <RecordingName>MainAccountCategory</RecordingName>
-        <Sequence>8</Sequence>
+        <RecordingName>VendOnHoldUpdate</RecordingName>
+        <Sequence>18</Sequence>
+      </d2p1:Value>
+    </d2p1:KeyValueOfstringFormContextyaScvdpM>
+    <d2p1:KeyValueOfstringFormContextyaScvdpM>
+      <d2p1:Key>22646_ReasonCode_Lookup_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</d2p1:Key>
+      <d2p1:Value>
+        <Annotations i:nil="true" />
+        <FormID>22646_ReasonCode_Lookup_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormID>
+        <FormName></FormName>
+        <HasMetadata>false</HasMetadata>
+        <RecordingName>ReasonCode_Lookup</RecordingName>
+        <Sequence>25</Sequence>
+      </d2p1:Value>
+    </d2p1:KeyValueOfstringFormContextyaScvdpM>
+    <d2p1:KeyValueOfstringFormContextyaScvdpM>
+      <d2p1:Key>22687_PurchTable_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</d2p1:Key>
+      <d2p1:Value>
+        <Annotations>
+          <Annotation i:type="FormAnnotation">
+            <ConfigurationOwnerName>PurchTable</ConfigurationOwnerName>
+            <ConfigurationScope>41</ConfigurationScope>
+            <FilterCommandName>ApplyFilters</FilterCommandName>
+            <FilterControlName>SystemDefinedFilterPane</FilterControlName>
+            <FormViewOptionType>0</FormViewOptionType>
+            <MenuItemLabel>All purchase orders</MenuItemLabel>
+            <MenuItemName>PurchTableListPage</MenuItemName>
+            <MenuItemType>Display</MenuItemType>
+            <PublishedFromConfiguration>0</PublishedFromConfiguration>
+          </Annotation>
+        </Annotations>
+        <FormID>22687_PurchTable_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormID>
+        <FormName>PurchTable</FormName>
+        <HasMetadata>true</HasMetadata>
+        <RecordingName>PurchTable</RecordingName>
+        <Sequence>43</Sequence>
+      </d2p1:Value>
+    </d2p1:KeyValueOfstringFormContextyaScvdpM>
+    <d2p1:KeyValueOfstringFormContextyaScvdpM>
+      <d2p1:Key>25167_PurchCreateOrder_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</d2p1:Key>
+      <d2p1:Value>
+        <Annotations i:nil="true" />
+        <FormID>25167_PurchCreateOrder_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormID>
+        <FormName>PurchCreateOrder</FormName>
+        <HasMetadata>true</HasMetadata>
+        <RecordingName>PurchCreateOrder</RecordingName>
+        <Sequence>61</Sequence>
+      </d2p1:Value>
+    </d2p1:KeyValueOfstringFormContextyaScvdpM>
+    <d2p1:KeyValueOfstringFormContextyaScvdpM>
+      <d2p1:Key>26087_PurchTable_OrderAccount_Lookup_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</d2p1:Key>
+      <d2p1:Value>
+        <Annotations i:nil="true" />
+        <FormID>26087_PurchTable_OrderAccount_Lookup_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormID>
+        <FormName>VendTableLookup</FormName>
+        <HasMetadata>true</HasMetadata>
+        <RecordingName>PurchTable_OrderAccount_Lookup</RecordingName>
+        <Sequence>68</Sequence>
+      </d2p1:Value>
+    </d2p1:KeyValueOfstringFormContextyaScvdpM>
+    <d2p1:KeyValueOfstringFormContextyaScvdpM>
+      <d2p1:Key>27463_SysBoxForm_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</d2p1:Key>
+      <d2p1:Value>
+        <Annotations i:nil="true" />
+        <FormID>27463_SysBoxForm_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormID>
+        <FormName>SysBoxForm</FormName>
+        <HasMetadata>true</HasMetadata>
+        <RecordingName>SysBoxForm</RecordingName>
+        <Sequence>78</Sequence>
+      </d2p1:Value>
+    </d2p1:KeyValueOfstringFormContextyaScvdpM>
+    <d2p1:KeyValueOfstringFormContextyaScvdpM>
+      <d2p1:Key>27480_PurchTable_OrderAccount_Lookup_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</d2p1:Key>
+      <d2p1:Value>
+        <Annotations i:nil="true" />
+        <FormID>27480_PurchTable_OrderAccount_Lookup_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormID>
+        <FormName>VendTableLookup</FormName>
+        <HasMetadata>true</HasMetadata>
+        <RecordingName>PurchTable_OrderAccount_Lookup</RecordingName>
+        <Sequence>85</Sequence>
+      </d2p1:Value>
+    </d2p1:KeyValueOfstringFormContextyaScvdpM>
+    <d2p1:KeyValueOfstringFormContextyaScvdpM>
+      <d2p1:Key>27552_LedgerJournalTable_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</d2p1:Key>
+      <d2p1:Value>
+        <Annotations>
+          <Annotation i:type="FormAnnotation">
+            <ConfigurationOwnerName>LedgerJournalTable</ConfigurationOwnerName>
+            <ConfigurationScope>41</ConfigurationScope>
+            <FilterCommandName>ApplyFilters</FilterCommandName>
+            <FilterControlName>SystemDefinedFilterPane</FilterControlName>
+            <FormViewOptionType>0</FormViewOptionType>
+            <MenuItemLabel>Vendor payment journal</MenuItemLabel>
+            <MenuItemName>LedgerJournalTable5</MenuItemName>
+            <MenuItemType>Display</MenuItemType>
+            <PublishedFromConfiguration>0</PublishedFromConfiguration>
+          </Annotation>
+        </Annotations>
+        <FormID>27552_LedgerJournalTable_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormID>
+        <FormName>LedgerJournalTable</FormName>
+        <HasMetadata>true</HasMetadata>
+        <RecordingName>LedgerJournalTable</RecordingName>
+        <Sequence>98</Sequence>
+      </d2p1:Value>
+    </d2p1:KeyValueOfstringFormContextyaScvdpM>
+    <d2p1:KeyValueOfstringFormContextyaScvdpM>
+      <d2p1:Key>28257_LedgerJournalTransVendPaym_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</d2p1:Key>
+      <d2p1:Value>
+        <Annotations>
+          <Annotation i:type="FormAnnotation">
+            <ConfigurationOwnerName>LedgerJournalTransVendPaym</ConfigurationOwnerName>
+            <ConfigurationScope>41</ConfigurationScope>
+            <FilterCommandName>ApplyFilters</FilterCommandName>
+            <FilterControlName>SystemDefinedFilterPane</FilterControlName>
+            <FormViewOptionType>0</FormViewOptionType>
+            <MenuItemLabel>Payment journal</MenuItemLabel>
+            <MenuItemName>LedgerJournalTransVendPaym</MenuItemName>
+            <MenuItemType>Display</MenuItemType>
+            <PublishedFromConfiguration>0</PublishedFromConfiguration>
+          </Annotation>
+        </Annotations>
+        <FormID>28257_LedgerJournalTransVendPaym_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormID>
+        <FormName>LedgerJournalTransVendPaym</FormName>
+        <HasMetadata>true</HasMetadata>
+        <RecordingName>LedgerJournalTransVendPaym</RecordingName>
+        <Sequence>106</Sequence>
+      </d2p1:Value>
+    </d2p1:KeyValueOfstringFormContextyaScvdpM>
+    <d2p1:KeyValueOfstringFormContextyaScvdpM>
+      <d2p1:Key>30115_SysBoxForm_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</d2p1:Key>
+      <d2p1:Value>
+        <Annotations i:nil="true" />
+        <FormID>30115_SysBoxForm_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormID>
+        <FormName>SysBoxForm</FormName>
+        <HasMetadata>true</HasMetadata>
+        <RecordingName>SysBoxForm</RecordingName>
+        <Sequence>118</Sequence>
       </d2p1:Value>
     </d2p1:KeyValueOfstringFormContextyaScvdpM>
   </FormContexts>
-  <Name>main_acc_general_ledger_1</Name>
-  <RootScope xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Id="i1">
-    <CustomDescription i:nil="true"/>
-    <Description i:nil="true"/>
-    <Id>0cd75ebb-7176-45f1-bfd3-5740a3420692</Id>
-    <Parent i:nil="true"/>
+  <Name>Vendor_on_hold</Name>
+  <RootScope z:Id="i1" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/">
+    <CustomDescription i:nil="true" />
+    <Description i:nil="true" />
+    <Id>d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</Id>
+    <Parent i:nil="true" />
     <ParentSequence>0</ParentSequence>
-    <ScreenshotUri i:nil="true"/>
+    <ScreenshotUri i:nil="true" />
     <Sequence>0</Sequence>
     <Children>
       <Node z:Id="i2" i:type="Scope">
-        <CustomDescription i:nil="true"/>
-        <Description/>
-        <Id>237_MainAccountCategory_0cd75ebb-7176-45f1-bfd3-5740a3420692</Id>
-        <Parent z:Ref="i1"/>
+        <CustomDescription i:nil="true" />
+        <Description></Description>
+        <Id>MenuItemvendtablelistpage_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</Id>
+        <Parent z:Ref="i1" />
         <ParentSequence>0</ParentSequence>
-        <ScreenshotUri i:nil="true"/>
-        <Sequence>2</Sequence>
+        <ScreenshotUri i:nil="true" />
+        <Sequence>1</Sequence>
         <Children>
-          <Node z:Id="i3" i:type="Scope">
-            <CustomDescription i:nil="true"/>
-            <Description/>
-            <Id>237RequestClose_0cd75ebb-7176-45f1-bfd3-5740a3420692</Id>
-            <Parent z:Ref="i2"/>
-            <ParentSequence>2</ParentSequence>
-            <ScreenshotUri i:nil="true"/>
-            <Sequence>3</Sequence>
-            <Children>
-              <Node z:Id="i4" i:type="CommandUserAction">
-                <CustomDescription i:nil="true"/>
-                <Description>Close the page.</Description>
-                <Id>237RequestClose_0cd75ebb-7176-45f1-bfd3-5740a3420692x4</Id>
-                <Parent z:Ref="i3"/>
-                <ParentSequence>3</ParentSequence>
-                <ScreenshotUri i:nil="true"/>
-                <Sequence>4</Sequence>
-                <Annotations/>
-                <GlobalId>3f9662bf-ddd2-4a64-898c-79fc6273212f</GlobalId>
-                <SystemGenerated>false</SystemGenerated>
-                <ControlLabel/>
-                <ControlLabelId/>
-                <FormId>237_MainAccountCategory_0cd75ebb-7176-45f1-bfd3-5740a3420692</FormId>
-                <ListContext i:nil="true"/>
-                <RowIndex i:nil="true"/>
-                <Arguments/>
-                <CommandName>RequestClose</CommandName>
-                <ControlName/>
-                <ControlType/>
-                <LabelId>@SysTaskRecorder:CloseForm</LabelId>
-                <ReturnType>Void</ReturnType>
-                <ReturnValue i:nil="true"/>
-                <TaskId i:nil="true"/>
-              </Node>
-            </Children>
-            <IsForm>false</IsForm>
-            <IsStepGroup>false</IsStepGroup>
-            <Name>RequestClose</Name>
-            <ScopeType>Private</ScopeType>
-          </Node>
-        </Children>
-        <IsForm>true</IsForm>
-        <IsStepGroup>false</IsStepGroup>
-        <Name>MainAccountCategory</Name>
-        <ScopeType>Public</ScopeType>
-      </Node>
-      <Node z:Id="i5" i:type="Scope">
-        <CustomDescription i:nil="true"/>
-        <Description/>
-        <Id>MenuItemmainaccountcategory_0cd75ebb-7176-45f1-bfd3-5740a3420692</Id>
-        <Parent z:Ref="i1"/>
-        <ParentSequence>0</ParentSequence>
-        <ScreenshotUri i:nil="true"/>
-        <Sequence>5</Sequence>
-        <Children>
-          <Node z:Id="i6" i:type="MenuItemUserAction">
-            <CustomDescription i:nil="true"/>
-            <Description>Go to General ledger > Chart of accounts > Accounts > Main account categories.</Description>
-            <Id>MenuItemmainaccountcategory_0cd75ebb-7176-45f1-bfd3-5740a3420692x6</Id>
-            <Parent z:Ref="i5"/>
-            <ParentSequence>5</ParentSequence>
-            <ScreenshotUri i:nil="true"/>
-            <Sequence>6</Sequence>
-            <Annotations/>
-            <GlobalId>d548060a-6e64-42d7-8c2f-1cf1443a0a2b</GlobalId>
+          <Node z:Id="i3" i:type="MenuItemUserAction">
+            <CustomDescription i:nil="true" />
+            <Description>Go to Procurement and sourcing &gt; Vendors &gt; All vendors.</Description>
+            <Id>MenuItemvendtablelistpage_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x2</Id>
+            <Parent z:Ref="i2" />
+            <ParentSequence>1</ParentSequence>
+            <ScreenshotUri i:nil="true" />
+            <Sequence>2</Sequence>
+            <Annotations />
+            <GlobalId>21a62077-3923-4f31-9a06-93cf027fab29</GlobalId>
             <SystemGenerated>false</SystemGenerated>
-            <MenuItemName>mainaccountcategory</MenuItemName>
+            <MenuItemName>vendtablelistpage</MenuItemName>
             <MenuItemType>Display</MenuItemType>
             <NavigationPath xmlns:d7p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
               <d7p1:string>mainmenu</d7p1:string>
-              <d7p1:string>GeneralLedger</d7p1:string>
-              <d7p1:string>ChartOfAccounts</d7p1:string>
-              <d7p1:string>Accounts</d7p1:string>
+              <d7p1:string>ProcurementAndSourcing</d7p1:string>
+              <d7p1:string>Vendors</d7p1:string>
             </NavigationPath>
           </Node>
-          <Node z:Id="i7" i:type="Scope">
-            <CustomDescription i:nil="true"/>
-            <Description/>
-            <Id>701_MainAccountCategory_0cd75ebb-7176-45f1-bfd3-5740a3420692</Id>
-            <Parent z:Ref="i5"/>
-            <ParentSequence>5</ParentSequence>
-            <ScreenshotUri i:nil="true"/>
-            <Sequence>7</Sequence>
+          <Node z:Id="i4" i:type="Scope">
+            <CustomDescription i:nil="true" />
+            <Description></Description>
+            <Id>19126_VendTable_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</Id>
+            <Parent z:Ref="i2" />
+            <ParentSequence>1</ParentSequence>
+            <ScreenshotUri i:nil="true" />
+            <Sequence>3</Sequence>
             <Children>
-              <Node z:Id="i8" i:type="Scope">
-                <CustomDescription i:nil="true"/>
-                <Description/>
-                <Id>773_0Click_0cd75ebb-7176-45f1-bfd3-5740a3420692</Id>
-                <Parent z:Ref="i7"/>
+              <Node z:Id="i5" i:type="Scope">
+                <CustomDescription i:nil="true" />
+                <Description></Description>
+                <Id>20560ChangeSelectedIndexInCache_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</Id>
+                <Parent z:Ref="i4" />
+                <ParentSequence>5</ParentSequence>
+                <ScreenshotUri i:nil="true" />
+                <Sequence>6</Sequence>
+                <Children>
+                  <Node z:Id="i6" i:type="CommandUserAction">
+                    <CustomDescription i:nil="true" />
+                    <Description>In the list, find and select the desired record.</Description>
+                    <Id>20560ChangeSelectedIndexInCache_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x7</Id>
+                    <Parent z:Ref="i5" />
+                    <ParentSequence>6</ParentSequence>
+                    <ScreenshotUri i:nil="true" />
+                    <Sequence>7</Sequence>
+                    <Annotations />
+                    <GlobalId>e2e6cc4d-c04a-41bb-b4da-0d047bfcb847</GlobalId>
+                    <SystemGenerated>false</SystemGenerated>
+                    <ControlLabel></ControlLabel>
+                    <ControlLabelId></ControlLabelId>
+                    <FormId>19126_VendTable_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormId>
+                    <ListContext>Grid</ListContext>
+                    <RowIndex i:nil="true" />
+                    <Arguments>
+                      <CommandArgument>
+                        <IsReference>false</IsReference>
+                        <Value>7</Value>
+                      </CommandArgument>
+                      <CommandArgument>
+                        <IsReference>false</IsReference>
+                        <Value>1</Value>
+                      </CommandArgument>
+                      <CommandArgument>
+                        <IsReference>false</IsReference>
+                        <Value>1</Value>
+                      </CommandArgument>
+                      <CommandArgument>
+                        <IsReference>false</IsReference>
+                        <Value>first</Value>
+                      </CommandArgument>
+                    </Arguments>
+                    <CommandName>ChangeSelectedIndexInCache</CommandName>
+                    <ControlName>Grid</ControlName>
+                    <ControlType>Grid</ControlType>
+                    <LabelId></LabelId>
+                    <ReturnType>Void</ReturnType>
+                    <ReturnValue i:nil="true" />
+                    <TaskId i:nil="true" />
+                  </Node>
+                </Children>
+                <IsForm>false</IsForm>
+                <IsStepGroup>false</IsStepGroup>
+                <Name>Grid_ChangeSelectedIndexInCache</Name>
+                <ScopeType>Private</ScopeType>
+              </Node>
+              <Node z:Id="i7" i:type="Scope">
+                <CustomDescription i:nil="true" />
+                <Description></Description>
+                <Id>20560NavigationAction_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</Id>
+                <Parent z:Ref="i4" />
+                <ParentSequence>5</ParentSequence>
+                <ScreenshotUri i:nil="true" />
+                <Sequence>8</Sequence>
+                <Children>
+                  <Node z:Id="i8" i:type="CommandUserAction">
+                    <CustomDescription i:nil="true" />
+                    <Description>In the list, click the link in the selected row.</Description>
+                    <Id>20560NavigationAction_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x9</Id>
+                    <Parent z:Ref="i7" />
+                    <ParentSequence>8</ParentSequence>
+                    <ScreenshotUri i:nil="true" />
+                    <Sequence>9</Sequence>
+                    <Annotations />
+                    <GlobalId>c8712b5b-642d-4361-844b-269e6abcb685</GlobalId>
+                    <SystemGenerated>false</SystemGenerated>
+                    <ControlLabel></ControlLabel>
+                    <ControlLabelId></ControlLabelId>
+                    <FormId>19126_VendTable_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormId>
+                    <ListContext>Grid</ListContext>
+                    <RowIndex i:nil="true" />
+                    <Arguments />
+                    <CommandName>NavigationAction</CommandName>
+                    <ControlName>Grid</ControlName>
+                    <ControlType>Grid</ControlType>
+                    <LabelId></LabelId>
+                    <ReturnType>Void</ReturnType>
+                    <ReturnValue i:nil="true" />
+                    <TaskId i:nil="true" />
+                  </Node>
+                </Children>
+                <IsForm>false</IsForm>
+                <IsStepGroup>false</IsStepGroup>
+                <Name>Grid_NavigationAction</Name>
+                <ScopeType>Private</ScopeType>
+              </Node>
+              <Node z:Id="i9" i:type="Scope">
+                <CustomDescription i:nil="true" />
+                <Description></Description>
+                <Id>20424_0TabShown_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</Id>
+                <Parent z:Ref="i4" />
                 <ParentSequence>10</ParentSequence>
-                <ScreenshotUri i:nil="true"/>
+                <ScreenshotUri i:nil="true" />
                 <Sequence>11</Sequence>
                 <Children>
-                  <Node z:Id="i9" i:type="CommandUserAction">
-                    <CustomDescription i:nil="true"/>
-                    <Description>Click New.</Description>
-                    <Id>773_0Click_0cd75ebb-7176-45f1-bfd3-5740a3420692x12</Id>
-                    <Parent z:Ref="i8"/>
+                  <Node z:Id="i10" i:type="CommandUserAction">
+                    <CustomDescription i:nil="true" />
+                    <Description>On the Action Pane, click Vendor.</Description>
+                    <Id>20424_0TabShown_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x12</Id>
+                    <Parent z:Ref="i9" />
                     <ParentSequence>11</ParentSequence>
-                    <ScreenshotUri i:nil="true"/>
+                    <ScreenshotUri i:nil="true" />
                     <Sequence>12</Sequence>
-                    <Annotations/>
-                    <GlobalId>3eccff44-e1f8-43b1-a9cb-db2305d9c6aa</GlobalId>
+                    <Annotations />
+                    <GlobalId>ab183d12-9dd1-40a9-86c2-4a3282f36ea0</GlobalId>
+                    <SystemGenerated>false</SystemGenerated>
+                    <ControlLabel>Vendor</ControlLabel>
+                    <ControlLabelId>@SYS301610</ControlLabelId>
+                    <FormId>19126_VendTable_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormId>
+                    <ListContext i:nil="true" />
+                    <RowIndex i:nil="true" />
+                    <Arguments />
+                    <CommandName>TabShown</CommandName>
+                    <ControlName>VendorTab</ControlName>
+                    <ControlType>AppBarTab</ControlType>
+                    <LabelId i:nil="true" />
+                    <ReturnType>Void</ReturnType>
+                    <ReturnValue i:nil="true" />
+                    <TaskId></TaskId>
+                  </Node>
+                </Children>
+                <IsForm>false</IsForm>
+                <IsStepGroup>false</IsStepGroup>
+                <Name>VendorTab_TabShown</Name>
+                <ScopeType>Private</ScopeType>
+              </Node>
+              <Node z:Id="i11" i:type="Scope">
+                <CustomDescription i:nil="true" />
+                <Description></Description>
+                <Id>22449RequestPopup_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</Id>
+                <Parent z:Ref="i4" />
+                <ParentSequence>14</ParentSequence>
+                <ScreenshotUri i:nil="true" />
+                <Sequence>15</Sequence>
+                <Children>
+                  <Node z:Id="i12" i:type="CommandUserAction">
+                    <CustomDescription i:nil="true" />
+                    <Description>Click On hold to open the drop dialog.</Description>
+                    <Id>22449RequestPopup_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x16</Id>
+                    <Parent z:Ref="i11" />
+                    <ParentSequence>15</ParentSequence>
+                    <ScreenshotUri i:nil="true" />
+                    <Sequence>16</Sequence>
+                    <Annotations />
+                    <GlobalId>f92ab4e2-f83a-4e5e-be1f-f58d7588d8b4</GlobalId>
+                    <SystemGenerated>false</SystemGenerated>
+                    <ControlLabel>On hold</ControlLabel>
+                    <ControlLabelId>@SYS103075</ControlLabelId>
+                    <FormId>19126_VendTable_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormId>
+                    <ListContext i:nil="true" />
+                    <RowIndex i:nil="true" />
+                    <Arguments />
+                    <CommandName>RequestPopup</CommandName>
+                    <ControlName>OnHoldDropDialogButton</ControlName>
+                    <ControlType>DropDialogButton</ControlType>
+                    <LabelId></LabelId>
+                    <ReturnType>Void</ReturnType>
+                    <ReturnValue i:nil="true" />
+                    <TaskId i:nil="true" />
+                  </Node>
+                  <Node z:Id="i13" i:type="Scope">
+                    <CustomDescription i:nil="true" />
+                    <Description></Description>
+                    <Id>22631_VendOnHoldUpdate_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</Id>
+                    <Parent z:Ref="i11" />
+                    <ParentSequence>15</ParentSequence>
+                    <ScreenshotUri i:nil="true" />
+                    <Sequence>17</Sequence>
+                    <Children>
+                      <Node z:Id="i14" i:type="Scope">
+                        <CustomDescription i:nil="true" />
+                        <Description></Description>
+                        <Id>22637Value_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</Id>
+                        <Parent z:Ref="i13" />
+                        <ParentSequence>19</ParentSequence>
+                        <ScreenshotUri i:nil="true" />
+                        <Sequence>20</Sequence>
+                        <Children>
+                          <Node z:Id="i15" i:type="PropertyUserAction">
+                            <CustomDescription i:nil="true" />
+                            <Description>In the Vendor hold field, select an option.</Description>
+                            <Id>22637Value_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x21</Id>
+                            <Parent z:Ref="i14" />
+                            <ParentSequence>20</ParentSequence>
+                            <ScreenshotUri i:nil="true" />
+                            <Sequence>21</Sequence>
+                            <Annotations />
+                            <GlobalId>2b3b1e67-5dbe-4421-999f-f5dbb01095a0</GlobalId>
+                            <SystemGenerated>false</SystemGenerated>
+                            <ControlLabel>Vendor hold</ControlLabel>
+                            <ControlLabelId>@SYS128406</ControlLabelId>
+                            <FormId>22631_VendOnHoldUpdate_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormId>
+                            <ListContext i:nil="true" />
+                            <RowIndex i:nil="true" />
+                            <BoundDataSource></BoundDataSource>
+                            <BoundProperty></BoundProperty>
+                            <ControlName>OnHold</ControlName>
+                            <ControlType>ComboBox</ControlType>
+                            <IsReference>false</IsReference>
+                            <LabelId i:nil="true" />
+                            <PropertyName>Value</PropertyName>
+                            <UserActionType>Input</UserActionType>
+                            <Value>2</Value>
+                            <ValueLabel>@SYS11696</ValueLabel>
+                          </Node>
+                        </Children>
+                        <IsForm>false</IsForm>
+                        <IsStepGroup>false</IsStepGroup>
+                        <Name>OnHold_Value</Name>
+                        <ScopeType>Private</ScopeType>
+                      </Node>
+                      <Node z:Id="i16" i:type="Scope">
+                        <CustomDescription i:nil="true" />
+                        <Description i:nil="true" />
+                        <Id>22639RequestPopup_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</Id>
+                        <Parent z:Ref="i13" />
+                        <ParentSequence>22</ParentSequence>
+                        <ScreenshotUri i:nil="true" />
+                        <Sequence>23</Sequence>
+                        <Children>
+                          <Node z:Id="i17" i:type="CommandUserAction">
+                            <CustomDescription i:nil="true" />
+                            <Description>In the Reason code field, enter or select a value.</Description>
+                            <Id>22639RequestPopup_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x24</Id>
+                            <Parent z:Ref="i16" />
+                            <ParentSequence>23</ParentSequence>
+                            <ScreenshotUri i:nil="true" />
+                            <Sequence>24</Sequence>
+                            <Annotations>
+                              <Annotation i:type="CanonicalActionAnnotation">
+                                <CanonicalUserAction z:Id="i18" i:type="PropertyUserAction">
+                                  <CustomDescription i:nil="true" />
+                                  <Description i:nil="true" />
+                                  <Id i:nil="true" />
+                                  <Parent i:nil="true" />
+                                  <ParentSequence>0</ParentSequence>
+                                  <ScreenshotUri i:nil="true" />
+                                  <Sequence>0</Sequence>
+                                  <Annotations>
+                                    <Annotation i:type="LookupAnnotation">
+                                      <ParentFormName>VendOnHoldUpdate</ParentFormName>
+                                      <ReferenceDataSource i:nil="true" />
+                                      <TableName>ReasonTable</TableName>
+                                    </Annotation>
+                                  </Annotations>
+                                  <GlobalId>63cba773-aec1-4e20-ab0b-fb6befb4a4c7</GlobalId>
+                                  <SystemGenerated>false</SystemGenerated>
+                                  <ControlLabel>Reason code</ControlLabel>
+                                  <ControlLabelId>@SYS111246</ControlLabelId>
+                                  <FormId>22631_VendOnHoldUpdate_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormId>
+                                  <ListContext i:nil="true" />
+                                  <RowIndex i:nil="true" />
+                                  <BoundDataSource></BoundDataSource>
+                                  <BoundProperty></BoundProperty>
+                                  <ControlName>ReasonCode</ControlName>
+                                  <ControlType>Input</ControlType>
+                                  <IsReference>false</IsReference>
+                                  <LabelId i:nil="true" />
+                                  <PropertyName>Value</PropertyName>
+                                  <UserActionType>Input</UserActionType>
+                                  <Value>QUALITY</Value>
+                                  <ValueLabel i:nil="true" />
+                                </CanonicalUserAction>
+                              </Annotation>
+                            </Annotations>
+                            <GlobalId>8e6129a9-7431-498e-a4cb-42695b7a71a0</GlobalId>
+                            <SystemGenerated>false</SystemGenerated>
+                            <ControlLabel>Reason code</ControlLabel>
+                            <ControlLabelId>@SYS111246</ControlLabelId>
+                            <FormId>22631_VendOnHoldUpdate_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormId>
+                            <ListContext i:nil="true" />
+                            <RowIndex i:nil="true" />
+                            <Arguments />
+                            <CommandName>RequestPopup</CommandName>
+                            <ControlName>ReasonCode</ControlName>
+                            <ControlType>Input</ControlType>
+                            <LabelId>@SysTaskRecorder:SetValueFromLookUp</LabelId>
+                            <ReturnType>Void</ReturnType>
+                            <ReturnValue i:nil="true" />
+                            <TaskId i:nil="true" />
+                          </Node>
+                          <Node z:Id="i19" i:type="Scope">
+                            <CustomDescription i:nil="true" />
+                            <Description></Description>
+                            <Id>22646_ReasonCode_Lookup_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</Id>
+                            <Parent z:Ref="i16" />
+                            <ParentSequence>23</ParentSequence>
+                            <ScreenshotUri i:nil="true" />
+                            <Sequence>26</Sequence>
+                            <Children>
+                              <Node z:Id="i20" i:type="Scope">
+                                <CustomDescription i:nil="true" />
+                                <Description></Description>
+                                <Id>22664ChangeSelectedIndexInCache_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</Id>
+                                <Parent z:Ref="i19" />
+                                <ParentSequence>27</ParentSequence>
+                                <ScreenshotUri i:nil="true" />
+                                <Sequence>28</Sequence>
+                                <Children>
+                                  <Node z:Id="i21" i:type="CommandUserAction">
+                                    <CustomDescription i:nil="true" />
+                                    <Description>In the list, select row 6.</Description>
+                                    <Id>22664ChangeSelectedIndexInCache_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x29</Id>
+                                    <Parent z:Ref="i20" />
+                                    <ParentSequence>28</ParentSequence>
+                                    <ScreenshotUri i:nil="true" />
+                                    <Sequence>29</Sequence>
+                                    <Annotations>
+                                      <Annotation i:type="TaskGuideAnnotation">
+                                        <Description i:nil="true" />
+                                        <ExampleText i:nil="true" />
+                                        <GlobalId i:nil="true" />
+                                        <Hidden>true</Hidden>
+                                        <RecordingValueType>Preferred</RecordingValueType>
+                                        <Title i:nil="true" />
+                                      </Annotation>
+                                    </Annotations>
+                                    <GlobalId>1cf590db-2f34-4578-8244-2fc0978f8428</GlobalId>
+                                    <SystemGenerated>false</SystemGenerated>
+                                    <ControlLabel></ControlLabel>
+                                    <ControlLabelId></ControlLabelId>
+                                    <FormId>22646_ReasonCode_Lookup_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormId>
+                                    <ListContext>Grid</ListContext>
+                                    <RowIndex i:nil="true" />
+                                    <Arguments>
+                                      <CommandArgument>
+                                        <IsReference>false</IsReference>
+                                        <Value>6</Value>
+                                      </CommandArgument>
+                                      <CommandArgument>
+                                        <IsReference>false</IsReference>
+                                        <Value>4</Value>
+                                      </CommandArgument>
+                                      <CommandArgument>
+                                        <IsReference>false</IsReference>
+                                        <Value>1</Value>
+                                      </CommandArgument>
+                                      <CommandArgument>
+                                        <IsReference>false</IsReference>
+                                        <Value>first</Value>
+                                      </CommandArgument>
+                                    </Arguments>
+                                    <CommandName>ChangeSelectedIndexInCache</CommandName>
+                                    <ControlName>Grid</ControlName>
+                                    <ControlType>Grid</ControlType>
+                                    <LabelId></LabelId>
+                                    <ReturnType>Void</ReturnType>
+                                    <ReturnValue i:nil="true" />
+                                    <TaskId i:nil="true" />
+                                  </Node>
+                                </Children>
+                                <IsForm>false</IsForm>
+                                <IsStepGroup>false</IsStepGroup>
+                                <Name>Grid_ChangeSelectedIndexInCache</Name>
+                                <ScopeType>Private</ScopeType>
+                              </Node>
+                              <Node z:Id="i22" i:type="Scope">
+                                <CustomDescription i:nil="true" />
+                                <Description></Description>
+                                <Id>22664NavigationAction_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</Id>
+                                <Parent z:Ref="i19" />
+                                <ParentSequence>27</ParentSequence>
+                                <ScreenshotUri i:nil="true" />
+                                <Sequence>30</Sequence>
+                                <Children>
+                                  <Node z:Id="i23" i:type="CommandUserAction">
+                                    <CustomDescription i:nil="true" />
+                                    <Description>In the list, click the link in the selected row.</Description>
+                                    <Id>22664NavigationAction_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x31</Id>
+                                    <Parent z:Ref="i22" />
+                                    <ParentSequence>30</ParentSequence>
+                                    <ScreenshotUri i:nil="true" />
+                                    <Sequence>31</Sequence>
+                                    <Annotations>
+                                      <Annotation i:type="TaskGuideAnnotation">
+                                        <Description i:nil="true" />
+                                        <ExampleText i:nil="true" />
+                                        <GlobalId i:nil="true" />
+                                        <Hidden>true</Hidden>
+                                        <RecordingValueType>Preferred</RecordingValueType>
+                                        <Title i:nil="true" />
+                                      </Annotation>
+                                    </Annotations>
+                                    <GlobalId>05c0e830-fb08-4518-98dd-2d490c63c7c8</GlobalId>
+                                    <SystemGenerated>false</SystemGenerated>
+                                    <ControlLabel></ControlLabel>
+                                    <ControlLabelId></ControlLabelId>
+                                    <FormId>22646_ReasonCode_Lookup_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormId>
+                                    <ListContext>Grid</ListContext>
+                                    <RowIndex i:nil="true" />
+                                    <Arguments />
+                                    <CommandName>NavigationAction</CommandName>
+                                    <ControlName>Grid</ControlName>
+                                    <ControlType>Grid</ControlType>
+                                    <LabelId></LabelId>
+                                    <ReturnType>Void</ReturnType>
+                                    <ReturnValue i:nil="true" />
+                                    <TaskId i:nil="true" />
+                                  </Node>
+                                </Children>
+                                <IsForm>false</IsForm>
+                                <IsStepGroup>false</IsStepGroup>
+                                <Name>Grid_NavigationAction</Name>
+                                <ScopeType>Private</ScopeType>
+                              </Node>
+                            </Children>
+                            <IsForm>true</IsForm>
+                            <IsStepGroup>false</IsStepGroup>
+                            <Name>ReasonCode_Lookup</Name>
+                            <ScopeType>Private</ScopeType>
+                          </Node>
+                        </Children>
+                        <IsForm>false</IsForm>
+                        <IsStepGroup>true</IsStepGroup>
+                        <Name>ReasonCode_RequestPopup</Name>
+                        <ScopeType>Private</ScopeType>
+                      </Node>
+                      <Node z:Id="i24" i:type="Scope">
+                        <CustomDescription i:nil="true" />
+                        <Description></Description>
+                        <Id>22638Value_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</Id>
+                        <Parent z:Ref="i13" />
+                        <ParentSequence>32</ParentSequence>
+                        <ScreenshotUri i:nil="true" />
+                        <Sequence>33</Sequence>
+                        <Children>
+                          <Node z:Id="i25" i:type="PropertyUserAction">
+                            <CustomDescription i:nil="true" />
+                            <Description>In the Vendor hold release date field, enter a date and time.</Description>
+                            <Id>22638Value_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x34</Id>
+                            <Parent z:Ref="i24" />
+                            <ParentSequence>33</ParentSequence>
+                            <ScreenshotUri i:nil="true" />
+                            <Sequence>34</Sequence>
+                            <Annotations />
+                            <GlobalId>082a2302-a86e-46c9-a3dd-67dc66f1a6eb</GlobalId>
+                            <SystemGenerated>false</SystemGenerated>
+                            <ControlLabel>Vendor hold release date</ControlLabel>
+                            <ControlLabelId>@SYS128399</ControlLabelId>
+                            <FormId>22631_VendOnHoldUpdate_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormId>
+                            <ListContext i:nil="true" />
+                            <RowIndex i:nil="true" />
+                            <BoundDataSource></BoundDataSource>
+                            <BoundProperty></BoundProperty>
+                            <ControlName>BlockedReleaseDate</ControlName>
+                            <ControlType>DateTime</ControlType>
+                            <IsReference>false</IsReference>
+                            <LabelId i:nil="true" />
+                            <PropertyName>Value</PropertyName>
+                            <UserActionType>Input</UserActionType>
+                            <Value>2025-11-30T00:00:00</Value>
+                            <ValueLabel i:nil="true" />
+                          </Node>
+                        </Children>
+                        <IsForm>false</IsForm>
+                        <IsStepGroup>false</IsStepGroup>
+                        <Name>BlockedReleaseDate_Value</Name>
+                        <ScopeType>Private</ScopeType>
+                      </Node>
+                      <Node z:Id="i26" i:type="Scope">
+                        <CustomDescription i:nil="true" />
+                        <Description></Description>
+                        <Id>22642_0Click_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</Id>
+                        <Parent z:Ref="i13" />
+                        <ParentSequence>35</ParentSequence>
+                        <ScreenshotUri i:nil="true" />
+                        <Sequence>36</Sequence>
+                        <Children>
+                          <Node z:Id="i27" i:type="CommandUserAction">
+                            <CustomDescription i:nil="true" />
+                            <Description>Click OK.</Description>
+                            <Id>22642_0Click_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x37</Id>
+                            <Parent z:Ref="i26" />
+                            <ParentSequence>36</ParentSequence>
+                            <ScreenshotUri i:nil="true" />
+                            <Sequence>37</Sequence>
+                            <Annotations />
+                            <GlobalId>e03873c1-f8af-4023-9085-4104aaa5afcb</GlobalId>
+                            <SystemGenerated>false</SystemGenerated>
+                            <ControlLabel>OK</ControlLabel>
+                            <ControlLabelId></ControlLabelId>
+                            <FormId>22631_VendOnHoldUpdate_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormId>
+                            <ListContext i:nil="true" />
+                            <RowIndex i:nil="true" />
+                            <Arguments />
+                            <CommandName>Click</CommandName>
+                            <ControlName>CommandButtonOK</ControlName>
+                            <ControlType>CommandButton</ControlType>
+                            <LabelId i:nil="true" />
+                            <ReturnType>Void</ReturnType>
+                            <ReturnValue i:nil="true" />
+                            <TaskId>263</TaskId>
+                          </Node>
+                        </Children>
+                        <IsForm>false</IsForm>
+                        <IsStepGroup>false</IsStepGroup>
+                        <Name>CommandButtonOK_Click</Name>
+                        <ScopeType>Private</ScopeType>
+                      </Node>
+                    </Children>
+                    <IsForm>true</IsForm>
+                    <IsStepGroup>false</IsStepGroup>
+                    <Name>VendOnHoldUpdate</Name>
+                    <ScopeType>Public</ScopeType>
+                  </Node>
+                </Children>
+                <IsForm>false</IsForm>
+                <IsStepGroup>false</IsStepGroup>
+                <Name>OnHoldDropDialogButton_RequestPopup</Name>
+                <ScopeType>Private</ScopeType>
+              </Node>
+              <Node z:Id="i28" i:type="Scope">
+                <CustomDescription i:nil="true" />
+                <Description></Description>
+                <Id>19126RequestClose_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</Id>
+                <Parent z:Ref="i4" />
+                <ParentSequence>3</ParentSequence>
+                <ScreenshotUri i:nil="true" />
+                <Sequence>38</Sequence>
+                <Children>
+                  <Node z:Id="i29" i:type="CommandUserAction">
+                    <CustomDescription i:nil="true" />
+                    <Description>Close the page.</Description>
+                    <Id>19126RequestClose_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x39</Id>
+                    <Parent z:Ref="i28" />
+                    <ParentSequence>38</ParentSequence>
+                    <ScreenshotUri i:nil="true" />
+                    <Sequence>39</Sequence>
+                    <Annotations />
+                    <GlobalId>f5ec3c52-c6e1-4efd-9f00-82f48635c9a2</GlobalId>
+                    <SystemGenerated>false</SystemGenerated>
+                    <ControlLabel></ControlLabel>
+                    <ControlLabelId></ControlLabelId>
+                    <FormId>19126_VendTable_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormId>
+                    <ListContext i:nil="true" />
+                    <RowIndex i:nil="true" />
+                    <Arguments />
+                    <CommandName>RequestClose</CommandName>
+                    <ControlName></ControlName>
+                    <ControlType></ControlType>
+                    <LabelId>@SysTaskRecorder:CloseForm</LabelId>
+                    <ReturnType>Void</ReturnType>
+                    <ReturnValue i:nil="true" />
+                    <TaskId i:nil="true" />
+                  </Node>
+                </Children>
+                <IsForm>false</IsForm>
+                <IsStepGroup>false</IsStepGroup>
+                <Name>RequestClose</Name>
+                <ScopeType>Private</ScopeType>
+              </Node>
+            </Children>
+            <IsForm>true</IsForm>
+            <IsStepGroup>false</IsStepGroup>
+            <Name>VendTable</Name>
+            <ScopeType>Public</ScopeType>
+          </Node>
+        </Children>
+        <IsForm>false</IsForm>
+        <IsStepGroup>false</IsStepGroup>
+        <Name>MenuItem_vendtablelistpage</Name>
+        <ScopeType>Private</ScopeType>
+      </Node>
+      <Node z:Id="i30" i:type="Scope">
+        <CustomDescription i:nil="true" />
+        <Description></Description>
+        <Id>MenuItempurchtablelistpage_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</Id>
+        <Parent z:Ref="i1" />
+        <ParentSequence>0</ParentSequence>
+        <ScreenshotUri i:nil="true" />
+        <Sequence>40</Sequence>
+        <Children>
+          <Node z:Id="i31" i:type="MenuItemUserAction">
+            <CustomDescription i:nil="true" />
+            <Description>Go to Procurement and sourcing &gt; Purchase orders &gt; All purchase orders.</Description>
+            <Id>MenuItempurchtablelistpage_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x41</Id>
+            <Parent z:Ref="i30" />
+            <ParentSequence>40</ParentSequence>
+            <ScreenshotUri i:nil="true" />
+            <Sequence>41</Sequence>
+            <Annotations />
+            <GlobalId>7ad13b91-0121-43de-94f0-2059526366ba</GlobalId>
+            <SystemGenerated>false</SystemGenerated>
+            <MenuItemName>purchtablelistpage</MenuItemName>
+            <MenuItemType>Display</MenuItemType>
+            <NavigationPath xmlns:d7p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+              <d7p1:string>mainmenu</d7p1:string>
+              <d7p1:string>ProcurementAndSourcing</d7p1:string>
+              <d7p1:string>PurchaseOrders</d7p1:string>
+            </NavigationPath>
+          </Node>
+          <Node z:Id="i32" i:type="Scope">
+            <CustomDescription i:nil="true" />
+            <Description></Description>
+            <Id>22687_PurchTable_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</Id>
+            <Parent z:Ref="i30" />
+            <ParentSequence>40</ParentSequence>
+            <ScreenshotUri i:nil="true" />
+            <Sequence>42</Sequence>
+            <Children>
+              <Node z:Id="i33" i:type="Scope">
+                <CustomDescription i:nil="true" />
+                <Description></Description>
+                <Id>24182_0Click_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</Id>
+                <Parent z:Ref="i32" />
+                <ParentSequence>57</ParentSequence>
+                <ScreenshotUri i:nil="true" />
+                <Sequence>58</Sequence>
+                <Children>
+                  <Node z:Id="i34" i:type="CommandUserAction">
+                    <CustomDescription i:nil="true" />
+                    <Description>Click New.</Description>
+                    <Id>24182_0Click_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x59</Id>
+                    <Parent z:Ref="i33" />
+                    <ParentSequence>58</ParentSequence>
+                    <ScreenshotUri i:nil="true" />
+                    <Sequence>59</Sequence>
+                    <Annotations />
+                    <GlobalId>161957ca-f46d-4ec9-b91a-bbb04e2585f4</GlobalId>
                     <SystemGenerated>false</SystemGenerated>
                     <ControlLabel>New</ControlLabel>
-                    <ControlLabelId/>
-                    <FormId>701_MainAccountCategory_0cd75ebb-7176-45f1-bfd3-5740a3420692</FormId>
-                    <ListContext i:nil="true"/>
-                    <RowIndex i:nil="true"/>
-                    <Arguments/>
+                    <ControlLabelId></ControlLabelId>
+                    <FormId>22687_PurchTable_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormId>
+                    <ListContext i:nil="true" />
+                    <RowIndex i:nil="true" />
+                    <Arguments />
                     <CommandName>Click</CommandName>
                     <ControlName>SystemDefinedNewButton</ControlName>
                     <ControlType>CommandButton</ControlType>
-                    <LabelId i:nil="true"/>
+                    <LabelId i:nil="true" />
                     <ReturnType>Void</ReturnType>
-                    <ReturnValue i:nil="true"/>
+                    <ReturnValue i:nil="true" />
                     <TaskId>260</TaskId>
+                  </Node>
+                  <Node z:Id="i35" i:type="Scope">
+                    <CustomDescription i:nil="true" />
+                    <Description></Description>
+                    <Id>25167_PurchCreateOrder_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</Id>
+                    <Parent z:Ref="i33" />
+                    <ParentSequence>58</ParentSequence>
+                    <ScreenshotUri i:nil="true" />
+                    <Sequence>64</Sequence>
+                    <Children>
+                      <Node z:Id="i36" i:type="Scope">
+                        <CustomDescription i:nil="true" />
+                        <Description i:nil="true" />
+                        <Id>25226RequestPopup_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</Id>
+                        <Parent z:Ref="i35" />
+                        <ParentSequence>65</ParentSequence>
+                        <ScreenshotUri i:nil="true" />
+                        <Sequence>66</Sequence>
+                        <Children>
+                          <Node z:Id="i37" i:type="CommandUserAction">
+                            <CustomDescription i:nil="true" />
+                            <Description>In the Vendor account field, enter or select a value.</Description>
+                            <Id>25226RequestPopup_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x67</Id>
+                            <Parent z:Ref="i36" />
+                            <ParentSequence>66</ParentSequence>
+                            <ScreenshotUri i:nil="true" />
+                            <Sequence>67</Sequence>
+                            <Annotations />
+                            <GlobalId>3ae6fcdb-1c33-4254-ae9d-a9d3c48f9136</GlobalId>
+                            <SystemGenerated>false</SystemGenerated>
+                            <ControlLabel>Vendor account</ControlLabel>
+                            <ControlLabelId>@SYS14048</ControlLabelId>
+                            <FormId>25167_PurchCreateOrder_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormId>
+                            <ListContext i:nil="true" />
+                            <RowIndex i:nil="true" />
+                            <Arguments />
+                            <CommandName>RequestPopup</CommandName>
+                            <ControlName>PurchTable_OrderAccount</ControlName>
+                            <ControlType>Input</ControlType>
+                            <LabelId>@SysTaskRecorder:SetValueFromLookUp</LabelId>
+                            <ReturnType>Void</ReturnType>
+                            <ReturnValue i:nil="true" />
+                            <TaskId i:nil="true" />
+                          </Node>
+                          <Node z:Id="i38" i:type="Scope">
+                            <CustomDescription i:nil="true" />
+                            <Description></Description>
+                            <Id>26087_PurchTable_OrderAccount_Lookup_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</Id>
+                            <Parent z:Ref="i36" />
+                            <ParentSequence>66</ParentSequence>
+                            <ScreenshotUri i:nil="true" />
+                            <Sequence>69</Sequence>
+                            <Children>
+                              <Node z:Id="i39" i:type="Scope">
+                                <CustomDescription i:nil="true" />
+                                <Description></Description>
+                                <Id>26087RequestClose_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</Id>
+                                <Parent z:Ref="i38" />
+                                <ParentSequence>69</ParentSequence>
+                                <ScreenshotUri i:nil="true" />
+                                <Sequence>71</Sequence>
+                                <Children>
+                                  <Node z:Id="i40" i:type="CommandUserAction">
+                                    <CustomDescription i:nil="true" />
+                                    <Description>Close the page.</Description>
+                                    <Id>26087RequestClose_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x72</Id>
+                                    <Parent z:Ref="i39" />
+                                    <ParentSequence>71</ParentSequence>
+                                    <ScreenshotUri i:nil="true" />
+                                    <Sequence>72</Sequence>
+                                    <Annotations>
+                                      <Annotation i:type="TaskGuideAnnotation">
+                                        <Description i:nil="true" />
+                                        <ExampleText i:nil="true" />
+                                        <GlobalId i:nil="true" />
+                                        <Hidden>true</Hidden>
+                                        <RecordingValueType>Preferred</RecordingValueType>
+                                        <Title i:nil="true" />
+                                      </Annotation>
+                                    </Annotations>
+                                    <GlobalId>97060f3a-6d67-4fb5-95c6-ace74dfd6292</GlobalId>
+                                    <SystemGenerated>false</SystemGenerated>
+                                    <ControlLabel></ControlLabel>
+                                    <ControlLabelId></ControlLabelId>
+                                    <FormId>26087_PurchTable_OrderAccount_Lookup_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormId>
+                                    <ListContext i:nil="true" />
+                                    <RowIndex i:nil="true" />
+                                    <Arguments />
+                                    <CommandName>RequestClose</CommandName>
+                                    <ControlName></ControlName>
+                                    <ControlType></ControlType>
+                                    <LabelId>@SysTaskRecorder:CloseForm</LabelId>
+                                    <ReturnType>Void</ReturnType>
+                                    <ReturnValue i:nil="true" />
+                                    <TaskId i:nil="true" />
+                                  </Node>
+                                </Children>
+                                <IsForm>false</IsForm>
+                                <IsStepGroup>false</IsStepGroup>
+                                <Name>RequestClose</Name>
+                                <ScopeType>Private</ScopeType>
+                              </Node>
+                            </Children>
+                            <IsForm>true</IsForm>
+                            <IsStepGroup>false</IsStepGroup>
+                            <Name>PurchTable_OrderAccount_Lookup</Name>
+                            <ScopeType>Private</ScopeType>
+                          </Node>
+                        </Children>
+                        <IsForm>false</IsForm>
+                        <IsStepGroup>true</IsStepGroup>
+                        <Name>PurchTable_OrderAccount_RequestPopup</Name>
+                        <ScopeType>Private</ScopeType>
+                      </Node>
+                      <Node z:Id="i41" i:type="Scope">
+                        <CustomDescription i:nil="true" />
+                        <Description></Description>
+                        <Id>25226Value_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</Id>
+                        <Parent z:Ref="i35" />
+                        <ParentSequence>65</ParentSequence>
+                        <ScreenshotUri i:nil="true" />
+                        <Sequence>73</Sequence>
+                        <Children>
+                          <Node z:Id="i42" i:type="PropertyUserAction">
+                            <CustomDescription i:nil="true" />
+                            <Description>In the Vendor account field, type a value.</Description>
+                            <Id>25226Value_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x74</Id>
+                            <Parent z:Ref="i41" />
+                            <ParentSequence>73</ParentSequence>
+                            <ScreenshotUri i:nil="true" />
+                            <Sequence>74</Sequence>
+                            <Annotations />
+                            <GlobalId>93127bd8-755d-4167-a909-305e41ea24f5</GlobalId>
+                            <SystemGenerated>false</SystemGenerated>
+                            <ControlLabel>Vendor account</ControlLabel>
+                            <ControlLabelId>@SYS14048</ControlLabelId>
+                            <FormId>25167_PurchCreateOrder_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormId>
+                            <ListContext i:nil="true" />
+                            <RowIndex i:nil="true" />
+                            <BoundDataSource>PurchTable</BoundDataSource>
+                            <BoundProperty>OrderAccount</BoundProperty>
+                            <ControlName>PurchTable_OrderAccount</ControlName>
+                            <ControlType>Input</ControlType>
+                            <IsReference>false</IsReference>
+                            <LabelId i:nil="true" />
+                            <PropertyName>Value</PropertyName>
+                            <UserActionType>Input</UserActionType>
+                            <Value>checkgrid2</Value>
+                            <ValueLabel i:nil="true" />
+                          </Node>
+                        </Children>
+                        <IsForm>false</IsForm>
+                        <IsStepGroup>false</IsStepGroup>
+                        <Name>PurchTable_OrderAccount_Value</Name>
+                        <ScopeType>Private</ScopeType>
+                      </Node>
+                      <Node z:Id="i43" i:type="Scope">
+                        <CustomDescription i:nil="true" />
+                        <Description></Description>
+                        <Id>25167ExecuteShortcuts_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</Id>
+                        <Parent z:Ref="i35" />
+                        <ParentSequence>64</ParentSequence>
+                        <ScreenshotUri i:nil="true" />
+                        <Sequence>75</Sequence>
+                        <Children>
+                          <Node z:Id="i44" i:type="CommandUserAction">
+                            <CustomDescription i:nil="true" />
+                            <Description>Use the shortcut for invoking the default button.</Description>
+                            <Id>25167ExecuteShortcuts_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x76</Id>
+                            <Parent z:Ref="i43" />
+                            <ParentSequence>75</ParentSequence>
+                            <ScreenshotUri i:nil="true" />
+                            <Sequence>76</Sequence>
+                            <Annotations />
+                            <GlobalId>182ab76b-60cf-4f06-a59e-4646de01c853</GlobalId>
+                            <SystemGenerated>false</SystemGenerated>
+                            <ControlLabel></ControlLabel>
+                            <ControlLabelId></ControlLabelId>
+                            <FormId>25167_PurchCreateOrder_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormId>
+                            <ListContext i:nil="true" />
+                            <RowIndex i:nil="true" />
+                            <Arguments>
+                              <CommandArgument>
+                                <IsReference>false</IsReference>
+                                <Value>InvokeDefaultButton</Value>
+                              </CommandArgument>
+                            </Arguments>
+                            <CommandName>ExecuteShortcuts</CommandName>
+                            <ControlName></ControlName>
+                            <ControlType></ControlType>
+                            <LabelId>@SysTaskRecorder:InvokeDefaultButtonTask</LabelId>
+                            <ReturnType>Void</ReturnType>
+                            <ReturnValue i:nil="true" />
+                            <TaskId i:nil="true" />
+                          </Node>
+                          <Node z:Id="i45" i:type="Scope">
+                            <CustomDescription i:nil="true" />
+                            <Description></Description>
+                            <Id>27463_SysBoxForm_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</Id>
+                            <Parent z:Ref="i43" />
+                            <ParentSequence>75</ParentSequence>
+                            <ScreenshotUri i:nil="true" />
+                            <Sequence>77</Sequence>
+                            <Children>
+                              <Node z:Id="i46" i:type="Scope">
+                                <CustomDescription i:nil="true" />
+                                <Description></Description>
+                                <Id>27476_0Click_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</Id>
+                                <Parent z:Ref="i45" />
+                                <ParentSequence>79</ParentSequence>
+                                <ScreenshotUri i:nil="true" />
+                                <Sequence>80</Sequence>
+                                <Children>
+                                  <Node z:Id="i47" i:type="CommandUserAction">
+                                    <CustomDescription i:nil="true" />
+                                    <Description>Click Close.</Description>
+                                    <Id>27476_0Click_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x81</Id>
+                                    <Parent z:Ref="i46" />
+                                    <ParentSequence>80</ParentSequence>
+                                    <ScreenshotUri i:nil="true" />
+                                    <Sequence>81</Sequence>
+                                    <Annotations />
+                                    <GlobalId>96e4887e-6fe8-4dcc-88f9-468482470b19</GlobalId>
+                                    <SystemGenerated>false</SystemGenerated>
+                                    <ControlLabel>Close</ControlLabel>
+                                    <ControlLabelId>@SYS301990</ControlLabelId>
+                                    <FormId>27463_SysBoxForm_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormId>
+                                    <ListContext i:nil="true" />
+                                    <RowIndex i:nil="true" />
+                                    <Arguments />
+                                    <CommandName>Click</CommandName>
+                                    <ControlName>Close</ControlName>
+                                    <ControlType>CommandButton</ControlType>
+                                    <LabelId i:nil="true" />
+                                    <ReturnType>Void</ReturnType>
+                                    <ReturnValue i:nil="true" />
+                                    <TaskId>264</TaskId>
+                                  </Node>
+                                </Children>
+                                <IsForm>false</IsForm>
+                                <IsStepGroup>false</IsStepGroup>
+                                <Name>Close_Click</Name>
+                                <ScopeType>Private</ScopeType>
+                              </Node>
+                            </Children>
+                            <IsForm>true</IsForm>
+                            <IsStepGroup>false</IsStepGroup>
+                            <Name>SysBoxForm</Name>
+                            <ScopeType>Public</ScopeType>
+                          </Node>
+                        </Children>
+                        <IsForm>false</IsForm>
+                        <IsStepGroup>false</IsStepGroup>
+                        <Name>ExecuteShortcuts</Name>
+                        <ScopeType>Private</ScopeType>
+                      </Node>
+                      <Node z:Id="i48" i:type="Scope">
+                        <CustomDescription i:nil="true" />
+                        <Description i:nil="true" />
+                        <Id>25226RequestPopup_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</Id>
+                        <Parent z:Ref="i35" />
+                        <ParentSequence>82</ParentSequence>
+                        <ScreenshotUri i:nil="true" />
+                        <Sequence>83</Sequence>
+                        <Children>
+                          <Node z:Id="i49" i:type="CommandUserAction">
+                            <CustomDescription i:nil="true" />
+                            <Description>In the Vendor account field, enter or select a value.</Description>
+                            <Id>25226RequestPopup_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x84</Id>
+                            <Parent z:Ref="i48" />
+                            <ParentSequence>83</ParentSequence>
+                            <ScreenshotUri i:nil="true" />
+                            <Sequence>84</Sequence>
+                            <Annotations>
+                              <Annotation i:type="CanonicalActionAnnotation">
+                                <CanonicalUserAction z:Id="i50" i:type="PropertyUserAction">
+                                  <CustomDescription i:nil="true" />
+                                  <Description i:nil="true" />
+                                  <Id i:nil="true" />
+                                  <Parent i:nil="true" />
+                                  <ParentSequence>0</ParentSequence>
+                                  <ScreenshotUri i:nil="true" />
+                                  <Sequence>0</Sequence>
+                                  <Annotations>
+                                    <Annotation i:type="LookupAnnotation">
+                                      <ParentFormName>PurchCreateOrder</ParentFormName>
+                                      <ReferenceDataSource i:nil="true" />
+                                      <TableName>VendTable</TableName>
+                                    </Annotation>
+                                  </Annotations>
+                                  <GlobalId>1e069171-7668-4462-a2e6-834939be3a29</GlobalId>
+                                  <SystemGenerated>false</SystemGenerated>
+                                  <ControlLabel>Vendor account</ControlLabel>
+                                  <ControlLabelId>@SYS14048</ControlLabelId>
+                                  <FormId>25167_PurchCreateOrder_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormId>
+                                  <ListContext i:nil="true" />
+                                  <RowIndex i:nil="true" />
+                                  <BoundDataSource>PurchTable</BoundDataSource>
+                                  <BoundProperty>OrderAccount</BoundProperty>
+                                  <ControlName>PurchTable_OrderAccount</ControlName>
+                                  <ControlType>Input</ControlType>
+                                  <IsReference>false</IsReference>
+                                  <LabelId i:nil="true" />
+                                  <PropertyName>Value</PropertyName>
+                                  <UserActionType>Input</UserActionType>
+                                  <Value>checkgrid2</Value>
+                                  <ValueLabel i:nil="true" />
+                                </CanonicalUserAction>
+                              </Annotation>
+                            </Annotations>
+                            <GlobalId>6491fa98-4733-466d-860a-0fa402730503</GlobalId>
+                            <SystemGenerated>false</SystemGenerated>
+                            <ControlLabel>Vendor account</ControlLabel>
+                            <ControlLabelId>@SYS14048</ControlLabelId>
+                            <FormId>25167_PurchCreateOrder_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormId>
+                            <ListContext i:nil="true" />
+                            <RowIndex i:nil="true" />
+                            <Arguments />
+                            <CommandName>RequestPopup</CommandName>
+                            <ControlName>PurchTable_OrderAccount</ControlName>
+                            <ControlType>Input</ControlType>
+                            <LabelId>@SysTaskRecorder:SetValueFromLookUp</LabelId>
+                            <ReturnType>Void</ReturnType>
+                            <ReturnValue i:nil="true" />
+                            <TaskId i:nil="true" />
+                          </Node>
+                          <Node z:Id="i51" i:type="Scope">
+                            <CustomDescription i:nil="true" />
+                            <Description></Description>
+                            <Id>27480_PurchTable_OrderAccount_Lookup_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</Id>
+                            <Parent z:Ref="i48" />
+                            <ParentSequence>83</ParentSequence>
+                            <ScreenshotUri i:nil="true" />
+                            <Sequence>86</Sequence>
+                            <Children>
+                              <Node z:Id="i52" i:type="Scope">
+                                <CustomDescription i:nil="true" />
+                                <Description></Description>
+                                <Id>27528NavigationAction_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</Id>
+                                <Parent z:Ref="i51" />
+                                <ParentSequence>87</ParentSequence>
+                                <ScreenshotUri i:nil="true" />
+                                <Sequence>88</Sequence>
+                                <Children>
+                                  <Node z:Id="i53" i:type="CommandUserAction">
+                                    <CustomDescription i:nil="true" />
+                                    <Description>In the list, click the link in the selected row.</Description>
+                                    <Id>27528NavigationAction_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x89</Id>
+                                    <Parent z:Ref="i52" />
+                                    <ParentSequence>88</ParentSequence>
+                                    <ScreenshotUri i:nil="true" />
+                                    <Sequence>89</Sequence>
+                                    <Annotations>
+                                      <Annotation i:type="TaskGuideAnnotation">
+                                        <Description i:nil="true" />
+                                        <ExampleText i:nil="true" />
+                                        <GlobalId i:nil="true" />
+                                        <Hidden>true</Hidden>
+                                        <RecordingValueType>Preferred</RecordingValueType>
+                                        <Title i:nil="true" />
+                                      </Annotation>
+                                    </Annotations>
+                                    <GlobalId>b210ff59-231d-4be6-9beb-c7db103481c2</GlobalId>
+                                    <SystemGenerated>false</SystemGenerated>
+                                    <ControlLabel></ControlLabel>
+                                    <ControlLabelId></ControlLabelId>
+                                    <FormId>27480_PurchTable_OrderAccount_Lookup_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormId>
+                                    <ListContext>Grid</ListContext>
+                                    <RowIndex i:nil="true" />
+                                    <Arguments />
+                                    <CommandName>NavigationAction</CommandName>
+                                    <ControlName>Grid</ControlName>
+                                    <ControlType>Grid</ControlType>
+                                    <LabelId></LabelId>
+                                    <ReturnType>Void</ReturnType>
+                                    <ReturnValue i:nil="true" />
+                                    <TaskId i:nil="true" />
+                                  </Node>
+                                </Children>
+                                <IsForm>false</IsForm>
+                                <IsStepGroup>false</IsStepGroup>
+                                <Name>Grid_NavigationAction</Name>
+                                <ScopeType>Private</ScopeType>
+                              </Node>
+                            </Children>
+                            <IsForm>true</IsForm>
+                            <IsStepGroup>false</IsStepGroup>
+                            <Name>PurchTable_OrderAccount_Lookup</Name>
+                            <ScopeType>Private</ScopeType>
+                          </Node>
+                        </Children>
+                        <IsForm>false</IsForm>
+                        <IsStepGroup>true</IsStepGroup>
+                        <Name>PurchTable_OrderAccount_RequestPopup</Name>
+                        <ScopeType>Private</ScopeType>
+                      </Node>
+                      <Node z:Id="i54" i:type="Scope">
+                        <CustomDescription i:nil="true" />
+                        <Description></Description>
+                        <Id>25268_0Click_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</Id>
+                        <Parent z:Ref="i35" />
+                        <ParentSequence>90</ParentSequence>
+                        <ScreenshotUri i:nil="true" />
+                        <Sequence>91</Sequence>
+                        <Children>
+                          <Node z:Id="i55" i:type="CommandUserAction">
+                            <CustomDescription i:nil="true" />
+                            <Description>Click Cancel.</Description>
+                            <Id>25268_0Click_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x92</Id>
+                            <Parent z:Ref="i54" />
+                            <ParentSequence>91</ParentSequence>
+                            <ScreenshotUri i:nil="true" />
+                            <Sequence>92</Sequence>
+                            <Annotations />
+                            <GlobalId>db75c9b8-6fbd-4596-8431-bd6f20eec6f6</GlobalId>
+                            <SystemGenerated>false</SystemGenerated>
+                            <ControlLabel>Cancel</ControlLabel>
+                            <ControlLabelId></ControlLabelId>
+                            <FormId>25167_PurchCreateOrder_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormId>
+                            <ListContext i:nil="true" />
+                            <RowIndex i:nil="true" />
+                            <Arguments />
+                            <CommandName>Click</CommandName>
+                            <ControlName>Cancel</ControlName>
+                            <ControlType>CommandButton</ControlType>
+                            <LabelId i:nil="true" />
+                            <ReturnType>Void</ReturnType>
+                            <ReturnValue i:nil="true" />
+                            <TaskId>264</TaskId>
+                          </Node>
+                        </Children>
+                        <IsForm>false</IsForm>
+                        <IsStepGroup>false</IsStepGroup>
+                        <Name>Cancel_Click</Name>
+                        <ScopeType>Private</ScopeType>
+                      </Node>
+                    </Children>
+                    <IsForm>true</IsForm>
+                    <IsStepGroup>false</IsStepGroup>
+                    <Name>PurchCreateOrder</Name>
+                    <ScopeType>Public</ScopeType>
                   </Node>
                 </Children>
                 <IsForm>false</IsForm>
@@ -194,155 +1336,1215 @@
                 <Name>SystemDefinedNewButton_Click</Name>
                 <ScopeType>Private</ScopeType>
               </Node>
-              <Node z:Id="i10" i:type="Scope">
-                <CustomDescription i:nil="true"/>
-                <Description/>
-                <Id>789Value_0cd75ebb-7176-45f1-bfd3-5740a3420692</Id>
-                <Parent z:Ref="i7"/>
-                <ParentSequence>13</ParentSequence>
-                <ScreenshotUri i:nil="true"/>
-                <Sequence>14</Sequence>
+              <Node z:Id="i56" i:type="Scope">
+                <CustomDescription i:nil="true" />
+                <Description></Description>
+                <Id>22687RequestClose_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</Id>
+                <Parent z:Ref="i32" />
+                <ParentSequence>42</ParentSequence>
+                <ScreenshotUri i:nil="true" />
+                <Sequence>93</Sequence>
                 <Children>
-                  <Node z:Id="i11" i:type="PropertyUserAction">
-                    <CustomDescription i:nil="true"/>
-                    <Description>In the Main account type field, select an option.</Description>
-                    <Id>789Value_0cd75ebb-7176-45f1-bfd3-5740a3420692x15</Id>
-                    <Parent z:Ref="i10"/>
-                    <ParentSequence>14</ParentSequence>
-                    <ScreenshotUri i:nil="true"/>
-                    <Sequence>15</Sequence>
-                    <Annotations/>
-                    <GlobalId>4d0b07fb-b0c9-4de4-b493-07cdf50f2264</GlobalId>
+                  <Node z:Id="i57" i:type="CommandUserAction">
+                    <CustomDescription i:nil="true" />
+                    <Description>Close the page.</Description>
+                    <Id>22687RequestClose_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x94</Id>
+                    <Parent z:Ref="i56" />
+                    <ParentSequence>93</ParentSequence>
+                    <ScreenshotUri i:nil="true" />
+                    <Sequence>94</Sequence>
+                    <Annotations />
+                    <GlobalId>d09625ac-7e7a-48b0-884c-ac665ccf65f3</GlobalId>
                     <SystemGenerated>false</SystemGenerated>
-                    <ControlLabel>Main account type</ControlLabel>
-                    <ControlLabelId>@SYS342312</ControlLabelId>
-                    <FormId>701_MainAccountCategory_0cd75ebb-7176-45f1-bfd3-5740a3420692</FormId>
-                    <ListContext>AccountCategoryGrid</ListContext>
-                    <RowIndex i:nil="true"/>
-                    <BoundDataSource>MainAccountCategory</BoundDataSource>
-                    <BoundProperty>AccountType</BoundProperty>
-                    <ControlName>LedgerAccountCategory_AccountType</ControlName>
-                    <ControlType>ComboBox</ControlType>
-                    <IsReference>false</IsReference>
-                    <LabelId i:nil="true"/>
-                    <PropertyName>Value</PropertyName>
-                    <UserActionType>Input</UserActionType>
-                    <Value>0</Value>
-                    <ValueLabel>@SYS3418</ValueLabel>
-                  </Node>
-                  <Node z:Id="i12" i:type="PropertyUserAction">
-                    <CustomDescription i:nil="true"/>
-                    <Description>In the Main account type field, select an option.</Description>
-                    <Id>789Value_0cd75ebb-7176-45f1-bfd3-5740a3420692x16</Id>
-                    <Parent z:Ref="i10"/>
-                    <ParentSequence>14</ParentSequence>
-                    <ScreenshotUri i:nil="true"/>
-                    <Sequence>16</Sequence>
-                    <Annotations/>
-                    <GlobalId>545c9256-2141-4018-ab1a-992bdc67d5f2</GlobalId>
-                    <SystemGenerated>false</SystemGenerated>
-                    <ControlLabel>Main account type</ControlLabel>
-                    <ControlLabelId>@SYS342312</ControlLabelId>
-                    <FormId>701_MainAccountCategory_0cd75ebb-7176-45f1-bfd3-5740a3420692</FormId>
-                    <ListContext>AccountCategoryGrid</ListContext>
-                    <RowIndex i:nil="true"/>
-                    <BoundDataSource>MainAccountCategory</BoundDataSource>
-                    <BoundProperty>AccountType</BoundProperty>
-                    <ControlName>LedgerAccountCategory_AccountType</ControlName>
-                    <ControlType>ComboBox</ControlType>
-                    <IsReference>false</IsReference>
-                    <LabelId i:nil="true"/>
-                    <PropertyName>Value</PropertyName>
-                    <UserActionType>Input</UserActionType>
-                    <Value>1</Value>
-                    <ValueLabel>@SYS2835</ValueLabel>
-                  </Node>
-                  <Node z:Id="i13" i:type="PropertyUserAction">
-                    <CustomDescription i:nil="true"/>
-                    <Description>In the Main account type field, select an option.</Description>
-                    <Id>789Value_0cd75ebb-7176-45f1-bfd3-5740a3420692x17</Id>
-                    <Parent z:Ref="i10"/>
-                    <ParentSequence>14</ParentSequence>
-                    <ScreenshotUri i:nil="true"/>
-                    <Sequence>17</Sequence>
-                    <Annotations/>
-                    <GlobalId>332a6459-6240-46ed-a1cc-e09688841b52</GlobalId>
-                    <SystemGenerated>false</SystemGenerated>
-                    <ControlLabel>Main account type</ControlLabel>
-                    <ControlLabelId>@SYS342312</ControlLabelId>
-                    <FormId>701_MainAccountCategory_0cd75ebb-7176-45f1-bfd3-5740a3420692</FormId>
-                    <ListContext>AccountCategoryGrid</ListContext>
-                    <RowIndex i:nil="true"/>
-                    <BoundDataSource>MainAccountCategory</BoundDataSource>
-                    <BoundProperty>AccountType</BoundProperty>
-                    <ControlName>LedgerAccountCategory_AccountType</ControlName>
-                    <ControlType>ComboBox</ControlType>
-                    <IsReference>false</IsReference>
-                    <LabelId i:nil="true"/>
-                    <PropertyName>Value</PropertyName>
-                    <UserActionType>Input</UserActionType>
-                    <Value>2</Value>
-                    <ValueLabel>@SYS84540</ValueLabel>
-                  </Node>
-                  <Node z:Id="i14" i:type="PropertyUserAction">
-                    <CustomDescription i:nil="true"/>
-                    <Description>In the Main account type field, select an option.</Description>
-                    <Id>789Value_0cd75ebb-7176-45f1-bfd3-5740a3420692x18</Id>
-                    <Parent z:Ref="i10"/>
-                    <ParentSequence>14</ParentSequence>
-                    <ScreenshotUri i:nil="true"/>
-                    <Sequence>18</Sequence>
-                    <Annotations/>
-                    <GlobalId>03b9ad9d-517e-45d2-a8f1-4ce54750fb9a</GlobalId>
-                    <SystemGenerated>false</SystemGenerated>
-                    <ControlLabel>Main account type</ControlLabel>
-                    <ControlLabelId>@SYS342312</ControlLabelId>
-                    <FormId>701_MainAccountCategory_0cd75ebb-7176-45f1-bfd3-5740a3420692</FormId>
-                    <ListContext>AccountCategoryGrid</ListContext>
-                    <RowIndex i:nil="true"/>
-                    <BoundDataSource>MainAccountCategory</BoundDataSource>
-                    <BoundProperty>AccountType</BoundProperty>
-                    <ControlName>LedgerAccountCategory_AccountType</ControlName>
-                    <ControlType>ComboBox</ControlType>
-                    <IsReference>false</IsReference>
-                    <LabelId i:nil="true"/>
-                    <PropertyName>Value</PropertyName>
-                    <UserActionType>Input</UserActionType>
-                    <Value>3</Value>
-                    <ValueLabel>@SYS135770</ValueLabel>
+                    <ControlLabel></ControlLabel>
+                    <ControlLabelId></ControlLabelId>
+                    <FormId>22687_PurchTable_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormId>
+                    <ListContext i:nil="true" />
+                    <RowIndex i:nil="true" />
+                    <Arguments />
+                    <CommandName>RequestClose</CommandName>
+                    <ControlName></ControlName>
+                    <ControlType></ControlType>
+                    <LabelId>@SysTaskRecorder:CloseForm</LabelId>
+                    <ReturnType>Void</ReturnType>
+                    <ReturnValue i:nil="true" />
+                    <TaskId i:nil="true" />
                   </Node>
                 </Children>
                 <IsForm>false</IsForm>
                 <IsStepGroup>false</IsStepGroup>
-                <Name>LedgerAccountCategory_AccountType_Value</Name>
+                <Name>RequestClose</Name>
                 <ScopeType>Private</ScopeType>
               </Node>
             </Children>
             <IsForm>true</IsForm>
             <IsStepGroup>false</IsStepGroup>
-            <Name>MainAccountCategory</Name>
+            <Name>PurchTable</Name>
             <ScopeType>Public</ScopeType>
           </Node>
         </Children>
         <IsForm>false</IsForm>
         <IsStepGroup>false</IsStepGroup>
-        <Name>MenuItem_mainaccountcategory</Name>
+        <Name>MenuItem_purchtablelistpage</Name>
+        <ScopeType>Private</ScopeType>
+      </Node>
+      <Node z:Id="i58" i:type="Scope">
+        <CustomDescription i:nil="true" />
+        <Description></Description>
+        <Id>MenuItemledgerjournaltable5_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</Id>
+        <Parent z:Ref="i1" />
+        <ParentSequence>0</ParentSequence>
+        <ScreenshotUri i:nil="true" />
+        <Sequence>95</Sequence>
+        <Children>
+          <Node z:Id="i59" i:type="MenuItemUserAction">
+            <CustomDescription i:nil="true" />
+            <Description>Go to Accounts payable &gt; Payments &gt; Vendor payment journal.</Description>
+            <Id>MenuItemledgerjournaltable5_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x96</Id>
+            <Parent z:Ref="i58" />
+            <ParentSequence>95</ParentSequence>
+            <ScreenshotUri i:nil="true" />
+            <Sequence>96</Sequence>
+            <Annotations />
+            <GlobalId>23bf7fa3-a6ff-4e1d-8575-9a8476f745d5</GlobalId>
+            <SystemGenerated>false</SystemGenerated>
+            <MenuItemName>ledgerjournaltable5</MenuItemName>
+            <MenuItemType>Display</MenuItemType>
+            <NavigationPath xmlns:d7p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+              <d7p1:string>mainmenu</d7p1:string>
+              <d7p1:string>AccountsPayable</d7p1:string>
+              <d7p1:string>Payments</d7p1:string>
+            </NavigationPath>
+          </Node>
+          <Node z:Id="i60" i:type="Scope">
+            <CustomDescription i:nil="true" />
+            <Description></Description>
+            <Id>27552_LedgerJournalTable_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</Id>
+            <Parent z:Ref="i58" />
+            <ParentSequence>95</ParentSequence>
+            <ScreenshotUri i:nil="true" />
+            <Sequence>97</Sequence>
+            <Children>
+              <Node z:Id="i61" i:type="Scope">
+                <CustomDescription i:nil="true" />
+                <Description></Description>
+                <Id>28064MarkActiveRow_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</Id>
+                <Parent z:Ref="i60" />
+                <ParentSequence>99</ParentSequence>
+                <ScreenshotUri i:nil="true" />
+                <Sequence>100</Sequence>
+                <Children>
+                  <Node z:Id="i62" i:type="CommandUserAction">
+                    <CustomDescription i:nil="true" />
+                    <Description>In the list, mark the selected row.</Description>
+                    <Id>28064MarkActiveRow_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x101</Id>
+                    <Parent z:Ref="i61" />
+                    <ParentSequence>100</ParentSequence>
+                    <ScreenshotUri i:nil="true" />
+                    <Sequence>101</Sequence>
+                    <Annotations />
+                    <GlobalId>878d7e5a-b25f-4a43-a7aa-5097e8f8e4e9</GlobalId>
+                    <SystemGenerated>false</SystemGenerated>
+                    <ControlLabel></ControlLabel>
+                    <ControlLabelId></ControlLabelId>
+                    <FormId>27552_LedgerJournalTable_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormId>
+                    <ListContext>GridOverview</ListContext>
+                    <RowIndex i:nil="true" />
+                    <Arguments />
+                    <CommandName>MarkActiveRow</CommandName>
+                    <ControlName>GridOverview</ControlName>
+                    <ControlType>Grid</ControlType>
+                    <LabelId></LabelId>
+                    <ReturnType>Void</ReturnType>
+                    <ReturnValue i:nil="true" />
+                    <TaskId i:nil="true" />
+                  </Node>
+                </Children>
+                <IsForm>false</IsForm>
+                <IsStepGroup>false</IsStepGroup>
+                <Name>GridOverview_MarkActiveRow</Name>
+                <ScopeType>Private</ScopeType>
+              </Node>
+              <Node z:Id="i63" i:type="Scope">
+                <CustomDescription i:nil="true" />
+                <Description></Description>
+                <Id>28046Click_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</Id>
+                <Parent z:Ref="i60" />
+                <ParentSequence>102</ParentSequence>
+                <ScreenshotUri i:nil="true" />
+                <Sequence>103</Sequence>
+                <Children>
+                  <Node z:Id="i64" i:type="CommandUserAction">
+                    <CustomDescription i:nil="true" />
+                    <Description>Click Lines.</Description>
+                    <Id>28046Click_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x104</Id>
+                    <Parent z:Ref="i63" />
+                    <ParentSequence>103</ParentSequence>
+                    <ScreenshotUri i:nil="true" />
+                    <Sequence>104</Sequence>
+                    <Annotations />
+                    <GlobalId>47cb7b0c-fe3d-41ba-aea5-b5ccd626a618</GlobalId>
+                    <SystemGenerated>false</SystemGenerated>
+                    <ControlLabel>Lines</ControlLabel>
+                    <ControlLabelId>@SYS15451</ControlLabelId>
+                    <FormId>27552_LedgerJournalTable_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormId>
+                    <ListContext i:nil="true" />
+                    <RowIndex i:nil="true" />
+                    <Arguments />
+                    <CommandName>Click</CommandName>
+                    <ControlName>JournalLines</ControlName>
+                    <ControlType>MenuItemButton</ControlType>
+                    <LabelId></LabelId>
+                    <ReturnType>Void</ReturnType>
+                    <ReturnValue i:nil="true" />
+                    <TaskId i:nil="true" />
+                  </Node>
+                  <Node z:Id="i65" i:type="Scope">
+                    <CustomDescription i:nil="true" />
+                    <Description></Description>
+                    <Id>28257_LedgerJournalTransVendPaym_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</Id>
+                    <Parent z:Ref="i63" />
+                    <ParentSequence>103</ParentSequence>
+                    <ScreenshotUri i:nil="true" />
+                    <Sequence>105</Sequence>
+                    <Children>
+                      <Node z:Id="i66" i:type="Scope">
+                        <CustomDescription i:nil="true" />
+                        <Description></Description>
+                        <Id>28615MarkActiveRow_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</Id>
+                        <Parent z:Ref="i65" />
+                        <ParentSequence>108</ParentSequence>
+                        <ScreenshotUri i:nil="true" />
+                        <Sequence>109</Sequence>
+                        <Children>
+                          <Node z:Id="i67" i:type="CommandUserAction">
+                            <CustomDescription i:nil="true" />
+                            <Description>In the list, mark the selected row.</Description>
+                            <Id>28615MarkActiveRow_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x110</Id>
+                            <Parent z:Ref="i66" />
+                            <ParentSequence>109</ParentSequence>
+                            <ScreenshotUri i:nil="true" />
+                            <Sequence>110</Sequence>
+                            <Annotations />
+                            <GlobalId>758958e0-0ee3-4b32-8932-13285ba62d58</GlobalId>
+                            <SystemGenerated>false</SystemGenerated>
+                            <ControlLabel></ControlLabel>
+                            <ControlLabelId></ControlLabelId>
+                            <FormId>28257_LedgerJournalTransVendPaym_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormId>
+                            <ListContext>overviewGrid</ListContext>
+                            <RowIndex i:nil="true" />
+                            <Arguments />
+                            <CommandName>MarkActiveRow</CommandName>
+                            <ControlName>overviewGrid</ControlName>
+                            <ControlType>Grid</ControlType>
+                            <LabelId></LabelId>
+                            <ReturnType>Void</ReturnType>
+                            <ReturnValue i:nil="true" />
+                            <TaskId i:nil="true" />
+                          </Node>
+                        </Children>
+                        <IsForm>false</IsForm>
+                        <IsStepGroup>false</IsStepGroup>
+                        <Name>overviewGrid_MarkActiveRow</Name>
+                        <ScopeType>Private</ScopeType>
+                      </Node>
+                      <Node z:Id="i68" i:type="Scope">
+                        <CustomDescription i:nil="true" />
+                        <Description></Description>
+                        <Id>LedgerJournalTrans_AccountNum_Value_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</Id>
+                        <Parent z:Ref="i65" />
+                        <ParentSequence>111</ParentSequence>
+                        <ScreenshotUri i:nil="true" />
+                        <Sequence>112</Sequence>
+                        <Children>
+                          <Node z:Id="i69" i:type="PropertyUserAction">
+                            <CustomDescription i:nil="true" />
+                            <Description>In the Account field, specify the desired values.</Description>
+                            <Id>LedgerJournalTrans_AccountNum_Value_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x113</Id>
+                            <Parent z:Ref="i68" />
+                            <ParentSequence>112</ParentSequence>
+                            <ScreenshotUri i:nil="true" />
+                            <Sequence>113</Sequence>
+                            <Annotations />
+                            <GlobalId>3be13210-173b-4962-aec9-afbf5f9892a6</GlobalId>
+                            <SystemGenerated>false</SystemGenerated>
+                            <ControlLabel>Account</ControlLabel>
+                            <ControlLabelId>@SYS24500</ControlLabelId>
+                            <FormId>28257_LedgerJournalTransVendPaym_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormId>
+                            <ListContext i:nil="true" />
+                            <RowIndex i:nil="true" />
+                            <BoundDataSource i:nil="true" />
+                            <BoundProperty i:nil="true" />
+                            <ControlName>LedgerJournalTrans_AccountNum</ControlName>
+                            <ControlType>SegmentedEntry</ControlType>
+                            <IsReference>false</IsReference>
+                            <LabelId>@Dimension:SegmentedEntry_Value</LabelId>
+                            <PropertyName>Value</PropertyName>
+                            <UserActionType>Input</UserActionType>
+                            <Value>1001</Value>
+                            <ValueLabel i:nil="true" />
+                          </Node>
+                        </Children>
+                        <IsForm>false</IsForm>
+                        <IsStepGroup>false</IsStepGroup>
+                        <Name>LedgerJournalTrans_AccountNum_Value</Name>
+                        <ScopeType>Private</ScopeType>
+                      </Node>
+                      <Node z:Id="i70" i:type="Scope">
+                        <CustomDescription i:nil="true" />
+                        <Description></Description>
+                        <Id>28588Click_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</Id>
+                        <Parent z:Ref="i65" />
+                        <ParentSequence>114</ParentSequence>
+                        <ScreenshotUri i:nil="true" />
+                        <Sequence>115</Sequence>
+                        <Children>
+                          <Node z:Id="i71" i:type="CommandUserAction">
+                            <CustomDescription i:nil="true" />
+                            <Description>Click Post.</Description>
+                            <Id>28588Click_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x116</Id>
+                            <Parent z:Ref="i70" />
+                            <ParentSequence>115</ParentSequence>
+                            <ScreenshotUri i:nil="true" />
+                            <Sequence>116</Sequence>
+                            <Annotations />
+                            <GlobalId>9d54e9a3-1ac8-4f95-aa1b-623d6b37daf6</GlobalId>
+                            <SystemGenerated>false</SystemGenerated>
+                            <ControlLabel>Post</ControlLabel>
+                            <ControlLabelId>@SYS6098</ControlLabelId>
+                            <FormId>28257_LedgerJournalTransVendPaym_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormId>
+                            <ListContext i:nil="true" />
+                            <RowIndex i:nil="true" />
+                            <Arguments />
+                            <CommandName>Click</CommandName>
+                            <ControlName>PostJournal</ControlName>
+                            <ControlType>MenuItemButton</ControlType>
+                            <LabelId></LabelId>
+                            <ReturnType>Void</ReturnType>
+                            <ReturnValue i:nil="true" />
+                            <TaskId i:nil="true" />
+                          </Node>
+                          <Node z:Id="i72" i:type="Scope">
+                            <CustomDescription i:nil="true" />
+                            <Description></Description>
+                            <Id>30115_SysBoxForm_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</Id>
+                            <Parent z:Ref="i70" />
+                            <ParentSequence>115</ParentSequence>
+                            <ScreenshotUri i:nil="true" />
+                            <Sequence>117</Sequence>
+                            <Children>
+                              <Node z:Id="i73" i:type="Scope">
+                                <CustomDescription i:nil="true" />
+                                <Description></Description>
+                                <Id>30128_0Click_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</Id>
+                                <Parent z:Ref="i72" />
+                                <ParentSequence>119</ParentSequence>
+                                <ScreenshotUri i:nil="true" />
+                                <Sequence>120</Sequence>
+                                <Children>
+                                  <Node z:Id="i74" i:type="CommandUserAction">
+                                    <CustomDescription i:nil="true" />
+                                    <Description>Click Close.</Description>
+                                    <Id>30128_0Click_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x121</Id>
+                                    <Parent z:Ref="i73" />
+                                    <ParentSequence>120</ParentSequence>
+                                    <ScreenshotUri i:nil="true" />
+                                    <Sequence>121</Sequence>
+                                    <Annotations />
+                                    <GlobalId>d8151dcd-f9d5-4200-9621-cd442a02f9ab</GlobalId>
+                                    <SystemGenerated>false</SystemGenerated>
+                                    <ControlLabel>Close</ControlLabel>
+                                    <ControlLabelId>@SYS301990</ControlLabelId>
+                                    <FormId>30115_SysBoxForm_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormId>
+                                    <ListContext i:nil="true" />
+                                    <RowIndex i:nil="true" />
+                                    <Arguments />
+                                    <CommandName>Click</CommandName>
+                                    <ControlName>Close</ControlName>
+                                    <ControlType>CommandButton</ControlType>
+                                    <LabelId i:nil="true" />
+                                    <ReturnType>Void</ReturnType>
+                                    <ReturnValue i:nil="true" />
+                                    <TaskId>264</TaskId>
+                                  </Node>
+                                </Children>
+                                <IsForm>false</IsForm>
+                                <IsStepGroup>false</IsStepGroup>
+                                <Name>Close_Click</Name>
+                                <ScopeType>Private</ScopeType>
+                              </Node>
+                            </Children>
+                            <IsForm>true</IsForm>
+                            <IsStepGroup>false</IsStepGroup>
+                            <Name>SysBoxForm</Name>
+                            <ScopeType>Public</ScopeType>
+                          </Node>
+                        </Children>
+                        <IsForm>false</IsForm>
+                        <IsStepGroup>false</IsStepGroup>
+                        <Name>PostJournal_Click</Name>
+                        <ScopeType>Private</ScopeType>
+                      </Node>
+                      <Node z:Id="i75" i:type="Scope">
+                        <CustomDescription i:nil="true" />
+                        <Description></Description>
+                        <Id>LedgerJournalTrans_AccountNum_Value_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</Id>
+                        <Parent z:Ref="i65" />
+                        <ParentSequence>122</ParentSequence>
+                        <ScreenshotUri i:nil="true" />
+                        <Sequence>123</Sequence>
+                        <Children>
+                          <Node z:Id="i76" i:type="PropertyUserAction">
+                            <CustomDescription i:nil="true" />
+                            <Description>In the Account field, specify the desired values.</Description>
+                            <Id>LedgerJournalTrans_AccountNum_Value_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x124</Id>
+                            <Parent z:Ref="i75" />
+                            <ParentSequence>123</ParentSequence>
+                            <ScreenshotUri i:nil="true" />
+                            <Sequence>124</Sequence>
+                            <Annotations />
+                            <GlobalId>41f30bef-7c64-48aa-b172-35f453b2d215</GlobalId>
+                            <SystemGenerated>false</SystemGenerated>
+                            <ControlLabel>Account</ControlLabel>
+                            <ControlLabelId>@SYS24500</ControlLabelId>
+                            <FormId>28257_LedgerJournalTransVendPaym_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormId>
+                            <ListContext i:nil="true" />
+                            <RowIndex i:nil="true" />
+                            <BoundDataSource i:nil="true" />
+                            <BoundProperty i:nil="true" />
+                            <ControlName>LedgerJournalTrans_AccountNum</ControlName>
+                            <ControlType>SegmentedEntry</ControlType>
+                            <IsReference>false</IsReference>
+                            <LabelId>@Dimension:SegmentedEntry_Value</LabelId>
+                            <PropertyName>Value</PropertyName>
+                            <UserActionType>Input</UserActionType>
+                            <Value>1001</Value>
+                            <ValueLabel i:nil="true" />
+                          </Node>
+                          <Node z:Id="i77" i:type="PropertyUserAction">
+                            <CustomDescription i:nil="true" />
+                            <Description>In the Account field, specify the desired values.</Description>
+                            <Id>LedgerJournalTrans_AccountNum_Value_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x125</Id>
+                            <Parent z:Ref="i75" />
+                            <ParentSequence>123</ParentSequence>
+                            <ScreenshotUri i:nil="true" />
+                            <Sequence>125</Sequence>
+                            <Annotations />
+                            <GlobalId>bbc10810-ffc3-4b1f-8fae-773dbfe28659</GlobalId>
+                            <SystemGenerated>false</SystemGenerated>
+                            <ControlLabel>Account</ControlLabel>
+                            <ControlLabelId>@SYS24500</ControlLabelId>
+                            <FormId>28257_LedgerJournalTransVendPaym_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormId>
+                            <ListContext i:nil="true" />
+                            <RowIndex i:nil="true" />
+                            <BoundDataSource i:nil="true" />
+                            <BoundProperty i:nil="true" />
+                            <ControlName>LedgerJournalTrans_AccountNum</ControlName>
+                            <ControlType>SegmentedEntry</ControlType>
+                            <IsReference>false</IsReference>
+                            <LabelId>@Dimension:SegmentedEntry_Value</LabelId>
+                            <PropertyName>Value</PropertyName>
+                            <UserActionType>Input</UserActionType>
+                            <Value>1001</Value>
+                            <ValueLabel i:nil="true" />
+                          </Node>
+                          <Node z:Id="i78" i:type="PropertyUserAction">
+                            <CustomDescription i:nil="true" />
+                            <Description>In the Account field, specify the desired values.</Description>
+                            <Id>LedgerJournalTrans_AccountNum_Value_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x126</Id>
+                            <Parent z:Ref="i75" />
+                            <ParentSequence>123</ParentSequence>
+                            <ScreenshotUri i:nil="true" />
+                            <Sequence>126</Sequence>
+                            <Annotations />
+                            <GlobalId>23ffca9c-6cab-4015-a39d-31dd98cb95c6</GlobalId>
+                            <SystemGenerated>false</SystemGenerated>
+                            <ControlLabel>Account</ControlLabel>
+                            <ControlLabelId>@SYS24500</ControlLabelId>
+                            <FormId>28257_LedgerJournalTransVendPaym_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormId>
+                            <ListContext i:nil="true" />
+                            <RowIndex i:nil="true" />
+                            <BoundDataSource i:nil="true" />
+                            <BoundProperty i:nil="true" />
+                            <ControlName>LedgerJournalTrans_AccountNum</ControlName>
+                            <ControlType>SegmentedEntry</ControlType>
+                            <IsReference>false</IsReference>
+                            <LabelId>@Dimension:SegmentedEntry_Value</LabelId>
+                            <PropertyName>Value</PropertyName>
+                            <UserActionType>Input</UserActionType>
+                            <Value>1001</Value>
+                            <ValueLabel i:nil="true" />
+                          </Node>
+                          <Node z:Id="i79" i:type="PropertyUserAction">
+                            <CustomDescription i:nil="true" />
+                            <Description>In the Account field, specify the desired values.</Description>
+                            <Id>LedgerJournalTrans_AccountNum_Value_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x127</Id>
+                            <Parent z:Ref="i75" />
+                            <ParentSequence>123</ParentSequence>
+                            <ScreenshotUri i:nil="true" />
+                            <Sequence>127</Sequence>
+                            <Annotations />
+                            <GlobalId>ed56498a-259f-49b4-a304-142acc122873</GlobalId>
+                            <SystemGenerated>false</SystemGenerated>
+                            <ControlLabel>Account</ControlLabel>
+                            <ControlLabelId>@SYS24500</ControlLabelId>
+                            <FormId>28257_LedgerJournalTransVendPaym_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormId>
+                            <ListContext i:nil="true" />
+                            <RowIndex i:nil="true" />
+                            <BoundDataSource i:nil="true" />
+                            <BoundProperty i:nil="true" />
+                            <ControlName>LedgerJournalTrans_AccountNum</ControlName>
+                            <ControlType>SegmentedEntry</ControlType>
+                            <IsReference>false</IsReference>
+                            <LabelId>@Dimension:SegmentedEntry_Value</LabelId>
+                            <PropertyName>Value</PropertyName>
+                            <UserActionType>Input</UserActionType>
+                            <Value>1001</Value>
+                            <ValueLabel i:nil="true" />
+                          </Node>
+                          <Node z:Id="i80" i:type="PropertyUserAction">
+                            <CustomDescription i:nil="true" />
+                            <Description>In the Account field, specify the desired values.</Description>
+                            <Id>LedgerJournalTrans_AccountNum_Value_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x128</Id>
+                            <Parent z:Ref="i75" />
+                            <ParentSequence>123</ParentSequence>
+                            <ScreenshotUri i:nil="true" />
+                            <Sequence>128</Sequence>
+                            <Annotations />
+                            <GlobalId>a4e410ef-079b-4e89-be8c-63c61e8811a9</GlobalId>
+                            <SystemGenerated>false</SystemGenerated>
+                            <ControlLabel>Account</ControlLabel>
+                            <ControlLabelId>@SYS24500</ControlLabelId>
+                            <FormId>28257_LedgerJournalTransVendPaym_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormId>
+                            <ListContext i:nil="true" />
+                            <RowIndex i:nil="true" />
+                            <BoundDataSource i:nil="true" />
+                            <BoundProperty i:nil="true" />
+                            <ControlName>LedgerJournalTrans_AccountNum</ControlName>
+                            <ControlType>SegmentedEntry</ControlType>
+                            <IsReference>false</IsReference>
+                            <LabelId>@Dimension:SegmentedEntry_Value</LabelId>
+                            <PropertyName>Value</PropertyName>
+                            <UserActionType>Input</UserActionType>
+                            <Value>1001</Value>
+                            <ValueLabel i:nil="true" />
+                          </Node>
+                          <Node z:Id="i81" i:type="PropertyUserAction">
+                            <CustomDescription i:nil="true" />
+                            <Description>In the Account field, specify the desired values.</Description>
+                            <Id>LedgerJournalTrans_AccountNum_Value_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x129</Id>
+                            <Parent z:Ref="i75" />
+                            <ParentSequence>123</ParentSequence>
+                            <ScreenshotUri i:nil="true" />
+                            <Sequence>129</Sequence>
+                            <Annotations />
+                            <GlobalId>6295c53e-6326-4b55-a588-4192b4c8a2dd</GlobalId>
+                            <SystemGenerated>false</SystemGenerated>
+                            <ControlLabel>Account</ControlLabel>
+                            <ControlLabelId>@SYS24500</ControlLabelId>
+                            <FormId>28257_LedgerJournalTransVendPaym_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormId>
+                            <ListContext i:nil="true" />
+                            <RowIndex i:nil="true" />
+                            <BoundDataSource i:nil="true" />
+                            <BoundProperty i:nil="true" />
+                            <ControlName>LedgerJournalTrans_AccountNum</ControlName>
+                            <ControlType>SegmentedEntry</ControlType>
+                            <IsReference>false</IsReference>
+                            <LabelId>@Dimension:SegmentedEntry_Value</LabelId>
+                            <PropertyName>Value</PropertyName>
+                            <UserActionType>Input</UserActionType>
+                            <Value>1001</Value>
+                            <ValueLabel i:nil="true" />
+                          </Node>
+                          <Node z:Id="i82" i:type="PropertyUserAction">
+                            <CustomDescription i:nil="true" />
+                            <Description>In the Account field, specify the desired values.</Description>
+                            <Id>LedgerJournalTrans_AccountNum_Value_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x130</Id>
+                            <Parent z:Ref="i75" />
+                            <ParentSequence>123</ParentSequence>
+                            <ScreenshotUri i:nil="true" />
+                            <Sequence>130</Sequence>
+                            <Annotations />
+                            <GlobalId>91b5c967-de60-407e-b383-a240e96d7759</GlobalId>
+                            <SystemGenerated>false</SystemGenerated>
+                            <ControlLabel>Account</ControlLabel>
+                            <ControlLabelId>@SYS24500</ControlLabelId>
+                            <FormId>28257_LedgerJournalTransVendPaym_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormId>
+                            <ListContext i:nil="true" />
+                            <RowIndex i:nil="true" />
+                            <BoundDataSource i:nil="true" />
+                            <BoundProperty i:nil="true" />
+                            <ControlName>LedgerJournalTrans_AccountNum</ControlName>
+                            <ControlType>SegmentedEntry</ControlType>
+                            <IsReference>false</IsReference>
+                            <LabelId>@Dimension:SegmentedEntry_Value</LabelId>
+                            <PropertyName>Value</PropertyName>
+                            <UserActionType>Input</UserActionType>
+                            <Value>1001</Value>
+                            <ValueLabel i:nil="true" />
+                          </Node>
+                          <Node z:Id="i83" i:type="PropertyUserAction">
+                            <CustomDescription i:nil="true" />
+                            <Description>In the Account field, specify the desired values.</Description>
+                            <Id>LedgerJournalTrans_AccountNum_Value_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x131</Id>
+                            <Parent z:Ref="i75" />
+                            <ParentSequence>123</ParentSequence>
+                            <ScreenshotUri i:nil="true" />
+                            <Sequence>131</Sequence>
+                            <Annotations />
+                            <GlobalId>95e07e16-0d2d-4b97-8420-10a640e35e81</GlobalId>
+                            <SystemGenerated>false</SystemGenerated>
+                            <ControlLabel>Account</ControlLabel>
+                            <ControlLabelId>@SYS24500</ControlLabelId>
+                            <FormId>28257_LedgerJournalTransVendPaym_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormId>
+                            <ListContext i:nil="true" />
+                            <RowIndex i:nil="true" />
+                            <BoundDataSource i:nil="true" />
+                            <BoundProperty i:nil="true" />
+                            <ControlName>LedgerJournalTrans_AccountNum</ControlName>
+                            <ControlType>SegmentedEntry</ControlType>
+                            <IsReference>false</IsReference>
+                            <LabelId>@Dimension:SegmentedEntry_Value</LabelId>
+                            <PropertyName>Value</PropertyName>
+                            <UserActionType>Input</UserActionType>
+                            <Value>1001</Value>
+                            <ValueLabel i:nil="true" />
+                          </Node>
+                          <Node z:Id="i84" i:type="PropertyUserAction">
+                            <CustomDescription i:nil="true" />
+                            <Description>In the Account field, specify the desired values.</Description>
+                            <Id>LedgerJournalTrans_AccountNum_Value_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x132</Id>
+                            <Parent z:Ref="i75" />
+                            <ParentSequence>123</ParentSequence>
+                            <ScreenshotUri i:nil="true" />
+                            <Sequence>132</Sequence>
+                            <Annotations />
+                            <GlobalId>0ed7c3eb-50dd-44fe-91df-77006433d448</GlobalId>
+                            <SystemGenerated>false</SystemGenerated>
+                            <ControlLabel>Account</ControlLabel>
+                            <ControlLabelId>@SYS24500</ControlLabelId>
+                            <FormId>28257_LedgerJournalTransVendPaym_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormId>
+                            <ListContext i:nil="true" />
+                            <RowIndex i:nil="true" />
+                            <BoundDataSource i:nil="true" />
+                            <BoundProperty i:nil="true" />
+                            <ControlName>LedgerJournalTrans_AccountNum</ControlName>
+                            <ControlType>SegmentedEntry</ControlType>
+                            <IsReference>false</IsReference>
+                            <LabelId>@Dimension:SegmentedEntry_Value</LabelId>
+                            <PropertyName>Value</PropertyName>
+                            <UserActionType>Input</UserActionType>
+                            <Value>1001</Value>
+                            <ValueLabel i:nil="true" />
+                          </Node>
+                          <Node z:Id="i85" i:type="PropertyUserAction">
+                            <CustomDescription i:nil="true" />
+                            <Description>In the Account field, specify the desired values.</Description>
+                            <Id>LedgerJournalTrans_AccountNum_Value_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x133</Id>
+                            <Parent z:Ref="i75" />
+                            <ParentSequence>123</ParentSequence>
+                            <ScreenshotUri i:nil="true" />
+                            <Sequence>133</Sequence>
+                            <Annotations />
+                            <GlobalId>1b8219cc-59fd-40da-ad18-27e6c743403f</GlobalId>
+                            <SystemGenerated>false</SystemGenerated>
+                            <ControlLabel>Account</ControlLabel>
+                            <ControlLabelId>@SYS24500</ControlLabelId>
+                            <FormId>28257_LedgerJournalTransVendPaym_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormId>
+                            <ListContext i:nil="true" />
+                            <RowIndex i:nil="true" />
+                            <BoundDataSource i:nil="true" />
+                            <BoundProperty i:nil="true" />
+                            <ControlName>LedgerJournalTrans_AccountNum</ControlName>
+                            <ControlType>SegmentedEntry</ControlType>
+                            <IsReference>false</IsReference>
+                            <LabelId>@Dimension:SegmentedEntry_Value</LabelId>
+                            <PropertyName>Value</PropertyName>
+                            <UserActionType>Input</UserActionType>
+                            <Value>1001</Value>
+                            <ValueLabel i:nil="true" />
+                          </Node>
+                          <Node z:Id="i86" i:type="PropertyUserAction">
+                            <CustomDescription i:nil="true" />
+                            <Description>In the Account field, specify the desired values.</Description>
+                            <Id>LedgerJournalTrans_AccountNum_Value_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x134</Id>
+                            <Parent z:Ref="i75" />
+                            <ParentSequence>123</ParentSequence>
+                            <ScreenshotUri i:nil="true" />
+                            <Sequence>134</Sequence>
+                            <Annotations />
+                            <GlobalId>2e05a0ab-05a4-46cf-ad1e-52e04a9837ac</GlobalId>
+                            <SystemGenerated>false</SystemGenerated>
+                            <ControlLabel>Account</ControlLabel>
+                            <ControlLabelId>@SYS24500</ControlLabelId>
+                            <FormId>28257_LedgerJournalTransVendPaym_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormId>
+                            <ListContext i:nil="true" />
+                            <RowIndex i:nil="true" />
+                            <BoundDataSource i:nil="true" />
+                            <BoundProperty i:nil="true" />
+                            <ControlName>LedgerJournalTrans_AccountNum</ControlName>
+                            <ControlType>SegmentedEntry</ControlType>
+                            <IsReference>false</IsReference>
+                            <LabelId>@Dimension:SegmentedEntry_Value</LabelId>
+                            <PropertyName>Value</PropertyName>
+                            <UserActionType>Input</UserActionType>
+                            <Value>1001</Value>
+                            <ValueLabel i:nil="true" />
+                          </Node>
+                          <Node z:Id="i87" i:type="PropertyUserAction">
+                            <CustomDescription i:nil="true" />
+                            <Description>In the Account field, specify the desired values.</Description>
+                            <Id>LedgerJournalTrans_AccountNum_Value_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x135</Id>
+                            <Parent z:Ref="i75" />
+                            <ParentSequence>123</ParentSequence>
+                            <ScreenshotUri i:nil="true" />
+                            <Sequence>135</Sequence>
+                            <Annotations />
+                            <GlobalId>9d91db2e-9dde-4d85-be6d-246746b45d5a</GlobalId>
+                            <SystemGenerated>false</SystemGenerated>
+                            <ControlLabel>Account</ControlLabel>
+                            <ControlLabelId>@SYS24500</ControlLabelId>
+                            <FormId>28257_LedgerJournalTransVendPaym_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormId>
+                            <ListContext i:nil="true" />
+                            <RowIndex i:nil="true" />
+                            <BoundDataSource i:nil="true" />
+                            <BoundProperty i:nil="true" />
+                            <ControlName>LedgerJournalTrans_AccountNum</ControlName>
+                            <ControlType>SegmentedEntry</ControlType>
+                            <IsReference>false</IsReference>
+                            <LabelId>@Dimension:SegmentedEntry_Value</LabelId>
+                            <PropertyName>Value</PropertyName>
+                            <UserActionType>Input</UserActionType>
+                            <Value>1001</Value>
+                            <ValueLabel i:nil="true" />
+                          </Node>
+                          <Node z:Id="i88" i:type="PropertyUserAction">
+                            <CustomDescription i:nil="true" />
+                            <Description>In the Account field, specify the desired values.</Description>
+                            <Id>LedgerJournalTrans_AccountNum_Value_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x136</Id>
+                            <Parent z:Ref="i75" />
+                            <ParentSequence>123</ParentSequence>
+                            <ScreenshotUri i:nil="true" />
+                            <Sequence>136</Sequence>
+                            <Annotations />
+                            <GlobalId>fcd75449-ca60-4c1a-842d-f221cc8ef6de</GlobalId>
+                            <SystemGenerated>false</SystemGenerated>
+                            <ControlLabel>Account</ControlLabel>
+                            <ControlLabelId>@SYS24500</ControlLabelId>
+                            <FormId>28257_LedgerJournalTransVendPaym_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormId>
+                            <ListContext i:nil="true" />
+                            <RowIndex i:nil="true" />
+                            <BoundDataSource i:nil="true" />
+                            <BoundProperty i:nil="true" />
+                            <ControlName>LedgerJournalTrans_AccountNum</ControlName>
+                            <ControlType>SegmentedEntry</ControlType>
+                            <IsReference>false</IsReference>
+                            <LabelId>@Dimension:SegmentedEntry_Value</LabelId>
+                            <PropertyName>Value</PropertyName>
+                            <UserActionType>Input</UserActionType>
+                            <Value>1001</Value>
+                            <ValueLabel i:nil="true" />
+                          </Node>
+                          <Node z:Id="i89" i:type="PropertyUserAction">
+                            <CustomDescription i:nil="true" />
+                            <Description>In the Account field, specify the desired values.</Description>
+                            <Id>LedgerJournalTrans_AccountNum_Value_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x137</Id>
+                            <Parent z:Ref="i75" />
+                            <ParentSequence>123</ParentSequence>
+                            <ScreenshotUri i:nil="true" />
+                            <Sequence>137</Sequence>
+                            <Annotations />
+                            <GlobalId>58b32762-4d2e-491a-b182-9b9ccb984078</GlobalId>
+                            <SystemGenerated>false</SystemGenerated>
+                            <ControlLabel>Account</ControlLabel>
+                            <ControlLabelId>@SYS24500</ControlLabelId>
+                            <FormId>28257_LedgerJournalTransVendPaym_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormId>
+                            <ListContext i:nil="true" />
+                            <RowIndex i:nil="true" />
+                            <BoundDataSource i:nil="true" />
+                            <BoundProperty i:nil="true" />
+                            <ControlName>LedgerJournalTrans_AccountNum</ControlName>
+                            <ControlType>SegmentedEntry</ControlType>
+                            <IsReference>false</IsReference>
+                            <LabelId>@Dimension:SegmentedEntry_Value</LabelId>
+                            <PropertyName>Value</PropertyName>
+                            <UserActionType>Input</UserActionType>
+                            <Value>1001</Value>
+                            <ValueLabel i:nil="true" />
+                          </Node>
+                          <Node z:Id="i90" i:type="PropertyUserAction">
+                            <CustomDescription i:nil="true" />
+                            <Description>In the Account field, specify the desired values.</Description>
+                            <Id>LedgerJournalTrans_AccountNum_Value_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x138</Id>
+                            <Parent z:Ref="i75" />
+                            <ParentSequence>123</ParentSequence>
+                            <ScreenshotUri i:nil="true" />
+                            <Sequence>138</Sequence>
+                            <Annotations />
+                            <GlobalId>32a67806-f538-4ac4-8426-3cb994c7b157</GlobalId>
+                            <SystemGenerated>false</SystemGenerated>
+                            <ControlLabel>Account</ControlLabel>
+                            <ControlLabelId>@SYS24500</ControlLabelId>
+                            <FormId>28257_LedgerJournalTransVendPaym_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormId>
+                            <ListContext i:nil="true" />
+                            <RowIndex i:nil="true" />
+                            <BoundDataSource i:nil="true" />
+                            <BoundProperty i:nil="true" />
+                            <ControlName>LedgerJournalTrans_AccountNum</ControlName>
+                            <ControlType>SegmentedEntry</ControlType>
+                            <IsReference>false</IsReference>
+                            <LabelId>@Dimension:SegmentedEntry_Value</LabelId>
+                            <PropertyName>Value</PropertyName>
+                            <UserActionType>Input</UserActionType>
+                            <Value>1001</Value>
+                            <ValueLabel i:nil="true" />
+                          </Node>
+                          <Node z:Id="i91" i:type="PropertyUserAction">
+                            <CustomDescription i:nil="true" />
+                            <Description>In the Account field, specify the desired values.</Description>
+                            <Id>LedgerJournalTrans_AccountNum_Value_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x139</Id>
+                            <Parent z:Ref="i75" />
+                            <ParentSequence>123</ParentSequence>
+                            <ScreenshotUri i:nil="true" />
+                            <Sequence>139</Sequence>
+                            <Annotations />
+                            <GlobalId>265f5634-e611-41e8-b58e-62f10e864866</GlobalId>
+                            <SystemGenerated>false</SystemGenerated>
+                            <ControlLabel>Account</ControlLabel>
+                            <ControlLabelId>@SYS24500</ControlLabelId>
+                            <FormId>28257_LedgerJournalTransVendPaym_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormId>
+                            <ListContext i:nil="true" />
+                            <RowIndex i:nil="true" />
+                            <BoundDataSource i:nil="true" />
+                            <BoundProperty i:nil="true" />
+                            <ControlName>LedgerJournalTrans_AccountNum</ControlName>
+                            <ControlType>SegmentedEntry</ControlType>
+                            <IsReference>false</IsReference>
+                            <LabelId>@Dimension:SegmentedEntry_Value</LabelId>
+                            <PropertyName>Value</PropertyName>
+                            <UserActionType>Input</UserActionType>
+                            <Value>1001</Value>
+                            <ValueLabel i:nil="true" />
+                          </Node>
+                          <Node z:Id="i92" i:type="PropertyUserAction">
+                            <CustomDescription i:nil="true" />
+                            <Description>In the Account field, specify the desired values.</Description>
+                            <Id>LedgerJournalTrans_AccountNum_Value_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x140</Id>
+                            <Parent z:Ref="i75" />
+                            <ParentSequence>123</ParentSequence>
+                            <ScreenshotUri i:nil="true" />
+                            <Sequence>140</Sequence>
+                            <Annotations />
+                            <GlobalId>5e46fe5d-1e65-4044-8a0d-22d28961296a</GlobalId>
+                            <SystemGenerated>false</SystemGenerated>
+                            <ControlLabel>Account</ControlLabel>
+                            <ControlLabelId>@SYS24500</ControlLabelId>
+                            <FormId>28257_LedgerJournalTransVendPaym_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormId>
+                            <ListContext i:nil="true" />
+                            <RowIndex i:nil="true" />
+                            <BoundDataSource i:nil="true" />
+                            <BoundProperty i:nil="true" />
+                            <ControlName>LedgerJournalTrans_AccountNum</ControlName>
+                            <ControlType>SegmentedEntry</ControlType>
+                            <IsReference>false</IsReference>
+                            <LabelId>@Dimension:SegmentedEntry_Value</LabelId>
+                            <PropertyName>Value</PropertyName>
+                            <UserActionType>Input</UserActionType>
+                            <Value>1001</Value>
+                            <ValueLabel i:nil="true" />
+                          </Node>
+                          <Node z:Id="i93" i:type="PropertyUserAction">
+                            <CustomDescription i:nil="true" />
+                            <Description>In the Account field, specify the desired values.</Description>
+                            <Id>LedgerJournalTrans_AccountNum_Value_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x141</Id>
+                            <Parent z:Ref="i75" />
+                            <ParentSequence>123</ParentSequence>
+                            <ScreenshotUri i:nil="true" />
+                            <Sequence>141</Sequence>
+                            <Annotations />
+                            <GlobalId>43880d52-b98f-49f7-b967-ef51e9d5ce0b</GlobalId>
+                            <SystemGenerated>false</SystemGenerated>
+                            <ControlLabel>Account</ControlLabel>
+                            <ControlLabelId>@SYS24500</ControlLabelId>
+                            <FormId>28257_LedgerJournalTransVendPaym_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormId>
+                            <ListContext i:nil="true" />
+                            <RowIndex i:nil="true" />
+                            <BoundDataSource i:nil="true" />
+                            <BoundProperty i:nil="true" />
+                            <ControlName>LedgerJournalTrans_AccountNum</ControlName>
+                            <ControlType>SegmentedEntry</ControlType>
+                            <IsReference>false</IsReference>
+                            <LabelId>@Dimension:SegmentedEntry_Value</LabelId>
+                            <PropertyName>Value</PropertyName>
+                            <UserActionType>Input</UserActionType>
+                            <Value>1001</Value>
+                            <ValueLabel i:nil="true" />
+                          </Node>
+                          <Node z:Id="i94" i:type="PropertyUserAction">
+                            <CustomDescription i:nil="true" />
+                            <Description>In the Account field, specify the desired values.</Description>
+                            <Id>LedgerJournalTrans_AccountNum_Value_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x142</Id>
+                            <Parent z:Ref="i75" />
+                            <ParentSequence>123</ParentSequence>
+                            <ScreenshotUri i:nil="true" />
+                            <Sequence>142</Sequence>
+                            <Annotations />
+                            <GlobalId>3505229b-5d7e-4619-b0f7-0c8f39347eab</GlobalId>
+                            <SystemGenerated>false</SystemGenerated>
+                            <ControlLabel>Account</ControlLabel>
+                            <ControlLabelId>@SYS24500</ControlLabelId>
+                            <FormId>28257_LedgerJournalTransVendPaym_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormId>
+                            <ListContext i:nil="true" />
+                            <RowIndex i:nil="true" />
+                            <BoundDataSource i:nil="true" />
+                            <BoundProperty i:nil="true" />
+                            <ControlName>LedgerJournalTrans_AccountNum</ControlName>
+                            <ControlType>SegmentedEntry</ControlType>
+                            <IsReference>false</IsReference>
+                            <LabelId>@Dimension:SegmentedEntry_Value</LabelId>
+                            <PropertyName>Value</PropertyName>
+                            <UserActionType>Input</UserActionType>
+                            <Value>1001</Value>
+                            <ValueLabel i:nil="true" />
+                          </Node>
+                          <Node z:Id="i95" i:type="PropertyUserAction">
+                            <CustomDescription i:nil="true" />
+                            <Description>In the Account field, specify the desired values.</Description>
+                            <Id>LedgerJournalTrans_AccountNum_Value_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x143</Id>
+                            <Parent z:Ref="i75" />
+                            <ParentSequence>123</ParentSequence>
+                            <ScreenshotUri i:nil="true" />
+                            <Sequence>143</Sequence>
+                            <Annotations />
+                            <GlobalId>98cc0e94-308a-45d2-b11e-030577bef90a</GlobalId>
+                            <SystemGenerated>false</SystemGenerated>
+                            <ControlLabel>Account</ControlLabel>
+                            <ControlLabelId>@SYS24500</ControlLabelId>
+                            <FormId>28257_LedgerJournalTransVendPaym_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormId>
+                            <ListContext i:nil="true" />
+                            <RowIndex i:nil="true" />
+                            <BoundDataSource i:nil="true" />
+                            <BoundProperty i:nil="true" />
+                            <ControlName>LedgerJournalTrans_AccountNum</ControlName>
+                            <ControlType>SegmentedEntry</ControlType>
+                            <IsReference>false</IsReference>
+                            <LabelId>@Dimension:SegmentedEntry_Value</LabelId>
+                            <PropertyName>Value</PropertyName>
+                            <UserActionType>Input</UserActionType>
+                            <Value>1001</Value>
+                            <ValueLabel i:nil="true" />
+                          </Node>
+                          <Node z:Id="i96" i:type="PropertyUserAction">
+                            <CustomDescription i:nil="true" />
+                            <Description>In the Account field, specify the desired values.</Description>
+                            <Id>LedgerJournalTrans_AccountNum_Value_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x144</Id>
+                            <Parent z:Ref="i75" />
+                            <ParentSequence>123</ParentSequence>
+                            <ScreenshotUri i:nil="true" />
+                            <Sequence>144</Sequence>
+                            <Annotations />
+                            <GlobalId>e88612ce-4d86-4590-9465-2b20380c2ebc</GlobalId>
+                            <SystemGenerated>false</SystemGenerated>
+                            <ControlLabel>Account</ControlLabel>
+                            <ControlLabelId>@SYS24500</ControlLabelId>
+                            <FormId>28257_LedgerJournalTransVendPaym_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormId>
+                            <ListContext i:nil="true" />
+                            <RowIndex i:nil="true" />
+                            <BoundDataSource i:nil="true" />
+                            <BoundProperty i:nil="true" />
+                            <ControlName>LedgerJournalTrans_AccountNum</ControlName>
+                            <ControlType>SegmentedEntry</ControlType>
+                            <IsReference>false</IsReference>
+                            <LabelId>@Dimension:SegmentedEntry_Value</LabelId>
+                            <PropertyName>Value</PropertyName>
+                            <UserActionType>Input</UserActionType>
+                            <Value>1001</Value>
+                            <ValueLabel i:nil="true" />
+                          </Node>
+                          <Node z:Id="i97" i:type="PropertyUserAction">
+                            <CustomDescription i:nil="true" />
+                            <Description>In the Account field, specify the desired values.</Description>
+                            <Id>LedgerJournalTrans_AccountNum_Value_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x145</Id>
+                            <Parent z:Ref="i75" />
+                            <ParentSequence>123</ParentSequence>
+                            <ScreenshotUri i:nil="true" />
+                            <Sequence>145</Sequence>
+                            <Annotations />
+                            <GlobalId>651522e3-05f6-4d77-aaf1-ddd7274ec56c</GlobalId>
+                            <SystemGenerated>false</SystemGenerated>
+                            <ControlLabel>Account</ControlLabel>
+                            <ControlLabelId>@SYS24500</ControlLabelId>
+                            <FormId>28257_LedgerJournalTransVendPaym_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormId>
+                            <ListContext i:nil="true" />
+                            <RowIndex i:nil="true" />
+                            <BoundDataSource i:nil="true" />
+                            <BoundProperty i:nil="true" />
+                            <ControlName>LedgerJournalTrans_AccountNum</ControlName>
+                            <ControlType>SegmentedEntry</ControlType>
+                            <IsReference>false</IsReference>
+                            <LabelId>@Dimension:SegmentedEntry_Value</LabelId>
+                            <PropertyName>Value</PropertyName>
+                            <UserActionType>Input</UserActionType>
+                            <Value>1001</Value>
+                            <ValueLabel i:nil="true" />
+                          </Node>
+                          <Node z:Id="i98" i:type="PropertyUserAction">
+                            <CustomDescription i:nil="true" />
+                            <Description>In the Account field, specify the desired values.</Description>
+                            <Id>LedgerJournalTrans_AccountNum_Value_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x146</Id>
+                            <Parent z:Ref="i75" />
+                            <ParentSequence>123</ParentSequence>
+                            <ScreenshotUri i:nil="true" />
+                            <Sequence>146</Sequence>
+                            <Annotations />
+                            <GlobalId>f97df1a5-edb7-48a2-814c-2023d79d46e2</GlobalId>
+                            <SystemGenerated>false</SystemGenerated>
+                            <ControlLabel>Account</ControlLabel>
+                            <ControlLabelId>@SYS24500</ControlLabelId>
+                            <FormId>28257_LedgerJournalTransVendPaym_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormId>
+                            <ListContext i:nil="true" />
+                            <RowIndex i:nil="true" />
+                            <BoundDataSource i:nil="true" />
+                            <BoundProperty i:nil="true" />
+                            <ControlName>LedgerJournalTrans_AccountNum</ControlName>
+                            <ControlType>SegmentedEntry</ControlType>
+                            <IsReference>false</IsReference>
+                            <LabelId>@Dimension:SegmentedEntry_Value</LabelId>
+                            <PropertyName>Value</PropertyName>
+                            <UserActionType>Input</UserActionType>
+                            <Value>1001</Value>
+                            <ValueLabel i:nil="true" />
+                          </Node>
+                          <Node z:Id="i99" i:type="PropertyUserAction">
+                            <CustomDescription i:nil="true" />
+                            <Description>In the Account field, specify the desired values.</Description>
+                            <Id>LedgerJournalTrans_AccountNum_Value_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x147</Id>
+                            <Parent z:Ref="i75" />
+                            <ParentSequence>123</ParentSequence>
+                            <ScreenshotUri i:nil="true" />
+                            <Sequence>147</Sequence>
+                            <Annotations />
+                            <GlobalId>88f04d04-b8c5-4d41-9073-764c6ae663a8</GlobalId>
+                            <SystemGenerated>false</SystemGenerated>
+                            <ControlLabel>Account</ControlLabel>
+                            <ControlLabelId>@SYS24500</ControlLabelId>
+                            <FormId>28257_LedgerJournalTransVendPaym_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormId>
+                            <ListContext i:nil="true" />
+                            <RowIndex i:nil="true" />
+                            <BoundDataSource i:nil="true" />
+                            <BoundProperty i:nil="true" />
+                            <ControlName>LedgerJournalTrans_AccountNum</ControlName>
+                            <ControlType>SegmentedEntry</ControlType>
+                            <IsReference>false</IsReference>
+                            <LabelId>@Dimension:SegmentedEntry_Value</LabelId>
+                            <PropertyName>Value</PropertyName>
+                            <UserActionType>Input</UserActionType>
+                            <Value>1001</Value>
+                            <ValueLabel i:nil="true" />
+                          </Node>
+                          <Node z:Id="i100" i:type="PropertyUserAction">
+                            <CustomDescription i:nil="true" />
+                            <Description>In the Account field, specify the desired values.</Description>
+                            <Id>LedgerJournalTrans_AccountNum_Value_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x148</Id>
+                            <Parent z:Ref="i75" />
+                            <ParentSequence>123</ParentSequence>
+                            <ScreenshotUri i:nil="true" />
+                            <Sequence>148</Sequence>
+                            <Annotations />
+                            <GlobalId>7aeda534-ff22-4313-95c9-13a7c695715d</GlobalId>
+                            <SystemGenerated>false</SystemGenerated>
+                            <ControlLabel>Account</ControlLabel>
+                            <ControlLabelId>@SYS24500</ControlLabelId>
+                            <FormId>28257_LedgerJournalTransVendPaym_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormId>
+                            <ListContext i:nil="true" />
+                            <RowIndex i:nil="true" />
+                            <BoundDataSource i:nil="true" />
+                            <BoundProperty i:nil="true" />
+                            <ControlName>LedgerJournalTrans_AccountNum</ControlName>
+                            <ControlType>SegmentedEntry</ControlType>
+                            <IsReference>false</IsReference>
+                            <LabelId>@Dimension:SegmentedEntry_Value</LabelId>
+                            <PropertyName>Value</PropertyName>
+                            <UserActionType>Input</UserActionType>
+                            <Value>1001</Value>
+                            <ValueLabel i:nil="true" />
+                          </Node>
+                          <Node z:Id="i101" i:type="PropertyUserAction">
+                            <CustomDescription i:nil="true" />
+                            <Description>In the Account field, specify the desired values.</Description>
+                            <Id>LedgerJournalTrans_AccountNum_Value_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x149</Id>
+                            <Parent z:Ref="i75" />
+                            <ParentSequence>123</ParentSequence>
+                            <ScreenshotUri i:nil="true" />
+                            <Sequence>149</Sequence>
+                            <Annotations />
+                            <GlobalId>fc02e4ff-5b78-44f9-9525-05c47c4fb344</GlobalId>
+                            <SystemGenerated>false</SystemGenerated>
+                            <ControlLabel>Account</ControlLabel>
+                            <ControlLabelId>@SYS24500</ControlLabelId>
+                            <FormId>28257_LedgerJournalTransVendPaym_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormId>
+                            <ListContext i:nil="true" />
+                            <RowIndex i:nil="true" />
+                            <BoundDataSource i:nil="true" />
+                            <BoundProperty i:nil="true" />
+                            <ControlName>LedgerJournalTrans_AccountNum</ControlName>
+                            <ControlType>SegmentedEntry</ControlType>
+                            <IsReference>false</IsReference>
+                            <LabelId>@Dimension:SegmentedEntry_Value</LabelId>
+                            <PropertyName>Value</PropertyName>
+                            <UserActionType>Input</UserActionType>
+                            <Value>1001</Value>
+                            <ValueLabel i:nil="true" />
+                          </Node>
+                          <Node z:Id="i102" i:type="PropertyUserAction">
+                            <CustomDescription i:nil="true" />
+                            <Description>In the Account field, specify the desired values.</Description>
+                            <Id>LedgerJournalTrans_AccountNum_Value_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x150</Id>
+                            <Parent z:Ref="i75" />
+                            <ParentSequence>123</ParentSequence>
+                            <ScreenshotUri i:nil="true" />
+                            <Sequence>150</Sequence>
+                            <Annotations />
+                            <GlobalId>f5b61d76-6548-4ec4-847c-e63c2cffe1d0</GlobalId>
+                            <SystemGenerated>false</SystemGenerated>
+                            <ControlLabel>Account</ControlLabel>
+                            <ControlLabelId>@SYS24500</ControlLabelId>
+                            <FormId>28257_LedgerJournalTransVendPaym_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormId>
+                            <ListContext i:nil="true" />
+                            <RowIndex i:nil="true" />
+                            <BoundDataSource i:nil="true" />
+                            <BoundProperty i:nil="true" />
+                            <ControlName>LedgerJournalTrans_AccountNum</ControlName>
+                            <ControlType>SegmentedEntry</ControlType>
+                            <IsReference>false</IsReference>
+                            <LabelId>@Dimension:SegmentedEntry_Value</LabelId>
+                            <PropertyName>Value</PropertyName>
+                            <UserActionType>Input</UserActionType>
+                            <Value>1001</Value>
+                            <ValueLabel i:nil="true" />
+                          </Node>
+                          <Node z:Id="i103" i:type="PropertyUserAction">
+                            <CustomDescription i:nil="true" />
+                            <Description>In the Account field, specify the desired values.</Description>
+                            <Id>LedgerJournalTrans_AccountNum_Value_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34x151</Id>
+                            <Parent z:Ref="i75" />
+                            <ParentSequence>123</ParentSequence>
+                            <ScreenshotUri i:nil="true" />
+                            <Sequence>151</Sequence>
+                            <Annotations />
+                            <GlobalId>72fd25c1-ee52-4c7c-983d-7890b6a949ac</GlobalId>
+                            <SystemGenerated>false</SystemGenerated>
+                            <ControlLabel>Account</ControlLabel>
+                            <ControlLabelId>@SYS24500</ControlLabelId>
+                            <FormId>28257_LedgerJournalTransVendPaym_d5cd36c7-b6a8-46c6-bb8d-272bff5c1f34</FormId>
+                            <ListContext i:nil="true" />
+                            <RowIndex i:nil="true" />
+                            <BoundDataSource i:nil="true" />
+                            <BoundProperty i:nil="true" />
+                            <ControlName>LedgerJournalTrans_AccountNum</ControlName>
+                            <ControlType>SegmentedEntry</ControlType>
+                            <IsReference>false</IsReference>
+                            <LabelId>@Dimension:SegmentedEntry_Value</LabelId>
+                            <PropertyName>Value</PropertyName>
+                            <UserActionType>Input</UserActionType>
+                            <Value>1001</Value>
+                            <ValueLabel i:nil="true" />
+                          </Node>
+                        </Children>
+                        <IsForm>false</IsForm>
+                        <IsStepGroup>false</IsStepGroup>
+                        <Name>LedgerJournalTrans_AccountNum_Value</Name>
+                        <ScopeType>Private</ScopeType>
+                      </Node>
+                    </Children>
+                    <IsForm>true</IsForm>
+                    <IsStepGroup>false</IsStepGroup>
+                    <Name>LedgerJournalTransVendPaym</Name>
+                    <ScopeType>Public</ScopeType>
+                  </Node>
+                </Children>
+                <IsForm>false</IsForm>
+                <IsStepGroup>false</IsStepGroup>
+                <Name>JournalLines_Click</Name>
+                <ScopeType>Private</ScopeType>
+              </Node>
+            </Children>
+            <IsForm>true</IsForm>
+            <IsStepGroup>false</IsStepGroup>
+            <Name>LedgerJournalTable</Name>
+            <ScopeType>Public</ScopeType>
+          </Node>
+        </Children>
+        <IsForm>false</IsForm>
+        <IsStepGroup>false</IsStepGroup>
+        <Name>MenuItem_ledgerjournaltable5</Name>
         <ScopeType>Private</ScopeType>
       </Node>
     </Children>
     <IsForm>false</IsForm>
     <IsStepGroup>false</IsStepGroup>
-    <Name>main_acc_general_ledger_1</Name>
+    <Name>Vendor_on_hold</Name>
     <ScopeType>Public</ScopeType>
   </RootScope>
   <UserActions xmlns:d2p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
-    <d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i4"/>
-    <d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i6"/>
-    <d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i9"/>
-    <d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i11"/>
-    <d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i12"/>
-    <d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i13"/>
-    <d2p1:anyType xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Ref="i14"/>
+    <d2p1:anyType z:Ref="i3" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i6" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i8" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i10" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i12" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i15" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i17" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i21" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i23" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i25" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i27" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i29" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i31" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i34" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i37" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i40" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i42" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i44" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i47" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i49" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i53" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i55" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i57" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i59" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i62" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i64" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i67" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i69" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i71" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i74" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i76" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i77" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i78" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i79" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i80" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i81" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i82" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i83" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i84" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i85" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i86" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i87" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i88" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i89" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i90" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i91" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i92" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i93" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i94" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i95" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i96" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i97" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i98" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i99" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i100" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i101" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i102" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i103" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
   </UserActions>
   <Version>1</Version>
 </Recording>

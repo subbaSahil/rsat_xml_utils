@@ -2,8 +2,13 @@ def generate_xpath_from_control(control_type, control_name, control_label, descr
     control_type = control_type.lower()
 #filter manager/quick filter
     if control_type in ["commandbutton", "menuitembutton","dropdialogbutton","button","togglebutton"]:
-        return [f"//button[@data-dyn-controlname='{control_name}']",
-                 f"//button[@aria-label='{control_label}']"]
+        return [f"//button[@name='{control_name}']",
+                # f"//button[@data-dyn-controlname='{control_name}']",
+                f"//button[@aria-label='{control_label}']",
+                f"//div[@class='overflow-menu sysPopup allowFlyoutClickPropagation']//button[@name='{control_name}']",
+                f"//div[@class='overflow-menu sysPopup allowFlyoutClickPropagation']//button[@aria-label='{control_label}']"
+                ]
+
     elif control_type in ["menubutton", "menuitem"]:
         return [f"//button[@name='{control_name}']", f"//span[text()='{control_label}']/ancestor::button"]
     # elif control_type in ["combobox"]:
@@ -55,8 +60,9 @@ def generate_xpath_from_control(control_type, control_name, control_label, descr
     elif control_type == "segmentedentry":
         return [
             f"//input[contains(@name,'{control_name.strip()}')]",
-            f"//input[contains(@aria-label,'{control_label.strip()}')]",
-            f"//input[@title='{control_label.strip()}']"
+            f"//input[contains(@aria-label,'{control_label.strip()}') and contains(@id,'{control_name.strip()}')]",
+            f"//input[@title='{control_label.strip()}']",
+            f"//input[contains(@id,'{control_name.strip()}')]"
         ]
     elif control_type=="filterpane":
         return ["//span[text()='Apply']//ancestor::button" ,
@@ -69,3 +75,5 @@ def generate_xpath_from_control(control_type, control_name, control_label, descr
         return f"//div[@name='{control_name}']"
     elif control_type == "anchorbutton":
         return f"//span[text() = '{control_label}']/ancestor::a"
+    
+    

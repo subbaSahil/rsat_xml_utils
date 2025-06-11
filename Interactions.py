@@ -530,13 +530,13 @@ def scroll_and_click(driver, by, container_xpath, target_xpath, timeout=10, max_
                 for _ in range(max_scrolls):
                     try:
                         element_to_click = WebDriverWait(driver, 8).until(
-                            EC.visibility_of_element_located((by, target_xpath))
+                            EC.element_to_be_clickable((by, target_xpath))
                         )
                         element_to_click.click()
                         print(f"Clicked element: {target_xpath}")
                         return
                     except TimeoutException:
-                        actions.move_to_element(container).send_keys(scroll_direction).perform()
+                        actions.send_keys(scroll_direction).perform()
                         time.sleep(0.5)
  
                 raise TimeoutException(f"Element {target_xpath} not found after scrolling.")
@@ -588,3 +588,51 @@ def hybrid_scroll_and_click(driver, by, container_xpath, target_xpath, timeout=1
             print(f"Error: {e}")
 
     print("Visible scroll container not found.")
+
+
+def get_element_attribute_value(driver, by, xpath, timeout=10):
+    try:
+        element = WebDriverWait(driver, timeout).until(
+            EC.presence_of_element_located((by, xpath))
+        )
+        return element.get_attribute("value")
+    except TimeoutException:
+        return None
+
+
+def take_screenshot(driver, name="screenshot"):
+    """
+    Takes a screenshot and saves it with a timestamp.
+ 
+    Args:
+        driver: Selenium WebDriver instance.
+        name: A name for the screenshot to be included in the filename.
+    """
+    try:
+        timestamp = time.strftime("%Y%m%d_%H%M%S")
+        screenshot_name = f"{name}_{timestamp}.png"
+        driver.save_screenshot(screenshot_name)
+        print(f"Screenshot saved as {screenshot_name}")
+    except Exception as e:
+        print(f"Failed to take screenshot: {e}")
+ 
+def take_screenshot_on_pass(driver, test_name="test"):
+    """
+    Takes a screenshot on pass by calling the generic screenshot function.
+ 
+    Args:
+        driver: Selenium WebDriver instance.
+        test_name: A name for the test to be included in the filename.
+    """
+    take_screenshot(driver, f"passed_{test_name}")
+
+def take_screenshot_on_failure(driver, test_name="test"):
+    """
+    Takes a screenshot on failure by calling the generic screenshot function.
+ 
+    Args:
+        driver: Selenium WebDriver instance.
+        test_name: A name for the test to be included in the filename.
+    """
+    take_screenshot(driver, f"failure_{test_name}")
+ 

@@ -1,118 +1,128 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <UserActionsWithDetails>
-    <UserAction Ref="i3">
-        <Description>Go to General ledger &gt; Chart of accounts &gt; Accounts &gt; Main account categories.</Description>
-        <NodeId>i3</NodeId>
-        <Sequence>11</Sequence>
-        <Navigation>mainmenu</Navigation>
-        <Navigation>GeneralLedger</Navigation>
-        <Navigation>ChartOfAccounts</Navigation>
-        <Navigation>Accounts</Navigation>
-        <ControlName>No Control Name</ControlName>
-        <ControlLabel />
-        <ControlType />
-        <Value />
-        <CommandName />
-    </UserAction>
-    <UserAction Ref="i6">
-        <Description>Click New.</Description>
-        <NodeId>i6</NodeId>
-        <Sequence>11</Sequence>
-        <ControlName>SystemDefinedNewButton</ControlName>
-        <ControlLabel>New</ControlLabel>
-        <ControlType>CommandButton</ControlType>
-        <Value />
-        <CommandName>Click</CommandName>
-    </UserAction>
-    <UserAction Ref="i8">
-        <Description>In the Main account category field, type a value.</Description>
-        <NodeId>i8</NodeId>
-        <Sequence>11</Sequence>
-        <ControlName>LedgerAccountCategory_AccountCategory</ControlName>
-        <ControlLabel>Main account category</ControlLabel>
-        <ControlType>Input</ControlType>
-        <Value>win</Value>
-        <CommandName />
-    </UserAction>
-    <UserAction Ref="i10">
-        <Description>In the Description field, type a value.</Description>
-        <NodeId>i10</NodeId>
-        <Sequence>11</Sequence>
-        <ControlName>LedgerAccountCategory_Description</ControlName>
-        <ControlLabel>Description</ControlLabel>
-        <ControlType>Input</ControlType>
-        <Value>win</Value>
-        <CommandName />
-    </UserAction>
-    <UserAction Ref="i12">
-        <Description>In the Main account type field, select an option.</Description>
-        <NodeId>i12</NodeId>
-        <Sequence>11</Sequence>
-        <ControlName>LedgerAccountCategory_AccountType</ControlName>
-        <ControlLabel>Main account type</ControlLabel>
-        <ControlType>ComboBox</ControlType>
-        <Value>1</Value>
-        <CommandName />
-    </UserAction>
-    <UserAction Ref="i14">
-        <Description>Click Link main accounts.</Description>
-        <NodeId>i14</NodeId>
-        <Sequence>11</Sequence>
-        <ControlName>LinkMainAccounts</ControlName>
-        <ControlLabel>Link main accounts</ControlLabel>
-        <ControlType>MenuItemButton</ControlType>
-        <Value />
-        <CommandName>Click</CommandName>
-    </UserAction>
-    <UserAction Ref="i17">
-        <Description>Select the Linked check box.</Description>
-        <NodeId>i17</NodeId>
-        <Sequence>11</Sequence>
-        <ControlName>Linked</ControlName>
-        <ControlLabel>Linked</ControlLabel>
-        <ControlType>CheckBox</ControlType>
-        <Value>True</Value>
-        <CommandName />
-    </UserAction>
-    <UserAction Ref="i19">
-        <Description>Click OK.</Description>
-        <NodeId>i19</NodeId>
-        <Sequence>11</Sequence>
-        <ControlName>OKButton</ControlName>
-        <ControlLabel>OK</ControlLabel>
-        <ControlType>CommandButton</ControlType>
-        <Value />
-        <CommandName>Click</CommandName>
-    </UserAction>
-    <UserAction Ref="i22">
-        <Description>Click Yes.</Description>
-        <NodeId>i22</NodeId>
-        <Sequence>11</Sequence>
-        <ControlName>Yes</ControlName>
-        <ControlLabel>Yes</ControlLabel>
-        <ControlType>CommandButton</ControlType>
-        <Value />
-        <CommandName>Click</CommandName>
-    </UserAction>
-    <UserAction Ref="i24">
-        <Description>Click Save.</Description>
-        <NodeId>i24</NodeId>
-        <Sequence>11</Sequence>
-        <ControlName>SystemDefinedSaveButton</ControlName>
-        <ControlLabel>Save</ControlLabel>
-        <ControlType>CommandButton</ControlType>
-        <Value />
-        <CommandName>Click</CommandName>
-    </UserAction>
-    <UserAction Ref="i26">
+    <UserAction Ref="i4">
         <Description>Close the page.</Description>
-        <NodeId>i26</NodeId>
-        <Sequence>11</Sequence>
+        <NodeId>i4</NodeId>
+        <Sequence>12</Sequence>
         <ControlName>No Control Name</ControlName>
         <ControlLabel />
         <ControlType />
         <Value />
         <CommandName>RequestClose</CommandName>
         <Annotations />
+    </UserAction>
+    <UserAction Ref="i6">
+        <Description>Click Delete.</Description>
+        <NodeId>i6</NodeId>
+        <Sequence>12</Sequence>
+        <ControlName>SystemDefinedDeleteButton</ControlName>
+        <ControlLabel>Delete</ControlLabel>
+        <ControlType>CommandButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i8">
+        <Description>Click Delete.</Description>
+        <NodeId>i8</NodeId>
+        <Sequence>12</Sequence>
+        <ControlName>SystemDefinedDeleteButton</ControlName>
+        <ControlLabel>Delete</ControlLabel>
+        <ControlType>CommandButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i10">
+        <Description>Close the page.</Description>
+        <NodeId>i10</NodeId>
+        <Sequence>12</Sequence>
+        <ControlName>No Control Name</ControlName>
+        <ControlLabel />
+        <ControlType />
+        <Value />
+        <CommandName>RequestClose</CommandName>
+        <Annotations />
+    </UserAction>
+    <UserAction Ref="i12">
+        <Description>Go to Accounts payable &gt; Broker and royalties &gt; Broker claims.</Description>
+        <NodeId>i12</NodeId>
+        <Sequence>12</Sequence>
+        <Navigation>mainmenu</Navigation>
+        <Navigation>AccountsPayable</Navigation>
+        <Navigation>MCRBrokerAndRoyalties</Navigation>
+        <ControlName>No Control Name</ControlName>
+        <ControlLabel />
+        <ControlType />
+        <Value />
+        <CommandName />
+    </UserAction>
+    <UserAction Ref="i15">
+        <Description>Click Broker report.</Description>
+        <NodeId>i15</NodeId>
+        <Sequence>12</Sequence>
+        <ControlName>SSRS_OpenBrokerInvoices</ControlName>
+        <ControlLabel>Broker report</ControlLabel>
+        <ControlType>Button</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i18">
+        <Description>In the Broker field, enter or select a value.</Description>
+        <NodeId>i18</NodeId>
+        <Sequence>12</Sequence>
+        <ControlName>Fld1_1</ControlName>
+        <ControlLabel>Broker</ControlLabel>
+        <ControlType>Input</ControlType>
+        <Value />
+        <CommandName>RequestPopup</CommandName>
+    </UserAction>
+    <UserAction Ref="i21">
+        <Description>In the list, select row 2.</Description>
+        <NodeId>i21</NodeId>
+        <Sequence>12</Sequence>
+        <ControlName>Grid</ControlName>
+        <ControlLabel />
+        <ControlType>Grid</ControlType>
+        <Value>2</Value>
+        <CommandName>ChangeSelectedIndexInCache</CommandName>
+    </UserAction>
+    <UserAction Ref="i22">
+        <Description>In the list, select row 3.</Description>
+        <NodeId>i22</NodeId>
+        <Sequence>12</Sequence>
+        <ControlName>Grid</ControlName>
+        <ControlLabel />
+        <ControlType>Grid</ControlType>
+        <Value>3</Value>
+        <CommandName>ChangeSelectedIndexInCache</CommandName>
+    </UserAction>
+    <UserAction Ref="i23">
+        <Description>In the list, select row 8.</Description>
+        <NodeId>i23</NodeId>
+        <Sequence>12</Sequence>
+        <ControlName>Grid</ControlName>
+        <ControlLabel />
+        <ControlType>Grid</ControlType>
+        <Value>8</Value>
+        <CommandName>ChangeSelectedIndexInCache</CommandName>
+    </UserAction>
+    <UserAction Ref="i25">
+        <Description>Click Select.</Description>
+        <NodeId>i25</NodeId>
+        <Sequence>12</Sequence>
+        <ControlName>OK</ControlName>
+        <ControlLabel>Select</ControlLabel>
+        <ControlType>CommandButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i27">
+        <Description>Click OK.</Description>
+        <NodeId>i27</NodeId>
+        <Sequence>12</Sequence>
+        <ControlName>CommandButton</ControlName>
+        <ControlLabel>OK</ControlLabel>
+        <ControlType>CommandButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
     </UserAction>
 </UserActionsWithDetails>

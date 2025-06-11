@@ -301,7 +301,7 @@ def generate_selenium_script(controls):
                             lines.append(f"# Clicking on last path: {last_node}")
                             lines.append(f"Interactions.wait_and_click(driver, By.XPATH, \"{xpath}\")")
             if xpath:
-                if ctype in ["commandbutton", "menuitembutton","dropdialogbutton","button","togglebutton"]:
+                if ctype in ["commandbutton","button","togglebutton"]:
                     lines.append(f"if(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[0]}\")):")
                     lines.append(f"     Interactions.wait_and_click(driver, By.XPATH, \"{xpath[0]}\")")
                     lines.append(f"elif(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[1]}\")):")
@@ -317,6 +317,19 @@ def generate_selenium_script(controls):
                          
                     #     lines.append("else:")
                     #     lines.append("     print(\"There are errors in the form, please check the messages.\")")
+                elif ctype in ["menuitembutton","dropdialogbutton"]:
+                    more_button = "//div[@data-dyn-controlname='ActionPane']//div[@class='appBar-toolbar']//div[@data-dyn-role='OverflowButton']"
+                    lines.append(f"if(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[0]}\")):")
+                    lines.append(f"     Interactions.wait_and_click(driver, By.XPATH, \"{xpath[0]}\")")
+                    lines.append(f"elif(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[1]}\")):")
+                    lines.append(f"     Interactions.wait_and_click(driver, By.XPATH, \"{xpath[1]}\")")
+                    lines.append(f"else:")
+                    lines.append(f"     Interactions.wait_and_click(driver, By.XPATH, \"{more_button}\")")
+                    lines.append(f"     if(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[2]}\")):")
+                    lines.append(f"          Interactions.wait_and_click(driver, By.XPATH, \"{xpath[2]}\")")
+                    lines.append(f"     elif(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[3]}\")):")
+                    lines.append(f"          Interactions.wait_and_click(driver, By.XPATH, \"{xpath[3]}\")")
+
                 elif ctype in ["menubutton", "menuitem"]:
                     lines.append(f"if(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[0]}\")):")
                     lines.append(f"     Interactions.wait_and_click(driver, By.XPATH, \"{xpath[0]}\")")
@@ -345,6 +358,9 @@ def generate_selenium_script(controls):
                         lines.append(f"     elif(Interactions.check_element_exist(driver, By.XPATH, \"{'('+xpath[1] +')[1]'}\")):")
                         lines.append(f"          ActionChains(driver).move_to_element(driver.find_element(By.XPATH, \"{xpath[1]}\")).perform()")
                         lines.append(f"          Interactions.clear_input_field_and_send_keys(driver, By.XPATH, \"{'('+xpath[1] +')[1]'}\", \"{value}\")")
+                        lines.append(f"     elif(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[3]}\")):")
+                        lines.append(f"         ActionChains(driver).move_to_element(driver.find_element(By.XPATH, \"{'('+xpath[3] +')[1]'}\")).perform()")
+                        lines.append(f"         Interactions.clear_input_field_and_send_keys(driver, By.XPATH, \"{xpath[3]}\", \"{value}\")")
                         lines.append(f"     else:")
                         lines.append(f"          ActionChains(driver).move_to_element(driver.find_element(By.XPATH, \"{'('+xpath[2] +')[1]'}\")).perform()")
                         lines.append(f"          Interactions.clear_input_field_and_send_keys(driver, By.XPATH, \"{'('+xpath[2] +')[1]'}\", \"{value}\")")
@@ -353,6 +369,8 @@ def generate_selenium_script(controls):
                         lines.append(f"         Interactions.clear_input_field_and_send_keys(driver, By.XPATH, \"{xpath[0]}\", \"{value}\")")
                         lines.append(f"     elif(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[1]}\")):")
                         lines.append(f"         Interactions.clear_input_field_and_send_keys(driver, By.XPATH, \"{xpath[1]}\", \"{value}\")")
+                        lines.append(f"     elif(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[3]}\")):")
+                        lines.append(f"         Interactions.clear_input_field_and_send_keys(driver, By.XPATH, \"{xpath[3]}\", \"{value}\")")
                         lines.append(f"     else:")
                         lines.append(f"          ActionChains(driver).move_to_element(driver.find_element(By.XPATH, \"{xpath[2]}\")).perform()")
                         lines.append(f"          Interactions.clear_input_field_and_send_keys(driver, By.XPATH, \"{xpath[2]}\", \"{value}\")")
@@ -670,7 +688,9 @@ def generate_selenium_script(controls):
                         value = int(match.group(1))  # Convert matched row number to int
                         locator = f"//div[@aria-rowindex='{value + 1}']/div[@class='fixedDataTableRowLayout_body']//*[@role='checkbox']"
                         if previous_user_action_value == "":
-                            lines.append(f"Interactions.scroll_and_click(driver, By.XPATH, {container}, \"{locator}\")")
+                            lines.append(f"Interactions.scroll_and_click(driver, By.XPATH, container, \"{locator}\")")
+                        elif previous_control_type == "grid" and value != "":
+                            lines.append(f"Interactions.scroll_and_click(driver, By.XPATH, container, \"{locator}\")")
                     elif previous_control_type == "input" and previous_control_description == previous_desc and previous_user_action_value != "":
                         lines.append("\"Skipping grid since previous was control was input\"")
                         input_flag_for_grid = True
@@ -770,6 +790,8 @@ def generate_selenium_script(controls):
             previous_user_action_value = value
             previous_control_label = label
     lines.append("time.sleep(5)")
+    lines.append("Interactions.take_screenshot_on_pass(driver, \"test_case_passed\")")
+    lines.append('print("test case passed")')
     lines.append("print(\"test case passed\")")
     lines.append("driver.quit()")
     return "\n".join(lines)
