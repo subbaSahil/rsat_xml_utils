@@ -332,9 +332,9 @@ def generate_selenium_script(controls):
                     lines.append(f"               Interactions.wait_and_click(driver, By.XPATH, \"{xpath[3]}\")")
  
                 elif ctype in ["menubutton", "menuitem"]:
-                    lines.append(f"      if(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[0]}\")):")
+                    lines.append(f"     if(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[0]}\")):")
                     lines.append(f"          Interactions.wait_and_click(driver, By.XPATH, \"{xpath[0]}\")")
-                    lines.append(f"      elif(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[1]}\")):")
+                    lines.append(f"     elif(Interactions.check_element_exist(driver, By.XPATH, \"{xpath[1]}\")):")
                     lines.append(f"          Interactions.wait_and_click(driver, By.XPATH, \"{xpath[1]}\")")
  
                 elif ctype == "segmentedentry":
@@ -685,14 +685,14 @@ def generate_selenium_script(controls):
                     previous_desc = f"In the {previous_control_label} field, enter or select a value."
                     match_desc = description.strip()
                     match = re.search(r"select row (\d+)", match_desc.lower())
-                    if match:
-                        value = int(match.group(1))  # Convert matched row number to int
-                        locator = f"//div[@aria-rowindex='{value + 1}']/div[@class='fixedDataTableRowLayout_body']//*[@role='checkbox']"
-                        if previous_user_action_value == "":
-                            lines.append(f"     Interactions.scroll_and_click(driver, By.XPATH, container, \"{locator}\")")
-                        elif previous_control_type == "grid" and value != "":
-                            lines.append(f"     Interactions.scroll_and_click(driver, By.XPATH, container, \"{locator}\")")
-                    elif previous_control_type == "input" and previous_control_description == previous_desc and previous_user_action_value != "":
+                    # if match:
+                    #     value = int(match.group(1))  # Convert matched row number to int
+                    #     locator = f"//div[@aria-rowindex='{value + 1}']/div[@class='fixedDataTableRowLayout_body']//*[@role='checkbox']"
+                    #     if previous_user_action_value == "":
+                    #         lines.append(f"     Interactions.scroll_and_click(driver, By.XPATH, container, \"{locator}\")")
+                    #     elif previous_control_type == "grid" and value != "":
+                    #         lines.append(f"     Interactions.scroll_and_click(driver, By.XPATH, container, \"{locator}\")")
+                    if previous_control_type == "input" and previous_control_description == previous_desc and previous_user_action_value != "":
                         lines.append("#    \"Skipping grid since previous was control was input\"")
                         input_flag_for_grid = True
                     elif previous_control_type == "grid" and "In the list, select row" in previous_control_description:
@@ -800,6 +800,7 @@ def generate_selenium_script(controls):
     lines.append("          Interactions.take_screenshot_on_pass(driver, \"test_case_passed\")")
     lines.append("     else:")
     lines.append("          print(\"❌ Test case failed\")")
+    lines.append("          Interactions.take_screenshot_on_failure(driver, \"test_case_failed\")")
     lines.append("     driver.quit()")
     return "\n".join(lines)
 # Main logic

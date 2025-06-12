@@ -1,2 +1,601 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<UserActionsWithDetails><UserAction Ref="i4"><Description>Close the page.</Description><NodeId>i4</NodeId><Sequence>4</Sequence><ControlName>No Control Name</ControlName><ControlLabel /><ControlType /><Value /><CommandName>RequestClose</CommandName><Annotations /></UserAction><UserAction Ref="i6"><Description>Go to Accounts payable &gt; Vendors &gt; Vendors past due.</Description><NodeId>i6</NodeId><Sequence>4</Sequence><Navigation>mainmenu</Navigation><Navigation>AccountsPayable</Navigation><Navigation>Vendors</Navigation><ControlName>No Control Name</ControlName><ControlLabel /><ControlType /><Value /><CommandName /></UserAction><UserAction Ref="i9"><Description>Use the Quick Filter to find records. For example, filter on the Vendor account field with a value of '1001'.</Description><NodeId>i9</NodeId><Sequence>4</Sequence><ControlName>QuickFilterControl</ControlName><ControlLabel /><ControlType>QuickFilter</ControlType><Value>Vendor account</Value><CommandName>ApplyFilterForTaskRecorder</CommandName></UserAction><UserAction Ref="i10"><Description>Use the Quick Filter to find records. For example, filter on the Vendor account field with a value of '10'.</Description><NodeId>i10</NodeId><Sequence>4</Sequence><ControlName>QuickFilterControl</ControlName><ControlLabel /><ControlType>QuickFilter</ControlType><Value>Vendor account</Value><CommandName>ApplyFilterForTaskRecorder</CommandName></UserAction></UserActionsWithDetails>
+<UserActionsWithDetails xmlns:ns0="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Client.ServerForm.TaskRecording"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <UserAction Ref="i4">
+        <Description>Close the page.</Description>
+        <NodeId>i4</NodeId>
+        <Sequence>58</Sequence>
+        <ControlName>No Control Name</ControlName>
+        <ControlLabel />
+        <ControlType />
+        <Value />
+        <CommandName>RequestClose</CommandName>
+        <Annotations />
+    </UserAction>
+    <UserAction Ref="i6">
+        <Description>Go to Product information management &gt; Products &gt; Released products.</Description>
+        <NodeId>i6</NodeId>
+        <Sequence>58</Sequence>
+        <Navigation>mainmenu</Navigation>
+        <Navigation>ProductInformationManagement</Navigation>
+        <Navigation>Products</Navigation>
+        <ControlName>No Control Name</ControlName>
+        <ControlLabel />
+        <ControlType />
+        <Value />
+        <CommandName />
+    </UserAction>
+    <UserAction Ref="i9">
+        <Description>Click New.</Description>
+        <NodeId>i9</NodeId>
+        <Sequence>58</Sequence>
+        <ControlName>SystemDefinedNewButton</ControlName>
+        <ControlLabel>New</ControlLabel>
+        <ControlType>CommandButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i12">
+        <Description>In the Product number field, type a value.</Description>
+        <NodeId>i12</NodeId>
+        <Sequence>58</Sequence>
+        <ControlName>Identification_ProductNumber</ControlName>
+        <ControlLabel>Product number</ControlLabel>
+        <ControlType>Input</ControlType>
+        <Value>A0054</Value>
+        <CommandName />
+    </UserAction>
+    <UserAction Ref="i14">
+        <Description>In the Product name field, type a value.</Description>
+        <NodeId>i14</NodeId>
+        <Sequence>58</Sequence>
+        <ControlName>Identification_Name</ControlName>
+        <ControlLabel>Product name</ControlLabel>
+        <ControlType>Input</ControlType>
+        <Value>Phone</Value>
+        <CommandName />
+    </UserAction>
+    <UserAction Ref="i16">
+        <Description>In the Item model group field, enter or select a value.</Description>
+        <NodeId>i16</NodeId>
+        <Sequence>58</Sequence>
+        <ControlName>ModelGroupId</ControlName>
+        <ControlLabel>Item model group</ControlLabel>
+        <ControlType>Input</ControlType>
+        <Value>FIFO</Value>
+        <CommandName>RequestPopup</CommandName>
+    </UserAction>
+    <UserAction Ref="i20">
+        <Description>In the list, select row 2.</Description>
+        <NodeId>i20</NodeId>
+        <Sequence>58</Sequence>
+        <ControlName>Grid</ControlName>
+        <ControlLabel />
+        <ControlType>Grid</ControlType>
+        <Value>2</Value>
+        <CommandName>ChangeSelectedIndexInCache</CommandName>
+    </UserAction>
+    <UserAction Ref="i22">
+        <Description>In the list, click the link in the selected row.</Description>
+        <NodeId>i22</NodeId>
+        <Sequence>58</Sequence>
+        <ControlName>Grid</ControlName>
+        <ControlLabel />
+        <ControlType>Grid</ControlType>
+        <Value />
+        <CommandName>NavigationAction</CommandName>
+    </UserAction>
+    <UserAction Ref="i24">
+        <Description>In the Item group field, enter or select a value.</Description>
+        <NodeId>i24</NodeId>
+        <Sequence>58</Sequence>
+        <ControlName>ItemGroupId</ControlName>
+        <ControlLabel>Item group</ControlLabel>
+        <ControlType>Input</ControlType>
+        <Value>Charger-gr</Value>
+        <CommandName>RequestPopup</CommandName>
+    </UserAction>
+    <UserAction Ref="i28">
+        <Description>In the list, select row 5.</Description>
+        <NodeId>i28</NodeId>
+        <Sequence>58</Sequence>
+        <ControlName>Grid</ControlName>
+        <ControlLabel />
+        <ControlType>Grid</ControlType>
+        <Value>5</Value>
+        <CommandName>ChangeSelectedIndexInCache</CommandName>
+    </UserAction>
+    <UserAction Ref="i30">
+        <Description>In the list, click the link in the selected row.</Description>
+        <NodeId>i30</NodeId>
+        <Sequence>58</Sequence>
+        <ControlName>Grid</ControlName>
+        <ControlLabel />
+        <ControlType>Grid</ControlType>
+        <Value />
+        <CommandName>NavigationAction</CommandName>
+    </UserAction>
+    <UserAction Ref="i32">
+        <Description>In the Storage dimension group field, enter or select a value.</Description>
+        <NodeId>i32</NodeId>
+        <Sequence>58</Sequence>
+        <ControlName>StorageDimensionGroup</ControlName>
+        <ControlLabel>Storage dimension group</ControlLabel>
+        <ControlType>ReferenceGroup</ControlType>
+        <Value />
+        <CommandName>ResolveChanges</CommandName>
+    </UserAction>
+    <UserAction Ref="i36">
+        <Description>In the list, select row 2.</Description>
+        <NodeId>i36</NodeId>
+        <Sequence>58</Sequence>
+        <ControlName>Grid</ControlName>
+        <ControlLabel />
+        <ControlType>Grid</ControlType>
+        <Value>2</Value>
+        <CommandName>ChangeSelectedIndexInCache</CommandName>
+    </UserAction>
+    <UserAction Ref="i38">
+        <Description>In the list, click the link in the selected row.</Description>
+        <NodeId>i38</NodeId>
+        <Sequence>58</Sequence>
+        <ControlName>Grid</ControlName>
+        <ControlLabel />
+        <ControlType>Grid</ControlType>
+        <Value />
+        <CommandName>NavigationAction</CommandName>
+    </UserAction>
+    <UserAction Ref="i40">
+        <Description>In the Tracking dimension group field, enter or select a value.</Description>
+        <NodeId>i40</NodeId>
+        <Sequence>58</Sequence>
+        <ControlName>TrackingDimensionGroup</ControlName>
+        <ControlLabel>Tracking dimension group</ControlLabel>
+        <ControlType>ReferenceGroup</ControlType>
+        <Value />
+        <CommandName>ResolveChanges</CommandName>
+    </UserAction>
+    <UserAction Ref="i44">
+        <Description>In the list, select row 4.</Description>
+        <NodeId>i44</NodeId>
+        <Sequence>58</Sequence>
+        <ControlName>Grid</ControlName>
+        <ControlLabel />
+        <ControlType>Grid</ControlType>
+        <Value>4</Value>
+        <CommandName>ChangeSelectedIndexInCache</CommandName>
+    </UserAction>
+    <UserAction Ref="i46">
+        <Description>In the list, click the link in the selected row.</Description>
+        <NodeId>i46</NodeId>
+        <Sequence>58</Sequence>
+        <ControlName>Grid</ControlName>
+        <ControlLabel />
+        <ControlType>Grid</ControlType>
+        <Value />
+        <CommandName>NavigationAction</CommandName>
+    </UserAction>
+    <UserAction Ref="i48">
+        <Description>In the Purchase price field, enter a number.</Description>
+        <NodeId>i48</NodeId>
+        <Sequence>58</Sequence>
+        <ControlName>PurchasePrice</ControlName>
+        <ControlLabel>Purchase price</ControlLabel>
+        <ControlType>Real</ControlType>
+        <Value>400.00</Value>
+        <CommandName />
+    </UserAction>
+    <UserAction Ref="i50">
+        <Description>In the Sales price field, enter a number.</Description>
+        <NodeId>i50</NodeId>
+        <Sequence>58</Sequence>
+        <ControlName>SalesPrice</ControlName>
+        <ControlLabel>Sales price</ControlLabel>
+        <ControlType>Real</ControlType>
+        <Value>500.00</Value>
+        <CommandName />
+    </UserAction>
+    <UserAction Ref="i52">
+        <Description>Click OK.</Description>
+        <NodeId>i52</NodeId>
+        <Sequence>58</Sequence>
+        <ControlName>OKButton</ControlName>
+        <ControlLabel>OK</ControlLabel>
+        <ControlType>CommandButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i54">
+        <Description>On the Action Pane, click Product.</Description>
+        <NodeId>i54</NodeId>
+        <Sequence>58</Sequence>
+        <ControlName>ActionPaneTabDefine</ControlName>
+        <ControlLabel>Product</ControlLabel>
+        <ControlType>AppBarTab</ControlType>
+        <Value />
+        <CommandName>TabShown</CommandName>
+    </UserAction>
+    <UserAction Ref="i56">
+        <Description>Click Save.</Description>
+        <NodeId>i56</NodeId>
+        <Sequence>58</Sequence>
+        <ControlName>SystemDefinedSaveButton</ControlName>
+        <ControlLabel>Save</ControlLabel>
+        <ControlType>CommandButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i57">
+        <Description>Click Save.</Description>
+        <NodeId>i57</NodeId>
+        <Sequence>58</Sequence>
+        <ControlName>SystemDefinedSaveButton</ControlName>
+        <ControlLabel>Save</ControlLabel>
+        <ControlType>CommandButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i59">
+        <Description>Click the form caption.</Description>
+        <NodeId>i59</NodeId>
+        <Sequence>58</Sequence>
+        <ControlName>No Control Name</ControlName>
+        <ControlLabel />
+        <ControlType />
+        <Value />
+        <CommandName>OpenGridView</CommandName>
+    </UserAction>
+    <UserAction Ref="i61">
+        <Description>On the Action Pane, click Engineer.</Description>
+        <NodeId>i61</NodeId>
+        <Sequence>58</Sequence>
+        <ControlName>ActionPaneTabEngineer</ControlName>
+        <ControlLabel>Engineer</ControlLabel>
+        <ControlType>AppBarTab</ControlType>
+        <Value />
+        <CommandName>TabShown</CommandName>
+    </UserAction>
+    <UserAction Ref="i63">
+        <Description>Use the Quick Filter to find records. For example, filter on the Item number field with a value of 'A0054'.</Description>
+        <NodeId>i63</NodeId>
+        <Sequence>58</Sequence>
+        <ControlName>QuickFilter</ControlName>
+        <ControlLabel />
+        <ControlType>QuickFilter</ControlType>
+        <Value>Item number</Value>
+        <CommandName>ApplyFilterForTaskRecorder</CommandName>
+    </UserAction>
+    <UserAction Ref="i65">
+        <Description>In the list, mark the selected row.</Description>
+        <NodeId>i65</NodeId>
+        <Sequence>58</Sequence>
+        <ControlName>HeaderGrid</ControlName>
+        <ControlLabel />
+        <ControlType>Grid</ControlType>
+        <Value />
+        <CommandName>MarkActiveRow</CommandName>
+    </UserAction>
+    <UserAction Ref="i67">
+        <Description>Click BOM versions.</Description>
+        <NodeId>i67</NodeId>
+        <Sequence>58</Sequence>
+        <ControlName>BOMConsistOfAction</ControlName>
+        <ControlLabel>BOM versions</ControlLabel>
+        <ControlType>MenuItemButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i70">
+        <Description>Click New.</Description>
+        <NodeId>i70</NodeId>
+        <Sequence>58</Sequence>
+        <ControlName>NewFormMenuButton</ControlName>
+        <ControlLabel>New</ControlLabel>
+        <ControlType>MenuButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i72">
+        <Description>Close the page.</Description>
+        <NodeId>i72</NodeId>
+        <Sequence>58</Sequence>
+        <ControlName>No Control Name</ControlName>
+        <ControlLabel />
+        <ControlType />
+        <Value />
+        <CommandName>RequestClose</CommandName>
+        <Annotations />
+    </UserAction>
+    <UserAction Ref="i73">
+        <Description>Click BOM versions.</Description>
+        <NodeId>i73</NodeId>
+        <Sequence>58</Sequence>
+        <ControlName>BOMConsistOfAction</ControlName>
+        <ControlLabel>BOM versions</ControlLabel>
+        <ControlType>MenuItemButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i76">
+        <Description>Click New.</Description>
+        <NodeId>i76</NodeId>
+        <Sequence>58</Sequence>
+        <ControlName>NewFormMenuButton</ControlName>
+        <ControlLabel>New</ControlLabel>
+        <ControlType>MenuButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i78">
+        <Description>Click BOM and BOM version.</Description>
+        <NodeId>i78</NodeId>
+        <Sequence>58</Sequence>
+        <ControlName>CreateBOM</ControlName>
+        <ControlLabel>BOM and BOM version</ControlLabel>
+        <ControlType>MenuItem</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i81">
+        <Description>In the Name field, type a value.</Description>
+        <NodeId>i81</NodeId>
+        <Sequence>58</Sequence>
+        <ControlName>Fld2_1</ControlName>
+        <ControlLabel>Name</ControlLabel>
+        <ControlType>Input</ControlType>
+        <Value>Charger BOM</Value>
+        <CommandName />
+    </UserAction>
+    <UserAction Ref="i83">
+        <Description>In the Site field, enter or select a value.</Description>
+        <NodeId>i83</NodeId>
+        <Sequence>58</Sequence>
+        <ControlName>Fld4_1</ControlName>
+        <ControlLabel>Site</ControlLabel>
+        <ControlType>Input</ControlType>
+        <Value>1</Value>
+        <CommandName>RequestPopup</CommandName>
+    </UserAction>
+    <UserAction Ref="i87">
+        <Description>In the list, click the link in the selected row.</Description>
+        <NodeId>i87</NodeId>
+        <Sequence>58</Sequence>
+        <ControlName>Grid</ControlName>
+        <ControlLabel />
+        <ControlType>Grid</ControlType>
+        <Value />
+        <CommandName>NavigationAction</CommandName>
+    </UserAction>
+    <UserAction Ref="i89">
+        <Description>Click OK.</Description>
+        <NodeId>i89</NodeId>
+        <Sequence>58</Sequence>
+        <ControlName>OkButton</ControlName>
+        <ControlLabel>OK</ControlLabel>
+        <ControlType>CommandButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i92">
+        <Description>Click New.</Description>
+        <NodeId>i92</NodeId>
+        <Sequence>58</Sequence>
+        <ControlName>NewBomLine</ControlName>
+        <ControlLabel>New</ControlLabel>
+        <ControlType>CommandButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i94">
+        <Description>In the list, mark the selected row.</Description>
+        <NodeId>i94</NodeId>
+        <Sequence>58</Sequence>
+        <ControlName>GridBOM</ControlName>
+        <ControlLabel />
+        <ControlType>Grid</ControlType>
+        <Value />
+        <CommandName>MarkActiveRow</CommandName>
+    </UserAction>
+    <UserAction Ref="i96">
+        <Description>In the Item number field, enter or select a value.</Description>
+        <NodeId>i96</NodeId>
+        <Sequence>58</Sequence>
+        <ControlName>BOM_ItemId</ControlName>
+        <ControlLabel>Item number</ControlLabel>
+        <ControlType>Input</ControlType>
+        <Value>SC000001</Value>
+        <CommandName>RequestPopup</CommandName>
+    </UserAction>
+    <UserAction Ref="i100">
+        <Description>In the list, click the link in the selected row.</Description>
+        <NodeId>i100</NodeId>
+        <Sequence>58</Sequence>
+        <ControlName>Grid</ControlName>
+        <ControlLabel />
+        <ControlType>Grid</ControlType>
+        <Value />
+        <CommandName>NavigationAction</CommandName>
+    </UserAction>
+    <UserAction Ref="i102">
+        <Description>Click New.</Description>
+        <NodeId>i102</NodeId>
+        <Sequence>58</Sequence>
+        <ControlName>NewBomLine</ControlName>
+        <ControlLabel>New</ControlLabel>
+        <ControlType>CommandButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i104">
+        <Description>In the Item number field, enter or select a value.</Description>
+        <NodeId>i104</NodeId>
+        <Sequence>58</Sequence>
+        <ControlName>BOM_ItemId</ControlName>
+        <ControlLabel>Item number</ControlLabel>
+        <ControlType>Input</ControlType>
+        <Value>SC00003</Value>
+        <CommandName>RequestPopup</CommandName>
+    </UserAction>
+    <UserAction Ref="i108">
+        <Description>Close the page.</Description>
+        <NodeId>i108</NodeId>
+        <Sequence>58</Sequence>
+        <ControlName>No Control Name</ControlName>
+        <ControlLabel />
+        <ControlType />
+        <Value />
+        <CommandName>RequestClose</CommandName>
+        <Annotations>
+            <ns0:Annotation xsi:type="TaskGuideAnnotation">
+                <ns0:Description xsi:nil="true" />
+                <ns0:ExampleText xsi:nil="true" />
+                <ns0:GlobalId xsi:nil="true" />
+                <ns0:Hidden>true</ns0:Hidden>
+                <ns0:RecordingValueType>Preferred</ns0:RecordingValueType>
+                <ns0:Title xsi:nil="true" />
+            </ns0:Annotation>
+        </Annotations>
+    </UserAction>
+    <UserAction Ref="i109">
+        <Description>In the Item number field, enter or select a value.</Description>
+        <NodeId>i109</NodeId>
+        <Sequence>58</Sequence>
+        <ControlName>BOM_ItemId</ControlName>
+        <ControlLabel>Item number</ControlLabel>
+        <ControlType>Input</ControlType>
+        <Value />
+        <CommandName>RequestPopup</CommandName>
+    </UserAction>
+    <UserAction Ref="i112">
+        <Description>In the list, select row 3.</Description>
+        <NodeId>i112</NodeId>
+        <Sequence>58</Sequence>
+        <ControlName>Grid</ControlName>
+        <ControlLabel />
+        <ControlType>Grid</ControlType>
+        <Value>3</Value>
+        <CommandName>ChangeSelectedIndexInCache</CommandName>
+    </UserAction>
+    <UserAction Ref="i114">
+        <Description>In the list, click the link in the selected row.</Description>
+        <NodeId>i114</NodeId>
+        <Sequence>58</Sequence>
+        <ControlName>Grid</ControlName>
+        <ControlLabel />
+        <ControlType>Grid</ControlType>
+        <Value />
+        <CommandName>NavigationAction</CommandName>
+    </UserAction>
+    <UserAction Ref="i116">
+        <Description>Click Save.</Description>
+        <NodeId>i116</NodeId>
+        <Sequence>58</Sequence>
+        <ControlName>SystemDefinedSaveButton</ControlName>
+        <ControlLabel>Save</ControlLabel>
+        <ControlType>CommandButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i118">
+        <Description>Click Approval.</Description>
+        <NodeId>i118</NodeId>
+        <Sequence>58</Sequence>
+        <ControlName>BOMApprove</ControlName>
+        <ControlLabel>Approval</ControlLabel>
+        <ControlType>MenuItemButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i121">
+        <Description>Click OK.</Description>
+        <NodeId>i121</NodeId>
+        <Sequence>58</Sequence>
+        <ControlName>OkButton</ControlName>
+        <ControlLabel>OK</ControlLabel>
+        <ControlType>CommandButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i123">
+        <Description>Click Save.</Description>
+        <NodeId>i123</NodeId>
+        <Sequence>58</Sequence>
+        <ControlName>SystemDefinedSaveButton</ControlName>
+        <ControlLabel>Save</ControlLabel>
+        <ControlType>CommandButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i125">
+        <Description>Close the page.</Description>
+        <NodeId>i125</NodeId>
+        <Sequence>58</Sequence>
+        <ControlName>No Control Name</ControlName>
+        <ControlLabel />
+        <ControlType />
+        <Value />
+        <CommandName>RequestClose</CommandName>
+        <Annotations />
+    </UserAction>
+    <UserAction Ref="i127">
+        <Description>In the From date field, enter a date.</Description>
+        <NodeId>i127</NodeId>
+        <Sequence>58</Sequence>
+        <ControlName>General_BOMVersion_FromDate</ControlName>
+        <ControlLabel>From date</ControlLabel>
+        <ControlType>Date</ControlType>
+        <Value>2025-06-04</Value>
+        <CommandName />
+    </UserAction>
+    <UserAction Ref="i129">
+        <Description>In the To date field, enter a date.</Description>
+        <NodeId>i129</NodeId>
+        <Sequence>58</Sequence>
+        <ControlName>General_BOMVersion_ToDate</ControlName>
+        <ControlLabel>To date</ControlLabel>
+        <ControlType>Date</ControlType>
+        <Value>2025-06-18</Value>
+        <CommandName />
+    </UserAction>
+    <UserAction Ref="i131">
+        <Description>Click Save.</Description>
+        <NodeId>i131</NodeId>
+        <Sequence>58</Sequence>
+        <ControlName>SystemDefinedSaveButton</ControlName>
+        <ControlLabel>Save</ControlLabel>
+        <ControlType>CommandButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i133">
+        <Description>Click Approval.</Description>
+        <NodeId>i133</NodeId>
+        <Sequence>58</Sequence>
+        <ControlName>BOMVersionApprove</ControlName>
+        <ControlLabel>Approval</ControlLabel>
+        <ControlType>MenuItemButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i136">
+        <Description>Click OK.</Description>
+        <NodeId>i136</NodeId>
+        <Sequence>58</Sequence>
+        <ControlName>OkButton</ControlName>
+        <ControlLabel>OK</ControlLabel>
+        <ControlType>CommandButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+    <UserAction Ref="i138">
+        <Description>Click Activate.</Description>
+        <NodeId>i138</NodeId>
+        <Sequence>58</Sequence>
+        <ControlName>BOMRouteVersionActivate</ControlName>
+        <ControlLabel>Activate</ControlLabel>
+        <ControlType>MenuItemButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
+</UserActionsWithDetails>
+ 
