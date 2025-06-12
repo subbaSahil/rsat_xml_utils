@@ -61,19 +61,17 @@ def extract_navigation_steps(description):
 
 def wait_and_click(driver, by, base_xpath, timeout=10, enable_fallback=True):
     try:
-        # Wait for the element to be present
         element = WebDriverWait(driver, timeout).until(
             EC.presence_of_element_located((by, base_xpath))
         )
-
         aria_expanded = element.get_attribute("aria-expanded")
 
-        # Determine if we need to click
         if aria_expanded is None or aria_expanded.lower() == "false":
             WebDriverWait(driver, timeout).until(EC.element_to_be_clickable((by, base_xpath)))
             ActionChains(driver).move_to_element(element).perform()
             element.click()
             print(f"Clicked element with base_xpath: {base_xpath}")
+            return True
         else:
             print(f"Element already expanded (aria-expanded='{aria_expanded}') - Skipping click")
 
@@ -81,7 +79,6 @@ def wait_and_click(driver, by, base_xpath, timeout=10, enable_fallback=True):
         print(f"Primary click failed on base_xpath: {base_xpath} - {str(e)}")
 
         if enable_fallback and base_xpath:
-            # Try fallback by clicking indexed variants
             for i in range(1, 20):
                 indexed_xpath = f"({base_xpath})[{i}]"
                 try:
@@ -90,13 +87,14 @@ def wait_and_click(driver, by, base_xpath, timeout=10, enable_fallback=True):
                     )
                     driver.execute_script("arguments[0].click();", fallback_element)
                     print(f"Successfully clicked fallback element at index {i}")
-                    break
+                    return True
                 except Exception as ex:
                     print(f"Attempt {i} failed for xpath: {indexed_xpath} - {str(ex)}")
         else:
             print(f"No fallback attempted or no base_xpath provided. Exception: {str(e)}")
+    
+    return False  # Ensure a definitive return
 
-    time.sleep(1) 
         
 def hover_on_an_element(driver, by, value, timeout=10):
     element = WebDriverWait(driver, timeout).until(EC.element_to_be_clickable((by, value)))

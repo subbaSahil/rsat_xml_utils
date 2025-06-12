@@ -3,7 +3,7 @@ def generate_xpath_from_control(control_type, control_name, control_label, descr
 #filter manager/quick filter
     if control_type in ["commandbutton", "menuitembutton","dropdialogbutton","button","togglebutton"]:
         return [f"//button[@name='{control_name}']",
-                # f"//button[@data-dyn-controlname='{control_name}']",
+                f"//button[@data-dyn-controlname='{control_name}']",
                 f"//button[@aria-label='{control_label}']",
                 f"//div[@class='overflow-menu sysPopup allowFlyoutClickPropagation']//button[@name='{control_name}']",
                 f"//div[@class='overflow-menu sysPopup allowFlyoutClickPropagation']//button[@aria-label='{control_label}']"

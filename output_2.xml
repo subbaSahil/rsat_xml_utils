@@ -1,0 +1,10 @@
+    <UserAction Ref="i31">
+        <Description>Click Save.</Description>
+        <NodeId>i31</NodeId>
+        <Sequence>38</Sequence>
+        <ControlName>OKButton</ControlName>
+        <ControlLabel>Save</ControlLabel>
+        <ControlType>CommandButton</ControlType>
+        <Value />
+        <CommandName>Click</CommandName>
+    </UserAction>
