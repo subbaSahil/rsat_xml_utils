@@ -5,7 +5,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
 import re
-
+import os
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.common.exceptions import NoSuchElementException, ElementClickInterceptedException
 
@@ -609,10 +609,13 @@ def take_screenshot(driver, name="screenshot"):
         name: A name for the screenshot to be included in the filename.
     """
     try:
+        if not os.path.exists("screenshots"):
+            os.makedirs("screenshots")
         timestamp = time.strftime("%Y%m%d_%H%M%S")
         screenshot_name = f"{name}_{timestamp}.png"
-        driver.save_screenshot(screenshot_name)
-        print(f"Screenshot saved as {screenshot_name}")
+        screenshot_path = os.path.join("screenshots", screenshot_name)
+        driver.save_screenshot(screenshot_path)
+        print(f"Screenshot saved as {screenshot_path}")
     except Exception as e:
         print(f"Failed to take screenshot: {e}")
  

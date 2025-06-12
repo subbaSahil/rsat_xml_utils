@@ -29,61 +29,28 @@ try:
      Interactions.wait_and_click(driver, By.XPATH, "//div[@aria-label='Modules']")
 # Clicking navigation: Accounts payable
      Interactions.wait_and_click(driver, By.XPATH, "//a[@data-dyn-title='Accounts payable']")
-# Clicking navigation: Purchase orders
-     Interactions.wait_and_click(driver, By.XPATH, "//a[@data-dyn-title='Purchase orders']")
-# Clicking navigation: All purchase orders
-     Interactions.wait_and_click(driver, By.XPATH, "//a[@data-dyn-title='All purchase orders']")
-# Inputting into: GridFilter
-     if(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@name,'GridFilter')]")):
-         locator=Interactions.get_locator(driver, By.XPATH, "//input[contains(@name,'GridFilter')]")
-         Interactions.clear_input_field_and_send_keys(driver, By.XPATH, locator, "00001")
+# Clicking navigation: Vendors
+     Interactions.wait_and_click(driver, By.XPATH, "//a[@data-dyn-title='Vendors']")
+# Clicking navigation: Vendors past due
+     Interactions.wait_and_click(driver, By.XPATH, "//a[@data-dyn-title='Vendors past due']")
+# Inputting into: QuickFilterControl
+     if(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@name,'QuickFilterControl')]")):
+         locator=Interactions.get_locator(driver, By.XPATH, "//input[contains(@name,'QuickFilterControl')]")
+         Interactions.clear_input_field_and_send_keys(driver, By.XPATH, locator, "1001")
          Interactions.press_enter(driver, By.XPATH, locator)
      elif(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@aria-label,'')]")):
          locator=Interactions.get_locator(driver, By.XPATH, "//input[contains(@aria-label,'')]")
-         Interactions.clear_input_field_and_send_keys(driver, By.XPATH, locator, "00001")
+         Interactions.clear_input_field_and_send_keys(driver, By.XPATH, locator, "1001")
          Interactions.press_enter(driver, By.XPATH, locator)
-# Inputting into: GridFilter
-     if(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@name,'GridFilter')]")):
-         locator=Interactions.get_locator(driver, By.XPATH, "//input[contains(@name,'GridFilter')]")
-         Interactions.clear_input_field_and_send_keys(driver, By.XPATH, locator, "00000")
-         Interactions.press_enter(driver, By.XPATH, locator)
-     elif(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@aria-label,'')]")):
-         locator=Interactions.get_locator(driver, By.XPATH, "//input[contains(@aria-label,'')]")
-         Interactions.clear_input_field_and_send_keys(driver, By.XPATH, locator, "00000")
-         Interactions.press_enter(driver, By.XPATH, locator)
-# Inputting into: GridFilter
-     if(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@name,'GridFilter')]")):
-         locator=Interactions.get_locator(driver, By.XPATH, "//input[contains(@name,'GridFilter')]")
-         Interactions.clear_input_field_and_send_keys(driver, By.XPATH, locator, "00000859")
+# Inputting into: QuickFilterControl
+     if(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@name,'QuickFilterControl')]")):
+         locator=Interactions.get_locator(driver, By.XPATH, "//input[contains(@name,'QuickFilterControl')]")
+         Interactions.clear_input_field_and_send_keys(driver, By.XPATH, locator, "10")
          Interactions.press_enter(driver, By.XPATH, locator)
      elif(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@aria-label,'')]")):
          locator=Interactions.get_locator(driver, By.XPATH, "//input[contains(@aria-label,'')]")
-         Interactions.clear_input_field_and_send_keys(driver, By.XPATH, locator, "00000859")
+         Interactions.clear_input_field_and_send_keys(driver, By.XPATH, locator, "10")
          Interactions.press_enter(driver, By.XPATH, locator)
-# Clicking button: Grid
-     if Interactions.check_element_exist(driver, By.XPATH, f"//input[@value='00000859']/ancestor::div[@class='fixedDataTableRowLayout_body']/div[1]//div[@role='checkbox']"):
-          Interactions.wait_and_click(driver, By.XPATH, f"//input[@value='00000859']/ancestor::div[@class='fixedDataTableRowLayout_body']/div[1]//div[@role='checkbox']")
-     else:
-          Interactions.wait_and_click(driver, By.XPATH, f"//input[@value='00000859']")
-     Interactions.press_enter(driver, By.XPATH, "//input[@value='00000859']")
-# Clicking (default) on: PurchOrder
-     time.sleep(3)
-     Interactions.wait_and_click(driver, By.XPATH, "//button/parent::div[@data-dyn-controlname='PurchOrder']")
-# Inputting into: GridFilter
-     if(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@name,'GridFilter')]")):
-         locator=Interactions.get_locator(driver, By.XPATH, "//input[contains(@name,'GridFilter')]")
-         Interactions.clear_input_field_and_send_keys(driver, By.XPATH, locator, "000008")
-         Interactions.press_enter(driver, By.XPATH, locator)
-     elif(Interactions.check_element_exist(driver, By.XPATH, "//input[contains(@aria-label,'')]")):
-         locator=Interactions.get_locator(driver, By.XPATH, "//input[contains(@aria-label,'')]")
-         Interactions.clear_input_field_and_send_keys(driver, By.XPATH, locator, "000008")
-         Interactions.press_enter(driver, By.XPATH, locator)
-     user_input = input("Press data to select: ")
-     Interactions.scroll_and_click_row(driver, By.XPATH, "//div[contains(@class,'fixedDataTableRowLayout_')]/ancestor::div[@role='grid']", f"//input[@value='{user_input}']/ancestor::div[@class='fixedDataTableRowLayout_body']/div[1]//div[@role='checkbox']")
-     Interactions.press_enter(driver, By.XPATH, "//input[@value='"+user_input+"']")
-# Clicking (default) on: PurchOrder
-     time.sleep(3)
-     Interactions.wait_and_click(driver, By.XPATH, "//button/parent::div[@data-dyn-controlname='PurchOrder']")
 except Exception as e:
      test_passed = False
      print("Test case failed:"+ e)
