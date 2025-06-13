@@ -38,7 +38,7 @@ try:
      Interactions.press_enter(driver, By.XPATH, "//input[@value='"+user_input+"']")
 # Clicking (default) on: aptabProjects
      time.sleep(3)
-     Interactions.wait_and_click(driver, By.XPATH, "//button/parent::div[@data-dyn-controlname='aptabProjects']")
+     Interactions.wait_and_click(driver, By.XPATH, "//button/parent::div[@data-dyn-controlname='aptabProjectss']")
 # going to edit view mode
      Interactions.click_back_button(driver, By.XPATH, "//button[@data-dyn-controlname='SystemDefinedViewEditButton']")
      time.sleep(1)
